@@ -1,0 +1,39 @@
+# Credentials — must never be committed. A leaked token is the one mistake on
+# this project that cannot be undone: public repos are scanned by bots within
+# minutes, and git keeps the value in history forever.
+.jobs-config
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Enumeration cache and raw snapshots. Large, regenerable, and raw postings
+# should not be republished.
+.cache/*
+raw/
+
+# ...but DO track the enumerated board lists. They are the expensive artifact:
+# Common Crawl throttles hard, so re-querying on every CI run is both rude and
+# unreliable. Versioning them also makes a sweep reproducible.
+!.cache/boards_*.json
+!.cache/crawl_id.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Local scratch
+*.log
+*.tmp
+jobs.json.tmp
