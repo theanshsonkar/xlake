@@ -44,7 +44,7 @@ import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 
 import filters
 import quality
@@ -62,6 +62,8 @@ WORKERS = int(os.environ.get("LAKE_WORKERS", "4"))
 # Sweep only the first N registry entries. Local testing should never need the
 # whole registry — verify the logic on a handful, run the real thing on CI.
 LIMIT = int(os.environ.get("LAKE_LIMIT", "0"))  # 0 = no limit
+IGNORE_TIERS = os.environ.get("LAKE_IGNORE_TIERS", "") == "1"
+TIER_STATE_PATH = os.environ.get("LAKE_TIER_STATE", "") or None
 
 # Maximum rows one company may surface. Same measured reason as the old
 # engine: a single high-volume poster can dominate the lake. Kept even though
@@ -70,12 +72,34 @@ LIMIT = int(os.environ.get("LAKE_LIMIT", "0"))  # 0 = no limit
 COMPANY_CAP = int(os.environ.get("LAKE_COMPANY_CAP", "10"))
 
 
+def is_sweepable(entry: Dict) -> bool:
+    """False only for boards that can never work; absent key means sweepable."""
+    return bool(entry.get("reachable", True))
+
+
+def is_due(entry: Dict, state: Dict, now=None, ignore: Optional[bool] = None) -> bool:
+    """Freshness gate. Unmeasured boards are always due, so an empty tier
+    state sweeps everything. Separate from is_sweepable, which permanently
+    excludes boards that can never work."""
+    if IGNORE_TIERS if ignore is None else ignore:
+        return True
+    history = state.get("{}|{}".format(entry["platform"], entry["token"]))
+    if history is None:
+        return True
+    return tiering.sweep_due(history, now)
+
+
 def load_registry(segment: str = None) -> List[Dict]:
     if not os.path.exists(REGISTRY):
         return []
     rows = json.load(open(REGISTRY))
     if segment:
         rows = [r for r in rows if r.get("segment") == segment]
+    excluded = len(rows)
+    rows = [r for r in rows if is_sweepable(r)]
+    excluded -= len(rows)
+    if excluded:
+        print("skipped {} unreachable registry entries".format(excluded))
     return rows
 
 
@@ -434,6 +458,7 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
 def main() -> None:
     args = sys.argv[1:]
     segment = None
+    list_selection = "--list-selection" in args
     if "--segment" in args:
         segment = args[args.index("--segment") + 1]
 
@@ -458,8 +483,18 @@ def main() -> None:
     entries = load_registry(segment)
     if positional:
         entries = [r for r in entries if r.get("platform") in positional]
+    tier_state = tiering.load_tier_state(TIER_STATE_PATH) if TIER_STATE_PATH else tiering.load_tier_state()
+    before_due = len(entries)
+    entries = [r for r in entries if is_due(r, tier_state)]
+    if before_due - len(entries):
+        print("skipped {} boards not due".format(before_due - len(entries)))
     if LIMIT:
         entries = entries[:LIMIT]
+
+    if list_selection:
+        for entry in entries:
+            print("{}|{}".format(entry["platform"], entry["token"]))
+        sys.exit(0)
 
     if not entries:
         print("data/registry.json has no entries{} — nothing to sweep. "
