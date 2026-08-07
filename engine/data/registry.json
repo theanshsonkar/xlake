@@ -2682,5 +2682,85 @@
   "segment": "unknown",
   "source": "enumerate:commoncrawl",
   "evidence": "https://zupersoft.keka.com/careers/"
+ },
+ {
+  "platform": "ashby",
+  "token": "agentio",
+  "company": "Agentio",
+  "company_name": "Agentio",
+  "segment": "portfolio",
+  "source": "portfolio_resolver",
+  "portfolio_slug": "antler",
+  "evidence": "jobs.ashbyhq.com/agentio"
+ },
+ {
+  "platform": "ashby",
+  "token": "chainalysis-careers",
+  "company": "Website",
+  "company_name": "Website",
+  "segment": "portfolio",
+  "source": "portfolio_resolver",
+  "portfolio_slug": "techstars",
+  "evidence": "jobs.ashbyhq.com/chainalysis-careers"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "glossgenius",
+  "company": "Website",
+  "company_name": "Website",
+  "segment": "portfolio",
+  "source": "portfolio_resolver",
+  "portfolio_slug": "techstars",
+  "evidence": "job-boards.greenhouse.io/glossgenius"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "newsela",
+  "company": "Website",
+  "company_name": "Website",
+  "segment": "portfolio",
+  "source": "portfolio_resolver",
+  "portfolio_slug": "techstars",
+  "evidence": "boards.greenhouse.io/newsela"
+ },
+ {
+  "platform": "ashby",
+  "token": "openloophealth",
+  "company": "Website",
+  "company_name": "Website",
+  "segment": "portfolio",
+  "source": "portfolio_resolver",
+  "portfolio_slug": "techstars",
+  "evidence": "jobs.ashbyhq.com/openloophealth"
+ },
+ {
+  "platform": "lever",
+  "token": "outreach",
+  "company": "Website",
+  "company_name": "Website",
+  "segment": "portfolio",
+  "source": "portfolio_resolver",
+  "portfolio_slug": "techstars",
+  "evidence": "api.lever.co/v0/postings/outreach"
+ },
+ {
+  "platform": "workable",
+  "token": "owlet-baby-care-1",
+  "company": "Website",
+  "company_name": "Website",
+  "segment": "portfolio",
+  "source": "portfolio_resolver",
+  "portfolio_slug": "techstars",
+  "evidence": "apply.workable.com/owlet-baby-care-1"
+ },
+ {
+  "platform": "ashby",
+  "token": "twelve",
+  "company": "Website",
+  "company_name": "Website",
+  "segment": "portfolio",
+  "source": "portfolio_resolver",
+  "portfolio_slug": "techstars",
+  "evidence": "jobs.ashbyhq.com/twelve"
  }
 ]

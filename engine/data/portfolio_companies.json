@@ -1,0 +1,822 @@
+[
+  {
+    "company": "3square",
+    "website": "https://www.3square.ai",
+    "domain": "3square.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Five Whys",
+    "website": "https://www.five-whys.com/",
+    "domain": "five-whys.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "913",
+    "website": "https://www.913.ai",
+    "domain": "913.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Abivo",
+    "website": "https://abivo.ai",
+    "domain": "abivo.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Abodelabs",
+    "website": "https://abodelabs.ai/",
+    "domain": "abodelabs.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Access Carbon",
+    "website": "https://www.access-carbon.com/",
+    "domain": "access-carbon.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Acrux",
+    "website": "https://www.acrux.education",
+    "domain": "acrux.education",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Adaptive",
+    "website": "https://adaptive.live/",
+    "domain": "adaptive.live",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Ad Auris",
+    "website": "https://www.ad-auris.com",
+    "domain": "ad-auris.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Adeu",
+    "website": "https://adeu.ai",
+    "domain": "adeu.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Adrenalineinteractive",
+    "website": "https://adrenalineinteractive.ai",
+    "domain": "adrenalineinteractive.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Advancepay",
+    "website": "https://www.advancepay.io/",
+    "domain": "advancepay.io",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Advisewell",
+    "website": "https://www.advisewell.co/",
+    "domain": "advisewell.co",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Aesty",
+    "website": "https://aesty.ai",
+    "domain": "aesty.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Aevy",
+    "website": "https://aevy.io/",
+    "domain": "aevy.io",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Affinitylabs",
+    "website": "https://affinitylabs.ai/",
+    "domain": "affinitylabs.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Afterefx",
+    "website": "https://afterefx.com",
+    "domain": "afterefx.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Agenta",
+    "website": "https://agenta.ai",
+    "domain": "agenta.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Agentio",
+    "website": "https://agentio.com/",
+    "domain": "agentio.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Agrigate",
+    "website": "https://www.agrigate.id/",
+    "domain": "agrigate.id",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Agrisparta",
+    "website": "http://www.agrisparta.com",
+    "domain": "agrisparta.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Agrovisia",
+    "website": "https://www.agrovisia.com.br/",
+    "domain": "agrovisia.com.br",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Aiba",
+    "website": "https://aiba.ai",
+    "domain": "aiba.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Getaiden",
+    "website": "https://getaiden.com",
+    "domain": "getaiden.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Ai Fluence",
+    "website": "http://ai-fluence.com/",
+    "domain": "ai-fluence.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Aignosis",
+    "website": "https://aignosis.in/",
+    "domain": "aignosis.in",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Airalo",
+    "website": "https://www.airalo.com/",
+    "domain": "airalo.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Airballoon",
+    "website": "https://airballoon.app",
+    "domain": "airballoon.app",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Aircity",
+    "website": "https://www.aircity.network/",
+    "domain": "aircity.network",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Airdodge",
+    "website": "https://www.airdodge.io/",
+    "domain": "airdodge.io",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Airmo",
+    "website": "https://airmo.io",
+    "domain": "airmo.io",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Airshelf",
+    "website": "https://airshelf.ai/",
+    "domain": "airshelf.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Aivotlabs",
+    "website": "https://aivotlabs.ai/",
+    "domain": "aivotlabs.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Akar",
+    "website": "https://www.akar.cloud",
+    "domain": "akar.cloud",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Getalchemystai",
+    "website": "https://getalchemystai.com/",
+    "domain": "getalchemystai.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Alcolase",
+    "website": "https://alcolase.com/",
+    "domain": "alcolase.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Aleahealth",
+    "website": "https://aleahealth.co/",
+    "domain": "aleahealth.co",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Alertmend",
+    "website": "https://alertmend.io/",
+    "domain": "alertmend.io",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Allihoop",
+    "website": "https://www.allihoop.se/",
+    "domain": "allihoop.se",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Tryallspring",
+    "website": "https://www.tryallspring.com",
+    "domain": "tryallspring.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Alpha Grid",
+    "website": "https://alpha-grid.ai",
+    "domain": "alpha-grid.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Alphaguard",
+    "website": "https://alphaguard.ai/",
+    "domain": "alphaguard.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Alphaimpact",
+    "website": "https://alphaimpact.fi/",
+    "domain": "alphaimpact.fi",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Alphaloops",
+    "website": "https://www.alphaloops.ai/",
+    "domain": "alphaloops.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Alphanova",
+    "website": "https://www.alphanova.tech",
+    "domain": "alphanova.tech",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Alphashine",
+    "website": "https://www.alphashine.ca",
+    "domain": "alphashine.ca",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Altaicasting",
+    "website": "https://www.altaicasting.com",
+    "domain": "altaicasting.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Alterno",
+    "website": "https://www.alterno.net/",
+    "domain": "alterno.net",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Myalt",
+    "website": "https://www.myalt.shop/",
+    "domain": "myalt.shop",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Jenni",
+    "website": "https://jenni.ai/?utm_source=jenny",
+    "domain": "jenni.ai",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Alva",
+    "website": "https://www.alva.as",
+    "domain": "alva.as",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "domain_label"
+  },
+  {
+    "company": "Investors portal",
+    "website": "https://icx.efrontcloud.com/@6854/antler/login.aspx",
+    "domain": "efrontcloud.com",
+    "portfolio_slug": "antler",
+    "portfolio_url": "https://www.antler.co/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "anchor_text"
+  },
+  {
+    "company": "Website",
+    "website": "https://alloy.co/",
+    "domain": "alloy.co",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://chainalysis.com/",
+    "domain": "chainalysis.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://classpass.com/",
+    "domain": "classpass.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://datarobot.com/",
+    "domain": "datarobot.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://degreed.com/",
+    "domain": "degreed.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://digitalocean.com/",
+    "domain": "digitalocean.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://door.com/",
+    "domain": "door.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://ginger.com/",
+    "domain": "ginger.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://glossgenius.com",
+    "domain": "glossgenius.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://jumpcloud.com/",
+    "domain": "jumpcloud.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://newsela.com/",
+    "domain": "newsela.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://openloophealth.com/",
+    "domain": "openloophealth.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://outreach.io/",
+    "domain": "outreach.io",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://owletcare.com/",
+    "domain": "owletcare.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://pillpack.com/",
+    "domain": "pillpack.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://preply.com/",
+    "domain": "preply.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://remitly.com/",
+    "domain": "remitly.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://salesloft.com/",
+    "domain": "salesloft.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://www.scopely.com/",
+    "domain": "scopely.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://self.inc/",
+    "domain": "self.inc",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://sendbird.com/",
+    "domain": "sendbird.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://sendgrid.com/",
+    "domain": "sendgrid.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://tradingview.com/",
+    "domain": "tradingview.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://twelve.co/",
+    "domain": "twelve.co",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://www.twilio.com/",
+    "domain": "twilio.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://www.uber.com/",
+    "domain": "uber.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://shipveho.com/",
+    "domain": "shipveho.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Website",
+    "website": "https://flyzipline.com/",
+    "domain": "flyzipline.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "aria_label"
+  },
+  {
+    "company": "Brand Guidelines",
+    "website": "https://brandguides.brandfolder.com/techstars-brand",
+    "domain": "brandfolder.com",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "anchor_text"
+  },
+  {
+    "company": "Techstars Foundation",
+    "website": "https://techstars.org/",
+    "domain": "techstars.org",
+    "portfolio_slug": "techstars",
+    "portfolio_url": "https://www.techstars.com/portfolio",
+    "first_seen": "2026-08-07T08:26:21.308130Z",
+    "last_seen": "2026-08-07T16:47:08.122484Z",
+    "company_name_source": "anchor_text"
+  }
+]

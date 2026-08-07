@@ -138,10 +138,10 @@
  "keka|jupiter": {
   "platform": "keka",
   "token": "jupiter",
-  "total_qualifying_ever": 14,
-  "qualifying_last_30d": 14,
-  "sweeps_run": 2,
-  "last_swept_at": "2026-08-04T14:39:53+00:00"
+  "total_qualifying_ever": 21,
+  "qualifying_last_30d": 21,
+  "sweeps_run": 3,
+  "last_swept_at": "2026-08-07T08:31:51+00:00"
  },
  "workable|apna": {
   "platform": "workable",
@@ -190,5 +190,253 @@
   "qualifying_last_30d": 1388,
   "sweeps_run": 1,
   "last_swept_at": "2026-08-04T14:47:00+00:00"
+ },
+ "keka|3scsolution": {
+  "platform": "keka",
+  "token": "3scsolution",
+  "total_qualifying_ever": 11,
+  "qualifying_last_30d": 11,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:51+00:00"
+ },
+ "keka|abcoffee": {
+  "platform": "keka",
+  "token": "abcoffee",
+  "total_qualifying_ever": 3,
+  "qualifying_last_30d": 3,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:51+00:00"
+ },
+ "keka|100": {
+  "platform": "keka",
+  "token": "100",
+  "total_qualifying_ever": 59,
+  "qualifying_last_30d": 59,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:51+00:00"
+ },
+ "keka|academian": {
+  "platform": "keka",
+  "token": "academian",
+  "total_qualifying_ever": 13,
+  "qualifying_last_30d": 13,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:53+00:00"
+ },
+ "keka|acaindia": {
+  "platform": "keka",
+  "token": "acaindia",
+  "total_qualifying_ever": 23,
+  "qualifying_last_30d": 23,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:53+00:00"
+ },
+ "keka|adda247": {
+  "platform": "keka",
+  "token": "adda247",
+  "total_qualifying_ever": 9,
+  "qualifying_last_30d": 9,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:55+00:00"
+ },
+ "keka|afreespace": {
+  "platform": "keka",
+  "token": "afreespace",
+  "total_qualifying_ever": 1,
+  "qualifying_last_30d": 1,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:56+00:00"
+ },
+ "keka|adit": {
+  "platform": "keka",
+  "token": "adit",
+  "total_qualifying_ever": 16,
+  "qualifying_last_30d": 16,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:56+00:00"
+ },
+ "keka|acciojob": {
+  "platform": "keka",
+  "token": "acciojob",
+  "total_qualifying_ever": 0,
+  "qualifying_last_30d": 0,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:56+00:00"
+ },
+ "keka|ahinternational": {
+  "platform": "keka",
+  "token": "ahinternational",
+  "total_qualifying_ever": 5,
+  "qualifying_last_30d": 5,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:58+00:00"
+ },
+ "keka|aitmc": {
+  "platform": "keka",
+  "token": "aitmc",
+  "total_qualifying_ever": 1,
+  "qualifying_last_30d": 1,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:58+00:00"
+ },
+ "keka|aivarinnovations": {
+  "platform": "keka",
+  "token": "aivarinnovations",
+  "total_qualifying_ever": 4,
+  "qualifying_last_30d": 4,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:31:59+00:00"
+ },
+ "keka|americanchase": {
+  "platform": "keka",
+  "token": "americanchase",
+  "total_qualifying_ever": 9,
+  "qualifying_last_30d": 9,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:32:01+00:00"
+ },
+ "keka|amberstudent": {
+  "platform": "keka",
+  "token": "amberstudent",
+  "total_qualifying_ever": 1,
+  "qualifying_last_30d": 1,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:32:01+00:00"
+ },
+ "keka|alphamindxaddmind": {
+  "platform": "keka",
+  "token": "alphamindxaddmind",
+  "total_qualifying_ever": 3,
+  "qualifying_last_30d": 3,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:32:03+00:00"
+ },
+ "keka|aminu": {
+  "platform": "keka",
+  "token": "aminu",
+  "total_qualifying_ever": 13,
+  "qualifying_last_30d": 13,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:32:03+00:00"
+ },
+ "keka|analyticsvidhya": {
+  "platform": "keka",
+  "token": "analyticsvidhya",
+  "total_qualifying_ever": 27,
+  "qualifying_last_30d": 27,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:32:04+00:00"
+ },
+ "keka|almirqab": {
+  "platform": "keka",
+  "token": "almirqab",
+  "total_qualifying_ever": 0,
+  "qualifying_last_30d": 0,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:32:04+00:00"
+ },
+ "keka|ansibytecode": {
+  "platform": "keka",
+  "token": "ansibytecode",
+  "total_qualifying_ever": 4,
+  "qualifying_last_30d": 4,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:32:06+00:00"
+ },
+ "keka|antara": {
+  "platform": "keka",
+  "token": "antara",
+  "total_qualifying_ever": 10,
+  "qualifying_last_30d": 10,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:32:06+00:00"
+ },
+ "keka|anubhutiorganization": {
+  "platform": "keka",
+  "token": "anubhutiorganization",
+  "total_qualifying_ever": 7,
+  "qualifying_last_30d": 7,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:32:06+00:00"
+ },
+ "keka|arisinfra": {
+  "platform": "keka",
+  "token": "arisinfra",
+  "total_qualifying_ever": 1,
+  "qualifying_last_30d": 1,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:32:07+00:00"
+ },
+ "keka|arthanergy": {
+  "platform": "keka",
+  "token": "arthanergy",
+  "total_qualifying_ever": 3,
+  "qualifying_last_30d": 3,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T08:32:08+00:00"
+ },
+ "ashby|agentio": {
+  "platform": "ashby",
+  "token": "agentio",
+  "total_qualifying_ever": 10,
+  "qualifying_last_30d": 10,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T16:54:46+00:00"
+ },
+ "greenhouse|newsela": {
+  "platform": "greenhouse",
+  "token": "newsela",
+  "total_qualifying_ever": 2,
+  "qualifying_last_30d": 2,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T16:54:46+00:00"
+ },
+ "greenhouse|glossgenius": {
+  "platform": "greenhouse",
+  "token": "glossgenius",
+  "total_qualifying_ever": 5,
+  "qualifying_last_30d": 5,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T16:54:48+00:00"
+ },
+ "ashby|chainalysis-careers": {
+  "platform": "ashby",
+  "token": "chainalysis-careers",
+  "total_qualifying_ever": 8,
+  "qualifying_last_30d": 8,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T16:54:48+00:00"
+ },
+ "workable|owlet-baby-care-1": {
+  "platform": "workable",
+  "token": "owlet-baby-care-1",
+  "total_qualifying_ever": 3,
+  "qualifying_last_30d": 3,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T16:54:49+00:00"
+ },
+ "ashby|openloophealth": {
+  "platform": "ashby",
+  "token": "openloophealth",
+  "total_qualifying_ever": 10,
+  "qualifying_last_30d": 10,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T16:54:50+00:00"
+ },
+ "lever|outreach": {
+  "platform": "lever",
+  "token": "outreach",
+  "total_qualifying_ever": 3,
+  "qualifying_last_30d": 3,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T16:54:50+00:00"
+ },
+ "ashby|twelve": {
+  "platform": "ashby",
+  "token": "twelve",
+  "total_qualifying_ever": 1,
+  "qualifying_last_30d": 1,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-07T16:54:51+00:00"
  }
 }
