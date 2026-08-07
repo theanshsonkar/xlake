@@ -1,0 +1,177 @@
+# The known-company list. name,domain,segment
+#
+# Typed once, on purpose. This is NOT the discovery mechanism — thousands of
+# startups come from Common Crawl enumeration and the YC directory, with no names
+# typed. The old plan's warning was about typing company names to *discover*
+# companies, which is a different thing. This set is small, known, stable, and it
+# is the set a B.Tech CSE student actually asks about by name.
+#
+# The resolver runs over this list and sorts each company into:
+#   mechanism 1 (board API)   free, every 12h
+#   mechanism 2 (page reader) costs a model call, only when the page hash changes
+#
+# That split is the AI budget, so it is measured rather than estimated.
+# See data/registry.json for the current answer and resolve_companies.py to redo it.
+#
+# segment values: it_services | big_tech | india_product | quant
+
+# --- Indian IT services -----------------------------------------------------
+# Several of these are known to be bot-blocked to a plain fetch (TCS, Infosys,
+# HCLTech, Cognizant, Persistent). They stay on the list so the resolver records
+# WHY they fail rather than leaving them unexplained, and they are handled as
+# calendar entries for their mass-recruitment drives instead.
+TCS,tcs.com,it_services
+Infosys,infosys.com,it_services
+Wipro,wipro.com,it_services
+HCLTech,hcltech.com,it_services
+Tech Mahindra,techmahindra.com,it_services
+Cognizant,cognizant.com,it_services
+Accenture,accenture.com,it_services
+Capgemini,capgemini.com,it_services
+LTIMindtree,ltimindtree.com,it_services
+Mphasis,mphasis.com,it_services
+Persistent Systems,persistent.com,it_services
+Coforge,coforge.com,it_services
+Birlasoft,birlasoft.com,it_services
+Hexaware,hexaware.com,it_services
+Zensar,www.zensar.com,it_services
+Cyient,cyient.com,it_services
+KPIT,kpit.com,it_services
+L&T Technology Services,ltts.com,it_services
+Infosys BPM,infosysbpm.com,it_services
+Mindtree,ltimindtree.com,it_services
+
+# --- Global product and big tech --------------------------------------------
+Google,google.com,big_tech
+Microsoft,microsoft.com,big_tech
+Amazon,amazon.com,big_tech
+Apple,apple.com,big_tech
+Adobe,adobe.com,big_tech
+Nvidia,nvidia.com,big_tech
+Salesforce,salesforce.com,big_tech
+Oracle,oracle.com,big_tech
+SAP,sap.com,big_tech
+Intel,intel.com,big_tech
+Qualcomm,qualcomm.com,big_tech
+AMD,amd.com,big_tech
+Cisco,cisco.com,big_tech
+VMware,vmware.com,big_tech
+Dell Technologies,dell.com,big_tech
+IBM,ibm.com,big_tech
+Uber,uber.com,big_tech
+Walmart Global Tech,walmart.com,big_tech
+Target,target.com,big_tech
+PayPal,paypal.com,big_tech
+Visa,visa.com,big_tech
+Mastercard,mastercard.com,big_tech
+American Express,americanexpress.com,big_tech
+Goldman Sachs,goldmansachs.com,big_tech
+JPMorgan Chase,jpmorganchase.com,big_tech
+Morgan Stanley,morganstanley.com,big_tech
+Barclays,barclays.com,big_tech
+Standard Chartered,sc.com,big_tech
+HSBC,hsbc.com,big_tech
+Citi,citi.com,big_tech
+Optum,optum.com,big_tech
+UnitedHealth Group,unitedhealthgroup.com,big_tech
+Philips,philips.com,big_tech
+Siemens,siemens.com,big_tech
+Bosch,bosch.com,big_tech
+Honeywell,honeywell.com,big_tech
+GE Aerospace,geaerospace.com,big_tech
+Schneider Electric,se.com,big_tech
+Micron,micron.com,big_tech
+Texas Instruments,ti.com,big_tech
+Analog Devices,analog.com,big_tech
+Synopsys,synopsys.com,big_tech
+Cadence,cadence.com,big_tech
+Arm,arm.com,big_tech
+Western Digital,westerndigital.com,big_tech
+Red Hat,redhat.com,big_tech
+Palantir,palantir.com,big_tech
+Stripe,stripe.com,big_tech
+Cloudflare,cloudflare.com,big_tech
+Atlassian,atlassian.com,big_tech
+Netflix,netflix.com,big_tech
+LinkedIn,linkedin.com,big_tech
+Expedia,expediagroup.com,big_tech
+Booking.com,booking.com,big_tech
+Agoda,agoda.com,big_tech
+Rubrik,rubrik.com,big_tech
+Nutanix,nutanix.com,big_tech
+Databricks,databricks.com,big_tech
+Snowflake,snowflake.com,big_tech
+
+# --- Indian product and unicorns --------------------------------------------
+Flipkart,flipkart.com,india_product
+Zomato,zomato.com,india_product
+Swiggy,swiggy.com,india_product
+Paytm,paytm.com,india_product
+PhonePe,phonepe.com,india_product
+Razorpay,razorpay.com,india_product
+CRED,cred.club,india_product
+Zerodha,zerodha.com,india_product
+Groww,groww.in,india_product
+Meesho,meesho.com,india_product
+Zepto,zeptonow.com,india_product
+Nykaa,nykaa.com,india_product
+Dream11,www.dream11.com,india_product
+Freshworks,freshworks.com,india_product
+Zoho,zoho.com,india_product
+Postman,postman.com,india_product
+BrowserStack,browserstack.com,india_product
+Chargebee,chargebee.com,india_product
+Druva,druva.com,india_product
+Netskope,netskope.com,india_product
+Innovaccer,innovaccer.com,india_product
+ShareChat,sharechat.com,india_product
+Unacademy,unacademy.com,india_product
+PhysicsWallah,pw.live,india_product
+Urban Company,urbancompany.com,india_product
+Lenskart,lenskart.com,india_product
+Delhivery,delhivery.com,india_product
+Ola,olacabs.com,india_product
+Rapido,rapido.bike,india_product
+Porter,porter.in,india_product
+Cars24,cars24.com,india_product
+Juspay,juspay.in,india_product
+Setu,setu.co,india_product
+M2P Fintech,m2pfintech.com,india_product
+Hasura,hasura.io,india_product
+Atlan,atlan.com,india_product
+Whatfix,whatfix.com,india_product
+MindTickle,mindtickle.com,india_product
+HackerRank,hackerrank.com,india_product
+Sarvam AI,sarvam.ai,india_product
+Krutrim,olakrutrim.com,india_product
+Udaan,udaan.com,india_product
+Pixxel,pixxel.space,india_product
+Emeritus,emeritus.org,india_product
+CoinDCX,coindcx.com,india_product
+Jupiter,jupiter.money,india_product
+Slice,sliceit.com,india_product
+Khatabook,khatabook.com,india_product
+Apna,apna.co,india_product
+Eightfold AI,eightfold.ai,india_product
+
+# --- Quant and trading ------------------------------------------------------
+Jane Street,janestreet.com,quant
+Optiver,optiver.com,quant
+IMC Trading,imc.com,quant
+Tower Research Capital,tower-research.com,quant
+Jump Trading,jumptrading.com,quant
+Graviton Research Capital,gravitonresearch.com,quant
+WorldQuant,worldquant.com,quant
+Squarepoint Capital,squarepoint-capital.com,quant
+Citadel,citadel.com,quant
+D. E. Shaw,deshaw.com,quant
+Quadeye,quadeye.com,quant
+AlphaGrep,alpha-grep.com,quant
+Dolat Capital,dolatcapital.com,quant
+Estee Advisors,esteeadvisors.com,quant
+NK Securities,nksecurities.com,quant
+Futures First,futuresfirst.com,quant
+Aquatic Capital Management,aquatic.com,quant
+PDT Partners,pdtpartners.com,quant
+Susquehanna,sig.com,quant
+Millennium,mlp.com,quant

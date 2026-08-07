@@ -1,0 +1,5 @@
+{
+  "_url": "https://zerodha.com/careers/",
+  "_why_this_fixture": "NEGATIVE. 5,639 bytes of HTML that flatten to ZERO characters of text: the page is a pure JavaScript shell. The seed data records a real rejection here reading 'There are no job openings currently.' This is the exact input on which a model invents 'SDE Intern, Bangalore' out of nothing, so the correct answer being an empty list is the single most important assertion in this suite.",
+  "roles": []
+}

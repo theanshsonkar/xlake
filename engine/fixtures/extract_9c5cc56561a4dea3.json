@@ -1,0 +1,21 @@
+{
+  "_url": "https://ccs.iith.ac.in/careers",
+  "_why_this_fixture": "POSITIVE, and the reason it is a fixture rather than skipped: the page lists SEVEN positions at once, spanning Postdoctoral Fellow down to Systems Engineer, and only ONE ('Interns') is early-career in the sense this product cares about ('Predoctoral Researcher' and 'M.Tech (RA)' are graduate-level; 'Systems Engineer' wants 2-5 years experience). The extractor must not surface all seven just because the page is about hiring. The page text is HTML-flattened into SEPARATE LINES (a numbered table), so quotes must match single lines exactly rather than spanning sentences the way a prose page would allow.",
+  "roles": [
+    {
+      "title": "Interns",
+      "quote": "Interns work with faculty members and graduate students",
+      "apply_url": "https://ccs.iith.ac.in/careers",
+      "location": "Hyderabad, India",
+      "stage": "intern",
+      "degree_ceiling": "",
+      "prerequisite_gate": "Bachelors in CSE / IT / EE/ ECE / Mathematics.",
+      "stipend_text": "Rs 15,000 per month (consolidated)",
+      "access_channel": "off_campus",
+      "evidence": {
+        "prerequisite_gate": "Bachelors in CSE / IT / EE/ ECE / Mathematics.",
+        "stipend_text": "Rs 15,000 per month (consolidated)"
+      }
+    }
+  ]
+}

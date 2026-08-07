@@ -1,0 +1,5 @@
+{
+  "_url": "https://busigence.zohorecruit.com/jobs/Careers",
+  "_why_this_fixture": "NEGATIVE, and the subtlest of the three. 1.7 MB of HTML flattens to 438 characters, so it is NOT short enough to be rejected by a length check the way the zero-text pages are — there is just enough text to look like a real page. The residue even contains Zoho's own internal marker \\\"_no_longer\\\":\\\"zr.pos.no.act\\\" (no active positions). A model given 438 characters of JSON fragments will pattern-match its way to a plausible posting. Only the quote rule stops it.",
+  "roles": []
+}

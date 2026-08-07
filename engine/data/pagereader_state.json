@@ -1,0 +1,56 @@
+{
+ "https://www.techmahindra.com/careers/": {
+  "company": "Tech Mahindra",
+  "url": "https://www.techmahindra.com/careers/",
+  "final_url": "https://www.techmahindra.com/careers/",
+  "content_hash": "9ca3dfabf627026aa312c0a07e43e48a8251bd6a0efc6e396a310c263f32026b",
+  "last_fetched": "2026-08-01T03:50:18+00:00",
+  "last_extracted": "2026-08-01T03:50:18+00:00",
+  "last_role_count": 0
+ },
+ "https://www.cognizant.com/us/en": {
+  "company": "Cognizant",
+  "url": "https://www.cognizant.com/us/en",
+  "final_url": "https://www.cognizant.com/us/en",
+  "content_hash": "60e9f522e912a5df2a49c8c20f227c93389263cd2871732f3c5a73abeabe5578",
+  "last_fetched": "2026-08-01T03:50:19+00:00",
+  "last_extracted": "2026-08-01T03:50:19+00:00",
+  "last_role_count": 0
+ },
+ "https://www.capgemini.com/careers/": {
+  "company": "Capgemini",
+  "url": "https://www.capgemini.com/careers/",
+  "final_url": "https://www.capgemini.com/careers/",
+  "content_hash": "7adbe244dc20a813378798819f119485d68eef10c49c53e01575a47bb7b73e1c",
+  "last_fetched": "2026-08-01T03:50:19+00:00",
+  "last_extracted": "2026-08-01T03:50:19+00:00",
+  "last_role_count": 0
+ },
+ "https://www.ltm.com/careers": {
+  "company": "LTIMindtree",
+  "url": "https://www.ltm.com/careers",
+  "final_url": "https://www.ltm.com/careers",
+  "content_hash": "bacab0552eeb49297fe8d9c7b0e872d1bfa4de74c4b26f2baec223e8d6987228",
+  "last_fetched": "2026-08-01T03:50:20+00:00",
+  "last_extracted": "2026-08-01T03:50:20+00:00",
+  "last_role_count": 0
+ },
+ "https://www.mphasis.com/home.html": {
+  "company": "Mphasis",
+  "url": "https://www.mphasis.com/home.html",
+  "final_url": "https://www.mphasis.com/home.html",
+  "content_hash": "3503fedf2e60c4ce303aa6b654dfc41d24551fd22b4627d584c5b643fec107f7",
+  "last_fetched": "2026-08-01T03:50:20+00:00",
+  "last_extracted": "2026-08-01T03:50:20+00:00",
+  "last_role_count": 0
+ },
+ "https://validate.perfdrive.com/?ssa=45d712c3-c330-4f9b-b027-47aade1d56f4&ssb=87392266308&ssc=https%3A%2F%2Fpersistent.com%2Fcareers&ssi=fb81680b-d452-4183-a994-1385c44fb862&ssk=botmanager_support@radware.com&ssm=84855028121090511108643689738548&ssn=0a894c70250d45c5f6602bb4cabe56510f9e6fbac4b7-1360-4188-97f89d&sso=36aea041-c6b6346c5fe79bc77a8741e77216188c425244031896ad66&ssp=15042372491785547776178559356126461&ssq=63233741317502859582713175733166092072121&ssr=MTIyLjE2My4yMjMuMTE2&sst=xlake/1.0%20(+https://github.com/theanshsonkar/xlake;%20contact:%20anshsonkar@users.noreply.github.com)&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDA2ZmJhYzRiNy0xMzYwLTQxODgtOTA0MS1jNmI2MzQ2YzVmZTcxLTE3ODU1MTMxNzUzMjIwLTAwNGFiMjlhNTk2MjhmNjM1M2ExMCJ9": {
+  "company": "Persistent Systems",
+  "url": "https://validate.perfdrive.com/?ssa=45d712c3-c330-4f9b-b027-47aade1d56f4&ssb=87392266308&ssc=https%3A%2F%2Fpersistent.com%2Fcareers&ssi=fb81680b-d452-4183-a994-1385c44fb862&ssk=botmanager_support@radware.com&ssm=84855028121090511108643689738548&ssn=0a894c70250d45c5f6602bb4cabe56510f9e6fbac4b7-1360-4188-97f89d&sso=36aea041-c6b6346c5fe79bc77a8741e77216188c425244031896ad66&ssp=15042372491785547776178559356126461&ssq=63233741317502859582713175733166092072121&ssr=MTIyLjE2My4yMjMuMTE2&sst=xlake/1.0%20(+https://github.com/theanshsonkar/xlake;%20contact:%20anshsonkar@users.noreply.github.com)&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDA2ZmJhYzRiNy0xMzYwLTQxODgtOTA0MS1jNmI2MzQ2YzVmZTcxLTE3ODU1MTMxNzUzMjIwLTAwNGFiMjlhNTk2MjhmNjM1M2ExMCJ9",
+  "final_url": "https://validate.perfdrive.com/?ssa=45d712c3-c330-4f9b-b027-47aade1d56f4&ssb=87392266308&ssc=https%3A%2F%2Fpersistent.com%2Fcareers&ssi=fb81680b-d452-4183-a994-1385c44fb862&ssk=botmanager_support@radware.com&ssm=84855028121090511108643689738548&ssn=0a894c70250d45c5f6602bb4cabe56510f9e6fbac4b7-1360-4188-97f89d&sso=36aea041-c6b6346c5fe79bc77a8741e77216188c425244031896ad66&ssp=15042372491785547776178559356126461&ssq=63233741317502859582713175733166092072121&ssr=MTIyLjE2My4yMjMuMTE2&sst=xlake/1.0%20(+https://github.com/theanshsonkar/xlake;%20contact:%20anshsonkar@users.noreply.github.com)&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDA2ZmJhYzRiNy0xMzYwLTQxODgtOTA0MS1jNmI2MzQ2YzVmZTcxLTE3ODU1MTMxNzUzMjIwLTAwNGFiMjlhNTk2MjhmNjM1M2ExMCJ9",
+  "content_hash": "89cfbdd99a9b5e250055e84f2e09c134ffd5fdd649a184969268aa4706112449",
+  "last_fetched": "2026-08-01T03:50:23+00:00",
+  "last_extracted": "2026-08-01T03:50:23+00:00",
+  "last_role_count": 0
+ }
+}

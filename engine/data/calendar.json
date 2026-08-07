@@ -1,0 +1,1916 @@
+{
+  "_README": [
+    "The calendar. Rows are typed once by hand and then VERIFIED against the",
+    "official page every week by calendar.py. Nothing here is scraped.",
+    "",
+    "THE RULE THAT SHAPES THIS FILE: a model may READ a fetched page, never",
+    "RECALL a date. Asking a model 'when does GSoC 2027 open' produces a",
+    "confident invention, and unlike a wrong job verdict a student cannot detect",
+    "it by clicking through — they just miss the deadline.",
+    "",
+    "So every date-bearing field obeys this:",
+    "  deadline / opens_on   set ONLY when a fetched page said so, and then",
+    "                        evidence.<field> holds the exact quoted sentence",
+    "                        and the URL it came from.",
+    "  typical_open_month    a SEASON, not a date. Explicitly fuzzy: it renders",
+    "                        as 'usually opens in February', never as a",
+    "                        countdown. No countdown may ever be drawn from it.",
+    "  verify_status         verified | stale | unverified | excluded",
+    "",
+    "Rows below carry verified=... only where the source is stated. Dates marked",
+    "seed_verified came from jobs_memory.jsonl, which was checked by hand against",
+    "the official page on the date given. Everything else is deliberately null",
+    "until calendar.py reads the page. A null date is honest; a guessed one is",
+    "the single worst thing this file could contain.",
+    "",
+    "If a page cannot be read, KEEP the last known window and mark it stale.",
+    "Never silently re-date a row."
+  ],
+  "rows": [
+    {
+      "id": "gsoc",
+      "kind": "open_source",
+      "name": "Google Summer of Code",
+      "org": "Google / Open Source Programs Office",
+      "official_url": "https://summerofcode.withgoogle.com/",
+      "typical_open_month": "February",
+      "typical_close_month": "April",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 1,
+        "degree_ceiling": null,
+        "age_min": 18,
+        "region_exclusions": [],
+        "prerequisite_gate": null
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "open_source",
+        "remote_intl"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "outreachy",
+      "kind": "open_source",
+      "name": "Outreachy",
+      "org": "Software Freedom Conservancy",
+      "official_url": "https://www.outreachy.org/apply/eligibility/",
+      "typical_open_month": "August",
+      "typical_close_month": "October",
+      "deadline": null,
+      "window_note": "Dec-2026 cohort initial applications open ~Aug/Sep 2026 (seed_verified 2026-07-18).",
+      "eligibility": {
+        "study_year_min": 1,
+        "degree_ceiling": null,
+        "region_exclusions": [],
+        "prerequisite_gate": "Outreachy is for people subject to systemic bias or under-representation in tech in their region. In India it is generally not open to men unless they face specific systemic bias. This is an eligibility gate the user must self-assess, not one the collector may decide."
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "open_source",
+        "remote_intl"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "lfx-mentorship",
+      "kind": "open_source",
+      "name": "LFX Mentorship (CNCF and Linux Foundation projects)",
+      "org": "Linux Foundation",
+      "official_url": "https://mentorship.lfx.linuxfoundation.org/",
+      "typical_open_month": "August",
+      "typical_close_month": "September",
+      "deadline": null,
+      "window_note": "Term 3 runs Sep-Nov; applications open ~late Aug 2026 (seed_verified).",
+      "eligibility": {
+        "study_year_min": 1,
+        "age_min": 18,
+        "region_exclusions": [],
+        "prerequisite_gate": "Must be eligible to work in India and NOT a prior or active LF mentee."
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "open_source",
+        "remote_intl"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "mlh-fellowship",
+      "kind": "open_source",
+      "name": "MLH Fellowship — Open Source Track",
+      "org": "Major League Hacking",
+      "official_url": "https://fellowship.mlh.io/programs/open-source",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "region_exclusions": [
+          "India",
+          "APAC"
+        ],
+        "prerequisite_gate": "Requires prior MLH Hackathon / Global Hack Week participation."
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "open_source"
+      ],
+      "verify_status": "excluded",
+      "excluded_reason": "Official FAQ states it is not open to India/APAC, and it requires prior MLH Hack Week participation (seed_verified). Kept as a row so it can never be re-added by a later sweep, and so the exclusion is auditable.",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": null,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "season-of-docs",
+      "kind": "open_source",
+      "name": "Google Season of Docs",
+      "org": "Google",
+      "official_url": "https://developers.google.com/season-of-docs",
+      "typical_open_month": "March",
+      "typical_close_month": "May",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 1,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "open_source",
+        "remote_intl"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "c4gt-dmp",
+      "kind": "open_source",
+      "name": "C4GT / Digital Mentorship Programme",
+      "org": "Code for GovTech (Samagra)",
+      "official_url": "https://www.codeforgovtech.in/",
+      "typical_open_month": "March",
+      "typical_close_month": "May",
+      "deadline": null,
+      "window_note": "Annual summer programme; the 2026 window is closed, watch for 2027 (seed_verified).",
+      "eligibility": {
+        "study_year_min": 3,
+        "study_year_max": 4,
+        "region_exclusions": []
+      },
+      "stipend_text": "INR 1,00,000 for ~240 hours over 3 months (seed_verified)",
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "open_source"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 3,
+      "study_year_max": 4,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "cern-technical-studentship",
+      "kind": "research",
+      "name": "CERN Technical Studentship",
+      "org": "CERN",
+      "official_url": "https://careers.cern/programmes/technical-studentship/",
+      "typical_open_month": "August",
+      "typical_close_month": "October",
+      "deadline": null,
+      "window_note": "Programme was CLOSED and reopens 6 August 2026 (seed_verified on careers.cern 2026-07-18). Field list includes 'Software Engineering and IT'. Duration 4-12 months; allowance 3,486 CHF/month net plus travel to Geneva.",
+      "eligibility": {
+        "study_year_min": 2,
+        "degree_ceiling": "PhD holders and PhD students are NOT eligible",
+        "prerequisite_gate": "Must be a national of a CERN Member or Associate Member State. India is an Associate Member, so Indian nationals are eligible. Must have completed at least 18 months of study and remain enrolled full-time.",
+        "region_exclusions": []
+      },
+      "stipend_text": "3,486 CHF/month net (seed_verified)",
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "research",
+        "remote_intl"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": null,
+      "enrolled_required": true,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "cern-short-term-stag",
+      "kind": "research",
+      "name": "CERN Short-Term Internship (STAG)",
+      "org": "CERN",
+      "official_url": "https://careers.cern/jobs/short-term-internship/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 1,
+        "prerequisite_gate": "CERN Member / Associate Member State nationality; India is an Associate Member.",
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "research",
+        "remote_intl"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "cern-openlab",
+      "kind": "research",
+      "name": "CERN openlab Summer Student Programme",
+      "org": "CERN openlab",
+      "official_url": "https://openlab.cern/summer-student-programme",
+      "typical_open_month": "November",
+      "typical_close_month": "January",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 2,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "research",
+        "remote_intl"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "daad-rise",
+      "kind": "research",
+      "name": "DAAD RISE Germany",
+      "org": "DAAD",
+      "official_url": "https://www.daad.de/rise/en/rise-germany/",
+      "typical_open_month": "October",
+      "typical_close_month": "December",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 2,
+        "study_year_max": 4,
+        "degree_ceiling": "Undergraduate only",
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "research",
+        "remote_intl"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": 4,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "mitacs-globalink",
+      "kind": "research",
+      "name": "Mitacs Globalink Research Internship",
+      "org": "Mitacs (Canada)",
+      "official_url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/",
+      "typical_open_month": "August",
+      "typical_close_month": "September",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 2,
+        "study_year_max": 4,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "research",
+        "remote_intl"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": 4,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "ias-srfp",
+      "kind": "research",
+      "name": "Indian Academy of Sciences Summer Research Fellowship",
+      "org": "IAS / INSA / NASI",
+      "official_url": "https://web-japps.ias.ac.in/srfellowship/index.php",
+      "typical_open_month": "November",
+      "typical_close_month": "December",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 1,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "research"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "iisc-summer-research",
+      "kind": "research",
+      "name": "IISc Summer Research Fellowship",
+      "org": "Indian Institute of Science, Bengaluru",
+      "official_url": "https://iisc.ac.in/events/summer-research-fellowship-programme/",
+      "typical_open_month": "January",
+      "typical_close_month": "February",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 2,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "research"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "iith-ccs-interns",
+      "kind": "research",
+      "name": "IIT Hyderabad — Centre for Cryptography and Cybersecurity, Interns",
+      "org": "IIT Hyderabad",
+      "official_url": "https://ccs.iith.ac.in/careers",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "Rolling advertisement, not a fixed window (seed_verified 2026-07-31). Apply with CV, a brief research-interest statement and two references to the official CCS email; project and faculty availability vary.",
+      "eligibility": {
+        "study_year_min": 1,
+        "degree_ceiling": null,
+        "prerequisite_gate": "Bachelor's in CSE, IT, EE, ECE or Mathematics.",
+        "region_exclusions": []
+      },
+      "stipend_text": "INR 15,000/month (seed_verified)",
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "research"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "isro-student-project-trainee",
+      "kind": "research",
+      "name": "ISRO Student Project Trainee",
+      "org": "ISRO",
+      "official_url": "https://www.isro.gov.in/Careers.html",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 3,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "unknown",
+      "tags": [
+        "programme",
+        "research"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 3,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "tcs-nqt",
+      "kind": "mass_drive",
+      "name": "TCS National Qualifier Test (NQT) / TCS Prime and Digital",
+      "org": "Tata Consultancy Services",
+      "official_url": "https://www.tcs.com/careers/india/off-campus-recruitment-fresher",
+      "typical_open_month": "August",
+      "typical_close_month": "September",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 4,
+        "degree_ceiling": null,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "mass_drive"
+      ],
+      "verify_status": "unverified",
+      "note": "One of the largest single sources of CSE fresher hiring in India and invisible to every board sweep. TCS is bot-blocked to a plain fetch, so this is deliberately a hand-typed calendar row rather than something to scrape.",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 4,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "infosys-hackwithinfy",
+      "kind": "mass_drive",
+      "name": "Infosys HackWithInfy",
+      "org": "Infosys",
+      "official_url": "https://www.infosys.com/careers/hackwithinfy.html",
+      "typical_open_month": "January",
+      "typical_close_month": "March",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 4,
+        "prerequisite_gate": "Pre-final and final year engineering students; leads to Power Programmer / Specialist Programmer offers.",
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "mass_drive"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 4,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "infosys-off-campus",
+      "kind": "mass_drive",
+      "name": "Infosys Off-Campus / InfyTQ certification route",
+      "org": "Infosys",
+      "official_url": "https://www.infosys.com/careers/apply.html",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 3,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "mass_drive"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 3,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "wipro-elite-nth",
+      "kind": "mass_drive",
+      "name": "Wipro Elite National Talent Hunt (NTH)",
+      "org": "Wipro",
+      "official_url": "https://careers.wipro.com/",
+      "typical_open_month": "September",
+      "typical_close_month": "November",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 4,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "mass_drive"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 4,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "wipro-wilp",
+      "kind": "mass_drive",
+      "name": "Wipro WILP (Work Integrated Learning Programme)",
+      "org": "Wipro",
+      "official_url": "https://careers.wipro.com/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 4,
+        "prerequisite_gate": "Targets B.Sc/BCA graduates rather than B.Tech; included so a non-B.Tech user is not told nothing exists.",
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "mass_drive"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 4,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "cognizant-genc",
+      "kind": "mass_drive",
+      "name": "Cognizant GenC / GenC Next / GenC Elevate",
+      "org": "Cognizant",
+      "official_url": "https://careers.cognizant.com/global-en/students-and-graduates/",
+      "typical_open_month": "August",
+      "typical_close_month": "October",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 4,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "mass_drive"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 4,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "accenture-fresher-drive",
+      "kind": "mass_drive",
+      "name": "Accenture India Fresher Hiring (ASE / Advanced ASE)",
+      "org": "Accenture",
+      "official_url": "https://www.accenture.com/in-en/careers/local/india-early-careers",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 4,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "mass_drive"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 4,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "capgemini-fresher-drive",
+      "kind": "mass_drive",
+      "name": "Capgemini India Fresher Engineer Hiring",
+      "org": "Capgemini",
+      "official_url": "https://www.capgemini.com/in-en/careers/join-capgemini/graduate-careers/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 4,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "mass_drive"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 4,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "techmahindra-fresher-drive",
+      "kind": "mass_drive",
+      "name": "Tech Mahindra Off-Campus Fresher Hiring",
+      "org": "Tech Mahindra",
+      "official_url": "https://careers.techmahindra.com/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 4,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "mass_drive"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 4,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "ltimindtree-fresher-drive",
+      "kind": "mass_drive",
+      "name": "LTIMindtree Early Career Hiring",
+      "org": "LTIMindtree",
+      "official_url": "https://www.ltimindtree.com/careers/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 4,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "mass_drive"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 4,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "hcltech-techbee",
+      "kind": "mass_drive",
+      "name": "HCLTech TechBee / Early Career Programme",
+      "org": "HCLTech",
+      "official_url": "https://www.hcltech.com/careers",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 4,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "mass_drive"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 4,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "google-step",
+      "kind": "seasonal_bigtech",
+      "name": "Google STEP Internship",
+      "org": "Google",
+      "official_url": "https://www.google.com/about/careers/applications/jobs/results/?q=STEP%20intern",
+      "typical_open_month": "October",
+      "typical_close_month": "December",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 1,
+        "study_year_max": 2,
+        "prerequisite_gate": "STEP is specifically for students in their FIRST or SECOND year of an undergraduate degree. A final-year student is not eligible — the same lower-bound gate that made Explore Microsoft a rejection.",
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": 2,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "google-swe-intern-india",
+      "kind": "seasonal_bigtech",
+      "name": "Google Software Engineering Internship (India)",
+      "org": "Google",
+      "official_url": "https://www.google.com/about/careers/applications/jobs/results/?q=software%20engineering%20intern&location=India",
+      "typical_open_month": "September",
+      "typical_close_month": "November",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 2,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "google-sw-apprenticeship",
+      "kind": "seasonal_bigtech",
+      "name": "Google Software Application Development Apprenticeship (India)",
+      "org": "Google",
+      "official_url": "https://www.google.com/about/careers/applications/jobs/results/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": "2026-08-03",
+      "window_note": "Deadline 2026-08-03; locations Bengaluru / Gurgaon / Hyderabad / Mumbai (seed_verified).",
+      "eligibility": {
+        "study_year_min": 1,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "top_company",
+        "programme"
+      ],
+      "verify_status": "seed_verified",
+      "evidence": {
+        "deadline": {
+          "quote": "deadline 2026-08-03, Bengaluru/Gurgaon/Hyd/Mumbai",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/",
+          "source": "jobs_memory.jsonl, verified by hand"
+        },
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": true
+    },
+    {
+      "id": "google-data-analytics-apprenticeship",
+      "kind": "seasonal_bigtech",
+      "name": "Google Data Analytics Apprenticeship (March 2027 cohort)",
+      "org": "Google",
+      "official_url": "https://www.google.com/about/careers/applications/jobs/results/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": "2026-08-03",
+      "window_note": "24-month apprenticeship; deadline 2026-08-03 (seed_verified).",
+      "eligibility": {
+        "study_year_min": 1,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "top_company",
+        "programme"
+      ],
+      "verify_status": "seed_verified",
+      "evidence": {
+        "deadline": {
+          "quote": "deadline 2026-08-03, 24-month",
+          "url": "https://www.google.com/about/careers/applications/jobs/results/",
+          "source": "jobs_memory.jsonl, verified by hand"
+        },
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": true
+    },
+    {
+      "id": "microsoft-swe-intern-india",
+      "kind": "seasonal_bigtech",
+      "name": "Microsoft Software Engineering Intern (India)",
+      "org": "Microsoft",
+      "official_url": "https://careers.microsoft.com/v2/global/en/students.html",
+      "typical_open_month": "August",
+      "typical_close_month": "October",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 2,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "microsoft-explore",
+      "kind": "seasonal_bigtech",
+      "name": "Explore Microsoft (India)",
+      "org": "Microsoft",
+      "official_url": "https://careers.microsoft.com/v2/global/en/exploremicrosoft",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 1,
+        "study_year_max": 2,
+        "prerequisite_gate": "First and second year students ONLY. This was a real rejection in the seed data — a lower bound on study year, which most filters miss because they only check for seniority.",
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "top_company",
+        "programme"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": 2,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "amazon-sde-intern-india",
+      "kind": "seasonal_bigtech",
+      "name": "Amazon SDE Intern (University)",
+      "org": "Amazon",
+      "official_url": "https://www.amazon.jobs/en/teams/internships-for-students",
+      "typical_open_month": "July",
+      "typical_close_month": "October",
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 2,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "adobe-india-intern",
+      "kind": "seasonal_bigtech",
+      "name": "Adobe India Internship / Adobe Research India",
+      "org": "Adobe",
+      "official_url": "https://careers.adobe.com/us/en/c/students-and-interns-jobs",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 2,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "qualcomm-campus-india",
+      "kind": "seasonal_bigtech",
+      "name": "Qualcomm India Campus / Interim Engineering Intern",
+      "org": "Qualcomm",
+      "official_url": "https://careers.qualcomm.com/careers",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 3,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 3,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "goldman-summer-analyst-apac",
+      "kind": "seasonal_bigtech",
+      "name": "Goldman Sachs Summer Analyst Programme — Asia Pacific",
+      "org": "Goldman Sachs",
+      "official_url": "https://www.goldmansachs.com/careers/students/programs-and-internships",
+      "typical_open_month": "July",
+      "typical_close_month": "October",
+      "deadline": "2026-10-04",
+      "window_note": "Applications open until 2026-10-04. 9-11 week internship; Mumbai is included in the official Apply Now location filter (seed_verified 2026-07-31).",
+      "eligibility": {
+        "study_year_min": 3,
+        "prerequisite_gate": "Requires students currently in the PENULTIMATE year of a Bachelor's or Master's programme. A final-year student is a long shot, not a match — surface labelled, never as eligible.",
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "top_company",
+        "programme"
+      ],
+      "verify_status": "seed_verified",
+      "evidence": {
+        "deadline": {
+          "quote": "Applications are open until 2026-10-04; the program is a 9-11 week internship for undergraduate/graduate students",
+          "url": "https://www.goldmansachs.com/careers/students/programs-and-internships",
+          "source": "jobs_memory.jsonl, verified by hand 2026-07-31"
+        },
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 3,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": true
+    },
+    {
+      "id": "databricks-student-fellow",
+      "kind": "fellowship",
+      "name": "Databricks University Student Fellow",
+      "org": "Databricks",
+      "official_url": "https://www.databricks.com/university/student-fellows",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": null,
+      "eligibility": {
+        "study_year_min": 2,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "baseten-base-labs",
+      "kind": "fellowship",
+      "name": "Baseten Base Labs Fellowship",
+      "org": "Baseten",
+      "official_url": "https://jobs.ashbyhq.com/baseten",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "Cohort starts late September 2026 (seed_verified).",
+      "eligibility": {
+        "study_year_min": 1,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "startup",
+        "remote_intl"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 1,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "hennge-gip",
+      "kind": "fellowship",
+      "name": "HENNGE Global Internship Program",
+      "org": "HENNGE (Tokyo)",
+      "official_url": "https://recruit.hennge.com/en/gip/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "Software-engineering training programme in Tokyo. Round-trip airfare, medical insurance for non-residents, pre-arrival support and visa guidance are offered (seed_verified 2026-07-30).",
+      "eligibility": {
+        "study_year_min": 3,
+        "prerequisite_gate": "Third-year undergraduate or higher in CS or a related field. English fluency required; Japanese not required.",
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "remote_tier": "onsite",
+      "needs_confirmation": "Will HENNGE arrange or sponsor the appropriate Japan entry status for an India-based candidate?",
+      "tags": [
+        "programme",
+        "remote_intl"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 3,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "ibm-extreme-blue",
+      "kind": "fellowship",
+      "name": "IBM Extreme Blue",
+      "org": "IBM",
+      "official_url": "https://www.ibm.com/careers/blog/extreme-blue-ibms-leadership-program-for-future-tech-business-leaders",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "IBM's flagship leadership/technical internship programme (est. 1999), run in cohorts across global labs including India. Acceptance rate is reported in the low single digits by third-party guides, not an official IBM figure (checked 2026-08-01, no fixed application window stated on the official page).",
+      "eligibility": {
+        "study_year_min": 2,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "ibm-internship-india",
+      "kind": "seasonal_bigtech",
+      "name": "IBM India Internship (incl. Research)",
+      "org": "IBM",
+      "official_url": "https://www.ibm.com/in-en/careers/internships",
+      "typical_open_month": "August",
+      "typical_close_month": "September",
+      "deadline": null,
+      "window_note": "General student/research internship track (research areas include hybrid cloud, security, quantum computing). Third-party cycle guides describe next-cycle applications opening late Aug/early Sep for a following-summer start (checked 2026-08-01, not an IBM-official date, treat typical_open_month as a season only).",
+      "eligibility": {
+        "study_year_min": 2,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "samsung-ignite",
+      "kind": "seasonal_bigtech",
+      "name": "Samsung IGNITE Summer Internship (SRI-B)",
+      "org": "Samsung R&D Institute India",
+      "official_url": "https://news.samsung.com/in/samsung-ignite-2026-where-curiosity-meets-possibility",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "Annual summer internship run by Samsung R&D Institute Bangalore, confirmed to have run a 2026 edition (checked 2026-08-01 via Samsung Newsroom India). Distinct from Samsung PRISM, which is a college-nominated industry-academia project programme, not a directly-applied internship.",
+      "eligibility": {
+        "study_year_min": 3,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 3,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "sap-ixp-india",
+      "kind": "seasonal_bigtech",
+      "name": "SAP Internship Experience Program (iXp) India",
+      "org": "SAP",
+      "official_url": "https://www.sap.com/about/careers/students-graduates/internships/internship-experience-program.html/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "Global rolling internship programme with individual roles posted continuously on jobs.sap.com; no single fixed India application window found (checked 2026-08-01). Individual iXp reqs belong in the job lake via the SAP board, not here — this row exists so the programme name itself is tracked.",
+      "eligibility": {
+        "study_year_min": 2,
+        "region_exclusions": []
+      },
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 2,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "drdo-paid-internship",
+      "kind": "research",
+      "name": "DRDO Paid Internship Scheme (per-laboratory)",
+      "org": "Defence Research and Development Organisation",
+      "official_url": "https://drdo.gov.in/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "DRDO does not run one national cycle: individual laboratories (DLRL, TBRL, DMRL, SSPL, PXE, RCI and others) each publish their own paid-internship advertisement and deadline on drdo.gov.in at different times of year, confirmed live for multiple labs in 2026 (checked 2026-08-01: DLRL advt for 2026-27 final-year B.E/B.Tech, SSPL 65 slots/₹5,000 stipend closing 30 Sep, RCI 160 vacancies for 7th/8th-sem B.Tech). This row tracks the scheme as a category; a specific lab's window is never inferred from another lab's.",
+      "eligibility": {
+        "study_year_min": 4,
+        "prerequisite_gate": "Final-year (7th/8th semester) B.E./B.Tech, typically with a minimum CGPA around 7.0/10 — varies by laboratory.",
+        "region_exclusions": []
+      },
+      "stipend_text": "Varies by laboratory, commonly INR 5,000-30,000/month (seed source: multiple 2026 lab advertisements)",
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "research"
+      ],
+      "verify_status": "unverified",
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "grad_years_accepted": [],
+      "study_year_min": 4,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "opening_soon_ready": false
+    },
+    {
+      "id": "amazon-hackon",
+      "kind": "hackathon",
+      "name": "HackOn with Amazon",
+      "org": "Amazon",
+      "official_url": "https://www.amazon.jobs/content/en/career-programs/university/hackon-with-amazon",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "Annual student hackathon target; current cycle and dates need checking on the official page.",
+      "eligibility": {},
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "hackathon",
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "verified": false,
+      "note": "Added as a recurring programme candidate; no current official cycle, date, stipend or eligibility rule was verified.",
+      "grad_years_accepted": [],
+      "study_year_min": null,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "opening_soon_ready": false
+    },
+    {
+      "id": "amazon-ml-summer-school",
+      "kind": "seasonal_bigtech",
+      "name": "Amazon ML Summer School",
+      "org": "Amazon",
+      "official_url": "https://www.amazon.science/academic-engagements/amazon-ml-summer-school",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "Annual student programme target; current cycle and dates need checking on the official page.",
+      "eligibility": {},
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "verified": false,
+      "note": "Added as a recurring programme candidate; no current official cycle, date, stipend or eligibility rule was verified.",
+      "grad_years_accepted": [],
+      "study_year_min": null,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "opening_soon_ready": false
+    },
+    {
+      "id": "microsoft-engage",
+      "kind": "hackathon",
+      "name": "Microsoft Engage",
+      "org": "Microsoft",
+      "official_url": "https://careers.microsoft.com/v2/global/en/students-and-graduates.html",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "Historical student programme target; whether a current Microsoft Engage cycle still runs needs checking.",
+      "eligibility": {},
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "programme",
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "verified": false,
+      "note": "Status is intentionally unverified; no date or eligibility rule is inferred from the generic students page.",
+      "grad_years_accepted": [],
+      "study_year_min": null,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "opening_soon_ready": false
+    },
+    {
+      "id": "flipkart-grid",
+      "kind": "hackathon",
+      "name": "Flipkart GRiD",
+      "org": "Flipkart",
+      "official_url": "https://www.flipkartcareers.com/#!/joblist",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "Annual student competition target; current cycle and dates need checking on the official page.",
+      "eligibility": {},
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "hackathon",
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "verified": false,
+      "note": "Added as a recurring programme candidate; no current official cycle, date, stipend or eligibility rule was verified.",
+      "grad_years_accepted": [],
+      "study_year_min": null,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "opening_soon_ready": false
+    },
+    {
+      "id": "uber-hacktag",
+      "kind": "hackathon",
+      "name": "Uber HackTag",
+      "org": "Uber",
+      "official_url": "https://www.uber.com/in/en/careers/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "Student hackathon target; current cycle and dates need checking on the official page.",
+      "eligibility": {},
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "hackathon",
+        "top_company"
+      ],
+      "verify_status": "unverified",
+      "verified": false,
+      "note": "Added as a recurring programme candidate; the generic official careers URL does not verify a current HackTag cycle.",
+      "grad_years_accepted": [],
+      "study_year_min": null,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "opening_soon_ready": false
+    },
+    {
+      "id": "smart-india-hackathon",
+      "kind": "hackathon",
+      "name": "Smart India Hackathon",
+      "org": "Ministry of Education / AICTE",
+      "official_url": "https://www.sih.gov.in/",
+      "typical_open_month": null,
+      "typical_close_month": null,
+      "deadline": null,
+      "window_note": "Recurring national student hackathon target; current cycle and dates need checking on the official portal.",
+      "eligibility": {},
+      "stipend_text": null,
+      "access_channel": "off_campus",
+      "tags": [
+        "hackathon",
+        "government"
+      ],
+      "verify_status": "unverified",
+      "verified": false,
+      "note": "Added as a recurring programme candidate; no current official cycle, date, stipend or eligibility rule was verified.",
+      "grad_years_accepted": [],
+      "study_year_min": null,
+      "study_year_max": null,
+      "enrolled_required": null,
+      "degree_required": [],
+      "evidence": {
+        "grad_years_accepted": null,
+        "study_year_min": null,
+        "study_year_max": null,
+        "enrolled_required": null,
+        "degree_required": null,
+        "typical_open_month": null,
+        "typical_close_month": null
+      },
+      "opening_soon_ready": false
+    }
+  ]
+}

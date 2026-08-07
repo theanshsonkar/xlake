@@ -1,0 +1,194 @@
+[
+ {
+  "platform": "successfactors",
+  "token": "careers.wipro.com",
+  "company": "Wipro",
+  "segment": "it_services",
+  "source": "resolver",
+  "evidence": "rmkcdn.successfactors.com"
+ },
+ {
+  "platform": "workday",
+  "token": "accenture.wd103.myworkdayjobs.com|accenture|AccentureCareers",
+  "company": "Accenture",
+  "segment": "it_services",
+  "source": "resolver",
+  "evidence": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers"
+ },
+ {
+  "platform": "successfactors",
+  "token": "jobs.sap.com",
+  "company": "SAP",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "rmkcdn.successfactors.com"
+ },
+ {
+  "platform": "workday",
+  "token": "intel.wd1.myworkdayjobs.com|intel|External",
+  "company": "Intel",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "https://intel.wd1.myworkdayjobs.com/External"
+ },
+ {
+  "platform": "workday",
+  "token": "target.wd5.myworkdayjobs.com|target|targetcareers",
+  "company": "Target",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "https://target.wd5.myworkdayjobs.com/targetcareers"
+ },
+ {
+  "platform": "workday",
+  "token": "visa.wd5.myworkdayjobs.com|visa|Visa",
+  "company": "Visa",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "https://visa.wd5.myworkdayjobs.com/Visa"
+ },
+ {
+  "platform": "workday",
+  "token": "citi.wd5.myworkdayjobs.com|citi|2",
+  "company": "Citi",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "https://citi.wd5.myworkdayjobs.com/en-US/2"
+ },
+ {
+  "platform": "workday",
+  "token": "philips.wd3.myworkdayjobs.com|philips|jobs-and-careers",
+  "company": "Philips",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "https://philips.wd3.myworkdayjobs.com/jobs-and-careers"
+ },
+ {
+  "platform": "eightfold",
+  "token": "micron|micron.com",
+  "company": "Micron",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "micron.eightfold.ai"
+ },
+ {
+  "platform": "workday",
+  "token": "redhat.wd5.myworkdayjobs.com|redhat|jobs",
+  "company": "Red Hat",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "https://redhat.wd5.myworkdayjobs.com/jobs"
+ },
+ {
+  "platform": "lever",
+  "token": "palantir",
+  "company": "Palantir",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "jobs.lever.co/palantir"
+ },
+ {
+  "platform": "workday",
+  "token": "expedia.wd108.myworkdayjobs.com|expedia|search",
+  "company": "Expedia",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "https://expedia.wd108.myworkdayjobs.com/en-US/search"
+ },
+ {
+  "platform": "lever",
+  "token": "paytm",
+  "company": "Paytm",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "jobs.lever.co/paytm"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "razorpaysoftwareprivatelimited",
+  "company": "Razorpay",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "job-boards.greenhouse.io/razorpaysoftwareprivatelimited"
+ },
+ {
+  "platform": "workday",
+  "token": "browserstack.wd3.myworkdayjobs.com|browserstack|External",
+  "company": "BrowserStack",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "https://browserstack.wd3.myworkdayjobs.com/External"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "druva",
+  "company": "Druva",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "boards-api.greenhouse.io/v1/boards/druva"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "netskope",
+  "company": "Netskope",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "greenhouse.io/embed/job_board/js?for=netskope"
+ },
+ {
+  "platform": "lever",
+  "token": "mindtickle",
+  "company": "MindTickle",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "jobs.lever.co/mindtickle"
+ },
+ {
+  "platform": "ashby",
+  "token": "sarvam",
+  "company": "Sarvam AI",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "jobs.ashbyhq.com/sarvam"
+ },
+ {
+  "platform": "keka",
+  "token": "jupiter",
+  "company": "Jupiter",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "jupiter.keka.com"
+ },
+ {
+  "platform": "workable",
+  "token": "apna",
+  "company": "Apna",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "apply.workable.com/apna"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "towerresearchcapital",
+  "company": "Tower Research Capital",
+  "segment": "quant",
+  "source": "resolver",
+  "evidence": "greenhouse.io/embed/job_board/js?for=towerresearchcapital"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "pdtpartners",
+  "company": "PDT Partners",
+  "segment": "quant",
+  "source": "resolver",
+  "evidence": "job-boards.greenhouse.io/pdtpartners"
+ },
+ {
+  "platform": "eightfold",
+  "token": "mlp|mlp.com",
+  "company": "Millennium",
+  "segment": "quant",
+  "source": "resolver",
+  "evidence": "mlp.eightfold.ai"
+ }
+]

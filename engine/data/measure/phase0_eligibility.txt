@@ -1,0 +1,36 @@
+Phase 0 eligibility measurement report
+Date: 2026-08-04
+
+Filter test summaries (copied verbatim from the run):
+38 / 38 passed
+33 / 33 passed
+53 / 53 passed
+18 / 18 passed
+7 / 7 passed
+
+Exit status: env python3 filters.py = 0
+Exit status: env python3 -m py_compile sweep.py filters.py = 0
+
+hidden_reason audit:
+senior: explicit incompatibility — the title states seniority, or an anchored 3+ years requirement resolves the posting to senior.
+experience_3plus: explicit incompatibility — an anchored 3+ years requirement is present.
+not_india: explicit under the project rule — a role that cannot be located in India or India-eligible remote is useless to the target student.
+non_technical: explicit incompatibility — discipline is resolved to non_tech, never merely unknown.
+
+Recall checks:
+technical is None does not hide: PASS (hidden_reason('unknown', INDIA_LOCATED, None, None, UNKNOWN_D) -> None)
+discipline 'unknown' does not hide: PASS (hidden_reason('unknown', INDIA_LOCATED, False, None, UNKNOWN_D) -> None)
+discipline 'other_eng' does not hide: PASS (hidden_reason('unknown', INDIA_LOCATED, True, None, OTHER_ENG_D) -> None)
+experience_conflict True does not hide: PASS (Software Engineer + conflict description -> conflict=True, hidden_reason=None, eligibility_status=confirmed)
+
+Measurement input: data/measure/keka_raw.json (848 records)
+Eligibility status across all 848 records:
+Counter({'hidden': 814, 'rules_unclear': 21, 'confirmed': 13})
+
+India-eligible AND technical is True (12 records):
+By eligibility_status:
+Counter({'rules_unclear': 10, 'confirmed': 1, 'hidden': 1})
+By discipline:
+Counter({'unknown': 6, 'cse': 6})
+Joint eligibility_status / discipline:
+Counter({('rules_unclear', 'cse'): 6, ('rules_unclear', 'unknown'): 4, ('confirmed', 'unknown'): 1, ('hidden', 'unknown'): 1})

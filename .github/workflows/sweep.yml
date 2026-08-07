@@ -1,18 +1,25 @@
 name: sweep
 
 # The collector runs on GitHub's hardware, not on a laptop. Free tier is 2,000
-# minutes/month for private repos; twice-daily sweeps must stay inside that.
+# minutes/month for private repos; twice-daily sweeps plus one daily
+# page-reader pass must stay comfortably inside that.
+#
+# GitHub only reads workflows from the repo ROOT (.github/workflows/), which
+# is why this file lives here and not under engine/ — the old engine's copy
+# at oldengine/.github/workflows/sweep.yml was never actually picked up by
+# GitHub for that reason (Task 10, PRODUCT.md/README.md follow-up).
 on:
   schedule:
-    - cron: "0 1,13 * * *"   # 06:30 and 18:30 IST
+    - cron: "0 1,13 * * *"   # 06:30 and 18:30 IST — the board sweep, twice daily
+    - cron: "30 2 * * *"     # 08:00 IST — the page-reader pass, once daily
   workflow_dispatch:
     inputs:
-      platforms:
-        description: "Platforms to sweep (space separated, blank = defaults)"
+      job:
+        description: "Which job to run manually (sweep | read_pages | both)"
         required: false
-        default: ""
+        default: "both"
       limit:
-        description: "Max boards per platform (0 = all)"
+        description: "LAKE_LIMIT for a manual run (0 = all)"
         required: false
         default: "0"
 
@@ -20,14 +27,18 @@ concurrency:
   group: sweep
   cancel-in-progress: false
 
-# The job commits jobs.json back to the repo, so it needs write access.
+# Both jobs commit data/*.json back to the repo, so they need write access.
 permissions:
   contents: write
 
 jobs:
   sweep:
+    if: github.event_name != 'workflow_dispatch' || github.event.inputs.job == 'sweep' || github.event.inputs.job == 'both' || github.event.inputs.job == ''
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: engine
 
     steps:
       - uses: actions/checkout@v4
@@ -36,44 +47,30 @@ jobs:
         with:
           python-version: "3.12"
 
-      # The enumeration cache is expensive to rebuild and Common Crawl throttles
-      # hard, so keep it between runs rather than re-querying every sweep.
-      - name: Restore board cache
-        uses: actions/cache@v4
-        with:
-          path: .cache
-          key: boards-${{ github.run_id }}
-          restore-keys: |
-            boards-
-
-      - name: Enumerate boards (only if cache is empty)
-        run: |
-          if [ -z "$(ls -A .cache/boards_*.json 2>/dev/null)" ]; then
-            echo "no cached boards — enumerating from Common Crawl"
-            python3 enumerate_boards.py || echo "enumeration incomplete; continuing with whatever cached"
-          else
-            echo "using cached board lists:"
-            ls -la .cache/
-          fi
-
-      - name: Sweep
+      # The registry is small and company-scoped (data/registry.json, built by
+      # resolve_companies.py), not the raw Common Crawl universe, so there is
+      # no enumeration-cache step here the way the old engine needed one — see
+      # sweep.py's module docstring for why this sweep is company-scoped.
+      - name: Sweep the resolved registry
         env:
-          # CI can be more concurrent than a laptop, but stays polite per host.
-          LAKE_WORKERS: "12"
+          LAKE_WORKERS: "8"
           LAKE_HOST_DELAY: "0.3"
           LAKE_LIMIT: ${{ github.event.inputs.limit || '0' }}
-        run: python3 -u sweep.py ${{ github.event.inputs.platforms }}
+        run: python3 -u sweep.py
 
       - name: Show report
-        run: tail -1 runs.jsonl | python3 -m json.tool
+        run: tail -1 data/runs.jsonl | python3 -m json.tool
 
-      # jobs.json is the lake. Committing it is how the site gets its data, and
-      # it gives a free history of what was open when.
+      # jobs.json is the lake. Committing it is how the site gets its data,
+      # and it gives a free history of what was open when. tier_state.json is
+      # the board-tiering history (tiering.py) that decides hot/warm/cold
+      # sweep frequency going forward — it must persist across runs the same
+      # way jobs.json does, or every run looks like a first sweep.
       - name: Commit lake
         run: |
           git config user.name  "opportunity-lake-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add jobs.json runs.jsonl
+          git add data/jobs.json data/runs.jsonl data/tier_state.json
           git diff --staged --quiet || git commit -m "sweep: $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
 
@@ -83,6 +80,49 @@ jobs:
         with:
           name: sweep-output
           path: |
-            jobs.json
-            runs.jsonl
+            engine/data/jobs.json
+            engine/data/runs.jsonl
+            engine/data/tier_state.json
           retention-days: 14
+
+  read_pages:
+    if: github.event_name != 'workflow_dispatch' || github.event.inputs.job == 'read_pages' || github.event.inputs.job == 'both' || github.event.inputs.job == ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: engine
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # read_pages.py is mechanism 2 (the AI page reader) — see extractors.py.
+      # It needs an LLM configured via XLAKE_LLM_API_KEY / XLAKE_LLM_MODEL /
+      # XLAKE_LLM_ENDPOINT. None of those secrets exist in this repo yet
+      # (engine currently runs in fixture/test mode only, per README.md), so
+      # this job is wired up and scheduled but will no-op or fall back to
+      # fixtures until those secrets are added — that is expected, not a bug.
+      - name: Read queued company pages
+        env:
+          LAKE_LIMIT: ${{ github.event.inputs.limit || '0' }}
+          XLAKE_LLM_API_KEY: ${{ secrets.XLAKE_LLM_API_KEY }}
+          XLAKE_LLM_MODEL: ${{ secrets.XLAKE_LLM_MODEL }}
+          XLAKE_LLM_ENDPOINT: ${{ secrets.XLAKE_LLM_ENDPOINT }}
+        run: |
+          if [ -z "$XLAKE_LLM_API_KEY" ]; then
+            echo "no XLAKE_LLM_API_KEY secret set — page reader has no model configured, skipping run"
+            exit 0
+          fi
+          python3 -u read_pages.py
+
+      - name: Commit page-reader state
+        run: |
+          git config user.name  "opportunity-lake-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/pagereader_rows.json data/pagereader_state.json
+          git diff --staged --quiet || git commit -m "read_pages: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push

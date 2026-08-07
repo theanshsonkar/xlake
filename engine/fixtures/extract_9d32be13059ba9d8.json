@@ -1,0 +1,11 @@
+{
+  "_url": "https://careers.cern/programmes/technical-studentship",
+  "_why_this_fixture": "POSITIVE, but for the CALENDAR rather than a live posting. This programme page states its own closure and reopening date in one quotable sentence, with NO YEAR given for '6 August'. This is the exact shape the 'never recall a date' rule exists for: a model asked cold 'when does CERN reopen' would confidently invent a year. Here the extractor's job is to surface the row as OUT-OF-STAGE (no current opening) while attaching the exact reopening quote as evidence, so calendar.py can decide the year from context (the fetch date) rather than from memory. This is not a job listing, so 'roles' stays empty by the strict per-posting schema; the reopening evidence is what feeds the calendar update, checked separately below.",
+  "roles": [],
+  "programme_evidence": {
+    "id": "cern-technical-studentship",
+    "status_quote": "This programme is now closed. We will reopen applications on 6 August. Please check back then for the updated vacancy announcement, or create a job alert to be notified when applications reopen.",
+    "field_quote": "Software is crucial to CERN's mission of producing particle beams for physics experiments, coordinating thousands of devices through a sophisticated accelerator control system. Our engineers and technicians develop software across all layers, from embedded real-time systems to micro-service-based backend servers and user interfaces. We leverage mainstream, open-source technologies such as Linux, Docker, Kubernetes, Java, Python, and Kafka, ensuring our knowledge is broadly applicable beyond CERN.",
+    "note": "The quote says '6 August' with no year. calendar.py must attach the year from the fetch date, never from model recall, and must mark the row stale rather than re-date it if the page cannot be re-read."
+  }
+}

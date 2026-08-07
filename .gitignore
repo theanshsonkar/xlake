@@ -37,3 +37,7 @@ venv/
 *.log
 *.tmp
 jobs.json.tmp
+# Generated lake artifacts. Large and regenerable; these belong in S3, not git.
+engine/data/jobs.json
+engine/data/hidden.json
+engine/data/measure/keka_raw.json

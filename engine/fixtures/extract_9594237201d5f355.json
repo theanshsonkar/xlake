@@ -1,0 +1,30 @@
+{
+  "_url": "https://www.optiver.com/working-at-optiver/career-opportunities/",
+  "_why_this_fixture": "POSITIVE. The page listing is a filterable job board rendered with each posting's title, location and level ('Experienced' | 'Graduate' | 'Internship') repeated as plain text. This is the case where a real early-career role sits among many senior ones ('Senior Technical Recruiter', 'Institutional Trader', etc.), and the extractor must keep only the Internship/Graduate rows and discard the Experienced ones. Two rows kept below, taken from the saved page's own text verbatim.",
+  "roles": [
+    {
+      "title": "FPGA Engineer Intern (Summer 2027 - Austin)",
+      "quote": "FPGA Engineer Intern (Summer 2027 - Austin)",
+      "location": "Austin",
+      "stage": "intern",
+      "remote_tier": "onsite",
+      "access_channel": "off_campus",
+      "evidence": {
+        "stage": "FPGA Engineer Intern (Summer 2027 - Austin)"
+      }
+    },
+    {
+      "title": "Graduate FPGA Engineer (2027 Start - Austin)",
+      "quote": "Graduate FPGA Engineer (2027 Start - Austin)",
+      "location": "Austin",
+      "stage": "fresher_newgrad",
+      "grad_years_accepted": [2027],
+      "remote_tier": "onsite",
+      "access_channel": "off_campus",
+      "evidence": {
+        "stage": "Graduate FPGA Engineer (2027 Start - Austin)",
+        "grad_years_accepted": "Graduate FPGA Engineer (2027 Start - Austin)"
+      }
+    }
+  ]
+}

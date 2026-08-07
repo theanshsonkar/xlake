@@ -13,6 +13,25 @@ Caveats measured on 2026-07-31:
   - Keka, Zoho Recruit and Darwinbox are subdomain-per-company, so they need
     matchType=domain rather than a path prefix.
 
+Workday added 2026-08-01, NOT YET LIVE-VERIFIED against Common Crawl in this
+session — the sandbox this was written in has no outbound network route to
+index.commoncrawl.org (connection timed out on collinfo.json), so the query
+below is built from the SAME matchType=domain pattern already proven to work
+for keka.com/zohorecruit.com/darwinbox.in, plus the token shape resolve.py
+already extracts from a live Workday URL (WORKDAY_RE, resolve.py). It has not
+been run end-to-end. Before relying on it: run
+`python3 enumerate_boards.py workday` somewhere with real network access and
+confirm token count > 0 before trusting the cache.
+
+Workday is subdomain-per-tenant like Keka (matchType=domain on
+myworkdayjobs.com), but the useful token is host+site, not just the tenant
+subdomain — resolve.py's fetch adapter needs 'host|tenant|site', and site is a
+PATH segment (e.g. accenture.wd103.myworkdayjobs.com/AccentureCareers), not
+part of the domain. So Workday cannot reuse the plain domain-mode token
+extraction the other three domain-mode platforms use; it needs the full URL,
+which is why _index_page's raw url list is walked directly by
+_workday_token_from_url() below instead of the generic path/domain switch.
+
 Results are cached to disk. Re-enumerating on every run would be rude and slow.
 """
 
@@ -40,7 +59,18 @@ SOURCES: Dict[str, List[tuple]] = {
     "keka": [("keka.com", "domain", "keka.com")],
     "zohorecruit": [("zohorecruit.com", "domain", "zohorecruit.com")],
     "darwinbox": [("darwinbox.in", "domain", "darwinbox.in")],
+    # Workday is subdomain-per-tenant (matchType=domain) but the token also
+    # needs a path segment (the "site"), so it is handled by its own code path
+    # in enumerate_platform() rather than the generic path/domain extractor.
+    "workday": [("myworkdayjobs.com", "domain", "myworkdayjobs.com")],
 }
+
+# https://{tenant}.{wdN}.myworkdayjobs.com/{locale?}/{site}
+WORKDAY_URL_RE = re.compile(
+    r"https?://([a-z0-9][a-z0-9-]*)\.(wd\d+)\.myworkdayjobs\.com/"
+    r"(?:([a-z]{2}-[A-Z]{2})/)?([a-zA-Z0-9_-]+)",
+    re.I,
+)
 
 NOT_TOKENS = {
     "www", "api", "jobs", "careers", "career", "app", "help", "docs", "embed",
@@ -118,6 +148,22 @@ def _index_page(crawl: str, query: str, mode: str, page: int) -> List[str]:
     return out
 
 
+def _workday_token_from_url(u: str) -> str:
+    """Extract 'host|tenant|site' the way fetch._workday()/resolve.py expect.
+
+    host is the full subdomain (tenant.wdN.myworkdayjobs.com), tenant is its
+    first label, site is the path segment after the optional locale. Mirrors
+    resolve.WORKDAY_RE's shape but keeps the wdN cluster instead of discarding
+    it, since fetch._workday() needs the real host to hit /wday/cxs/.
+    """
+    m = WORKDAY_URL_RE.match(u)
+    if not m:
+        return ""
+    tenant, wd, _locale, site = m.groups()
+    host = "{}.{}.myworkdayjobs.com".format(tenant, wd)
+    return "{}|{}|{}".format(host, tenant, site)
+
+
 def enumerate_platform(platform: str, max_pages: int = 12,
                        refresh: bool = False) -> List[str]:
     """Return distinct board tokens for one platform, cached to disk."""
@@ -133,6 +179,11 @@ def enumerate_platform(platform: str, max_pages: int = 12,
         for p in range(min(pages, max_pages)):
             for u in _index_page(crawl, query, mode, p):
                 if u.endswith("robots.txt"):
+                    continue
+                if platform == "workday":
+                    tok = _workday_token_from_url(u)
+                    if tok:
+                        tokens.add(tok)
                     continue
                 tok = ""
                 if mode == "path":
