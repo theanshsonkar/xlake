@@ -2,193 +2,193 @@
  "successfactors|careers.wipro.com": {
   "platform": "successfactors",
   "token": "careers.wipro.com",
-  "total_qualifying_ever": 27064,
-  "qualifying_last_30d": 27064,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:19+00:00"
+  "total_qualifying_ever": 28479,
+  "qualifying_last_30d": 28479,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:20:19+00:00"
  },
  "successfactors|jobs.sap.com": {
   "platform": "successfactors",
   "token": "jobs.sap.com",
-  "total_qualifying_ever": 8746,
-  "qualifying_last_30d": 8746,
-  "sweeps_run": 19,
-  "last_swept_at": "2026-08-13T04:27:45+00:00"
+  "total_qualifying_ever": 9228,
+  "qualifying_last_30d": 9228,
+  "sweeps_run": 20,
+  "last_swept_at": "2026-08-13T14:21:01+00:00"
  },
  "workday|intel.wd1.myworkdayjobs.com|intel|External": {
   "platform": "workday",
   "token": "intel.wd1.myworkdayjobs.com|intel|External",
-  "total_qualifying_ever": 9083,
-  "qualifying_last_30d": 9083,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:49+00:00"
+  "total_qualifying_ever": 9536,
+  "qualifying_last_30d": 9536,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:20:51+00:00"
  },
  "workday|visa.wd5.myworkdayjobs.com|visa|Visa": {
   "platform": "workday",
   "token": "visa.wd5.myworkdayjobs.com|visa|Visa",
-  "total_qualifying_ever": 2427,
-  "qualifying_last_30d": 2427,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:59+00:00"
+  "total_qualifying_ever": 2546,
+  "qualifying_last_30d": 2546,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:01+00:00"
  },
  "workday|philips.wd3.myworkdayjobs.com|philips|jobs-and-careers": {
   "platform": "workday",
   "token": "philips.wd3.myworkdayjobs.com|philips|jobs-and-careers",
-  "total_qualifying_ever": 10745,
-  "qualifying_last_30d": 10745,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:28:49+00:00"
+  "total_qualifying_ever": 11266,
+  "qualifying_last_30d": 11266,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:56+00:00"
  },
  "workday|accenture.wd103.myworkdayjobs.com|accenture|AccentureCareers": {
   "platform": "workday",
   "token": "accenture.wd103.myworkdayjobs.com|accenture|AccentureCareers",
-  "total_qualifying_ever": 29874,
-  "qualifying_last_30d": 29874,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:30:40+00:00"
+  "total_qualifying_ever": 31379,
+  "qualifying_last_30d": 31379,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:24:14+00:00"
  },
  "workday|target.wd5.myworkdayjobs.com|target|targetcareers": {
   "platform": "workday",
   "token": "target.wd5.myworkdayjobs.com|target|targetcareers",
-  "total_qualifying_ever": 25375,
-  "qualifying_last_30d": 25375,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:29:57+00:00"
+  "total_qualifying_ever": 26613,
+  "qualifying_last_30d": 26613,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:23:00+00:00"
  },
  "lever|palantir": {
   "platform": "lever",
   "token": "palantir",
-  "total_qualifying_ever": 5233,
-  "qualifying_last_30d": 5233,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:51+00:00"
+  "total_qualifying_ever": 5495,
+  "qualifying_last_30d": 5495,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:01+00:00"
  },
  "workday|redhat.wd5.myworkdayjobs.com|redhat|jobs": {
   "platform": "workday",
   "token": "redhat.wd5.myworkdayjobs.com|redhat|jobs",
-  "total_qualifying_ever": 673,
-  "qualifying_last_30d": 673,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:49+00:00"
+  "total_qualifying_ever": 706,
+  "qualifying_last_30d": 706,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:01+00:00"
  },
  "lever|paytm": {
   "platform": "lever",
   "token": "paytm",
-  "total_qualifying_ever": 1344,
-  "qualifying_last_30d": 1344,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:54+00:00"
+  "total_qualifying_ever": 1414,
+  "qualifying_last_30d": 1414,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:02+00:00"
  },
  "greenhouse|razorpaysoftwareprivatelimited": {
   "platform": "greenhouse",
   "token": "razorpaysoftwareprivatelimited",
-  "total_qualifying_ever": 119,
-  "qualifying_last_30d": 119,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:54+00:00"
+  "total_qualifying_ever": 123,
+  "qualifying_last_30d": 123,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:01+00:00"
  },
  "workday|browserstack.wd3.myworkdayjobs.com|browserstack|External": {
   "platform": "workday",
   "token": "browserstack.wd3.myworkdayjobs.com|browserstack|External",
-  "total_qualifying_ever": 234,
-  "qualifying_last_30d": 234,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:56+00:00"
+  "total_qualifying_ever": 247,
+  "qualifying_last_30d": 247,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:04+00:00"
  },
  "greenhouse|druva": {
   "platform": "greenhouse",
   "token": "druva",
-  "total_qualifying_ever": 123,
-  "qualifying_last_30d": 123,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:54+00:00"
+  "total_qualifying_ever": 131,
+  "qualifying_last_30d": 131,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:02+00:00"
  },
  "workday|expedia.wd108.myworkdayjobs.com|expedia|search": {
   "platform": "workday",
   "token": "expedia.wd108.myworkdayjobs.com|expedia|search",
-  "total_qualifying_ever": 508,
-  "qualifying_last_30d": 508,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:54+00:00"
+  "total_qualifying_ever": 532,
+  "qualifying_last_30d": 532,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:03+00:00"
  },
  "lever|mindtickle": {
   "platform": "lever",
   "token": "mindtickle",
-  "total_qualifying_ever": 106,
-  "qualifying_last_30d": 106,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:56+00:00"
+  "total_qualifying_ever": 112,
+  "qualifying_last_30d": 112,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:03+00:00"
  },
  "greenhouse|netskope": {
   "platform": "greenhouse",
   "token": "netskope",
-  "total_qualifying_ever": 1234,
-  "qualifying_last_30d": 1234,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:55+00:00"
+  "total_qualifying_ever": 1297,
+  "qualifying_last_30d": 1297,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:03+00:00"
  },
  "ashby|sarvam": {
   "platform": "ashby",
   "token": "sarvam",
-  "total_qualifying_ever": 525,
-  "qualifying_last_30d": 525,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:56+00:00"
+  "total_qualifying_ever": 552,
+  "qualifying_last_30d": 552,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:03+00:00"
  },
  "keka|jupiter": {
   "platform": "keka",
   "token": "jupiter",
-  "total_qualifying_ever": 140,
-  "qualifying_last_30d": 140,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:27:58+00:00"
+  "total_qualifying_ever": 147,
+  "qualifying_last_30d": 147,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:21:06+00:00"
  },
  "workable|apna": {
   "platform": "workable",
   "token": "apna",
-  "total_qualifying_ever": 1756,
-  "qualifying_last_30d": 1756,
-  "sweeps_run": 19,
-  "last_swept_at": "2026-08-13T04:27:56+00:00"
+  "total_qualifying_ever": 1854,
+  "qualifying_last_30d": 1854,
+  "sweeps_run": 20,
+  "last_swept_at": "2026-08-13T14:21:03+00:00"
  },
  "greenhouse|towerresearchcapital": {
   "platform": "greenhouse",
   "token": "towerresearchcapital",
-  "total_qualifying_ever": 1079,
-  "qualifying_last_30d": 1079,
-  "sweeps_run": 19,
-  "last_swept_at": "2026-08-13T04:27:56+00:00"
+  "total_qualifying_ever": 1140,
+  "qualifying_last_30d": 1140,
+  "sweeps_run": 20,
+  "last_swept_at": "2026-08-13T14:21:04+00:00"
  },
  "greenhouse|pdtpartners": {
   "platform": "greenhouse",
   "token": "pdtpartners",
-  "total_qualifying_ever": 171,
-  "qualifying_last_30d": 171,
-  "sweeps_run": 19,
-  "last_swept_at": "2026-08-13T04:27:57+00:00"
+  "total_qualifying_ever": 180,
+  "qualifying_last_30d": 180,
+  "sweeps_run": 20,
+  "last_swept_at": "2026-08-13T14:21:04+00:00"
  },
  "workday|citi.wd5.myworkdayjobs.com|citi|2": {
   "platform": "workday",
   "token": "citi.wd5.myworkdayjobs.com|citi|2",
-  "total_qualifying_ever": 15415,
-  "qualifying_last_30d": 15415,
-  "sweeps_run": 20,
-  "last_swept_at": "2026-08-13T04:29:18+00:00"
+  "total_qualifying_ever": 16194,
+  "qualifying_last_30d": 16194,
+  "sweeps_run": 21,
+  "last_swept_at": "2026-08-13T14:22:17+00:00"
  },
  "eightfold|mlp|mlp.com": {
   "platform": "eightfold",
   "token": "mlp|mlp.com",
-  "total_qualifying_ever": 3470,
-  "qualifying_last_30d": 3470,
-  "sweeps_run": 19,
-  "last_swept_at": "2026-08-13T04:28:15+00:00"
+  "total_qualifying_ever": 3648,
+  "qualifying_last_30d": 3648,
+  "sweeps_run": 20,
+  "last_swept_at": "2026-08-13T14:21:20+00:00"
  },
  "eightfold|micron|micron.com": {
   "platform": "eightfold",
   "token": "micron|micron.com",
-  "total_qualifying_ever": 26227,
-  "qualifying_last_30d": 26227,
-  "sweeps_run": 19,
-  "last_swept_at": "2026-08-13T04:30:22+00:00"
+  "total_qualifying_ever": 27620,
+  "qualifying_last_30d": 27620,
+  "sweeps_run": 20,
+  "last_swept_at": "2026-08-13T14:22:42+00:00"
  }
 }
