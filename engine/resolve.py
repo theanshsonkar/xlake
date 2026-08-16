@@ -32,7 +32,7 @@ import urllib.parse
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
-from fetch import UA, _request, _throttle, _release  # reuse politeness + UA
+from adapters.boards import UA, _request, _throttle, _release  # reuse politeness + UA
 
 import urllib.error
 import urllib.request
@@ -438,7 +438,7 @@ def resolve(company: str, domain: str) -> Resolution:
     if statuses and all("nodename nor servname" in s or "Name or service not known" in s
                         or "getaddrinfo" in s for s in statuses):
         # Every path failed DNS: the domain itself does not exist. That is a
-        # defect in data/companies.txt, not a fact about the employer, and
+        # defect in data/operations/companies.txt, not a fact about the employer, and
         # conflating them would quietly under-report coverage.
         res.error = "domain_does_not_resolve"
     elif any(s in ("403", "406", "429") for s in statuses):
@@ -459,7 +459,7 @@ def resolve_and_verify(company: str, domain: str) -> Resolution:
       empty    -> token answers, zero postings (real; company may be frozen)
       dead     -> token does not answer (404/422); the token is wrong
     """
-    from fetch import list_board
+    from adapters.boards import list_board
 
     res = resolve(company, domain)
     if not (res.platform in READABLE and res.token):

@@ -14,11 +14,8 @@ import sys
 import urllib.parse
 from typing import Any, Dict, List, Optional, Tuple
 
-import fetch
-import filters
-import pagetext
-import quality
-import robots
+from adapters import boards as fetch
+from core import filters, pagetext, quality, robots
 
 ATS_KINDS = {
     "greenhouse", "lever", "ashby", "keka", "smartrecruiters", "workable",

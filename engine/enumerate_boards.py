@@ -44,7 +44,9 @@ import urllib.parse
 import urllib.request
 from typing import Dict, List, Set
 
-CACHE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".cache")
+from core.paths import DISCOVERY_CACHE_DIR
+
+CACHE_DIR = DISCOVERY_CACHE_DIR
 UA = "OpportunityLake/0.1 (+contact: anshsonkar@users.noreply.github.com)"
 
 # platform -> (query, mode). mode 'path' takes the first path segment as token,

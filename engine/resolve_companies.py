@@ -8,9 +8,10 @@ and how many need a model to read their careers page.
     python3 resolve_companies.py --segment quant # one segment
     python3 resolve_companies.py --limit 20      # a cheap smoke test
 
-Writes data/registry.json (mechanism 1 boards, ready for the sweep) and
-data/pagereader_targets.json (mechanism 2 queue). Both are rewritten in full,
-because a resolution is a current fact about a company, not history.
+Writes `data/operations/registry.json` (mechanism 1 boards, ready for the
+sweep) and `data/operations/pagereader_targets.json` (mechanism 2 queue). Both
+are rewritten in full, because a resolution is a current fact about a company,
+not history.
 
 No AI in this file.
 """
@@ -27,12 +28,14 @@ from datetime import datetime, timezone
 from typing import Dict, List, Optional, Tuple
 
 import resolve
+from core.paths import (
+    COMPANIES_PATH, OPERATIONS_DIR, PAGEREADER_TARGETS_PATH, REGISTRY_PATH,
+)
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-DATA = os.path.join(HERE, "data")
-COMPANIES = os.path.join(DATA, "companies.txt")
-OUT_REGISTRY = os.path.join(DATA, "registry.json")
-OUT_PAGEREADER = os.path.join(DATA, "pagereader_targets.json")
+DATA = OPERATIONS_DIR
+COMPANIES = COMPANIES_PATH
+OUT_REGISTRY = REGISTRY_PATH
+OUT_PAGEREADER = PAGEREADER_TARGETS_PATH
 
 WORKERS = int(os.environ.get("LAKE_WORKERS", "8"))
 

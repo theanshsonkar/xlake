@@ -24,13 +24,12 @@ import os
 import sys
 from typing import Optional
 
-import extractors
-import pagetext
-import robots
+from adapters import extractors
+from core import pagetext, robots
+from core.paths import FIXTURES_DIR
 from resolve import _fetch_page
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-FIXTURES = os.path.join(HERE, "fixtures")
+FIXTURES = FIXTURES_DIR
 PAGES = os.path.join(FIXTURES, "pages")
 
 

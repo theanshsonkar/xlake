@@ -2,31 +2,22 @@
 page's content actually changed.
 
     python3 read_pages.py                    # every company in
-                                              # data/pagereader_targets.json
+                                              # data/operations/pagereader_targets.json
     python3 read_pages.py --limit 10         # cheap smoke test
     python3 read_pages.py --company Zerodha  # one company
 
 Pipeline per company:
-  1. fetch the careers page (free, robots-checked, cached in cache.py)
-  2. hash the STABLE text (pagetext.stable_text) and compare to the last hash
-     recorded for this URL
-  3. hash unchanged -> skip extraction entirely. This is the whole saving:
-     ~80 pages fetched daily, free; only pages that actually changed
-     (measured old-engine estimate: ~15-30/month) reach a model.
-  4. hash changed (or first time seen) -> run the configured RoleExtractor
-  5. enforce_quotes() again at this layer as a second gate, even though
-     LLMExtractor already applies it — belt and braces, and it means a future
-     extractor implementation cannot skip the rule by forgetting to call it.
-  6. run filters.classify() + quality on the resulting rows so page-reader
-     output is shaped exactly like board output and both merge into the same
-     lake.
+  1. fetch the careers page (free, robots-checked, cached in core/cache.py)
+  2. hash stable text and compare to the last hash recorded for this URL
+  3. unchanged -> skip extraction; changed -> run the configured extractor
+  4. enforce quotes and shared filters/quality
 
-Writes data/pagereader_state.json (hash-per-url memory) and
-data/pagereader_rows.json (extracted rows, merged not replaced — same no-delete
-rule as the board sweep).
+Writes `data/operations/pagereader_state.json` and
+`data/operations/pagereader_rows.json`. The rows file is operational
+processing/compatibility output, not a second final lake; canonical board lake
+writes remain in `data/lake/`.
 
-No AI runs in this file directly; it calls into extractors.get_extractor(),
-which is FixtureExtractor unless XLAKE_LLM_API_KEY etc. are set.
+No AI runs in this file directly; it calls into adapters.extractors.
 """
 
 from __future__ import annotations
@@ -38,19 +29,19 @@ import time
 from datetime import datetime, timezone
 from typing import Dict, List, Optional
 
-import cache
-import extractors
-import filters
-import pagetext
-import quality
-import robots
+from core import cache, filters, pagetext, quality, robots
+from adapters import extractors
+from core.paths import (
+    DATA_ROOT, PAGEREADER_ROWS_PATH, PAGEREADER_STATE_PATH,
+    PAGEREADER_TARGETS_PATH,
+)
 from resolve import _fetch_page
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-DATA = os.path.join(HERE, "data")
-TARGETS = os.path.join(DATA, "pagereader_targets.json")
-STATE = os.path.join(DATA, "pagereader_state.json")
-OUT_ROWS = os.path.join(DATA, "pagereader_rows.json")
+DATA = DATA_ROOT
+TARGETS = PAGEREADER_TARGETS_PATH
+STATE = PAGEREADER_STATE_PATH
+# Operational processing/compatibility output, not a second final lake.
+OUT_ROWS = PAGEREADER_ROWS_PATH
 
 
 def load_state() -> Dict[str, Dict]:

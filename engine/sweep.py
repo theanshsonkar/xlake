@@ -1,31 +1,16 @@
 """The sweep. Company-scoped, board-scoped liveness.
 
-Reads data/registry.json — the boards the resolver has already confirmed
-answer for a NAMED company (mechanism 1) — fetches each one, filters on title
-+ location, runs the hygiene layer, and writes data/jobs.json plus a run
-report to data/runs.jsonl.
+Reads `data/operations/registry.json` — boards the resolver has already
+confirmed for a named company — fetches each one, filters on title and
+location, runs the hygiene layer, and writes the canonical lake stores under
+`data/lake/` plus an operational report under `data/operations/`.
 
-This deliberately does NOT sweep enumerate_boards.py's raw Common Crawl
-universe of thousands of tokens. REGISTRY-PLAN.md section 1 retired that
-approach: a board swept with no company context produces roles nobody can
-research or trust the identity of. Every row this sweep produces traces back
-to a company someone (or resolve_companies.py) actually looked up.
+This does not sweep the raw Common Crawl discovery universe. Every row traces
+back to a company someone or the resolver actually looked up.
 
-FIXES THE OLD ENGINE'S REAL BUG (oldengine/sweep.py line 133):
-    swept = set(swept_platforms)
-`swept_platforms` was never defined in that scope — a NameError that meant
-this line, and therefore all of _write_jobs()'s liveness logic, never actually
-executed in production. The bug was invisible because the function never got
-called with real data at scale in that state.
-
-The fix here is not a smaller patch on the same idea — liveness is
-BOARD-scoped ((platform, token) pair), not platform-scoped, from the start.
-The oldengine's own comment already explains why platform-scoping is wrong:
-a LAKE_LIMIT=12 test run against a 311-board platform marked 264 untouched
-rows dead, because "platform X was in this run" doesn't mean "board (X, this
-particular token) was fetched this run". `boards_read` here is a set of
-(platform, token) tuples that were fetched WITHOUT ERROR this run; only rows
-whose own board is in that set are eligible to be marked dead if missing.
+The board-scoped liveness behavior supersedes the historical implementation
+preserved in `archive/opportunity-lake-oldengine-2026-08-16/`; uncertain reads
+never establish closure.
 
 No AI in this file.
 
@@ -46,17 +31,17 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from typing import Dict, List, Set, Tuple
 
-import filters
-import quality
-import tiering
-from fetch import list_board
+from core import filters, quality, tiering
+from core.paths import (
+    DATA_ROOT, HIDDEN_PATH, OPPORTUNITIES_PATH, REGISTRY_PATH, RUNS_PATH,
+)
+from adapters.boards import list_board
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-DATA = os.path.join(HERE, "data")
-REGISTRY = os.environ.get("LAKE_REGISTRY", os.path.join(DATA, "registry.json"))
-OUT_JOBS = os.path.join(DATA, "jobs.json")
-OUT_HIDDEN = os.path.join(DATA, "hidden.json")
-OUT_RUNS = os.path.join(DATA, "runs.jsonl")
+DATA = DATA_ROOT
+REGISTRY = os.environ.get("LAKE_REGISTRY", REGISTRY_PATH)
+OUT_JOBS = OPPORTUNITIES_PATH
+OUT_HIDDEN = HIDDEN_PATH
+OUT_RUNS = RUNS_PATH
 
 WORKERS = int(os.environ.get("LAKE_WORKERS", "4"))
 # Sweep only the first N registry entries. Local testing should never need the
@@ -462,7 +447,7 @@ def main() -> None:
         entries = entries[:LIMIT]
 
     if not entries:
-        print("data/registry.json has no entries{} — nothing to sweep. "
+        print("data/operations/registry.json has no entries{} — nothing to sweep. "
               "Run resolve_companies.py first.".format(
                   " for segment={}".format(segment) if segment else ""))
         sys.exit(1)
