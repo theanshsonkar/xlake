@@ -4,10 +4,9 @@ name: sweep
 # minutes/month for private repos; twice-daily sweeps plus one daily
 # page-reader pass must stay comfortably inside that.
 #
-# GitHub only reads workflows from the repo ROOT (.github/workflows/), which
-# is why this file lives here and not under engine/ — the old engine's copy
-# at oldengine/.github/workflows/sweep.yml was never actually picked up by
-# GitHub for that reason (Task 10, PRODUCT.md/README.md follow-up).
+# GitHub only reads workflows from the repo ROOT (.github/workflows/). The
+# archived legacy workflow, if needed for historical comparison, is preserved
+# under archive/opportunity-lake-oldengine-2026-08-16/ and is not active.
 on:
   schedule:
     - cron: "0 1,13 * * *"   # 06:30 and 18:30 IST — the board sweep, twice daily
@@ -24,7 +23,7 @@ on:
         default: "0"
 
 concurrency:
-  group: sweep
+  group: sweep-${{ github.ref }}
   cancel-in-progress: false
 
 # Both jobs commit data/*.json back to the repo, so they need write access.
@@ -33,7 +32,11 @@ permissions:
 
 jobs:
   sweep:
-    if: github.event_name != 'workflow_dispatch' || github.event.inputs.job == 'sweep' || github.event.inputs.job == 'both' || github.event.inputs.job == ''
+    if: >
+      (github.event_name == 'schedule' &&
+       github.event.schedule == '0 1,13 * * *') ||
+      (github.event_name == 'workflow_dispatch' &&
+       (github.event.inputs.job == 'sweep' || github.event.inputs.job == 'both'))
     runs-on: ubuntu-latest
     timeout-minutes: 60
     defaults:
@@ -47,10 +50,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      # The registry is small and company-scoped (data/registry.json, built by
-      # resolve_companies.py), not the raw Common Crawl universe, so there is
-      # no enumeration-cache step here the way the old engine needed one — see
-      # sweep.py's module docstring for why this sweep is company-scoped.
+      # The registry is small and company-scoped (data/operations/registry.json,
+      # built by resolve_companies.py), not the raw Common Crawl universe, so
+      # there is no enumeration-cache step here.
       - name: Sweep the resolved registry
         env:
           LAKE_WORKERS: "8"
@@ -59,18 +61,16 @@ jobs:
         run: python3 -u sweep.py
 
       - name: Show report
-        run: tail -1 data/runs.jsonl | python3 -m json.tool
+        run: tail -1 data/operations/runs.jsonl | python3 -m json.tool
 
-      # jobs.json is the lake. Committing it is how the site gets its data,
-      # and it gives a free history of what was open when. tier_state.json is
-      # the board-tiering history (tiering.py) that decides hot/warm/cold
-      # sweep frequency going forward — it must persist across runs the same
-      # way jobs.json does, or every run looks like a first sweep.
+      # opportunities.json is the canonical lake. hidden.json is its retained
+      # non-default companion; run and tier state are operational history.
       - name: Commit lake
         run: |
           git config user.name  "opportunity-lake-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/jobs.json data/runs.jsonl data/tier_state.json
+          git add data/lake/opportunities.json data/lake/hidden.json \
+            data/operations/runs.jsonl data/operations/tier_state.json
           git diff --staged --quiet || git commit -m "sweep: $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
 
@@ -80,13 +80,23 @@ jobs:
         with:
           name: sweep-output
           path: |
-            engine/data/jobs.json
-            engine/data/runs.jsonl
-            engine/data/tier_state.json
+            engine/data/lake/opportunities.json
+            engine/data/lake/hidden.json
+            engine/data/operations/runs.jsonl
+            engine/data/operations/tier_state.json
           retention-days: 14
 
   read_pages:
-    if: github.event_name != 'workflow_dispatch' || github.event.inputs.job == 'read_pages' || github.event.inputs.job == 'both' || github.event.inputs.job == ''
+    needs: sweep
+    if: >
+      always() &&
+      (needs.sweep.result == 'success' || needs.sweep.result == 'skipped') &&
+      (
+        (github.event_name == 'schedule' &&
+         github.event.schedule == '30 2 * * *') ||
+        (github.event_name == 'workflow_dispatch' &&
+         (github.event.inputs.job == 'read_pages' || github.event.inputs.job == 'both'))
+      )
     runs-on: ubuntu-latest
     timeout-minutes: 60
     defaults:
@@ -123,6 +133,6 @@ jobs:
         run: |
           git config user.name  "opportunity-lake-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/pagereader_rows.json data/pagereader_state.json
+          git add data/operations/pagereader_rows.json data/operations/pagereader_state.json
           git diff --staged --quiet || git commit -m "read_pages: $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
