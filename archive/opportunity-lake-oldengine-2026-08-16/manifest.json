@@ -1,0 +1,120 @@
+{
+  "archive_name": "opportunity-lake-oldengine-2026-08-16",
+  "capture_timestamp": "2026-08-16T13:49:34.711+05:30",
+  "exceptions": [],
+  "excluded_duplicate_caches": [
+    {
+      "active_path": "engine/data/raw/discovery-cache/boards_darwinbox.json",
+      "legacy_path": "oldengine/.cache/boards_darwinbox.json",
+      "reason": "byte_identical_to_active_discovery_cache",
+      "sha256": "63465890c4b8fc25cf4603788411d8ea0fe20f062acb7a8bb096b29bdef0f375",
+      "size": 154
+    },
+    {
+      "active_path": "engine/data/raw/discovery-cache/boards_greenhouse.json",
+      "legacy_path": "oldengine/.cache/boards_greenhouse.json",
+      "reason": "byte_identical_to_active_discovery_cache",
+      "sha256": "62f59bfbb9cf950b47df0fc6cf12893b88ef184a8f261a0f59808f94fe2247e5",
+      "size": 3031
+    },
+    {
+      "active_path": "engine/data/raw/discovery-cache/boards_keka.json",
+      "legacy_path": "oldengine/.cache/boards_keka.json",
+      "reason": "byte_identical_to_active_discovery_cache",
+      "sha256": "da2f1d79c42973ced1096c0dfd6afcc5db9b956675c3a8c23adddcc1ef4dd3ca",
+      "size": 3993
+    },
+    {
+      "active_path": "engine/data/raw/discovery-cache/boards_workable.json",
+      "legacy_path": "oldengine/.cache/boards_workable.json",
+      "reason": "byte_identical_to_active_discovery_cache",
+      "sha256": "c96d45affd6f308e6925b27e982141e48f44a17c49317310c7cbc5b3abc6b97e",
+      "size": 27556
+    },
+    {
+      "active_path": "engine/data/raw/discovery-cache/boards_zohorecruit.json",
+      "legacy_path": "oldengine/.cache/boards_zohorecruit.json",
+      "reason": "byte_identical_to_active_discovery_cache",
+      "sha256": "9c93a22867816cad1bed4d76969e9b96ae0e009d33744d9dd086c7590da84195",
+      "size": 949
+    },
+    {
+      "active_path": "engine/data/raw/discovery-cache/crawl_id.txt",
+      "legacy_path": "oldengine/.cache/crawl_id.txt",
+      "reason": "byte_identical_to_active_discovery_cache",
+      "sha256": "111881eda46410b96649f6265aa877678f39367a757691de4db4fd0ca110719f",
+      "size": 15
+    }
+  ],
+  "included_files": [
+    {
+      "legacy_path": "oldengine/.github/workflows/sweep.yml",
+      "path": ".github/workflows/sweep.yml",
+      "sha256": "c1c93a7ee0cabdc6b93935b109d217312c694b770ee01662d0103e6835818a2b",
+      "size": 2711
+    },
+    {
+      "legacy_path": "oldengine/companies_india.txt",
+      "path": "companies_india.txt",
+      "sha256": "9baa63f711fa760184c5d85d7c78214f40d69eda23c0f6032bae2985d5e8e5bb",
+      "size": 1176
+    },
+    {
+      "legacy_path": "oldengine/enumerate_boards.py",
+      "path": "enumerate_boards.py",
+      "sha256": "ec9c0b5aafe3683e090b9adf1408956a4be9756023e8617463ee2f78ff626010",
+      "size": 6978
+    },
+    {
+      "legacy_path": "oldengine/fetch.py",
+      "path": "fetch.py",
+      "sha256": "11cc05fc309b9fd8b9744cd3a1b783a035924c4d183e262fe46018c7caa86dbe",
+      "size": 20574
+    },
+    {
+      "legacy_path": "oldengine/filters.py",
+      "path": "filters.py",
+      "sha256": "74e3acb5ad739ce255e9d29d120d226232c810674e0a0afd99d6563621375052",
+      "size": 29978
+    },
+    {
+      "legacy_path": "oldengine/jobs.json",
+      "path": "jobs.json",
+      "sha256": "53fc131ef500a31876b8ceff44986bdc3352d2edfe0ad00febf6277424b055b4",
+      "size": 533917
+    },
+    {
+      "legacy_path": "oldengine/quality.py",
+      "path": "quality.py",
+      "sha256": "bf7ea071e1b45cdd6900f75cd7128b2a4f2791d1c4d1ce6f5f05288fc8ea8a27",
+      "size": 23467
+    },
+    {
+      "legacy_path": "oldengine/resolve.py",
+      "path": "resolve.py",
+      "sha256": "ba2a1cbeae08a4d3e60ffacee3650b745cb6972727393c11f4c4f7e906e0bf35",
+      "size": 12027
+    },
+    {
+      "legacy_path": "oldengine/runs.jsonl",
+      "path": "runs.jsonl",
+      "sha256": "dd134f1be2229d91defc52da7993498d32af6e63e503a3405813e6a332f79a0c",
+      "size": 4290
+    },
+    {
+      "legacy_path": "oldengine/sweep.py",
+      "path": "sweep.py",
+      "sha256": "7246078d3a28664ebbeaf52f18a2df9a477f80546b5193210794bbdcc63d5303",
+      "size": 12387
+    }
+  ],
+  "schema_version": "1.0",
+  "source": "oldengine",
+  "verification": {
+    "algorithm": "SHA-256",
+    "archive_files_verified": true,
+    "checksums_file": "SHA256SUMS",
+    "source_comparison_performed": true,
+    "verifier": "engine/tools/verify_oldengine_archive.py"
+  }
+}

@@ -1,0 +1,88 @@
+name: sweep
+
+# The collector runs on GitHub's hardware, not on a laptop. Free tier is 2,000
+# minutes/month for private repos; twice-daily sweeps must stay inside that.
+on:
+  schedule:
+    - cron: "0 1,13 * * *"   # 06:30 and 18:30 IST
+  workflow_dispatch:
+    inputs:
+      platforms:
+        description: "Platforms to sweep (space separated, blank = defaults)"
+        required: false
+        default: ""
+      limit:
+        description: "Max boards per platform (0 = all)"
+        required: false
+        default: "0"
+
+concurrency:
+  group: sweep
+  cancel-in-progress: false
+
+# The job commits jobs.json back to the repo, so it needs write access.
+permissions:
+  contents: write
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The enumeration cache is expensive to rebuild and Common Crawl throttles
+      # hard, so keep it between runs rather than re-querying every sweep.
+      - name: Restore board cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: boards-${{ github.run_id }}
+          restore-keys: |
+            boards-
+
+      - name: Enumerate boards (only if cache is empty)
+        run: |
+          if [ -z "$(ls -A .cache/boards_*.json 2>/dev/null)" ]; then
+            echo "no cached boards — enumerating from Common Crawl"
+            python3 enumerate_boards.py || echo "enumeration incomplete; continuing with whatever cached"
+          else
+            echo "using cached board lists:"
+            ls -la .cache/
+          fi
+
+      - name: Sweep
+        env:
+          # CI can be more concurrent than a laptop, but stays polite per host.
+          LAKE_WORKERS: "12"
+          LAKE_HOST_DELAY: "0.3"
+          LAKE_LIMIT: ${{ github.event.inputs.limit || '0' }}
+        run: python3 -u sweep.py ${{ github.event.inputs.platforms }}
+
+      - name: Show report
+        run: tail -1 runs.jsonl | python3 -m json.tool
+
+      # jobs.json is the lake. Committing it is how the site gets its data, and
+      # it gives a free history of what was open when.
+      - name: Commit lake
+        run: |
+          git config user.name  "opportunity-lake-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add jobs.json runs.jsonl
+          git diff --staged --quiet || git commit -m "sweep: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sweep-output
+          path: |
+            jobs.json
+            runs.jsonl
+          retention-days: 14
