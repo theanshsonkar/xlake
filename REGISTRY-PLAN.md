@@ -3,6 +3,48 @@
 A simple list of the source platforms and official pages Xlake uses or plans to
 use. Individual company boards are stored in the collector registry data.
 
+## Beta opportunity types
+
+This is the India-first beta catalog for students and early-career candidates. Global opportunities are included only when explicitly accessible to applicants in India. These types are user-browseable categories and are distinct from collection sources and adapters.
+
+- **Jobs** — entry-level/early-career full-time
+- **Internships** — student, summer, off-cycle, industrial training
+- **Apprenticeships** — structured work-and-learning; a standalone category
+- **Graduate & Campus Programmes** — GET, campus hiring, new-grad cohorts, rotational
+- **Fellowships** — structured/selective learning, work, or research
+- **Research Opportunities** — research internships, assistantships, labs, student research calls
+- **Open Source Opportunities** — mentorship, paid OSS internships, contributor programmes, issue-based pathways
+- **Grants & Funding** — project, student innovation, creator, startup, research funding
+- **Startup & Founder Programmes** — accelerators, incubators, founder/student-founder programmes, founder fellowships, pre-accelerators
+- **Community & Leadership Programmes** — campus ambassadors, communities, leadership cohorts, developer communities, volunteer leadership
+
+Hackathons & Competitions, Scholarships, and Learning-to-Opportunity Programmes are not in beta; this is focus, not a statement of importance. Category-specific inclusion criteria, evidence, liveness/deadline rules, collection status, and priority will be defined one category at a time; no category should be understood as currently implemented or collectible.
+
+## Future category-work convention
+
+`engine/categories/` may contain structural scaffolding for category predicates,
+annotations, and category-specific processing helpers. Scaffolding alone does
+not activate a category or claim collector support, and it must not own a final
+database. Do not create a category contract document or implementation stub
+until work on that category has explicitly begun; when it begins, keep its
+requirements in one canonical Markdown document for that category.
+
+The shared collector remains `engine/`. Category documents define category
+scope, evidence, liveness, deadline, and acceptance requirements; they do not
+duplicate or replace shared fetch, sweep, storage, or trust logic. Only one
+category is actively worked on at a time, and each document must cover:
+
+- scope, inclusion, and exclusions
+- official-source and evidence requirements
+- liveness and deadline rules
+- candidate sources and collection gaps
+- acceptance gate
+- implementation and status evidence
+
+The beta catalog is a roadmap, not a claim that every category is currently
+supported. No category implementation is claimed by the scaffold or by this
+convention.
+
 ## Active sources
 
 - **Greenhouse** — official company ATS boards — jobs and internships — active

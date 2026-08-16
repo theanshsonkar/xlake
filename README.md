@@ -1,99 +1,100 @@
 # Opportunity Radar — the collector
 
-The engine behind Opportunity Radar, a search engine for opportunities from
-official sources. It helps people search, inspect evidence and freshness, and
-open the original application page. It does not make an individual eligibility
-promise and it never submits an application.
+Opportunity Radar collects opportunities from official employer, programme, ATS,
+and other source pages. It helps people inspect evidence and freshness and open
+the original application page; it does not promise individual eligibility and
+never submits an application.
 
-The active collector lives under `engine/`. Canonical generated artifacts live
-under `engine/data/`. The engine currently lists **15 platform adapters**, with
-optional page-reader and LLM enrichment for sources that do not expose a usable
-structured endpoint. AI is optional enrichment; it is not a substitute for
-source confirmation.
+The operational root is `engine/`. Discovery sources are leads only. A role is
+not product-live or verified until its original official URL, provenance, and a
+successful confirmation are available. Errors, stale checks, blocked pages, and
+partial reads need confirmation; they do not establish closure. Records are
+retained.
 
-## How it works
+## Layout
 
+```text
+engine/
+  core/                 shared policy/infrastructure implementations
+  adapters/             source integrations (`boards.py`, `extractors.py`)
+  categories/           inactive category predicate/annotation scaffold only
+  data/
+    lake/               canonical final opportunities + retained hidden rows
+    operations/         registry, run/state, resolver input, page-reader output
+    raw/                private HTTP recordings and discovery-cache/
+    measure/            historical measurement evidence
+  fixtures/             committed offline page/extractor fixtures
 ```
-engine/enumerate_boards.py  discovery leads from public indexes and registries
-engine/resolve.py           resolve a company or programme lead to its official source
-engine/fetch.py             platform adapters, pagination, and source reads
-engine/filters.py           generic title, location, stage, and relevance gates
-engine/sweep.py             scheduled collection, merge, retention, and status updates
-```
 
-Discovery sources are leads only. Product/display contract: the default surface
-must not mark a role live or display it as verified until the original official
-employer, ATS, or programme URL, source provenance, and a last successful
-confirmation are available. This is a required target, not a claim that the
-current collector always persists those fields; provenance and confirmation
-persistence, and fail-closed partial-read handling, are implementation
-requirements still being hardened where necessary. The official source is the
-primary CTA.
+`engine/data/lake/opportunities.json` is the only canonical final user-facing
+opportunity lake. `lake/hidden.json` is its retained non-default companion and
+`lake/opportunities_history.json` is historical evidence. The page reader keeps
+`data/operations/pagereader_rows.json` as an operational processing/
+compatibility output; it is not a second final lake. No category owns a final
+database.
 
-## Trust contract
+The implementations live in `core` and `adapters`. Root files `cache.py`,
+`filters.py`, `quality.py`, `robots.py`, `pagetext.py`, `tiering.py`,
+`extractors.py`, and `fetch.py` are documented backward-compatible import
+facades. The `fetch.py` facade also preserves `python3 fetch.py ...`.
 
-These are product/display semantics and acceptance requirements, not a claim
-that current sweeps universally enforce them:
+## Commands
 
-- **Live** means recently confirmed present at the official source; the last
-  confirmation is shown and is not a universal freshness SLA.
-- Errors, stale checks, ambiguous expiry, blocked pages, and partial reads are
-  **needs confirmation**, not live or closed by default.
-- Closed rows are hidden from default search but retained historically; the
-  collector does not delete records.
-- No individual eligibility guarantee is made. Generic gates and evidence help
-  people decide what to inspect.
-- Coverage is incomplete by design: not every source or role is covered, and
-  no universal freshness claim is made.
-
-The product contract requires partial reads to be treated as uncertain and not
-to establish completeness or closure. Persistence and fail-closed enforcement
-remain implementation requirements being hardened where necessary.
-
-## Current source notes
-
-Keka has a documented public JSON API:
-`/careers/api/embedjobs/{portalName}/active/{board_guid}`. Zoho Recruit and
-Darwinbox remain page-reader or bespoke-source work. Workday is an implemented
-source whose pagination and read completeness must be monitored; it is not
-silently treated as fully covered. The optional page-reader/LLM path is used
-where a public page must be interpreted, not to invent missing source facts.
-
-## Running it
-
-Run commands from the engine directory so paths and canonical artifacts remain
-unambiguous:
+Run commands from the engine directory:
 
 ```bash
-# cheap local test — do this, not a full sweep
 cd engine
-LAKE_LIMIT=20 LAKE_WORKERS=2 python3 sweep.py keka greenhouse
-
-# filter test set
-python3 filters.py
-
-# one board
-python3 fetch.py greenhouse vercel
-
-# resolve companies from an engine-local input file
-python3 resolve.py --file companies_india.txt
+python3 filters.py                         # compatibility CLI
+python3 fetch.py greenhouse vercel         # one board; may access network
+python3 resolve.py --file data/operations/companies.txt # resolver input; may access network
+python3 read_url.py URL                    # one URL; may access network
+python3 build_fixtures.py check             # offline fixture check
+python3 -m unittest tests.test_robots      # targeted offline test example
 ```
 
-Full sweeps belong on CI, not a laptop. `LAKE_WORKERS`, `LAKE_HOST_DELAY`, and
-`LAKE_LIMIT` control load.
+A sweep is network collection and is intentionally not part of the lightweight
+migration validation. Full sweeps belong on CI. `LAKE_WORKERS`,
+`LAKE_HOST_DELAY`, and `LAKE_LIMIT` control collection load.
 
-## Collector rules
+Discovery enumeration caches leads in `engine/data/raw/discovery-cache/`; it is
+not the scheduled collection universe. HTTP response recordings live under
+`engine/data/raw/` and are private. `LAKE_RAW_DIR` may relocate those response
+recordings without relocating the discovery cache.
 
-- One request at a time per host, with a delay, an honest User-Agent, and
-  `robots.txt` respected.
-- LinkedIn and Naukri are never accessed; their listings are leads at most and
-  are not republished.
-- A successful empty result must be distinct from an error or partial read. The
-  acceptance requirement is that an uncertain read cannot establish closure or
-  completeness; current sweep enforcement is still being hardened where
-  necessary.
-- Records are retained. A posting that is reliably confirmed absent becomes
-  closed/not live; uncertain records become needs confirmation. These are
-  required status semantics, not a claim that every current sweep already
-  enforces them.
-- Never display a full job description; link to the original official source.
+## Trust and collection rules
+
+- Live means recently confirmed at the official source; it is not a universal
+  freshness SLA.
+- A successful empty result is distinct from an error or partial read. An
+  uncertain read cannot establish completeness or closure.
+- Closed rows are hidden from default search but retained historically.
+- LinkedIn and Naukri are never accessed or republished.
+- Never display a full description; link to the official source.
+- AI is optional page enrichment and cannot invent missing source facts.
+
+Keka has a documented public JSON API. Zoho Recruit and Darwinbox remain
+page-reader or bespoke-source work. Workday is implemented, but pagination and
+read completeness require monitoring rather than a universal coverage claim.
+
+## Categories
+
+`engine/categories/` is structural scaffolding for category predicates,
+annotations, and category-specific processing helpers only. Its existence does
+not activate or claim support for any category. Category work remains one
+category at a time, and category helpers must use the shared lake and trust
+policy rather than creating a category database. See `REGISTRY-PLAN.md` for the
+category-work convention.
+
+## Legacy archive
+
+The inactive legacy tree was archived and then deleted with explicit approval.
+The dated archive is `archive/opportunity-lake-oldengine-2026-08-16/`.
+`manifest.json` records included files, SHA-256 hashes, and omitted duplicate
+cache mappings; `SHA256SUMS` records the included archive files. Verify it with:
+
+```bash
+python3 engine/tools/verify_oldengine_archive.py
+```
+
+The verifier is stdlib-only and checks both archive contents and omitted-cache
+mappings against `engine/data/raw/discovery-cache/`.
