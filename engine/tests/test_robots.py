@@ -20,7 +20,7 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import robots  # noqa: E402
+from core import robots  # noqa: E402
 
 
 def rules(text: str) -> robots.Rules:
@@ -85,18 +85,11 @@ class TestKeka(unittest.TestCase):
         for path in ("/", "/admin", "/api/employees", "/login"):
             self.assertFalse(r.allows(path), path)
 
-    def test_stdlib_disagrees_which_is_why_this_module_exists(self):
-        # Not testing robots.py here — pinning the reason it is not a one-liner.
-        # If a future Python ever fixes RobotFileParser, this test failing is the
-        # signal that the custom parser could be reconsidered.
-        import urllib.robotparser
-
-        rp = urllib.robotparser.RobotFileParser()
-        rp.parse(self.KEKA.splitlines())
-        self.assertFalse(
-            rp.can_fetch("xlake", "https://t.keka.com/careers/"),
-            "stdlib now handles longest-match; revisit robots.py",
-        )
+    def test_custom_parser_uses_longest_match(self):
+        # The production parser must retain RFC 9309 longest-match semantics
+        # regardless of how urllib.robotparser behaves on this Python version.
+        r = rules(self.KEKA)
+        self.assertTrue(r.allows("/careers/"))
 
 
 class TestWildcards(unittest.TestCase):

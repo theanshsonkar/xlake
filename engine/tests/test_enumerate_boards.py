@@ -1,7 +1,7 @@
 """Tests for the Workday token extraction added to enumerate_boards.py.
 
 These run fully offline against known-good URLs (the same shapes already
-present in data/registry.json, resolved live by resolve.py in an earlier
+present in data/operations/registry.json, resolved live by resolve.py in an earlier
 session) — they do NOT touch Common Crawl. See enumerate_boards.py's module
 docstring: the Common Crawl query itself has not been live-verified in this
 sandbox because outbound network to index.commoncrawl.org is unreachable
@@ -26,7 +26,7 @@ class TestWorkdayTokenFromUrl(unittest.TestCase):
         )
 
     def test_matches_known_registry_entry_accenture(self):
-        # This exact token is already live in data/registry.json, resolved by
+        # This exact token is already live in data/operations/registry.json, resolved by
         # resolve.py against the real careers page redirect.
         self.assertEqual(
             _workday_token_from_url(

@@ -10,7 +10,7 @@ from datetime import datetime, timedelta, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from tiering import (  # noqa: E402
+from core.tiering import (  # noqa: E402
     BoardHistory,
     per_board_yield,
     tier_for,

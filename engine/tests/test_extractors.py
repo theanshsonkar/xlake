@@ -15,8 +15,8 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import extractors  # noqa: E402
-import pagetext  # noqa: E402
+from adapters import extractors  # noqa: E402
+from core import pagetext  # noqa: E402
 from build_fixtures import PAGES, page_path  # noqa: E402
 
 
