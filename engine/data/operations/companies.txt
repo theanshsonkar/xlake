@@ -11,7 +11,7 @@
 #   mechanism 2 (page reader) costs a model call, only when the page hash changes
 #
 # That split is the AI budget, so it is measured rather than estimated.
-# See data/registry.json for the current answer and resolve_companies.py to redo it.
+# See data/operations/registry.json for the current answer and resolve_companies.py to redo it.
 #
 # segment values: it_services | big_tech | india_product | quant
 

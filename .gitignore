@@ -10,9 +10,17 @@ credentials.json
 secrets.json
 
 # Enumeration cache and raw snapshots. Large, regenerable, and raw postings
-# should not be republished.
+# should not be republished. Discovery lists remain versioned for reproducible
+# offline operation; HTTP recordings remain private.
 .cache/*
 raw/
+!engine/data/raw/
+engine/data/raw/*
+!engine/data/raw/README.md
+!engine/data/raw/discovery-cache/
+engine/data/raw/discovery-cache/*
+!engine/data/raw/discovery-cache/boards_*.json
+!engine/data/raw/discovery-cache/crawl_id.txt
 
 # ...but DO track the enumerated board lists. They are the expensive artifact:
 # Common Crawl throttles hard, so re-querying on every CI run is both rude and
@@ -37,7 +45,7 @@ venv/
 *.log
 *.tmp
 jobs.json.tmp
-# Generated lake artifacts. Large and regenerable; these belong in S3, not git.
-engine/data/hidden.json
+# Generated lake artifacts. Large and regenerable; operational backups remain
+# ignored by the generic *.bak rule.
 engine/data/measure/keka_raw.json
 *.bak
