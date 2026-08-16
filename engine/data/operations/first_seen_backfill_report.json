@@ -1,0 +1,13 @@
+{
+ "rows_total": 9385,
+ "history_rows": 1617,
+ "history_unique_keys": 1617,
+ "matched": 0,
+ "changed": 0,
+ "unchanged_because_not_earlier": 0,
+ "unmatched_history_keys": 1617,
+ "changed_first_seen_dates": {},
+ "missing_or_unparseable_first_seen": 0,
+ "missing_or_unparseable_filled": 0,
+ "jobs_shape": "list"
+}
