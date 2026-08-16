@@ -1,261 +1,429 @@
-# LAKE — the engine reference
+# Xlake
 
-Technical reference for the Opportunity Radar collector. Updated 2026-08-07.
+## Product reference
 
-Companion to `PRODUCT.md`. The split is deliberate:
+Xlake is a free search engine for early-career opportunities.
 
-- **PRODUCT.md** — what we are building, for whom, and which decisions are
-  settled. Product, trust contract, scope, growth, decision log.
-- **LAKE.md** — how the engine works. Architecture, module map, data flow,
-  record shape, how to run it, current state, known defects.
+Its purpose is simple: help people find trustworthy opportunities, understand
+what the official source says, and open the real application page. Xlake does
+not replace the organisation running an opportunity, decide whether someone is
+eligible, or submit an application for anyone.
 
-A new session should be able to read both and start work without asking for
-background.
+This is the single product reference for Xlake. It records the product
+identity, audience, scope, experience, trust rules, and collection principles
+that should guide the website and the collector.
 
-## 1. What the engine does
+## 1. What Xlake is
 
-It finds opportunities at official sources, reads them politely, decides which
-are relevant to early-career candidates, and maintains a record of what is
-currently present and when it was last confirmed. It does not delete history and
-it does not republish full descriptions.
+**Search every opportunity. Decide what fits.**
 
-Data flow, in order:
+Xlake is an opportunity search engine for students and early-career people. It
+collects opportunities from official sources, makes them searchable, shows the
+facts that matter, and sends users to the original application or programme
+page.
 
+Xlake is not a conventional job board. Jobs matter, but they are only one kind
+of opportunity. A useful opportunity may be an internship, a research
+programme, an open-source programme, a fellowship, a scholarship, a grant, or
+a hackathon.
+
+Xlake is also not a career-preparation product, a resume product, a social
+network, or an application portal. Its job is discovery and clear source
+information.
+
+The official source is always the primary destination.
+
+## 2. Who Xlake is for
+
+Xlake initially serves:
+
+- students in India;
+- early-career candidates with roughly zero to two years of experience; and
+- people looking primarily for technical, STEM, engineering, research, and
+  related opportunities.
+
+The product should be useful whether a person is in college, recently
+graduated, looking for an internship, seeking research experience, or trying
+to find an early-career technical role.
+
+Starting with a focused audience is deliberate. Xlake should first be reliable
+for this group, rather than becoming a broad, low-quality listing site for
+every career field. Other fields can be added when Xlake has dependable source
+coverage and classification for them.
+
+## 3. Opportunity scope
+
+Xlake is designed to cover opportunities, not only jobs.
+
+The initial user-facing categories should follow the opportunities that Xlake
+can genuinely support. The first categories include:
+
+- internships;
+- research programmes;
+- open-source programmes; and
+- early-career technical roles when reliable source coverage exists.
+
+As reliable coverage grows, Xlake can add categories such as:
+
+- fellowships;
+- scholarships;
+- grants and funds;
+- hackathons;
+- student and research programmes; and
+- other early-career technical opportunities.
+
+Categories in the interface should be dynamic. Xlake should not advertise a
+category merely because it sounds useful; it should show a category when it has
+real, searchable opportunities within it.
+
+## 4. Geography
+
+Xlake covers:
+
+- opportunities located in India;
+- India-remote opportunities; and
+- global opportunities relevant to Indian students and early-career candidates.
+
+A global opportunity can appear when an official source explicitly welcomes
+international or Indian applicants. Xlake may also show a strong global
+opportunity when visa, work-permission, location, or international eligibility
+is not clear. In that case, the uncertainty must be shown plainly.
+
+Xlake must never imply that an Indian applicant can work in a country, obtain a
+visa, or meet an organisation's eligibility requirements unless the official
+source says so.
+
+## 5. The Xlake experience
+
+Xlake is search-first.
+
+A user should be able to arrive, search for an area such as internships,
+cybersecurity, AI, research, companies, or a location, and inspect useful
+results without creating an account or uploading a resume.
+
+The main experience has four parts:
+
+1. **Search.** A user searches by role, subject, skill, organisation,
+   programme, or place.
+2. **Filters.** Users can narrow results by location, opportunity type, status,
+   and deadline or timing. Filters should remain simple and useful.
+3. **Results.** Each result shows the organisation or programme, title, type,
+   location, status, and relevant timing information.
+4. **Detail panel.** A selected result explains what the official source says,
+   what is known about eligibility, what remains uncertain, and provides the
+   official application or programme link.
+
+The default results view shows all useful states together, in a clear order:
+
+1. live opportunities;
+2. opening-soon opportunities; and
+3. opportunities that need confirmation.
+
+Within a relevant search, opportunities with a real upcoming deadline and live
+status should receive priority. Freshly confirmed or newly found live
+opportunities follow. Search relevance must still matter: a matching research
+or cybersecurity result should not be buried beneath an unrelated role solely
+because it closes sooner.
+
+A later sort control may offer options such as recommended, closing soon,
+newest, and recently confirmed.
+
+## 6. Filters and local saves
+
+The beta experience should support practical filters:
+
+- **Location:** India, remote, and global;
+- **Opportunity type:** based on categories actually present in the results;
+- **Status:** live, opening soon, and needs confirmation; and
+- **Timing:** closing soon, rolling, or no deadline stated.
+
+Search is the first way to explore subject areas such as AI, software,
+cybersecurity, research, and other technical topics. More specialised filters
+should be added only when the underlying data is dependable.
+
+A user may save an opportunity locally in their browser. This does not require
+an account or sign-in during beta. Saved opportunities are a convenience, not a
+profile, resume, or eligibility system.
+
+## 7. Opportunity states
+
+Xlake uses clear status language. Status describes what Xlake observed at a
+source; it does not certify the opportunity or the applicant.
+
+### Live
+
+A live opportunity was recently found at its official source and appears to be
+currently open or present there.
+
+### Opening soon
+
+An opening-soon opportunity has an official programme page, announcement, or
+confirmed upcoming application window, but applications are not yet open. Its
+primary action should be **View official page** or **View programme**, not
+**Open application**.
+
+Recurring programmes can appear in this state when their future window is
+supported by an official source. Xlake must not invent an opening date from
+history alone.
+
+### Needs confirmation
+
+Needs confirmation means an important fact is uncertain. Examples include an
+unclear deadline, uncertain visa or work-permission support, a blocked or
+partial source read, an old confirmation, or incomplete source information.
+
+These opportunities remain visible by default because they may still be useful.
+Xlake must make the uncertainty easy to understand and must not quietly treat
+it as a live guarantee.
+
+### Closed
+
+Closed means an opportunity was reliably confirmed absent, expired, or no
+longer accepting applications. Closed records are retained for history but are
+not shown in normal search.
+
+## 8. Trust contract
+
+Trust is Xlake's core product requirement.
+
+Xlake must:
+
+- use the original official application, employer, university, lab, programme,
+  or organisation page as the primary link;
+- show when an opportunity was last confirmed at an official source;
+- explain facts using observational language;
+- show important uncertainty instead of hiding or guessing it;
+- preserve historical records rather than silently deleting them; and
+- make it clear that coverage is incomplete.
+
+Xlake must not:
+
+- promise that an individual user is eligible;
+- say that an application will succeed;
+- claim complete market coverage;
+- present an uncertain, blocked, partial, stale, or failed source read as live;
+- republish a full job description instead of linking to the source; or
+- present a lead, directory listing, or search result as an application link.
+
+The product should use wording such as:
+
+- **Seen at official source**
+- **Last confirmed at official source**
+- **The source does not state a batch-year requirement**
+- **Visa or work-permission support needs confirmation**
+- **Read the official source before applying**
+
+The product should avoid language such as **Verified by Xlake**. That wording
+implies human vetting or a guarantee that Xlake does not provide.
+
+## 9. Eligibility information
+
+Xlake helps users inspect eligibility. It does not decide eligibility.
+
+Where the official source provides it, Xlake may show:
+
+- opportunity type and career stage;
+- degree or study requirements;
+- graduation or batch-year requirements;
+- experience requirements;
+- enrolled-student requirements;
+- location and work arrangement;
+- international, visa, or work-permission information;
+- deadline or rolling-application information; and
+- concise evidence from the official source.
+
+When a requirement is missing, Xlake should say that it was not stated by the
+source. It must not infer eligibility from a title, company, location, or
+previous programme cycle.
+
+The official organisation and the applicant make the final eligibility
+decision.
+
+## 10. Minimum quality bar for a result
+
+An opportunity may appear in Xlake when it has, at minimum:
+
+- a meaningful title;
+- an organisation or programme name;
+- an official source or application URL;
+- source provenance or a clear record of where Xlake found it;
+- a status; and
+- a last-confirmed or last-observed time.
+
+Eligibility details, deadlines, compensation, funding, and location may be
+missing from an official source. Their absence should be displayed honestly,
+not guessed.
+
+A lead without an official source is not a user-visible opportunity. It can be
+kept internally for further resolution, but users should not be sent to a
+third-party directory, a social post, or a guessed application link.
+
+## 11. The detail panel
+
+The opportunity detail view should help a user make a quick, informed decision
+about what to inspect next. It should include:
+
+- organisation or programme name;
+- opportunity title;
+- status and last-confirmed information;
+- location;
+- a concise source-based summary;
+- an eligibility snapshot;
+- source evidence;
+- an explicit uncertainty note when needed;
+- a local save action; and
+- the official application or programme link.
+
+For live opportunities, the primary action is **Open application**. For an
+opening-soon opportunity, it is **View official page**. For a needs-confirmation
+opportunity, the action can still open the official source, while the interface
+makes the unresolved fact clear.
+
+Xlake should not require sign-in, a resume, or a personal profile before a user
+can search, inspect an opportunity, save it locally, or open its official page.
+
+## 12. Current interface direction
+
+The interface is a two-column opportunity browser: search and results on the
+left, with a detail panel on the right. It is the reference direction for the
+product experience, not a claim that every visible control is already active.
+
+The sidebar can show:
+
+- All opportunities;
+- Saved; and
+- Programme calendar.
+
+Programme calendar is a future surface. It may remain visible in the interface,
+but it is not required to work in the current beta.
+
+Similarly, alerts and an eligibility profile are future ideas, not current beta
+features. The beta should not claim that they are active. It has no sign-in,
+alerts, resume upload, or personalised eligibility matching.
+
+Header statistics must be sourced from current, real data or omitted. Xlake
+must not ship invented figures for live roles, programme counts, or newly added
+opportunities.
+
+## 13. How Xlake finds opportunities
+
+Xlake uses a collector that works in stages:
+
+```text
+discover -> resolve -> read -> classify -> merge -> store
 ```
-discover   public indexes, registries, VC and incubator portfolios -> leads
-resolve    a lead -> its official ATS / employer / programme URL
-read       platform adapters, pagination, page reads
-classify   title, location, stage, discipline, eligibility gates
-merge      dedupe, update last_seen, decide liveness, retain history
-store      jobs.json (public), hidden.json (filtered out), archive
-```
 
-The critical asymmetry: **finding a posting is evidence it exists; not finding
-one is not evidence it is gone.** Absence only counts when the read that missed
-it was both error-free and complete.
+- **Discover:** public indexes, registries, portfolios, and directories provide
+  leads.
+- **Resolve:** a lead is traced to an official careers page, ATS, university,
+  lab, programme, or application source.
+- **Read:** Xlake reads permitted official sources and identifies opportunity
+  data, deadlines, and source evidence.
+- **Classify:** Xlake identifies useful facts such as type, location, career
+  stage, discipline, and stated eligibility requirements.
+- **Merge:** repeated observations are deduplicated, confirmation history is
+  preserved, and liveness is handled cautiously.
+- **Store:** user-visible opportunity data and historical records are retained.
 
-## 2. Module inventory
+Discovery sources are leads only. A directory, public company list, search
+result, or portfolio page never becomes the user-facing application link unless
+Xlake resolves it to the relevant official source.
 
-| File | Lines | Role |
-| --- | ---: | --- |
-| `build_fixtures.py` | 134 | Build page-reader fixtures |
-| `cache.py` | 200 | Cache raw HTTP responses |
-| `enumerate_boards.py` | 232 | Discover ATS boards from Common Crawl |
-| `extractors.py` | 434 | Extract roles from careers pages |
-| `fetch.py` | 1,716 | Fetch board listings through platform adapters |
-| `filters.py` | 1,180 | Apply title and location filters |
-| `pagetext.py` | 112 | Convert HTML to text and hash content |
-| `quality.py` | 665 | Check collected rows for lake hygiene |
-| `read_pages.py` | 277 | Read and enrich careers pages |
-| `read_url.py` | 435 | Read one opportunity URL |
-| `resolve.py` | 538 | Resolve companies to official boards |
-| `resolve_companies.py` | 212 | Resolve company inputs and write registries |
-| `robots.py` | 356 | Enforce robots.txt and crawl delays |
-| `sweep.py` | 509 | Sweep boards, merge rows, update liveness |
-| `tiering.py` | 223 | Assign board scheduling tiers |
+## 14. Collection principles
 
-Tests: test_enumerate_boards.py, test_extractors.py, test_partial_read_liveness.py, test_robots.py, test_tiering.py
+Xlake collects responsibly.
 
-Run them from the `engine` directory with `python3 -m unittest discover -s tests`.
-They are offline and use fixtures; none makes a network call.
+- It respects `robots.txt`, uses an honest user agent, and limits requests per
+  host.
+- It prefers structured, public official sources such as ATS APIs, official
+  careers pages, university pages, research-lab pages, and programme sites.
+- It treats pagination, transport errors, blocked pages, and partial reads as
+  uncertainty.
+- Finding an opportunity is evidence that it exists; failing to find it is not
+  automatically evidence that it closed.
+- A complete, reliable official read is required before marking a previously
+  seen opportunity closed.
+- It retains historical records rather than deleting opportunities from the
+  underlying system.
+- It does not automate access to LinkedIn, Naukri, or Wellfound, and it does
+  not republish their listings.
 
-## 3. Source adapters
+Artificial intelligence may be used as optional enrichment where an official
+page needs interpretation. It must not invent source facts, replace source
+confirmation, or create an eligibility guarantee.
 
-Fifteen platforms are registered: greenhouse, lever, ashby, smartrecruiters,
-workable, workday, personio, recruitee, keka, eightfold, successfactors,
-zohorecruit, darwinbox, amazon, unstop.
+## 15. Product data requirements
 
-Real pagination loops exist for Unstop, SmartRecruiters, Workday, Eightfold and
-SuccessFactors (child sitemaps). The others read a single response.
+To support the Xlake experience, a user-visible opportunity record should carry
+at least:
 
-Keka has a documented public JSON API:
-`/careers/api/embedjobs/{portalName}/active/{board_guid}`. Zoho Recruit and
-Darwinbox remain page-reader or bespoke work. Workday's pagination completeness
-must be monitored rather than assumed.
+- title;
+- organisation or programme name;
+- opportunity type;
+- official URL;
+- source provenance;
+- status;
+- last confirmation or observation time;
+- read outcome;
+- location or remote information when stated; and
+- a liveness model: present-at-source or deadline-based.
 
-## 4. Read outcomes — the rule that matters most
+When available, it should also carry a real deadline, eligibility facts,
+evidence, and concise source-based context.
 
-`BoardResult.ok` means no error. `count` is the number of postings returned. A
-successful empty read is `error=None, count=0` and is genuinely different from a
-failure.
+A boolean such as `is_live` alone is not enough for the product. Xlake needs a
+clear three-state user model: **live**, **opening soon**, and **needs
+confirmation**, with closed records retained outside normal search.
 
-Three outcomes, three behaviours:
+## 16. What Xlake does not do
 
-| Outcome | Enters `boards_read`? | Can close absent rows? |
-| --- | --- | --- |
-| Errored | No | No |
-| Truncated / partial | No | No |
-| Complete, including empty | Yes | Yes |
+Xlake does not:
 
-Only boards in `boards_read` are allowed to mark previously-seen rows as not
-live. Rows returned by a truncated read are still ingested and still count as
-seen — the restriction is only on inferring absence.
+- submit applications;
+- host application forms;
+- require a resume to search;
+- require sign-in during beta;
+- make eligibility decisions;
+- promise an interview, offer, visa, funding, or selection outcome;
+- act as a complete list of every opportunity in the world;
+- build a personalised matching profile during beta; or
+- act as a paid career-preparation product.
 
-## 5. Record shape
+Xlake remains a free opportunity search engine. Business-model decisions are
+separate from this product reference and are intentionally not defined here.
 
-Canonical rows live in `data/jobs.json`; rows rejected by filters live in
-`data/hidden.json`. Both are retained.
+## 17. Product decisions
 
-Fields present today include: `platform`, `token`, `job_id`, `title`,
-`location`, `url`, `posted_on`, `description`, `company_name`, `company`,
-`segment`, `stage`, `stage_title`, `stage_resolved`, `experience_min`,
-`experience_max`, `experience_conflict`, `batch_years`, `degree_required`,
-`enrolled_required`, `eligibility_evidence`, `gates_found`, `gates_missing`,
-`eligibility_status`, `hidden_reason`, `technical`, `discipline`,
-`needs_description`, `location_bucket`, `source_mechanism`, `first_seen`,
-`last_seen`, `is_live`, `is_recruiter`, `cities`, `states`, `title_norm`,
-`posting_age_days`, `is_stale`, `is_pay_to_intern`, `dup_of`, `over_cap`,
-`surfaced`.
+The following decisions guide Xlake unless new evidence justifies changing
+them:
 
-The eligibility gate fields are the most valuable data in the lake and the
-frontend currently displays none of them.
+- Xlake is the product name.
+- Xlake is a free search engine for opportunities.
+- The initial audience is Indian students and early-career technical/STEM
+  candidates with roughly zero to two years of experience.
+- Xlake covers India, India-remote, and relevant global opportunities.
+- Xlake includes global opportunities with explicit international access and
+  may include strong global opportunities whose visa or work-permission
+  conditions are unknown, as long as that uncertainty is clear.
+- Xlake begins with the opportunity types it can support reliably, not with an
+  artificial promise of every category.
+- Users can browse without sign-in and save opportunities locally in beta.
+- Live, opening-soon, and needs-confirmation opportunities appear together in
+  the default results view with clear status labels.
+- Xlake never states that a user is eligible; it reports source facts and
+  missing information.
+- Official links, source provenance, and confirmation information are required
+  for user-visible opportunities.
+- The programme calendar, alerts, and eligibility profile may appear as future
+  interface directions but are not current beta functionality.
+- Xlake uses observational language, not claims of verification or guarantee.
 
-**Fields required by the product and still missing** (see PRODUCT.md §5):
-`official_url`, `source_provenance`, `last_confirmed_at`, a three-value
-`status`, `opportunity_kind`, `liveness_model`, `deadline`, `read_outcome`.
-Canonical rows currently use `url`, not `official_url`; `official_url` exists
-only in `calendar.json` and the Unstop adapter.
+## 18. The standard Xlake should meet
 
-Dedupe is by normalised official URL, falling back to platform/token/title.
-Existing rows keep their original `first_seen` and only `last_seen` is updated.
+A user should be able to open Xlake, search for an opportunity, understand
+whether it is live, opening soon, or uncertain, see what the official source
+actually says, and go directly to the real page without a resume, sign-in, or
+unnecessary gate.
 
-## 6. Status semantics
-
-Required by the trust contract:
-
-- **live** — recently confirmed present at the official source.
-- **needs confirmation** — errors, stale checks, ambiguous expiry, blocked
-  pages, partial reads. Uncertainty is never rounded to live or closed.
-- **closed** — reliably confirmed absent. Hidden from default search, never
-  deleted.
-
-The code today has only a boolean `is_live` plus `is_stale` and `went_dead_at`.
-There is no third state, so "needs confirmation" has nowhere to live. This is a
-known gap, not a design choice.
-
-## 7. Collector conduct — non-negotiable
-
-- One request at a time per host, with a delay, an honest User-Agent, and
-  `robots.txt` respected.
-- LinkedIn, Naukri and Wellfound are never accessed. Their listings are leads at
-  most and are never republished.
-- Never display a full job description. Link to the official source.
-- Presence-based rows (jobs, internships) are read daily. Deadline-based rows
-  (fellowships, grants, scholarships, research and OSS programmes) are read
-  weekly — their state comes from stored dates, so daily reads buy nothing.
-- Getting banned costs more than the marginal supply.
-
-## 8. Running it
-
-Always run from the `engine` directory so paths and artifacts stay unambiguous.
-
-```bash
-cd engine
-
-# cheap local test — do this, not a full sweep
-LAKE_LIMIT=20 LAKE_WORKERS=2 python3 sweep.py keka greenhouse
-
-# filter test set
-python3 filters.py
-
-# one board
-python3 fetch.py greenhouse vercel
-
-# resolve companies from an engine-local input file
-python3 resolve.py --file companies_india.txt
-
-# tests
-python3 -m unittest discover -s tests
-```
-
-Environment: `LAKE_REGISTRY`, `LAKE_WORKERS`, `LAKE_HOST_DELAY`, `LAKE_LIMIT`,
-`LAKE_COMPANY_CAP`. Full sweeps belong on CI, not a laptop.
-
-CI (`.github/workflows/sweep.yml`) runs `sweep.py` twice daily at 01:00 and
-13:00 UTC, and `read_pages.py` daily at 02:30 UTC. The page-reader job exits 0
-when `XLAKE_LLM_API_KEY` is absent, so it is normally a no-op.
-
-## 9. Current state — measured 2026-08-07
-
-- `jobs.json` 9,385 rows. `hidden.json` 9,218 rows. Roughly 34 MB combined.
-- **198 rows surfaced — 2.1%.** The bottleneck is classification, not filters.
-- `stage` unknown on 8,013 rows (85%). `discipline` unknown on 4,794 (51%).
-- `eligibility_status`: hidden 8,214, confirmed 494, rules_unclear 677.
-- `location_bucket`: global_hiring 7,992, india_located 1,392, **india_remote 1**.
-- Three successful local sweeps on 2026-08-04 (kept_total 8,026 -> 8,477 ->
-  9,385). Same-day re-confirmation works; `first_seen` is preserved.
-- No cross-day history exists, because no sweep has run since.
-
-## 10. Known defects and gaps
-
-1. **`engine/` is untracked.** Nothing under it has ever been committed. CI
-   checks out a pre-restructure tree, finds nothing to add, and its commit step
-   has no `--allow-empty`, so it silently pushes nothing. This is also why the
-   project has no backup. Highest priority.
-2. **`india_remote` classifier is broken** — 1 row out of 9,385, while
-   India-remote is core to the declared scope.
-3. **No third status state**, no `last_confirmed_at`, no `source_provenance`, no
-   `official_url` on canonical rows.
-4. **Stale robots test** —
-   `test_robots.TestKeka.test_stdlib_disagrees_which_is_why_this_module_exists`
-   fails because stdlib behaviour changed. Robots handling rests on an
-   assumption that no longer holds.
-5. **Tiering leak** — a truncated read returning zero rows still calls
-   `tiering.record_sweep(qualifying_count=0)`, so an unreliable read can demote
-   a board's scheduling tier.
-6. **Page-reader output is orphaned** — `data/pagereader_rows.json` is 2 bytes
-   and never merges into `jobs.json`.
-7. **CI does not run the tests**, so nothing protects the trust invariants.
-8. **No dependency manifest**, so runtime reproducibility is unverified.
-9. **34 MB of generated JSON is committed to git** twice daily by design. This
-   should move to S3 with a small serving file.
-
-Fixed 2026-08-07: truncated reads no longer enter `boards_read`, so a partial
-read can no longer mark absent rows not live. Regression test at
-`tests/test_partial_read_liveness.py`.
-
-## 11. Proposed directory structure — not yet applied
-
-Currently every module sits flat in `engine/`, and `fetch.py` holds all fifteen
-adapters in one file. The proposed layout groups by pipeline stage, which is the
-order data actually moves in:
-
-```
-engine/
-  core/        shared plumbing: http, robots, rate limiting, record model
-  discover/    finding leads: VC and incubator portfolios, registries, indexes
-  resolve/     lead -> official source
-  sources/
-    ats/       one file per platform
-    programmes/  GSoC, LFX, Outreachy, government and university programmes
-    pages/     page-reader and the AI recipe cache
-  classify/    filters, eligibility gates, stage/discipline/location
-  pipeline/    sweep, merge, liveness, tiering, retention
-  store/       jobs/hidden IO, S3 archive
-  data/        generated artifacts
-  tests/
-```
-
-Why not a folder per source category (ATS, startups, incubators, programmes):
-those mix two different axes. "ATS" is a way of *reading*; an incubator
-portfolio is a way of *finding*; and a startup is neither — it is a company
-found via a portfolio and read via an ATS. Grouping by pipeline stage keeps each
-folder meaning one kind of thing, and new source families land in an obvious
-place.
-
-**Do not perform this refactor until `engine/` is committed.** Restructuring
-untracked code with no revert path is how work gets lost.
-
-## 12. Work order
-
-Authoritative list lives in PRODUCT.md §13. Summary:
-
-1. Commit `engine/`, keep generated data out of git, fix CI paths, prove
-   cross-day accumulation.
-2. Port the unreachable-versus-empty distinction from the Desktop engine; stop
-   truncated reads from demoting tier state.
-3. Fix the `india_remote` classifier.
-4. Add the missing record fields and S3 archiving.
-5. Backfill-classify the 8,013 unknown-stage rows with a cheap model — the
-   largest available supply unlock.
-6. Add new source families, accelerator portfolios first.
+That is the product: a clear, trustworthy search engine for early-career
+opportunities.
