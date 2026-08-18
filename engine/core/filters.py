@@ -263,11 +263,16 @@ GLOBAL_HIRING = "global_hiring"
 EXCLUDED = "excluded"
 
 
-def location_bucket(location: str) -> str:
-    """Which of the three applicability buckets a posting falls into."""
+def location_bucket(location: str, india_source: bool = False) -> str:
+    """Which applicability bucket a posting falls into.
+
+    ``india_source`` treats blank or otherwise unspecified remote locations from
+    India-first sources as India-remote. Explicit foreign locations still retain
+    their normal global or excluded classification.
+    """
     loc = (location or "").strip()
     if not loc:
-        return GLOBAL_HIRING  # unknown location; needs one confirmation
+        return INDIA_REMOTE if india_source else GLOBAL_HIRING
     if INDIA_RE.search(loc):
         return INDIA_LOCATED
     if REMOTE_OPEN.search(loc):
@@ -275,7 +280,7 @@ def location_bucket(location: str) -> str:
     if REMOTE_EXCLUDES_INDIA.search(loc):
         return EXCLUDED
     if REMOTE_ANY.search(loc):
-        return GLOBAL_HIRING  # remote, region unstated
+        return INDIA_REMOTE if india_source else GLOBAL_HIRING
     return GLOBAL_HIRING  # overseas onsite; no authorisation bar stated
 
 
@@ -792,6 +797,7 @@ class Verdict:
     needs_description: bool = False
     # cse | other_eng | non_tech | unknown — what the beta filters on.
     discipline: str = UNKNOWN_D
+    is_internship: bool = False
 
 
 def technical_of(title: str) -> Optional[bool]:
@@ -833,23 +839,28 @@ def stage_of(title: str) -> str:
     return "early" if is_early else "unknown"
 
 
-def classify(title: str, location: str = "", include_maybe: bool = True) -> Verdict:
+def classify(title: str, location: str = "", include_maybe: bool = True,
+             india_source: bool = False) -> Verdict:
     """Decide from title + location alone. Cheap, deterministic, explainable.
 
     ``include_maybe`` remains accepted for callers of the old API. Junior and
     associate markers are now explicit early-stage signals, so there is no
-    separate maybe stage to exclude.
+    separate maybe stage to exclude. ``india_source`` enables India-first
+    handling for unspecified locations from sources such as Unstop and Keka.
     """
     del include_maybe
     t = (title or "").strip()
-    bucket = location_bucket(location)
+    bucket = location_bucket(location, india_source)
+    internship = bool(EARLY_OVERRIDE.search(t))
 
     if not t:
-        return Verdict(False, "unknown", None, bucket, "no_title")
+        return Verdict(False, "unknown", None, bucket, "no_title",
+                       is_internship=internship)
 
     stage = stage_of(t)
     if stage == "senior":
-        return Verdict(False, stage, None, bucket, "senior_title")
+        return Verdict(False, stage, None, bucket, "senior_title",
+                       is_internship=internship)
 
     tech = technical_of(t)
     bare = bool(BARE_TITLE.match(t))
@@ -859,13 +870,13 @@ def classify(title: str, location: str = "", include_maybe: bool = True) -> Verd
 
     if bucket == EXCLUDED:
         return Verdict(False, stage, tech, bucket, "remote_region_excludes_india",
-                       discipline=disc)
+                       discipline=disc, is_internship=internship)
 
     # Unknown-stage technical titles are deliberately kept: a plain "Software
     # Engineer" is exactly the India fresher case this classifier must recover.
     return Verdict(True, stage, tech, bucket, "ok",
                    needs_description=bare or disc == UNKNOWN_D,
-                   discipline=disc)
+                   discipline=disc, is_internship=internship)
 
 
 if __name__ == "__main__":

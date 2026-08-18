@@ -18,7 +18,27 @@ This is the India-first beta catalog for students and early-career candidates. G
 - **Startup & Founder Programmes** — accelerators, incubators, founder/student-founder programmes, founder fellowships, pre-accelerators
 - **Community & Leadership Programmes** — campus ambassadors, communities, leadership cohorts, developer communities, volunteer leadership
 
-Hackathons & Competitions, Scholarships, and Learning-to-Opportunity Programmes are not in beta; this is focus, not a statement of importance. Category-specific inclusion criteria, evidence, liveness/deadline rules, collection status, and priority will be defined one category at a time; no category should be understood as currently implemented or collectible.
+Only Learning-to-Opportunity Programmes remains deferred; this is focus, not a statement of importance. Scholarships and Hackathons & Competitions were promoted into beta on 2026-08-18 (strong fit for the student audience). Category-specific inclusion criteria, evidence, liveness/deadline rules, collection status, and priority will be defined one category at a time; no category should be understood as currently implemented or collectible.
+
+## Collection method by category
+Each category is either calendar (application windows, prose pages, few slow-changing sources; collected by engine plumbing + AI reading) or listing (high-volume structured data; engine only).
+
+| Category | Type | Collection |
+|---|---|---|
+| Jobs | listing | engine (boards/APIs) |
+| Internships | listing | engine (boards/APIs) |
+| Apprenticeships | listing | engine (boards/APIs) |
+| Graduate & Campus Programmes | calendar | engine + AI reading |
+| Fellowships | calendar | engine + AI reading |
+| Research Opportunities | calendar | engine + AI reading |
+| Open Source Opportunities | calendar (programmes) + listing (good-first-issues) | engine + AI for programmes; engine-only GitHub collector for issues |
+| Grants & Funding | calendar | engine + AI reading |
+| Startup & Founder Programmes | calendar | engine + AI reading |
+| Community & Leadership Programmes | calendar | engine + AI reading |
+| Scholarships | calendar | engine + AI reading |
+| Hackathons & Competitions | calendar | engine + AI reading |
+
+Currently active category: Open Source (in progress). AI verification for calendar categories runs ~2x/month; the engine sweep runs once a day.
 
 ## Future category-work convention
 

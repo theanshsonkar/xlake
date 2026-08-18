@@ -17,7 +17,9 @@ retained.
 engine/
   core/                 shared policy/infrastructure implementations
   adapters/             source integrations (`boards.py`, `extractors.py`)
-  categories/           inactive category predicate/annotation scaffold only
+  pipeline/             runnable collection and maintenance scripts
+  categories/
+    open_source/        category code and `OPEN_SOURCE.md`
   data/
     lake/               canonical final opportunities + retained hidden rows
     operations/         registry, run/state, resolver input, page-reader output
@@ -33,10 +35,10 @@ opportunity lake. `lake/hidden.json` is its retained non-default companion and
 compatibility output; it is not a second final lake. No category owns a final
 database.
 
-The implementations live in `core` and `adapters`. Root files `cache.py`,
-`filters.py`, `quality.py`, `robots.py`, `pagetext.py`, `tiering.py`,
-`extractors.py`, and `fetch.py` are documented backward-compatible import
-facades. The `fetch.py` facade also preserves `python3 fetch.py ...`.
+Run scripts live in `engine/pipeline/`; shared code lives in
+`engine/core/` and `engine/adapters/`. Each category has its own folder under
+`engine/categories/<category>/` containing its code and its `<CATEGORY>.md`
+document.
 
 ## Commands
 
@@ -44,11 +46,11 @@ Run commands from the engine directory:
 
 ```bash
 cd engine
-python3 filters.py                         # compatibility CLI
-python3 fetch.py greenhouse vercel         # one board; may access network
-python3 resolve.py --file data/operations/companies.txt # resolver input; may access network
-python3 read_url.py URL                    # one URL; may access network
-python3 build_fixtures.py check             # offline fixture check
+python3 -m core.filters                    # compatibility CLI
+python3 -m pipeline.fetch greenhouse vercel # one board; may access network
+python3 -m pipeline.resolve --file data/operations/companies.txt # resolver input; may access network
+python3 -m pipeline.read_url URL            # one URL; may access network
+python3 -m pipeline.build_fixtures check    # offline fixture check
 python3 -m unittest tests.test_robots      # targeted offline test example
 ```
 

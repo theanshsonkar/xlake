@@ -190,5 +190,61 @@
   "segment": "quant",
   "source": "resolver",
   "evidence": "mlp.eightfold.ai"
+ },
+ {
+  "platform": "workday",
+  "token": "sprinklr.wd1.myworkdayjobs.com|sprinklr|careers",
+  "company": "Sprinklr",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "https://sprinklr.wd1.myworkdayjobs.com/careers"
+ },
+ {
+  "platform": "keka",
+  "token": "zluri",
+  "company": "Zluri",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "zluri.keka.com"
+ },
+ {
+  "platform": "workday",
+  "token": "fractal.wd1.myworkdayjobs.com|fractal|Careers",
+  "company": "Fractal",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "https://fractal.wd1.myworkdayjobs.com/Careers"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "observeai",
+  "company": "Observe.AI",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "greenhouse.io/embed/job_board/js?for=observeai"
+ },
+ {
+  "platform": "workday",
+  "token": "uniphore.wd503.myworkdayjobs.com|uniphore|Uniphore",
+  "company": "Uniphore",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "https://uniphore.wd503.myworkdayjobs.com/Uniphore"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "groww",
+  "company": "Groww",
+  "segment": "india_product",
+  "source": "manual-verified",
+  "evidence": "careers page https://groww.in/careers links openings to https://job-boards.eu.greenhouse.io/groww"
+ },
+ {
+  "platform": "unstop",
+  "token": "",
+  "company": "Unstop",
+  "segment": "india_aggregate",
+  "source": "manual",
+  "evidence": "Unstop public opportunities feed (India-first internships/competitions)"
  }
 ]

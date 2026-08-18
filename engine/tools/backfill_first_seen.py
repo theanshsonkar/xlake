@@ -18,7 +18,7 @@ HISTORY_PATH = OPPORTUNITIES_HISTORY_PATH
 JOBS_PATH = OPPORTUNITIES_PATH
 REPORT_PATH = os.path.join(DATA_DIR, "first_seen_backfill_report.json")
 
-from sweep import _key  # noqa: E402
+from pipeline.sweep import _key  # noqa: E402
 
 
 def parse_timestamp(value):

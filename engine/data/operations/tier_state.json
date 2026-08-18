@@ -138,10 +138,10 @@
  "keka|jupiter": {
   "platform": "keka",
   "token": "jupiter",
-  "total_qualifying_ever": 203,
-  "qualifying_last_30d": 203,
-  "sweeps_run": 29,
-  "last_swept_at": "2026-08-16T03:28:24+00:00"
+  "total_qualifying_ever": 224,
+  "qualifying_last_30d": 224,
+  "sweeps_run": 32,
+  "last_swept_at": "2026-08-18T14:38:02+00:00"
  },
  "workable|apna": {
   "platform": "workable",
@@ -190,5 +190,29 @@
   "qualifying_last_30d": 38724,
   "sweeps_run": 28,
   "last_swept_at": "2026-08-16T03:30:29+00:00"
+ },
+ "greenhouse|groww": {
+  "platform": "greenhouse",
+  "token": "groww",
+  "total_qualifying_ever": 12,
+  "qualifying_last_30d": 12,
+  "sweeps_run": 3,
+  "last_swept_at": "2026-08-18T14:38:02+00:00"
+ },
+ "keka|zluri": {
+  "platform": "keka",
+  "token": "zluri",
+  "total_qualifying_ever": 9,
+  "qualifying_last_30d": 9,
+  "sweeps_run": 3,
+  "last_swept_at": "2026-08-18T14:38:02+00:00"
+ },
+ "unstop|": {
+  "platform": "unstop",
+  "token": "",
+  "total_qualifying_ever": 39,
+  "qualifying_last_30d": 39,
+  "sweeps_run": 1,
+  "last_swept_at": "2026-08-18T14:38:07+00:00"
  }
 }

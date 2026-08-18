@@ -15,7 +15,7 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from enumerate_boards import _workday_token_from_url  # noqa: E402
+from pipeline.enumerate_boards import _workday_token_from_url  # noqa: E402
 
 
 class TestWorkdayTokenFromUrl(unittest.TestCase):

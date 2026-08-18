@@ -4,6 +4,15 @@ The active collector is `engine/`, and all commands below are run from that
 directory. This document describes implemented layout and persistence; it does
 not claim universal source coverage or a universal freshness SLA.
 
+## Operating model
+The engine runs once a day and its deterministic sweep establishes liveness/freshness for every row. Categories collect in two modes:
+- Calendar/programme categories (Fellowships, Research, Open Source, Grants & Funding, Scholarships, Hackathons & Competitions, Startup/Founder, Community & Leadership, Graduate & Campus): the engine fetches pages, tracks liveness, dedups and stores; AI reads the prose pages to extract dates, eligibility and funding. This uses the evidence-gated extractor (adapters/extractors.py LLMExtractor) or, until an API key is configured, a human-in-the-loop AI verifier. AI records only facts it can quote from the official page and never invents; a failed/unclear read never closes a row. These are low-volume, so AI verification runs about twice a month.
+- Listing categories (Jobs, Internships, Apprenticeships, OSS good-first-issues): structured sources (boards/APIs/GitHub) collected by the engine only. OSS good-first-issues will be a category-owned GitHub collector under engine/categories/open_source/ (planned), modeled on the programmes collector, keyed by issue URL.
+
+Update this file whenever the engine changes.
+
+India-first board handling is source-aware: Unstop and Keka treat unspecified or generic remote locations as `india_remote`, while explicit foreign locations keep their normal bucket. Job rows now carry `is_internship`, derived from title signals. Resolver registry writes preserve manually curated non-`resolver` entries unless a resolver result has the same platform/token.
+
 ## Purpose and flow
 
 The collector resolves named companies to official employer/ATS sources, reads
@@ -29,27 +38,24 @@ uncertain reads do not establish closure. Records are retained.
 
 `core/` owns shared cache, filters, quality, robots, page-text, tiering, and
 `paths.py`. `adapters/boards.py` owns the existing large board adapter module;
-`adapters/extractors.py` owns fixture/optional-LLM page extraction. The root
-modules with those names are thin backward-compatible import facades. In
-particular, `python3 fetch.py greenhouse vercel` delegates to
-`adapters.boards.main()` and keeps the historical launcher behavior.
+`adapters/extractors.py` owns fixture/optional-LLM page extraction. Runnable
+collection and maintenance scripts live in `engine/pipeline/` and are invoked
+as `python3 -m pipeline.<name>` from `engine/`.
 
-The remaining command files stay at the engine root:
+| Script | Invocation from `engine/` | Purpose |
+|---|---|---|
+| `engine/pipeline/sweep.py` | `python3 -m pipeline.sweep` | Collect resolved boards, apply filters/quality, merge retained lake rows, and append a run report. Network collection; use CI for full sweeps. |
+| `engine/pipeline/resolve.py` | `python3 -m pipeline.resolve` | Resolve a company/domain to a source and verify readable boards. Network collection. |
+| `engine/pipeline/resolve_companies.py` | `python3 -m pipeline.resolve_companies` | Rewrite the operational registry and page-reader target queue. Network collection. |
+| `engine/pipeline/read_pages.py` | `python3 -m pipeline.read_pages` | Read queued careers pages and write operational page-reader state/rows. Network collection and optional model enrichment. |
+| `engine/pipeline/read_url.py` | `python3 -m pipeline.read_url` | Inspect one URL using known APIs or HTML fallbacks. Network collection. |
+| `engine/pipeline/enumerate_boards.py` | `python3 -m pipeline.enumerate_boards` | Optional Common Crawl lead enumeration; writes discovery cache only. Network collection. |
+| `engine/pipeline/build_fixtures.py` | `python3 -m pipeline.build_fixtures` | Fetch/show/check committed offline fixtures; only `check` is offline. |
 
-| Command | Purpose |
-|---|---|
-| `sweep.py` | Collect resolved boards, apply filters/quality, merge retained lake rows, and append a run report. Network collection; use CI for full sweeps. |
-| `resolve.py` | Resolve a company/domain to a source and verify readable boards. Network collection. |
-| `resolve_companies.py` | Rewrite the operational registry and page-reader target queue. Network collection. |
-| `read_pages.py` | Read queued careers pages and write operational page-reader state/rows. Network collection and optional model enrichment. |
-| `read_url.py` | Inspect one URL using known APIs or HTML fallbacks. Network collection. |
-| `enumerate_boards.py` | Optional Common Crawl lead enumeration; writes discovery cache only. Network collection. |
-| `build_fixtures.py` | Fetch/show/check committed offline fixtures; only `check` is offline. |
-
-Useful offline checks from `engine/` include `python3 build_fixtures.py check`,
-`python3 -m unittest tests.test_robots`, and the archive verifier at
-`python3 engine/tools/verify_oldengine_archive.py`. Do not interpret these as a
-sweep or source-coverage check.
+Useful offline checks from `engine/` include
+`python3 -m pipeline.build_fixtures check`, `python3 -m unittest tests.test_robots`,
+and the archive verifier at `python3 tools/verify_oldengine_archive.py`. Do not
+interpret these as a sweep or source-coverage check.
 
 ## Canonical persistence
 
@@ -105,9 +111,9 @@ sweeps are CI work, not lightweight migration validation.
 `engine/categories/` is scaffolding for category predicates/annotations and
 category-specific processing helpers only. It does not activate or claim any
 category, and it must not own a final database. Category work is one category at
-a time and uses the shared canonical lake and trust policy. Structural
-scaffolding is allowed; premature category contract documents or implementation
-stubs are not. See `REGISTRY-PLAN.md`.
+a time and uses the shared canonical lake and trust policy. Category-specific docs and implementation helpers belong under the relevant
+category folder; they use the shared canonical lake and trust policy and do not
+create a category database. See `REGISTRY-PLAN.md`.
 
 ## Archived legacy tree
 
@@ -119,5 +125,30 @@ omitted because they were byte-identical to the active discovery cache.
 `SHA256SUMS` covers included archive files. Verify the archive with:
 
 ```bash
-python3 engine/tools/verify_oldengine_archive.py
+python3 tools/verify_oldengine_archive.py
 ```
+
+### Official open-source programmes
+
+`python3 -m categories.open_source.programmes` reads the six official seed URLs from the category-local
+registry in `categories/open_source/programmes.py`. The registry is seed data only (stable
+IDs, organizers, URLs, path hints, and cadence); every source runs through one
+generic data-driven pipeline. Date patterns, applicant/organizer window tokens,
+and formal-programme vocabulary are shared module-level data so they can be
+edited without adding source parsers. Broad official-page discovery is a
+planned next layer and is not enabled yet.
+
+The pipeline extracts only source-backed quotes and URLs, resolves application
+links only on the seed or final redirect origin, and leaves unstated fields as
+`not_stated` or `needs_confirmation`. A surfaced `open`, `rolling`, or
+`opening_soon` record always has the registry's `official_url`. `rolling` also
+requires a resolvable absolute `application_url` restricted to the seed/final
+origin as its actionability evidence. `open` and `opening_soon` require no
+separate apply link: their exact official date window is sufficient, so
+`application_url` may be null and `official_url` is the action link. Only
+`open`, `rolling`, and exact-date `opening_soon` states become canonical
+programme rows. Closed and non-actionable reads are observation-only and may
+deactivate prior rows for that source; failed reads never close rows.
+Programme observations and rows are written atomically, malformed existing lake
+state fails closed, and merge preserves unrelated job rows and source-scoped
+liveness fields.

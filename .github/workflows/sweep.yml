@@ -1,7 +1,7 @@
 name: sweep
 
 # The collector runs on GitHub's hardware, not on a laptop. Free tier is 2,000
-# minutes/month for private repos; twice-daily sweeps plus one daily
+# minutes/month for private repos; one daily sweep plus one daily
 # page-reader pass must stay comfortably inside that.
 #
 # GitHub only reads workflows from the repo ROOT (.github/workflows/). The
@@ -9,8 +9,8 @@ name: sweep
 # under archive/opportunity-lake-oldengine-2026-08-16/ and is not active.
 on:
   schedule:
-    - cron: "0 1,13 * * *"   # 06:30 and 18:30 IST — the board sweep, twice daily
-    - cron: "30 2 * * *"     # 08:00 IST — the page-reader pass, once daily
+    - cron: "0 1 * * *"     # 06:30 IST — the board sweep, once daily
+    - cron: "30 2 * * *"    # 08:00 IST — the page-reader pass, once daily
   workflow_dispatch:
     inputs:
       job:
@@ -34,7 +34,7 @@ jobs:
   sweep:
     if: >
       (github.event_name == 'schedule' &&
-       github.event.schedule == '0 1,13 * * *') ||
+       github.event.schedule == '0 1 * * *') ||
       (github.event_name == 'workflow_dispatch' &&
        (github.event.inputs.job == 'sweep' || github.event.inputs.job == 'both'))
     runs-on: ubuntu-latest
@@ -58,7 +58,7 @@ jobs:
           LAKE_WORKERS: "8"
           LAKE_HOST_DELAY: "0.3"
           LAKE_LIMIT: ${{ github.event.inputs.limit || '0' }}
-        run: python3 -u sweep.py
+        run: python3 -u -m pipeline.sweep
 
       - name: Show report
         run: tail -1 data/operations/runs.jsonl | python3 -m json.tool
@@ -110,7 +110,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      # read_pages.py is mechanism 2 (the AI page reader) — see extractors.py.
+      # read_pages.py is mechanism 2 (the AI page reader) — see adapters/extractors.py.
       # It needs an LLM configured via XLAKE_LLM_API_KEY / XLAKE_LLM_MODEL /
       # XLAKE_LLM_ENDPOINT. None of those secrets exist in this repo yet
       # (engine currently runs in fixture/test mode only, per README.md), so
@@ -127,7 +127,7 @@ jobs:
             echo "no XLAKE_LLM_API_KEY secret set — page reader has no model configured, skipping run"
             exit 0
           fi
-          python3 -u read_pages.py
+          python3 -u -m pipeline.read_pages
 
       - name: Commit page-reader state
         run: |

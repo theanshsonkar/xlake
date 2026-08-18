@@ -175,3 +175,43 @@ Aquatic Capital Management,aquatic.com,quant
 PDT Partners,pdtpartners.com,quant
 Susquehanna,sig.com,quant
 Millennium,mlp.com,quant
+Razorpay,razorpay.com,india_product
+CRED,cred.club,india_product
+Groww,groww.in,india_product
+Zerodha,zerodha.com,india_product
+PhonePe,phonepe.com,india_product
+slice,sliceit.com,india_product
+Zeta,zeta.tech,india_product
+Cashfree,cashfree.com,india_product
+Setu,setu.co,india_product
+M2P Fintech,m2pfintech.com,india_product
+Postman,postman.com,india_product
+Hasura,hasura.io,india_product
+Chargebee,chargebee.com,india_product
+Freshworks,freshworks.com,india_product
+BrowserStack,browserstack.com,india_product
+Atlan,atlan.com,india_product
+Whatfix,whatfix.com,india_product
+Sprinklr,sprinklr.com,india_product
+Zluri,zluri.com,india_product
+Rocketlane,rocketlane.com,india_product
+DevRev,devrev.ai,india_product
+Fyle,fylehq.com,india_product
+Facilio,facilio.com,india_product
+Locus,locus.sh,india_product
+Meesho,meesho.com,india_product
+Swiggy,swiggy.com,india_product
+Zomato,zomato.com,india_product
+Dream11,dream11.com,india_product
+Unacademy,unacademy.com,india_product
+Urban Company,urbancompany.com,india_product
+Cars24,cars24.com,india_product
+Spinny,spinny.com,india_product
+PhysicsWallah,pw.live,india_product
+Fractal,fractal.ai,india_product
+Observe.AI,observe.ai,india_product
+Uniphore,uniphore.com,india_product
+InMobi,inmobi.com,india_product
+Druva,druva.com,india_product
+Innovaccer,innovaccer.com,india_product
+Gupshup,gupshup.io,india_product

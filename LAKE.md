@@ -1,3 +1,5 @@
+Few things is that this lake md is the overall info abt my prodcut and idea and then the registry plan is basically the file that knwo what categorirs and then in that categories what we are having in ouir engine so we work and have info and eveything and then the engine md is the overall info abt our engine that shoudl have whole image of our engine so any ai can knwo and also whenever we make changes in our engine we also upodate the engine md. and the engine folder shoudl not have evrything scatterred as i need sub folder or folder for things not scattered . also in the dsktop is xlake folder that has ui design half so if u have any questions regardiung ui you can get answers from that.
+
 # Xlake
 
 ## Product reference

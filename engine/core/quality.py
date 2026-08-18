@@ -414,6 +414,10 @@ def normalise_title(title: str) -> str:
     return t.lower()
 
 
+def _is_job_row(row: Dict) -> bool:
+    return row.get("record_type") not in ("programme", "contribution")
+
+
 def annotate(rows: Iterable[Dict], cap: int = 10,
             stale_days: int = STALE_DAYS) -> List[Dict]:
     """Add hygiene fields to every row. Mutates and returns the same list.
@@ -440,18 +444,21 @@ def annotate(rows: Iterable[Dict], cap: int = 10,
     rows = list(rows)
 
     for r in rows:
+        job_row = _is_job_row(r)
         r["company"] = company_key(r.get("platform", ""), r.get("token", ""))
-        rec, why = is_recruiter(r.get("token", ""), r.get("title", ""))
-        r["is_recruiter"] = rec
-        r["recruiter_reason"] = why
+        if job_row:
+            rec, why = is_recruiter(r.get("token", ""), r.get("title", ""))
+            r["is_recruiter"] = rec
+            r["recruiter_reason"] = why
         loc = parse_locations(r.get("location", ""))
         r["cities"] = loc["cities"]
         r["states"] = loc["states"]
         r["location_parsed"] = loc["parsed"]
         r["title_norm"] = normalise_title(r.get("title", ""))
-        stale, age = is_stale(r.get("posted_on", ""), stale_days)
-        r["posting_age_days"] = age
-        r["is_stale"] = stale
+        if job_row:
+            stale, age = is_stale(r.get("posted_on", ""), stale_days)
+            r["posting_age_days"] = age
+            r["is_stale"] = stale
         # Checked against whatever description text a row happens to carry.
         # Board rows mostly have none (mechanism 1 downloads no description by
         # design); page-reader rows carry the extracted quote and evidence
@@ -477,6 +484,8 @@ def annotate(rows: Iterable[Dict], cap: int = 10,
     # in bucket are never the same opportunity.
     seen: Dict[Tuple[str, str, str], str] = {}
     for r in sorted(rows, key=lambda x: (x.get("first_seen") or "", x.get("url") or "")):
+        if not _is_job_row(r):
+            continue
         k = (r["company"], r["title_norm"], r.get("location_bucket") or "")
         if k in seen:
             r["dup_of"] = seen[k]
@@ -488,6 +497,8 @@ def annotate(rows: Iterable[Dict], cap: int = 10,
     # company is not penalised for duplicates that were already collapsed.
     per_company: collections.Counter = collections.Counter()
     for r in sorted(rows, key=lambda x: (x.get("first_seen") or "", x.get("url") or "")):
+        if not _is_job_row(r):
+            continue
         eligible = not r["is_recruiter"] and not r["dup_of"]
         if not eligible:
             r["over_cap"] = False
@@ -496,6 +507,9 @@ def annotate(rows: Iterable[Dict], cap: int = 10,
         r["over_cap"] = per_company[r["company"]] > cap
 
     for r in rows:
+        if not _is_job_row(r):
+            r["surfaced"] = True
+            continue
         r["surfaced"] = bool(
             not r["is_recruiter"] and not r["dup_of"] and not r["over_cap"]
             and not r["is_stale"] and not r["is_pay_to_intern"]

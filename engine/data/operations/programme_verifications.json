@@ -1,0 +1,76 @@
+[
+  {
+    "programme_id": "outreachy",
+    "verified_at": "2026-08-18T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "opening_soon",
+    "opening_date": "2026-08-24",
+    "deadline": "2026-08-31",
+    "eligibility": "Open worldwide to anyone who faces under-representation, systemic bias, or discrimination in the technology industry of their country. NOTE: students in India (treated as Northern Hemisphere) are only eligible for the May-August cohort, so Indian students are NOT eligible for this December 2026 cohort; non-students in India may apply.",
+    "funding": "$7,000 USD total internship stipend",
+    "remote": true,
+    "international_eligibility": true,
+    "official_url": "https://www.outreachy.org/",
+    "application_url": "https://www.outreachy.org/apply/",
+    "official_evidence": {
+      "status": {
+        "quote": "Aug. 24, 2026 at 4pm UTC | Initial applications open",
+        "url": "https://www.outreachy.org/docs/applicant/#outreachy-schedule"
+      },
+      "opening_date": {
+        "quote": "Aug. 24, 2026 at 4pm UTC | Initial applications open",
+        "url": "https://www.outreachy.org/docs/applicant/#outreachy-schedule"
+      },
+      "deadline": {
+        "quote": "Aug. 31, 2026 at 4pm UTC | Initial application deadline",
+        "url": "https://www.outreachy.org/docs/applicant/#outreachy-schedule"
+      },
+      "funding": {
+        "quote": "Interns are paid a stipend of $7,000 USD for the three month internship.",
+        "url": "https://www.outreachy.org/docs/applicant/"
+      },
+      "eligibility": {
+        "quote": "Students in India are considered to be in the northern hemisphere, regardless of where their university is located.",
+        "url": "https://www.outreachy.org/docs/applicant/#eligibility"
+      }
+    },
+    "verification_note": "December 2026 cohort. Internship runs Dec. 7, 2026 to March 8, 2027. Initial application window Aug 24-31, 2026."
+  },
+  {
+    "programme_id": "igalia-coding-experience",
+    "verified_at": "2026-08-18T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "closed",
+    "official_url": "https://www.igalia.com/coding-experience/",
+    "official_evidence": {
+      "status": {
+        "quote": "2026 Selection Process is closed",
+        "url": "https://www.igalia.com/coding-experience/"
+      }
+    },
+    "verification_note": "2026 selection process complete; all successful candidates notified. Recheck for next-year cycle."
+  },
+  {
+    "programme_id": "hacktoberfest",
+    "verified_at": "2026-08-18T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "opening_soon",
+    "official_url": "https://hacktoberfest.com/",
+    "official_evidence": {
+      "status": {
+        "quote": "You will need to apply to host a Fest, and applications will open soon.",
+        "url": "https://hacktoberfest.com/"
+      },
+      "pivot": {
+        "quote": "Hacktoberfest is moving away from counting PRs this year.",
+        "url": "https://hacktoberfest.com/"
+      },
+      "format": {
+        "quote": "Online and local events (Fests) everywhere, all about building with open source AI.",
+        "url": "https://hacktoberfest.com/"
+      }
+    },
+    "opportunity_type": "community_event",
+    "verification_note": "RECATEGORIZED: 2026 Hacktoberfest is no longer a pull-request / good-first-issue programme. It is now local/online Fests about open-source AI (October 2026, 300+ events) under MLH and DEV. Host applications open soon."
+  }
+]

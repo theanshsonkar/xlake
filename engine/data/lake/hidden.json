@@ -422266,7 +422266,7 @@
   "hidden_reason": "senior",
   "source_mechanism": "board",
   "first_seen": "2026-08-04T04:13:57+00:00",
-  "last_seen": "2026-08-07T08:32:09+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
   "is_live": true,
   "company": "jupiter",
   "is_recruiter": false,
@@ -422331,7 +422331,7 @@
   "hidden_reason": "senior",
   "source_mechanism": "board",
   "first_seen": "2026-08-04T04:13:57+00:00",
-  "last_seen": "2026-08-07T08:32:09+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
   "is_live": true,
   "company": "jupiter",
   "is_recruiter": false,
@@ -422459,7 +422459,7 @@
   "hidden_reason": "senior",
   "source_mechanism": "board",
   "first_seen": "2026-08-04T04:13:57+00:00",
-  "last_seen": "2026-08-07T08:32:09+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
   "is_live": true,
   "company": "jupiter",
   "is_recruiter": false,
@@ -422522,7 +422522,7 @@
   "hidden_reason": "senior",
   "source_mechanism": "board",
   "first_seen": "2026-08-04T04:13:57+00:00",
-  "last_seen": "2026-08-07T08:32:09+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
   "is_live": true,
   "company": "jupiter",
   "is_recruiter": false,
@@ -433049,8 +433049,8 @@
    "Hyderabad"
   ],
   "states": [
-   "Karnataka",
-   "Telangana"
+   "Telangana",
+   "Karnataka"
   ],
   "location_parsed": true,
   "title_norm": "senior engineer, ssd firmware",
@@ -433715,8 +433715,8 @@
    "Bengaluru"
   ],
   "states": [
-   "Karnataka",
-   "Telangana"
+   "Telangana",
+   "Karnataka"
   ],
   "location_parsed": true,
   "title_norm": "senior manager, gpcoe ai transformation",
@@ -437700,8 +437700,8 @@
    "Hyderabad"
   ],
   "states": [
-   "Karnataka",
-   "Telangana"
+   "Telangana",
+   "Karnataka"
   ],
   "location_parsed": true,
   "title_norm": "system architect for advanced memory system architecture- dmts/smts",
@@ -439246,8 +439246,8 @@
    "Hyderabad"
   ],
   "states": [
-   "Karnataka",
-   "Telangana"
+   "Telangana",
+   "Karnataka"
   ],
   "location_parsed": true,
   "title_norm": "hardware engineer",
@@ -448251,8 +448251,8 @@
    "Hyderabad"
   ],
   "states": [
-   "Karnataka",
-   "Telangana"
+   "Telangana",
+   "Karnataka"
   ],
   "location_parsed": true,
   "title_norm": "staff engineer , asic ams verification",
@@ -510094,7 +510094,7 @@
   "hidden_reason": "senior",
   "source_mechanism": "board",
   "first_seen": "2026-08-04T14:47:01+00:00",
-  "last_seen": "2026-08-07T08:32:09+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
   "is_live": true,
   "company": "jupiter",
   "is_recruiter": false,
@@ -510423,8 +510423,8 @@
    "Hyderabad"
   ],
   "states": [
-   "Karnataka",
-   "Telangana"
+   "Telangana",
+   "Karnataka"
   ],
   "location_parsed": true,
   "title_norm": "memory systems performance & workload architect - smts",
@@ -522293,12 +522293,12 @@
   ],
   "states": [
    "Rajasthan",
-   "Maharashtra",
-   "West Bengal",
    "Telangana",
-   "Kerala",
+   "Goa",
+   "Maharashtra",
    "Gujarat",
-   "Goa"
+   "West Bengal",
+   "Kerala"
   ],
   "location_parsed": true,
   "title_norm": "sales manager",
@@ -535831,6 +535831,452 @@
   "states": [],
   "location_parsed": false,
   "title_norm": "sr. principal electrical engineer",
+  "posting_age_days": null,
+  "is_stale": false,
+  "is_pay_to_intern": false,
+  "pay_to_intern_phrase": "",
+  "dup_of": null,
+  "over_cap": false,
+  "surfaced": true
+ },
+ {
+  "platform": "greenhouse",
+  "token": "groww",
+  "job_id": "4728765101",
+  "title": "Manager - Controllership (NBFC)",
+  "url": "https://job-boards.eu.greenhouse.io/groww/jobs/4728765101",
+  "location": "Bengaluru-VTP, India",
+  "company_name": "Groww",
+  "segment": "india_product",
+  "stage": "senior",
+  "stage_title": "senior",
+  "stage_resolved": "senior",
+  "technical": null,
+  "discipline": "unknown",
+  "is_internship": false,
+  "location_bucket": "india_located",
+  "experience_min": 3.0,
+  "experience_max": null,
+  "experience_conflict": false,
+  "batch_years": [],
+  "degree_required": [
+   "Bachelor's",
+   "Master's"
+  ],
+  "enrolled_required": null,
+  "eligibility_evidence": {
+   "degree": "Bachelor\u2019s; Master\u2019s",
+   "experience_requirement": "Minimum 3 years"
+  },
+  "gates_found": [
+   "experience",
+   "degree"
+  ],
+  "gates_missing": [
+   "fresher",
+   "stage_early",
+   "batch_years",
+   "enrolled"
+  ],
+  "eligibility_status": "hidden",
+  "hidden_reason": "senior",
+  "source_mechanism": "board",
+  "first_seen": "2026-08-18T14:36:08+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
+  "is_live": true,
+  "company": "groww",
+  "is_recruiter": false,
+  "recruiter_reason": "",
+  "cities": [],
+  "states": [],
+  "location_parsed": false,
+  "title_norm": "manager - controllership (nbfc)",
+  "posting_age_days": null,
+  "is_stale": false,
+  "is_pay_to_intern": false,
+  "pay_to_intern_phrase": "",
+  "dup_of": null,
+  "over_cap": false,
+  "surfaced": true,
+  "posted_on": "",
+  "description": null,
+  "needs_description": false
+ },
+ {
+  "platform": "keka",
+  "token": "zluri",
+  "job_id": "80996",
+  "title": "Senior Product Manager",
+  "url": "https://zluri.keka.com/careers/jobdetails/80996",
+  "location": "Bangalore Bangalore KA",
+  "company_name": "Zluri",
+  "segment": "india_product",
+  "stage": "senior",
+  "stage_title": "senior",
+  "stage_resolved": "senior",
+  "technical": null,
+  "discipline": "unknown",
+  "is_internship": false,
+  "location_bucket": "india_located",
+  "experience_min": 4.0,
+  "experience_max": 7.0,
+  "experience_conflict": false,
+  "batch_years": [],
+  "degree_required": [
+   "Bachelor's"
+  ],
+  "enrolled_required": null,
+  "eligibility_evidence": {
+   "degree": "Bachelor's",
+   "experience_requirement": "4-7 years"
+  },
+  "gates_found": [
+   "experience",
+   "degree"
+  ],
+  "gates_missing": [
+   "fresher",
+   "stage_early",
+   "batch_years",
+   "enrolled"
+  ],
+  "eligibility_status": "hidden",
+  "hidden_reason": "senior",
+  "source_mechanism": "board",
+  "first_seen": "2026-08-18T14:36:08+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
+  "is_live": true,
+  "company": "zluri",
+  "is_recruiter": false,
+  "recruiter_reason": "",
+  "cities": [
+   "Bengaluru"
+  ],
+  "states": [
+   "Karnataka"
+  ],
+  "location_parsed": true,
+  "title_norm": "senior product manager",
+  "posting_age_days": null,
+  "is_stale": false,
+  "is_pay_to_intern": false,
+  "pay_to_intern_phrase": "",
+  "dup_of": null,
+  "over_cap": false,
+  "surfaced": true,
+  "posted_on": "",
+  "description": null,
+  "needs_description": false
+ },
+ {
+  "platform": "keka",
+  "token": "zluri",
+  "job_id": "59695",
+  "title": "Senior Product Designer",
+  "url": "https://zluri.keka.com/careers/jobdetails/59695",
+  "location": "",
+  "company_name": "Zluri",
+  "segment": "india_product",
+  "stage": "senior",
+  "stage_title": "senior",
+  "stage_resolved": "senior",
+  "technical": null,
+  "discipline": "unknown",
+  "is_internship": false,
+  "location_bucket": "india_remote",
+  "experience_min": 4.0,
+  "experience_max": 7.0,
+  "experience_conflict": false,
+  "batch_years": [],
+  "degree_required": [
+   "Bachelor's",
+   "MBA"
+  ],
+  "enrolled_required": null,
+  "eligibility_evidence": {
+   "degree": "Bachelor's; MBA",
+   "experience_requirement": "4-7 years"
+  },
+  "gates_found": [
+   "experience",
+   "degree"
+  ],
+  "gates_missing": [
+   "fresher",
+   "stage_early",
+   "batch_years",
+   "enrolled"
+  ],
+  "eligibility_status": "hidden",
+  "hidden_reason": "senior",
+  "source_mechanism": "board",
+  "first_seen": "2026-08-18T14:36:08+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
+  "is_live": true,
+  "company": "zluri",
+  "is_recruiter": false,
+  "recruiter_reason": "",
+  "cities": [],
+  "states": [],
+  "location_parsed": false,
+  "title_norm": "senior product designer",
+  "posting_age_days": null,
+  "is_stale": false,
+  "is_pay_to_intern": false,
+  "pay_to_intern_phrase": "",
+  "dup_of": null,
+  "over_cap": false,
+  "surfaced": true,
+  "posted_on": "",
+  "description": null,
+  "needs_description": false
+ },
+ {
+  "platform": "keka",
+  "token": "zluri",
+  "job_id": "45924",
+  "title": "Senior Data Engineer",
+  "url": "https://zluri.keka.com/careers/jobdetails/45924",
+  "location": "Bangalore Bangalore KA",
+  "company_name": "Zluri",
+  "segment": "india_product",
+  "stage": "senior",
+  "stage_title": "senior",
+  "stage_resolved": "senior",
+  "technical": null,
+  "discipline": "unknown",
+  "is_internship": false,
+  "location_bucket": "india_located",
+  "experience_min": 3.0,
+  "experience_max": 6.0,
+  "experience_conflict": false,
+  "batch_years": [],
+  "degree_required": [
+   "Bachelor's"
+  ],
+  "enrolled_required": null,
+  "eligibility_evidence": {
+   "degree": "Bachelor's",
+   "experience_requirement": "3-6 years"
+  },
+  "gates_found": [
+   "experience",
+   "degree"
+  ],
+  "gates_missing": [
+   "fresher",
+   "stage_early",
+   "batch_years",
+   "enrolled"
+  ],
+  "eligibility_status": "hidden",
+  "hidden_reason": "senior",
+  "source_mechanism": "board",
+  "first_seen": "2026-08-18T14:36:08+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
+  "is_live": true,
+  "company": "zluri",
+  "is_recruiter": false,
+  "recruiter_reason": "",
+  "cities": [
+   "Bengaluru"
+  ],
+  "states": [
+   "Karnataka"
+  ],
+  "location_parsed": true,
+  "title_norm": "senior data engineer",
+  "posting_age_days": null,
+  "is_stale": false,
+  "is_pay_to_intern": false,
+  "pay_to_intern_phrase": "",
+  "dup_of": null,
+  "over_cap": false,
+  "surfaced": true,
+  "posted_on": "",
+  "description": null,
+  "needs_description": false
+ },
+ {
+  "platform": "keka",
+  "token": "zluri",
+  "job_id": "39385",
+  "title": "Senior Software Engineer (Backend)",
+  "url": "https://zluri.keka.com/careers/jobdetails/39385",
+  "location": "Bangalore Bangalore KA",
+  "company_name": "Zluri",
+  "segment": "india_product",
+  "stage": "senior",
+  "stage_title": "senior",
+  "stage_resolved": "senior",
+  "technical": null,
+  "discipline": "unknown",
+  "is_internship": false,
+  "location_bucket": "india_located",
+  "experience_min": 3.0,
+  "experience_max": null,
+  "experience_conflict": false,
+  "batch_years": [],
+  "degree_required": [],
+  "enrolled_required": null,
+  "eligibility_evidence": {
+   "experience_requirement": "3+ years"
+  },
+  "gates_found": [
+   "experience"
+  ],
+  "gates_missing": [
+   "fresher",
+   "stage_early",
+   "batch_years",
+   "degree",
+   "enrolled"
+  ],
+  "eligibility_status": "hidden",
+  "hidden_reason": "senior",
+  "source_mechanism": "board",
+  "first_seen": "2026-08-18T14:36:08+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
+  "is_live": true,
+  "company": "zluri",
+  "is_recruiter": false,
+  "recruiter_reason": "",
+  "cities": [
+   "Bengaluru"
+  ],
+  "states": [
+   "Karnataka"
+  ],
+  "location_parsed": true,
+  "title_norm": "senior software engineer (backend)",
+  "posting_age_days": null,
+  "is_stale": false,
+  "is_pay_to_intern": false,
+  "pay_to_intern_phrase": "",
+  "dup_of": null,
+  "over_cap": false,
+  "surfaced": true,
+  "posted_on": "",
+  "description": null,
+  "needs_description": false
+ },
+ {
+  "platform": "keka",
+  "token": "zluri",
+  "job_id": "15423",
+  "title": "Lead Product Designer",
+  "url": "https://zluri.keka.com/careers/jobdetails/15423",
+  "location": "Bangalore Bangalore KA",
+  "company_name": "Zluri",
+  "segment": "india_product",
+  "stage": "senior",
+  "stage_title": "senior",
+  "stage_resolved": "senior",
+  "technical": null,
+  "discipline": "unknown",
+  "is_internship": false,
+  "location_bucket": "india_located",
+  "experience_min": null,
+  "experience_max": null,
+  "experience_conflict": true,
+  "batch_years": [],
+  "degree_required": [
+   "Bachelor's",
+   "MBA"
+  ],
+  "enrolled_required": null,
+  "eligibility_evidence": {
+   "degree": "Bachelor's; MBA",
+   "experience_requirement": "6+ years",
+   "experience_requirement_2": "at least 2 years"
+  },
+  "gates_found": [
+   "degree"
+  ],
+  "gates_missing": [
+   "experience",
+   "fresher",
+   "stage_early",
+   "batch_years",
+   "enrolled"
+  ],
+  "eligibility_status": "hidden",
+  "hidden_reason": "senior",
+  "source_mechanism": "board",
+  "first_seen": "2026-08-18T14:36:08+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
+  "is_live": true,
+  "company": "zluri",
+  "is_recruiter": false,
+  "recruiter_reason": "",
+  "cities": [
+   "Bengaluru"
+  ],
+  "states": [
+   "Karnataka"
+  ],
+  "location_parsed": true,
+  "title_norm": "lead product designer",
+  "posting_age_days": null,
+  "is_stale": false,
+  "is_pay_to_intern": false,
+  "pay_to_intern_phrase": "",
+  "dup_of": null,
+  "over_cap": false,
+  "surfaced": true,
+  "posted_on": "",
+  "description": null,
+  "needs_description": false
+ },
+ {
+  "platform": "unstop",
+  "token": "",
+  "job_id": "1739733",
+  "title": "Sales Manager",
+  "url": "https://unstop.com/jobs/sales-manager-tekpillar-1739733",
+  "location": "",
+  "company_name": "Unstop",
+  "segment": "india_aggregate",
+  "stage": "senior",
+  "stage_title": "senior",
+  "stage_resolved": "senior",
+  "technical": null,
+  "discipline": "unknown",
+  "is_internship": false,
+  "location_bucket": "india_remote",
+  "experience_min": null,
+  "experience_max": null,
+  "experience_conflict": false,
+  "batch_years": [],
+  "degree_required": [],
+  "enrolled_required": true,
+  "eligibility_evidence": {
+   "enrolled": "currently enrolled",
+   "fresher": "freshers"
+  },
+  "gates_found": [
+   "fresher",
+   "enrolled"
+  ],
+  "gates_missing": [
+   "experience",
+   "stage_early",
+   "batch_years",
+   "degree"
+  ],
+  "eligibility_status": "hidden",
+  "hidden_reason": "senior",
+  "source_mechanism": "board",
+  "first_seen": "2026-08-18T14:38:08+00:00",
+  "last_seen": "2026-08-18T14:38:08+00:00",
+  "is_live": true,
+  "company": "",
+  "is_recruiter": false,
+  "recruiter_reason": "",
+  "cities": [],
+  "states": [],
+  "location_parsed": false,
+  "title_norm": "sales manager",
   "posting_age_days": null,
   "is_stale": false,
   "is_pay_to_intern": false,

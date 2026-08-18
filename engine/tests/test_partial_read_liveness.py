@@ -10,7 +10,7 @@ from unittest import mock
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from adapters.boards import BoardResult  # noqa: E402
-import sweep  # noqa: E402
+from pipeline import sweep  # noqa: E402
 
 
 class TestPartialReadLiveness(unittest.TestCase):
