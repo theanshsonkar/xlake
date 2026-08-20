@@ -11,7 +11,11 @@ The engine runs once a day and its deterministic sweep establishes liveness/fres
 
 Update this file whenever the engine changes.
 
-India-first board handling is source-aware: Unstop and Keka treat unspecified or generic remote locations as `india_remote`, while explicit foreign locations keep their normal bucket. Job rows now carry `is_internship`, derived from title signals. Resolver registry writes preserve manually curated non-`resolver` entries unless a resolver result has the same platform/token.
+Location handling is India-first for the audience, but the index is comprehensive: trustworthy opportunities are not dropped for being foreign. Rows carry a `location_bucket`; accessibility maps `india_located` to rank 0, `india_remote` and generic remote without a region bar to `remote_global` at rank 1, and `global_hiring` (overseas on-site or unknown location) to `foreign_onsite` at rank 2. Source-aware handling still means Unstop and Keka treat unspecified or generic remote locations as `india_remote`, while explicit foreign locations keep their normal bucket.
+
+The default feed surfaces the `india_located` and `remote_global` tiers first. Foreign-onsite rows are retained and searchable behind a filter, ranked lower rather than hidden. A source that bars India, such as `Remote – US only`, is classified as `excluded` and retained in `data/lake/hidden.json` with the honest `region_excludes_india` reason. Location no longer creates a hidden row: `hidden_reason()` hides only senior, `experience_3plus`, and non-technical rows; `not_india` remains only for back-compat and is no longer produced.
+
+On job rows, `quality.annotate` stamps `accessibility` and `access_rank`; non-job rows pass through untouched. `quality.report` emits `surfaced_by_accessibility`. `sweep.py` is unchanged: pass-through for non-job rows, the reconfirmation window, and Unstop/Keka `india_source` handling remain intact. Job rows now also carry `is_internship`, derived from title signals. Resolver registry writes preserve manually curated non-`resolver` entries unless a resolver result has the same platform/token.
 
 ## Purpose and flow
 

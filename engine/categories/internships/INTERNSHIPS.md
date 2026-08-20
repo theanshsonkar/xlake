@@ -28,10 +28,21 @@ lead list).
 
 `list_internships` in `engine/categories/internships/internships.py` reads the
 canonical lake and filters rows with `record_type` absent and `is_internship`
-true. Run its view-only CLI from `engine/`:
+true. Its default view sorts by `access_rank`: `india_located` first, then
+`remote_global` (including `india_remote`), and `foreign_onsite` last.
+Accessibility ranks are `india_located` (0), `remote_global` (1),
+`foreign_onsite` (2), and `excluded` (3). Foreign-onsite internships are
+retained, labeled, and ranked lower; they are not deleted.
+
+Run its view-only CLI from `engine/`. `--india` selects India-located and
+India-remote rows, `--surfaced` selects rows with `hidden_reason` of `None`,
+and `--foreign` selects on-site-abroad rows only:
 
 ```bash
-python3 -m categories.internships.internships
+python3 -m categories.internships.internships --list
+python3 -m categories.internships.internships --list --india
+python3 -m categories.internships.internships --list --surfaced
+python3 -m categories.internships.internships --list --foreign
 ```
 
 ~300+ Indian internships are surfaced at runtime; this is not a stored metric.

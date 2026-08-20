@@ -5,7 +5,7 @@ use. Individual company boards are stored in the collector registry data.
 
 ## Opportunity categories
 
-This is the India-first catalog for students and early-career candidates. Global opportunities are included only when explicitly accessible to applicants in India. These types are user-browseable categories and are distinct from collection sources and adapters.
+This is the India-first catalog for students and early-career candidates. For the listing categories (Jobs and Internships), the engine keeps a comprehensive global index rather than hiding non-India roles: India-located and remote/global opportunities are surfaced first for an India-based user, while foreign on-site roles are retained and searchable behind a filter, ranked lower by accessibility. These types are user-browseable categories and are distinct from collection sources and adapters.
 
 - **Jobs** — entry-level/early-career full-time — good enough; India tech roles surface through the shared `india_source` machinery, and we are not grinding more employers by design
 - **Internships** — student, summer, off-cycle, industrial training — LIVE via the Unstop public feed, `india_source` machinery, and hand-audited registry companies
