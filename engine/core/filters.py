@@ -258,9 +258,10 @@ REMOTE_EXCLUDES_INDIA = re.compile(
 )
 
 INDIA_LOCATED = "india_located"
-INDIA_REMOTE = "india_remote"
-GLOBAL_HIRING = "global_hiring"
-EXCLUDED = "excluded"
+INDIA_REMOTE = "india_remote"          # remote/worldwide that explicitly includes India
+REMOTE_GLOBAL = "remote_global"        # generic remote, no region bar: reachable from India
+GLOBAL_HIRING = "global_hiring"        # overseas on-site / unknown location: needs relocation
+EXCLUDED = "excluded"                  # remote restricted to a region that bars India
 
 
 def location_bucket(location: str, india_source: bool = False) -> str:
@@ -280,8 +281,42 @@ def location_bucket(location: str, india_source: bool = False) -> str:
     if REMOTE_EXCLUDES_INDIA.search(loc):
         return EXCLUDED
     if REMOTE_ANY.search(loc):
-        return INDIA_REMOTE if india_source else GLOBAL_HIRING
-    return GLOBAL_HIRING  # overseas onsite; no authorisation bar stated
+        return INDIA_REMOTE if india_source else REMOTE_GLOBAL
+    return GLOBAL_HIRING  # overseas on-site; retained and searchable, ranked lower
+
+
+# --- Accessibility: how reachable an opportunity is for an India-based user. ---
+# The index stays comprehensive (nothing trustworthy is dropped for being
+# foreign); accessibility is what the default feed ranks by.
+ACCESS_INDIA = "india_located"           # physically in India
+ACCESS_REMOTE_GLOBAL = "remote_global"   # remote / open worldwide: reachable from India
+ACCESS_FOREIGN_ONSITE = "foreign_onsite" # on-site abroad: needs relocation/visa
+ACCESS_EXCLUDED = "excluded"             # source explicitly bars India: not eligible
+
+_ACCESS_BY_BUCKET = {
+    INDIA_LOCATED: ACCESS_INDIA,
+    INDIA_REMOTE: ACCESS_REMOTE_GLOBAL,
+    REMOTE_GLOBAL: ACCESS_REMOTE_GLOBAL,
+    GLOBAL_HIRING: ACCESS_FOREIGN_ONSITE,
+    EXCLUDED: ACCESS_EXCLUDED,
+}
+
+# Lower rank = surfaced higher in the default feed.
+ACCESS_RANK = {ACCESS_INDIA: 0, ACCESS_REMOTE_GLOBAL: 1,
+               ACCESS_FOREIGN_ONSITE: 2, ACCESS_EXCLUDED: 3}
+
+# The default (non-noisy) feed surfaces these tiers; foreign on-site sits behind a filter.
+DEFAULT_FEED_TIERS = (ACCESS_INDIA, ACCESS_REMOTE_GLOBAL)
+
+
+def accessibility(bucket: Optional[str]) -> str:
+    """Accessibility tier for an India-based user, derived from a location bucket."""
+    return _ACCESS_BY_BUCKET.get(bucket, ACCESS_FOREIGN_ONSITE)
+
+
+def access_rank(bucket: Optional[str]) -> int:
+    """Default-feed sort key (0 = highest priority)."""
+    return ACCESS_RANK[accessibility(bucket)]
 
 
 # --------------------------------------------------------------------------- #
@@ -714,7 +749,8 @@ def resolve_stage(stage_title: str, description: Optional[str],
 # Canonical hidden reasons keep the report stable when classifier wording changes.
 HIDDEN_SENIOR = "senior"
 HIDDEN_EXPERIENCE = "experience_3plus"
-HIDDEN_NOT_INDIA = "not_india"
+HIDDEN_NOT_INDIA = "not_india"            # retained for back-compat; no longer produced
+HIDDEN_REGION_EXCLUDED = "region_excludes_india"
 HIDDEN_NON_TECHNICAL = "non_technical"
 HIDDEN_NO_TITLE = "no_title"
 
@@ -762,12 +798,13 @@ def gates_of(resolution, stage_title, title) -> Tuple[List[str], List[str]]:
 def hidden_reason(stage_resolved: str, bucket: str, technical: Optional[bool],
                   experience_min: Optional[float] = None,
                   discipline: Optional[str] = None) -> Optional[str]:
+    # Location no longer hides a row: non-India roles are kept in the index and
+    # ranked by accessibility() instead. Region-excluded remote is handled
+    # upstream in classify() and routed out of the default feed there.
     if stage_resolved == "senior":
         return HIDDEN_SENIOR
     if experience_min is not None and experience_min >= 3:
         return HIDDEN_EXPERIENCE
-    if bucket not in (INDIA_LOCATED, INDIA_REMOTE):
-        return HIDDEN_NOT_INDIA
     if technical is False and discipline == NON_TECH:
         return HIDDEN_NON_TECHNICAL
     return None
@@ -776,7 +813,7 @@ def hidden_reason(stage_resolved: str, bucket: str, technical: Optional[bool],
 def canonical_reason(verdict_reason: str) -> str:
     return {
         "senior_title": HIDDEN_SENIOR,
-        "remote_region_excludes_india": HIDDEN_NOT_INDIA,
+        "remote_region_excludes_india": HIDDEN_REGION_EXCLUDED,
         "no_title": HIDDEN_NO_TITLE,
     }.get(verdict_reason, verdict_reason)
 

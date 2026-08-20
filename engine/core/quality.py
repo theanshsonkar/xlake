@@ -514,6 +514,8 @@ def annotate(rows: Iterable[Dict], cap: int = 10,
             not r["is_recruiter"] and not r["dup_of"] and not r["over_cap"]
             and not r["is_stale"] and not r["is_pay_to_intern"]
         )
+        r["accessibility"] = filters.accessibility(r.get("location_bucket"))
+        r["access_rank"] = filters.ACCESS_RANK[r["accessibility"]]
     return rows
 
 
@@ -537,6 +539,8 @@ def report(rows: List[Dict]) -> Dict:
         "age_unknown": sum(1 for r in rows if r.get("posting_age_days") is None),
         "removed_over_cap": sum(1 for r in rows if r.get("over_cap")),
         "surfaced": len(surfaced),
+        "surfaced_by_accessibility": dict(collections.Counter(
+            r.get("accessibility") or "unset" for r in surfaced)),
         "surfaced_by_discipline": dict(collections.Counter(
             r.get("discipline") or "unset" for r in surfaced)),
         "surfaced_india": len(india),

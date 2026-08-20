@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 
+from core import filters
 from core.paths import OPPORTUNITIES_PATH
 
 
@@ -23,7 +24,8 @@ def _company_value(row):
     return row.get("company") or row.get("company_name") or ""
 
 
-def list_internships(india=None, surfaced=None, platform=None, company=None):
+def list_internships(india=None, surfaced=None, platform=None, company=None,
+                     foreign=False):
     """Return internship job rows from the canonical opportunity lake."""
     rows = [
         row for row in _load_json(OPPORTUNITIES_PATH, [])
@@ -32,10 +34,17 @@ def list_internships(india=None, surfaced=None, platform=None, company=None):
     if india is True:
         rows = [
             row for row in rows
-            if row.get("location_bucket") in ("india_located", "india_remote")
+            if row.get("location_bucket") in
+            (filters.INDIA_LOCATED, filters.INDIA_REMOTE)
         ]
     if surfaced is True:
         rows = [row for row in rows if row.get("hidden_reason") in (None,)]
+    if foreign is True:
+        rows = [
+            row for row in rows
+            if filters.accessibility(row.get("location_bucket")) ==
+            filters.ACCESS_FOREIGN_ONSITE
+        ]
     if platform is not None:
         platform = str(platform).casefold()
         rows = [
@@ -48,6 +57,7 @@ def list_internships(india=None, surfaced=None, platform=None, company=None):
             row for row in rows
             if str(_company_value(row)).casefold() == company
         ]
+    rows.sort(key=lambda row: filters.access_rank(row.get("location_bucket")))
     return rows
 
 
@@ -68,6 +78,7 @@ def _list_cli():
     )
     parser.add_argument("--india", action="store_true", default=None)
     parser.add_argument("--surfaced", action="store_true", default=None)
+    parser.add_argument("--foreign", action="store_true", default=False)
     parser.add_argument("--platform")
     parser.add_argument("--company")
     args = parser.parse_args()
@@ -79,6 +90,7 @@ def _list_cli():
         surfaced=args.surfaced,
         platform=args.platform,
         company=args.company,
+        foreign=args.foreign,
     )
     print("{} internship(s)".format(len(rows)))
     for row in rows[:5]:
