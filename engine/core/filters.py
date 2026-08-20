@@ -797,7 +797,8 @@ def gates_of(resolution, stage_title, title) -> Tuple[List[str], List[str]]:
 
 def hidden_reason(stage_resolved: str, bucket: str, technical: Optional[bool],
                   experience_min: Optional[float] = None,
-                  discipline: Optional[str] = None) -> Optional[str]:
+                  discipline: Optional[str] = None,
+                  is_internship: bool = False) -> Optional[str]:
     # Location no longer hides a row: non-India roles are kept in the index and
     # ranked by accessibility() instead. Region-excluded remote is handled
     # upstream in classify() and routed out of the default feed there.
@@ -805,6 +806,14 @@ def hidden_reason(stage_resolved: str, bucket: str, technical: Optional[bool],
         return HIDDEN_SENIOR
     if experience_min is not None and experience_min >= 3:
         return HIDDEN_EXPERIENCE
+    if is_internship:
+        # Internships launch targets a software/CS/data audience. Surface a
+        # row only when the title is affirmatively technical and not another
+        # engineering branch. Marketing, ambassador, ops, civil/mechanical,
+        # or no technical signal at all are retained but not surfaced.
+        if not (technical is True and discipline not in (OTHER_ENG_D, NON_TECH)):
+            return HIDDEN_NON_TECHNICAL
+        return None
     if technical is False and discipline == NON_TECH:
         return HIDDEN_NON_TECHNICAL
     return None

@@ -256,6 +256,7 @@ class Posting:
     posted_on: str = ""
     description: str | None = None
     locations: list | None = None
+    company: str = ""
 
     def key(self) -> str:
         return "{}:{}:{}".format(self.platform, self.token, self.job_id)
@@ -347,6 +348,16 @@ def _unstop_json_value(value):
         return json.loads(value)
     except (TypeError, ValueError, json.JSONDecodeError):
         return None
+
+
+def _unstop_company(record):
+    """Real organizing company from an Unstop record (organisation.name)."""
+    if not isinstance(record, dict):
+        return ""
+    org = record.get("organisation")
+    if isinstance(org, dict):
+        return str(org.get("name") or "").strip()
+    return ""
 
 
 def _unstop_years(value) -> List[int]:
@@ -698,6 +709,7 @@ def _unstop(token: str) -> BoardResult:
                 "unstop", token, jid, str(record.get("title") or ""), location,
                 canonical, str(record.get("approved_date") or record.get("start_date") or ""),
                 description=description or None,
+                company=_unstop_company(record),
             )
             # These attributes extend the compatibility Posting without changing
             # the return type used by the established adapters.

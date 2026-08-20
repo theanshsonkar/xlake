@@ -307,7 +307,7 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                         "title": p.title,
                         "url": p.url,
                         "location": p.location,
-                        "company_name": entry.get("company"),
+                        "company_name": (p.company or entry.get("company")),
                         "segment": entry.get("segment"),
                         "stage": v.stage,
                         "stage_title": v.stage,
@@ -332,7 +332,7 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                     continue
                 row_hidden_reason = filters.hidden_reason(
                     resolution.stage_resolved, v.bucket, v.technical,
-                    resolution.experience_min, v.discipline)
+                    resolution.experience_min, v.discipline, v.is_internship)
                 row_eligibility_status = filters.eligibility_status(
                     row_hidden_reason, gates_found)
                 s["kept"] += 1

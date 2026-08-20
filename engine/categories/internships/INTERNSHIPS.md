@@ -18,6 +18,20 @@ India-first. `core/filters.classify` maps their generic-remote rows to
 `india_remote` and explicit-India rows to `india_located`. `is_internship` is
 classified from title words: `intern`, `internship`, `trainee`, or `apprentice`.
 `REMOTE_ANY` matches `online`, `virtual`, `remote`, `wfh`, or `hybrid`.
+Each Unstop internship shows its real organizing company, read from the source
+record's `organisation.name`; aggregator rows no longer display the platform
+label `Unstop`. The sweep writes `company_name = posting.company or the
+registry entry's company`.
+
+### Technical-only surfacing
+
+The internships feed targets a software/CS/data audience. A row surfaces only
+when its title is affirmatively technical and not another engineering branch.
+Non-technical roles (marketing, business development, campus ambassador,
+community, HR, content/video, operations) and non-software engineering (civil,
+mechanical, electrical, etc.) are retained in the lake but hidden from the
+default feed via `hidden_reason='non_technical'` (internship-gated in
+`core/filters.py`). Regular Jobs are unaffected.
 
 ## Registry and view
 
@@ -45,7 +59,12 @@ python3 -m categories.internships.internships --list --surfaced
 python3 -m categories.internships.internships --list --foreign
 ```
 
-~300+ Indian internships are surfaced at runtime; this is not a stored metric.
+Bounded validation 2026-08-20: Unstop returned 800 open opportunities / 773
+internships; 179 surface as technical (cse=111, technical-unknown=68); ~150
+non-technical dropped from the feed vs. the prior generic filter. Runtime metric,
+not a stored count.
+The code change does not rewrite already-collected rows; the stored lake reflects
+the real company names and technical-only surfacing after the next daily sweep.
 
 ## Jobs note
 

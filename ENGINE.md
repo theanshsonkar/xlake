@@ -13,7 +13,7 @@ Update this file whenever the engine changes.
 
 Location handling is India-first for the audience, but the index is comprehensive: trustworthy opportunities are not dropped for being foreign. Rows carry a `location_bucket`; accessibility maps `india_located` to rank 0, `india_remote` and generic remote without a region bar to `remote_global` at rank 1, and `global_hiring` (overseas on-site or unknown location) to `foreign_onsite` at rank 2. Source-aware handling still means Unstop and Keka treat unspecified or generic remote locations as `india_remote`, while explicit foreign locations keep their normal bucket.
 
-The default feed surfaces the `india_located` and `remote_global` tiers first. Foreign-onsite rows are retained and searchable behind a filter, ranked lower rather than hidden. A source that bars India, such as `Remote – US only`, is classified as `excluded` and retained in `data/lake/hidden.json` with the honest `region_excludes_india` reason. Location no longer creates a hidden row: `hidden_reason()` hides only senior, `experience_3plus`, and non-technical rows; `not_india` remains only for back-compat and is no longer produced.
+The default feed surfaces the `india_located` and `remote_global` tiers first. Foreign-onsite rows are retained and searchable behind a filter, ranked lower rather than hidden. A source that bars India, such as `Remote – US only`, is classified as `excluded` and retained in `data/lake/hidden.json` with the honest `region_excludes_india` reason. Location no longer creates a hidden row: `hidden_reason()` hides only senior, `experience_3plus`, and non-technical rows; `not_india` remains only for back-compat and is no longer produced. `hidden_reason()` is internship-aware: for internship rows it surfaces only affirmatively technical, non-other-engineering titles and hides the rest as `non_technical`; non-internship job rows keep the prior behavior (only technical is False + discipline `non_tech` hides).
 
 On job rows, `quality.annotate` stamps `accessibility` and `access_rank`; non-job rows pass through untouched. `quality.report` emits `surfaced_by_accessibility`. `sweep.py` is unchanged: pass-through for non-job rows, the reconfirmation window, and Unstop/Keka `india_source` handling remain intact. Job rows now also carry `is_internship`, derived from title signals. Resolver registry writes preserve manually curated non-`resolver` entries unless a resolver result has the same platform/token.
 
@@ -196,7 +196,12 @@ machinery in `pipeline/sweep.py` marks `{unstop, keka}` as India-first, and
 `core/filters.classify` maps their generic-remote rows to `india_remote` and
 explicit-India rows to `india_located`. `is_internship` is classified from
 title words (intern/internship/trainee/apprentice); `REMOTE_ANY` also matches
-online and virtual, plus remote/wfh/hybrid.
+online and virtual, plus remote/wfh/hybrid. `Posting` has a `company` field.
+Single-company boards leave it blank and inherit the registry entry company;
+aggregator adapters (e.g. Unstop) populate it per posting (Unstop from
+`organisation.name`). The sweep writes `company_name = posting.company or
+registry entry company`, so aggregators show the real employer while
+single-company boards are unchanged.
 
 Hand-audited Indian companies live in
 `engine/data/operations/registry.json`: Groww is manual-verified; Sprinklr,
