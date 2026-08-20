@@ -57,22 +57,18 @@ coverage and classification for them.
 
 Xlake is designed to cover opportunities, not only jobs.
 
-The initial user-facing categories should follow the opportunities that Xlake
-can genuinely support. The first categories include:
+The current user-facing categories follow the opportunities that Xlake can
+actually support. Open Source is the hero category and is actively collected,
+including calendar programmes and good-first-issue listings. Current coverage
+also includes:
 
-- internships;
-- research programmes;
-- open-source programmes; and
-- early-career technical roles when reliable source coverage exists.
+- India-first internships, currently collected via Unstop; and
+- India-focused early-career technical roles where source coverage is good
+enough.
 
-As reliable coverage grows, Xlake can add categories such as:
-
-- fellowships;
-- scholarships;
-- grants and funds;
-- hackathons;
-- student and research programmes; and
-- other early-career technical opportunities.
+Scholarships and Hackathons & Competitions are in beta. As reliable coverage
+grows, Xlake can add categories such as fellowships, grants and funds, student
+and research programmes, and other early-career technical opportunities.
 
 Categories in the interface should be dynamic. Xlake should not advertise a
 category merely because it sounds useful; it should show a category when it has

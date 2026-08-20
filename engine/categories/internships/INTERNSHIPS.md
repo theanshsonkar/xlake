@@ -1,30 +1,49 @@
 # Internships - category doc
 
-This category is an India-first listing view for early-career internships. It
-uses the shared lake and shared `india_source` machinery; it does not own a
-separate database. Unstop is the main India-first source, alongside official
-employer and ATS listings collected by the engine.
+Status: LIVE. This category covers India-relevant internships for students and
+early-career candidates. It uses official sources only, links to the official
+page, and never submits an application. LinkedIn and Naukri are never accessed
+or republished.
 
-## Listing view
+## How collected
 
-`list_internships(india=None, surfaced=None, platform=None, company=None)` reads
-`engine/data/lake/opportunities.json` and returns only rows with
-`is_internship == True` and no non-null `record_type` (the job-row shape used by
-the lake). Optional filters select India-located or India-remote rows, surfaced
-rows, or exact case-insensitive platform/company values. It is read-only and
-performs no network access.
+Internships are a listing category collected by the engine only. The Unstop
+public feed adapter in `engine/adapters/boards.py` reads
+`unstop.com/api/public/opportunity/search-result` with `opportunity=internships`
+and `oppstatus=open`. It is bounded to 60 pages; over-long reads are marked
+`truncated`, and the adapter is churn-tolerant.
 
-The equivalent view-only CLI is:
+The `india_source` machinery in `pipeline/sweep.py` treats `{unstop, keka}` as
+India-first. `core/filters.classify` maps their generic-remote rows to
+`india_remote` and explicit-India rows to `india_located`. `is_internship` is
+classified from title words: `intern`, `internship`, `trainee`, or `apprentice`.
+`REMOTE_ANY` matches `online`, `virtual`, `remote`, `wfh`, or `hybrid`.
+
+## Registry and view
+
+The hand-audited Indian companies in
+`engine/data/operations/registry.json` include Groww (manual-verified) and
+Sprinklr, Zluri, Fractal, Observe.AI, and Uniphore (resolved from an audited
+lead list).
+
+`list_internships` in `engine/categories/internships/internships.py` reads the
+canonical lake and filters rows with `record_type` absent and `is_internship`
+true. Run its view-only CLI from `engine/`:
 
 ```bash
-cd engine
-python3 -m categories.internships.internships --list \
-  [--india] [--surfaced] [--platform unstop] [--company "Company Name"]
+python3 -m categories.internships.internships
 ```
 
-It prints a count and up to five title/company/location/URL summaries. The
-`is_internship` flag comes from `core.filters` classification at sweep time; the
-category view does not reclassify or infer it.
+~300+ Indian internships are surfaced at runtime; this is not a stored metric.
 
-Last worked: 2026-08-20 - added the read-only internships listing view, CLI,
-and offline regression coverage.
+## Jobs note
+
+Jobs are good enough via the same `india_source` machinery: India tech roles
+surface through it, and there is no separate jobs doc or worklist. We are not
+grinding more employers by design. Darwinbox is deferred as the biggest untapped
+India employer source.
+
+## Guardrails
+
+The one canonical lake is `engine/data/lake/opportunities.json`. Failed,
+blocked, or partial reads never close a row.

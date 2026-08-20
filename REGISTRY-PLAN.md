@@ -3,22 +3,27 @@
 A simple list of the source platforms and official pages Xlake uses or plans to
 use. Individual company boards are stored in the collector registry data.
 
-## Beta opportunity types
+## Opportunity categories
 
-This is the India-first beta catalog for students and early-career candidates. Global opportunities are included only when explicitly accessible to applicants in India. These types are user-browseable categories and are distinct from collection sources and adapters.
+This is the India-first catalog for students and early-career candidates. Global opportunities are included only when explicitly accessible to applicants in India. These types are user-browseable categories and are distinct from collection sources and adapters.
 
-- **Jobs** — entry-level/early-career full-time
-- **Internships** — student, summer, off-cycle, industrial training
-- **Apprenticeships** — structured work-and-learning; a standalone category
-- **Graduate & Campus Programmes** — GET, campus hiring, new-grad cohorts, rotational
-- **Fellowships** — structured/selective learning, work, or research
-- **Research Opportunities** — research internships, assistantships, labs, student research calls
-- **Open Source Opportunities** — mentorship, paid OSS internships, contributor programmes, issue-based pathways
-- **Grants & Funding** — project, student innovation, creator, startup, research funding
-- **Startup & Founder Programmes** — accelerators, incubators, founder/student-founder programmes, founder fellowships, pre-accelerators
-- **Community & Leadership Programmes** — campus ambassadors, communities, leadership cohorts, developer communities, volunteer leadership
+- **Jobs** — entry-level/early-career full-time — good enough; India tech roles surface through the shared `india_source` machinery, and we are not grinding more employers by design
+- **Internships** — student, summer, off-cycle, industrial training — LIVE via the Unstop public feed, `india_source` machinery, and hand-audited registry companies
+- **Apprenticeships** — structured work-and-learning; a standalone category — not yet implemented
+- **Graduate & Campus Programmes** — GET, campus hiring, new-grad cohorts, rotational — not yet implemented
+- **Fellowships** — structured/selective learning, work, or research — not yet implemented
+- **Research Opportunities** — research internships, assistantships, labs, student research calls — not yet implemented
+- **Open Source Opportunities** — mentorship, paid OSS internships, contributor programmes, issue-based pathways — LIVE and actively collected (calendar programmes + listing good-first-issues); hero category
+- **Grants & Funding** — project, student innovation, creator, startup, research funding — not yet implemented
+- **Startup & Founder Programmes** — accelerators, incubators, founder/student-founder programmes, founder fellowships, pre-accelerators — not yet implemented
+- **Community & Leadership Programmes** — campus ambassadors, communities, leadership cohorts, developer communities, volunteer leadership — not yet implemented
+- **Scholarships** — student funding and scholarship calls — BETA, promoted 2026-08-18
+- **Hackathons & Competitions** — build challenges, contests, and competitions — BETA, promoted 2026-08-18
 
-Only Learning-to-Opportunity Programmes remains deferred; this is focus, not a statement of importance. Scholarships and Hackathons & Competitions were promoted into beta on 2026-08-18 (strong fit for the student audience). Category-specific inclusion criteria, evidence, liveness/deadline rules, collection status, and priority will be defined one category at a time; no category should be understood as currently implemented or collectible.
+Learning-to-Opportunity Programmes remains deferred. Categories marked not yet
+implemented remain under that disclaimer; this is focus, not a statement of
+importance. Category-specific inclusion criteria, evidence, liveness/deadline
+rules, collection status, and priority will be defined one category at a time.
 
 ## Collection method by category
 Each category is either calendar (application windows, prose pages, few slow-changing sources; collected by engine plumbing + AI reading) or listing (high-volume structured data; engine only).
@@ -38,7 +43,10 @@ Each category is either calendar (application windows, prose pages, few slow-cha
 | Scholarships | calendar | engine + AI reading |
 | Hackathons & Competitions | calendar | engine + AI reading |
 
-Currently active category: Open Source (in progress). AI verification for calendar categories runs ~2x/month; the engine sweep runs once a day.
+Currently active categories: Open Source (LIVE and actively collected),
+Internships (LIVE), Jobs (good enough), Scholarships (BETA), and Hackathons &
+Competitions (BETA). AI verification for calendar categories runs ~2x/month;
+the engine sweep runs once a day.
 
 ## Future category-work convention
 
@@ -61,8 +69,8 @@ category is actively worked on at a time, and each document must cover:
 - acceptance gate
 - implementation and status evidence
 
-The beta catalog is a roadmap, not a claim that every category is currently
-supported. No category implementation is claimed by the scaffold or by this
+The beta catalog is a roadmap for the category statuses above. Categories marked
+not yet implemented are not claimed as supported by the scaffold or by this
 convention.
 
 ## Active sources
@@ -81,12 +89,13 @@ convention.
 
 ## Planned sources
 
-- **Google Summer of Code** — official open-source programme page — planned
-- **Other open-source programmes** — official programme pages — planned
-- **University and research-lab pages** — official research programmes — planned
+- **Additional university and research-lab pages** — official research programmes — planned
 - **Government scholarship and grant pages** — official programmes — planned
-- **Fellowship, scholarship, and hackathon pages** — official programme pages —
-  planned
+- **Additional fellowship, scholarship, and hackathon pages** — official programme pages — planned
+
+Open Source programme sources, including Google Summer of Code, are already
+tracked in the 31-source worklist at
+`engine/categories/open_source/OPEN_SOURCE.md`; they are not merely planned.
 
 ## Not used
 

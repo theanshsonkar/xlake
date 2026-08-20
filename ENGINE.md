@@ -6,8 +6,8 @@ not claim universal source coverage or a universal freshness SLA.
 
 ## Operating model
 The engine runs once a day and its deterministic sweep establishes liveness/freshness for every row. Categories collect in two modes:
-- Calendar/programme categories (Fellowships, Research, Open Source, Grants & Funding, Scholarships, Hackathons & Competitions, Startup/Founder, Community & Leadership, Graduate & Campus): the engine fetches pages, tracks liveness, dedups and stores; AI reads the prose pages to extract dates, eligibility and funding. This uses the evidence-gated extractor (adapters/extractors.py LLMExtractor) or, until an API key is configured, a human-in-the-loop AI verifier. AI records only facts it can quote from the official page and never invents; a failed/unclear read never closes a row. These are low-volume, so AI verification runs about twice a month.
-- Listing categories (Jobs, Internships, Apprenticeships, OSS good-first-issues): structured sources (boards/APIs/GitHub) collected by the engine only. OSS good-first-issues will be a category-owned GitHub collector under engine/categories/open_source/ (planned), modeled on the programmes collector, keyed by issue URL.
+- Calendar/programme categories (Fellowships, Research, Open Source, Grants & Funding, Scholarships, Hackathons & Competitions, Startup/Founder, Community & Leadership, Graduate & Campus): the engine fetches pages, tracks liveness, dedups and stores; AI reads the prose pages to extract dates, eligibility and funding. This uses the evidence-gated extractor (adapters/extractors.py LLMExtractor) or, until an API key is configured, a human-in-the-loop AI verifier. AI records only facts it can quote from the official page and never invents; a failed/unclear read never closes a row. These are low-volume, so AI verification runs about twice a month. Scholarships and Hackathons & Competitions were promoted into beta on 2026-08-18.
+- Listing categories (Jobs, Internships, Apprenticeships, OSS good-first-issues): structured sources (boards/APIs/GitHub) collected by the engine only. Internships and OSS good-first-issues are actively collected; the OSS good-first-issues collector is implemented under engine/categories/open_source/.
 
 Update this file whenever the engine changes.
 
@@ -64,7 +64,7 @@ relative to `engine/`:
 
 | Path | Role |
 |---|---|
-| `data/lake/opportunities.json` | The only canonical final user-facing opportunity lake. |
+| `data/lake/opportunities.json` | The one canonical final user-facing opportunity lake. It holds three record types: job rows (the absence of a `record_type` field), programme rows (`record_type='programme'`), and contribution rows (`record_type='contribution'`). |
 | `data/lake/hidden.json` | Retained non-default companion for rejected/hidden rows; not deleted. |
 | `data/lake/opportunities_history.json` | Historical opportunity evidence. |
 | `data/operations/registry.json` | Resolver-confirmed company-scoped board registry. |
@@ -84,6 +84,15 @@ maintains its operational rows separately and does not create a category lake.
 discovery cache. Raw recordings and the discovery cache are not the canonical
 user-facing data.
 
+### Pass-through safety
+
+The daily sweep reads and writes programme and contribution rows untouched: it
+never re-keys, merges, closes, or quality-annotates non-job rows. Only job rows
+enter the merge/liveness/quality path. This is locked by regression tests
+`tests/test_sweep_passthrough.py` and `tests/test_quality_record_types.py`.
+`core/quality.py` skips non-job rows: `_is_job_row` returns
+`record_type not in ('programme','contribution')`.
+
 ## Trust and source notes
 
 Discovery leads are never product verification. A row should not be displayed
@@ -99,6 +108,12 @@ read completeness need monitoring. AI is optional page enrichment and the quote
 gate prevents it from inventing source facts.
 
 ## CI
+
+The engine runs once a day: the board sweep runs at 06:30 IST (`0 1 * * *` UTC)
+and the page-reader runs at 08:00 IST (`30 2 * * *` UTC). The daily sweep also
+runs the Open Source programme and contribution collectors, then makes one
+atomic commit covering all record types and pushes it. The page-reader commits
+and pushes separately. Everything ends up on `origin/main`.
 
 The root workflow is `.github/workflows/sweep.yml`; its jobs keep
 `working-directory: engine`. It stages canonical lake files and operational run,
@@ -130,13 +145,12 @@ python3 tools/verify_oldengine_archive.py
 
 ### Official open-source programmes
 
-`python3 -m categories.open_source.programmes` reads the six official seed URLs from the category-local
-registry in `categories/open_source/programmes.py`. The registry is seed data only (stable
-IDs, organizers, URLs, path hints, and cadence); every source runs through one
-generic data-driven pipeline. Date patterns, applicant/organizer window tokens,
-and formal-programme vocabulary are shared module-level data so they can be
-edited without adding source parsers. Broad official-page discovery is a
-planned next layer and is not enabled yet.
+`python3 -m categories.open_source.programmes` from
+`engine/categories/open_source/programmes.py` tracks 31 official programme
+sources. Evidence-gated verification uses `programme_verifications.json`: it
+records only facts quoted from the official page and requires an official
+quote and URL for `status`, `opening_date`, and `deadline`. Programme rows set
+`record_type='programme'`.
 
 The pipeline extracts only source-backed quotes and URLs, resolves application
 links only on the seed or final redirect origin, and leaves unstated fields as
@@ -152,3 +166,47 @@ deactivate prior rows for that source; failed reads never close rows.
 Programme observations and rows are written atomically, malformed existing lake
 state fails closed, and merge preserves unrelated job rows and source-scoped
 liveness fields.
+
+### Open-source contributions
+
+`engine/categories/open_source/contributions.py` (run with
+`python3 -m categories.open_source.contributions`) collects good-first-issues
+from ~45 curated repositories plus GitHub Search discovery. Discovery is
+token-gated: it reads `GITHUB_TOKEN`, populated in CI from a `GH_PAT` secret or
+the built-in token; without a token it collects curated repositories only. The
+discovery floor is stars>=500, good-first-issues>=3, pushed within 60 days, plus
+an updated-recency qualifier. Quality filters drop issues stale >120 days or
+with >30 comments. Results are surfaced freshest-first, and each contribution
+row carries `language`, `difficulty`, `is_new_this_month` (30-day window), and
+`is_recently_active` (3-day window). A 7-day reconfirmation window retires
+unseen rows to `needs-confirmation` (`is_live=False`) rather than leaving them
+falsely live. Contribution rows set `record_type='contribution'`.
+
+## Internships and jobs
+
+Internships are collected via the Unstop public feed adapter in
+`engine/adapters/boards.py`: `unstop.com/api/public/opportunity/search-result`
+with `opportunity=internships` and `oppstatus=open`, bounded to 60 pages;
+over-long reads are marked truncated and are churn-tolerant. The `india_source`
+machinery in `pipeline/sweep.py` marks `{unstop, keka}` as India-first, and
+`core/filters.classify` maps their generic-remote rows to `india_remote` and
+explicit-India rows to `india_located`. `is_internship` is classified from
+title words (intern/internship/trainee/apprentice); `REMOTE_ANY` also matches
+online and virtual, plus remote/wfh/hybrid.
+
+Hand-audited Indian companies live in
+`engine/data/operations/registry.json`: Groww is manual-verified; Sprinklr,
+Zluri, Fractal, Observe.AI, and Uniphore were resolved from an audited lead
+list. A `list_internships` view/CLI exists in
+`engine/categories/internships/internships.py`. ~300+ Indian internships
+are surfaced at runtime, not as a stored metric. Jobs are good enough through
+the same `india_source` machinery: India tech roles surface through it, rather
+than grinding more employers by design.
+
+## Deferred / future work
+
+Deferred work includes Darwinbox (the biggest untapped India employer source),
+C4GT (JS-only site; it needs its JSON API or a JS-capable fetch, with no
+headless browser), the AWS move at launch (data moves from the git repo to
+S3/DB), and an AI API key to automate programme verification. Until then,
+programme verification is done manually by a human-in-the-loop AI.

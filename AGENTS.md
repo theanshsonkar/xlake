@@ -15,9 +15,9 @@ Work on ONE category per chat. Do not spread across categories. The category doc
 Categories are collected in one of two ways:
 
 - Calendar/programme categories - Fellowships, Research programmes, Open Source programmes, Grants & Funding, Scholarships, Hackathons & Competitions, Startup/Founder programmes, Community & Leadership programmes, Graduate & Campus programmes. They have application windows/deadlines and prose pages, with few official sources that change slowly. Collected by: the engine for fetching, liveness, dedup and storage, PLUS AI to read each page and extract dates/eligibility/funding. AI rule: only record what you can quote from the official page; never invent a date; a failed or unclear read never closes a row. Because these are low-volume, AI verification runs about twice a month (a human-in-the-loop AI does it until an API key is configured).
-- Listing categories - Jobs, Internships, Apprenticeships, and OSS good-first-issues. High volume, structured data (job boards / APIs / GitHub). Collected by the engine only.
+- Listing categories - Jobs, Internships, Apprenticeships, and OSS good-first-issues. High volume, structured data (job boards / APIs / GitHub), collected by the engine only. Internships and OSS good-first-issues are now actively collected.
 
-Schedule: the engine runs once a day for liveness/freshness.
+Schedule: the engine runs once a day for liveness/freshness. The daily sweep also runs the Open Source programme and contribution collectors, then makes one atomic commit covering all record types and pushes; the page-reader commits and pushes separately.
 
 ## Guardrails
 - Never fabricate opportunities, sources, dates, or eligibility. Every row needs an official source URL and evidence from that page.
@@ -28,7 +28,7 @@ Schedule: the engine runs once a day for liveness/freshness.
 
 ## Per-chat loop
 1. Open the category doc; read its status and source worklist.
-2. Pick the next source(s) marked not-started.
+2. Pick the next source(s) needing collection/verification or reconfirmation.
 3. Collect from the official source with evidence; verify.
 4. Merge results into the canonical lake.
 5. Update the category doc: mark sources collected/verified/blocked, update counts and a short 'last worked' note.
@@ -42,13 +42,19 @@ Schedule: the engine runs once a day for liveness/freshness.
 - engine/data/lake/opportunities.json - the one canonical lake
 
 ## Commands (run from engine/)
-- python3 -m pipeline.sweep ...
-- python3 -m pipeline.fetch greenhouse vercel
-- python3 -m pipeline.resolve --file data/operations/companies.txt
-- python3 -m pipeline.read_url URL
-- python3 -m pipeline.build_fixtures check
-- python3 -m categories.open_source.programmes
-- python3 -m unittest tests.test_robots
+- `python3 -m pipeline.sweep`
+- `python3 -m pipeline.fetch greenhouse vercel`
+- `python3 -m pipeline.resolve --file data/operations/companies.txt`
+- `python3 -m pipeline.read_url URL`
+- `python3 -m pipeline.build_fixtures check`
+- `python3 -m categories.open_source.programmes`
+- `python3 -m categories.open_source.contributions`
+- `python3 -m categories.internships.internships`
+- `python3 -m unittest tests.test_robots`
+
+Contribution discovery uses the `GITHUB_TOKEN` environment variable (from a
+`GH_PAT` secret in CI, else the built-in token). Without it, only curated
+repositories are collected.
 
 ## When things change
 Update ENGINE.md when the engine changes. Update a category's doc when its coverage changes.
