@@ -18,6 +18,8 @@ from urllib.parse import urlencode
 from core.paths import OPPORTUNITIES_PATH
 
 
+STALE_DAYS = 120
+MAX_COMMENTS = 30
 RECENT_ACTIVITY_DAYS = 3
 NEW_WINDOW_DAYS = 30
 RECONFIRM_WINDOW_DAYS = 7
@@ -158,6 +160,7 @@ def discover_repos(token, now, search_fetch=_default_search_fetch):
     if now is None:
         return []
     pushed_since = (now - timedelta(days=DISCOVERY_PUSHED_WITHIN_DAYS)).date().isoformat()
+    updated_since = (now - timedelta(days=STALE_DAYS)).date().isoformat()
     curated = {repo.casefold() for repo, _language in CURATED_REPOS}
     discovered = []
     seen = set(curated)
@@ -166,12 +169,13 @@ def discover_repos(token, now, search_fetch=_default_search_fetch):
             _discovery_sleep(DISCOVERY_REQUEST_DELAY)
         query = (
             "language:{lang} good-first-issues:>{minimum} stars:>={stars} "
-            "pushed:>={date} archived:false is:public"
+            "pushed:>={date} updated:>={updated} archived:false is:public"
         ).format(
             lang=language,
             minimum=DISCOVERY_MIN_GOOD_FIRST_ISSUES - 1,
             stars=DISCOVERY_MIN_STARS,
             date=pushed_since,
+            updated=updated_since,
         )
         try:
             result = search_fetch(query, token)
@@ -223,6 +227,11 @@ def _age_days(value, checked_at):
     if parsed is None or checked is None:
         return None
     return (checked - parsed).days
+
+
+def _updated_sort_key(row):
+    parsed = _parse_timestamp(row.get("updated_at"))
+    return parsed if parsed is not None else datetime.min.replace(tzinfo=timezone.utc)
 
 
 def _last_seen_age_days(value, checked_at):
@@ -307,6 +316,23 @@ def parse_repo(repo, issues, checked_at, language=None, discovery_source="curate
             continue
         if issue.get("assignee") or issue.get("assignees"):
             continue
+        labels = issue.get("labels", [])
+        if not any(
+            isinstance(label, dict)
+            and str(label.get("name", "")).strip().casefold()
+            in {"good first issue", "good-first-issue"}
+            for label in labels
+        ):
+            continue
+        activity_age_days = _age_days(issue.get("updated_at"), checked_at)
+        if activity_age_days is not None and activity_age_days > STALE_DAYS:
+            continue
+        try:
+            comment_count = int(issue.get("comments", 0) or 0)
+        except (TypeError, ValueError):
+            continue
+        if comment_count > MAX_COMMENTS:
+            continue
         rows.append(build_row(
             repo,
             issue,
@@ -315,7 +341,7 @@ def parse_repo(repo, issues, checked_at, language=None, discovery_source="curate
             discovery_source=discovery_source,
             repo_stars=repo_stars,
         ))
-    return rows
+    return sorted(rows, key=_updated_sort_key, reverse=True)
 
 
 def _load_json(path, default):
@@ -355,7 +381,11 @@ def merge_contributions(rows_by_repo, successful_repos, lake_path=OPPORTUNITIES_
         if row.get("record_type") == "contribution" and not row.get("contribution_id")
     ]
 
-    new_rows = [row for rows in rows_by_repo.values() for row in rows]
+    new_rows = sorted(
+        (row for rows in rows_by_repo.values() for row in rows),
+        key=_updated_sort_key,
+        reverse=True,
+    )
     current_ids = {row["contribution_id"] for row in new_rows}
     for row in new_rows:
         contribution_id = row["contribution_id"]
@@ -396,7 +426,11 @@ def merge_contributions(rows_by_repo, successful_repos, lake_path=OPPORTUNITIES_
             row["needs_confirmation"] = True
             row["liveness_reason"] = "not_reconfirmed"
 
-    merged_contributions = unkeyed + list(contribution_rows.values())
+    merged_contributions = sorted(
+        unkeyed + list(contribution_rows.values()),
+        key=_updated_sort_key,
+        reverse=True,
+    )
     _atomic_json(lake_path, preserved + merged_contributions)
     return merged_contributions
 

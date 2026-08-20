@@ -9,11 +9,14 @@ from unittest.mock import patch
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from categories.open_source.contributions import (
     CURATED_REPOS,
+    MAX_COMMENTS,
+    STALE_DAYS,
     build_row,
     collect,
     discover_repos,
     list_contributions,
     merge_contributions,
+    parse_repo,
 )
 
 
@@ -380,6 +383,74 @@ class TestContributionsCollector(unittest.TestCase):
         self.assertFalse(merged[0]["needs_confirmation"])
         self.assertEqual(merged[0]["last_seen"], now)
         self.assertNotIn("liveness_reason", merged[0])
+
+    def test_parse_repo_drops_stale_and_discussion_heavy_issues_and_sorts_kept_rows(self):
+        checked_at = datetime(2026, 8, 18, 8, 0, tzinfo=timezone.utc)
+        base = {
+            "title": "Contribution issue",
+            "labels": [{"name": "good first issue"}],
+            "state": "open",
+            "created_at": "2026-08-01T00:00:00Z",
+        }
+
+        def issue(number, updated_at, **extra):
+            return dict(
+                base,
+                html_url="https://github.com/owner/repo/issues/{}".format(number),
+                number=number,
+                updated_at=updated_at,
+                **extra,
+            )
+
+        rows = parse_repo(
+            "owner/repo",
+            [
+                issue(201, "2026-04-19T00:00:00Z"),
+                issue(202, "2026-08-17T00:00:00Z", comments=MAX_COMMENTS + 1),
+                issue(203, "2026-08-18T06:00:00Z", comments=MAX_COMMENTS),
+                issue(204, "2026-08-18T07:00:00Z", comments=0),
+                issue(
+                    205,
+                    "2026-08-18T07:30:00Z",
+                    pull_request={"url": "https://api.github.com/repos/owner/repo/pulls/205"},
+                ),
+                issue(
+                    206,
+                    "2026-08-18T07:30:00Z",
+                    assignee={"login": "contributor"},
+                    assignees=[{"login": "contributor"}],
+                ),
+            ],
+            checked_at,
+        )
+
+        self.assertEqual([row["issue_number"] for row in rows], [204, 203])
+        self.assertEqual(rows[0]["updated_at"], "2026-08-18T07:00:00Z")
+        self.assertEqual(rows[1]["updated_at"], "2026-08-18T06:00:00Z")
+        self.assertGreater(STALE_DAYS, 0)
+
+    def test_discover_repos_query_restricts_results_to_recently_updated_repositories(self):
+        from categories.open_source import contributions as module
+
+        queries = []
+
+        def fake_search(query, token):
+            queries.append(query)
+            return {"items": []}
+
+        with patch.object(module, "CURATED_REPOS", ()), \
+                patch.object(module, "DISCOVERY_LANGUAGES", ["Python"]), \
+                patch.object(module, "_discovery_sleep"):
+            discover_repos(
+                "test-token",
+                datetime(2026, 8, 18, 8, 0, tzinfo=timezone.utc),
+                search_fetch=fake_search,
+            )
+
+        self.assertEqual(len(queries), 1)
+        self.assertIn("updated:>=2026-04-20", queries[0])
+        self.assertIn("good-first-issues:>2", queries[0])
+        self.assertIn("stars:>=500", queries[0])
 
 if __name__ == "__main__":
     unittest.main()

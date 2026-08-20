@@ -151,7 +151,9 @@ python3 -m categories.open_source.contributions --list \
 ```
 
 It prints a count and up to five title/official-URL summaries. Collection with
-no arguments retains the existing network behavior. The 2026-08-18 live run
+no arguments retains the existing network behavior. Quality filters: drop
+issues stale >120d or with >30 comments; search discovery restricted to
+recently-updated issues; surfaced freshest-first. The 2026-08-18 live run
 found 116 repositories through search (45 curated plus 116 discovered),
 collected 909 contribution rows total (up from 101), and produced 76
 `is_recently_active` rows and 55 `is_new_this_month` rows. The final lake has
