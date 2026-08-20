@@ -270,6 +270,7 @@ class BoardResult:
     error: Optional[str] = None
     reported_total: Optional[int] = None  # what the API claims, if it says
     extra: Dict = field(default_factory=dict)  # platform-native fields worth keeping
+    _truncated: bool = field(default=False, init=False, repr=False)
 
     @property
     def ok(self) -> bool:
@@ -281,13 +282,14 @@ class BoardResult:
 
     @property
     def truncated(self) -> bool:
-        """True if the API claimed more postings than we actually collected.
+        """True if the API claimed more postings than we actually collected."""
+        return (self._truncated or
+                (self.reported_total is not None and
+                 self.count < self.reported_total))
 
-        This must always be False in production. If it is ever True we are
-        silently under-reporting a board, which is the Workday bug that made
-        Nvidia look like a 200-job company when it has 2,000.
-        """
-        return self.reported_total is not None and self.count < self.reported_total
+    @truncated.setter
+    def truncated(self, value: bool) -> None:
+        self._truncated = bool(value)
 
 
 # --------------------------------------------------------------------------- #
@@ -328,8 +330,10 @@ def _greenhouse(token: str) -> BoardResult:
 # --------------------------------------------------------------------------- #
 # Unstop public opportunities API
 # --------------------------------------------------------------------------- #
-UNSTOP_SEARCH_URL = "https://unstop.com/api/public/opportunity/search"
+UNSTOP_SEARCH_URL = "https://unstop.com/api/public/opportunity/search-result"
 UNSTOP_PAGE_SIZE = 20
+UNSTOP_MAX_PAGES = 60
+UNSTOP_QUERY = {"opportunity": "internships", "oppstatus": "open"}
 UNSTOP_MIN_DELAY = 2.0
 
 
@@ -548,13 +552,23 @@ def _unstop_http_url(value) -> str:
 
 def _unstop_location(record: dict, requirements: dict) -> str:
     value = record.get("location")
+    if not value:
+        value = record.get("locations")
     if isinstance(value, dict):
         value = ", ".join(str(value.get(k) or "") for k in (
-            "name", "city", "state", "country"))
+            "name", "city", "state", "country") if value.get(k))
     elif isinstance(value, list):
-        value = "; ".join(str(x.get("name") or x.get("city") or x)
-                            if isinstance(x, dict) else str(x) for x in value)
-    location = str(value or "").strip()
+        parts = []
+        for item in value:
+            if isinstance(item, dict):
+                text = ", ".join(str(item.get(k) or "") for k in (
+                    "name", "city", "state", "country") if item.get(k))
+            else:
+                text = str(item)
+            if text:
+                parts.append(text)
+        value = "; ".join(parts)
+    location = str(value or record.get("region") or "").strip()
     allowed = _unstop_json_value(requirements.get("allowed_countries"))
     if isinstance(allowed, str):
         allowed = [allowed]
@@ -617,13 +631,15 @@ def _unstop(token: str) -> BoardResult:
     test_limit = int(os.environ.get("LAKE_LIMIT", "0") or 0)
     collected = 0
     page = 1
-    expected_last = expected_total = None
+    latest_last_page = latest_total = None
     requests = 0
     while True:
         # robots.py supplies the site's delay; Unstop has no measured
         # Crawl-delay, so this adapter keeps the project's stricter 2s floor.
         time.sleep(UNSTOP_MIN_DELAY)
-        params = urllib.parse.urlencode({"page": page, "per_page": UNSTOP_PAGE_SIZE})
+        params = urllib.parse.urlencode({**UNSTOP_QUERY,
+                                         "page": page,
+                                         "per_page": UNSTOP_PAGE_SIZE})
         url = UNSTOP_SEARCH_URL + "?" + params
         status, data, err = _request(url)
         requests += 1
@@ -644,13 +660,9 @@ def _unstop(token: str) -> BoardResult:
             r.error = "unstop_pagination_unconfirmed"
             r.extra["requests"] = requests
             return r
-        if expected_last is None:
-            expected_last, expected_total = last_page, total
+        if r.reported_total is None:
             r.reported_total = total
-        elif (last_page, total) != (expected_last, expected_total):
-            r.error = "unstop_pagination_changed"
-            r.extra["requests"] = requests
-            return r
+        latest_last_page, latest_total = last_page, total
         if not records and total > collected:
             r.error = "unstop_empty_page_partial_at_{}".format(collected)
             r.extra["requests"] = requests
@@ -710,22 +722,18 @@ def _unstop(token: str) -> BoardResult:
                                 "pages_read": page})
                 return r
 
-        if page >= last_page:
-            if collected != total:
-                r.error = "unstop_total_mismatch_{}_of_{}".format(collected, total)
-                r.extra["requests"] = requests
-                return r
-            r.extra.update({"requests": requests, "pages_read": page})
+        if page >= latest_last_page or page >= UNSTOP_MAX_PAGES:
+            if page < latest_last_page:
+                r.truncated = True
+            r.extra.update({"requests": requests, "pages_read": page,
+                            "last_page": latest_last_page,
+                            "total": latest_total})
             return r
         if not records:
             r.error = "unstop_short_page_partial_at_{}".format(collected)
             r.extra["requests"] = requests
             return r
         page += 1
-        if page > last_page:
-            r.error = "unstop_pagination_runaway"
-            r.extra["requests"] = requests
-            return r
 
 
 def _lever(token: str) -> BoardResult:

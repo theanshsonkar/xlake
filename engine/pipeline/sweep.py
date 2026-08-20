@@ -148,10 +148,14 @@ def _merge_store(path: str, rows: List[Dict],
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
     lake: Dict[str, Dict] = {}
+    passthrough: List[Dict] = []
     if os.path.exists(path):
         try:
             for r in json.load(open(path)):
-                lake[_key(r)] = r
+                if r.get("record_type"):
+                    passthrough.append(r)
+                else:
+                    lake[_key(r)] = r
         except Exception:
             pass  # corrupt file: rebuild rather than crash
 
@@ -207,12 +211,14 @@ def _merge_store(path: str, rows: List[Dict],
             r["went_dead_at"] = now
             disappeared += 1
 
-    out = list(lake.values())
+    job_rows = list(lake.values())
 
-    # Set-level hygiene runs over the WHOLE lake, not just this run's rows,
+    # Set-level hygiene runs over the WHOLE job lake, not just this run's rows,
     # because "is this company over its cap" and "is this a duplicate" are
-    # questions about the set.
-    quality.annotate(out, cap=COMPANY_CAP)
+    # questions about the set. Non-job records are pass-through rows and must
+    # never receive job annotations or participate in job liveness.
+    quality.annotate(job_rows, cap=COMPANY_CAP)
+    out = job_rows + passthrough
 
     os.makedirs(DATA, exist_ok=True)
     tmp = path + ".tmp"

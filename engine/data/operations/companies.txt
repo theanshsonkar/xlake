@@ -215,3 +215,7 @@ InMobi,inmobi.com,india_product
 Druva,druva.com,india_product
 Innovaccer,innovaccer.com,india_product
 Gupshup,gupshup.io,india_product
+Ethinos,ethinos.com,india_product
+Vinove,vinove.com,india_product
+Techdome,techdome.io,india_product
+Dataction,dataction.com,india_product

@@ -247,7 +247,7 @@ REMOTE_OPEN = re.compile(
     r"work\s+from\s+anywhere|anywhere|any\s+location|fully\s+remote|remote\s*\(global\))\b",
     re.I,
 )
-REMOTE_ANY = re.compile(r"\b(remote|wfh|work\s+from\s+home|hybrid)\b", re.I)
+REMOTE_ANY = re.compile(r"\b(remote|wfh|work\s+from\s+home|hybrid|online|virtual)\b", re.I)
 
 # Remote restricted to a region that excludes India -> not actionable.
 REMOTE_EXCLUDES_INDIA = re.compile(

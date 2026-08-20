@@ -210,9 +210,9 @@
  "unstop|": {
   "platform": "unstop",
   "token": "",
-  "total_qualifying_ever": 39,
-  "qualifying_last_30d": 39,
-  "sweeps_run": 1,
-  "last_swept_at": "2026-08-18T14:38:07+00:00"
+  "total_qualifying_ever": 896,
+  "qualifying_last_30d": 896,
+  "sweeps_run": 3,
+  "last_swept_at": "2026-08-20T07:02:39+00:00"
  }
 }
