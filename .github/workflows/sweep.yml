@@ -63,6 +63,14 @@ jobs:
       - name: Show report
         run: tail -1 data/operations/runs.jsonl | python3 -m json.tool
 
+      - name: Refresh Open Source programmes
+        run: python3 -u -m categories.open_source.programmes
+
+      - name: Refresh Open Source contributions (good-first-issues)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: python3 -u -m categories.open_source.contributions
+
       # opportunities.json is the canonical lake. hidden.json is its retained
       # non-default companion; run and tier state are operational history.
       - name: Commit lake
@@ -70,8 +78,9 @@ jobs:
           git config user.name  "opportunity-lake-bot"
           git config user.email "bot@users.noreply.github.com"
           git add data/lake/opportunities.json data/lake/hidden.json \
-            data/operations/runs.jsonl data/operations/tier_state.json
-          git diff --staged --quiet || git commit -m "sweep: $(date -u +%Y-%m-%dT%H:%MZ)"
+            data/operations/runs.jsonl data/operations/tier_state.json \
+            data/operations/programmes_observations.json
+          git diff --staged --quiet || git commit -m "daily: sweep + programmes + contributions $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
 
       - name: Upload artifacts
