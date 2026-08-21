@@ -1,0 +1,32 @@
+[
+  {
+    "programme_id": "research-mitacs-globalink-research-internship",
+    "programme_name": "Mitacs Globalink Research Internship",
+    "organizer": "Mitacs",
+    "verified_at": "2026-08-21T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "open",
+    "deadline": "2026-09-16",
+    "eligibility": "Open to undergraduate students in Mitacs' partner countries",
+    "funding": "Funding to contribute to the cost of a round-trip airfare to Canada",
+    "official_url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are now open for summer 2027!",
+        "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
+      },
+      "deadline": {
+        "quote": "Application deadline: Wednesday, September 16, 2026, at 1:00 p.m. (Pacific time). Applications will not be accepted past the deadline.",
+        "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
+      },
+      "eligibility": {
+        "quote": "Open to undergraduate students in Mitacs' partner countries",
+        "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
+      },
+      "funding": {
+        "quote": "Funding to contribute to the cost of a round-trip airfare to Canada",
+        "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
+      }
+    }
+  }
+]

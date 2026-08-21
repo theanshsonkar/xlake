@@ -191,6 +191,12 @@ row carries `language`, `difficulty`, `is_new_this_month` (30-day window), and
 unseen rows to `needs-confirmation` (`is_live=False`) rather than leaving them
 falsely live. Contribution rows set `record_type='contribution'`.
 
+### Shared programme engine
+
+`engine/categories/programme_core.py` provides category-parameterized programme collection via `ProgrammeConfig(category, opportunity_type, source_registry, observations_path, verifications_path)`. `engine/categories/open_source/programmes.py` and `engine/categories/research/research.py` are thin wrappers over it; the Open Source public API is unchanged. Research rows are `record_type='programme'`, `opportunity_type='research_programme'`, `category='research'`, and follow the same pass-through rules as Open Source programme rows: the daily sweep never re-keys, merges, or closes non-job rows.
+
+`parse_programme` now includes an additive, evidence-gated normalization: when a single application date's official evidence quote contains `deadline`, it is recorded as the deadline and is not surfaced as an opening date. Research is collected via `python3 -m categories.research.research` and is not yet wired into the daily sweep.
+
 ## Internships and jobs
 
 Internships are collected via the Unstop public feed adapter in

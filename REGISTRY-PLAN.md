@@ -16,7 +16,7 @@ Jobs and Internships are the India-first, technical part of this catalog (studen
 - **Apprenticeships** — structured work-and-learning; a standalone category — not yet implemented
 - **Graduate & Campus Programmes** — GET, campus hiring, new-grad cohorts, rotational — not yet implemented
 - **Fellowships** — structured/selective learning, work, or research — not yet implemented
-- **Research Opportunities** — research internships, assistantships, labs, student research calls — not yet implemented
+- **Research Opportunities** — worldwide research internships, fellowships, and summer research programmes for students & early-career (e.g. Mitacs Globalink, DAAD RISE, CERN/DESY Summer Student, Amgen Scholars, Caltech SURF, ETH/EPFL summer fellowships, RIKEN IPA) — IN PROGRESS (worldwide, open to anyone, anywhere); calendar programmes on the shared programme engine; 9 verified seeds, first evidence-backed programme live (Mitacs Globalink)
 - **Open Source Opportunities** — mentorship, paid OSS internships, contributor programmes, issue-based pathways — LIVE and actively collected (calendar programmes + listing good-first-issues); hero category
 - **Grants & Funding** — project, student innovation, creator, startup, research funding — not yet implemented
 - **Startup & Founder Programmes** — accelerators, incubators, founder/student-founder programmes, founder fellowships, pre-accelerators — not yet implemented
