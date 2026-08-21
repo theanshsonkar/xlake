@@ -156,6 +156,26 @@ def _is_online(location_text):
     return any(word in value for word in ("online", "digital", "virtual", "remote", "everywhere", "worldwide"))
 
 
+def _normalize_mlh_location(location):
+    if location is None:
+        return None
+    value = re.sub(r"\s+", " ", str(location)).strip()
+    value = re.sub(r"\s+,", ",", value)
+    return value or None
+
+
+def _mlh_format_from_attrs(attrs):
+    for key in ("format", "data-format", "event-format", "data-event-format"):
+        if attrs.get(key):
+            return attrs[key]
+    return None
+
+
+def _mlh_is_digital(event):
+    value = str(event.get("format") or "").strip().casefold()
+    return value in {"digital", "online", "virtual"} or "onlineeventattendancemode" in value
+
+
 def build_row(
     source,
     *,
@@ -307,12 +327,22 @@ class _MlhEventParser(HTMLParser):
                     "location_parts": [],
                     "startDate": None,
                     "endDate": None,
+                    "format": _mlh_format_from_attrs(attrs),
                 }
                 self.depth = 1
                 return
         if self.current is None:
             return
         itemprop = (attrs.get("itemprop") or "").lower()
+        if self.current.get("format") is None:
+            self.current["format"] = _mlh_format_from_attrs(attrs)
+        if itemprop in ("eventattendancemode", "format"):
+            self.current["format"] = (
+                attrs.get("content")
+                or attrs.get("href")
+                or attrs.get("value")
+                or self.current.get("format")
+            )
         if tag.lower() not in {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}:
             self.depth += 1
         if tag.lower() == "h4":
@@ -374,18 +404,22 @@ def normalize_mlh(html, checked_at, source_url="https://mlh.io/seasons/events"):
         start, end = _iso_date(start_raw), _iso_date(end_raw)
         if end and date.fromisoformat(end) < today:
             continue
-        rows.append(build_row(
+        location = _normalize_mlh_location(event.get("location"))
+        row = build_row(
             "mlh",
             title=title,
             official_url=official_url,
-            location=event.get("location") or None,
+            location=location,
             start_date=start,
             end_date=end,
             tags=[],
             source_mechanism="mlh_events",
             evidence={"source": "mlh", "source_url": source_url, "start": start_raw, "end": end_raw},
             checked_at=checked_at,
-        ))
+        )
+        if _mlh_is_digital(event):
+            row["is_online"] = True
+        rows.append(row)
     return rows
 
 

@@ -127,6 +127,28 @@ class TestHackathonsCollector(unittest.TestCase):
             self.assertNotIn("utm_", row["official_url"])
         self.assertTrue(any("ref=calendar" in row["official_url"] for row in rows))
 
+    def test_mlh_normalizes_location_and_reads_digital_format(self):
+        html = """
+        <a itemscope itemtype="http://schema.org/Event" href="https://events.mlh.io/digital" data-format="digital">
+          <h4 itemprop="name">MLH Digital Hack Day</h4>
+          <meta itemprop="startDate" content="2026-09-01T09:00:00Z">
+          <meta itemprop="endDate" content="2026-09-02T23:59:00Z">
+          <span itemprop="location"></span>
+        </a>
+        <a itemscope itemtype="http://schema.org/Event" href="https://events.mlh.io/hyderabad">
+          <h4 itemprop="name">MLH Hyderabad Hack Day</h4>
+          <meta itemprop="startDate" content="2026-09-03T09:00:00Z">
+          <meta itemprop="endDate" content="2026-09-04T23:59:00Z">
+          <span itemprop="location"> Hyderabad ,   Telangana, IN </span>
+        </a>
+        """
+        rows = normalize_mlh(html, CHECKED_AT)
+        digital = next(row for row in rows if row["official_url"].endswith("/digital"))
+        hyderabad = next(row for row in rows if row["official_url"].endswith("/hyderabad"))
+        self.assertTrue(digital["is_online"])
+        self.assertIsNone(digital["location"])
+        self.assertEqual(hyderabad["location"], "Hyderabad, Telangana, IN")
+
     def test_closure_distinguishes_successful_source_and_failed_source(self):
         successful_old = {
             "record_type": "hackathon", "hackathon_id": "https://devpost.com/old",
