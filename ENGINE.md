@@ -6,14 +6,16 @@ not claim universal source coverage or a universal freshness SLA.
 
 ## Operating model
 The engine runs once a day and its deterministic sweep establishes liveness/freshness for every row. Categories collect in two modes:
-- Calendar/programme categories (Fellowships, Research, Open Source, Grants & Funding, Scholarships, Hackathons & Competitions, Startup/Founder, Community & Leadership, Graduate & Campus): the engine fetches pages, tracks liveness, dedups and stores; AI reads the prose pages to extract dates, eligibility and funding. This uses the evidence-gated extractor (adapters/extractors.py LLMExtractor) or, until an API key is configured, a human-in-the-loop AI verifier. AI records only facts it can quote from the official page and never invents; a failed/unclear read never closes a row. These are low-volume, so AI verification runs about twice a month. Scholarships and Hackathons & Competitions were promoted into beta on 2026-08-18.
+- Calendar/programme categories: Open Source programmes are fetched by the engine, with liveness tracked and prose pages read for dates, eligibility, and funding. Fellowships, Grants & Funding, Scholarships, and Hackathons & Competitions are planned / not yet built: category scaffolding only, not actively collected. This uses the evidence-gated extractor (adapters/extractors.py LLMExtractor) or, until an API key is configured, a human-in-the-loop AI verifier. AI records only facts it can quote from the official page and never invents; a failed/unclear read never closes a row. These are low-volume, so AI verification runs about twice a month.
 - Listing categories (Jobs, Internships, Apprenticeships, OSS good-first-issues): structured sources (boards/APIs/GitHub) collected by the engine only. Internships and OSS good-first-issues are actively collected; the OSS good-first-issues collector is implemented under engine/categories/open_source/.
 
 Update this file whenever the engine changes.
 
-Location handling is India-first for the audience, but the index is comprehensive: trustworthy opportunities are not dropped for being foreign. Rows carry a `location_bucket`; accessibility maps `india_located` to rank 0, `india_remote` and generic remote without a region bar to `remote_global` at rank 1, and `global_hiring` (overseas on-site or unknown location) to `foreign_onsite` at rank 2. Source-aware handling still means Unstop and Keka treat unspecified or generic remote locations as `india_remote`, while explicit foreign locations keep their normal bucket.
+Location handling is India-first for the audience, but jobs are not hidden by country. Every job is classified by accessibility: `india_located`, `remote_global`, `foreign_onsite`, or `excluded`, and ranked accordingly. Source-aware handling still means Unstop and Keka treat unspecified or generic remote locations as `india_remote`, while explicit foreign locations keep their normal bucket.
 
-The default feed surfaces the `india_located` and `remote_global` tiers first. Foreign-onsite rows are retained and searchable behind a filter, ranked lower rather than hidden. A source that bars India, such as `Remote – US only`, is classified as `excluded` and retained in `data/lake/hidden.json` with the honest `region_excludes_india` reason. Location no longer creates a hidden row: `hidden_reason()` hides only senior, `experience_3plus`, and non-technical rows; `not_india` remains only for back-compat and is no longer produced. `hidden_reason()` is internship-aware: for internship rows it surfaces only affirmatively technical, non-other-engineering titles and hides the rest as `non_technical`; non-internship job rows keep the prior behavior (only technical is False + discipline `non_tech` hides).
+The default feed shows ONLY `india_located` and `remote_global` rows. `foreign_onsite` rows are retained, searchable, and ranked lower. Rows classified as `excluded`, including `region_excludes_india` cases such as `Remote – US only`, go to `data/lake/hidden.json`. The old `not_india` location-hiding is no longer produced. `hidden_reason()` remains internship-aware: for internship rows it surfaces only affirmatively technical, non-other-engineering titles and hides the rest as `non_technical`; non-internship job rows keep the prior behavior (only technical is False + discipline `non_tech` hides).
+
+Jobs and Internships are India-first and technical for students and early-career candidates in India. All other categories - Open Source programmes and good-first-issues, Fellowships, Grants & Funding, Scholarships, and Hackathons & Competitions - are worldwide and open to anyone; never apply an India/location filter to them.
 
 On job rows, `quality.annotate` stamps `accessibility` and `access_rank`; non-job rows pass through untouched. `quality.report` emits `surfaced_by_accessibility`. `sweep.py` is unchanged: pass-through for non-job rows, the reconfirmation window, and Unstop/Keka `india_source` handling remain intact. Job rows now also carry `is_internship`, derived from title signals. Resolver registry writes preserve manually curated non-`resolver` entries unless a resolver result has the same platform/token.
 
@@ -150,23 +152,26 @@ python3 tools/verify_oldengine_archive.py
 ### Official open-source programmes
 
 `python3 -m categories.open_source.programmes` from
-`engine/categories/open_source/programmes.py` tracks 41 official programme
-sources. Evidence-gated verification uses `programme_verifications.json`: it
-records only facts quoted from the official page and requires an official
-quote and URL for `status`, `opening_date`, and `deadline`. Programme rows set
+`engine/categories/open_source/programmes.py` tracks 41 verified worldwide
+programme sources. Open Source programmes are worldwide and open to anyone.
+Evidence-gated verification records only facts quoted from the official page
+and their official URLs, and requires an official quote and URL for `status`,
+`opening_date`, and `deadline`. Programme rows set
 `record_type='programme'`.
 
 The pipeline extracts only source-backed quotes and URLs, resolves application
 links only on the seed or final redirect origin, and leaves unstated fields as
-`not_stated` or `needs_confirmation`. A surfaced `open`, `rolling`, or
-`opening_soon` record always has the registry's `official_url`. `rolling` also
-requires a resolvable absolute `application_url` restricted to the seed/final
-origin as its actionability evidence. `open` and `opening_soon` require no
-separate apply link: their exact official date window is sufficient, so
-`application_url` may be null and `official_url` is the action link. Only
-`open`, `rolling`, and exact-date `opening_soon` states become canonical
-programme rows. Closed and non-actionable reads are observation-only and may
-deactivate prior rows for that source; failed reads never close rows.
+`not_stated` or `needs_confirmation`. Only evidence-verified open, opening, or
+rolling records surface as live now (~6 live now); the rest are off-season. A
+surfaced `open`, `rolling`, or `opening_soon` record always has the registry's
+`official_url`. `rolling` also requires a resolvable absolute
+`application_url` restricted to the seed/final origin as its actionability
+evidence. `open` and `opening_soon` require no separate apply link: their exact
+official date window is sufficient, so `application_url` may be null and
+`official_url` is the action link. Only `open`, `rolling`, and exact-date
+`opening_soon` states become canonical programme rows. A failed or blocked read
+never closes a row, but a successful read showing a programme is off-season or
+closed can close a previously-live row.
 Programme observations and rows are written atomically, malformed existing lake
 state fails closed, and merge preserves unrelated job rows and source-scoped
 liveness fields.
@@ -207,14 +212,14 @@ Hand-audited Indian companies live in
 `engine/data/operations/registry.json`: Groww is manual-verified; Sprinklr,
 Zluri, Fractal, Observe.AI, and Uniphore were resolved from an audited lead
 list. A `list_internships` view/CLI exists in
-`engine/categories/internships/internships.py`. ~300+ Indian internships
-are surfaced at runtime, not as a stored metric. Jobs are good enough through
+`engine/categories/internships/internships.py`. ~179 technical internships
+surface at runtime, not as a stored metric. Jobs are good enough through
 the same `india_source` machinery: India tech roles surface through it, rather
 than grinding more employers by design.
 
 ## Deferred / future work
 
-Deferred work includes Darwinbox (the biggest untapped India employer source),
+Fellowships, Grants & Funding, Scholarships, and Hackathons & Competitions are planned / not yet built; their category scaffolding is not actively collected. Deferred work also includes Darwinbox (the biggest untapped India employer source),
 C4GT (JS-only site; it needs its JSON API or a JS-capable fetch, with no
 headless browser), the AWS move at launch (data moves from the git repo to
 S3/DB), and an AI API key to automate programme verification. Until then,

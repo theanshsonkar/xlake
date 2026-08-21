@@ -28,6 +28,7 @@ Schedule: the engine runs once a day for liveness/freshness. The daily sweep als
 - Use the one canonical lake: engine/data/lake/opportunities.json. Never create a second database for a category.
 - Never access or republish LinkedIn or Naukri. Never show a full description - link to the official source.
 - A failed, blocked, or partial read is not a closure. Only a successful read updates liveness.
+- On divergence, use git pull --rebase to keep the daily bot's data commits and replay our commits on top. Never use merge -s ours (it discards the bot's data) and never force-push.
 
 ## Per-chat loop
 1. Open the category doc; read its status and source worklist.

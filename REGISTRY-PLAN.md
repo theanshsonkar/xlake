@@ -21,8 +21,8 @@ Jobs and Internships are the India-first, technical part of this catalog (studen
 - **Grants & Funding** — project, student innovation, creator, startup, research funding — not yet implemented
 - **Startup & Founder Programmes** — accelerators, incubators, founder/student-founder programmes, founder fellowships, pre-accelerators — not yet implemented
 - **Community & Leadership Programmes** — campus ambassadors, communities, leadership cohorts, developer communities, volunteer leadership — not yet implemented
-- **Scholarships** — student funding and scholarship calls — BETA, promoted 2026-08-18
-- **Hackathons & Competitions** — build challenges, contests, and competitions — BETA, promoted 2026-08-18
+- **Scholarships** — student funding and scholarship calls — planned / not yet built
+- **Hackathons & Competitions** — build challenges, contests, and competitions — planned / not yet built
 
 Learning-to-Opportunity Programmes remains deferred. Categories marked not yet
 implemented remain under that disclaimer; this is focus, not a statement of
@@ -38,19 +38,24 @@ Each category is either calendar (application windows, prose pages, few slow-cha
 | Internships | listing | engine (boards/APIs) |
 | Apprenticeships | listing | engine (boards/APIs) |
 | Graduate & Campus Programmes | calendar | engine + AI reading |
-| Fellowships | calendar | engine + AI reading |
+| Fellowships | calendar | planned / not yet built |
 | Research Opportunities | calendar | engine + AI reading |
 | Open Source Opportunities | calendar (programmes) + listing (good-first-issues) | engine + AI for programmes; engine-only GitHub collector for issues |
-| Grants & Funding | calendar | engine + AI reading |
+| Grants & Funding | calendar | planned / not yet built |
 | Startup & Founder Programmes | calendar | engine + AI reading |
 | Community & Leadership Programmes | calendar | engine + AI reading |
-| Scholarships | calendar | engine + AI reading |
-| Hackathons & Competitions | calendar | engine + AI reading |
+| Scholarships | calendar | planned / not yet built |
+| Hackathons & Competitions | calendar | planned / not yet built |
+
+Open Source contributions (good-first-issues) are collected from curated repositories plus token-gated GitHub search; stale and over-commented issues are dropped, with a 7-day reconfirmation window.
+
+The one canonical lake holds three record types: jobs (no `record_type`), programmes, and contributions. Region-excluded roles are retained in hidden records with `region_excludes_india`, not deleted.
 
 Currently active categories: Open Source (LIVE and actively collected),
-Internships (LIVE), Jobs (good enough), Scholarships (BETA), and Hackathons &
-Competitions (BETA). AI verification for calendar categories runs ~2x/month;
-the engine sweep runs once a day.
+Internships (LIVE), and Jobs (good enough). Fellowships, Grants & Funding,
+Scholarships, and Hackathons & Competitions are planned / not yet built;
+category scaffolding is not actively collected. AI verification for active
+calendar programmes runs ~2x/month; the engine sweep runs once a day.
 
 ## Future category-work convention
 
@@ -73,7 +78,7 @@ category is actively worked on at a time, and each document must cover:
 - acceptance gate
 - implementation and status evidence
 
-The beta catalog is a roadmap for the category statuses above. Categories marked
+The category catalog is a roadmap for the statuses above. Categories marked
 not yet implemented are not claimed as supported by the scaffold or by this
 convention.
 

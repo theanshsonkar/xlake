@@ -60,7 +60,7 @@ python3 -m categories.internships.internships --list --foreign
 ```
 
 Bounded validation 2026-08-20: Unstop returned 800 open opportunities / 773
-internships; 179 surface as technical (cse=111, technical-unknown=68); ~150
+internships; ~179 surface as technical (cse=111, technical-unknown=68); ~150
 non-technical dropped from the feed vs. the prior generic filter. Runtime metric,
 not a stored count.
 The code change does not rewrite already-collected rows; the stored lake reflects

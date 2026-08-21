@@ -56,7 +56,7 @@ Status values: not-started / collected / verified / blocked. This universe was r
 | Hacktoberfest | https://hacktoberfest.com/ | collected | opening_soon; recategorized to community_event; read OK 2026-08-17 |
 | 24 Pull Requests | https://24pullrequests.com/ | collected | December; beginner-friendly; read OK 2026-08-17; off-season, will surface at next window |
 | Igalia Coding Experience | https://www.igalia.com/coding-experience/ | collected | closed; 2026 selection process closed |
-| X.Org EVoC | https://www.x.org/wiki/XorgEVoC/ | collected | Year-round; open to all; read OK 2026-08-17; off-season, will surface at next window |
+| X.Org EVoC | https://www.x.org/wiki/XorgEVoC/ | collected | Year-round; open to all; read OK 2026-08-17; FLAGGED possibly legacy/uncertain (some external program lists omit it) - reconfirm continuity before next window; not removed yet. |
 | Processing Foundation Fellowship | https://processingfoundation.org/fellowships/ | collected | Annual; read OK 2026-08-17; off-season, will surface at next window |
 | FOSSASIA Codeheat | https://codeheat.org/ | collected | Cycles; verify current edition at collection; read OK 2026-08-17; off-season, will surface at next window |
 | Code for GovTech (C4GT) | https://www.codeforgovtech.in/ | collected | unverified and deferred: JS-only site; needs its JSON API or a JS-capable fetch; not closed |
@@ -95,7 +95,7 @@ Status values: not-started / collected / verified / blocked. This universe was r
 ## Current programme state
 - Official programme sources tracked: 41 total.
 - Worklist status: 23 collected, 3 verified, 6 blocked, 9 not-started.
-- ~5 programme rows currently in the lake.
+- ~6 programme rows currently in the lake.
 - Current statuses: MLH Fellowship - `rolling`, `live`; GSSoC - `open`, `live`; Outreachy - `opening_soon`; Igalia Coding Experience - `closed`; Hacktoberfest - `opening_soon`, recategorized to `community_event`.
 - C4GT remains unverified, not closed, and deferred pending its JSON API or a JS-capable fetch.
 - Last worked: 2026-08-21 - added 10 verified worldwide programmes (31->41) and a rolling-open evidence record for Sequoia OSS Fellowship.

@@ -33,7 +33,7 @@ Xlake is also not a career-preparation product, a resume product, a social
 network, or an application portal. Its job is discovery and clear source
 information.
 
-The official source is always the primary destination.
+The official source is always the primary destination. Everything lives in one canonical lake with three record types: jobs (the default), Open Source programmes, and Open Source contributions (good-first-issues).
 
 ## 2. Who Xlake is for
 
@@ -53,6 +53,11 @@ for this group, rather than becoming a broad, low-quality listing site for
 every career field. Other fields can be added when Xlake has dependable source
 coverage and classification for them.
 
+Jobs and Internships are India-first and technical for students and early-career
+candidates in India. Every other category - Open Source programmes and
+good-first-issues, Fellowships, Grants & Funding, Scholarships, and Hackathons &
+Competitions - is worldwide and open to anyone.
+
 ## 3. Opportunity scope
 
 Xlake is designed to cover opportunities, not only jobs.
@@ -66,7 +71,8 @@ also includes:
 - India-focused early-career technical roles where source coverage is good
 enough.
 
-Scholarships and Hackathons & Competitions are in beta. As reliable coverage
+Scholarships and Hackathons & Competitions are planned / not yet built
+(category scaffolding only, not actively collected). As reliable coverage
 grows, Xlake can add categories such as fellowships, grants and funds, student
 and research programmes, and other early-career technical opportunities.
 
@@ -76,11 +82,12 @@ real, searchable opportunities within it.
 
 ## 4. Geography
 
-Xlake covers:
-
-- opportunities located in India;
-- India-remote opportunities; and
-- global opportunities relevant to Indian students and early-career candidates.
+Jobs are not hidden by country. Each job is classified by accessibility as
+India-located, remote-global, foreign on-site, or excluded, and ranked
+accordingly. The default feed shows India-located and remote-global roles.
+Foreign on-site roles are retained, searchable, and ranked lower. Roles whose
+stated location rules out Indian applicants are kept as hidden records, not
+deleted.
 
 A global opportunity can appear when an official source explicitly welcomes
 international or Indian applicants. Xlake may also show a strong global
@@ -399,7 +406,8 @@ them:
 - Xlake is a free search engine for opportunities.
 - The initial audience is Indian students and early-career technical/STEM
   candidates with roughly zero to two years of experience.
-- Xlake covers India, India-remote, and relevant global opportunities.
+- Jobs are classified as India-located, remote-global, foreign on-site, or excluded; the default feed shows India-located and remote-global roles, while foreign on-site roles are retained, searchable, and ranked lower.
+- Roles whose stated location rules out Indian applicants are retained as hidden records, not deleted.
 - Xlake includes global opportunities with explicit international access and
   may include strong global opportunities whose visa or work-permission
   conditions are unknown, as long as that uncertainty is clear.
