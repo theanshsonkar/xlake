@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Unstop Future Hack",
+    "seo_url": "https://unstop.com/hackathon/future-hack",
+    "organisation": {"name": "Unstop Community"},
+    "region": "Worldwide",
+    "regnRequirements": {"end_regn_dt": "2026-09-05T23:59:00Z", "eligibility": "Open to all students"},
+    "end_date": "2026-09-09T23:59:00Z",
+    "prizes": [{"amount": "$20,000"}],
+    "tags": [{"name": "AI"}],
+    "status": "LIVE"
+  },
+  {
+    "title": "Unstop Past Hack",
+    "seo_url": "https://unstop.com/hackathon/past-hack",
+    "organisation": {"name": "Old Organisers"},
+    "region": "Delhi",
+    "regnRequirements": {"end_regn_dt": "2026-08-01T23:59:00Z", "eligibility": "Open to all"},
+    "end_date": "2026-08-03T23:59:00Z",
+    "prizes": "$1,000",
+    "tags": [],
+    "status": "LIVE"
+  },
+  {
+    "title": "Unstop Upcoming Hack",
+    "seo_url": "https://unstop.com/hackathon/upcoming-hack",
+    "organisation": {"name": "Future Org"},
+    "region": "Remote",
+    "regnRequirements": {"end_regn_dt": "2026-10-01T23:59:00Z", "eligibility": "Developers"},
+    "end_date": null,
+    "prizes": "$5,000",
+    "tags": [{"name": "Cloud"}],
+    "status": "upcoming"
+  }
+]

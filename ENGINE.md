@@ -97,7 +97,13 @@ never re-keys, merges, closes, or quality-annotates non-job rows. Only job rows
 enter the merge/liveness/quality path. This is locked by regression tests
 `tests/test_sweep_passthrough.py` and `tests/test_quality_record_types.py`.
 `core/quality.py` skips non-job rows: `_is_job_row` returns
-`record_type not in ('programme','contribution')`.
+`record_type not in ('programme','contribution','hackathon')`. Hackathon rows are
+non-job pass-through records; this is the one shared-engine behavior change for
+the category. `engine/categories/hackathons/` is a structured live-source
+collector for Devpost, MLH, and Unstop, built on the contributions.py pattern
+with direct stdlib `urllib` and no adapter changes. It runs as its own daily
+sweep step; the sweep never merges, closes, or quality-annotates these rows, and
+the collector owns their freshness/liveness.
 
 ## Trust and source notes
 

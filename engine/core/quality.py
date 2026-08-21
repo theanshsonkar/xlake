@@ -415,7 +415,7 @@ def normalise_title(title: str) -> str:
 
 
 def _is_job_row(row: Dict) -> bool:
-    return row.get("record_type") not in ("programme", "contribution")
+    return row.get("record_type") not in ("programme", "contribution", "hackathon")
 
 
 def annotate(rows: Iterable[Dict], cap: int = 10,

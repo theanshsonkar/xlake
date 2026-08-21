@@ -22,7 +22,7 @@ Jobs and Internships are the India-first, technical part of this catalog (studen
 - **Startup & Founder Programmes** — accelerators, incubators, founder/student-founder programmes, founder fellowships, pre-accelerators — not yet implemented
 - **Community & Leadership Programmes** — campus ambassadors, communities, leadership cohorts, developer communities, volunteer leadership — not yet implemented
 - **Scholarships** — student funding and scholarship calls — planned / not yet built
-- **Hackathons & Competitions** — build challenges, contests, and competitions — planned / not yet built
+- **Hackathons & Competitions** — worldwide upcoming/open build-and-ship hackathons with official links and dates (Devpost + MLH + Unstop) — IN PROGRESS (worldwide, open to anyone, anywhere); structured live-source collector, fresh daily, keyed by official URL; ~348 upcoming surfaced in first run
 
 Learning-to-Opportunity Programmes remains deferred. Categories marked not yet
 implemented remain under that disclaimer; this is focus, not a statement of

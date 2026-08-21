@@ -71,6 +71,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: python3 -u -m categories.open_source.contributions
 
+      - name: Refresh Hackathons
+        run: python3 -u -m categories.hackathons.hackathons
+
       # opportunities.json is the canonical lake. hidden.json is its retained
       # non-default companion; run and tier state are operational history.
       - name: Commit lake

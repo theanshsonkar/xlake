@@ -1,0 +1,42 @@
+[
+  {
+    "title": "RevenueCat Shipaton 2026",
+    "url": "https://revenuecat.devpost.com/",
+    "organization_name": "RevenueCat",
+    "displayed_location": {"location": "Online"},
+    "submission_period_dates": "Jul 31 - Oct 01, 2026",
+    "prize_amount": "<strong>$740,000</strong>",
+    "themes": [{"name": "Mobile"}, {"name": "AI"}],
+    "open_state": "open"
+  },
+  {
+    "title": "Autumn Build Challenge",
+    "url": "https://example.devpost.com/autumn-build",
+    "organization_name": "Example Labs",
+    "displayed_location": {"location": "New York"},
+    "submission_period_dates": "Sep 01 - Sep 20, 2026",
+    "prize_amount": "$10,000",
+    "themes": [{"name": "Web"}],
+    "open_state": "upcoming"
+  },
+  {
+    "title": "Past Build Challenge",
+    "url": "https://example.devpost.com/past-build",
+    "organization_name": "Example Labs",
+    "displayed_location": {"location": "Remote"},
+    "submission_period_dates": "Jul 01 - Aug 01, 2026",
+    "prize_amount": "$1,000",
+    "themes": [],
+    "open_state": "open"
+  },
+  {
+    "title": "Date To Be Announced Hackathon",
+    "url": "https://example.devpost.com/tba",
+    "organization_name": "Example Labs",
+    "displayed_location": {"location": "Worldwide"},
+    "submission_period_dates": "to be announced",
+    "prize_amount": null,
+    "themes": [],
+    "open_state": "upcoming"
+  }
+]
