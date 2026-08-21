@@ -150,7 +150,7 @@ python3 tools/verify_oldengine_archive.py
 ### Official open-source programmes
 
 `python3 -m categories.open_source.programmes` from
-`engine/categories/open_source/programmes.py` tracks 31 official programme
+`engine/categories/open_source/programmes.py` tracks 41 official programme
 sources. Evidence-gated verification uses `programme_verifications.json`: it
 records only facts quoted from the official page and requires an official
 quote and URL for `status`, `opening_date`, and `deadline`. Programme rows set

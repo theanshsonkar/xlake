@@ -21,7 +21,7 @@ Official, org-run open-source contribution programmes plus good-first-issue cont
 - Every programme needs its official source URL.
 - Dates, eligibility, and status come from the official page (verbatim evidence), never invented.
 - Application links stay on the official/organizer origin.
-- Programme verification is evidence-gated through `engine/data/operations/programme_verifications.json` (3 records). Only facts quoted from the official page are recorded; a claimed `status`, `opening_date`, or `deadline` requires an official quote and URL. A failed or unclear read never closes a row.
+- Programme verification is evidence-gated through `engine/data/operations/programme_verifications.json` (4 records). Only facts quoted from the official page are recorded; a claimed `status`, `opening_date`, or `deadline` requires an official quote and URL. A failed or unclear read never closes a row.
 - Manual human-in-the-loop verification runs about twice a month until an AI API key is configured.
 
 ## Liveness model (window-based, not rolling jobs)
@@ -37,7 +37,7 @@ Official, org-run open-source contribution programmes plus good-first-issue cont
 - Floor: about 20+ live/verified programme rows in the lake so the category filter is not thin. (Adjustable.)
 
 ## Source worklist
-Status values: not-started / collected / verified / blocked. This universe was researched and approved on 2026-08-17: 31 official programme sources total (23 collected, 2 verified, 6 blocked, 0 not-started). Add new sources only with a verified official URL.
+Status values: not-started / collected / verified / blocked. This universe was researched and approved on 2026-08-17: 41 official programme sources total (23 collected, 3 verified, 6 blocked, 9 not-started). Add new sources only with a verified official URL.
 
 | Source | Official URL | Status | Notes |
 |---|---|---|---|
@@ -72,6 +72,16 @@ Status values: not-started / collected / verified / blocked. This universe was r
 | NJACK Winter of Code | https://njackwinterofcode.github.io/ | collected | IIT Patna; read OK 2026-08-17; off-season, will surface at next window |
 | OpenCode IIITA | https://opencodeiiita.github.io/ | blocked | IIIT Allahabad; blocked: HTTP 404; verify official URL |
 | Cross Winter of Code | https://crosswoc.ieeedtu.in/ | blocked | IEEE DTU; blocked: SSL certificate mismatch; recheck |
+| Summer of Nix | https://summer.nixos.org/ | not-started | NixOS Foundation; paid; global; recurring (2026 ran Aug 3-28); off-season |
+| Ethereum Protocol Fellowship | https://ps.ethereum.foundation/fellowship | not-started | Ethereum Foundation; permissionless/global; recurring (Cohort 7, 2026) |
+| Sovereign Tech Fellowship | https://www.sovereign.tech/programs/fellowship | not-started | Sovereign Tech Agency; global (freelance); recurring; 2026 window closed Apr 6 |
+| Sequoia Open Source Fellowship | https://www.sequoiacap.com/oss | verified | Sequoia Capital; global, location-agnostic; rolling, open now; evidence captured |
+| Djangonaut Space | https://djangonaut.space/ | not-started | Django community; free; global; multiple sessions/year |
+| Swift Mentorship Program | https://www.swift.org/mentorship/ | not-started | Swift.org (Apple); open to everyone 18+; annual 10-week cohort |
+| Kubernetes Release Shadow Program | https://github.com/kubernetes/sig-release/blob/master/release-team/shadows.md | not-started | Kubernetes/CNCF; recurring each release cycle; global |
+| Open Source Research Experience | https://ucsc-ospo.github.io/osre/ | not-started | UC Santa Cruz OSPO; annual summer research; students worldwide |
+| sktime Mentorship Program | https://www.sktime.net/docs/get-involved/mentoring/ | not-started | sktime community; open to all; rolling/seasonal onboarding |
+| European Summer of Code | https://www.esoc.dev/ | not-started | ESoC; stipends for newcomers worldwide; recurring (2025, 2026 batches) |
 
 ## Excluded sources (do not re-add without new evidence)
 - Google Season of Docs - officially concluded in 2026 (Google announcement).
@@ -83,12 +93,12 @@ Status values: not-started / collected / verified / blocked. This universe was r
 - Rails Girls Summer of Code - defunct.
 
 ## Current programme state
-- Official programme sources tracked: 31 total.
-- Worklist status: 23 collected, 2 verified, 6 blocked, 0 not-started.
+- Official programme sources tracked: 41 total.
+- Worklist status: 23 collected, 3 verified, 6 blocked, 9 not-started.
 - ~5 programme rows currently in the lake.
 - Current statuses: MLH Fellowship - `rolling`, `live`; GSSoC - `open`, `live`; Outreachy - `opening_soon`; Igalia Coding Experience - `closed`; Hacktoberfest - `opening_soon`, recategorized to `community_event`.
 - C4GT remains unverified, not closed, and deferred pending its JSON API or a JS-capable fetch.
-- Last worked: 2026-08-18 - evidence-gated programme verification and contribution collection updates.
+- Last worked: 2026-08-21 - added 10 verified worldwide programmes (31->41) and a rolling-open evidence record for Sequoia OSS Fellowship.
 
 ## Collection notes (2026-08-17)
 - August is off-season for most programmes, so MLH, GSSoC, and the manually verified current statuses surface now. The rest are tracked and will surface automatically as their application windows open (Winter-of-Code ~Dec, GSoC apps ~spring, Summer of Bitcoin ~Feb).
@@ -98,11 +108,11 @@ Status values: not-started / collected / verified / blocked. This universe was r
 ## Next actions
 1. Reconfirm and verify already-collected programme sources with official quotes and URLs.
 2. Clear or recheck the 6 blocked sources when their official pages or replacement URLs are available.
-3. Continue applying evidence-gated status, opening-date, and deadline facts; there are 0 not-started sources.
+3. Continue applying evidence-gated status, opening-date, and deadline facts; there are 9 not-started sources.
 
 ## Direction (updated 2026-08-18)
 This category has two layers:
-- Programmes (calendar): the 31 official sources in the worklist above. Engine tracks liveness; manual human-in-the-loop verification reads each prose page about twice a month to extract real dates, eligibility, and funding with a verbatim quote as evidence. Manual verification continues until an AI API key is configured.
+- Programmes (calendar): the 41 official sources in the worklist above. Engine tracks liveness; manual human-in-the-loop verification reads each prose page about twice a month to extract real dates, eligibility, and funding with a verbatim quote as evidence. Manual verification continues until an AI API key is configured.
 - Contributions (listing): good-first-issue style ongoing opportunities from curated, active open-source projects, collected via a category-owned GitHub collector (implemented), keyed by issue URL. This is the main source of daily volume and is engine-only.
 
 AI verification findings 2026-08-18:

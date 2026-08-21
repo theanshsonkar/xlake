@@ -11,6 +11,9 @@ Read this first. It tells any AI chat how to work on this project.
 ## The one rule
 Work on ONE category per chat. Do not spread across categories. The category doc is your worklist and your memory.
 
+## Audience
+Jobs and Internships are India-first and technical (students and early-career candidates in India). Every other category - Open Source (programmes and good-first-issues), Fellowships, Research programmes, Grants & Funding, Scholarships, and Hackathons & Competitions - is worldwide and open to anyone, anywhere. Never apply an India or location filter to these worldwide categories; capture each opportunity's own eligibility from its official page. Open-source programmes in particular are global.
+
 ## Two kinds of categories
 Categories are collected in one of two ways:
 

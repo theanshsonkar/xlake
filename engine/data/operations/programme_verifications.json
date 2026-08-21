@@ -72,5 +72,15 @@
     },
     "opportunity_type": "community_event",
     "verification_note": "RECATEGORIZED: 2026 Hacktoberfest is no longer a pull-request / good-first-issue programme. It is now local/online Fests about open-source AI (October 2026, 300+ events) under MLH and DEV. Host applications open soon."
+  },
+  {
+    "programme_id": "sequoia-oss-fellowship",
+    "programme_status": "open",
+    "official_evidence": {
+      "status": {
+        "quote": "We will take applications and accept fellows on a rolling basis.",
+        "url": "https://www.sequoiacap.com/oss"
+      }
+    }
   }
 ]

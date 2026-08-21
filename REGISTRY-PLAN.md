@@ -3,9 +3,13 @@
 A simple list of the source platforms and official pages Xlake uses or plans to
 use. Individual company boards are stored in the collector registry data.
 
+## Audience rule
+
+Jobs and Internships are India-first and technical: they target students and early-career candidates in India. Every other category is worldwide and open to anyone, anywhere: Open Source (programmes and good-first-issues), Fellowships, Research programmes, Grants & Funding, Scholarships, and Hackathons & Competitions. Never apply an India or other location filter to these worldwide categories; record each opportunity's own eligibility from its official page instead. Open-source programmes in particular are global.
+
 ## Opportunity categories
 
-This is the India-first catalog for students and early-career candidates. For the listing categories (Jobs and Internships), the engine keeps a comprehensive global index rather than hiding non-India roles: India-located and remote/global opportunities are surfaced first for an India-based user, while foreign on-site roles are retained and searchable behind a filter, ranked lower by accessibility. These types are user-browseable categories and are distinct from collection sources and adapters.
+Jobs and Internships are the India-first, technical part of this catalog (students and early-career candidates). All other categories are worldwide and open to anyone (see the Audience rule above). For the listing categories (Jobs and Internships), the engine keeps a comprehensive global index rather than hiding non-India roles: India-located and remote/global opportunities are surfaced first for an India-based user, while foreign on-site roles are retained and searchable behind a filter, ranked lower by accessibility. These types are user-browseable categories and are distinct from collection sources and adapters.
 
 - **Jobs** — entry-level/early-career full-time — good enough; India tech roles surface through the shared `india_source` machinery, and we are not grinding more employers by design
 - **Internships** — student, summer, off-cycle, industrial training — LIVE via the Unstop public feed, `india_source` machinery, and hand-audited registry companies
@@ -94,7 +98,7 @@ convention.
 - **Additional fellowship, scholarship, and hackathon pages** — official programme pages — planned
 
 Open Source programme sources, including Google Summer of Code, are already
-tracked in the 31-source worklist at
+tracked in the 41-source worklist at
 `engine/categories/open_source/OPEN_SOURCE.md`; they are not merely planned.
 
 ## Not used
