@@ -53,6 +53,9 @@ jobs:
       # The registry is small and company-scoped (data/operations/registry.json,
       # built by resolve_companies.py), not the raw Common Crawl universe, so
       # there is no enumeration-cache step here.
+      - name: Refresh community internship lists (zshah101)
+        run: python3 -u -m categories.internships.lists
+
       - name: Sweep the resolved registry
         env:
           LAKE_WORKERS: "8"

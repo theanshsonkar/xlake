@@ -77,3 +77,34 @@ India employer source.
 
 The one canonical lake is `engine/data/lake/opportunities.json`. Failed,
 blocked, or partial reads never close a row.
+
+## Community lists (2026-08-22)
+
+The category also ingests zshah101's
+`Automated-List-Of-Summer-2027-and-Fall-2026-Tech-Internships` (MIT © Shah
+Zain); provenance and attribution are recorded on every row. The machine-readable
+source is `docs/api/jobs.json` via `raw.githubusercontent.com`. Its scope is US
+Software and Data/ML internships for Summer 2027 and Fall 2026.
+
+The category-owned collector is `python3 -m categories.internships.lists`. It
+runs **before the daily sweep**, so accessibility, quality, and deduplication
+apply in the same run. It accepts **official employer/ATS apply links only**
+(Workday, Greenhouse, Ashby, Lever, SmartRecruiters, Workable, and Oracle
+Cloud), never a repository or aggregator URL. Rows are job-shaped (`record_type`
+absent), and `is_internship` is set from the source authority, including Co-op
+listings that the title regex would miss. Accessibility uses `core.filters`: US
+roles land in `foreign_onsite` (kept and searchable, ranked below India/remote),
+while remote roles land in the remote tier.
+
+Rows are deduplicated by normalized official apply URL across the whole lake
+(board jobs, Unstop, and within the list). The source owns liveness with a
+7-day reconfirmation window: a listing dropped by the source after a successful
+fetch is closed; a failed fetch never closes rows.
+
+dreamworkhq/Tech-Internships-2027 was **EVALUATED and SKIPPED**: MIT-licensed
+but every listing links to `www.dreamworkhq.com/job/<uuid>` (an intermediary
+aggregator), never the employer's official apply URL — rejected under the
+official-links-only rule, same class as LinkedIn/Naukri.
+
+Last worked 2026-08-22: first run added 241 rows, deduped 7 against existing
+lake rows, and produced 233 `foreign_onsite` / 8 remote.

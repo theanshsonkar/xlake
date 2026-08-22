@@ -12,7 +12,7 @@ Jobs and Internships are India-first and technical: they target students and ear
 Jobs and Internships are the India-first, technical part of this catalog (students and early-career candidates). All other categories are worldwide and open to anyone (see the Audience rule above). For the listing categories (Jobs and Internships), the engine keeps a comprehensive global index rather than hiding non-India roles: India-located and remote/global opportunities are surfaced first for an India-based user, while foreign on-site roles are retained and searchable behind a filter, ranked lower by accessibility. These types are user-browseable categories and are distinct from collection sources and adapters.
 
 - **Jobs** — entry-level/early-career full-time — good enough; India tech roles surface through the shared `india_source` machinery, and we are not grinding more employers by design
-- **Internships** — student, summer, off-cycle, industrial training — LIVE via the Unstop public feed, `india_source` machinery, and hand-audited registry companies
+- **Internships** — student, summer, off-cycle, industrial training — LIVE via the Unstop public feed, `india_source` machinery, hand-audited registry companies, and the zshah101 community tech-internship list (MIT, official ATS apply links only, US Summer 2027 + Fall 2026, deduped and accessibility-ranked)
 - **Apprenticeships** — structured work-and-learning; a standalone category — not yet implemented
 - **Graduate & Campus Programmes** — GET, campus hiring, new-grad cohorts, rotational — not yet implemented
 - **Fellowships** — structured/selective learning, work, or research — not yet implemented
