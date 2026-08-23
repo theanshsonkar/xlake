@@ -67,6 +67,75 @@ class TestQualityRecordTypes(unittest.TestCase):
         self.assertTrue(any(row["dup_of"] for row in jobs))
         self.assertEqual(len(rows), 28)
 
+    def test_unknown_record_type_bypasses_job_hygiene(self):
+        rows = [
+            {
+                "url": "https://jobs.example/job",
+                "token": "acme-job",
+                "platform": "greenhouse",
+                "title": "Software Engineer",
+                "location": "Bengaluru, India",
+                "location_bucket": "location-job",
+                "posted_on": "2026-08-20",
+                "first_seen": "2026-08-20",
+            },
+            {
+                "record_type": "programme",
+                "url": "https://acme.example/programme",
+                "token": "acme-programme",
+                "platform": "programme",
+                "title": "Software Engineering Programme",
+                "location": "Remote",
+                "location_bucket": "location-programme",
+                "posted_on": "2026-08-20",
+                "first_seen": "2026-08-20",
+            },
+            {
+                "record_type": "contribution",
+                "url": "https://github.com/acme/repo/issues/1",
+                "token": "acme-contribution",
+                "platform": "github",
+                "title": "Good first issue",
+                "location": "Remote",
+                "location_bucket": "location-contribution",
+                "posted_on": "2026-08-20",
+                "first_seen": "2026-08-20",
+            },
+            {
+                "record_type": "hackathon",
+                "url": "https://acme.example/hackathon",
+                "token": "acme-hackathon",
+                "platform": "acme",
+                "title": "Acme Hackathon",
+                "location": "New York, United States",
+                "location_bucket": "location-hackathon",
+                "posted_on": "2026-08-20",
+                "first_seen": "2026-08-20",
+            },
+            {
+                "record_type": "fellowship",
+                "url": "https://acme.example/fellowship",
+                "token": "acme-fellowship",
+                "platform": "acme",
+                "title": "Acme Fellowship",
+                "location": "Remote",
+                "location_bucket": "location-fellowship",
+                "posted_on": "2026-08-20",
+                "first_seen": "2026-08-20",
+            },
+        ]
+
+        annotate(rows, cap=10)
+
+        for row in rows[1:]:
+            self.assertIs(row["surfaced"], True)
+            self.assertIsNone(row.get("over_cap"))
+            self.assertIsNone(row.get("dup_of"))
+            self.assertNotIn("is_recruiter", row)
+            self.assertNotIn("is_stale", row)
+        self.assertIn("is_recruiter", rows[0])
+        self.assertIn("is_stale", rows[0])
+
 
 if __name__ == "__main__":
     unittest.main()
