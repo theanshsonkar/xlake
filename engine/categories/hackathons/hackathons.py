@@ -633,10 +633,15 @@ def _atomic_json(path, value):
             os.unlink(tmp)
 
 
-def merge_hackathons(rows_by_id, successful_sources, lake_path=OPPORTUNITIES_PATH, now=None):
+def merge_hackathons(rows_by_id, successful_sources, lake_path=OPPORTUNITIES_PATH, now=None, today=None):
     now = now or datetime.now(timezone.utc).isoformat(timespec="seconds")
     if isinstance(now, datetime):
         now = now.isoformat(timespec="seconds")
+    today = today or datetime.now(timezone.utc).date()
+    if isinstance(today, datetime):
+        today = today.date()
+    elif not isinstance(today, date):
+        today = date.fromisoformat(str(today))
     lake = _load_json(lake_path, [])
     preserved = [row for row in lake if row.get("record_type") != "hackathon"]
     hackathon_rows = {
@@ -702,6 +707,17 @@ def merge_hackathons(rows_by_id, successful_sources, lake_path=OPPORTUNITIES_PAT
             row["liveness_reason"] = "not_reconfirmed"
 
     merged = sorted(unkeyed + list(hackathon_rows.values()), key=_hackathon_sort_key)
+    for row in merged:
+        if row.get("record_type", "hackathon") != "hackathon" or not row.get("is_live"):
+            continue
+        iso = _iso_date(row.get("end_date"))
+        if not iso:
+            continue
+        end = date.fromisoformat(iso)
+        if end < today:
+            row["is_live"] = False
+            row["needs_confirmation"] = True
+            row["liveness_reason"] = "event_ended"
     _atomic_json(lake_path, preserved + merged)
     return merged
 

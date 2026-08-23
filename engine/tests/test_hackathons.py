@@ -3,7 +3,7 @@ import os
 import sys
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from categories.hackathons.hackathons import (
@@ -148,6 +148,67 @@ class TestHackathonsCollector(unittest.TestCase):
         self.assertTrue(digital["is_online"])
         self.assertIsNone(digital["location"])
         self.assertEqual(hyderabad["location"], "Hyderabad, Telangana, IN")
+
+    def test_wall_clock_expiry_retires_persisted_live_past_event(self):
+        seeded = {
+            "record_type": "hackathon", "hackathon_id": "past-event",
+            "official_url": "https://example.test/past-event", "source": "devpost",
+            "last_seen": "2026-08-20T00:00:00+00:00", "is_live": True,
+            "end_date": "2026-08-01", "needs_confirmation": False,
+        }
+        with tempfile.TemporaryDirectory() as td:
+            lake_path = os.path.join(td, "lake.json")
+            with open(lake_path, "w") as handle:
+                json.dump([seeded], handle)
+            merged = merge_hackathons(
+                {}, set(), lake_path,
+                now="2026-08-21T00:00:00+00:00", today=date(2026, 8, 23),
+            )
+        self.assertFalse(merged[0]["is_live"])
+        self.assertTrue(merged[0]["needs_confirmation"])
+        self.assertEqual(merged[0]["liveness_reason"], "event_ended")
+
+    def test_wall_clock_expiry_ignores_past_registration_deadline(self):
+        seeded = {
+            "record_type": "hackathon", "hackathon_id": "future-event",
+            "official_url": "https://example.test/future-event", "source": "devpost",
+            "last_seen": "2026-08-20T00:00:00+00:00", "is_live": True,
+            "end_date": "2026-12-01", "registration_deadline": "2026-08-01",
+        }
+        with tempfile.TemporaryDirectory() as td:
+            lake_path = os.path.join(td, "lake.json")
+            with open(lake_path, "w") as handle:
+                json.dump([seeded], handle)
+            merged = merge_hackathons(
+                {}, set(), lake_path,
+                now="2026-08-21T00:00:00+00:00", today=date(2026, 8, 23),
+            )
+        self.assertTrue(merged[0]["is_live"])
+        self.assertNotEqual(merged[0].get("liveness_reason"), "event_ended")
+
+    def test_wall_clock_expiry_preserves_non_hackathon_row(self):
+        programme = {
+            "record_type": "programme", "programme_id": "programme-1",
+            "title": "A programme", "is_live": True,
+        }
+        seeded = [programme, {
+            "record_type": "hackathon", "hackathon_id": "past-event",
+            "official_url": "https://example.test/past-event", "source": "devpost",
+            "last_seen": "2026-08-20T00:00:00+00:00", "is_live": True,
+            "end_date": "2026-08-01",
+        }]
+        with tempfile.TemporaryDirectory() as td:
+            lake_path = os.path.join(td, "lake.json")
+            with open(lake_path, "w") as handle:
+                json.dump(seeded, handle)
+            merge_hackathons(
+                {}, set(), lake_path,
+                now="2026-08-21T00:00:00+00:00", today=date(2026, 8, 23),
+            )
+            with open(lake_path) as handle:
+                lake = json.load(handle)
+        preserved = next(row for row in lake if row.get("record_type") == "programme")
+        self.assertEqual(preserved, programme)
 
     def test_closure_distinguishes_successful_source_and_failed_source(self):
         successful_old = {
