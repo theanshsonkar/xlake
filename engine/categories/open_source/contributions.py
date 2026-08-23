@@ -426,6 +426,16 @@ def merge_contributions(rows_by_repo, successful_repos, lake_path=OPPORTUNITIES_
             row["needs_confirmation"] = True
             row["liveness_reason"] = "not_reconfirmed"
 
+    now_dt = _parse_timestamp(now)
+    for row in unkeyed + list(contribution_rows.values()):
+        if row.get("record_type", "contribution") != "contribution" or not row.get("is_live"):
+            continue
+        age = _age_days(row.get("updated_at"), now_dt)
+        if age is not None and age > STALE_DAYS:
+            row["is_live"] = False
+            row["needs_confirmation"] = True
+            row["liveness_reason"] = "stale_activity"
+
     merged_contributions = sorted(
         unkeyed + list(contribution_rows.values()),
         key=_updated_sort_key,

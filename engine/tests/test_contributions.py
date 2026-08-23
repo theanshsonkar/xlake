@@ -287,6 +287,59 @@ class TestContributionsCollector(unittest.TestCase):
         self.assertEqual(merged[0]["last_seen"], now)
         self.assertNotIn("liveness_reason", merged[0])
 
+    def test_stale_activity_retires_live_rows_without_deleting_or_touching_other_records(self):
+        now = "2026-08-23T00:00:00+00:00"
+        stale = {
+            "record_type": "contribution",
+            "contribution_id": "https://github.com/owner/repo/issues/stale",
+            "repo": "owner/repo",
+            "updated_at": "2026-02-04T00:00:00+00:00",
+            "last_seen": "2026-08-20T00:00:00+00:00",
+            "status": "open",
+            "is_live": True,
+            "needs_confirmation": False,
+        }
+        recent = {
+            "record_type": "contribution",
+            "contribution_id": "https://github.com/owner/repo/issues/recent",
+            "repo": "owner/repo",
+            "updated_at": "2026-08-18T00:00:00+00:00",
+            "last_seen": "2026-08-20T00:00:00+00:00",
+            "status": "open",
+            "is_live": True,
+            "needs_confirmation": False,
+        }
+        programme = {
+            "record_type": "programme",
+            "programme_id": "programme-pass-through",
+            "title": "Unchanged programme",
+            "metadata": {"value": 1},
+        }
+
+        with tempfile.TemporaryDirectory() as td:
+            lake_path = os.path.join(td, "lake.json")
+            with open(lake_path, "w") as handle:
+                json.dump([stale, recent, programme], handle)
+            merged = merge_contributions({}, set(), lake_path=lake_path, now=now)
+            with open(lake_path) as handle:
+                lake = json.load(handle)
+
+        by_id = {row.get("contribution_id"): row for row in merged}
+        retired = by_id[stale["contribution_id"]]
+        retained = by_id[recent["contribution_id"]]
+        self.assertFalse(retired["is_live"])
+        self.assertTrue(retired["needs_confirmation"])
+        self.assertEqual(retired["liveness_reason"], "stale_activity")
+        self.assertEqual(retired["last_seen"], stale["last_seen"])
+        self.assertEqual(retired["status"], stale["status"])
+        self.assertNotIn("went_dead_at", retired)
+        self.assertTrue(retained["is_live"])
+        self.assertFalse(retained["needs_confirmation"])
+        self.assertEqual(
+            next(row for row in lake if row.get("programme_id") == programme["programme_id"]),
+            programme,
+        )
+
     def test_absent_row_from_successfully_fetched_repo_is_confirmed_closed(self):
         now = "2026-08-18T08:00:00+00:00"
         old = {
