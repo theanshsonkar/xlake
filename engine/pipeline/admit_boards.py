@@ -14,7 +14,10 @@ Add a platform in ONE line: add it to PLATFORM_POLICY (and optionally EVIDENCE_U
 import argparse
 import json
 import os
+import re
 import sys
+import urllib.parse
+from typing import Optional
 
 _ENGINE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if _ENGINE_ROOT not in sys.path:
@@ -222,13 +225,147 @@ def _write_json(path, data):
         fh.write("\n")
 
 
+def clean_token(token: str) -> str:
+    """Produce a readable fallback name from an ATS token."""
+    words = re.sub(r"[-_.\s]+", " ", token).strip().split()
+    return " ".join(word.capitalize() if word.islower() else word for word in words)
+
+
+def parse_keka_title(html: str) -> Optional[str]:
+    """Extract a company name from common Keka careers page titles."""
+    import html as html_module
+
+    match = re.search(r"<title\b[^>]*>(.*?)</title\s*>", html,
+                      flags=re.IGNORECASE | re.DOTALL)
+    if not match:
+        return None
+    title = html_module.unescape(match.group(1)).strip()
+    if not title:
+        return None
+    patterns = (
+        r"^Careers at (.+)$",
+        r"^Jobs at (.+)$",
+        r"^(.+?)\s*[-|–]\s*Careers$",
+        r"^Careers\s*[-|–]\s*(.+)$",
+    )
+    for pattern in patterns:
+        matched = re.match(pattern, title, flags=re.IGNORECASE)
+        if matched:
+            return matched.group(1).strip()
+    return None
+
+
+def _fetch_greenhouse_name(token, request_fn):
+    url = "https://boards-api.greenhouse.io/v1/boards/{}".format(
+        urllib.parse.quote(token)
+    )
+    status, body, _error = request_fn(url)
+    if status == 200 and isinstance(body, dict) and body.get("name"):
+        return body["name"].strip(), "greenhouse-api"
+    return None, "unresolved"
+
+
+def _fetch_keka_name(token, request_fn):
+    url = "https://{}.keka.com/careers/".format(urllib.parse.quote(token))
+    status, body, _error = request_fn(url, want_json=False)
+    if status == 200 and body:
+        name = parse_keka_title(body)
+        if name:
+            return name, "keka-title"
+        return clean_token(token), "fallback-token"
+    return None, "unresolved"
+
+
+def resolve_display_name(platform, token, request_fn=None):
+    if request_fn is None:
+        from adapters.boards import _request
+        request_fn = _request
+    if platform == "greenhouse":
+        return _fetch_greenhouse_name(token, request_fn)
+    if platform == "keka":
+        return _fetch_keka_name(token, request_fn)
+    return None, "unresolved"
+
+
+def refresh_display_names(registry, resolve_fn=resolve_display_name):
+    rows = []
+    for entry in registry:
+        if entry.get("source") != "discovery":
+            continue
+        platform = entry.get("platform")
+        token = entry.get("token")
+        old_company = entry.get("company")
+        if platform not in ("greenhouse", "keka"):
+            rows.append({
+                "platform": platform,
+                "token": token,
+                "old_company": old_company,
+                "new_company": old_company,
+                "kind": "unresolved-unsupported",
+            })
+            continue
+        name, kind = resolve_fn(platform, token)
+        if name and kind != "unresolved":
+            entry["company"] = name
+            new_company = name
+        else:
+            kind = "unresolved"
+            new_company = old_company
+        rows.append({
+            "platform": platform,
+            "token": token,
+            "old_company": old_company,
+            "new_company": new_company,
+            "kind": kind,
+        })
+    return rows
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Platform-generic board admission bridge")
     ap.add_argument("--dry-run", dest="dry_run", action="store_true", default=True,
                     help="report only, write nothing (DEFAULT)")
     ap.add_argument("--write", dest="dry_run", action="store_false",
                     help="persist registry/review/pending changes")
+    ap.add_argument("--refresh-names", action="store_true",
+                    help="refresh company names for discovery entries")
     args = ap.parse_args(argv)
+
+    if args.refresh_names:
+        registry = _load_json(REGISTRY_PATH, [])
+        rows = refresh_display_names(registry)
+        authoritative = sum(row["kind"] in ("greenhouse-api", "keka-title")
+                            for row in rows)
+        fallback = sum(row["kind"] == "fallback-token" for row in rows)
+        unresolved = sum(row["kind"] in ("unresolved", "unresolved-unsupported")
+                         for row in rows)
+        print("REFRESH_DISPLAY_NAMES (mode: {})".format(
+            "DRY-RUN" if args.dry_run else "WRITE"))
+        print("authoritative: {}".format(authoritative))
+        print("fallback-cleaned: {}".format(fallback))
+        print("unresolved: {}".format(unresolved))
+        from collections import Counter
+        by_platform = {}
+        for row in rows:
+            by_platform.setdefault(row['platform'], Counter())[row['kind']] += 1
+        print('by-platform kind breakdown:')
+        for _plat in sorted(by_platform):
+            print('  {}: {}'.format(_plat, dict(by_platform[_plat])))
+        for platform in ("greenhouse", "keka"):
+            print("{} samples:".format(platform))
+            for row in [r for r in rows if r["platform"] == platform][:10]:
+                print("  {} -> {} [{}]".format(
+                    row["token"], row["new_company"], row["kind"]))
+        print("unresolved tokens:")
+        for row in rows:
+            if row["kind"] in ("unresolved", "unresolved-unsupported"):
+                print("  {}".format(row["token"]))
+        if args.dry_run:
+            print("DRY-RUN: nothing written to registry.json.")
+        else:
+            _write_json(REGISTRY_PATH, registry)
+            print("WROTE: registry.json")
+        return 0
 
     caches = _load_caches()
     registry = _load_json(REGISTRY_PATH, [])
