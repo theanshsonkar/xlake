@@ -1,0 +1,10 @@
+[
+ {
+  "platform": "workable",
+  "cache_file": "boards_workable.json",
+  "new_tokens": 1755,
+  "total_in_cache": 1755,
+  "already_in_registry": 0,
+  "note": "list API blind on location/employer; requires a job-detail read (location + employer) before admission"
+ }
+]

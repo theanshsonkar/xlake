@@ -1,0 +1,72 @@
+[
+ {
+  "platform": "keka",
+  "token": "kpgroup",
+  "company": "kpgroup",
+  "count": 918,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "accelschools",
+  "company": "accelschools",
+  "count": 246,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "accenturefederalservices",
+  "company": "accenturefederalservices",
+  "count": 646,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "adyen",
+  "company": "adyen",
+  "count": 218,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "affirm",
+  "company": "affirm",
+  "count": 207,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "agency",
+  "company": "agency",
+  "count": 821,
+  "reason": "outlier_count>=200, agency_pattern"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "agencywithin",
+  "company": "agencywithin",
+  "count": 46,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "agoda",
+  "company": "agoda",
+  "count": 286,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "aloyoga",
+  "company": "aloyoga",
+  "count": 766,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "alphasense",
+  "company": "alphasense",
+  "count": 232,
+  "reason": "outlier_count>=200"
+ }
+]
