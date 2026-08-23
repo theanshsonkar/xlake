@@ -97,9 +97,90 @@ class RefreshNamesTest(unittest.TestCase):
         self.assertIsNone(admit.parse_keka_title("<title>Some Random Page</title>"))
         self.assertIsNone(admit.parse_keka_title("<html>no title</html>"))
 
+    def test_x_careers_title_pattern(self):
+        self.assertEqual(
+            admit.parse_keka_title("<title>Entropik Careers</title>"),
+            "Entropik",
+        )
+        self.assertEqual(
+            admit.parse_keka_title("<title>Careers at Foo</title>"),
+            "Foo",
+        )
+        self.assertEqual(
+            admit.parse_keka_title("<title>Bar - Careers</title>"),
+            "Bar",
+        )
+
     def test_clean_token(self):
         self.assertEqual(admit.clean_token("kp-group"), "Kp Group")
         self.assertEqual(admit.clean_token("kpgroup"), "Kpgroup")
+
+
+class KekaNameParsingTest(unittest.TestCase):
+    def _fetch(self, token, html, status=200):
+        def fake(url, want_json=True):
+            return status, html, None
+
+        return admit._fetch_keka_name(token, request_fn=fake)
+
+    def test_og_title_used_when_title_generic(self):
+        html = ('<html><head><title>Keka Hire</title>'
+                '<meta property="og:title" content="Careers at Entropik">'
+                '</head></html>')
+        self.assertEqual(
+            self._fetch("entropik", html),
+            ("Entropik", "keka-og-title"),
+        )
+
+    def test_fetch_keka_x_careers_is_keka_title(self):
+        def fake(url, want_json=True):
+            return 200, "<title>Entropik Careers</title>", None
+
+        self.assertEqual(
+            admit._fetch_keka_name("entropik", request_fn=fake),
+            ("Entropik", "keka-title"),
+        )
+
+    def test_title_preferred_over_og_title(self):
+        html = ('<title>Careers at Foo</title>'
+                '<meta property="og:title" content="Careers at Bar">')
+        self.assertEqual(
+            self._fetch("foo", html),
+            ("Foo", "keka-title"),
+        )
+
+    def test_fallback_labeled_when_no_name(self):
+        html = "<title>Keka Hire</title>"
+        self.assertEqual(
+            self._fetch("aitmc", html),
+            (admit.clean_token("aitmc"), "fallback-token"),
+        )
+
+    def test_unresolved_on_failed_read(self):
+        def fake(url, want_json=True):
+            return None, None, "timeout"
+
+        self.assertEqual(
+            admit._fetch_keka_name("x", request_fn=fake),
+            (None, "unresolved"),
+        )
+
+    def test_parse_keka_og_title_direct(self):
+        self.assertEqual(
+            admit.parse_keka_og_title(
+                '<meta property="og:title" content="Careers at Entropik">'
+            ),
+            "Entropik",
+        )
+        self.assertEqual(
+            admit.parse_keka_og_title(
+                '<meta content="Jobs at Acme" property="og:title">'
+            ),
+            "Acme",
+        )
+        self.assertIsNone(
+            admit.parse_keka_og_title("<title>no og</title>")
+        )
 
 
 if __name__ == "__main__":

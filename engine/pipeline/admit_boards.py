@@ -231,28 +231,47 @@ def clean_token(token: str) -> str:
     return " ".join(word.capitalize() if word.islower() else word for word in words)
 
 
-def parse_keka_title(html: str) -> Optional[str]:
-    """Extract a company name from common Keka careers page titles."""
-    import html as html_module
+_TITLE_COMPANY_PATTERNS = (
+    r"^Careers at (.+)$",
+    r"^Jobs at (.+)$",
+    r"^(.+?)\s*[-|–]\s*Careers$",
+    r"^Careers\s*[-|–]\s*(.+)$",
+    r"^(.+?)\s+Careers$",
+)
 
+
+def _company_from_title_text(text):
+    text = (text or "").strip()
+    if not text:
+        return None
+    for pattern in _TITLE_COMPANY_PATTERNS:
+        matched = re.match(pattern, text, flags=re.IGNORECASE)
+        if matched:
+            return matched.group(1).strip()
+    return None
+
+
+def parse_keka_title(html: str) -> Optional[str]:
+    """Extract a company name from common Keka careers page <title> text."""
+    import html as html_module
     match = re.search(r"<title\b[^>]*>(.*?)</title\s*>", html,
                       flags=re.IGNORECASE | re.DOTALL)
     if not match:
         return None
-    title = html_module.unescape(match.group(1)).strip()
-    if not title:
+    return _company_from_title_text(html_module.unescape(match.group(1)))
+
+
+def parse_keka_og_title(html: str) -> Optional[str]:
+    """Extract a company name from the og:title meta tag of a Keka careers page."""
+    import html as html_module
+    m = re.search(r'<meta[^>]+property=["\']og:title["\'][^>]*content=["\']([^"\']*)["\']',
+                  html, flags=re.IGNORECASE)
+    if not m:
+        m = re.search(r'<meta[^>]+content=["\']([^"\']*)["\'][^>]*property=["\']og:title["\']',
+                      html, flags=re.IGNORECASE)
+    if not m:
         return None
-    patterns = (
-        r"^Careers at (.+)$",
-        r"^Jobs at (.+)$",
-        r"^(.+?)\s*[-|–]\s*Careers$",
-        r"^Careers\s*[-|–]\s*(.+)$",
-    )
-    for pattern in patterns:
-        matched = re.match(pattern, title, flags=re.IGNORECASE)
-        if matched:
-            return matched.group(1).strip()
-    return None
+    return _company_from_title_text(html_module.unescape(m.group(1)))
 
 
 def _fetch_greenhouse_name(token, request_fn):
@@ -272,6 +291,9 @@ def _fetch_keka_name(token, request_fn):
         name = parse_keka_title(body)
         if name:
             return name, "keka-title"
+        name = parse_keka_og_title(body)
+        if name:
+            return name, "keka-og-title"
         return clean_token(token), "fallback-token"
     return None, "unresolved"
 
@@ -334,7 +356,7 @@ def main(argv=None):
     if args.refresh_names:
         registry = _load_json(REGISTRY_PATH, [])
         rows = refresh_display_names(registry)
-        authoritative = sum(row["kind"] in ("greenhouse-api", "keka-title")
+        authoritative = sum(row["kind"] in ("greenhouse-api", "keka-title", "keka-og-title")
                             for row in rows)
         fallback = sum(row["kind"] == "fallback-token" for row in rows)
         unresolved = sum(row["kind"] in ("unresolved", "unresolved-unsupported")
