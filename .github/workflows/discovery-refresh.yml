@@ -1,0 +1,44 @@
+name: discovery-refresh
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: discovery-refresh-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-names:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Refresh discovery board names
+        run: python3 -u -m pipeline.admit_boards --refresh-names --write
+
+      - name: Commit and push registry changes
+        working-directory: ${{ github.workspace }}
+        run: |
+          git config user.name  "opportunity-lake-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add engine/data/operations/registry.json
+          if git diff --cached --quiet; then
+            echo "No registry changes to commit."
+            exit 0
+          fi
+          git commit -m "Refresh discovery board names"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
