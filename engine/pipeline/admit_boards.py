@@ -51,6 +51,7 @@ _OPS_DIR = os.path.join(_ENGINE_ROOT, "data", "operations")
 _CACHE_DIR = os.path.join(_ENGINE_ROOT, "data", "raw", "discovery-cache")
 REGISTRY_PATH = os.path.join(_OPS_DIR, "registry.json")
 REVIEW_PATH = os.path.join(_OPS_DIR, "discovery_review.json")
+REJECTED_PATH = os.path.join(_OPS_DIR, "discovery_rejected.json")
 PENDING_PATH = os.path.join(_OPS_DIR, "discovery_pending_enrichment.json")
 
 
@@ -70,13 +71,15 @@ def is_agency(token, company):
     return any(p in hay for p in AGENCY_PATTERNS)
 
 
-def build_entry(platform, token, company, count):
+def build_entry(platform, token, company, count, note=None):
     tmpl = EVIDENCE_URL.get(platform)
     url = tmpl.format(token=token) if tmpl else ""
     prefix = (url + " ") if url else ""
     evidence = "{}(discovery-cache boards_{}.json, verified {} live jobs)".format(
         prefix, platform, count
     )
+    if note:
+        evidence += " ({})".format(note)
     return {
         "platform": platform,
         "token": token,
@@ -88,7 +91,9 @@ def build_entry(platform, token, company, count):
 
 
 def run_admission(caches, registry, list_board_fn=list_board,
-                  policy=PLATFORM_POLICY, outlier=OUTLIER_COUNT):
+                  policy=PLATFORM_POLICY, outlier=OUTLIER_COUNT,
+                  rejected=None):
+    rejected = set(rejected or ())
     existing = {_key(e) for e in registry}
     report = {}
     admit_entries = []
@@ -107,6 +112,7 @@ def run_admission(caches, registry, list_board_fn=list_board,
                 seen.add(t)
                 uniq.append(t)
         new_tokens = [t for t in uniq if (platform, t) not in existing]
+        new_tokens = [t for t in new_tokens if (platform, t) not in rejected]
         r = {
             "policy": pol,
             "read": len(uniq),
@@ -360,6 +366,104 @@ def refresh_display_names(registry, resolve_fn=resolve_display_name):
     return rows
 
 
+def _parse_keys(values):
+    keys = []
+    for chunk in values or []:
+        for item in chunk.split(','):
+            item = item.strip()
+            if not item:
+                continue
+            platform, _, token = item.partition(':')
+            platform = platform.strip(); token = token.strip()
+            if platform and token:
+                keys.append((platform, token))
+    return keys
+
+
+def process_review(admit_keys, reject_keys, review, registry, rejected,
+                   list_board_fn=list_board, resolve_fn=resolve_display_name):
+    admit_keys = list(admit_keys or ())
+    reject_keys = list(reject_keys or ())
+    admit_set = set(admit_keys)
+    reject_set = set(reject_keys)
+    existing_reg = {(e["platform"], e["token"]) for e in registry}
+    review_by_key = {(r["platform"], r["token"]): r for r in review}
+    result = {
+        "admitted": [],
+        "already_admitted": [],
+        "admit_errors": [],
+        "rejected_added": [],
+        "already_rejected": [],
+        "held": [],
+    }
+    new_entries = []
+
+    for platform, token in admit_keys:
+        key = (platform, token)
+        if key in existing_reg:
+            result["already_admitted"].append(key)
+            continue
+        try:
+            board_result = list_board_fn(platform, token)
+            count = getattr(board_result, "count", None)
+            if count in (None, 0):
+                error = getattr(board_result, "error", None) or "not live"
+                result["admit_errors"].append({
+                    "platform": platform, "token": token, "error": str(error),
+                })
+                continue
+        except Exception as exc:
+            result["admit_errors"].append({
+                "platform": platform, "token": token, "error": str(exc),
+            })
+            continue
+        name, _kind = resolve_fn(platform, token)
+        if not name:
+            name = token
+        new_entries.append(build_entry(
+            platform, token, name, count, note="approved from review"
+        ))
+        result["admitted"].append({
+            "platform": platform, "token": token,
+            "company": name, "count": count,
+        })
+
+    new_registry = merge_registry(list(registry), new_entries)
+    existing_rej = {(r["platform"], r["token"]) for r in rejected}
+    new_rejected = list(rejected)
+    for platform, token in reject_keys:
+        key = (platform, token)
+        if key in existing_rej:
+            result["already_rejected"].append(key)
+            continue
+        if key in review_by_key:
+            record = dict(review_by_key[key])
+        else:
+            record = {
+                "platform": platform,
+                "token": token,
+                "company": token,
+                "count": None,
+                "reason": "manual_reject",
+            }
+        new_rejected.append(record)
+        existing_rej.add(key)
+        result["rejected_added"].append(key)
+
+    new_review = [
+        row for row in review
+        if (row["platform"], row["token"]) not in admit_set
+        and (row["platform"], row["token"]) not in reject_set
+    ]
+    result["held"] = [
+        (row["platform"], row["token"]) for row in new_review
+    ]
+    result["new_registry"] = new_registry
+    result["new_review"] = new_review
+    result["new_rejected"] = new_rejected
+    return result
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Platform-generic board admission bridge")
     ap.add_argument("--dry-run", dest="dry_run", action="store_true", default=True,
@@ -368,6 +472,9 @@ def main(argv=None):
                     help="persist registry/review/pending changes")
     ap.add_argument("--refresh-names", action="store_true",
                     help="refresh company names for discovery entries")
+    ap.add_argument("--process-review", dest="process_review", action="store_true")
+    ap.add_argument("--admit", action="append", default=[])
+    ap.add_argument("--reject", action="append", default=[])
     args = ap.parse_args(argv)
 
     if args.refresh_names:
@@ -406,9 +513,61 @@ def main(argv=None):
             print("WROTE: registry.json")
         return 0
 
+    if args.process_review:
+        registry = _load_json(REGISTRY_PATH, [])
+        review = _load_json(REVIEW_PATH, [])
+        rejected = _load_json(REJECTED_PATH, [])
+        admit_keys = _parse_keys(args.admit)
+        reject_keys = _parse_keys(args.reject)
+        res = process_review(admit_keys, reject_keys, review, registry, rejected)
+        mode = "DRY-RUN" if args.dry_run else "WRITE"
+        print("PROCESS_REVIEW (mode: {})".format(mode))
+        print("ADMIT requested: {}  |  REJECT requested: {}".format(
+            len(admit_keys), len(reject_keys)))
+        print("-- ADMITTED (newly, {}):".format(len(res["admitted"])))
+        for a in res["admitted"]:
+            print("   {}/{} => {} | {} live".format(
+                a["platform"], a["token"], a["company"], a["count"]))
+        if res["already_admitted"]:
+            print("-- already in registry (idempotent skip): {}".format(
+                len(res["already_admitted"])))
+            for platform, token in res["already_admitted"]:
+                print("   {}/{}".format(platform, token))
+        if res["admit_errors"]:
+            print("-- ADMIT ERRORS / not live (NOT admitted): {}".format(
+                len(res["admit_errors"])))
+            for error in res["admit_errors"]:
+                print("   {}/{} :: {}".format(
+                    error["platform"], error["token"], error["error"]))
+        print("-- REJECTED (newly, {}):".format(len(res["rejected_added"])))
+        for platform, token in res["rejected_added"]:
+            print("   {}/{}".format(platform, token))
+        if res["already_rejected"]:
+            print("-- already rejected (idempotent skip): {}".format(
+                len(res["already_rejected"])))
+        print("-- HELD in review ({}):".format(len(res["held"])))
+        for platform, token in res["held"]:
+            print("   {}/{}".format(platform, token))
+        print("registry: {} -> {}".format(len(registry), len(res["new_registry"])))
+        print("discovery_review: {} -> {}".format(
+            len(review), len(res["new_review"])))
+        print("discovery_rejected: {} -> {}".format(
+            len(rejected), len(res["new_rejected"])))
+        if args.dry_run:
+            print("DRY-RUN: nothing written")
+        else:
+            _write_json(REGISTRY_PATH, res["new_registry"])
+            _write_json(REVIEW_PATH, res["new_review"])
+            _write_json(REJECTED_PATH, res["new_rejected"])
+            print("WROTE: registry.json, discovery_review.json, discovery_rejected.json")
+        return 0
+
     caches = _load_caches()
     registry = _load_json(REGISTRY_PATH, [])
-    result = run_admission(caches, registry, list_board_fn=list_board)
+    rejected_rows = _load_json(REJECTED_PATH, [])
+    rejected_keys = {(r["platform"], r["token"]) for r in rejected_rows}
+    result = run_admission(caches, registry, list_board_fn=list_board,
+                           rejected=rejected_keys)
 
     rep = result["report"]
     print("=" * 70)

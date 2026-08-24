@@ -1,0 +1,149 @@
+[
+ {
+  "platform": "greenhouse",
+  "token": "agency",
+  "company": "agency",
+  "count": 821,
+  "reason": "outlier_count>=200, agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "huzzle",
+  "company": "huzzle",
+  "count": 2359,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "hire-resolve-the-top-recruitment-agency",
+  "company": "hire-resolve-the-top-recruitment-agency",
+  "count": 1718,
+  "reason": "outlier_count>=200, agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "cxg",
+  "company": "cxg",
+  "count": 1396,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "eramtalent-1",
+  "company": "eramtalent-1",
+  "count": 1052,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "greenlife-healthcare-staffing-1",
+  "company": "greenlife-healthcare-staffing-1",
+  "count": 951,
+  "reason": "outlier_count>=200, agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "crossbordertalents",
+  "company": "crossbordertalents",
+  "count": 618,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "apt-resources",
+  "company": "apt-resources",
+  "count": 543,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "mediix-recruitment",
+  "company": "mediix-recruitment",
+  "count": 542,
+  "reason": "outlier_count>=200, agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "job-bridge-global-1",
+  "company": "job-bridge-global-1",
+  "count": 502,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "avomind",
+  "company": "avomind",
+  "count": 458,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "hirehawk",
+  "company": "hirehawk",
+  "count": 311,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "cesna-group-2",
+  "company": "cesna-group-2",
+  "count": 244,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "blue-united-sourcing",
+  "company": "blue-united-sourcing",
+  "count": 201,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "manilarecruitment",
+  "company": "manilarecruitment",
+  "count": 81,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "alex-staff-agency-careers",
+  "company": "alex-staff-agency-careers",
+  "count": 78,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "lmg-staffing-solutions",
+  "company": "lmg-staffing-solutions",
+  "count": 64,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "healthcarerecruiter",
+  "company": "healthcarerecruiter",
+  "count": 59,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "luke-recruitment",
+  "company": "luke-recruitment",
+  "count": 38,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "erg-recruiting",
+  "company": "erg-recruiting",
+  "count": 26,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "esselenvironmental",
+  "company": "esselenvironmental",
+  "count": 436,
+  "reason": "outlier_count>=200"
+ }
+]

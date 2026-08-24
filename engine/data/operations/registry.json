@@ -11070,5 +11070,269 @@
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/mercari-india (discovery-cache boards_workable.json, verified 13 live jobs)"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "adyen",
+  "company": "Adyen",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "job-boards.greenhouse.io/adyen (discovery-cache boards_greenhouse.json, verified 219 live jobs) (approved from review)"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "affirm",
+  "company": "Affirm",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "job-boards.greenhouse.io/affirm (discovery-cache boards_greenhouse.json, verified 207 live jobs) (approved from review)"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "agoda",
+  "company": "Agoda",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "job-boards.greenhouse.io/agoda (discovery-cache boards_greenhouse.json, verified 285 live jobs) (approved from review)"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "alphasense",
+  "company": "AlphaSense",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "job-boards.greenhouse.io/alphasense (discovery-cache boards_greenhouse.json, verified 235 live jobs) (approved from review)"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "aloyoga",
+  "company": "ALO",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "job-boards.greenhouse.io/aloyoga (discovery-cache boards_greenhouse.json, verified 767 live jobs) (approved from review)"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "accenturefederalservices",
+  "company": "Accenture Federal Services",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "job-boards.greenhouse.io/accenturefederalservices (discovery-cache boards_greenhouse.json, verified 646 live jobs) (approved from review)"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "accelschools",
+  "company": "ACCEL Schools",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "job-boards.greenhouse.io/accelschools (discovery-cache boards_greenhouse.json, verified 246 live jobs) (approved from review)"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "agencywithin",
+  "company": "WITHIN",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "job-boards.greenhouse.io/agencywithin (discovery-cache boards_greenhouse.json, verified 46 live jobs) (approved from review)"
+ },
+ {
+  "platform": "keka",
+  "token": "kpgroup",
+  "company": "Kpgroup",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "kpgroup.keka.com (discovery-cache boards_keka.json, verified 918 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "lapoflovejobs",
+  "company": "Lap of Love",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/lapoflovejobs (discovery-cache boards_workable.json, verified 1138 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "capgemini-insurance",
+  "company": "Capgemini",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/capgemini-insurance (discovery-cache boards_workable.json, verified 406 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "keywords-intl1",
+  "company": "Keywords Studios",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/keywords-intl1 (discovery-cache boards_workable.json, verified 289 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "alten-mexico-1",
+  "company": "ALTEN MÉXICO",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/alten-mexico-1 (discovery-cache boards_workable.json, verified 210 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "intellecthq",
+  "company": "Intellect",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/intellecthq (discovery-cache boards_workable.json, verified 357 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "covergo",
+  "company": "CoverGo",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/covergo (discovery-cache boards_workable.json, verified 209 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "amartha",
+  "company": "Amartha",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/amartha (discovery-cache boards_workable.json, verified 497 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "jasarapmc",
+  "company": "JASARA PMC",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/jasarapmc (discovery-cache boards_workable.json, verified 245 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "consigli-construction-1",
+  "company": "Consigli Construction",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/consigli-construction-1 (discovery-cache boards_workable.json, verified 244 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "joey-restaurants-1",
+  "company": "JOEY Restaurants",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/joey-restaurants-1 (discovery-cache boards_workable.json, verified 243 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "labella-associates",
+  "company": "LaBella Associates",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/labella-associates (discovery-cache boards_workable.json, verified 347 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "h2-health",
+  "company": "H2 Health",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/h2-health (discovery-cache boards_workable.json, verified 352 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "intetics-2",
+  "company": "Intetics",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/intetics-2 (discovery-cache boards_workable.json, verified 364 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "geeks-on-site",
+  "company": "Geeks on Site",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/geeks-on-site (discovery-cache boards_workable.json, verified 588 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "advisacare-2",
+  "company": "AdvisaCare",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/advisacare-2 (discovery-cache boards_workable.json, verified 353 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "kiavets",
+  "company": "Kia Veterans Technician Apprenticeship Program (VTAP)",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/kiavets (discovery-cache boards_workable.json, verified 548 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "citywide",
+  "company": "City Wide Facility Solutions",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/citywide (discovery-cache boards_workable.json, verified 567 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "altom-transport",
+  "company": "Altom Transport",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/altom-transport (discovery-cache boards_workable.json, verified 506 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "cheer-home-care",
+  "company": "Cheer Home Care",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/cheer-home-care (discovery-cache boards_workable.json, verified 406 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "dane-street-llc",
+  "company": "Dane Street, LLC",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/dane-street-llc (discovery-cache boards_workable.json, verified 457 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "amazing-athletes-2",
+  "company": "Amazing Athletes",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/amazing-athletes-2 (discovery-cache boards_workable.json, verified 430 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "levelagency",
+  "company": "Level Agency",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/levelagency (discovery-cache boards_workable.json, verified 16 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "cnc-agency",
+  "company": "CNC Agency",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/cnc-agency (discovery-cache boards_workable.json, verified 3 live jobs) (approved from review)"
+ },
+ {
+  "platform": "workable",
+  "token": "max-borges-agency",
+  "company": "Max Borges Agency",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "apply.workable.com/max-borges-agency (discovery-cache boards_workable.json, verified 3 live jobs) (approved from review)"
  }
 ]

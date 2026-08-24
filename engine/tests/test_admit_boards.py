@@ -172,6 +172,105 @@ class AdmitBoardsTest(unittest.TestCase):
         self.assertEqual(len(merged), 2)
 
 
+class ReviewProcessingTest(unittest.TestCase):
+    def test_admit_approved_adds_registry_and_clears_review(self):
+        review = [{
+            "platform": "greenhouse", "token": "good", "company": "good",
+            "count": 300, "reason": "outlier_count>=200",
+        }]
+
+        def fake_list_board(platform, token):
+            return fake_result(platform, token, count=300)
+
+        res = admit_boards.process_review(
+            [("greenhouse", "good")], [], review, [], [],
+            list_board_fn=fake_list_board,
+            resolve_fn=lambda platform, token: ("Good Co", "resolved"),
+        )
+
+        self.assertEqual(len(res["new_registry"]), 1)
+        entry = res["new_registry"][0]
+        self.assertEqual((entry["platform"], entry["token"]),
+                         ("greenhouse", "good"))
+        self.assertEqual(entry["source"], "discovery")
+        self.assertIn("approved from review", entry["evidence"])
+        self.assertEqual(entry["company"], "Good Co")
+        self.assertEqual(res["new_review"], [])
+        self.assertEqual(len(res["admitted"]), 1)
+
+    def test_reject_moves_to_rejected_and_skipped_by_future_admission(self):
+        review = [{
+            "platform": "workable", "token": "bad-agency",
+            "company": "bad-agency", "count": 500,
+            "reason": "agency_pattern",
+        }]
+        res = admit_boards.process_review(
+            [], [("workable", "bad-agency")], review, [], []
+        )
+        self.assertEqual(
+            {(r["platform"], r["token"]) for r in res["new_rejected"]},
+            {("workable", "bad-agency")},
+        )
+        self.assertEqual(res["new_review"], [])
+
+        verifier = FakeVerifier({
+            ("workable", "bad-agency"): {"count": 500},
+            ("workable", "ok"): {"count": 3},
+        })
+        future = admit_boards.run_admission(
+            {"workable": ["bad-agency", "ok"]}, [],
+            list_board_fn=verifier,
+            rejected={("workable", "bad-agency")},
+        )
+        self.assertNotIn(("workable", "bad-agency"), verifier.calls)
+        self.assertNotIn(
+            "bad-agency", [e["token"] for e in future["admit_entries"]]
+        )
+        self.assertNotIn(
+            "bad-agency", [r["token"] for r in future["review_rows"]]
+        )
+        self.assertIn("ok", [e["token"] for e in future["admit_entries"]])
+
+    def test_held_tokens_stay(self):
+        held = {"platform": "keka", "token": "held", "company": "Held",
+                "count": 4, "reason": "manual_review"}
+        res = admit_boards.process_review([], [], [held], [], [])
+        self.assertEqual(res["new_review"], [held])
+        self.assertEqual(res["held"], [("keka", "held")])
+
+    def test_idempotent(self):
+        review = [
+            {"platform": "greenhouse", "token": "good", "company": "good",
+             "count": 300, "reason": "outlier_count>=200"},
+            {"platform": "workable", "token": "bad", "company": "bad",
+             "count": 500, "reason": "agency_pattern"},
+            {"platform": "keka", "token": "held", "company": "held",
+             "count": 5, "reason": "manual_review"},
+        ]
+        admit_keys = [("greenhouse", "good")]
+        reject_keys = [("workable", "bad")]
+
+        def fake_list_board(platform, token):
+            return fake_result(platform, token, count=300)
+
+        first = admit_boards.process_review(
+            admit_keys, reject_keys, review, [], [],
+            list_board_fn=fake_list_board,
+            resolve_fn=lambda platform, token: ("Resolved", "resolved"),
+        )
+        second = admit_boards.process_review(
+            admit_keys, reject_keys, first["new_review"],
+            first["new_registry"], first["new_rejected"],
+            list_board_fn=fake_list_board,
+            resolve_fn=lambda platform, token: ("Resolved", "resolved"),
+        )
+        self.assertEqual(second["admitted"], [])
+        self.assertTrue(second["already_admitted"])
+        self.assertEqual(second["rejected_added"], [])
+        self.assertTrue(second["already_rejected"])
+        self.assertEqual(len(second["new_review"]), len(first["new_review"]))
+
+
 class WorkableNameResolutionTest(unittest.TestCase):
     def test_widget_name_is_authoritative(self):
         calls = []
