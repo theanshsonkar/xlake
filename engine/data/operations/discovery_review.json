@@ -68,5 +68,355 @@
   "company": "alphasense",
   "count": 232,
   "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "advisacare-2",
+  "company": "advisacare-2",
+  "count": 353,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "alex-staff-agency-careers",
+  "company": "alex-staff-agency-careers",
+  "count": 78,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "alten-mexico-1",
+  "company": "alten-mexico-1",
+  "count": 210,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "altom-transport",
+  "company": "altom-transport",
+  "count": 506,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "amartha",
+  "company": "amartha",
+  "count": 497,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "amazing-athletes-2",
+  "company": "amazing-athletes-2",
+  "count": 430,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "apt-resources",
+  "company": "apt-resources",
+  "count": 543,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "avomind",
+  "company": "avomind",
+  "count": 458,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "blue-united-sourcing",
+  "company": "blue-united-sourcing",
+  "count": 201,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "capgemini-insurance",
+  "company": "capgemini-insurance",
+  "count": 406,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "cesna-group-2",
+  "company": "cesna-group-2",
+  "count": 244,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "cheer-home-care",
+  "company": "cheer-home-care",
+  "count": 406,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "citywide",
+  "company": "citywide",
+  "count": 567,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "cnc-agency",
+  "company": "cnc-agency",
+  "count": 3,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "consigli-construction-1",
+  "company": "consigli-construction-1",
+  "count": 244,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "covergo",
+  "company": "covergo",
+  "count": 209,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "crossbordertalents",
+  "company": "crossbordertalents",
+  "count": 618,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "cxg",
+  "company": "cxg",
+  "count": 1396,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "d2b-1",
+  "company": "d2b-1",
+  "count": 268,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "dane-street-llc",
+  "company": "dane-street-llc",
+  "count": 457,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "digital-368",
+  "company": "digital-368",
+  "count": 212,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "eramtalent-1",
+  "company": "eramtalent-1",
+  "count": 1052,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "erg-recruiting",
+  "company": "erg-recruiting",
+  "count": 26,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "esselenvironmental",
+  "company": "esselenvironmental",
+  "count": 436,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "fuku",
+  "company": "fuku",
+  "count": 716,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "geeks-on-site",
+  "company": "geeks-on-site",
+  "count": 588,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "gramian",
+  "company": "gramian",
+  "count": 200,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "greenlife-healthcare-staffing-1",
+  "company": "greenlife-healthcare-staffing-1",
+  "count": 951,
+  "reason": "outlier_count>=200, agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "h2-health",
+  "company": "h2-health",
+  "count": 352,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "healthcarerecruiter",
+  "company": "healthcarerecruiter",
+  "count": 59,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "hire-resolve-the-top-recruitment-agency",
+  "company": "hire-resolve-the-top-recruitment-agency",
+  "count": 1718,
+  "reason": "outlier_count>=200, agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "hirehawk",
+  "company": "hirehawk",
+  "count": 311,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "huzzle",
+  "company": "huzzle",
+  "count": 2359,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "icbd-holdings",
+  "company": "icbd-holdings",
+  "count": 495,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "intellecthq",
+  "company": "intellecthq",
+  "count": 357,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "intetics-2",
+  "company": "intetics-2",
+  "count": 364,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "jasarapmc",
+  "company": "jasarapmc",
+  "count": 242,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "job-bridge-global-1",
+  "company": "job-bridge-global-1",
+  "count": 502,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "joey-restaurants-1",
+  "company": "joey-restaurants-1",
+  "count": 243,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "keywords-intl1",
+  "company": "keywords-intl1",
+  "count": 289,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "kiavets",
+  "company": "kiavets",
+  "count": 548,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "labella-associates",
+  "company": "labella-associates",
+  "count": 348,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "lago-1",
+  "company": "lago-1",
+  "count": 384,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "lapoflovejobs",
+  "company": "lapoflovejobs",
+  "count": 1138,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "workable",
+  "token": "levelagency",
+  "company": "levelagency",
+  "count": 16,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "lmg-staffing-solutions",
+  "company": "lmg-staffing-solutions",
+  "count": 64,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "luke-recruitment",
+  "company": "luke-recruitment",
+  "count": 38,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "manilarecruitment",
+  "company": "manilarecruitment",
+  "count": 81,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "max-borges-agency",
+  "company": "max-borges-agency",
+  "count": 3,
+  "reason": "agency_pattern"
+ },
+ {
+  "platform": "workable",
+  "token": "mediix-recruitment",
+  "company": "mediix-recruitment",
+  "count": 542,
+  "reason": "outlier_count>=200, agency_pattern"
  }
 ]
