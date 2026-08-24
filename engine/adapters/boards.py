@@ -869,15 +869,24 @@ def _workable(token: str) -> BoardResult:
         r.error = "unexpected_shape"
         return r
     for j in jobs:
-        loc = j.get("location") or {}
-        bits = [loc.get("city") or "", loc.get("country") or ""]
+        bits = [j.get("city") or "", j.get("country") or ""]
+        location = ", ".join(x for x in bits if x)
+        if not location:
+            for entry in (j.get("locations") or []):
+                if isinstance(entry, dict) and not entry.get("hidden"):
+                    parts = [entry.get("city") or "", entry.get("country") or ""]
+                    location = ", ".join(x for x in parts if x)
+                    if location:
+                        break
+        if not location and j.get("telecommuting"):
+            location = "Remote"
         r.postings.append(
             Posting(
                 "workable",
                 token,
                 str(j.get("shortcode") or j.get("id") or ""),
                 j.get("title") or "",
-                ", ".join(x for x in bits if x),
+                location,
                 j.get("url") or j.get("application_url") or "",
                 j.get("published_on") or "",
             )
