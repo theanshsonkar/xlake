@@ -28,7 +28,7 @@ from adapters.boards import list_board  # noqa: E402
 PLATFORM_POLICY = {
     "keka": "admit",
     "greenhouse": "admit",
-    "workable": "enrich",
+    "workable": "admit",
     "zohorecruit": "page_reader",
     "darwinbox": "page_reader",
 }
@@ -36,6 +36,7 @@ PLATFORM_POLICY = {
 EVIDENCE_URL = {
     "greenhouse": "job-boards.greenhouse.io/{token}",
     "keka": "{token}.keka.com",
+    "workable": "apply.workable.com/{token}",
 }
 
 OUTLIER_COUNT = 200
@@ -127,8 +128,8 @@ def run_admission(caches, registry, list_board_fn=list_board,
                     "new_tokens": len(new_tokens),
                     "total_in_cache": len(uniq),
                     "already_in_registry": r["deduped"],
-                    "note": ("list API blind on location/employer; requires a "
-                             "job-detail read (location + employer) before admission"),
+                    "note": ("list API lacks fields required for admission; "
+                             "parked pending enrichment"),
                 })
             report[platform] = r
             continue
@@ -298,6 +299,20 @@ def _fetch_keka_name(token, request_fn):
     return None, "unresolved"
 
 
+def _fetch_workable_name(token, request_fn):
+    url = "https://apply.workable.com/api/v1/widget/accounts/{}?details=true".format(
+        urllib.parse.quote(token)
+    )
+    status, body, _error = request_fn(url)
+    if status == 200 and isinstance(body, dict) and body.get("name"):
+        return body["name"].strip(), "workable-widget"
+    alt = "https://www.workable.com/api/accounts/{}".format(urllib.parse.quote(token))
+    status2, body2, _error2 = request_fn(alt)
+    if status2 == 200 and isinstance(body2, dict) and body2.get("name"):
+        return body2["name"].strip(), "workable-accounts"
+    return clean_token(token), "fallback-token"
+
+
 def resolve_display_name(platform, token, request_fn=None):
     if request_fn is None:
         from adapters.boards import _request
@@ -306,6 +321,8 @@ def resolve_display_name(platform, token, request_fn=None):
         return _fetch_greenhouse_name(token, request_fn)
     if platform == "keka":
         return _fetch_keka_name(token, request_fn)
+    if platform == "workable":
+        return _fetch_workable_name(token, request_fn)
     return None, "unresolved"
 
 
@@ -317,7 +334,7 @@ def refresh_display_names(registry, resolve_fn=resolve_display_name):
         platform = entry.get("platform")
         token = entry.get("token")
         old_company = entry.get("company")
-        if platform not in ("greenhouse", "keka"):
+        if platform not in ("greenhouse", "keka", "workable"):
             rows.append({
                 "platform": platform,
                 "token": token,
@@ -356,7 +373,7 @@ def main(argv=None):
     if args.refresh_names:
         registry = _load_json(REGISTRY_PATH, [])
         rows = refresh_display_names(registry)
-        authoritative = sum(row["kind"] in ("greenhouse-api", "keka-title", "keka-og-title")
+        authoritative = sum(row["kind"] in ("greenhouse-api", "keka-title", "keka-og-title", "workable-widget", "workable-accounts")
                             for row in rows)
         fallback = sum(row["kind"] == "fallback-token" for row in rows)
         unresolved = sum(row["kind"] in ("unresolved", "unresolved-unsupported")
@@ -373,7 +390,7 @@ def main(argv=None):
         print('by-platform kind breakdown:')
         for _plat in sorted(by_platform):
             print('  {}: {}'.format(_plat, dict(by_platform[_plat])))
-        for platform in ("greenhouse", "keka"):
+        for platform in ("greenhouse", "keka", "workable"):
             print("{} samples:".format(platform))
             for row in [r for r in rows if r["platform"] == platform][:10]:
                 print("  {} -> {} [{}]".format(
