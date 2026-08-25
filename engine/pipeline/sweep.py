@@ -392,11 +392,11 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
         "failure_modes": dict(fails.most_common(10)),
         "kept_total": len(job_rows),
         "store_reconciled": store_reconciled,
-        "by_stage": dict(collections.Counter(r["stage"] for r in job_rows)),
-        "by_bucket": dict(collections.Counter(r["location_bucket"] for r in job_rows)),
-        "technical": sum(1 for r in job_rows if r["technical"] is True),
-        "non_technical": sum(1 for r in job_rows if r["technical"] is False),
-        "unclassified": sum(1 for r in job_rows if r["technical"] is None),
+        "by_stage": dict(collections.Counter(r.get("stage", "unknown") for r in job_rows)),
+        "by_bucket": dict(collections.Counter(r.get("location_bucket", "unknown") for r in job_rows)),
+        "technical": sum(1 for r in job_rows if r.get("technical") is True),
+        "non_technical": sum(1 for r in job_rows if r.get("technical") is False),
+        "unclassified": sum(1 for r in job_rows if r.get("technical") is None),
         "filtered_out": {
             "total": sum(filtered_out.values()),
             "by_reason": dict(filtered_out),
@@ -404,31 +404,31 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
         "hidden": {
             "total": sum(1 for r in job_rows if r.get("hidden_reason") is not None),
             "by_reason": dict(collections.Counter(
-                r["hidden_reason"] for r in job_rows
+                r.get("hidden_reason", None) for r in job_rows
                 if r.get("hidden_reason") is not None)),
         },
         "visible_total": sum(1 for r in job_rows
                               if r.get("hidden_reason") is None),
         "by_stage_resolved": dict(collections.Counter(
-            r["stage_resolved"] for r in job_rows)),
+            r.get("stage_resolved", "unknown") for r in job_rows)),
         "stage_resolved_changed": sum(
-            1 for r in job_rows if r["stage_resolved"] != r["stage"]),
+            1 for r in job_rows if r.get("stage_resolved") != r.get("stage")),
         "experience_stated": sum(
             1 for r in job_rows if r.get("experience_min") is not None),
         "experience_conflicts": sum(
             1 for r in job_rows if r.get("experience_conflict") is True),
         "by_eligibility_status": dict(collections.Counter(
-            r["eligibility_status"] for r in job_rows)),
+            r.get("eligibility_status", "unknown") for r in job_rows)),
         "worth_checking_total": sum(
             1 for r in job_rows
             if r.get("eligibility_status") == filters.ELIG_RULES_UNCLEAR),
     }
 
     india = [r for r in job_rows
-             if r["location_bucket"] in (filters.INDIA_LOCATED, filters.INDIA_REMOTE)]
+             if r.get("location_bucket") in (filters.INDIA_LOCATED, filters.INDIA_REMOTE)]
     report["india_early_career"] = len(india)
     report["india_early_career_technical"] = sum(
-        1 for r in india if r["technical"] is True)
+        1 for r in india if r.get("technical") is True)
     report["quality"] = quality.report(unique)
 
     os.makedirs(DATA, exist_ok=True)
