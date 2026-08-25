@@ -34,27 +34,37 @@ Structured worldwide research programmes and opportunities for students and earl
 WORLDWIDE - open to anyone, anywhere. Capture each programme's own eligibility from its official page; never apply an India or other location filter.
 
 ## Source worklist
-Status values: not-started / collected / verified / blocked.
+Status values: not-started / collected / verified+live / verified+closed / pending / blocked.
 
 | Source | Official URL | Status | Notes |
 |---|---|---|---|
-| Mitacs Globalink Research Internship | https://www.mitacs.ca/our-programs/globalink-research-internship-students/ | verified | Open for summer 2027; deadline 2026-09-16 (1pm PT); evidence-backed, surfaced live; intl undergrads from partner countries |
-| DAAD RISE Germany | https://www.daad.de/rise/en/ | not-started | Window ~mid-Oct to late-Nov; off-season now; undergrads at North American/UK/Irish universities |
-| CERN Summer Student Programme | https://home.cern/summer-student-programme/ | not-started | All nationalities; window ~Nov to end Jan |
-| DESY Summer Student Programme | https://summerstudents.desy.de/ | not-started | Opens early Dec, deadline 31 Jan; intl |
-| ETH Zurich Student Summer Research Fellowship | https://www.inf.ethz.ch/studies/summer-research-fellowship.html | not-started | Open to all students worldwide except ETH; opens ~early Nov |
-| Summer@EPFL | https://summer.epfl.ch/ | not-started | International students; CS & Communication Sciences |
-| Amgen Scholars Program | https://amgenscholars.com/ | not-started | Regional incl. Asia (worldwide); window ~Nov to Feb |
-| Caltech Summer Undergraduate Research Fellowships (SURF) | https://sfp.caltech.edu/undergraduate-research/programs/surf | not-started | Intl eligible on Caltech campus; JPL US citizens/PR only |
-| RIKEN International Program Associate (IPA) | https://www.riken.jp/en/careers/programs/ipa/index.html | not-started | PhD research at RIKEN |
+| Mitacs Globalink Research Internship | https://www.mitacs.ca/our-programs/globalink-research-internship-students/ | verified+live | Open for summer 2027; deadline 2026-09-16 (1pm PT); evidence-backed, surfaced live; intl undergrads from partner countries |
+| DAAD RISE Germany | https://www.daad.de/rise/en/ | verified+live | Opening soon; application window 2026-10-15 to 2026-11-30; undergrads at North American/UK/Irish universities |
+| CERN Summer Student Programme | https://home.cern/summer-student-programme/ | verified+live | Open; all nationalities; applications due no later than end of January |
+| DESY Summer Student Programme | https://summerstudents.desy.de/ | verified+closed | Recorded, not live; 2026 cycle runs 21 July–10 September 2026; international |
+| ETH Zurich Student Summer Research Fellowship | https://www.inf.ethz.ch/studies/summer-research-fellowship.html | pending | Official programme and eligibility page found, but no application window/deadline; revisit when applications open |
+| Summer@EPFL | https://summer.epfl.ch/ | verified+live | Opening soon; deadline on the Sunday closest to 1 December; international students; CS & Communication Sciences |
+| Amgen Scholars Program | https://amgenscholars.com/ | verified+live | Opening soon; Summer 2027 applications available for Australia and coming November 1 for other regions; regional programmes worldwide |
+| Caltech Summer Undergraduate Research Fellowships (SURF) | https://sfp.caltech.edu/undergraduate-research/programs/surf | verified+live | Opening soon; SURF 2027 application opens November 1 and is due March 1; visiting students eligible on Caltech campus |
+| RIKEN International Program Associate (IPA) | https://www.riken.jp/en/careers/programs/ipa/index.html | verified+live | Opening soon; calls issued in April and September; PhD research at RIKEN |
+| NSF Research Experiences for Undergraduates (REU) | https://www.nsf.gov/funding/initiatives/reu | verified+live | Open; undergraduates apply directly to REU Sites; stipends and possible housing, meals, and travel assistance |
 
 ## Current programme state
 
 | Programme | Category | Status | Deadline |
 |---|---|---|---|
 | Mitacs Globalink Research Internship | research | open | 2026-09-16 |
+| CERN Summer Student Programme | research | open | End of January (specific annual deadline on official site) |
+| DAAD RISE Germany | research | opening_soon | 2026-11-30 |
+| Summer@EPFL Research Fellowship | research | opening_soon | Sunday closest to 2026-12-01 |
+| Amgen Scholars Program | research | opening_soon | Regional deadlines; other regions open November 1 |
+| RIKEN International Program Associate (IPA) | research | opening_soon | Calls in April and September |
+| Caltech Summer Undergraduate Research Fellowships (SURF) | research | opening_soon | 2027-03-01 |
+| NSF Research Experiences for Undergraduates (REU) | research | open | Site-specific |
+| DESY Summer Student Programme | research | closed | 2026 cycle in session: 2026-07-21 to 2026-09-10 |
+| ETH Zurich Student Summer Research Fellowship | research | pending | Not stated |
 
-One row is live in the lake: Mitacs Globalink. There are 9 seeds total; most are off-season and awaiting their application windows.
+Eight rows are live in the lake: Mitacs, CERN, DAAD RISE Germany, Summer@EPFL, Amgen Scholars, RIKEN IPA, Caltech SURF, and NSF REU. One recorded row is not live: DESY (2026 cycle in session). One programme is pending: ETH Zurich SSRF. There are 10 seeds total.
 
 ## Manual verification
 Evidence-backed records are stored in `data/operations/research_programme_verifications.json` and surfaced via `python3 -m categories.research.research --apply-verifications`.
@@ -63,9 +73,11 @@ Evidence-backed records are stored in `data/operations/research_programme_verifi
 `python3 -m categories.research.research` runs the live collector. It is built on the shared programme engine `categories/programme_core.py`. It is NOT yet wired into the daily sweep - research collection is in progress.
 
 ## Next actions
-- Collect and verify the 8 seeded programmes when their windows open.
-- Confirm each official URL is still live.
+- Revisit ETH Zurich Student Summer Research Fellowship when the official page publishes an application window or deadline.
+- Reconfirm the eight live programmes and DESY against their official pages on the monthly cadence.
 - Consider wiring the collector into the daily sweep once stable.
 
-## Direction (updated 2026-08-21)
-New worldwide Research category built on shared `programme_core`; 9 verified seeds, with Mitacs Globalink surfaced as the first evidence-backed live programme.
+## Direction (updated 2026-08-25)
+Worldwide Research category built on shared `programme_core`; 10 seeded sources, 8 evidence-backed live programmes, 1 recorded closed programme, and 1 pending programme.
+
+Last worked (2026-08-25): collected+verified 7 programmes from official pages via manual-ai verifications, added NSF REU seed, DESY recorded closed, ETH pending.

@@ -26,6 +26,7 @@ SOURCE_REGISTRY = (
     {"source_id": "amgen-scholars", "programme_id": "research-amgen-scholars", "programme_name": "Amgen Scholars Program", "organizer": "Amgen Foundation", "official_url": "https://amgenscholars.com/", "allowed_path_hints": [""], "check_cadence": "monthly"},
     {"source_id": "caltech-surf", "programme_id": "research-caltech-surf", "programme_name": "Caltech Summer Undergraduate Research Fellowships (SURF)", "organizer": "Caltech – Student-Faculty Programs", "official_url": "https://sfp.caltech.edu/undergraduate-research/programs/surf", "allowed_path_hints": ["undergraduate-research/programs/surf", "surf"], "check_cadence": "monthly"},
     {"source_id": "riken-ipa", "programme_id": "research-riken-ipa", "programme_name": "RIKEN International Program Associate (IPA)", "organizer": "RIKEN", "official_url": "https://www.riken.jp/en/careers/programs/ipa/index.html", "allowed_path_hints": ["careers/programs/ipa", "ipa"], "check_cadence": "monthly"},
+    {"source_id": "nsf-reu", "programme_id": "research-nsf-reu", "programme_name": "NSF Research Experiences for Undergraduates (REU)", "organizer": "U.S. National Science Foundation (NSF)", "official_url": "https://www.nsf.gov/funding/initiatives/reu", "allowed_path_hints": ["funding/initiatives/reu", "reu"], "check_cadence": "monthly"},
 )
 SEEDS = SOURCE_REGISTRY
 SEED_BY_URL = {seed["official_url"]: seed for seed in SOURCE_REGISTRY}

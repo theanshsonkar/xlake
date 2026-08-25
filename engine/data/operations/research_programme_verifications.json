@@ -28,5 +28,224 @@
         "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
       }
     }
+  },
+  {
+    "programme_id": "research-cern-summer-student",
+    "programme_name": "CERN Summer Student Programme",
+    "organizer": "CERN",
+    "verified_at": "2026-08-25T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "open",
+    "eligibility": "Students pursuing bachelor's or master's degrees in physics, computing, engineering and maths; all nationalities welcome to apply",
+    "official_url": "https://home.cern/summer-student-programme/",
+    "application_url": "https://careers.cern/summer",
+    "international_eligibility": "All nationalities welcome to apply",
+    "official_evidence": {
+      "status": {
+        "quote": "The programme is currently open for applications. All applications should reach us no later than end of January, please check the specific deadline for this year on our website https://careers.cern/summer",
+        "url": "https://home.cern/summer-student-programme/"
+      },
+      "eligibility": {
+        "quote": "The CERN Summer Student Programme offers students pursuing bachelor's or master's degrees in physics, computing, engineering and maths a unique opportunity to join in the day-to-day work of research teams participating in experiments at CERN in Geneva, Switzerland.",
+        "url": "https://home.cern/summer-student-programme/"
+      }
+    }
+  },
+  {
+    "programme_id": "research-daad-rise-germany",
+    "programme_name": "DAAD RISE Germany (Research Internships in Science and Engineering)",
+    "organizer": "DAAD (German Academic Exchange Service)",
+    "verified_at": "2026-08-25T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "opening_soon",
+    "opening_date": "2026-10-15",
+    "deadline": "2026-11-30",
+    "eligibility": "Undergraduate students enrolled at universities in the United States, Canada, the United Kingdom or Ireland in biology, chemistry, computer science, physics, earth sciences or engineering",
+    "funding": "Monthly DAAD scholarship of 992 Euros, plus health/accident/liability insurance, international travel subsidy and 160 Euros RISE meeting travel stipend",
+    "official_url": "https://www.daad.de/rise/en/",
+    "application_url": "https://www.daad.de/rise/en/rise-germany/find-an-internship/application-portal/",
+    "international_eligibility": "Open to students enrolled at US, Canadian, UK and Irish universities (not worldwide)",
+    "official_evidence": {
+      "status": {
+        "quote": "The internship database is open between October 15 to November 30, 2026.",
+        "url": "https://www.daad.de/rise/en/rise-germany/find-an-internship/what-applicants-need-to-know/"
+      },
+      "opening_date": {
+        "quote": "The internship database is open between October 15 to November 30, 2026.",
+        "url": "https://www.daad.de/rise/en/rise-germany/find-an-internship/what-applicants-need-to-know/"
+      },
+      "deadline": {
+        "quote": "All applications must be submitted by November 30, 2026 online (11:59 pm CET – Central European Time).",
+        "url": "https://www.daad.de/rise/en/rise-germany/find-an-internship/what-applicants-need-to-know/"
+      },
+      "eligibility": {
+        "quote": "currently be enrolled in a bachelor's degree program at a university/ college in the United States, Canada, the United Kingdom or Ireland in the field of biology, chemistry, computer science, physics, earth sciences or engineering (or a closely related field).",
+        "url": "https://www.daad.de/rise/en/rise-germany/find-an-internship/what-applicants-need-to-know/"
+      },
+      "funding": {
+        "quote": "a monthly scholarship of 992 Euros for full month",
+        "url": "https://www.daad.de/rise/en/rise-germany/find-an-internship/what-applicants-need-to-know/"
+      }
+    }
+  },
+  {
+    "programme_id": "research-epfl-summer-research",
+    "programme_name": "Summer@EPFL Research Fellowship",
+    "organizer": "EPFL – School of Computer and Communication Sciences",
+    "verified_at": "2026-08-25T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "opening_soon",
+    "eligibility": "Students enrolled in BSc, BTech, MSc, MTech or equivalent in Computer Science, Computer Engineering, Telecommunications or Electrical Engineering; must be 2nd year Bachelor or above; PhD students not eligible",
+    "funding": "Living allowance of CHF 1,800 per month (pro rata) and refund of travelling costs (2nd class train or economy airfare)",
+    "official_url": "https://summer.epfl.ch/",
+    "application_url": "https://summer.epfl.ch/apply.html",
+    "international_eligibility": "Open to international students",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are received once a year (deadline on the Sunday closest to the 1st December, each year). The applications may open as late as a couple of weeks before the deadline.",
+        "url": "https://summer.epfl.ch/"
+      },
+      "deadline": {
+        "quote": "Deadline on the Sunday closest to 1st DECEMBER. Applications open as late as a couple of weeks before the deadline.",
+        "url": "https://summer.epfl.ch/"
+      },
+      "funding": {
+        "quote": "Accepted students will receive a living allowance of CHF 1,800.- per month (pro rata to the actual duration) and a refund of travelling costs (2nd class train ticket or low-cost/economy airfare).",
+        "url": "https://summer.epfl.ch/"
+      },
+      "eligibility": {
+        "quote": "Fellowships are awarded to students enrolled in BSc, BTech, MSc, MTech, or equivalent programmes in Computer Science, Computer Engineering, Telecommunications, or Electrical Engineering. PhD students are not eligible.",
+        "url": "https://summer.epfl.ch/"
+      }
+    }
+  },
+  {
+    "programme_id": "research-amgen-scholars",
+    "programme_name": "Amgen Scholars Program",
+    "organizer": "Amgen Foundation",
+    "verified_at": "2026-08-25T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "opening_soon",
+    "eligibility": "Undergraduate students; regional programs open to students in the US, Europe, Asia, Canada, and Australia/New Zealand/Oceania",
+    "official_url": "https://amgenscholars.com/",
+    "international_eligibility": "International (regional programs across US, Europe, Asia, Canada, Australia)",
+    "official_evidence": {
+      "status": {
+        "quote": "Summer 2027 applications are now available for Australia; coming November 1 for all other regions.",
+        "url": "https://amgenscholars.com/"
+      },
+      "eligibility": {
+        "quote": "An Undergraduate Summer Research Program in Science and Biotechnology",
+        "url": "https://amgenscholars.com/"
+      }
+    }
+  },
+  {
+    "programme_id": "research-riken-ipa",
+    "programme_name": "RIKEN International Program Associate (IPA)",
+    "organizer": "RIKEN",
+    "verified_at": "2026-08-25T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "opening_soon",
+    "eligibility": "Non-Japanese doctoral (PhD) candidates enrolled at a university with a RIKEN joint graduate school partnership",
+    "funding": "Daily living allowance of 5,200 JPY, one round-trip airfare, free on-campus housing or rent up to 70,000 JPY/month, and accident insurance",
+    "official_url": "https://www.riken.jp/en/careers/programs/ipa/index.html",
+    "international_eligibility": "Open to overseas PhD students at partner universities worldwide",
+    "official_evidence": {
+      "status": {
+        "quote": "Calls for applications are issued in April and in September each year.",
+        "url": "https://www.riken.jp/en/careers/programs/ipa/index.html"
+      },
+      "eligibility": {
+        "quote": "A graduate student enrolled in a PhD program at a Japanese or an overseas university which has entered into a joint graduate school partnership program with RIKEN, or is in the process of entering into an agreement.",
+        "url": "https://www.riken.jp/en/careers/programs/ipa/index.html"
+      },
+      "funding": {
+        "quote": "Living allowance (5,200 JPY/day)",
+        "url": "https://www.riken.jp/en/careers/programs/ipa/index.html"
+      }
+    }
+  },
+  {
+    "programme_id": "research-caltech-surf",
+    "programme_name": "Caltech Summer Undergraduate Research Fellowships (SURF)",
+    "organizer": "Caltech – Student-Faculty Programs",
+    "verified_at": "2026-08-25T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "opening_soon",
+    "eligibility": "Undergraduate students, including visiting (non-Caltech) students; requires a Caltech faculty mentor",
+    "funding": "In 2026, Fellows receive an $8,110 award for the ten-week period",
+    "official_url": "https://sfp.caltech.edu/undergraduate-research/programs/surf",
+    "application_url": "https://sfp.caltech.edu/undergraduate-research/programs/surf/application_information",
+    "official_evidence": {
+      "status": {
+        "quote": "The SURF 2027 application will open on November 1st.",
+        "url": "https://sfp.caltech.edu/undergraduate-research/programs/surf/application_information"
+      },
+      "deadline": {
+        "quote": "SURF applications are due on March 1.",
+        "url": "https://sfp.caltech.edu/undergraduate-research/programs/surf/application_information"
+      },
+      "funding": {
+        "quote": "In 2026, Fellows will receive an $8,110 award for the ten-week period.",
+        "url": "https://sfp.caltech.edu/undergraduate-research/programs/surf"
+      },
+      "eligibility": {
+        "quote": "Visiting (non-Caltech) students need to submit an unofficial transcript at time of application.",
+        "url": "https://sfp.caltech.edu/undergraduate-research/programs/surf/application_information"
+      }
+    }
+  },
+  {
+    "programme_id": "research-desy-summer-student",
+    "programme_name": "DESY Summer Student Programme",
+    "organizer": "DESY (Deutsches Elektronen-Synchrotron)",
+    "verified_at": "2026-08-25T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "closed",
+    "eligibility": "Undergraduate students in physics or related disciplines such as scientific computing and engineering",
+    "funding": "Salary of 28.50 Euro per day, free DESY hostel accommodation for the full programme period, and at least partial travel reimbursement",
+    "official_url": "https://summerstudents.desy.de/",
+    "international_eligibility": "International students (large international laboratory)",
+    "official_evidence": {
+      "status": {
+        "quote": "The 2026 programme will take place from 21 July - 10 September 2026.",
+        "url": "https://summerstudents.desy.de/"
+      },
+      "funding": {
+        "quote": "The students will receive a salary of 28,50 Euro per day and at least partial reimbursement of travel costs.",
+        "url": "https://summerstudents.desy.de/"
+      },
+      "eligibility": {
+        "quote": "Each summer DESY offers undergraduate students in physics or related disciplines (such as scientific computing and engineering) the opportunity to obtain first-hand research experience at a large international laboratory.",
+        "url": "https://summerstudents.desy.de/"
+      }
+    }
+  },
+  {
+    "programme_id": "research-nsf-reu",
+    "programme_name": "NSF Research Experiences for Undergraduates (REU)",
+    "organizer": "U.S. National Science Foundation (NSF)",
+    "verified_at": "2026-08-25T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "open",
+    "eligibility": "Undergraduate (college and university) students applying directly to REU Sites",
+    "funding": "REU-supported students receive stipends and in many cases assistance with housing, meals and travel",
+    "official_url": "https://www.nsf.gov/funding/initiatives/reu",
+    "application_url": "https://www.nsf.gov/funding/initiatives/reu/search",
+    "official_evidence": {
+      "status": {
+        "quote": "Undergraduates (college and university students) can apply directly to REU Sites to participate in research projects across the United States and the world.",
+        "url": "https://www.nsf.gov/funding/initiatives/reu"
+      },
+      "funding": {
+        "quote": "REU-supported students receive stipends and in many cases assistance with housing, meals and travel.",
+        "url": "https://www.nsf.gov/funding/initiatives/reu"
+      },
+      "eligibility": {
+        "quote": "Undergraduates (college and university students) can apply directly to REU Sites to participate in research projects across the United States and the world.",
+        "url": "https://www.nsf.gov/funding/initiatives/reu"
+      }
+    }
   }
 ]
