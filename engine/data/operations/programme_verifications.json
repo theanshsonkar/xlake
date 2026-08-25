@@ -82,5 +82,301 @@
         "url": "https://www.sequoiacap.com/oss"
       }
     }
+  },
+  {
+    "programme_id": "djangonaut-space",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "open",
+    "opening_date": "2026-08-14",
+    "deadline": "2026-09-06",
+    "eligibility": "Open to community members who want to level up their Django code contributions; no stipend (free program).",
+    "funding": "Not stated (free program)",
+    "official_url": "https://djangonaut.space/sessions/",
+    "application_url": "https://djangonaut.space/survey/session-7-application/response/create/",
+    "official_evidence": {
+      "status": {
+        "quote": "These sessions are limited to those who are accepted from an application process. If a session is accepting applications, you'll see an Apply button.",
+        "url": "https://djangonaut.space/sessions/"
+      },
+      "opening_date": {
+        "quote": "2026 Session 7 ... Applications Open Aug 14, 2026",
+        "url": "https://djangonaut.space/sessions/"
+      },
+      "deadline": {
+        "quote": "Applications Close Sep 06, 2026",
+        "url": "https://djangonaut.space/sessions/"
+      },
+      "eligibility": {
+        "quote": "This is an 8-week group mentoring program where individuals will work self-paced in a semi-structured learning environment.",
+        "url": "https://djangonaut.space/sessions/"
+      },
+      "funding": {
+        "quote": "Djangonaut Space is a free, 8-week group mentoring program where individuals will work self-paced in a semi-structured learning environment.",
+        "url": "https://djangonaut.space/"
+      }
+    },
+    "verification_note": "Session 7 applications open 2026-08-14, close 2026-09-06 (program starts Oct 12, 2026). Verified from official sessions page 2026-08-25."
+  },
+  {
+    "programme_id": "social-winter-of-code",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "open",
+    "opening_date": "2026-08-20",
+    "deadline": "2026-12-31",
+    "eligibility": "Anyone: students, working developers, and first-time contributors, worldwide.",
+    "funding": "Not stated (free; verified certificate)",
+    "official_url": "https://swoc.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "Registrations open 20 August 2026 and close 31 December 2026.",
+        "url": "https://swoc.in/"
+      },
+      "opening_date": {
+        "quote": "20 Aug 2026 Registrations open",
+        "url": "https://swoc.in/"
+      },
+      "deadline": {
+        "quote": "31 Dec 2026 Registrations close",
+        "url": "https://swoc.in/"
+      },
+      "eligibility": {
+        "quote": "Anyone: students, working developers, and first-time contributors. If you can open a pull request, you can join.",
+        "url": "https://swoc.in/"
+      },
+      "funding": {
+        "quote": "Completely free to join, contribute, and earn a certificate.",
+        "url": "https://swoc.in/"
+      }
+    },
+    "verification_note": "Season 7 (Winter 2026-27) registrations open 2026-08-20, close 2026-12-31; coding period Jan 1-Mar 30, 2027. Verified from official site 2026-08-25."
+  },
+  {
+    "programme_id": "24-pull-requests",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "opening_soon",
+    "opening_date": "2026-12-01",
+    "official_url": "https://24pullrequests.com/",
+    "official_evidence": {
+      "status": {
+        "quote": "24 Pull Requests is finished for 2025 ... See you on December 1st, 2026, Happy Hacking!",
+        "url": "https://24pullrequests.com/"
+      },
+      "opening_date": {
+        "quote": "See you on December 1st, 2026",
+        "url": "https://24pullrequests.com/"
+      }
+    },
+    "verification_note": "Annual Dec 1-24 open-source contribution challenge; 2025 edition finished, next edition announced for December 1, 2026. Verified 2026-08-25."
+  },
+  {
+    "programme_id": "sktime-mentorship",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "rolling",
+    "eligibility": "New contributors; students from underrepresented groups explicitly encouraged. Worldwide.",
+    "funding": "Not stated (informal, unpaid 2-3 month mentorship)",
+    "official_url": "https://www.sktime.net/docs/get-involved/mentoring/",
+    "application_url": "https://forms.gle/WyXVMWzwzwLon47YA",
+    "official_evidence": {
+      "status": {
+        "quote": "We accept applications on a rolling basis and we will be in touch with you shortly!",
+        "url": "https://www.sktime.net/docs/get-involved/mentoring/"
+      },
+      "eligibility": {
+        "quote": "We explicitly encourage students from underrepresented groups or who have experienced discrimination in the past to apply!",
+        "url": "https://www.sktime.net/docs/get-involved/mentoring/"
+      },
+      "funding": {
+        "quote": "we have launched an informal mentorship programme over 2 - 3 months to onboard new contributors",
+        "url": "https://www.sktime.net/docs/get-involved/mentoring/"
+      }
+    },
+    "verification_note": "Rolling informal 2-3 month mentorship; applications accepted on a rolling basis via online form. Reconfirmed 2026-08-25."
+  },
+  {
+    "programme_id": "ethereum-protocol-fellowship",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "closed",
+    "eligibility": "Fully permissionless - anyone can join; 5-month commitment.",
+    "funding": "Monthly stipend for selected participants",
+    "official_url": "https://ps.ethereum.foundation/fellowship",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications open annually, typically in April-May for a June cohort start.",
+        "url": "https://ps.ethereum.foundation/fellowship"
+      },
+      "eligibility": {
+        "quote": "EPF is fully permissionless. You can participate, access all resources, and contribute regardless of whether you receive a stipend.",
+        "url": "https://ps.ethereum.foundation/fellowship"
+      },
+      "funding": {
+        "quote": "Fellows work on real projects alongside client teams and researchers, with mentorship and a monthly stipend for selected participants.",
+        "url": "https://ps.ethereum.foundation/fellowship"
+      }
+    },
+    "verification_note": "5-month cohort; applications open annually ~April-May for a June start. No open window as of 2026-08-25; recorded closed (next cycle)."
+  },
+  {
+    "programme_id": "sovereign-tech-fellowship",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "closed",
+    "deadline": "2026-04-06",
+    "eligibility": "Open source maintainers, community managers, and technical writers.",
+    "funding": "EUR 64,000 to 82,000 per year (employment) or negotiated freelance hourly rate",
+    "official_url": "https://www.sovereign.tech/programs/fellowship",
+    "official_evidence": {
+      "status": {
+        "quote": "The application period ended on April 6, 2026.",
+        "url": "https://www.sovereign.tech/programs/fellowship"
+      },
+      "deadline": {
+        "quote": "Submission deadline for applications is on April 6, 2026, at 11:59 PM (CET).",
+        "url": "https://www.sovereign.tech/programs/fellowship"
+      },
+      "eligibility": {
+        "quote": "supporting maintainers, community managers, and technical writers whose work underpins the health and stability of critical components in the open source ecosystem",
+        "url": "https://www.sovereign.tech/programs/fellowship"
+      },
+      "funding": {
+        "quote": "will range from EUR 64,000 to 82,000 per year for a full-time position",
+        "url": "https://www.sovereign.tech/programs/fellowship"
+      }
+    },
+    "verification_note": "2026 application period ended 2026-04-06; program continues with periodic future recruitment. Recorded closed 2026-08-25."
+  },
+  {
+    "programme_id": "swift-mentorship",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "closed",
+    "deadline": "2026-06-15",
+    "eligibility": "Open to everyone 18 years and older; not limited to students.",
+    "funding": "Not stated (unpaid mentorship)",
+    "official_url": "https://www.swift.org/mentorship/",
+    "official_evidence": {
+      "status": {
+        "quote": "July 6th 10-week cohort begins",
+        "url": "https://www.swift.org/mentorship/"
+      },
+      "deadline": {
+        "quote": "June 15th Mentee Interest survey deadline",
+        "url": "https://www.swift.org/mentorship/"
+      },
+      "eligibility": {
+        "quote": "the program is open to everyone 18 years and older who is eager to learn about Swift",
+        "url": "https://www.swift.org/mentorship/"
+      }
+    },
+    "verification_note": "2026 mentee interest deadline June 15; 10-week cohort began July 6 and runs to Sept 11, 2026 - applications closed. Recorded 2026-08-25."
+  },
+  {
+    "programme_id": "open-source-research-experience",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "closed",
+    "deadline": "2026-03-31",
+    "eligibility": "Undergraduate and graduate students / newcomers to open source from anywhere in the world (must have work authorization in country of residence).",
+    "funding": "GSoC stipend; sponsor levels e.g. Silver 7,500 USD covers one student full-time for summer",
+    "official_url": "https://ucsc-ospo.github.io/osre26/",
+    "official_evidence": {
+      "status": {
+        "quote": "Deadline HAS PASSED for students to join Slack channel (required for proposal to be considered - WE ARE NO LONGER ACCEPTING NEW REQUESTS)",
+        "url": "https://ucsc-ospo.github.io/osre26/"
+      },
+      "deadline": {
+        "quote": "The FINAL proposal deadline is March 31 at 18:00 UTC.",
+        "url": "https://ucsc-ospo.github.io/osre26/"
+      },
+      "eligibility": {
+        "quote": "contributions are welcome from students or other newcomers from anywhere in the world",
+        "url": "https://ucsc-ospo.github.io/osre26/"
+      },
+      "funding": {
+        "quote": "Silver $7,500 (covers one student full-time for summer)",
+        "url": "https://ucsc-ospo.github.io/osre26/"
+      }
+    },
+    "verification_note": "OSRE 2026 proposal deadline March 31, 2026 passed; cohort in progress. Recorded closed 2026-08-25."
+  },
+  {
+    "programme_id": "european-summer-of-code",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "closed",
+    "deadline": "2026-04-30",
+    "eligibility": "Contributors new to open source, worldwide.",
+    "funding": "Stipends for accepted contributors",
+    "official_url": "https://www.esoc.dev/",
+    "official_evidence": {
+      "status": {
+        "quote": "April 30, 2026 Batch 2 - Applications Close Deadline for Batch 2 applications (18:00 UTC).",
+        "url": "https://www.esoc.dev/"
+      },
+      "deadline": {
+        "quote": "April 30, 2026 Batch 2 - Applications Close",
+        "url": "https://www.esoc.dev/"
+      },
+      "eligibility": {
+        "quote": "Funding stipends for contributors new to open source worldwide",
+        "url": "https://www.esoc.dev/"
+      },
+      "funding": {
+        "quote": "Receive stipends for your work",
+        "url": "https://www.esoc.dev/"
+      }
+    },
+    "verification_note": "ESoC 2026 Batch 2 applications closed April 30, 2026; projects started May 25, 2026. Recorded closed 2026-08-25."
+  },
+  {
+    "programme_id": "xorg-evoc",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "closed",
+    "official_url": "https://www.x.org/wiki/XorgEVoC/",
+    "official_evidence": {
+      "status": {
+        "quote": "!!! This project is being sunset and no application will be accepted for the time being. Please do not ask or apply for an EVoC. !!!",
+        "url": "https://www.x.org/wiki/XorgEVoC/"
+      }
+    },
+    "verification_note": "X.Org EVoC sunset; no applications accepted (official wiki last edited Aug 24, 2026). Recorded closed 2026-08-25."
+  },
+  {
+    "programme_id": "processing-foundation-fellowship",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "closed",
+    "official_url": "https://processingfoundation.org/fellowships/",
+    "official_evidence": {
+      "status": {
+        "quote": "There will be no Processing Foundation Fellowship in 2026.",
+        "url": "https://processingfoundation.org/fellowships/"
+      }
+    },
+    "verification_note": "No 2026 fellowship (strategic redesign); information on the 2027 Fellowship expected October 2026. Recorded closed 2026-08-25."
+  },
+  {
+    "programme_id": "kde-season-of-kde",
+    "verified_at": "2026-08-25",
+    "verified_by": "manual-verification",
+    "programme_status": "closed",
+    "deadline": "2026-01-14",
+    "official_url": "https://season.kde.org/",
+    "official_evidence": {
+      "status": {
+        "quote": "Deadline for the contributors applications 2026-01-14",
+        "url": "https://season.kde.org/"
+      },
+      "deadline": {
+        "quote": "Deadline for the contributors applications 2026-01-14",
+        "url": "https://season.kde.org/"
+      }
+    },
+    "verification_note": "SoK 2026 applications closed 2026-01-14; work period ended 2026-03-20. Next season not yet dated. Recorded closed 2026-08-25."
   }
 ]
