@@ -33,8 +33,8 @@ class TestResearchProgrammeCategory(unittest.TestCase):
         self.assertIn("deadline", record["official_evidence"])
         self.assertIn("application", record["official_evidence"])
 
-    def test_registry_has_nine_worldwide_separate_seeds(self):
-        self.assertEqual(len(research.SOURCE_REGISTRY), 9)
+    def test_registry_has_ten_worldwide_separate_seeds(self):
+        self.assertEqual(len(research.SOURCE_REGISTRY), 10)
         self.assertTrue(all(seed["programme_id"].startswith("research-") for seed in research.SOURCE_REGISTRY))
         self.assertTrue(
             {seed["programme_id"] for seed in research.SOURCE_REGISTRY}.isdisjoint(
@@ -73,7 +73,7 @@ class TestResearchProgrammeCategory(unittest.TestCase):
 
     def test_mitacs_verification_is_valid_and_loaded(self):
         verifications = research.load_verifications(research.RESEARCH_CONFIG.verifications_path)
-        self.assertEqual(len(verifications), 1)
+        self.assertEqual(len(verifications), 9)
         verification = verifications[0]
         self.assertEqual(verification["programme_id"], "research-mitacs-globalink-research-internship")
         self.assertEqual(programme_core.validate_verification(verification), (True, ""))
@@ -81,7 +81,7 @@ class TestResearchProgrammeCategory(unittest.TestCase):
     def test_manual_verification_creates_research_row(self):
         verifications = research.load_verifications(research.RESEARCH_CONFIG.verifications_path)
         rows = research.apply_verifications([], verifications, CHECKED_AT)
-        self.assertEqual(len(rows), 1)
+        self.assertEqual(len(rows), 9)
         row = rows[0]
         self.assertEqual(row["programme_id"], "research-mitacs-globalink-research-internship")
         self.assertEqual(row["category"], "research")
