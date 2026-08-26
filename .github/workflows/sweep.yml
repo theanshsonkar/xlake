@@ -39,6 +39,11 @@ jobs:
        (github.event.inputs.job == 'sweep' || github.event.inputs.job == 'both'))
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+      AWS_DEFAULT_REGION: ap-south-1
     defaults:
       run:
         working-directory: engine
@@ -55,6 +60,15 @@ jobs:
       # there is no enumeration-cache step here.
       - name: Refresh community internship lists (zshah101)
         run: python3 -u -m categories.internships.lists
+
+      # The canonical lake lives in S3, not git. Pull the current lake down so
+      # the collectors read/write the same local files exactly as before.
+      - name: Restore lake from S3
+        run: |
+          mkdir -p data/lake
+          aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities.json" data/lake/opportunities.json
+          aws s3 cp "s3://$AWS_S3_BUCKET/lake/hidden.json" data/lake/hidden.json
+          aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities_history.json" data/lake/opportunities_history.json
 
       - name: Sweep the resolved registry
         env:
@@ -77,15 +91,31 @@ jobs:
       - name: Refresh Hackathons
         run: python3 -u -m categories.hackathons.hackathons
 
+      # Persist the lake back to S3 after ALL collectors have written it, so no
+      # record type is lost, plus a timestamped snapshot for point-in-time
+      # recovery. Placed after the last collector (not right after the sweep)
+      # because programmes/contributions/hackathons also write the lake.
+      - name: Sync lake to S3
+        run: |
+          aws s3 cp data/lake/opportunities.json "s3://$AWS_S3_BUCKET/lake/opportunities.json"
+          aws s3 cp data/lake/hidden.json "s3://$AWS_S3_BUCKET/lake/hidden.json"
+          aws s3 cp data/lake/opportunities_history.json "s3://$AWS_S3_BUCKET/lake/opportunities_history.json"
+          aws s3 cp data/lake/opportunities.json "s3://$AWS_S3_BUCKET/archive/opportunities-$(date -u +%Y%m%dT%H%M%SZ).json"
+
       # opportunities.json is the canonical lake. hidden.json is its retained
       # non-default companion; run and tier state are operational history.
-      - name: Commit lake
+      # The lake files themselves now live in S3 (synced above) and are
+      # gitignored, so only the small operational files are committed here.
+      - name: Commit operational files
         run: |
           git config user.name  "opportunity-lake-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/lake/opportunities.json data/lake/hidden.json \
+          git add data/operations/registry.json \
             data/operations/runs.jsonl data/operations/tier_state.json \
-            data/operations/programmes_observations.json
+            data/operations/programmes_observations.json \
+            data/operations/programme_verifications.json \
+            data/operations/research_programme_verifications.json \
+            data/operations/discovery_*.json
           git diff --staged --quiet || git commit -m "daily: sweep + programmes + contributions $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
 

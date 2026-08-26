@@ -49,3 +49,10 @@ jobs.json.tmp
 # ignored by the generic *.bak rule.
 engine/data/measure/keka_raw.json
 *.bak
+
+# Canonical data lake now lives in S3 (s3://$AWS_S3_BUCKET/lake/), not git.
+# These are large and are seeded/synced by the sweep workflow. Kept on disk
+# locally and in CI, but never committed. See AGENTS.md / README.md.
+engine/data/lake/opportunities.json
+engine/data/lake/hidden.json
+engine/data/lake/opportunities_history.json
