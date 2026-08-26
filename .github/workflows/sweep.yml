@@ -102,6 +102,16 @@ jobs:
           aws s3 cp data/lake/opportunities_history.json "s3://$AWS_S3_BUCKET/lake/opportunities_history.json"
           aws s3 cp data/lake/opportunities.json "s3://$AWS_S3_BUCKET/archive/opportunities-$(date -u +%Y%m%dT%H%M%SZ).json"
 
+      # Publish the serving rows (is_live OR needs_confirmation) into the
+      # Supabase serving table. Read-only against the lake; upserts on id and
+      # soft-retires ids no longer serving. Uses the Python stdlib only
+      # (urllib/json/hashlib) — no extra pip deps required.
+      - name: Publish to Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 -u -m pipeline.publish_supabase --execute
+
       # opportunities.json is the canonical lake. hidden.json is its retained
       # non-default companion; run and tier state are operational history.
       # The lake files themselves now live in S3 (synced above) and are
