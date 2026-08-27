@@ -191,6 +191,8 @@ def _merge_store(path: str, rows: List[Dict],
                 "last_seen": now,
                 "is_live": True,
             })
+            if "is_internship" not in existing:
+                existing["is_internship"] = r.get("is_internship")
         else:
             r = dict(r)
             r["first_seen"] = now
