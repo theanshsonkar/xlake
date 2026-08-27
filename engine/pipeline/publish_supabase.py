@@ -163,6 +163,7 @@ def map_row(r: dict) -> dict:
         "url": _first(r.get("url"), r.get("official_url"),
                       r.get("application_url")),
         "is_live": bool(r.get("is_live", False)),
+        "surfaced": bool(r.get("surfaced", True)),
         "is_internship": bool(r.get("is_internship", False)),
         "technical": r.get("technical"),
         "needs_confirmation": bool(r.get("needs_confirmation", False)),
