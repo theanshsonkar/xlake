@@ -15,3 +15,7 @@ Discovery graph is live. `registry.json` holds ~1,417 boards (Keka, Greenhouse, 
 5. **Jobs backstop (core, optional)** — liveness is disappearance-based; a board that stops being swept never flips `is_live=false` (only the 180-day surfacing cutoff hides it). Consider age-based expiry in `sweep.py`. Shared-core change → needs approval.
 6. **Screen tuning** — the outlier job-count flag (≥200) over-flags big legit employers; the real agency signal is name-based. Tune thresholds / lean on name patterns + future AI.
 7. **Verify post-sweep** — confirm the ~1,417 admitted boards collect correctly, and that Workable jobs get India/foreign tags from the location fix, on the first daily sweep after 2026-08-25.
+
+Last worked 2026-08-27: the per-company surfaced cap flag was shipped through
+to Supabase serving, so the intended default Jobs view can de-cluster large
+employers such as Accenture and Wipro.

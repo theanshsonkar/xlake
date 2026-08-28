@@ -45,17 +45,23 @@ Each category is either calendar (application windows, prose pages, few slow-cha
 | Startup & Founder Programmes | calendar | engine + AI reading |
 | Community & Leadership Programmes | calendar | engine + AI reading |
 | Scholarships | calendar | planned / not yet built |
-| Hackathons & Competitions | calendar | planned / not yet built |
+| Hackathons & Competitions | calendar | active deterministic official-source refresh |
 
 Open Source contributions (good-first-issues) are collected from curated repositories plus token-gated GitHub search; stale and over-commented issues are dropped, with a 7-day reconfirmation window.
 
-The one canonical lake holds three record types: jobs (no `record_type`), programmes, and contributions. Region-excluded roles are retained in hidden records with `region_excludes_india`, not deleted.
+The persistent canonical lake is S3 at
+`s3://$AWS_S3_BUCKET/lake/{opportunities,hidden,opportunities_history}.json`;
+`engine/data/lake/` is the local/CI working copy and Supabase is the serving
+projection. It holds jobs, programmes, contributions, and hackathon records;
+region-excluded roles are retained in hidden records with
+`region_excludes_india`, not deleted.
 
 Currently active categories: Open Source (LIVE and actively collected),
-Internships (LIVE), and Jobs (good enough). Fellowships, Grants & Funding,
-Scholarships, and Hackathons & Competitions are planned / not yet built;
-category scaffolding is not actively collected. AI verification for active
-calendar programmes runs ~2x/month; the engine sweep runs once a day.
+Internships (LIVE), Hackathons & Competitions (active deterministic official-source
+refresh), and Jobs (good enough). Fellowships, Grants & Funding, and
+Scholarships are planned / not yet built; category scaffolding is not actively
+collected. AI verification for active calendar programmes runs ~2x/month; the
+engine sweep runs once a day.
 
 ## Future category-work convention
 

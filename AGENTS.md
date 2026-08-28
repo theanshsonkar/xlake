@@ -17,15 +17,15 @@ Jobs and Internships are India-first and technical (students and early-career ca
 ## Two kinds of categories
 Categories are collected in one of two ways:
 
-- Calendar/programme categories - Fellowships, Research programmes, Open Source programmes, Grants & Funding, Scholarships, Hackathons & Competitions, Startup/Founder programmes, Community & Leadership programmes, Graduate & Campus programmes. They have application windows/deadlines and prose pages, with few official sources that change slowly. Collected by: the engine for fetching, liveness, dedup and storage, PLUS AI to read each page and extract dates/eligibility/funding. AI rule: only record what you can quote from the official page; never invent a date; a failed or unclear read never closes a row. Because these are low-volume, AI verification runs about twice a month (a human-in-the-loop AI does it until an API key is configured).
+- Calendar/programme categories - Fellowships, Research programmes, Open Source programmes, Grants & Funding, Scholarships, Hackathons & Competitions, Startup/Founder programmes, Community & Leadership programmes, Graduate & Campus programmes. They have application windows/deadlines and prose pages, with few official sources that change slowly. Collected by: the engine for fetching, liveness, dedup and storage, PLUS AI to read each page and extract dates/eligibility/funding, except Hackathons & Competitions, which use the active deterministic official-source refresh. AI rule: only record what you can quote from the official page; never invent a date; a failed or unclear read never closes a row. Because these are low-volume, AI verification runs about twice a month (a human-in-the-loop AI does it until an API key is configured).
 - Listing categories - Jobs, Internships, Apprenticeships, and OSS good-first-issues. High volume, structured data (job boards / APIs / GitHub), collected by the engine only. Internships and OSS good-first-issues are now actively collected.
 
-Schedule: the engine runs once a day for liveness/freshness. The daily sweep also runs the Open Source programme and contribution collectors, then makes one atomic commit covering all record types and pushes; the page-reader commits and pushes separately.
+Schedule: the daily sweep runs at 06:30 IST (`0 1 * * *` UTC), and the separate page-reader job runs at 08:00 IST (`30 2 * * *` UTC); the workflow also supports manual `workflow_dispatch`. The sweep refreshes community internship lists, restores the lake from S3, sweeps the resolved registry, shows the report, refreshes Open Source programmes and contributions, refreshes Hackathons, syncs the lake to S3, publishes Supabase, commits operational files only (`data/operations/...`, never lake), and uploads artifacts. The page-reader job runs separately on its second schedule.
 
 ## Guardrails
 - Never fabricate opportunities, sources, dates, or eligibility. Every row needs an official source URL and evidence from that page.
 - Do not change shared engine code (engine/core/, engine/adapters/, engine/pipeline/, trust logic) during category work. If you believe shared code must change, STOP and tell the human.
-- Use the one canonical lake: engine/data/lake/opportunities.json. Never create a second database for a category.
+- Use the one canonical lake in S3: `s3://$AWS_S3_BUCKET/lake/{opportunities,hidden,opportunities_history}.json`. `engine/data/lake/` is only the local/CI working copy, and Supabase is the serving projection. Never create a second database for a category.
 - Never access or republish LinkedIn or Naukri. Never show a full description - link to the official source.
 - A failed, blocked, or partial read is not a closure. Only a successful read updates liveness.
 - On divergence, use git pull --rebase to keep the daily bot's data commits and replay our commits on top. Never use merge -s ours (it discards the bot's data) and never force-push.
@@ -34,7 +34,7 @@ Schedule: the engine runs once a day for liveness/freshness. The daily sweep als
 1. Open the category doc; read its status and source worklist.
 2. Pick the next source(s) needing collection/verification or reconfirmation.
 3. Collect from the official source with evidence; verify.
-4. Merge results into the canonical lake.
+4. Merge results into the local lake working copy and sync the canonical S3 lake.
 5. Update the category doc: mark sources collected/verified/blocked, update counts and a short 'last worked' note.
 6. Stop. Leave the doc clean for the next chat.
 
@@ -43,7 +43,9 @@ Schedule: the engine runs once a day for liveness/freshness. The daily sweep als
 - engine/adapters/ - source integrations
 - engine/pipeline/ - run scripts (run as `python3 -m pipeline.<name>` from engine/)
 - engine/categories/<category>/ - one folder per category: its code + its <CATEGORY>.md doc
-- engine/data/lake/opportunities.json - the one canonical lake
+- engine/data/lake/ - local/CI working copy of the S3-canonical lake
+- S3 `s3://$AWS_S3_BUCKET/lake/` - persistent canonical lake
+- Supabase Postgres - serving projection
 
 ## Commands (run from engine/)
 - `python3 -m pipeline.sweep`

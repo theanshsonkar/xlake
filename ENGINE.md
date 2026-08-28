@@ -6,7 +6,7 @@ not claim universal source coverage or a universal freshness SLA.
 
 ## Operating model
 The engine runs once a day and its deterministic sweep establishes liveness/freshness for every row. Categories collect in two modes:
-- Calendar/programme categories: Open Source programmes are fetched by the engine, with liveness tracked and prose pages read for dates, eligibility, and funding. Fellowships, Grants & Funding, Scholarships, and Hackathons & Competitions are planned / not yet built: category scaffolding only, not actively collected. This uses the evidence-gated extractor (adapters/extractors.py LLMExtractor) or, until an API key is configured, a human-in-the-loop AI verifier. AI records only facts it can quote from the official page and never invents; a failed/unclear read never closes a row. These are low-volume, so AI verification runs about twice a month.
+- Calendar/programme categories: Open Source programmes are fetched by the engine, with liveness tracked and prose pages read for dates, eligibility, and funding. Hackathons & Competitions are refreshed by a deterministic official-source collector; Fellowships, Grants & Funding, and Scholarships remain planned / not yet built. This uses the evidence-gated extractor (adapters/extractors.py LLMExtractor) or, until an API key is configured, a human-in-the-loop AI verifier. AI records only facts it can quote from the official page and never invents; a failed/unclear read never closes a row. These are low-volume, so AI verification runs about twice a month.
 - Listing categories (Jobs, Internships, Apprenticeships, OSS good-first-issues): structured sources (boards/APIs/GitHub) collected by the engine only. Internships and OSS good-first-issues are actively collected; the OSS good-first-issues collector is implemented under engine/categories/open_source/.
 
 Update this file whenever the engine changes.
@@ -17,7 +17,7 @@ The default feed shows ONLY `india_located` and `remote_global` rows. `foreign_o
 
 Jobs and Internships are India-first and technical for students and early-career candidates in India. All other categories - Open Source programmes and good-first-issues, Fellowships, Grants & Funding, Scholarships, and Hackathons & Competitions - are worldwide and open to anyone; never apply an India/location filter to them.
 
-On job rows, `quality.annotate` stamps `accessibility` and `access_rank`; non-job rows pass through untouched. `quality.report` emits `surfaced_by_accessibility`. `sweep.py` is unchanged: pass-through for non-job rows, the reconfirmation window, and Unstop/Keka `india_source` handling remain intact. Job rows now also carry `is_internship`, derived from title signals. Resolver registry writes preserve manually curated non-`resolver` entries unless a resolver result has the same platform/token.
+On job rows, `quality.annotate` stamps `accessibility` and `access_rank`; non-job rows pass through untouched. `quality.report` emits `surfaced_by_accessibility`. The sweep preserves `is_internship` on existing rows: `_merge_store` fills it from the incoming value only when the existing row lacks it, and does not overwrite an existing value. The next sweep is expected to move approximately 292 mislabeled real-company internships from Jobs to Internships. `core/quality.py` already applies a per-company cap of 10 (unchanged in this work); the publisher now also sends the resulting `surfaced` flag and maps a missing `surfaced` value to `true`; Supabase defines `surfaced` as `boolean NOT NULL DEFAULT true` and has `opportunities_type_surfaced_idx`. The intended default Jobs serving view filters `surfaced=true` to reduce employer clustering. Resolver registry writes preserve manually curated non-`resolver` entries unless a resolver result has the same platform/token.
 
 ## Purpose and flow
 
@@ -65,14 +65,18 @@ interpret these as a sweep or source-coverage check.
 
 ## Canonical persistence
 
-All paths are absolute/package-derived by `core.paths` and are listed here
-relative to `engine/`:
+The persistent canonical lake is S3. The local `engine/data/lake/` directory is a
+working copy restored from S3 before a sweep and synced back after it; lake files
+are not committed to Git. Snapshots append under `s3://$AWS_S3_BUCKET/archive/`.
+The Supabase Postgres `opportunities` table is a serving projection, not the
+canonical store.
 
 | Path | Role |
 |---|---|
-| `data/lake/opportunities.json` | The one canonical final user-facing opportunity lake. It holds three record types: job rows (the absence of a `record_type` field), programme rows (`record_type='programme'`), and contribution rows (`record_type='contribution'`). |
-| `data/lake/hidden.json` | Retained non-default companion for rejected/hidden rows; not deleted. |
-| `data/lake/opportunities_history.json` | Historical opportunity evidence. |
+| `s3://$AWS_S3_BUCKET/lake/opportunities.json` | Persistent canonical final user-facing opportunity lake. |
+| `s3://$AWS_S3_BUCKET/lake/hidden.json` | Persistent retained non-default companion for rejected/hidden rows; not deleted. |
+| `s3://$AWS_S3_BUCKET/lake/opportunities_history.json` | Persistent historical opportunity evidence. |
+| `engine/data/lake/` | Local/CI working copy restored before and synced after the sweep; never committed to Git. |
 | `data/operations/registry.json` | Resolver-confirmed company-scoped board registry. |
 | `data/operations/runs.jsonl` | Append-only operational sweep reports. |
 | `data/operations/tier_state.json` | Persistent board tier history. |
@@ -84,11 +88,22 @@ relative to `engine/`:
 | `data/raw/discovery-cache/` | Common Crawl lead caches, separate from private HTTP recordings. |
 | `data/measure/` | Historical measurement evidence; old command strings there are historical records, not active paths. |
 
-The sweep writes the canonical opportunities and hidden stores. The page reader
-maintains its operational rows separately and does not create a category lake.
-`LAKE_RAW_DIR` may relocate private HTTP recordings; it must not relocate the
-discovery cache. Raw recordings and the discovery cache are not the canonical
-user-facing data.
+The publisher sends rows where `is_live OR needs_confirmation` is true to
+Supabase, upserts by `id`, and soft-retires IDs missing from fresh source
+results by PATCHing `is_live=false`; it never deletes rows. Its `map_row`
+contract has exactly these top-level fields:
+
+`id, type, category, title, company, location, location_bucket, url, is_live, surfaced, is_internship, technical, needs_confirmation, last_checked, verified, description, deadline, eligibility, funding, extra`.
+
+`extra` contains only these source-specific keys, omitting empty values:
+
+`platform, token, job_id, discipline, skills, salary, season, sponsorship, program, segment, posting_age_days, repo, labels, language, difficulty, difficulty_signal, issue_number, repo_stars, discovery_source, prize, tags, start_date, end_date, is_online, registration_deadline, source, organizer, programme_status, opening_date, opportunity_type, international_eligibility, source_mechanism, source_confirmation, official_url, application_url`.
+
+The sweep writes the local working copies of the opportunities and hidden
+stores, while the page reader maintains its operational rows separately and
+does not create a category lake. `LAKE_RAW_DIR` may relocate private HTTP
+recordings; it must not relocate the discovery cache. Raw recordings and the
+discovery cache are not the canonical user-facing data.
 
 ### Pass-through safety
 
@@ -121,17 +136,33 @@ gate prevents it from inventing source facts.
 
 ## CI
 
-The engine runs once a day: the board sweep runs at 06:30 IST (`0 1 * * *` UTC)
-and the page-reader runs at 08:00 IST (`30 2 * * *` UTC). The daily sweep also
-runs the Open Source programme and contribution collectors, then makes one
-atomic commit covering all record types and pushes it. The page-reader commits
-and pushes separately. Everything ends up on `origin/main`.
+The root workflow is `.github/workflows/sweep.yml`. It supports the daily sweep
+at `0 1 * * *` UTC (06:30 IST), a separate page-reader schedule at `30 2 * * *`
+UTC (08:00 IST), and manual `workflow_dispatch`. The `read_pages` job runs on
+the second schedule.
 
-The root workflow is `.github/workflows/sweep.yml`; its jobs keep
-`working-directory: engine`. It stages canonical lake files and operational run,
-tier, and page-reader state files from `engine/data/**`. Artifact uploads use
-the reorganized paths and deliberately exclude private raw recordings. Full
-sweeps are CI work, not lightweight migration validation.
+The daily sweep order is:
+
+```text
+Refresh community internship lists (zshah101)
+-> Restore lake from S3
+-> Sweep resolved registry
+-> Show report
+-> Refresh Open Source programmes
+-> Refresh Open Source contributions
+-> Refresh Hackathons
+-> Sync lake to S3
+-> Publish Supabase
+-> Commit operational files only
+-> Upload artifacts
+```
+
+The lake sync also writes a timestamped snapshot to
+`s3://$AWS_S3_BUCKET/archive/opportunities-<UTC>.json`. Supabase is published
+with `python3 -m pipeline.publish_supabase --execute`. The Git commit contains
+operational files only (`data/operations/...`), never lake files; artifact
+uploads deliberately exclude private raw recordings. Full sweeps are CI work,
+not lightweight migration validation.
 
 ## Categories
 
@@ -231,8 +262,9 @@ than grinding more employers by design.
 
 ## Deferred / future work
 
-Fellowships, Grants & Funding, Scholarships, and Hackathons & Competitions are planned / not yet built; their category scaffolding is not actively collected. Deferred work also includes Darwinbox (the biggest untapped India employer source),
+Fellowships, Grants & Funding, and Scholarships remain planned / not yet built;
+their category scaffolding is not actively collected. Deferred work also
+includes Darwinbox (the biggest untapped India employer source),
 C4GT (JS-only site; it needs its JSON API or a JS-capable fetch, with no
-headless browser), the AWS move at launch (data moves from the git repo to
-S3/DB), and an AI API key to automate programme verification. Until then,
-programme verification is done manually by a human-in-the-loop AI.
+headless browser), and an AI API key to automate programme verification. Until
+then, programme verification is done manually by a human-in-the-loop AI.

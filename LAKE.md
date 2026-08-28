@@ -7,9 +7,10 @@ Few things is that this lake md is the overall info abt my prodcut and idea and 
 Xlake is a free search engine for early-career opportunities.
 
 Its purpose is simple: help people find trustworthy opportunities, understand
-what the official source says, and open the real application page. Xlake does
-not replace the organisation running an opportunity, decide whether someone is
-eligible, or submit an application for anyone.
+what the official source says, and open the real application page. Opportunity
+Radar links users to original sources rather than operating as a job board.
+Xlake does not replace the organisation running an opportunity, decide whether
+someone is eligible, or submit an application for anyone.
 
 This is the single product reference for Xlake. It records the product
 identity, audience, scope, experience, trust rules, and collection principles
@@ -33,7 +34,7 @@ Xlake is also not a career-preparation product, a resume product, a social
 network, or an application portal. Its job is discovery and clear source
 information.
 
-The official source is always the primary destination. Everything lives in one canonical lake with three record types: jobs (the default), Open Source programmes, and Open Source contributions (good-first-issues).
+The official source is always the primary destination. The persistent canonical lake is S3 at `s3://$AWS_S3_BUCKET/lake/{opportunities,hidden,opportunities_history}.json`; Supabase is the serving projection. Everything is retained across jobs (the default), Open Source programmes, and Open Source contributions (good-first-issues).
 
 ## 2. Who Xlake is for
 
@@ -64,17 +65,18 @@ Xlake is designed to cover opportunities, not only jobs.
 
 The current user-facing categories follow the opportunities that Xlake can
 actually support. Open Source is the hero category and is actively collected,
-including calendar programmes and good-first-issue listings. Current coverage
-also includes:
+including calendar programmes and good-first-issue listings. Hackathons &
+Competitions are also actively refreshed by the deterministic official-source
+collector. Current coverage also includes:
 
 - India-first internships, currently collected via Unstop; and
 - India-focused early-career technical roles where source coverage is good
 enough.
 
-Scholarships and Hackathons & Competitions are planned / not yet built
-(category scaffolding only, not actively collected). As reliable coverage
-grows, Xlake can add categories such as fellowships, grants and funds, student
-and research programmes, and other early-career technical opportunities.
+Scholarships are planned / not yet built (category scaffolding only, not
+actively collected). As reliable coverage grows, Xlake can add categories such
+as fellowships, grants and funds, student and research programmes, and other
+early-career technical opportunities.
 
 Categories in the interface should be dynamic. Xlake should not advertise a
 category merely because it sounds useful; it should show a category when it has

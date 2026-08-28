@@ -21,15 +21,18 @@ engine/
   categories/
     open_source/        category code and `OPEN_SOURCE.md`
   data/
-    lake/               canonical final opportunities + retained hidden rows
+    lake/               local/CI working copy of the S3-canonical lake
     operations/         registry, run/state, resolver input, page-reader output
     raw/                private HTTP recordings and discovery-cache/
     measure/            historical measurement evidence
   fixtures/             committed offline page/extractor fixtures
 ```
 
-`engine/data/lake/opportunities.json` is the only canonical final user-facing
-opportunity lake. `lake/hidden.json` is its retained non-default companion and
+The persistent canonical lake is S3 at
+`s3://$AWS_S3_BUCKET/lake/{opportunities,hidden,opportunities_history}.json`.
+`engine/data/lake/` is the local/CI working copy restored before and synced
+after sweeps; lake files are not committed to Git. Supabase is the serving
+projection. `lake/hidden.json` is its retained non-default companion and
 `lake/opportunities_history.json` is historical evidence. The page reader keeps
 `data/operations/pagereader_rows.json` as an operational processing/
 compatibility output; it is not a second final lake. No category owns a final

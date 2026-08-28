@@ -108,3 +108,8 @@ official-links-only rule, same class as LinkedIn/Naukri.
 
 Last worked 2026-08-22: first run added 241 rows, deduped 7 against existing
 lake rows, and produced 233 `foreign_onsite` / 8 remote.
+
+Last worked 2026-08-27: the missing-only `is_internship` backfill bug was fixed;
+the next sweep is expected to recover approximately 292 real-company
+internships from Jobs. The intended UI source ordering is real-company ATS
+platforms first, then `zshah101-list`, with Unstop last.
