@@ -1,0 +1,152 @@
+[
+  {
+    "programme_id": "fellowship-mlh-fellowship",
+    "verified_at": "2026-08-28T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "open",
+    "funding": "We offer fellows an educational stipend to help offset expenses while they participate in the program.",
+    "official_url": "https://fellowship.mlh.io/",
+    "official_evidence": {
+      "status": {
+        "quote": "Apply today to be considered for our upcoming start dates.",
+        "url": "https://fellowship.mlh.io/"
+      },
+      "funding": {
+        "quote": "We offer fellows an educational stipend to help offset expenses while they participate in the program.",
+        "url": "https://fellowship.mlh.io/"
+      }
+    }
+  },
+  {
+    "programme_id": "fellowship-thiel-fellowship",
+    "verified_at": "2026-08-28T00:00:00Z",
+    "verified_by": "manual-ai",
+    "funding": "The Thiel Fellowship gives $250,000 to young people who want to build new things instead of sitting in a classroom.",
+    "official_url": "https://thielfellowship.org/",
+    "official_evidence": {
+      "funding": {
+        "quote": "The Thiel Fellowship gives $250,000 to young people who want to build new things instead of sitting in a classroom.",
+        "url": "https://thielfellowship.org/"
+      }
+    }
+  },
+  {
+    "programme_id": "fellowship-echoing-green",
+    "verified_at": "2026-08-28T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "closed",
+    "eligibility": "Echoing Green supports bold leaders from all over the world",
+    "funding": "A stipend over 18 months (100,000 USD).",
+    "official_url": "https://echoinggreen.org/fellowship/apply/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications for the 2026 Fellowship are now closed",
+        "url": "https://echoinggreen.org/fellowship/apply/"
+      },
+      "eligibility": {
+        "quote": "Echoing Green supports bold leaders from all over the world",
+        "url": "https://echoinggreen.org/fellowship/apply/"
+      },
+      "funding": {
+        "quote": "A stipend over 18 months (100,000 USD).",
+        "url": "https://echoinggreen.org/fellowship/"
+      }
+    }
+  },
+  {
+    "programme_id": "fellowship-kleiner-perkins-fellows",
+    "verified_at": "2026-08-28T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "closed",
+    "official_url": "https://www.kleinerperkins.com/fellows/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are now closed. Stay tuned for more information about applying next year.",
+        "url": "https://www.kleinerperkins.com/fellows/"
+      }
+    }
+  },
+  {
+    "programme_id": "fellowship-acumen",
+    "verified_at": "2026-08-28T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "A transformative, cohort-based leadership program for extraordinary individuals with an entrepreneurial mindset and a commitment to solving problems of poverty.",
+    "official_url": "https://acumenacademy.org/fellowship/",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "A transformative, cohort-based leadership program for extraordinary individuals with an entrepreneurial mindset and a commitment to solving problems of poverty.",
+        "url": "https://acumenacademy.org/fellowship/"
+      }
+    }
+  },
+  {
+    "programme_id": "fellowship-mozilla",
+    "verified_at": "2026-08-28T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "We're looking for technologists who share our belief that a better tech future isn't just possible, it's ours to create.",
+    "official_url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "We're looking for technologists who share our belief that a better tech future isn't just possible, it's ours to create.",
+        "url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/"
+      }
+    }
+  },
+  {
+    "programme_id": "fellowship-emergent-ventures",
+    "verified_at": "2026-08-28T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "To be eligible for an EV grant, all applicants must be 13 years of age or older.",
+    "official_url": "https://www.mercatus.org/emergent-ventures",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "To be eligible for an EV grant, all applicants must be 13 years of age or older.",
+        "url": "https://www.mercatus.org/emergent-ventures"
+      }
+    }
+  },
+  {
+    "programme_id": "fellowship-eisenhower-global",
+    "verified_at": "2026-08-28T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "closed",
+    "eligibility": "Eligible candidates must have citizenship and/or current residence for at least five years in the country that they are applying to represent on fellowship.",
+    "official_url": "https://www.efworld.org/apply-now/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications Closed",
+        "url": "https://www.efworld.org/apply-now/"
+      },
+      "eligibility": {
+        "quote": "Eligible candidates must have citizenship and/or current residence for at least five years in the country that they are applying to represent on fellowship.",
+        "url": "https://www.efworld.org/2027-globalprogram-eligibilty-criteria/"
+      }
+    }
+  },
+  {
+    "programme_id": "fellowship-schmidt-science",
+    "verified_at": "2026-08-28T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "To be eligible to apply to Schmidt Science Fellows 2027, you must: Be nominated by your PhD awarding institution, which must be one of our nominating partner organizations.",
+    "official_url": "https://schmidtsciencefellows.org/selection/who-can-apply/",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "To be eligible to apply to Schmidt Science Fellows 2027, you must: Be nominated by your PhD awarding institution, which must be one of our nominating partner organizations.",
+        "url": "https://schmidtsciencefellows.org/selection/who-can-apply/"
+      }
+    }
+  },
+  {
+    "programme_id": "fellowship-ashoka",
+    "verified_at": "2026-08-28T00:00:00Z",
+    "verified_by": "manual-ai",
+    "funding": "A tailored stipend for up to three years, if needed, for the Fellow to dedicate themselves full time to the advancement of their idea",
+    "official_url": "https://www.ashoka.org/en-us/program/ashoka-fellowship",
+    "official_evidence": {
+      "funding": {
+        "quote": "A tailored stipend for up to three years, if needed, for the Fellow to dedicate themselves full time to the advancement of their idea",
+        "url": "https://www.ashoka.org/en-us/program/ashoka-fellowship"
+      }
+    }
+  }
+]

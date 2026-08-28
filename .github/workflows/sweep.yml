@@ -88,6 +88,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: python3 -u -m categories.open_source.contributions
 
+      - name: Refresh Fellowships
+        run: |
+          python3 -u -m categories.fellowships.fellowships
+          python3 -u -m categories.fellowships.fellowships --apply-verifications
+
       - name: Refresh Hackathons
         run: python3 -u -m categories.hackathons.hackathons
 
