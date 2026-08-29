@@ -11,18 +11,22 @@ import json
 import os
 import tempfile
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from urllib import request
-from urllib.parse import urlencode
+from urllib.error import HTTPError
+from urllib.parse import urlencode, urlsplit
 
 from core.paths import OPPORTUNITIES_PATH
 
 
 STALE_DAYS = 120
-MAX_COMMENTS = 30
+MAX_COMMENTS = 15
 RECENT_ACTIVITY_DAYS = 3
 NEW_WINDOW_DAYS = 30
 RECONFIRM_WINDOW_DAYS = 7
+REVERIFY_BATCH_SIZE = 4
 DISCOVERY_MIN_STARS = 500
 DISCOVERY_MIN_GOOD_FIRST_ISSUES = 3
 DISCOVERY_PUSHED_WITHIN_DAYS = 60
@@ -33,6 +37,22 @@ DISCOVERY_LANGUAGES = [
     "C++", "C", "Ruby", "PHP", "C#", "Kotlin",
 ]
 DISCOVERY_REQUEST_DELAY = 2
+GOOD_FIRST_ISSUE_LABELS = {"good first issue", "good-first-issue"}
+IN_PROGRESS_LABEL_MARKERS = (
+    "in pr", "in-pr", "has pr", "has-pr", "in progress", "in-progress",
+    "wip", "being worked", "claimed",
+)
+_INTERNAL_GATE_CLOSURE = "_reverification_gate_closed"
+_INTERNAL_REVERIFY_UNTOUCHED = "_reverification_untouched"
+_INTERNAL_REVERIFY_VERIFIED = "_reverification_verified"
+
+
+@dataclass(frozen=True)
+class _IssueFetchResult:
+    issue: object = None
+    rate_limited: bool = False
+    retry_after: object = None
+    rate_limit_reset: object = None
 
 
 CURATED_REPOS = (
@@ -99,6 +119,142 @@ DIFFICULTY_BY_LABEL = {
     "intermediate": "intermediate",
     "medium": "intermediate",
 }
+
+
+def _github_headers(token=None):
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "opportunity-radar",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    token = os.environ.get("GITHUB_TOKEN") if token is None else token
+    if token:
+        headers["Authorization"] = "Bearer " + token
+    return headers
+
+
+def _issue_admission_reason(issue, checked_at):
+    """Return a stable rejection reason, or None when an issue is admitted."""
+    if not isinstance(issue, dict):
+        return "needs-confirmation"
+    if "pull_request" in issue:
+        return "pull-request"
+
+    state = issue.get("state")
+    if not isinstance(state, str):
+        return "needs-confirmation"
+    if state != "open":
+        return "closed"
+
+    labels = issue.get("labels")
+    if not isinstance(labels, list):
+        return "needs-confirmation"
+    label_names = []
+    for label in labels:
+        if not isinstance(label, dict) or not isinstance(label.get("name"), str):
+            return "needs-confirmation"
+        label_names.append(label["name"])
+    normalized_labels = [label.strip().casefold() for label in label_names]
+    if not any(label in GOOD_FIRST_ISSUE_LABELS for label in normalized_labels):
+        return "missing-good-first-issue-label"
+
+    assignee = issue.get("assignee")
+    assignees = issue.get("assignees", [])
+    if assignees is None:
+        return "needs-confirmation"
+    if not isinstance(assignees, list):
+        return "needs-confirmation"
+    if assignee is not None or assignees:
+        return "assigned"
+
+    if any(
+        marker in label.casefold()
+        for label in label_names
+        for marker in IN_PROGRESS_LABEL_MARKERS
+    ):
+        return "in-progress-label"
+
+    comments = issue.get("comments", 0)
+    if isinstance(comments, bool):
+        return "needs-confirmation"
+    try:
+        comments = int(comments)
+    except (TypeError, ValueError):
+        return "needs-confirmation"
+    if comments < 0:
+        return "needs-confirmation"
+    if comments > MAX_COMMENTS:
+        return "too-many-comments"
+
+    updated_at = issue.get("updated_at")
+    if _parse_timestamp(updated_at) is None or _parse_timestamp(checked_at) is None:
+        return "needs-confirmation"
+    activity_age_days = _age_days(updated_at, checked_at)
+    if activity_age_days is None:
+        return "needs-confirmation"
+    if activity_age_days > STALE_DAYS:
+        return "stale-120d"
+    return None
+
+
+def _response_header(headers, name):
+    if headers is None:
+        return None
+    try:
+        return headers.get(name)
+    except (AttributeError, TypeError):
+        return None
+
+
+def _rate_limited_result(headers):
+    remaining = _response_header(headers, "X-RateLimit-Remaining")
+    return _IssueFetchResult(
+        rate_limited=True,
+        retry_after=_response_header(headers, "Retry-After"),
+        rate_limit_reset=_response_header(headers, "X-RateLimit-Reset"),
+    ) if remaining is not None and str(remaining).strip() == "0" else None
+
+
+def _fetch_issue(repo, issue_number):
+    """Fetch one issue without allowing any network/decoding failure to escape."""
+    url = "https://api.github.com/repos/{}/issues/{}".format(repo, issue_number)
+    req = request.Request(url, headers=_github_headers())
+    try:
+        with request.urlopen(req) as response:
+            headers = getattr(response, "headers", None)
+            rate_result = _rate_limited_result(headers)
+            if rate_result is not None:
+                return rate_result
+            status = getattr(response, "status", None)
+            if status is None:
+                status = response.getcode()
+            if status in (403, 429):
+                return _IssueFetchResult(
+                    rate_limited=True,
+                    retry_after=_response_header(headers, "Retry-After"),
+                    rate_limit_reset=_response_header(headers, "X-RateLimit-Reset"),
+                )
+            if status is not None and not 200 <= status < 300:
+                return _IssueFetchResult()
+            issue = json.load(response)
+            if not isinstance(issue, dict):
+                return _IssueFetchResult()
+            return _IssueFetchResult(issue=issue)
+    except HTTPError as error:
+        headers = getattr(error, "headers", None)
+        status = getattr(error, "code", None)
+        if status in (403, 429) or (
+            _response_header(headers, "X-RateLimit-Remaining") is not None
+            and str(_response_header(headers, "X-RateLimit-Remaining")).strip() == "0"
+        ):
+            return _IssueFetchResult(
+                rate_limited=True,
+                retry_after=_response_header(headers, "Retry-After"),
+                rate_limit_reset=_response_header(headers, "X-RateLimit-Reset"),
+            )
+        return _IssueFetchResult()
+    except Exception:
+        return _IssueFetchResult()
 
 
 def _default_fetch(repo):
@@ -263,6 +419,10 @@ def build_row(repo, issue, checked_at, language=None, discovery_source="curated"
     created_at = issue.get("created_at")
     updated_at = issue.get("updated_at")
     labels = [label["name"] for label in issue.get("labels", [])]
+    try:
+        comments_count = int(issue.get("comments", 0) or 0)
+    except (TypeError, ValueError):
+        comments_count = 0
     created_age_days = _age_days(created_at, checked_at)
     activity_age_days = _age_days(updated_at, checked_at)
     difficulty, difficulty_signal = _derive_difficulty(labels)
@@ -296,6 +456,8 @@ def build_row(repo, issue, checked_at, language=None, discovery_source="curated"
             and 0 <= activity_age_days <= RECENT_ACTIVITY_DAYS
         ),
         "updated_at": updated_at,
+        "comments_count": comments_count,
+        "assignee": None,
         "status": "open",
         "official_evidence": {
             "title": {"quote": issue["title"], "url": issue_url},
@@ -309,38 +471,22 @@ def build_row(repo, issue, checked_at, language=None, discovery_source="curated"
 
 def parse_repo(repo, issues, checked_at, language=None, discovery_source="curated", repo_stars=None):
     rows = []
+    if not isinstance(issues, list):
+        return rows
     for issue in issues:
-        if "pull_request" in issue:
-            continue
-        if issue.get("state") != "open":
-            continue
-        if issue.get("assignee") or issue.get("assignees"):
-            continue
-        labels = issue.get("labels", [])
-        if not any(
-            isinstance(label, dict)
-            and str(label.get("name", "")).strip().casefold()
-            in {"good first issue", "good-first-issue"}
-            for label in labels
-        ):
-            continue
-        activity_age_days = _age_days(issue.get("updated_at"), checked_at)
-        if activity_age_days is not None and activity_age_days > STALE_DAYS:
+        if _issue_admission_reason(issue, checked_at) is not None:
             continue
         try:
-            comment_count = int(issue.get("comments", 0) or 0)
-        except (TypeError, ValueError):
+            rows.append(build_row(
+                repo,
+                issue,
+                checked_at,
+                language=language,
+                discovery_source=discovery_source,
+                repo_stars=repo_stars,
+            ))
+        except (KeyError, TypeError, ValueError):
             continue
-        if comment_count > MAX_COMMENTS:
-            continue
-        rows.append(build_row(
-            repo,
-            issue,
-            checked_at,
-            language=language,
-            discovery_source=discovery_source,
-            repo_stars=repo_stars,
-        ))
     return sorted(rows, key=_updated_sort_key, reverse=True)
 
 
@@ -367,9 +513,244 @@ def _atomic_json(path, value):
             os.unlink(tmp)
 
 
-def merge_contributions(rows_by_repo, successful_repos, lake_path=OPPORTUNITIES_PATH, now=None):
+def _valid_repo(value):
+    if not isinstance(value, str) or any(char.isspace() for char in value):
+        return False
+    parts = value.split("/")
+    return len(parts) == 2 and all(
+        part and all(char.isalnum() or char in ".-_" for char in part)
+        for part in parts
+    )
+
+
+def _issue_number(value):
+    try:
+        if isinstance(value, bool):
+            return None
+        if isinstance(value, int):
+            return value if value > 0 else None
+        if isinstance(value, str) and value and all("0" <= char <= "9" for char in value):
+            number = int(value)
+            return number if number > 0 else None
+    except (TypeError, ValueError, OverflowError):
+        return None
+    return None
+
+
+def _fallback_issue_identity(row):
+    for value in (
+        row.get("official_url"),
+        row.get("application_url"),
+        row.get("contribution_id"),
+    ):
+        if not isinstance(value, str):
+            continue
+        try:
+            parsed = urlsplit(value)
+            if (
+                parsed.scheme.casefold() != "https"
+                or parsed.netloc.casefold() != "github.com"
+                or parsed.query
+                or parsed.fragment
+            ):
+                continue
+            parts = parsed.path.split("/")
+            if len(parts) != 5 or parts[0] or parts[3].casefold() != "issues":
+                continue
+            owner, repo, number = parts[1], parts[2], parts[4]
+            if not owner or not repo or _issue_number(number) is None:
+                continue
+            identity_repo = "{}/{}".format(owner, repo)
+            if not _valid_repo(identity_repo):
+                continue
+            return identity_repo, int(number)
+        except (TypeError, ValueError, OverflowError):
+            continue
+    return None
+
+
+def _row_issue_identity(row):
+    try:
+        if not isinstance(row, dict):
+            return None
+        repo = row.get("repo")
+        number = _issue_number(row.get("issue_number"))
+        if _valid_repo(repo) and number is not None:
+            return repo, number
+        return _fallback_issue_identity(row)
+    except Exception:
+        return None
+
+
+def _issue_refresh_fields(issue, checked_at):
+    labels = issue.get("labels")
+    if not isinstance(labels, list) or any(
+        not isinstance(label, dict) or not isinstance(label.get("name"), str)
+        for label in labels
+    ):
+        return None
+    title = issue.get("title")
+    issue_url = issue.get("html_url")
+    if not isinstance(title, str) or not title:
+        return None
+    if not isinstance(issue_url, str) or not issue_url:
+        return None
+    try:
+        comments_count = int(issue.get("comments", 0) or 0)
+    except (TypeError, ValueError):
+        return None
+    if isinstance(issue.get("comments", 0), bool) or comments_count < 0:
+        return None
+    updated_at = issue.get("updated_at")
+    if _parse_timestamp(updated_at) is None:
+        return None
+    return {
+        "title": title,
+        "official_evidence": {
+            "title": {"quote": title, "url": issue_url},
+        },
+        "updated_at": updated_at,
+        "labels": [label["name"] for label in labels],
+        "comments_count": comments_count,
+        "assignee": issue.get("assignee"),
+        "activity_age_days": _age_days(updated_at, checked_at),
+        "is_recently_active": (
+            _age_days(updated_at, checked_at) is not None
+            and 0 <= _age_days(updated_at, checked_at) <= RECENT_ACTIVITY_DAYS
+        ),
+        "last_checked_at": checked_at,
+    }
+
+
+def _reverify_rows(existing_rows, checked_at):
+    stats = {
+        "eligible": 0,
+        "attempted": 0,
+        "reverified": 0,
+        "admitted": 0,
+        "closed": 0,
+        "failed": 0,
+        "rate_limited": 0,
+        "rate_limit_detected": False,
+        "skipped_rate_limited": 0,
+        "untouched": 0,
+    }
+    working_rows = [dict(row) if isinstance(row, dict) else row for row in existing_rows]
+    candidates = []
+    for index, row in enumerate(working_rows):
+        if not isinstance(row, dict):
+            continue
+        if row.get("record_type") != "contribution":
+            continue
+        if row.get("is_live") is not True and row.get("needs_confirmation") is not True:
+            continue
+        if not isinstance(row.get("last_seen"), str):
+            continue
+        stats["eligible"] += 1
+        identity = _row_issue_identity(row)
+        if identity is None:
+            row[_INTERNAL_REVERIFY_UNTOUCHED] = True
+            stats["untouched"] += 1
+            continue
+        candidates.append((index, identity[0], identity[1]))
+
+    for offset in range(0, len(candidates), REVERIFY_BATCH_SIZE):
+        batch = candidates[offset:offset + REVERIFY_BATCH_SIZE]
+        results = {}
+        with ThreadPoolExecutor(max_workers=REVERIFY_BATCH_SIZE) as executor:
+            futures = {
+                executor.submit(_fetch_issue, repo, number): index
+                for index, repo, number in batch
+            }
+            stats["attempted"] += len(futures)
+            for future in as_completed(futures):
+                index = futures[future]
+                try:
+                    results[index] = future.result()
+                except Exception:
+                    results[index] = _IssueFetchResult()
+
+        hit_rate_limit = False
+        for index, _repo, _number in batch:
+            result = results.get(index, _IssueFetchResult())
+            row = working_rows[index]
+            if not isinstance(result, _IssueFetchResult):
+                row[_INTERNAL_REVERIFY_UNTOUCHED] = True
+                stats["failed"] += 1
+                stats["untouched"] += 1
+                continue
+            if result.rate_limited:
+                row[_INTERNAL_REVERIFY_UNTOUCHED] = True
+                stats["failed"] += 1
+                stats["untouched"] += 1
+                stats["rate_limited"] += 1
+                stats["rate_limit_detected"] = True
+                hit_rate_limit = True
+                continue
+            if not isinstance(result.issue, dict):
+                row[_INTERNAL_REVERIFY_UNTOUCHED] = True
+                stats["failed"] += 1
+                stats["untouched"] += 1
+                continue
+            reason = _issue_admission_reason(result.issue, checked_at)
+            refresh_fields = _issue_refresh_fields(result.issue, checked_at)
+            if reason == "needs-confirmation" or refresh_fields is None:
+                row[_INTERNAL_REVERIFY_UNTOUCHED] = True
+                stats["failed"] += 1
+                stats["untouched"] += 1
+                continue
+            refresh_evidence = refresh_fields.pop("official_evidence", None)
+            row.update(refresh_fields)
+            if isinstance(refresh_evidence, dict):
+                evidence = row.get("official_evidence")
+                if not isinstance(evidence, dict):
+                    evidence = {}
+                evidence.update(refresh_evidence)
+                row["official_evidence"] = evidence
+            created_age_days = _age_days(row.get("created_at"), checked_at)
+            row.update({
+                "created_age_days": created_age_days,
+                "is_new_this_month": (
+                    created_age_days is not None
+                    and 0 <= created_age_days <= NEW_WINDOW_DAYS
+                ),
+            })
+            stats["reverified"] += 1
+            row[_INTERNAL_REVERIFY_VERIFIED] = True
+            if reason is None:
+                row["is_live"] = True
+                row.pop("needs_confirmation", None)
+                row.pop("liveness_reason", None)
+                row.pop("went_dead_at", None)
+                row.pop(_INTERNAL_GATE_CLOSURE, None)
+                stats["admitted"] += 1
+            else:
+                row["is_live"] = False
+                row.pop("needs_confirmation", None)
+                row["went_dead_at"] = checked_at
+                row["liveness_reason"] = reason
+                row[_INTERNAL_GATE_CLOSURE] = True
+                stats["closed"] += 1
+
+        if hit_rate_limit:
+            for row in working_rows:
+                if (
+                    isinstance(row, dict)
+                    and row.get("record_type") == "contribution"
+                    and not row.get(_INTERNAL_REVERIFY_VERIFIED)
+                ):
+                    row[_INTERNAL_REVERIFY_UNTOUCHED] = True
+            remaining_candidates = candidates[offset + len(batch):]
+            skipped = len(remaining_candidates)
+            stats["skipped_rate_limited"] += skipped
+            stats["untouched"] += skipped
+            break
+    return working_rows, stats
+
+
+def merge_contributions(rows_by_repo, successful_repos, lake_path=OPPORTUNITIES_PATH, now=None, existing_rows=None):
     now = now or datetime.now(timezone.utc).isoformat(timespec="seconds")
-    lake = _load_json(lake_path, [])
+    lake = existing_rows if existing_rows is not None else _load_json(lake_path, [])
     preserved = [row for row in lake if row.get("record_type") != "contribution"]
     contribution_rows = {
         row.get("contribution_id"): row
@@ -391,6 +772,10 @@ def merge_contributions(rows_by_repo, successful_repos, lake_path=OPPORTUNITIES_
         contribution_id = row["contribution_id"]
         old = contribution_rows.get(contribution_id)
         if old:
+            if old.get(_INTERNAL_REVERIFY_UNTOUCHED):
+                continue
+            protected_gate_closure = bool(old.get(_INTERNAL_GATE_CLOSURE))
+            protected_reason = old.get("liveness_reason")
             first_seen = old.get("first_seen", now)
             old.update(row)
             old.update({
@@ -400,6 +785,10 @@ def merge_contributions(rows_by_repo, successful_repos, lake_path=OPPORTUNITIES_
                 "needs_confirmation": False,
             })
             old.pop("liveness_reason", None)
+            if protected_gate_closure:
+                old["is_live"] = False
+                old.pop("needs_confirmation", None)
+                old["liveness_reason"] = protected_reason
         else:
             row = dict(row)
             row.update({
@@ -413,9 +802,17 @@ def merge_contributions(rows_by_repo, successful_repos, lake_path=OPPORTUNITIES_
 
     successful_repos = set(successful_repos)
     for row in contribution_rows.values():
+        if row.get(_INTERNAL_REVERIFY_UNTOUCHED):
+            continue
         if row.get("contribution_id") in current_ids:
             continue
+        if row.get(_INTERNAL_REVERIFY_VERIFIED) and row.get("is_live") is True:
+            continue
+        if row.get(_INTERNAL_GATE_CLOSURE):
+            continue
         if row.get("repo") in successful_repos:
+            if row.get(_INTERNAL_GATE_CLOSURE):
+                continue
             row["is_live"], row["went_dead_at"] = False, now
             row["needs_confirmation"] = False
             row.pop("liveness_reason", None)
@@ -428,6 +825,8 @@ def merge_contributions(rows_by_repo, successful_repos, lake_path=OPPORTUNITIES_
 
     now_dt = _parse_timestamp(now)
     for row in unkeyed + list(contribution_rows.values()):
+        if row.get(_INTERNAL_REVERIFY_UNTOUCHED):
+            continue
         if row.get("record_type", "contribution") != "contribution" or not row.get("is_live"):
             continue
         age = _age_days(row.get("updated_at"), now_dt)
@@ -435,6 +834,12 @@ def merge_contributions(rows_by_repo, successful_repos, lake_path=OPPORTUNITIES_
             row["is_live"] = False
             row["needs_confirmation"] = True
             row["liveness_reason"] = "stale_activity"
+
+    for row in unkeyed + list(contribution_rows.values()):
+        if isinstance(row, dict):
+            row.pop(_INTERNAL_GATE_CLOSURE, None)
+            row.pop(_INTERNAL_REVERIFY_UNTOUCHED, None)
+            row.pop(_INTERNAL_REVERIFY_VERIFIED, None)
 
     merged_contributions = sorted(
         unkeyed + list(contribution_rows.values()),
@@ -454,6 +859,13 @@ def collect(
     checked_datetime = checked_at or datetime.now(timezone.utc)
     if isinstance(checked_datetime, str):
         checked_datetime = _parse_timestamp(checked_datetime)
+    if checked_datetime is None:
+        checked_datetime = datetime.now(timezone.utc)
+    if isinstance(checked_datetime, datetime):
+        if checked_datetime.tzinfo is None:
+            checked_datetime = checked_datetime.replace(tzinfo=timezone.utc)
+        else:
+            checked_datetime = checked_datetime.astimezone(timezone.utc)
     checked_at = checked_datetime
     if isinstance(checked_at, datetime):
         checked_at = checked_at.isoformat(timespec="seconds")
@@ -482,24 +894,33 @@ def collect(
             "repo_stars": item.get("stars"),
         })
 
+    existing_rows = _load_json(lake_path, [])
+    existing_rows, reverification = _reverify_rows(existing_rows, checked_at)
     rows_by_repo = {}
     successful_repos = set()
     failed_repos = set()
-    for spec in repo_specs:
-        repo = spec["repo"]
-        try:
-            rows_by_repo[repo] = parse_repo(
-                repo,
-                fetch(repo),
-                checked_at,
-                language=spec["language"],
-                discovery_source=spec["discovery_source"],
-                repo_stars=spec["repo_stars"],
-            )
-            successful_repos.add(repo)
-        except Exception:
-            failed_repos.add(repo)
-    rows = merge_contributions(rows_by_repo, successful_repos, lake_path, now=checked_at)
+    if not reverification["rate_limit_detected"]:
+        for spec in repo_specs:
+            repo = spec["repo"]
+            try:
+                rows_by_repo[repo] = parse_repo(
+                    repo,
+                    fetch(repo),
+                    checked_at,
+                    language=spec["language"],
+                    discovery_source=spec["discovery_source"],
+                    repo_stars=spec["repo_stars"],
+                )
+                successful_repos.add(repo)
+            except Exception:
+                failed_repos.add(repo)
+    rows = merge_contributions(
+        rows_by_repo,
+        successful_repos,
+        lake_path,
+        now=checked_at,
+        existing_rows=existing_rows,
+    )
     total_issues_collected = sum(len(repo_rows) for repo_rows in rows_by_repo.values())
     return {
         "repos_ok": len(successful_repos),
@@ -510,6 +931,7 @@ def collect(
         "contributions": len(rows),
         "recently_active": sum(1 for row in rows if row.get("is_recently_active")),
         "new_this_month": sum(1 for row in rows if row.get("is_new_this_month")),
+        "reverification": reverification,
     }
 
 
