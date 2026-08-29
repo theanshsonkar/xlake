@@ -98,6 +98,11 @@ jobs:
           python3 -u -m categories.scholarships.scholarships
           python3 -u -m categories.scholarships.scholarships --apply-verifications
 
+      - name: Refresh Grants
+        run: |
+          python3 -u -m categories.grants.grants
+          python3 -u -m categories.grants.grants --apply-verifications
+
       - name: Refresh Hackathons
         run: python3 -u -m categories.hackathons.hackathons
 

@@ -1,0 +1,125 @@
+[
+  {
+    "programme_id": "grant-otf-internet-freedom-fund",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "rolling",
+    "eligibility": "Individuals or organizations (for-profit or nonprofit) of all ages irrespective of nationality, creed, or sex are eligible to apply.",
+    "eligibility_qualifier": "Applicants in US trade restriction/export sanction countries are unsupported.",
+    "funding": "between $10,000 and $900,000 for up to 24 months",
+    "official_url": "https://www.opentech.fund/funds/internet-freedom-fund/",
+    "application_url": "https://apply.opentech.fund/internet-freedom-fund-concept-note/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are accepted on a rolling basis",
+        "url": "https://www.opentech.fund/funds/internet-freedom-fund/"
+      },
+      "application": {
+        "quote": "Submit a Concept Note through OTF’s online application system",
+        "url": "https://www.opentech.fund/funds/internet-freedom-fund/"
+      },
+      "application_url": {
+        "quote": "Submit a Concept Note through OTF’s online application system",
+        "url": "https://www.opentech.fund/funds/internet-freedom-fund/"
+      },
+      "eligibility": {
+        "quote": "Individuals or organizations (for-profit or nonprofit) of all ages irrespective of nationality, creed, or sex are eligible to apply.",
+        "url": "https://www.opentech.fund/funds/internet-freedom-fund/"
+      },
+      "eligibility_qualifier": {
+        "quote": "Applicants in US trade restriction/export sanction countries are unsupported.",
+        "url": "https://www.opentech.fund/funds/internet-freedom-fund/"
+      },
+      "funding": {
+        "quote": "between $10,000 and $900,000 for up to 24 months",
+        "url": "https://www.opentech.fund/funds/internet-freedom-fund/"
+      }
+    }
+  },
+  {
+    "programme_id": "grant-ethereum-ecosystem-support-program",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "We provide support to builders creating public goods for the Ethereum ecosystem.",
+    "eligibility_qualifier": "The program supports free/open-source projects and focuses on builder tools, infrastructure, research, community resources and public goods.",
+    "funding": "Financial support is offered through our Wishlist and RFPs",
+    "official_url": "https://esp.ethereum.foundation/",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "We provide support to builders creating public goods for the Ethereum ecosystem.",
+        "url": "https://esp.ethereum.foundation/"
+      },
+      "eligibility_qualifier": {
+        "quote": "The program supports free/open-source projects and focuses on builder tools, infrastructure, research, community resources and public goods.",
+        "url": "https://esp.ethereum.foundation/"
+      },
+      "funding": {
+        "quote": "Financial support is offered through our Wishlist and RFPs",
+        "url": "https://esp.ethereum.foundation/"
+      }
+    }
+  },
+  {
+    "programme_id": "grant-awesome-foundation-grant-application",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "Just fill out the application below with information about yourself and the details of your project.",
+    "official_url": "https://www.awesomefoundation.org/en/submissions/new",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "Just fill out the application below with information about yourself and the details of your project.",
+        "url": "https://www.awesomefoundation.org/en/submissions/new"
+      }
+    }
+  },
+  {
+    "programme_id": "grant-pollination-daily-grants",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "We fund individuals, informally organized groups and organizations, and formally registered or incorporated not for profit organizations based anywhere in the world.",
+    "eligibility_qualifier": "Early-stage applicants have a group or organization annual budget under $50,000 and a project total under $10,000.",
+    "funding": "one-time seed funding of up to $500",
+    "official_url": "https://thepollinationproject.org/apply/",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "We fund individuals, informally organized groups and organizations, and formally registered or incorporated not for profit organizations based anywhere in the world.",
+        "url": "https://thepollinationproject.org/apply/"
+      },
+      "eligibility_qualifier": {
+        "quote": "Early-stage applicants have a group or organization annual budget under $50,000 and a project total under $10,000.",
+        "url": "https://thepollinationproject.org/apply/"
+      },
+      "funding": {
+        "quote": "one-time seed funding of up to $500",
+        "url": "https://thepollinationproject.org/apply/"
+      },
+      "funding_cadence": {
+        "quote": "Funding decisions are made on a rolling basis",
+        "url": "https://thepollinationproject.org/apply/"
+      }
+    }
+  },
+  {
+    "programme_id": "grant-national-geographic-okavango-ecosystem-dynamics",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "deadline": "2026-09-23",
+    "eligibility": "in the Okavango River Basin in Angola, Namibia and Botswana",
+    "eligibility_qualifier": "Applicants must be 18+; the individual responsible should write the application and be listed as project leader.",
+    "official_url": "https://funding.nationalgeographic.org/s/fundingopportunity/119Hr000000byRrIAI/understanding-ecosystem-dynamics-ecology-of-the-okavango-river-basin",
+    "official_evidence": {
+      "deadline": {
+        "quote": "Apply by September 23, 2026",
+        "url": "https://funding.nationalgeographic.org/s/fundingopportunity/119Hr000000byRrIAI/understanding-ecosystem-dynamics-ecology-of-the-okavango-river-basin"
+      },
+      "eligibility": {
+        "quote": "in the Okavango River Basin in Angola, Namibia and Botswana",
+        "url": "https://funding.nationalgeographic.org/s/fundingopportunity/119Hr000000byRrIAI/understanding-ecosystem-dynamics-ecology-of-the-okavango-river-basin"
+      },
+      "eligibility_qualifier": {
+        "quote": "Applicants must be 18+; the individual responsible should write the application and be listed as project leader.",
+        "url": "https://www.nationalgeographic.org/society/grants-and-investments/"
+      }
+    }
+  }
+]
