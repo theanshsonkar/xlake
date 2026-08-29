@@ -93,6 +93,11 @@ jobs:
           python3 -u -m categories.fellowships.fellowships
           python3 -u -m categories.fellowships.fellowships --apply-verifications
 
+      - name: Refresh Scholarships
+        run: |
+          python3 -u -m categories.scholarships.scholarships
+          python3 -u -m categories.scholarships.scholarships --apply-verifications
+
       - name: Refresh Hackathons
         run: python3 -u -m categories.hackathons.hackathons
 

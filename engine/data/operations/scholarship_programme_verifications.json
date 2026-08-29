@@ -1,0 +1,177 @@
+[
+  {
+    "programme_id": "scholarship-fulbright-foreign-student-program",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "The Fulbright Foreign Student Program enables graduate students, young professionals and artists from abroad to study and conduct research in the United States.",
+    "eligibility_qualifier": "Program eligibility and selection procedures vary widely by country.",
+    "official_url": "https://foreign.fulbrightonline.org/about/foreign-student-program",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "The Fulbright Foreign Student Program enables graduate students, young professionals and artists from abroad to study and conduct research in the United States.",
+        "url": "https://foreign.fulbrightonline.org/about/foreign-student-program"
+      },
+      "eligibility_qualifier": {
+        "quote": "Program eligibility and selection procedures vary widely by country.",
+        "url": "https://foreign.fulbrightonline.org/about/foreign-student-program"
+      }
+    }
+  },
+  {
+    "programme_id": "scholarship-rhodes",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "open",
+    "funding": "The Rhodes Scholarship covers University of Oxford course fees, as well as providing an annual stipend.",
+    "official_url": "https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications for the Rhodes Scholarship 2027 are now open!",
+        "url": "https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/"
+      },
+      "funding": {
+        "quote": "The Rhodes Scholarship covers University of Oxford course fees, as well as providing an annual stipend.",
+        "url": "https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/"
+      }
+    }
+  },
+  {
+    "programme_id": "scholarship-gates-cambridge",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "You can apply for a Gates Cambridge Scholarship if you are: a citizen of any country outside the United Kingdom",
+    "official_url": "https://www.gatescambridge.org/apply/eligibility/",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "You can apply for a Gates Cambridge Scholarship if you are: a citizen of any country outside the United Kingdom",
+        "url": "https://www.gatescambridge.org/apply/eligibility/"
+      }
+    }
+  },
+  {
+    "programme_id": "scholarship-knight-hennessy",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "deadline": "2026-10-06",
+    "official_url": "https://knight-hennessy.stanford.edu/admission",
+    "official_evidence": {
+      "deadline": {
+        "quote": "The application closes on October 6, 2026, at 1 pm, Pacific Time.",
+        "url": "https://knight-hennessy.stanford.edu/admission"
+      }
+    }
+  },
+  {
+    "programme_id": "scholarship-daad",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "International students can apply to numerous organisations for a scholarship, for example to the DAAD, to party-related foundations or business-affiliated institutions.",
+    "official_url": "https://www.daad.de/en/studying-in-germany/scholarships/",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "International students can apply to numerous organisations for a scholarship, for example to the DAAD, to party-related foundations or business-affiliated institutions.",
+        "url": "https://www.daad.de/en/studying-in-germany/scholarships/"
+      }
+    }
+  },
+  {
+    "programme_id": "scholarship-schwarzman",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "open",
+    "deadline": "2026-09-09",
+    "eligibility": "Must have an undergraduate degree",
+    "official_url": "https://www.schwarzmanscholars.org/admissions/",
+    "official_evidence": {
+      "status": {
+        "quote": "The U. S. and Global application for the class of 2027-2028 is now open from April 8, 2026 to September 9, 2026 at 3 p. m. EDT.",
+        "url": "https://www.schwarzmanscholars.org/admissions/"
+      },
+      "deadline": {
+        "quote": "Application Deadline: Sept 9, 2026 at 3 p. m. EDT",
+        "url": "https://www.schwarzmanscholars.org/admissions/"
+      },
+      "eligibility": {
+        "quote": "Must have an undergraduate degree",
+        "url": "https://www.schwarzmanscholars.org/admissions/"
+      }
+    }
+  },
+  {
+    "programme_id": "scholarship-commonwealth-masters",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "opening_soon",
+    "eligibility": "Commonwealth Master’s Scholarships are for candidates from eligible low and middle income Commonwealth countries, to undertake full-time taught Master’s study at a UK university.",
+    "funding": "Approved tuition fees: full fees are covered by agreement between the CSC and the UK university, and Scholars are not liable to pay for any part of the tuition fee.",
+    "official_url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications for Commonwealth Master’s scholarships for the 2027/28 academic year will open on Tuesday 8 September.",
+        "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
+      },
+      "eligibility": {
+        "quote": "Commonwealth Master’s Scholarships are for candidates from eligible low and middle income Commonwealth countries, to undertake full-time taught Master’s study at a UK university.",
+        "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
+      },
+      "funding": {
+        "quote": "Approved tuition fees: full fees are covered by agreement between the CSC and the UK university, and Scholars are not liable to pay for any part of the tuition fee.",
+        "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
+      }
+    }
+  },
+  {
+    "programme_id": "scholarship-erasmus-mundus-joint-masters",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "Students from all over the world are welcome.",
+    "funding": "Scholarships cover your participation costs and contribute to travel, visa, a living allowance",
+    "official_url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "Students from all over the world are welcome.",
+        "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters"
+      },
+      "funding": {
+        "quote": "Scholarships cover your participation costs and contribute to travel, visa, a living allowance",
+        "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters"
+      }
+    }
+  },
+  {
+    "programme_id": "scholarship-stipendium-hungaricum",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "programme_status": "open",
+    "funding": "all your tuition fees will be covered, and your accommodation costs will be supported as well.",
+    "official_url": "https://stipendiumhungaricum.hu/",
+    "official_evidence": {
+      "status": {
+        "quote": "Application is On for the 2026/27 Stipendium Hungaricum Scholarship!",
+        "url": "https://stipendiumhungaricum.hu/"
+      },
+      "funding": {
+        "quote": "all your tuition fees will be covered, and your accommodation costs will be supported as well.",
+        "url": "https://stipendiumhungaricum.hu/"
+      }
+    }
+  },
+  {
+    "programme_id": "scholarship-turkiye",
+    "verified_at": "2026-08-29T00:00:00Z",
+    "verified_by": "manual-ai",
+    "eligibility": "Türkiye Scholarships are available for associate, bachelor's, master’s, PhD and research degrees in a range of subjects.",
+    "funding": "Türkiye Scholarships not only provides financial support but also ensures university placement.",
+    "official_url": "https://www.turkiyeburslari.gov.tr/",
+    "official_evidence": {
+      "eligibility": {
+        "quote": "Türkiye Scholarships are available for associate, bachelor's, master’s, PhD and research degrees in a range of subjects.",
+        "url": "https://www.turkiyeburslari.gov.tr/"
+      },
+      "funding": {
+        "quote": "Türkiye Scholarships not only provides financial support but also ensures university placement.",
+        "url": "https://www.turkiyeburslari.gov.tr/"
+      }
+    }
+  }
+]
