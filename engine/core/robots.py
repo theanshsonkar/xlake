@@ -70,6 +70,10 @@ ROBOTS_TIMEOUT = 10
 # request at a time per host with a delay, whether or not we are asked.
 DEFAULT_DELAY = float(os.environ.get("LAKE_HOST_DELAY", "1.0"))
 
+# Minimum delays for hosts that need extra protection beyond their robots.txt.
+# Keys are exact lowercase netlocs so additional host-specific floors are easy to add.
+HOST_DELAY_OVERRIDES = {"apply.workable.com": 2.5}
+
 # A site asking for a very long delay effectively asks us not to sweep it in
 # bulk. Cap what we will wait inline, and report the site as too-slow instead of
 # stalling a whole sweep for an hour on one host.
@@ -282,8 +286,11 @@ def crawl_delay(url: str) -> float:
     """Seconds to wait between requests to this host. The site's number wins."""
     r = rules_for(url)
     if r.delay is None:
-        return DEFAULT_DELAY
-    return max(DEFAULT_DELAY, min(r.delay, MAX_HONOURED_DELAY))
+        computed = DEFAULT_DELAY
+    else:
+        computed = max(DEFAULT_DELAY, min(r.delay, MAX_HONOURED_DELAY))
+    host = urllib.parse.urlsplit(url).netloc.lower()
+    return max(computed, HOST_DELAY_OVERRIDES.get(host, 0.0))
 
 
 # --------------------------------------------------------------------------- #

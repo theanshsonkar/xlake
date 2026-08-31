@@ -9,8 +9,8 @@ name: sweep
 # under archive/opportunity-lake-oldengine-2026-08-16/ and is not active.
 on:
   schedule:
-    - cron: "0 1 * * *"     # 06:30 IST — the board sweep, once daily
-    - cron: "30 2 * * *"    # 08:00 IST — the page-reader pass, once daily
+    - cron: "17 1 * * *"     # 06:47 IST — the board sweep, once daily
+    - cron: "37 2 * * *"    # 08:07 IST — the page-reader pass, once daily
   workflow_dispatch:
     inputs:
       job:
@@ -34,7 +34,7 @@ jobs:
   sweep:
     if: >
       (github.event_name == 'schedule' &&
-       github.event.schedule == '0 1 * * *') ||
+       github.event.schedule == '17 1 * * *') ||
       (github.event_name == 'workflow_dispatch' &&
        (github.event.inputs.job == 'sweep' || github.event.inputs.job == 'both'))
     runs-on: ubuntu-latest
@@ -142,6 +142,7 @@ jobs:
             data/operations/research_programme_verifications.json \
             data/operations/discovery_*.json
           git diff --staged --quiet || git commit -m "daily: sweep + programmes + contributions $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase --autostash origin "$GITHUB_REF_NAME"
           git push
 
       - name: Upload artifacts
@@ -163,7 +164,7 @@ jobs:
       (needs.sweep.result == 'success' || needs.sweep.result == 'skipped') &&
       (
         (github.event_name == 'schedule' &&
-         github.event.schedule == '30 2 * * *') ||
+         github.event.schedule == '37 2 * * *') ||
         (github.event_name == 'workflow_dispatch' &&
          (github.event.inputs.job == 'read_pages' || github.event.inputs.job == 'both'))
       )
@@ -205,4 +206,5 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add data/operations/pagereader_rows.json data/operations/pagereader_state.json
           git diff --staged --quiet || git commit -m "read_pages: $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase --autostash origin "$GITHUB_REF_NAME"
           git push
