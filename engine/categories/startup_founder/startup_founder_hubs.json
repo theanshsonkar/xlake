@@ -238,5 +238,13 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "modal-startups",
+    "url": "https://modal.com/startups",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

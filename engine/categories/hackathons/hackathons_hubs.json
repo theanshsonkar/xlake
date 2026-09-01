@@ -54,5 +54,13 @@
     "type": "hub",
     "authoritative": false,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "mistral-worldwide-hackathon",
+    "url": "https://worldwide-hackathon.mistral.ai/",
+    "category": "hackathons",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

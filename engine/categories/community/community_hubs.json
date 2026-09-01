@@ -102,5 +102,37 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "postman-student-program",
+    "url": "https://www.postman.com/student-program",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "github-campus-expert",
+    "url": "https://github.com/education/students/campus-expert",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "google-developer-groups",
+    "url": "https://developers.google.com/community/gdg",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "mongodb-students",
+    "url": "https://www.mongodb.com/students/",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

@@ -78,5 +78,21 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "chanzuckerberg-science-funding",
+    "url": "https://chanzuckerberg.com/science/science-funding/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "sloan-grants-database",
+    "url": "https://sloan.org/grants-database",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

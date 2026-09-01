@@ -102,5 +102,13 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "modal-academics",
+    "url": "https://modal.com/academics",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]
