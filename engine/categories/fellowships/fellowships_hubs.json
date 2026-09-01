@@ -46,5 +46,37 @@
     "type": "hub",
     "authoritative": false,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "openai-safety-fellowship",
+    "url": "https://openai.com/index/introducing-openai-safety-fellowship/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "deepmind-education",
+    "url": "https://deepmind.google/education/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "mozilla-foundation-what-we-fund",
+    "url": "https://foundation.mozilla.org/en/what-we-fund/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "landedjobs-ai-fellowships-and-residencies",
+    "url": "https://github.com/landedjobs/ai-fellowships-and-residencies",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

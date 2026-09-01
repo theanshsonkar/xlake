@@ -94,5 +94,37 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "nvidia-startups",
+    "url": "https://www.nvidia.com/en-us/startups/",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "microsoft-startups",
+    "url": "https://www.microsoft.com/en-us/startups/",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "aws-activate",
+    "url": "https://aws.amazon.com/activate/",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "station-f",
+    "url": "https://stationf.co/",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

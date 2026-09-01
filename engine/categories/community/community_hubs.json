@@ -54,5 +54,29 @@
     "type": "hub",
     "authoritative": false,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "cloudflare-community",
+    "url": "https://www.cloudflare.com/community/",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "cloudflare-students",
+    "url": "https://www.cloudflare.com/students/",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "apple-swift-student-challenge",
+    "url": "https://developer.apple.com/swift-student-challenge/",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]
