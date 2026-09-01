@@ -11422,5 +11422,109 @@
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/max-borges-agency (discovery-cache boards_workable.json, verified 3 live jobs) (approved from review)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "advanc",
+  "company": "advanc",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://advanc.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "advice",
+  "company": "advice",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://advice.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "dhk",
+  "company": "dhk",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://dhk.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "drivex",
+  "company": "drivex",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://drivex.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 1 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "e2ecleaning",
+  "company": "e2ecleaning",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://e2ecleaning.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 1 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "ellasotconsulting",
+  "company": "ellasotconsulting",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://ellasotconsulting.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 1 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "indiumsoft",
+  "company": "indiumsoft",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://indiumsoft.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 102 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "ironsidehr",
+  "company": "ironsidehr",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://ironsidehr.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "piedmontglobal",
+  "company": "piedmontglobal",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://piedmontglobal.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 2 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "r-2",
+  "company": "r-2",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://r-2.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "regulvar",
+  "company": "regulvar",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://regulvar.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "shugulika",
+  "company": "shugulika",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://shugulika.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 2 live jobs)"
+ },
+ {
+  "platform": "zohorecruit",
+  "token": "teacherproven",
+  "company": "teacherproven",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://teacherproven.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 1 live jobs)"
  }
 ]
