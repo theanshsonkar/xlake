@@ -86,5 +86,21 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "jetbrains-student",
+    "url": "https://jetbrains.com/student",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "github-student-developer-pack",
+    "url": "https://education.github.com/pack",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

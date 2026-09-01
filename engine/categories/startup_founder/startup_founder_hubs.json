@@ -214,5 +214,29 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "intel-liftoff",
+    "url": "https://developer.intel.com/liftoff",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "gitlab-startups",
+    "url": "https://about.gitlab.com/solutions/startups/",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "stripe-startups",
+    "url": "https://stripe.com/startups",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]
