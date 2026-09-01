@@ -118,5 +118,29 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "pmrf",
+    "url": "https://www.pmrf.in/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "icmr-fellowships",
+    "url": "https://www.icmr.gov.in/fellowships",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "ugc-fellowship-students",
+    "url": "https://www.ugc.gov.in/Fellowship/stu_Fellowship1",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

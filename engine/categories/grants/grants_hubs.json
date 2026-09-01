@@ -94,5 +94,21 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "schmidt-science-fellows",
+    "url": "https://schmidtsciencefellows.org/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "simons-foundation-funding-opportunities",
+    "url": "https://www.simonsfoundation.org/funding-opportunities/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]
