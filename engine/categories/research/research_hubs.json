@@ -78,5 +78,29 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "cohere-research",
+    "url": "https://cohere.com/research",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "allenai-predoctoral-young-investigators",
+    "url": "https://allenai.org/predoctoral-young-investigators",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "amazon-science-research-awards",
+    "url": "https://www.amazon.science/research-awards/call-for-proposals",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

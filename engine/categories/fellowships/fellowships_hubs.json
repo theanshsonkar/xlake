@@ -78,5 +78,21 @@
     "type": "hub",
     "authoritative": false,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "amazon-ai-phd-fellowship",
+    "url": "https://www.amazon.science/news/amazon-launches-68-million-ai-phd-fellowship-program",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "qualcomm-innovation-fellowship",
+    "url": "https://www.qualcomm.com/research/university-relations/innovation-fellowship",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

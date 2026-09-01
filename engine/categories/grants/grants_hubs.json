@@ -38,5 +38,13 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "cohere-c4ai-research-grants",
+    "url": "https://cohere.com/blog/c4ai-research-grants",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]
