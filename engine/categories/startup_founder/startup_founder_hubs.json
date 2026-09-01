@@ -182,5 +182,37 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "oracle-for-startups",
+    "url": "https://www.oracle.com/cloud/oracle-for-startups/",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "snowflake-startup-accelerator",
+    "url": "https://www.snowflake.com/en/why-snowflake/startup-program/startup-accelerator/",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "databricks-startups",
+    "url": "https://www.databricks.com/product/startups",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "notion-startups",
+    "url": "https://www.notion.com/startups",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

@@ -94,5 +94,29 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "nvidia-graduate-fellowships",
+    "url": "https://research.nvidia.com/graduate-fellowships",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "adobe-india-ai-research-fellowship",
+    "url": "https://research.adobe.com/india-ai-research-fellowship/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "apple-scholars",
+    "url": "https://www.apple.com/education/higher-education/scholars/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]
