@@ -46,5 +46,37 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "meta-llama-impact-grants",
+    "url": "https://ai.meta.com/llama/llama-impact-grants/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "ibm-academic-awards-program",
+    "url": "https://research.ibm.com/labs/yorktown-heights/ibm-academic-awards-program",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "google-academic-research-awards",
+    "url": "https://research.google/programs-and-events/google-academic-research-awards/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "google-org",
+    "url": "https://www.google.org/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

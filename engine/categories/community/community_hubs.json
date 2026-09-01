@@ -78,5 +78,13 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "microsoft-student-ambassador",
+    "url": "https://learn.microsoft.com/en-us/training/student-hub/become-a-student-ambassador",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]
