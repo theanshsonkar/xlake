@@ -1,0 +1,42 @@
+[
+  {
+    "hub_id": "opengrants",
+    "url": "https://www.opengrants.io/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "grants-gov",
+    "url": "https://www.grants.gov/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "ralphtheninja-open-funding",
+    "url": "https://github.com/ralphtheninja/open-funding",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "department-of-science-and-technology",
+    "url": "https://dst.gov.in/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "ministry-of-education-scholarships-loans",
+    "url": "https://www.education.gov.in/scholarships",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  }
+]

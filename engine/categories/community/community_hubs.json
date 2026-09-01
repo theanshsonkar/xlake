@@ -1,0 +1,58 @@
+[
+  {
+    "hub_id": "obama-foundation-leaders",
+    "url": "https://www.obama.org/programs/leaders/",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "global-changemakers",
+    "url": "https://www.global-changemakers.net/",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "afs-global-stem-academy",
+    "url": "https://afs.org/global-stem-academy/",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "us-state-department-leadership-program",
+    "url": "https://exchanges.state.gov/non-us/program/leadership-program",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "yali-network",
+    "url": "https://yali.state.gov/",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "chevening-community",
+    "url": "https://www.chevening.org/scholarships/",
+    "category": "community",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "idr-fellowships-community",
+    "url": "https://idronline.org/fellowships/",
+    "category": "community",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  }
+]

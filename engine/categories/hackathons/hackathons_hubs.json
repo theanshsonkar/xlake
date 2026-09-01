@@ -1,0 +1,58 @@
+[
+  {
+    "hub_id": "devpost-hackathons",
+    "url": "https://devpost.com/hackathons",
+    "category": "hackathons",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "mlh-events",
+    "url": "https://mlh.io/seasons/2026/events",
+    "category": "hackathons",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "devfolio-hackathons",
+    "url": "https://devfolio.co/hackathons",
+    "category": "hackathons",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "dorahacks-hackathons",
+    "url": "https://dorahacks.io/hackathon",
+    "category": "hackathons",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "hackerearth-hackathons",
+    "url": "https://www.hackerearth.com/challenges/hackathon/",
+    "category": "hackathons",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "unstop-hackathons",
+    "url": "https://unstop.com/hackathons",
+    "category": "hackathons",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "harshi1111-hackathon-tracker",
+    "url": "https://github.com/harshi1111/Hackathons",
+    "category": "hackathons",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  }
+]

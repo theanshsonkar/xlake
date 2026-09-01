@@ -1,0 +1,98 @@
+[
+  {
+    "hub_id": "ahmadnassri-awesome-accelerators",
+    "url": "https://github.com/ahmadnassri/awesome-accelerators",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "ahmadnassri-awesome-incubators",
+    "url": "https://github.com/ahmadnassri/awesome-incubators",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "selcuke-accelerators-incubators-list",
+    "url": "https://github.com/selcuke/Accelerators-and-Incubators-list",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "y-combinator-startup-programs",
+    "url": "https://www.ycombinator.com/",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "techstars-accelerators",
+    "url": "https://www.techstars.com/accelerators",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "antler-startup-programs",
+    "url": "https://www.antler.co/locations",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "entrepreneur-first-programs",
+    "url": "https://www.joinef.com/",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "avinash-awesome-startup-credits",
+    "url": "https://github.com/avinashkranjan/awesome-startup-credits",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "openvc-incubators-accelerators",
+    "url": "https://www.openvc.app/incubators-accelerators",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "startup-india-incubator-schemes",
+    "url": "https://www.startupindia.gov.in/content/sih/en/incubator.html",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "startup-india-seed-fund",
+    "url": "https://seedfund.startupindia.gov.in/",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "t-hub-programs",
+    "url": "https://t-hub.co/programs/",
+    "category": "startup_founder",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  }
+]

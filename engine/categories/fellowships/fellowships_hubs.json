@@ -1,0 +1,50 @@
+[
+  {
+    "hub_id": "chevening-scholarships",
+    "url": "https://www.chevening.org/scholarships/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "profellow-fellowships",
+    "url": "https://www.profellow.com/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "idr-fellowships",
+    "url": "https://idronline.org/fellowships/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "youth-for-india",
+    "url": "https://www.youthforindia.org/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "prs-opportunities",
+    "url": "https://prsindia.org/opportunities",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "thefellowships-in",
+    "url": "https://thefellowships.in/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "hub_id": "national-scholarship-portal",
+    "url": "https://scholarships.gov.in/",
+    "category": "scholarships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "scholarshippositions",
+    "url": "https://www.scholarshippositions.com/",
+    "category": "scholarships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "buddy4study",
+    "url": "https://www.buddy4study.com/",
+    "category": "scholarships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  }
+]

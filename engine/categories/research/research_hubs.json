@@ -1,0 +1,42 @@
+[
+  {
+    "hub_id": "nsf-reu",
+    "url": "https://www.nsf.gov/funding/initiatives/reu",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "pathwaystoscience-research-opportunities",
+    "url": "https://www.pathwaystoscience.org/",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "aas-internships",
+    "url": "https://aas.org/careers/internships",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "indian-academy-of-sciences",
+    "url": "https://www.ias.ac.in/",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "instem-surf",
+    "url": "https://www.instem.res.in/surf",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  }
+]
