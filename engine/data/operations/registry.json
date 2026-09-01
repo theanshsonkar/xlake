@@ -2418,7 +2418,7 @@
  {
   "platform": "greenhouse",
   "token": "8451",
-  "company": "84.51\u00b0",
+  "company": "84.51°",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "job-boards.greenhouse.io/8451 (discovery-cache boards_greenhouse.json, verified 20 live jobs)"
@@ -5370,7 +5370,7 @@
  {
   "platform": "workable",
   "token": "cadillacf1team",
-  "company": "Cadillac Formula 1\u00ae Team",
+  "company": "Cadillac Formula 1® Team",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/cadillacf1team (discovery-cache boards_workable.json, verified 26 live jobs)"
@@ -5794,7 +5794,7 @@
  {
   "platform": "workable",
   "token": "chuva-inc",
-  "company": "Galo\u00e1 (Chuva Inc.)",
+  "company": "Galoá (Chuva Inc.)",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/chuva-inc (discovery-cache boards_workable.json, verified 1 live jobs)"
@@ -7514,7 +7514,7 @@
  {
   "platform": "workable",
   "token": "eopae",
-  "company": "\u0395\u03b8\u03bd\u03b9\u03ba\u03cc\u03c2 \u039f\u03c1\u03b3\u03b1\u03bd\u03b9\u03c3\u03bc\u03cc\u03c2 \u03a0\u03c1\u03cc\u03bb\u03b7\u03c8\u03b7\u03c2 & \u0391\u03bd\u03c4\u03b9\u03bc\u03b5\u03c4\u03ce\u03c0\u03b9\u03c3\u03b7\u03c2 \u03c4\u03c9\u03bd \u0395\u03be\u03b1\u03c1\u03c4\u03ae\u03c3\u03b5\u03c9\u03bd",
+  "company": "Εθνικός Οργανισμός Πρόληψης & Αντιμετώπισης των Εξαρτήσεων",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/eopae (discovery-cache boards_workable.json, verified 25 live jobs)"
@@ -7770,7 +7770,7 @@
  {
   "platform": "workable",
   "token": "export-development-canada",
-  "company": "Export Development Canada | Exportation et d\u00e9veloppement Canada",
+  "company": "Export Development Canada | Exportation et développement Canada",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/export-development-canada (discovery-cache boards_workable.json, verified 44 live jobs)"
@@ -7930,7 +7930,7 @@
  {
   "platform": "workable",
   "token": "fernandez",
-  "company": "Fern\u00e1ndez",
+  "company": "Fernández",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/fernandez (discovery-cache boards_workable.json, verified 6 live jobs)"
@@ -8522,7 +8522,7 @@
  {
   "platform": "workable",
   "token": "gek-terna",
-  "company": "\u039f\u039c\u0399\u039b\u039f\u03a3 \u0393\u0395\u039a \u03a4\u0395\u03a1\u039d\u0391 / GEK TERNA GROUP",
+  "company": "ΟΜΙΛΟΣ ΓΕΚ ΤΕΡΝΑ / GEK TERNA GROUP",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/gek-terna (discovery-cache boards_workable.json, verified 111 live jobs)"
@@ -8578,7 +8578,7 @@
  {
   "platform": "workable",
   "token": "geoprobe",
-  "company": "Geoprobe Systems\u00ae",
+  "company": "Geoprobe Systems®",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/geoprobe (discovery-cache boards_workable.json, verified 16 live jobs)"
@@ -11114,7 +11114,7 @@
  {
   "platform": "workable",
   "token": "medecins-du-monde",
-  "company": "M\u00e9decins du Monde",
+  "company": "Médecins du Monde",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/medecins-du-monde (discovery-cache boards_workable.json, verified 35 live jobs)"
@@ -11258,7 +11258,7 @@
  {
   "platform": "workable",
   "token": "alten-mexico-1",
-  "company": "ALTEN M\u00c9XICO",
+  "company": "ALTEN MÉXICO",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/alten-mexico-1 (discovery-cache boards_workable.json, verified 210 live jobs) (approved from review)"
