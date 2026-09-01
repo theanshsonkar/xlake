@@ -134,12 +134,19 @@ class AdmitBoardsTest(unittest.TestCase):
         merged2 = admit_boards.merge_registry(merged, res2["admit_entries"])
         self.assertEqual(len(merged2), 1)
 
-    def test_page_reader_skipped(self):
+    def test_zohorecruit_admitted(self):
         caches = {"zohorecruit": ["a", "b", "c"]}
-        res, v = self._run(caches, [], {})
-        self.assertEqual(res["admit_entries"], [])
-        self.assertEqual(res["report"]["zohorecruit"]["policy"], "page_reader")
-        self.assertEqual(v.calls, [])
+        mapping = {
+            ("zohorecruit", "a"): {"count": 1},
+            ("zohorecruit", "b"): {"count": 1},
+            ("zohorecruit", "c"): {"count": 1},
+        }
+        res, v = self._run(caches, [], mapping)
+        self.assertEqual(len(res["admit_entries"]), 3)
+        self.assertEqual(res["report"]["zohorecruit"]["policy"], "admit")
+        self.assertEqual(v.calls, [("zohorecruit", "a"),
+                                   ("zohorecruit", "b"),
+                                   ("zohorecruit", "c")])
         self.assertEqual(res["report"]["zohorecruit"]["read"], 3)
 
     def test_existing_registry_tokens_skipped(self):

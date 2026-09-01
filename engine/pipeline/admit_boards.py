@@ -29,7 +29,7 @@ PLATFORM_POLICY = {
     "keka": "admit",
     "greenhouse": "admit",
     "workable": "admit",
-    "zohorecruit": "page_reader",
+    "zohorecruit": "admit",
     "darwinbox": "page_reader",
 }
 
@@ -37,6 +37,7 @@ EVIDENCE_URL = {
     "greenhouse": "job-boards.greenhouse.io/{token}",
     "keka": "{token}.keka.com",
     "workable": "apply.workable.com/{token}",
+    "zohorecruit": "https://{token}.zohorecruit.com/jobs/Careers",
 }
 
 OUTLIER_COUNT = 200

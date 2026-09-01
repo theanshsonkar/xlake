@@ -101,6 +101,7 @@ READABLE = {
     "keka",
     "eightfold",
     "successfactors",
+    "zohorecruit",
 }
 
 # Detected, but we may not or cannot read the listing. Worth recording either
@@ -113,7 +114,6 @@ READABLE = {
 UNREADABLE = {
     "smartrecruiters",
     "darwinbox",
-    "zohorecruit",
     "freshteam",
     "bespoke",
 }

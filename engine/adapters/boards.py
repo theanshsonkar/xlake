@@ -130,6 +130,7 @@ def _request(
     body: Optional[bytes] = None,
     want_json: bool = True,
     retries: int = 3,
+    user_agent: Optional[str] = None,
 ) -> Tuple[Optional[int], object, Optional[str]]:
     """Return (http_status, parsed_body_or_text, error_string).
 
@@ -176,7 +177,7 @@ def _request(
         return None, None, "offline_cache_miss"
 
     headers = {
-        "User-Agent": UA,
+        "User-Agent": user_agent or UA,
         "Accept": "application/json, text/plain, */*",
         "Accept-Language": "en-US,en;q=0.9",
     }
@@ -1639,33 +1640,150 @@ def _successfactors(token: str) -> BoardResult:
 
 
 # --------------------------------------------------------------------------- #
-# Zoho Recruit and Darwinbox: detected, deliberately NOT mechanism 1.
+# Zoho Recruit: public Careers HTML with an embedded jobs JSON input.
 # --------------------------------------------------------------------------- #
-# Both were probed live on 2026-07-31 against real tenants from the Common Crawl
-# enumeration (zohorecruit: busigence; darwinbox: rapido, porter, unacademy).
-# Neither exposes a public listing a plain fetch can read:
-#
-#   Zoho Recruit   /jobs/Careers returns 1.7 MB with zero job records in it —
-#                  the portal is a JS app. robots.txt is unusually generous
-#                  (Allow: /recruit/ViewJob.na, /recruit/downloadrssfeed,
-#                  /recruit/sitemapfeed, /jobs/*) but both feed paths redirect
-#                  to a Zoho sign-in page, and the portal needs a per-tenant
-#                  `digest` parameter that only the company's own careers page
-#                  carries.
-#   Darwinbox      {tenant}.darwinbox.in/careers is the EMPLOYEE SSO login, not
-#                  a careers portal — it redirects to SAML/Google. The real
-#                  public path /ms/candidate/careers returns a ~900-byte stub
-#                  containing only OpenGraph tags and the tenant's legal name,
-#                  and every subpath returns that same stub. unacademy.com's own
-#                  careers page links straight to it, confirming the stub IS the
-#                  careers site and its data arrives client-side.
-#
-# So they are page-reader (mechanism 2) targets. They keep entries here so that
-# `resolve.py` detecting "this company is on Darwinbox" routes it correctly, and
-# so a sweep reports a NAMED reason instead of a mystery failure. Inventing an
-# endpoint and recording the guess as a dead end is the mistake that hid Keka.
+ZOHO_BROWSER_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36"
+)
+
+
+def _zoho_openings(data):
+    """Return the openings list from Zoho's array or wrapped JSON shape."""
+    if isinstance(data, list):
+        return data
+    if not isinstance(data, dict):
+        return None
+    for key in ("jobs", "openings", "job_openings", "records", "results", "data"):
+        if key in data:
+            found = _zoho_openings(data[key])
+            if found is not None:
+                return found
+    for value in data.values():
+        if isinstance(value, (dict, list)):
+            found = _zoho_openings(value)
+            if found is not None:
+                return found
+    return None
+
+
+def _zoho_explicit_false(value) -> bool:
+    if isinstance(value, bool):
+        return not value
+    if isinstance(value, (int, float)):
+        return value == 0
+    if isinstance(value, str):
+        return value.strip().lower() in {"false", "0", "no", "off"}
+    return False
+
+
+def _zoho_truthy(value) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return value != 0
+    if isinstance(value, str):
+        return value.strip().lower() in {"true", "1", "yes", "on"}
+    return bool(value)
+
+
+def _zoho(token: str) -> BoardResult:
+    r = BoardResult("zohorecruit", token)
+    url = "https://{}.zohorecruit.com/jobs/Careers".format(
+        urllib.parse.quote(token, safe="")
+    )
+    r.status, page, r.error = _request(
+        url, want_json=False, user_agent=ZOHO_BROWSER_UA
+    )
+    if r.error:
+        return r
+    if not isinstance(page, str):
+        r.error = "unexpected_shape"
+        return r
+
+    import html as _html
+
+    id_match = re.search(
+        r"\bid\s*=\s*([\"'])jobs\1", page, flags=re.IGNORECASE
+    )
+    if not id_match:
+        r.error = "missing_jobs_input"
+        return r
+    input_start = page.rfind("<input", 0, id_match.start())
+    if input_start < 0:
+        r.error = "missing_jobs_input"
+        return r
+    input_end = page.find("<input", id_match.end())
+    if input_end < 0:
+        input_end = len(page)
+    value_match = re.search(
+        r"\bvalue\s*=\s*([\"'])(.*?)\1",
+        page[input_start:input_end],
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if not value_match:
+        r.error = "missing_jobs_value"
+        return r
+    try:
+        data = json.loads(_html.unescape(value_match.group(2)))
+    except (TypeError, ValueError, json.JSONDecodeError):
+        r.error = "invalid_jobs_json"
+        return r
+
+    openings = _zoho_openings(data)
+    if openings is None:
+        r.error = "unexpected_shape"
+        return r
+    for opening in openings:
+        if not isinstance(opening, dict):
+            continue
+        if _zoho_explicit_false(opening.get("Publish")):
+            continue
+        if _zoho_explicit_false(opening.get("Keep_on_Career_Site")):
+            continue
+        if _zoho_truthy(opening.get("Is_Locked")):
+            continue
+
+        raw_id = opening.get("id")
+        if raw_id is None:
+            raw_id = opening.get("ID", "")
+        job_id = str(raw_id)
+        title = opening.get("Posting_Title") or opening.get("Job_Opening_Name") or ""
+        if not isinstance(title, str):
+            title = str(title)
+        if _zoho_truthy(opening.get("Remote_Job")):
+            location = "Remote"
+        else:
+            location = ", ".join(
+                str(opening.get(field)).strip()
+                for field in ("City", "State", "Country")
+                if opening.get(field) not in (None, "")
+                and str(opening.get(field)).strip()
+            )
+        description = opening.get("Job_Description")
+        if description is not None and not isinstance(description, str):
+            description = str(description)
+        r.postings.append(
+            Posting(
+                "zohorecruit",
+                token,
+                job_id,
+                title,
+                location,
+                "https://{}.zohorecruit.com/jobs/Careers/{}".format(
+                    urllib.parse.quote(token, safe=""),
+                    urllib.parse.quote(job_id, safe=""),
+                ),
+                str(opening.get("Date_Opened") or ""),
+                description=strip_html(description) or None,
+            )
+        )
+    return r
+
+
+# Darwinbox remains a page-reader target; its public shell does not expose
+# listings to the plain fetcher.
 PAGE_READER_ONLY = {
-    "zohorecruit": "zoho_recruit_portal_is_js_only_needs_page_reader",
     "darwinbox": "darwinbox_careers_is_js_only_needs_page_reader",
 }
 
@@ -1689,7 +1807,7 @@ _ADAPTERS = {
     "keka": _keka,
     "eightfold": _eightfold,
     "successfactors": _successfactors,
-    "zohorecruit": _page_reader_only("zohorecruit"),
+    "zohorecruit": _zoho,
     "darwinbox": _page_reader_only("darwinbox"),
     "amazon": _amazon,
 }
