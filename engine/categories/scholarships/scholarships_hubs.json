@@ -22,5 +22,45 @@
     "type": "hub",
     "authoritative": false,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "gates-cambridge",
+    "url": "https://www.gatescambridge.org/",
+    "category": "scholarships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "cscuk",
+    "url": "https://cscuk.fcdo.gov.uk/",
+    "category": "scholarships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "daad",
+    "url": "https://www.daad.de/en/",
+    "category": "scholarships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "rhodes-house-oxford",
+    "url": "https://www.rhodeshouse.ox.ac.uk/",
+    "category": "scholarships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "erasmus-plus",
+    "url": "https://erasmus-plus.ec.europa.eu/",
+    "category": "scholarships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]

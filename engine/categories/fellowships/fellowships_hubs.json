@@ -142,5 +142,21 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "twosigma-phd-fellowships",
+    "url": "https://www.twosigma.com/graduate-students/phd-fellowships/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "janestreet-programs-and-events",
+    "url": "https://www.janestreet.com/join-jane-street/programs-and-events/",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
   }
 ]
