@@ -18,9 +18,9 @@ Method:
      and embed-script forms.
   4. Report what was found AND the evidence, so a wrong answer is debuggable.
 
-Detects platforms we can read (the 8 JSON ones) and also platforms we cannot
-yet read (Keka, Darwinbox, Zoho Recruit, Freshteam, bespoke pages). Knowing a
-company is on Keka is useful even before we can parse Keka.
+Detects platforms we can read (the JSON ones) and also platforms we cannot yet
+read (Zoho Recruit, Freshteam, bespoke pages). Knowing a company is on one of
+those platforms is useful even before a dedicated adapter exists.
 
 No AI in this file.
 """
@@ -102,18 +102,18 @@ READABLE = {
     "eightfold",
     "successfactors",
     "zohorecruit",
+    "darwinbox",
 }
 
 # Detected, but we may not or cannot read the listing. Worth recording either
-# way: knowing a company is on Darwinbox is what routes it to the page reader
-# instead of leaving it as an unexplained blank.
+# way: knowing a company is on one of these platforms is useful even before a
+# dedicated adapter exists.
 #
 # smartrecruiters is here for a legal/consent reason rather than a technical one
-# — see fetch.SMARTRECRUITERS_NOTE. The public HTML board is readable, so it is a
-# page-reader target.
+# — see fetch.SMARTRECRUITERS_NOTE. The public HTML board at
+# jobs.smartrecruiters.com/{token} is readable, so it is a page-reader target.
 UNREADABLE = {
     "smartrecruiters",
-    "darwinbox",
     "freshteam",
     "bespoke",
 }

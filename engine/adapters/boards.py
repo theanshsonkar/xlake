@@ -1781,18 +1781,124 @@ def _zoho(token: str) -> BoardResult:
     return r
 
 
-# Darwinbox remains a page-reader target; its public shell does not expose
-# listings to the plain fetcher.
-PAGE_READER_ONLY = {
-    "darwinbox": "darwinbox_careers_is_js_only_needs_page_reader",
-}
+# --------------------------------------------------------------------------- #
+# Darwinbox: public all-jobs JSON endpoint.
+# --------------------------------------------------------------------------- #
+def _darwinbox_openings(data):
+    """Return Darwinbox openings from its wrapped or direct JSON shape."""
+    if isinstance(data, list):
+        return data
+    if not isinstance(data, dict):
+        return None
+    for key in ("data", "jobs", "openings", "job_openings", "results"):
+        if key in data:
+            found = _darwinbox_openings(data[key])
+            if found is not None:
+                return found
+    return None
 
 
-def _page_reader_only(platform: str):
-    def adapter(token: str) -> BoardResult:
-        return BoardResult(platform, token, error=PAGE_READER_ONLY[platform])
+def _darwinbox_text(value) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value.strip()
+    return str(value).strip()
 
-    return adapter
+
+def _darwinbox_location(value) -> str:
+    """Flatten Darwinbox's string/list/dict location fields for display."""
+    if value in (None, ""):
+        return ""
+    if isinstance(value, str):
+        return value.strip()
+    if isinstance(value, dict):
+        for key in ("name", "location_name", "location", "label", "value"):
+            if value.get(key) not in (None, ""):
+                return _darwinbox_location(value[key])
+        return ""
+    if isinstance(value, (list, tuple)):
+        parts = []
+        for item in value:
+            text = _darwinbox_location(item)
+            if text and text not in parts:
+                parts.append(text)
+        return ", ".join(parts)
+    return _darwinbox_text(value)
+
+
+DARWINBOX_PAGE_SIZE = 100
+
+
+def _darwinbox(token: str) -> BoardResult:
+    r = BoardResult("darwinbox", token)
+    url = (
+        "https://{}.darwinbox.in/ms/candidateapi/job/alljobs?companyId=main"
+        .format(urllib.parse.quote(token, safe=""))
+    )
+    page = 1
+    while True:
+        body = json.dumps(
+            {"page": page, "limit": DARWINBOX_PAGE_SIZE},
+            separators=(",", ":"),
+        ).encode("utf-8")
+        status, data, error = _request(url, body=body)
+        if page == 1:
+            r.status = status
+        if error:
+            r.error = error
+            return r
+
+        openings = _darwinbox_openings(data)
+        if openings is None:
+            r.error = "unexpected_shape"
+            return r
+        if page == 1 and isinstance(data, dict):
+            total = data.get("job_counts")
+            if isinstance(total, int):
+                r.reported_total = total
+
+        for opening in openings:
+            if not isinstance(opening, dict):
+                continue
+            raw_id = opening.get("id")
+            if raw_id is None:
+                raw_id = opening.get("job_id", "")
+            job_id = _darwinbox_text(raw_id)
+            title = _darwinbox_text(
+                opening.get("designation_name") or opening.get("title")
+            )
+            raw_locations = opening.get("officelocation_show_arr")
+            if raw_locations in (None, ""):
+                raw_locations = opening.get("locations")
+            location = _darwinbox_location(raw_locations)
+            description = opening.get("jd_summary")
+            if description in (None, ""):
+                description = opening.get("jd")
+            posted_on = _darwinbox_text(
+                opening.get("posted_on") or opening.get("created_on")
+            )
+            r.postings.append(
+                Posting(
+                    "darwinbox",
+                    token,
+                    job_id,
+                    title,
+                    location,
+                    "https://{}.darwinbox.in/ms/candidatev2/main/careers/jobDetails/{}".format(
+                        urllib.parse.quote(token, safe=""),
+                        urllib.parse.quote(job_id, safe=""),
+                    ),
+                    posted_on,
+                    description=strip_html(_darwinbox_text(description)) or None,
+                )
+            )
+
+        if not openings or len(openings) < DARWINBOX_PAGE_SIZE:
+            return r
+        if r.reported_total is not None and r.count >= r.reported_total:
+            return r
+        page += 1
 
 
 _ADAPTERS = {
@@ -1808,7 +1914,7 @@ _ADAPTERS = {
     "eightfold": _eightfold,
     "successfactors": _successfactors,
     "zohorecruit": _zoho,
-    "darwinbox": _page_reader_only("darwinbox"),
+    "darwinbox": _darwinbox,
     "amazon": _amazon,
 }
 

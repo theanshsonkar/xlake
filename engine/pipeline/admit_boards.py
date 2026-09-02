@@ -30,7 +30,7 @@ PLATFORM_POLICY = {
     "greenhouse": "admit",
     "workable": "admit",
     "zohorecruit": "admit",
-    "darwinbox": "page_reader",
+    "darwinbox": "admit",
 }
 
 EVIDENCE_URL = {
@@ -38,6 +38,7 @@ EVIDENCE_URL = {
     "keka": "{token}.keka.com",
     "workable": "apply.workable.com/{token}",
     "zohorecruit": "https://{token}.zohorecruit.com/jobs/Careers",
+    "darwinbox": "https://{token}.darwinbox.in",
 }
 
 OUTLIER_COUNT = 200

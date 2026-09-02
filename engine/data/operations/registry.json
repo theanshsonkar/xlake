@@ -11526,5 +11526,85 @@
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "https://teacherproven.zohorecruit.com/jobs/Careers (discovery-cache boards_zohorecruit.json, verified 1 live jobs)"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "apacfinancial",
+  "company": "apacfinancial",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://apacfinancial.darwinbox.in (discovery-cache boards_darwinbox.json, verified 184 live jobs)"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "brigadegroup",
+  "company": "brigadegroup",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://brigadegroup.darwinbox.in (discovery-cache boards_darwinbox.json, verified 33 live jobs)"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "emeritus",
+  "company": "emeritus",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://emeritus.darwinbox.in (discovery-cache boards_darwinbox.json, verified 36 live jobs)"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "hdfcsecurities",
+  "company": "hdfcsecurities",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://hdfcsecurities.darwinbox.in (discovery-cache boards_darwinbox.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "hetero",
+  "company": "hetero",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://hetero.darwinbox.in (discovery-cache boards_darwinbox.json, verified 47 live jobs)"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "hrkare",
+  "company": "hrkare",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://hrkare.darwinbox.in (discovery-cache boards_darwinbox.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "leadsquaredhrms",
+  "company": "leadsquaredhrms",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://leadsquaredhrms.darwinbox.in (discovery-cache boards_darwinbox.json, verified 22 live jobs)"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "lifecycleqhtl",
+  "company": "lifecycleqhtl",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://lifecycleqhtl.darwinbox.in (discovery-cache boards_darwinbox.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "pixxel",
+  "company": "pixxel",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://pixxel.darwinbox.in (discovery-cache boards_darwinbox.json, verified 21 live jobs)"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "udaan",
+  "company": "udaan",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "https://udaan.darwinbox.in (discovery-cache boards_darwinbox.json, verified 21 live jobs)"
  }
 ]
