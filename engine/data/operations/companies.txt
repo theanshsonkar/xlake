@@ -215,3 +215,21 @@ InMobi,inmobi.com,india_product
 Druva,druva.com,india_product
 Innovaccer,innovaccer.com,india_product
 Gupshup,gupshup.io,india_product
+Porter,theporter.in
+PharmEasy,pharmeasy.in
+BigBasket,bigbasket.com
+upGrad,upgrad.com
+GoDigit,godigit.com
+Orange Health Labs,orangehealth.in
+Navi,navi.com
+Pine Labs,pinelabs.com
+Games24x7,games24x7.com
+LambdaTest,lambdatest.com
+Yellow.ai,yellow.ai
+Icertis,icertis.com
+HighRadius,highradius.com
+MoEngage,moengage.com
+Capillary,capillarytech.com
+Teachmint,teachmint.com
+Vedantu,vedantu.com
+Classplus,classplus.co

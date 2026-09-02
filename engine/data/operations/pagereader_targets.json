@@ -13,7 +13,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Infosys",
@@ -29,7 +29,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "HCLTech",
@@ -45,7 +45,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Tech Mahindra",
@@ -61,7 +61,7 @@
   "verify_error": null,
   "careers_url": "https://www.techmahindra.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Cognizant",
@@ -75,9 +75,9 @@
   "verify_jobs": null,
   "verify_status": null,
   "verify_error": null,
-  "careers_url": "https://www.cognizant.com/us/en",
+  "careers_url": "https://careers.cognizant.com/us-en/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Capgemini",
@@ -93,7 +93,7 @@
   "verify_error": null,
   "careers_url": "https://www.capgemini.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "LTIMindtree",
@@ -109,7 +109,7 @@
   "verify_error": null,
   "careers_url": "https://www.ltm.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Mphasis",
@@ -125,7 +125,7 @@
   "verify_error": null,
   "careers_url": "https://www.mphasis.com/home.html",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Persistent Systems",
@@ -139,9 +139,9 @@
   "verify_jobs": null,
   "verify_status": null,
   "verify_error": null,
-  "careers_url": "https://validate.perfdrive.com/?ssa=45d712c3-c330-4f9b-b027-47aade1d56f4&ssb=87392266308&ssc=https%3A%2F%2Fpersistent.com%2Fcareers&ssi=fb81680b-d452-4183-a994-1385c44fb862&ssk=botmanager_support@radware.com&ssm=84855028121090511108643689738548&ssn=0a894c70250d45c5f6602bb4cabe56510f9e6fbac4b7-1360-4188-97f89d&sso=36aea041-c6b6346c5fe79bc77a8741e77216188c425244031896ad66&ssp=15042372491785547776178559356126461&ssq=63233741317502859582713175733166092072121&ssr=MTIyLjE2My4yMjMuMTE2&sst=xlake/1.0%20(+https://github.com/theanshsonkar/xlake;%20contact:%20anshsonkar@users.noreply.github.com)&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDA2ZmJhYzRiNy0xMzYwLTQxODgtOTA0MS1jNmI2MzQ2YzVmZTcxLTE3ODU1MTMxNzUzMjIwLTAwNGFiMjlhNTk2MjhmNjM1M2ExMCJ9",
+  "careers_url": "https://validate.perfdrive.com/?ssa=e921e1d8-8703-4fe0-b9ed-e645fa7e9c3a&ssb=20933249628&ssc=https%3A%2F%2Fpersistent.com%2Fjobs&ssi=bafee677-d452-4ea6-8a09-5365fc72b8f0&ssk=botmanager_support@radware.com&ssm=89701087473269118101206591740886&ssn=f1b281c26bcc48c1d5c33037fe888204fea0f9951b8e-58a6-4e2c-9fb4bf&sso=f75d43f8-2813393fefff08f969dac81bca1165e446cceadc641cdc68&ssp=58787536961788328753178832060993814&ssq=28399073265293507723232652884398728868953&ssr=MTIyLjE2MS40OC4xNzQ=&sst=xlake/1.0%20(+https://github.com/theanshsonkar/xlake;%20contact:%20anshsonkar@users.noreply.github.com)&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDBmOTk1MWI4ZS01OGE2LTRlMmMtOTNmOC0yODEzMzkzZmVmZmYxLTE3ODgzMzI2NTI3NzMwLTAwNDZiM2VhNGNhOGVmODM4MWIxMCJ9",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Coforge",
@@ -157,23 +157,23 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Birlasoft",
   "domain": "birlasoft.com",
   "segment": "it_services",
-  "mechanism": "unreachable",
-  "reason": "no_careers_page_found",
-  "platform": null,
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
   "token": null,
   "state": null,
   "verify_jobs": null,
   "verify_status": null,
   "verify_error": null,
-  "careers_url": "",
-  "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "careers_url": "https://www.birlasoft.com/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Hexaware",
@@ -189,7 +189,7 @@
   "verify_error": null,
   "careers_url": "https://jobs.hexaware.com/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Zensar",
@@ -205,7 +205,7 @@
   "verify_error": null,
   "careers_url": "https://www.zensar.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Cyient",
@@ -221,7 +221,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "KPIT",
@@ -237,7 +237,7 @@
   "verify_error": null,
   "careers_url": "https://www.kpit.com/careers-overview/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "L&T Technology Services",
@@ -253,7 +253,7 @@
   "verify_error": null,
   "careers_url": "https://www.ltts.com:443/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Infosys BPM",
@@ -269,7 +269,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Mindtree",
@@ -285,7 +285,7 @@
   "verify_error": null,
   "careers_url": "https://www.ltm.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Google",
@@ -301,7 +301,7 @@
   "verify_error": null,
   "careers_url": "https://www.google.com/about/careers/applications/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Microsoft",
@@ -317,7 +317,7 @@
   "verify_error": null,
   "careers_url": "https://www.bing.com/?ref=aka&shorturl=9849952",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Amazon",
@@ -333,7 +333,7 @@
   "verify_error": null,
   "careers_url": "https://amazon.jobs/en/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Apple",
@@ -349,7 +349,7 @@
   "verify_error": null,
   "careers_url": "https://www.apple.com/careers/us/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Adobe",
@@ -365,7 +365,7 @@
   "verify_error": null,
   "careers_url": "https://www.adobe.com/careers.html",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Nvidia",
@@ -381,7 +381,7 @@
   "verify_error": null,
   "careers_url": "https://www.nvidia.com/en-us/about-nvidia/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Salesforce",
@@ -397,7 +397,7 @@
   "verify_error": null,
   "careers_url": "https://www.salesforce.com/company/careers/?bc=HL",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Oracle",
@@ -413,7 +413,7 @@
   "verify_error": null,
   "careers_url": "https://www.oracle.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Qualcomm",
@@ -429,7 +429,7 @@
   "verify_error": null,
   "careers_url": "https://www.qualcomm.com/company/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "AMD",
@@ -445,7 +445,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Cisco",
@@ -461,7 +461,7 @@
   "verify_error": null,
   "careers_url": "https://www.cisco.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "VMware",
@@ -477,7 +477,7 @@
   "verify_error": null,
   "careers_url": "https://www.vmware.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Dell Technologies",
@@ -493,7 +493,7 @@
   "verify_error": null,
   "careers_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "IBM",
@@ -509,43 +509,11 @@
   "verify_error": null,
   "careers_url": "https://www.ibm.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Uber",
   "domain": "uber.com",
-  "segment": "big_tech",
-  "mechanism": "page",
-  "reason": "bot_blocked_403",
-  "platform": null,
-  "token": null,
-  "state": null,
-  "verify_jobs": null,
-  "verify_status": null,
-  "verify_error": null,
-  "careers_url": "",
-  "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
- },
- {
-  "company": "Walmart Global Tech",
-  "domain": "walmart.com",
-  "segment": "big_tech",
-  "mechanism": "unreachable",
-  "reason": "no_careers_page_found",
-  "platform": null,
-  "token": null,
-  "state": null,
-  "verify_jobs": null,
-  "verify_status": null,
-  "verify_error": null,
-  "careers_url": "",
-  "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
- },
- {
-  "company": "PayPal",
-  "domain": "paypal.com",
   "segment": "big_tech",
   "mechanism": "page",
   "reason": "on_bespoke_not_machine_readable",
@@ -555,9 +523,25 @@
   "verify_jobs": null,
   "verify_status": null,
   "verify_error": null,
-  "careers_url": "https://www.paypal.com/webapps/mpp/about",
+  "careers_url": "https://jobs.uber.com/en/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Walmart Global Tech",
+  "domain": "walmart.com",
+  "segment": "big_tech",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://careers.walmart.com/us/en/home",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Mastercard",
@@ -573,7 +557,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "American Express",
@@ -589,7 +573,7 @@
   "verify_error": "eightfold_http_404",
   "careers_url": "https://www.americanexpress.com/en-us/careers/",
   "evidence": "aexp.eightfold.ai",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Goldman Sachs",
@@ -605,7 +589,7 @@
   "verify_error": null,
   "careers_url": "https://www.goldmansachs.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "JPMorgan Chase",
@@ -621,7 +605,7 @@
   "verify_error": null,
   "careers_url": "https://www.jpmorganchase.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Morgan Stanley",
@@ -637,7 +621,7 @@
   "verify_error": null,
   "careers_url": "https://www.morganstanley.com/people",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Barclays",
@@ -653,7 +637,7 @@
   "verify_error": null,
   "careers_url": "https://home.barclays/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Standard Chartered",
@@ -669,7 +653,7 @@
   "verify_error": null,
   "careers_url": "https://www.sc.com/en/global-careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "HSBC",
@@ -685,7 +669,7 @@
   "verify_error": null,
   "careers_url": "https://www.hsbc.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Optum",
@@ -701,7 +685,7 @@
   "verify_error": null,
   "careers_url": "https://www.optum.com/en/careers.html",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "UnitedHealth Group",
@@ -717,7 +701,23 @@
   "verify_error": null,
   "careers_url": "https://www.unitedhealthgroup.com/careers/en/work.html",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Philips",
+  "domain": "philips.com",
+  "segment": "big_tech",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.careers.philips.com/in/en/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Siemens",
@@ -733,7 +733,7 @@
   "verify_error": null,
   "careers_url": "https://www.siemens.com/en-us/company/jobs/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Bosch",
@@ -749,7 +749,7 @@
   "verify_error": null,
   "careers_url": "https://www.bosch.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Honeywell",
@@ -765,7 +765,7 @@
   "verify_error": null,
   "careers_url": "https://www.honeywell.com/us/en/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "GE Aerospace",
@@ -781,7 +781,7 @@
   "verify_error": null,
   "careers_url": "https://www.geaerospace.com/company/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Schneider Electric",
@@ -795,9 +795,9 @@
   "verify_jobs": null,
   "verify_status": null,
   "verify_error": null,
-  "careers_url": "https://www.se.com/ww/en/about-us/careers/overview/?utm_source=chatgpt.com",
+  "careers_url": "https://www.se.com/ww/en/about-us/careers/overview/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Texas Instruments",
@@ -813,7 +813,7 @@
   "verify_error": null,
   "careers_url": "https://careers.ti.com/en/sites/CX",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Analog Devices",
@@ -829,7 +829,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Synopsys",
@@ -845,23 +845,7 @@
   "verify_error": null,
   "careers_url": "https://careers.synopsys.com/",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
- },
- {
-  "company": "Cadence",
-  "domain": "cadence.com",
-  "segment": "big_tech",
-  "mechanism": "page",
-  "reason": "bot_blocked_403",
-  "platform": null,
-  "token": null,
-  "state": null,
-  "verify_jobs": null,
-  "verify_status": null,
-  "verify_error": null,
-  "careers_url": "",
-  "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Arm",
@@ -877,7 +861,7 @@
   "verify_error": null,
   "careers_url": "https://careers.arm.com/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Western Digital",
@@ -893,7 +877,7 @@
   "verify_error": null,
   "careers_url": "https://www.westerndigital.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Stripe",
@@ -909,7 +893,7 @@
   "verify_error": null,
   "careers_url": "https://stripe.com/in/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Cloudflare",
@@ -925,7 +909,7 @@
   "verify_error": null,
   "careers_url": "https://www.cloudflare.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Atlassian",
@@ -941,7 +925,7 @@
   "verify_error": null,
   "careers_url": "https://www.atlassian.com/company/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Netflix",
@@ -957,7 +941,7 @@
   "verify_error": null,
   "careers_url": "https://www.netflix.com/NotFound?prev=https%3A%2F%2Fwww.netflix.com%2Fcareers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "LinkedIn",
@@ -973,7 +957,7 @@
   "verify_error": null,
   "careers_url": "https://www.linkedin.com/company/linkedin/jobs",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Booking.com",
@@ -989,7 +973,7 @@
   "verify_error": null,
   "careers_url": "https://careers.booking.com/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Agoda",
@@ -1005,7 +989,7 @@
   "verify_error": null,
   "careers_url": "https://www.agoda.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Rubrik",
@@ -1021,23 +1005,23 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Nutanix",
   "domain": "nutanix.com",
   "segment": "big_tech",
   "mechanism": "page",
-  "reason": "bot_blocked_403",
-  "platform": null,
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
   "token": null,
   "state": null,
   "verify_jobs": null,
   "verify_status": null,
   "verify_error": null,
-  "careers_url": "",
-  "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "careers_url": "https://careers.nutanix.com/en/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Databricks",
@@ -1053,7 +1037,7 @@
   "verify_error": null,
   "careers_url": "https://www.databricks.com/company/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Snowflake",
@@ -1069,14 +1053,14 @@
   "verify_error": null,
   "careers_url": "https://careers.snowflake.com/us/en",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Flipkart",
   "domain": "flipkart.com",
   "segment": "india_product",
-  "mechanism": "page",
-  "reason": "bot_blocked_403",
+  "mechanism": "unreachable",
+  "reason": "no_careers_page_found",
   "platform": null,
   "token": null,
   "state": null,
@@ -1085,7 +1069,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Zomato",
@@ -1101,7 +1085,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Swiggy",
@@ -1117,7 +1101,7 @@
   "verify_error": null,
   "careers_url": "https://careers.swiggy.com/",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "PhonePe",
@@ -1133,7 +1117,7 @@
   "verify_error": null,
   "careers_url": "https://www.phonepe.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "CRED",
@@ -1149,7 +1133,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Zerodha",
@@ -1165,7 +1149,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Groww",
@@ -1181,7 +1165,7 @@
   "verify_error": null,
   "careers_url": "https://groww.in/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Meesho",
@@ -1197,7 +1181,7 @@
   "verify_error": null,
   "careers_url": "https://www.meesho.com:443/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Zepto",
@@ -1213,7 +1197,7 @@
   "verify_error": null,
   "careers_url": "https://zeptonow.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Nykaa",
@@ -1229,7 +1213,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Dream11",
@@ -1245,7 +1229,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Freshworks",
@@ -1261,23 +1245,23 @@
   "verify_error": null,
   "careers_url": "https://www.freshworks.com/company/careers/",
   "evidence": "careers.smartrecruiters.com/Freshworks",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Zoho",
   "domain": "zoho.com",
   "segment": "india_product",
-  "mechanism": "re_resolve",
-  "reason": "token_did_not_answer_sitemap_robots_disallow",
-  "platform": "successfactors",
-  "token": "careers.zohocorp.com",
-  "state": "dead",
-  "verify_jobs": 0,
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
   "verify_status": null,
-  "verify_error": "sitemap_robots_disallow",
-  "careers_url": "https://careers.zohocorp.com/jobs/Careers",
-  "evidence": "careersite.js",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "verify_error": null,
+  "careers_url": "https://www.zoho.com/careers/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Postman",
@@ -1291,9 +1275,9 @@
   "verify_jobs": null,
   "verify_status": null,
   "verify_error": null,
-  "careers_url": "https://www.postman.com/join-us",
+  "careers_url": "https://www.postman.com/company/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Chargebee",
@@ -1309,7 +1293,7 @@
   "verify_error": null,
   "careers_url": "https://www.chargebee.com:443/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Innovaccer",
@@ -1325,7 +1309,7 @@
   "verify_error": null,
   "careers_url": "https://innovaccer.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "ShareChat",
@@ -1341,39 +1325,7 @@
   "verify_error": null,
   "careers_url": "https://sharechat.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
- },
- {
-  "company": "Unacademy",
-  "domain": "unacademy.com",
-  "segment": "india_product",
-  "mechanism": "page",
-  "reason": "on_darwinbox_not_machine_readable",
-  "platform": "darwinbox",
-  "token": "unacademy",
-  "state": null,
-  "verify_jobs": null,
-  "verify_status": null,
-  "verify_error": null,
-  "careers_url": "https://unacademy.com/careers",
-  "evidence": "unacademy.darwinbox.in",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
- },
- {
-  "company": "PhysicsWallah",
-  "domain": "pw.live",
-  "segment": "india_product",
-  "mechanism": "page",
-  "reason": "on_darwinbox_not_machine_readable",
-  "platform": "darwinbox",
-  "token": "pwhr",
-  "state": null,
-  "verify_jobs": null,
-  "verify_status": null,
-  "verify_error": null,
-  "careers_url": "https://pw.live/careers",
-  "evidence": "pwhr.darwinbox.in",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Urban Company",
@@ -1389,23 +1341,23 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Lenskart",
   "domain": "lenskart.com",
   "segment": "india_product",
-  "mechanism": "unreachable",
-  "reason": "no_careers_page_found",
-  "platform": null,
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
   "token": null,
   "state": null,
   "verify_jobs": null,
   "verify_status": null,
   "verify_error": null,
-  "careers_url": "",
-  "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "careers_url": "https://www.lenskart.com/careers-at-lenskart",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Delhivery",
@@ -1421,7 +1373,7 @@
   "verify_error": null,
   "careers_url": "https://www.delhivery.com:443/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Ola",
@@ -1437,7 +1389,7 @@
   "verify_error": null,
   "careers_url": "https://www.olacabs.com:443/",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Rapido",
@@ -1453,23 +1405,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
- },
- {
-  "company": "Porter",
-  "domain": "porter.in",
-  "segment": "india_product",
-  "mechanism": "page",
-  "reason": "on_darwinbox_not_machine_readable",
-  "platform": "darwinbox",
-  "token": "porter",
-  "state": null,
-  "verify_jobs": null,
-  "verify_status": null,
-  "verify_error": null,
-  "careers_url": "https://porter.in/careers",
-  "evidence": "porter.darwinbox.in",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Cars24",
@@ -1485,7 +1421,7 @@
   "verify_error": null,
   "careers_url": "https://www.cars24.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Juspay",
@@ -1501,23 +1437,23 @@
   "verify_error": null,
   "careers_url": "https://juspay.io/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Setu",
   "domain": "setu.co",
   "segment": "india_product",
-  "mechanism": "unreachable",
-  "reason": "no_careers_page_found",
-  "platform": null,
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
   "token": null,
   "state": null,
   "verify_jobs": null,
   "verify_status": null,
   "verify_error": null,
-  "careers_url": "",
-  "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "careers_url": "https://setu.co/careers/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "M2P Fintech",
@@ -1533,7 +1469,7 @@
   "verify_error": null,
   "careers_url": "https://careers.m2pfintech.com/",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Hasura",
@@ -1549,7 +1485,7 @@
   "verify_error": null,
   "careers_url": "https://promptql.io/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Atlan",
@@ -1565,7 +1501,7 @@
   "verify_error": null,
   "careers_url": "https://atlan.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Whatfix",
@@ -1581,7 +1517,7 @@
   "verify_error": null,
   "careers_url": "https://whatfix.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "HackerRank",
@@ -1597,7 +1533,7 @@
   "verify_error": null,
   "careers_url": "https://www.hackerrank.com:443/careers/home",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Krutrim",
@@ -1613,7 +1549,7 @@
   "verify_error": null,
   "careers_url": "https://www.olakrutrim.com/",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Udaan",
@@ -1629,55 +1565,23 @@
   "verify_error": null,
   "careers_url": "https://udaan.com/jobs",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
- },
- {
-  "company": "Pixxel",
-  "domain": "pixxel.space",
-  "segment": "india_product",
-  "mechanism": "page",
-  "reason": "on_darwinbox_not_machine_readable",
-  "platform": "darwinbox",
-  "token": "pixxel",
-  "state": null,
-  "verify_jobs": null,
-  "verify_status": null,
-  "verify_error": null,
-  "careers_url": "https://www.pixxel.space/careers",
-  "evidence": "pixxel.darwinbox.in",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
- },
- {
-  "company": "Emeritus",
-  "domain": "emeritus.org",
-  "segment": "india_product",
-  "mechanism": "page",
-  "reason": "on_darwinbox_not_machine_readable",
-  "platform": "darwinbox",
-  "token": "emeritus",
-  "state": null,
-  "verify_jobs": null,
-  "verify_status": null,
-  "verify_error": null,
-  "careers_url": "https://careers.emeritus.org/",
-  "evidence": "emeritus.darwinbox.in",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "CoinDCX",
   "domain": "coindcx.com",
   "segment": "india_product",
   "mechanism": "page",
-  "reason": "bot_blocked_403",
-  "platform": null,
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
   "token": null,
   "state": null,
   "verify_jobs": null,
   "verify_status": null,
   "verify_error": null,
-  "careers_url": "",
-  "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "careers_url": "https://coindcx.com/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Slice",
@@ -1693,7 +1597,7 @@
   "verify_error": null,
   "careers_url": "https://slice.bank.in/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Khatabook",
@@ -1709,7 +1613,7 @@
   "verify_error": null,
   "careers_url": "https://khatabook.com/hiring/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Eightfold AI",
@@ -1725,7 +1629,7 @@
   "verify_error": "eightfold_http_404",
   "careers_url": "https://eightfold.ai/jobs",
   "evidence": "community.eightfold.ai",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Jane Street",
@@ -1741,7 +1645,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Optiver",
@@ -1757,7 +1661,7 @@
   "verify_error": null,
   "careers_url": "https://www.optiver.com/join-us/jobs/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "IMC Trading",
@@ -1773,7 +1677,7 @@
   "verify_error": null,
   "careers_url": "https://www.imc.com:443/in/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Jump Trading",
@@ -1789,7 +1693,7 @@
   "verify_error": null,
   "careers_url": "https://www.jumptrading.com/",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Graviton Research Capital",
@@ -1805,7 +1709,7 @@
   "verify_error": null,
   "careers_url": "https://www.gravitontrading.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "WorldQuant",
@@ -1821,7 +1725,7 @@
   "verify_error": null,
   "careers_url": "https://www.worldquant.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Squarepoint Capital",
@@ -1837,7 +1741,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Citadel",
@@ -1853,7 +1757,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "D. E. Shaw",
@@ -1869,23 +1773,23 @@
   "verify_error": null,
   "careers_url": "https://www.deshaw.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Quadeye",
   "domain": "quadeye.com",
   "segment": "quant",
-  "mechanism": "page",
-  "reason": "on_zohorecruit_not_machine_readable",
+  "mechanism": "re_resolve",
+  "reason": "token_did_not_answer_missing_jobs_input",
   "platform": "zohorecruit",
   "token": "quadeye",
-  "state": null,
-  "verify_jobs": null,
-  "verify_status": null,
-  "verify_error": null,
+  "state": "dead",
+  "verify_jobs": 0,
+  "verify_status": 200,
+  "verify_error": "missing_jobs_input",
   "careers_url": "https://www.quadeye.com/careers/",
   "evidence": "quadeye.zohorecruit.in",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "AlphaGrep",
@@ -1901,7 +1805,7 @@
   "verify_error": null,
   "careers_url": "https://alpha-grep.com/career/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Dolat Capital",
@@ -1917,7 +1821,7 @@
   "verify_error": null,
   "careers_url": "https://www.dolatcapital.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Estee Advisors",
@@ -1933,7 +1837,7 @@
   "verify_error": null,
   "careers_url": "https://esteeadvisors.com/careers",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "NK Securities",
@@ -1949,7 +1853,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Futures First",
@@ -1965,7 +1869,7 @@
   "verify_error": null,
   "careers_url": "https://futuresfirst.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Aquatic Capital Management",
@@ -1981,7 +1885,7 @@
   "verify_error": null,
   "careers_url": "",
   "evidence": "",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  },
  {
   "company": "Susquehanna",
@@ -1997,6 +1901,662 @@
   "verify_error": null,
   "careers_url": "https://sig.com/careers/",
   "evidence": "careers page reachable, no known ATS reference after 3 hops",
-  "resolved_at": "2026-07-31T16:05:04+00:00"
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "CRED",
+  "domain": "cred.club",
+  "segment": "india_product",
+  "mechanism": "unreachable",
+  "reason": "no_careers_page_found",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Groww",
+  "domain": "groww.in",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://groww.in/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Zerodha",
+  "domain": "zerodha.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "bot_blocked_403",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "PhonePe",
+  "domain": "phonepe.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.phonepe.com/careers/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "slice",
+  "domain": "sliceit.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://slice.bank.in/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Zeta",
+  "domain": "zeta.tech",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.zeta.tech/in/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Cashfree",
+  "domain": "cashfree.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.cashfree.com:443/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Setu",
+  "domain": "setu.co",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://setu.co/careers/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "M2P Fintech",
+  "domain": "m2pfintech.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "careers_path_redirects_to_homepage",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://careers.m2pfintech.com/",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Postman",
+  "domain": "postman.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.postman.com/company/careers/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Hasura",
+  "domain": "hasura.io",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://promptql.io/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Chargebee",
+  "domain": "chargebee.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.chargebee.com:443/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Freshworks",
+  "domain": "freshworks.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_smartrecruiters_not_machine_readable",
+  "platform": "smartrecruiters",
+  "token": "Freshworks",
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.freshworks.com/company/careers/",
+  "evidence": "careers.smartrecruiters.com/Freshworks",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Atlan",
+  "domain": "atlan.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://atlan.com/careers/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Whatfix",
+  "domain": "whatfix.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://whatfix.com/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Rocketlane",
+  "domain": "rocketlane.com",
+  "segment": "india_product",
+  "mechanism": "unreachable",
+  "reason": "no_careers_page_found",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "DevRev",
+  "domain": "devrev.ai",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "bot_blocked_403",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Fyle",
+  "domain": "fylehq.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.fylehq.com:443/company/team/join",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Facilio",
+  "domain": "facilio.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://facilio.com/careers/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Locus",
+  "domain": "locus.sh",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_freshteam_not_machine_readable",
+  "platform": "freshteam",
+  "token": "locus",
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://locus.sh/careers/",
+  "evidence": "locus.freshteam.com",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Meesho",
+  "domain": "meesho.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.meesho.com:443/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Swiggy",
+  "domain": "swiggy.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "careers_path_redirects_to_homepage",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://careers.swiggy.com/",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Zomato",
+  "domain": "zomato.com",
+  "segment": "india_product",
+  "mechanism": "unreachable",
+  "reason": "no_careers_page_found",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Dream11",
+  "domain": "dream11.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "bot_blocked_403",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Urban Company",
+  "domain": "urbancompany.com",
+  "segment": "india_product",
+  "mechanism": "unreachable",
+  "reason": "no_careers_page_found",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Cars24",
+  "domain": "cars24.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.cars24.com/careers/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "InMobi",
+  "domain": "inmobi.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.inmobi.com/company/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Innovaccer",
+  "domain": "innovaccer.com",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://innovaccer.com/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Gupshup",
+  "domain": "gupshup.io",
+  "segment": "india_product",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.gupshup.ai:443/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Porter",
+  "domain": "theporter.in",
+  "segment": "unsorted",
+  "mechanism": "page",
+  "reason": "careers_path_redirects_to_homepage",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://porter.in/",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "BigBasket",
+  "domain": "bigbasket.com",
+  "segment": "unsorted",
+  "mechanism": "re_resolve",
+  "reason": "token_did_not_answer_robots_unreachable_502",
+  "platform": "darwinbox",
+  "token": "bigbasket",
+  "state": "dead",
+  "verify_jobs": 0,
+  "verify_status": null,
+  "verify_error": "robots_unreachable_502",
+  "careers_url": "https://careers.bigbasket.com/",
+  "evidence": "bigbasket.darwinbox.in",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Navi",
+  "domain": "navi.com",
+  "segment": "unsorted",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://navi.com/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Pine Labs",
+  "domain": "pinelabs.com",
+  "segment": "unsorted",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.pinelabs.com/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Games24x7",
+  "domain": "games24x7.com",
+  "segment": "unsorted",
+  "mechanism": "unreachable",
+  "reason": "no_careers_page_found",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "LambdaTest",
+  "domain": "lambdatest.com",
+  "segment": "unsorted",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.testmuai.com/career/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Yellow.ai",
+  "domain": "yellow.ai",
+  "segment": "unsorted",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://yellow.ai/career/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Icertis",
+  "domain": "icertis.com",
+  "segment": "unsorted",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.icertis.com/company/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "MoEngage",
+  "domain": "moengage.com",
+  "segment": "unsorted",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://www.moengage.com/careers/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Capillary",
+  "domain": "capillarytech.com",
+  "segment": "unsorted",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://capillarytech.com/careers",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Vedantu",
+  "domain": "vedantu.com",
+  "segment": "unsorted",
+  "mechanism": "page",
+  "reason": "on_bespoke_not_machine_readable",
+  "platform": "bespoke",
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "https://courses.vedantu.com/career-page/",
+  "evidence": "careers page reachable, no known ATS reference after 3 hops",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
+ },
+ {
+  "company": "Classplus",
+  "domain": "classplus.co",
+  "segment": "unsorted",
+  "mechanism": "unreachable",
+  "reason": "domain_does_not_resolve_FIX_COMPANIES_TXT",
+  "platform": null,
+  "token": null,
+  "state": null,
+  "verify_jobs": null,
+  "verify_status": null,
+  "verify_error": null,
+  "careers_url": "",
+  "evidence": "",
+  "resolved_at": "2026-09-02T07:20:41+00:00"
  }
 ]

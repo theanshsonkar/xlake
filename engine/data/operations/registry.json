@@ -1,157 +1,5 @@
 [
  {
-  "platform": "greenhouse",
-  "token": "razorpaysoftwareprivatelimited",
-  "company": "Razorpay",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/razorpaysoftwareprivatelimited"
- },
- {
-  "platform": "greenhouse",
-  "token": "able",
-  "company": "Able",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/able"
- },
- {
-  "platform": "greenhouse",
-  "token": "affinidi",
-  "company": "Affinidi",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "boards.greenhouse.io/affinidi"
- },
- {
-  "platform": "greenhouse",
-  "token": "observeai",
-  "company": "Observe.ai",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "greenhouse.io/embed/job_board/js?for=observeai"
- },
- {
-  "platform": "greenhouse",
-  "token": "dialpad",
-  "company": "Dialpad",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/dialpad"
- },
- {
-  "platform": "lever",
-  "token": "mindtickle",
-  "company": "MindTickle",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "jobs.lever.co/mindtickle"
- },
- {
-  "platform": "lever",
-  "token": "paytm",
-  "company": "Paytm",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "jobs.lever.co/paytm"
- },
- {
-  "platform": "workable",
-  "token": "weekday-1",
-  "company": "Weekday",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "apply.workable.com/weekday-1"
- },
- {
-  "platform": "workable",
-  "token": "bharatx",
-  "company": "BharatX",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "apply.workable.com/bharatx"
- },
- {
-  "platform": "ashby",
-  "token": "bolna",
-  "company": "Bolna AI",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "jobs.ashbyhq.com/bolna"
- },
- {
-  "platform": "ashby",
-  "token": "bidgely-inc",
-  "company": "Bidgely",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "jobs.ashbyhq.com/bidgely-inc"
- },
- {
-  "platform": "ashby",
-  "token": "contra",
-  "company": "Contra",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "jobs.ashbyhq.com/contra"
- },
- {
-  "platform": "keka",
-  "token": "peoplebox",
-  "company": "Peoplebox.ai",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "peoplebox.keka.com"
- },
- {
-  "platform": "keka",
-  "token": "loop",
-  "company": "Loop Health",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "loop.keka.com"
- },
- {
-  "platform": "keka",
-  "token": "acciojob",
-  "company": "AccioJob",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "acciojob.keka.com"
- },
- {
-  "platform": "keka",
-  "token": "asteria",
-  "company": "Asteria Aerospace",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "asteria.kekahire.com"
- },
- {
-  "platform": "keka",
-  "token": "eyerov",
-  "company": "EyeROV",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "eyerov.keka.com"
- },
- {
-  "platform": "keka",
-  "token": "healthasyst",
-  "company": "HealthAsyst",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "healthasyst.keka.com"
- },
- {
-  "platform": "keka",
-  "token": "impactanalytics",
-  "company": "Impact Analytics",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "impactanalytics.keka.com"
- },
- {
   "platform": "successfactors",
   "token": "careers.wipro.com",
   "company": "Wipro",
@@ -192,6 +40,14 @@
   "evidence": "https://target.wd5.myworkdayjobs.com/targetcareers"
  },
  {
+  "platform": "eightfold",
+  "token": "paypal|paypal.com",
+  "company": "PayPal",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "paypal.eightfold.ai"
+ },
+ {
   "platform": "workday",
   "token": "visa.wd5.myworkdayjobs.com|visa|Visa",
   "company": "Visa",
@@ -208,20 +64,20 @@
   "evidence": "https://citi.wd5.myworkdayjobs.com/en-US/2"
  },
  {
-  "platform": "workday",
-  "token": "philips.wd3.myworkdayjobs.com|philips|jobs-and-careers",
-  "company": "Philips",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "https://philips.wd3.myworkdayjobs.com/jobs-and-careers"
- },
- {
   "platform": "eightfold",
   "token": "micron|micron.com",
   "company": "Micron",
   "segment": "big_tech",
   "source": "resolver",
   "evidence": "micron.eightfold.ai"
+ },
+ {
+  "platform": "workday",
+  "token": "cadence.wd1.myworkdayjobs.com|cadence|Univ_Careers",
+  "company": "Cadence",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "https://cadence.wd1.myworkdayjobs.com/Univ_Careers"
  },
  {
   "platform": "workday",
@@ -248,6 +104,22 @@
   "evidence": "https://expedia.wd108.myworkdayjobs.com/en-US/search"
  },
  {
+  "platform": "lever",
+  "token": "paytm",
+  "company": "Paytm",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "jobs.lever.co/paytm"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "razorpaysoftwareprivatelimited",
+  "company": "Razorpay",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "job-boards.greenhouse.io/razorpaysoftwareprivatelimited"
+ },
+ {
   "platform": "workday",
   "token": "browserstack.wd3.myworkdayjobs.com|browserstack|External",
   "company": "BrowserStack",
@@ -272,12 +144,60 @@
   "evidence": "greenhouse.io/embed/job_board/js?for=netskope"
  },
  {
+  "platform": "darwinbox",
+  "token": "unacademy",
+  "company": "Unacademy",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "unacademy.darwinbox.in"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "pwhr",
+  "company": "PhysicsWallah",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "pwhr.darwinbox.in"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "porter",
+  "company": "Porter",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "porter.darwinbox.in"
+ },
+ {
+  "platform": "lever",
+  "token": "mindtickle",
+  "company": "MindTickle",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "jobs.lever.co/mindtickle"
+ },
+ {
   "platform": "ashby",
   "token": "sarvam",
   "company": "Sarvam AI",
   "segment": "india_product",
   "source": "resolver",
   "evidence": "jobs.ashbyhq.com/sarvam"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "pixxel",
+  "company": "Pixxel",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "pixxel.darwinbox.in"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "emeritus",
+  "company": "Emeritus",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "emeritus.darwinbox.in"
  },
  {
   "platform": "keka",
@@ -320,6 +240,22 @@
   "evidence": "mlp.eightfold.ai"
  },
  {
+  "platform": "greenhouse",
+  "token": "razorpaysoftwareprivatelimited",
+  "company": "Razorpay",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "job-boards.greenhouse.io/razorpaysoftwareprivatelimited"
+ },
+ {
+  "platform": "workday",
+  "token": "browserstack.wd3.myworkdayjobs.com|browserstack|External",
+  "company": "BrowserStack",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "https://browserstack.wd3.myworkdayjobs.com/External"
+ },
+ {
   "platform": "workday",
   "token": "sprinklr.wd1.myworkdayjobs.com|sprinklr|careers",
   "company": "Sprinklr",
@@ -336,6 +272,30 @@
   "evidence": "zluri.keka.com"
  },
  {
+  "platform": "darwinbox",
+  "token": "unacademy",
+  "company": "Unacademy",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "unacademy.darwinbox.in"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "spinzone",
+  "company": "Spinny",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "spinzone.darwinbox.in"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "pwhr",
+  "company": "PhysicsWallah",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "pwhr.darwinbox.in"
+ },
+ {
   "platform": "workday",
   "token": "fractal.wd1.myworkdayjobs.com|fractal|Careers",
   "company": "Fractal",
@@ -344,12 +304,76 @@
   "evidence": "https://fractal.wd1.myworkdayjobs.com/Careers"
  },
  {
+  "platform": "greenhouse",
+  "token": "observeai",
+  "company": "Observe.AI",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "greenhouse.io/embed/job_board/js?for=observeai"
+ },
+ {
   "platform": "workday",
   "token": "uniphore.wd503.myworkdayjobs.com|uniphore|Uniphore",
   "company": "Uniphore",
   "segment": "india_product",
   "source": "resolver",
   "evidence": "https://uniphore.wd503.myworkdayjobs.com/Uniphore"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "druva",
+  "company": "Druva",
+  "segment": "india_product",
+  "source": "resolver",
+  "evidence": "boards-api.greenhouse.io/v1/boards/druva"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "myhr",
+  "company": "PharmEasy",
+  "segment": "unsorted",
+  "source": "resolver",
+  "evidence": "myhr.darwinbox.in"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "upgrad",
+  "company": "upGrad",
+  "segment": "unsorted",
+  "source": "resolver",
+  "evidence": "upgrad.darwinbox.in"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "godigit",
+  "company": "GoDigit",
+  "segment": "unsorted",
+  "source": "resolver",
+  "evidence": "godigit.darwinbox.in"
+ },
+ {
+  "platform": "darwinbox",
+  "token": "orangehealth",
+  "company": "Orange Health Labs",
+  "segment": "unsorted",
+  "source": "resolver",
+  "evidence": "orangehealth.darwinbox.in"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "highradius",
+  "company": "HighRadius",
+  "segment": "unsorted",
+  "source": "resolver",
+  "evidence": "greenhouse.io/embed/job_board/js?for=highradius"
+ },
+ {
+  "platform": "keka",
+  "token": "teachmint",
+  "company": "Teachmint",
+  "segment": "unsorted",
+  "source": "resolver",
+  "evidence": "teachmint.keka.com"
  },
  {
   "platform": "greenhouse",
@@ -1921,14 +1945,6 @@
  },
  {
   "platform": "keka",
-  "token": "teachmint",
-  "company": "Teachmint",
-  "segment": "unclassified",
-  "source": "discovery",
-  "evidence": "teachmint.keka.com (discovery-cache boards_keka.json, verified 31 live jobs)"
- },
- {
-  "platform": "keka",
   "token": "teaxpress",
   "company": "Teaxpress",
   "segment": "unclassified",
@@ -2418,7 +2434,7 @@
  {
   "platform": "greenhouse",
   "token": "8451",
-  "company": "84.51°",
+  "company": "84.51\u00b0",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "job-boards.greenhouse.io/8451 (discovery-cache boards_greenhouse.json, verified 20 live jobs)"
@@ -5370,7 +5386,7 @@
  {
   "platform": "workable",
   "token": "cadillacf1team",
-  "company": "Cadillac Formula 1® Team",
+  "company": "Cadillac Formula 1\u00ae Team",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/cadillacf1team (discovery-cache boards_workable.json, verified 26 live jobs)"
@@ -5794,7 +5810,7 @@
  {
   "platform": "workable",
   "token": "chuva-inc",
-  "company": "Galoá (Chuva Inc.)",
+  "company": "Galo\u00e1 (Chuva Inc.)",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/chuva-inc (discovery-cache boards_workable.json, verified 1 live jobs)"
@@ -7514,7 +7530,7 @@
  {
   "platform": "workable",
   "token": "eopae",
-  "company": "Εθνικός Οργανισμός Πρόληψης & Αντιμετώπισης των Εξαρτήσεων",
+  "company": "\u0395\u03b8\u03bd\u03b9\u03ba\u03cc\u03c2 \u039f\u03c1\u03b3\u03b1\u03bd\u03b9\u03c3\u03bc\u03cc\u03c2 \u03a0\u03c1\u03cc\u03bb\u03b7\u03c8\u03b7\u03c2 & \u0391\u03bd\u03c4\u03b9\u03bc\u03b5\u03c4\u03ce\u03c0\u03b9\u03c3\u03b7\u03c2 \u03c4\u03c9\u03bd \u0395\u03be\u03b1\u03c1\u03c4\u03ae\u03c3\u03b5\u03c9\u03bd",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/eopae (discovery-cache boards_workable.json, verified 25 live jobs)"
@@ -7770,7 +7786,7 @@
  {
   "platform": "workable",
   "token": "export-development-canada",
-  "company": "Export Development Canada | Exportation et développement Canada",
+  "company": "Export Development Canada | Exportation et d\u00e9veloppement Canada",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/export-development-canada (discovery-cache boards_workable.json, verified 44 live jobs)"
@@ -7930,7 +7946,7 @@
  {
   "platform": "workable",
   "token": "fernandez",
-  "company": "Fernández",
+  "company": "Fern\u00e1ndez",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/fernandez (discovery-cache boards_workable.json, verified 6 live jobs)"
@@ -8522,7 +8538,7 @@
  {
   "platform": "workable",
   "token": "gek-terna",
-  "company": "ΟΜΙΛΟΣ ΓΕΚ ΤΕΡΝΑ / GEK TERNA GROUP",
+  "company": "\u039f\u039c\u0399\u039b\u039f\u03a3 \u0393\u0395\u039a \u03a4\u0395\u03a1\u039d\u0391 / GEK TERNA GROUP",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/gek-terna (discovery-cache boards_workable.json, verified 111 live jobs)"
@@ -8578,7 +8594,7 @@
  {
   "platform": "workable",
   "token": "geoprobe",
-  "company": "Geoprobe Systems®",
+  "company": "Geoprobe Systems\u00ae",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/geoprobe (discovery-cache boards_workable.json, verified 16 live jobs)"
@@ -11114,7 +11130,7 @@
  {
   "platform": "workable",
   "token": "medecins-du-monde",
-  "company": "Médecins du Monde",
+  "company": "M\u00e9decins du Monde",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/medecins-du-monde (discovery-cache boards_workable.json, verified 35 live jobs)"
@@ -11258,7 +11274,7 @@
  {
   "platform": "workable",
   "token": "alten-mexico-1",
-  "company": "ALTEN MÉXICO",
+  "company": "ALTEN M\u00c9XICO",
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "apply.workable.com/alten-mexico-1 (discovery-cache boards_workable.json, verified 210 live jobs) (approved from review)"
@@ -11545,14 +11561,6 @@
  },
  {
   "platform": "darwinbox",
-  "token": "emeritus",
-  "company": "emeritus",
-  "segment": "unclassified",
-  "source": "discovery",
-  "evidence": "https://emeritus.darwinbox.in (discovery-cache boards_darwinbox.json, verified 36 live jobs)"
- },
- {
-  "platform": "darwinbox",
   "token": "hdfcsecurities",
   "company": "hdfcsecurities",
   "segment": "unclassified",
@@ -11590,14 +11598,6 @@
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "https://lifecycleqhtl.darwinbox.in (discovery-cache boards_darwinbox.json, verified 3 live jobs)"
- },
- {
-  "platform": "darwinbox",
-  "token": "pixxel",
-  "company": "pixxel",
-  "segment": "unclassified",
-  "source": "discovery",
-  "evidence": "https://pixxel.darwinbox.in (discovery-cache boards_darwinbox.json, verified 21 live jobs)"
  },
  {
   "platform": "darwinbox",
