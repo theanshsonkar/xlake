@@ -10828,5 +10828,554 @@
     "url": "https://www.esoc.dev/"
    }
   }
+ },
+ {
+  "source_id": "mlh-open-source",
+  "programme_id": "mlh-fellowship-open-source",
+  "official_url": "https://fellowship.mlh.io/programs/open-source",
+  "checked_at": "2026-09-05T06:33:33+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Fellowship applications are processed on a rolling basis and close a few weeks before the start of each batch.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   },
+   "application": {
+    "quote": "Apply Now",
+    "url": "https://fellowship.mlh.com/apply"
+   },
+   "application_url": {
+    "quote": "Apply Now",
+    "url": "https://fellowship.mlh.com/apply"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {
+    "quote": "Educational Stipend.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   },
+   "location": {
+    "quote": "Our program was designed to be remote from the beginning.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   },
+   "remote": {
+    "quote": "Our program was designed to be remote from the beginning.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   },
+   "international_eligibility": {
+    "quote": "MLH is committed to building a more diverse and inclusive tech industry and providing learning opportunities to technologists who face under-representation, discrimination, or systemic bias worldwide.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   },
+   "eligibility": {
+    "quote": "Anyone who meets these eligibility requirements is welcome to apply.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   }
+  }
+ },
+ {
+  "source_id": "google-summer-of-code",
+  "programme_id": "google-summer-of-code",
+  "official_url": "https://summerofcode.withgoogle.com/",
+  "checked_at": "2026-09-05T06:33:33+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "outreachy",
+  "programme_id": "outreachy",
+  "official_url": "https://www.outreachy.org/",
+  "checked_at": "2026-09-05T06:33:34+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "lfx-mentorship",
+  "programme_id": "lfx-mentorship",
+  "official_url": "https://lfx.linuxfoundation.org/tools/mentorship",
+  "checked_at": "2026-09-05T06:33:35+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "riscv-international-mentorship",
+  "programme_id": "riscv-international-mentorship",
+  "official_url": "https://riscv.org/community/mentorship/",
+  "checked_at": "2026-09-05T06:33:37+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications open: July 15 \u2013 August 5 (3 weeks).",
+    "url": "https://riscv.org/community/mentorship/"
+   },
+   "deadline": {
+    "quote": "Applications open: July 15 \u2013 August 5 (3 weeks).",
+    "url": "https://riscv.org/community/mentorship/"
+   },
+   "application_window": {
+    "quote": "Applications open: July 15 \u2013 August 5 (3 weeks).",
+    "url": "https://riscv.org/community/mentorship/"
+   }
+  }
+ },
+ {
+  "source_id": "kde-season-of-kde",
+  "programme_id": "kde-season-of-kde",
+  "official_url": "https://season.kde.org/",
+  "checked_at": "2026-09-05T06:33:39+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Deadline for the contributors applications.",
+    "url": "https://season.kde.org/"
+   },
+   "deadline": {
+    "quote": "Deadline for the contributors applications.",
+    "url": "https://season.kde.org/"
+   }
+  }
+ },
+ {
+  "source_id": "summer-of-bitcoin",
+  "programme_id": "summer-of-bitcoin",
+  "official_url": "https://www.summerofbitcoin.org/",
+  "checked_at": "2026-09-05T06:33:40+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "julia-summer-of-code",
+  "programme_id": "julia-summer-of-code",
+  "official_url": "https://julialang.org/jsoc/",
+  "checked_at": "2026-09-05T06:33:40+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "ospp",
+  "programme_id": "ospp",
+  "official_url": "https://summer-ospp.ac.cn/",
+  "checked_at": "2026-09-05T06:33:45+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "linux-kernel-mentorship",
+  "programme_id": "linux-kernel-mentorship",
+  "official_url": "https://wiki.linuxfoundation.org/lkmp",
+  "checked_at": "2026-09-05T06:33:45+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_403"
+ },
+ {
+  "source_id": "hyperledger-mentorship",
+  "programme_id": "hyperledger-mentorship",
+  "official_url": "https://wiki.hyperledger.org/display/INTERN/",
+  "checked_at": "2026-09-05T06:33:47+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "mentee application period on.",
+    "url": "https://wiki.hyperledger.org/display/INTERN/"
+   },
+   "deadline": {
+    "quote": "mentee application period on.",
+    "url": "https://wiki.hyperledger.org/display/INTERN/"
+   }
+  }
+ },
+ {
+  "source_id": "open-mainframe-mentorship",
+  "programme_id": "open-mainframe-mentorship",
+  "official_url": "https://www.openmainframeproject.org/projects/mentorship-program",
+  "checked_at": "2026-09-05T06:33:49+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_404"
+ },
+ {
+  "source_id": "hacktoberfest",
+  "programme_id": "hacktoberfest",
+  "official_url": "https://hacktoberfest.com/",
+  "checked_at": "2026-09-05T06:33:49+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "24-pull-requests",
+  "programme_id": "24-pull-requests",
+  "official_url": "https://24pullrequests.com/",
+  "checked_at": "2026-09-05T06:33:50+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "igalia-coding-experience",
+  "programme_id": "igalia-coding-experience",
+  "official_url": "https://www.igalia.com/coding-experience/",
+  "checked_at": "2026-09-05T06:33:53+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "xorg-evoc",
+  "programme_id": "xorg-evoc",
+  "official_url": "https://www.x.org/wiki/XorgEVoC/",
+  "checked_at": "2026-09-05T06:33:57+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "processing-foundation-fellowship",
+  "programme_id": "processing-foundation-fellowship",
+  "official_url": "https://processingfoundation.org/fellowships/",
+  "checked_at": "2026-09-05T06:33:57+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "fossasia-codeheat",
+  "programme_id": "fossasia-codeheat",
+  "official_url": "https://codeheat.org/",
+  "checked_at": "2026-09-05T06:33:58+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "c4gt",
+  "programme_id": "c4gt",
+  "official_url": "https://www.codeforgovtech.in/",
+  "checked_at": "2026-09-05T06:33:59+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "gssoc",
+  "programme_id": "gssoc",
+  "official_url": "https://gssoc.girlscript.org/",
+  "checked_at": "2026-09-05T06:33:59+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Applications are reviewed on a rolling basis.",
+    "url": "https://gssoc.girlscript.org/"
+   },
+   "application": {
+    "quote": "Apply for Agents Track",
+    "url": "https://gssoc.girlscript.org/#apply"
+   },
+   "application_url": {
+    "quote": "Apply for Agents Track",
+    "url": "https://gssoc.girlscript.org/#apply"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {
+    "quote": "Google Summer of Code (GSoC) is run by Google and offers a stipend to selected student contributors working on established open source organisations.",
+    "url": "https://gssoc.girlscript.org/"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {
+    "quote": "\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"GSSoC 2026 is open to everyone worldwide: students, working professionals, and hobbyists at any skill level.",
+    "url": "https://gssoc.girlscript.org/"
+   },
+   "eligibility": {
+    "quote": "\"}},{\"@type\":\"Question\",\"name\":\"Who can apply to GSSoC 2026?",
+    "url": "https://gssoc.girlscript.org/"
+   }
+  }
+ },
+ {
+  "source_id": "social-summer-of-code",
+  "programme_id": "social-summer-of-code",
+  "official_url": "https://socialsummerofcode.com/",
+  "checked_at": "2026-09-05T06:34:00+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "social-winter-of-code",
+  "programme_id": "social-winter-of-code",
+  "official_url": "https://swoc.in/",
+  "checked_at": "2026-09-05T06:34:01+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "fossee-summer-fellowship",
+  "programme_id": "fossee-summer-fellowship",
+  "official_url": "https://fossee.in/",
+  "checked_at": "2026-09-05T06:34:02+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "kwoc",
+  "programme_id": "kwoc",
+  "official_url": "https://kwoc.kossiitkgp.org/",
+  "checked_at": "2026-09-05T06:34:03+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "devscript-woc",
+  "programme_id": "devscript-woc",
+  "official_url": "https://devscript.tech/woc/",
+  "checked_at": "2026-09-05T06:34:03+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno -2] Name or service not known>"
+ },
+ {
+  "source_id": "dwoc",
+  "programme_id": "dwoc",
+  "official_url": "https://dwoc.io/",
+  "checked_at": "2026-09-05T06:34:06+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "foss-overflow",
+  "programme_id": "foss-overflow",
+  "official_url": "https://fossoverflow.dev/",
+  "checked_at": "2026-09-05T06:34:06+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "jgec-woc",
+  "programme_id": "jgec-woc",
+  "official_url": "https://jwoc.tech/",
+  "checked_at": "2026-09-05T06:34:06+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno -2] Name or service not known>"
+ },
+ {
+  "source_id": "njack-woc",
+  "programme_id": "njack-woc",
+  "official_url": "https://njackwinterofcode.github.io/",
+  "checked_at": "2026-09-05T06:34:07+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "opencode-iiita",
+  "programme_id": "opencode-iiita",
+  "official_url": "https://opencodeiiita.github.io/",
+  "checked_at": "2026-09-05T06:34:07+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_404"
+ },
+ {
+  "source_id": "cross-woc",
+  "programme_id": "cross-woc",
+  "official_url": "https://crosswoc.ieeedtu.in/",
+  "checked_at": "2026-09-05T06:34:07+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid f"
+ },
+ {
+  "source_id": "summer-of-nix",
+  "programme_id": "summer-of-nix",
+  "official_url": "https://summer.nixos.org/",
+  "checked_at": "2026-09-05T06:34:08+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "ethereum-protocol-fellowship",
+  "programme_id": "ethereum-protocol-fellowship",
+  "official_url": "https://ps.ethereum.foundation/fellowship",
+  "checked_at": "2026-09-05T06:34:12+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "sovereign-tech-fellowship",
+  "programme_id": "sovereign-tech-fellowship",
+  "official_url": "https://www.sovereign.tech/programs/fellowship",
+  "checked_at": "2026-09-05T06:34:13+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "The application period ended on April 6, 2026.",
+    "url": "https://www.sovereign.tech/programs/fellowship"
+   },
+   "deadline": {
+    "quote": "The application period ended on April 6, 2026.",
+    "url": "https://www.sovereign.tech/programs/fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "sequoia-oss-fellowship",
+  "programme_id": "sequoia-oss-fellowship",
+  "official_url": "https://www.sequoiacap.com/oss",
+  "checked_at": "2026-09-05T06:34:13+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "We will take applications and accept fellows on a rolling basis.",
+    "url": "https://www.sequoiacap.com/oss"
+   },
+   "application": {
+    "quote": "Apply to be a Fellow",
+    "url": "https://sequoiacap.com/oss#apply"
+   },
+   "application_url": {
+    "quote": "Apply to be a Fellow",
+    "url": "https://sequoiacap.com/oss#apply"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {
+    "quote": "`${g},${f}`:f);for(let r of a){let e=u(window.",
+    "url": "https://www.sequoiacap.com/oss"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "djangonaut-space",
+  "programme_id": "djangonaut-space",
+  "official_url": "https://djangonaut.space/",
+  "checked_at": "2026-09-05T06:34:14+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "swift-mentorship",
+  "programme_id": "swift-mentorship",
+  "official_url": "https://www.swift.org/mentorship/",
+  "checked_at": "2026-09-05T06:34:14+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "kubernetes-release-shadow",
+  "programme_id": "kubernetes-release-shadow",
+  "official_url": "https://github.com/kubernetes/sig-release/blob/master/release-team/shadows.md",
+  "checked_at": "2026-09-05T06:34:15+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "open-source-research-experience",
+  "programme_id": "open-source-research-experience",
+  "official_url": "https://ucsc-ospo.github.io/osre/",
+  "checked_at": "2026-09-05T06:34:15+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "sktime-mentorship",
+  "programme_id": "sktime-mentorship",
+  "official_url": "https://www.sktime.net/docs/get-involved/mentoring/",
+  "checked_at": "2026-09-05T06:34:16+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "We accept applications on a rolling basis and we will be in touch with you shortly!",
+    "url": "https://www.sktime.net/docs/get-involved/mentoring/"
+   },
+   "application": {
+    "quote": "How to apply",
+    "url": "https://www.sktime.net/docs/get-involved/mentoring/#how-to-apply"
+   },
+   "application_url": {
+    "quote": "How to apply",
+    "url": "https://www.sktime.net/docs/get-involved/mentoring/#how-to-apply"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {
+    "quote": "\\d+$/,t=/^(?",
+    "url": "https://www.sktime.net/docs/get-involved/mentoring/"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "european-summer-of-code",
+  "programme_id": "european-summer-of-code",
+  "official_url": "https://www.esoc.dev/",
+  "checked_at": "2026-09-05T06:34:17+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications open.",
+    "url": "https://www.esoc.dev/"
+   },
+   "deadline": {
+    "quote": "Applications open.",
+    "url": "https://www.esoc.dev/"
+   }
+  }
  }
 ]
