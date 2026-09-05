@@ -1,395 +1,219 @@
 [
  {
-  "platform": "keka",
-  "token": "peoplebox",
-  "company": "Peoplebox.ai",
-  "segment": "unsorted",
+  "platform": "ashby",
+  "token": "openai",
+  "company": "OpenAI",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "peoplebox.keka.com"
- },
- {
-  "platform": "keka",
-  "token": "loop",
-  "company": "Loop Health",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "loop.keka.com"
- },
- {
-  "platform": "keka",
-  "token": "acciojob",
-  "company": "AccioJob",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "acciojob.keka.com"
- },
- {
-  "platform": "keka",
-  "token": "asteria",
-  "company": "Asteria Aerospace",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "asteria.kekahire.com"
- },
- {
-  "platform": "keka",
-  "token": "eyerov",
-  "company": "EyeROV",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "eyerov.keka.com"
- },
- {
-  "platform": "keka",
-  "token": "healthasyst",
-  "company": "HealthAsyst",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "healthasyst.keka.com"
- },
- {
-  "platform": "keka",
-  "token": "impactanalytics",
-  "company": "Impact Analytics",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "impactanalytics.keka.com"
- },
- {
-  "platform": "successfactors",
-  "token": "careers.wipro.com",
-  "company": "Wipro",
-  "segment": "it_services",
-  "source": "resolver",
-  "evidence": "rmkcdn.successfactors.com"
- },
- {
-  "platform": "workday",
-  "token": "accenture.wd103.myworkdayjobs.com|accenture|AccentureCareers",
-  "company": "Accenture",
-  "segment": "it_services",
-  "source": "resolver",
-  "evidence": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers"
- },
- {
-  "platform": "successfactors",
-  "token": "jobs.sap.com",
-  "company": "SAP",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "rmkcdn.successfactors.com"
- },
- {
-  "platform": "workday",
-  "token": "intel.wd1.myworkdayjobs.com|intel|External",
-  "company": "Intel",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "https://intel.wd1.myworkdayjobs.com/External"
- },
- {
-  "platform": "workday",
-  "token": "target.wd5.myworkdayjobs.com|target|targetcareers",
-  "company": "Target",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "https://target.wd5.myworkdayjobs.com/targetcareers"
- },
- {
-  "platform": "eightfold",
-  "token": "paypal|paypal.com",
-  "company": "PayPal",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "paypal.eightfold.ai"
- },
- {
-  "platform": "workday",
-  "token": "visa.wd5.myworkdayjobs.com|visa|Visa",
-  "company": "Visa",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "https://visa.wd5.myworkdayjobs.com/Visa"
- },
- {
-  "platform": "workday",
-  "token": "citi.wd5.myworkdayjobs.com|citi|2",
-  "company": "Citi",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "https://citi.wd5.myworkdayjobs.com/en-US/2"
- },
- {
-  "platform": "eightfold",
-  "token": "micron|micron.com",
-  "company": "Micron",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "micron.eightfold.ai"
- },
- {
-  "platform": "workday",
-  "token": "cadence.wd1.myworkdayjobs.com|cadence|Univ_Careers",
-  "company": "Cadence",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "https://cadence.wd1.myworkdayjobs.com/Univ_Careers"
- },
- {
-  "platform": "workday",
-  "token": "redhat.wd5.myworkdayjobs.com|redhat|jobs",
-  "company": "Red Hat",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "https://redhat.wd5.myworkdayjobs.com/jobs"
- },
- {
-  "platform": "lever",
-  "token": "palantir",
-  "company": "Palantir",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "jobs.lever.co/palantir"
- },
- {
-  "platform": "workday",
-  "token": "expedia.wd108.myworkdayjobs.com|expedia|search",
-  "company": "Expedia",
-  "segment": "big_tech",
-  "source": "resolver",
-  "evidence": "https://expedia.wd108.myworkdayjobs.com/en-US/search"
- },
- {
-  "platform": "lever",
-  "token": "paytm",
-  "company": "Paytm",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "jobs.lever.co/paytm"
+  "evidence": "jobs.ashbyhq.com/openai"
  },
  {
   "platform": "greenhouse",
-  "token": "razorpaysoftwareprivatelimited",
-  "company": "Razorpay",
-  "segment": "india_product",
+  "token": "anthropic",
+  "company": "Anthropic",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/razorpaysoftwareprivatelimited"
- },
- {
-  "platform": "workday",
-  "token": "browserstack.wd3.myworkdayjobs.com|browserstack|External",
-  "company": "BrowserStack",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "https://browserstack.wd3.myworkdayjobs.com/External"
- },
- {
-  "platform": "greenhouse",
-  "token": "druva",
-  "company": "Druva",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "boards-api.greenhouse.io/v1/boards/druva"
- },
- {
-  "platform": "greenhouse",
-  "token": "netskope",
-  "company": "Netskope",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "greenhouse.io/embed/job_board/js?for=netskope"
- },
- {
-  "platform": "darwinbox",
-  "token": "unacademy",
-  "company": "Unacademy",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "unacademy.darwinbox.in"
- },
- {
-  "platform": "darwinbox",
-  "token": "pwhr",
-  "company": "PhysicsWallah",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "pwhr.darwinbox.in"
- },
- {
-  "platform": "darwinbox",
-  "token": "porter",
-  "company": "Porter",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "porter.darwinbox.in"
- },
- {
-  "platform": "lever",
-  "token": "mindtickle",
-  "company": "MindTickle",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "jobs.lever.co/mindtickle"
+  "evidence": "job-boards.greenhouse.io/anthropic"
  },
  {
   "platform": "ashby",
-  "token": "sarvam",
-  "company": "Sarvam AI",
-  "segment": "india_product",
+  "token": "ramp",
+  "company": "Ramp",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "jobs.ashbyhq.com/sarvam"
- },
- {
-  "platform": "darwinbox",
-  "token": "pixxel",
-  "company": "Pixxel",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "pixxel.darwinbox.in"
- },
- {
-  "platform": "darwinbox",
-  "token": "emeritus",
-  "company": "Emeritus",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "emeritus.darwinbox.in"
- },
- {
-  "platform": "keka",
-  "token": "jupiter",
-  "company": "Jupiter",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "jupiter.keka.com"
- },
- {
-  "platform": "workable",
-  "token": "apna",
-  "company": "Apna",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "apply.workable.com/apna"
+  "evidence": "jobs.ashbyhq.com/ramp"
  },
  {
   "platform": "greenhouse",
-  "token": "towerresearchcapital",
-  "company": "Tower Research Capital",
-  "segment": "quant",
+  "token": "figma",
+  "company": "Figma",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "greenhouse.io/embed/job_board/js?for=towerresearchcapital"
+  "evidence": "boards.greenhouse.io/figma"
+ },
+ {
+  "platform": "ashby",
+  "token": "notion",
+  "company": "Notion",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "jobs.ashbyhq.com/notion"
  },
  {
   "platform": "greenhouse",
-  "token": "pdtpartners",
-  "company": "PDT Partners",
-  "segment": "quant",
+  "token": "vercel",
+  "company": "Vercel",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/pdtpartners"
- },
- {
-  "platform": "eightfold",
-  "token": "mlp|mlp.com",
-  "company": "Millennium",
-  "segment": "quant",
-  "source": "resolver",
-  "evidence": "mlp.eightfold.ai"
+  "evidence": "job-boards.greenhouse.io/vercel"
  },
  {
   "platform": "workday",
-  "token": "sprinklr.wd1.myworkdayjobs.com|sprinklr|careers",
-  "company": "Sprinklr",
-  "segment": "india_product",
+  "token": "workday.wd5.myworkdayjobs.com|workday|Workday",
+  "company": "Workday",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://sprinklr.wd1.myworkdayjobs.com/careers"
- },
- {
-  "platform": "keka",
-  "token": "zluri",
-  "company": "Zluri",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "zluri.keka.com"
- },
- {
-  "platform": "darwinbox",
-  "token": "spinzone",
-  "company": "Spinny",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "spinzone.darwinbox.in"
+  "evidence": "https://workday.wd5.myworkdayjobs.com/Workday"
  },
  {
   "platform": "workday",
-  "token": "fractal.wd1.myworkdayjobs.com|fractal|Careers",
-  "company": "Fractal",
-  "segment": "india_product",
+  "token": "paloaltonetworks.wd5.myworkdayjobs.com|paloaltonetworks|panwexternalcareers",
+  "company": "Palo Alto Networks",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://fractal.wd1.myworkdayjobs.com/Careers"
- },
- {
-  "platform": "greenhouse",
-  "token": "observeai",
-  "company": "Observe.AI",
-  "segment": "india_product",
-  "source": "resolver",
-  "evidence": "greenhouse.io/embed/job_board/js?for=observeai"
+  "evidence": "https://paloaltonetworks.wd5.myworkdayjobs.com/en-US/panwexternalcareers"
  },
  {
   "platform": "workday",
-  "token": "uniphore.wd503.myworkdayjobs.com|uniphore|Uniphore",
-  "company": "Uniphore",
-  "segment": "india_product",
+  "token": "crowdstrike.wd5.myworkdayjobs.com|crowdstrike|crowdstrikecareers",
+  "company": "CrowdStrike",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://uniphore.wd503.myworkdayjobs.com/Uniphore"
+  "evidence": "https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers"
  },
  {
-  "platform": "darwinbox",
-  "token": "myhr",
-  "company": "PharmEasy",
-  "segment": "unsorted",
+  "platform": "workday",
+  "token": "hpe.wd5.myworkdayjobs.com|hpe|Jobsathpe",
+  "company": "HPE",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "myhr.darwinbox.in"
+  "evidence": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe"
  },
  {
-  "platform": "darwinbox",
-  "token": "upgrad",
-  "company": "upGrad",
-  "segment": "unsorted",
+  "platform": "ashby",
+  "token": "uipath",
+  "company": "UiPath",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "upgrad.darwinbox.in"
+  "evidence": "jobs.ashbyhq.com/uipath"
  },
  {
-  "platform": "darwinbox",
-  "token": "godigit",
-  "company": "GoDigit",
-  "segment": "unsorted",
+  "platform": "workday",
+  "token": "automationanywhere.wd5.myworkdayjobs.com|automationanywhere|AutomationAnywhereJobs",
+  "company": "Automation Anywhere",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "godigit.darwinbox.in"
- },
- {
-  "platform": "darwinbox",
-  "token": "orangehealth",
-  "company": "Orange Health Labs",
-  "segment": "unsorted",
-  "source": "resolver",
-  "evidence": "orangehealth.darwinbox.in"
+  "evidence": "https://automationanywhere.wd5.myworkdayjobs.com/AutomationAnywhereJobs"
  },
  {
   "platform": "greenhouse",
-  "token": "highradius",
-  "company": "HighRadius",
-  "segment": "unsorted",
+  "token": "c3ascend",
+  "company": "C3 AI",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "greenhouse.io/embed/job_board/js?for=highradius"
+  "evidence": "boards.greenhouse.io/c3ascend"
  },
  {
-  "platform": "keka",
-  "token": "teachmint",
-  "company": "Teachmint",
-  "segment": "unsorted",
+  "platform": "greenhouse",
+  "token": "doordashusa",
+  "company": "DoorDash",
+  "segment": "us_tech",
   "source": "resolver",
-  "evidence": "teachmint.keka.com"
+  "evidence": "job-boards.greenhouse.io/doordashusa"
+ },
+ {
+  "platform": "workday",
+  "token": "ebay.wd5.myworkdayjobs.com|ebay|apply",
+  "company": "eBay",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "https://ebay.wd5.myworkdayjobs.com/apply"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "xai",
+  "company": "xAI",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "job-boards.greenhouse.io/xai"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "lattice",
+  "company": "Lattice",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "greenhouse.io/embed/job_board/js?for=lattice"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "duolingo",
+  "company": "Duolingo",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "boards-api.greenhouse.io/v1/boards/duolingo"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "reddit",
+  "company": "Reddit",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "job-boards.greenhouse.io/reddit"
+ },
+ {
+  "platform": "ashby",
+  "token": "sentry",
+  "company": "Sentry",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "jobs.ashbyhq.com/sentry"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "launchdarkly",
+  "company": "LaunchDarkly",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "boards.greenhouse.io/launchdarkly"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "intercom",
+  "company": "Intercom",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "job-boards.greenhouse.io/intercom"
+ },
+ {
+  "platform": "workday",
+  "token": "genesys.wd1.myworkdayjobs.com|genesys|Genesys",
+  "company": "Genesys",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "https://genesys.wd1.myworkdayjobs.com/Genesys"
+ },
+ {
+  "platform": "workday",
+  "token": "modernatx.wd1.myworkdayjobs.com|modernatx|M_tx",
+  "company": "Moderna",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "https://modernatx.wd1.myworkdayjobs.com/M_tx"
+ },
+ {
+  "platform": "workday",
+  "token": "23andme.wd5.myworkdayjobs.com|23andme|23",
+  "company": "23andMe",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "https://23andme.wd5.myworkdayjobs.com/23"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "recursionpharmaceuticals",
+  "company": "Recursion",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "greenhouse.io/embed/job_board/js?for=recursionpharmaceuticals"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "mercury",
+  "company": "Mercury",
+  "segment": "us_tech",
+  "source": "resolver",
+  "evidence": "job-boards.greenhouse.io/mercury"
  },
  {
   "platform": "greenhouse",

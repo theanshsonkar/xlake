@@ -233,3 +233,122 @@ Capillary,capillarytech.com
 Teachmint,teachmint.com
 Vedantu,vedantu.com
 Classplus,classplus.co
+
+# --- US technology employers ------------------------------------------------
+OpenAI,openai.com,us_tech
+Anthropic,anthropic.com,us_tech
+Meta,meta.com,us_tech
+ByteDance,bytedance.com,us_tech
+TikTok,tiktok.com,us_tech
+Coinbase,coinbase.com,us_tech
+Robinhood,robinhood.com,us_tech
+Block,block.xyz,us_tech
+Chime,chime.com,us_tech
+Brex,brex.com,us_tech
+Plaid,plaid.com,us_tech
+Affirm,affirm.com,us_tech
+SoFi,sofi.com,us_tech
+Toast,toasttab.com,us_tech
+Ramp,ramp.com,us_tech
+Figma,figma.com,us_tech
+Notion,notion.so,us_tech
+Vercel,vercel.com,us_tech
+GitLab,gitlab.com,us_tech
+GitHub,github.com,us_tech
+HubSpot,hubspot.com,us_tech
+Shopify,shopify.com,us_tech
+Okta,okta.com,us_tech
+DocuSign,docusign.com,us_tech
+ServiceNow,servicenow.com,us_tech
+Workday,workday.com,us_tech
+Intuit,intuit.com,us_tech
+Workiva,workiva.com,us_tech
+Zoom,zoom.us,us_tech
+Dropbox,dropbox.com,us_tech
+Box,box.com,us_tech
+MongoDB,mongodb.com,us_tech
+Confluent,confluent.io,us_tech
+Elastic,elastic.co,us_tech
+HashiCorp,hashicorp.com,us_tech
+DigitalOcean,digitalocean.com,us_tech
+Fastly,fastly.com,us_tech
+Akamai,akamai.com,us_tech
+Datadog,datadoghq.com,us_tech
+New Relic,newrelic.com,us_tech
+Palo Alto Networks,paloaltonetworks.com,us_tech
+CrowdStrike,crowdstrike.com,us_tech
+Zscaler,zscaler.com,us_tech
+Fortinet,fortinet.com,us_tech
+Arista Networks,arista.com,us_tech
+HPE,hpe.com,us_tech
+NetApp,netapp.com,us_tech
+Pure Storage,purestorage.com,us_tech
+Samsara,samsara.com,us_tech
+UiPath,uipath.com,us_tech
+Automation Anywhere,automationanywhere.com,us_tech
+C3 AI,c3.ai,us_tech
+Scale AI,scale.com,us_tech
+Anduril,anduril.com,us_tech
+Figure AI,figure.ai,us_tech
+Waymo,waymo.com,us_tech
+Cruise,cruise.com,us_tech
+Aurora Innovation,aurora.tech,us_tech
+Rivian,rivian.com,us_tech
+Lucid Motors,lucidmotors.com,us_tech
+Tesla,tesla.com,us_tech
+Nuro,nuro.ai,us_tech
+DoorDash,doordash.com,us_tech
+Instacart,instacart.com,us_tech
+Lyft,lyft.com,us_tech
+Airbnb,airbnb.com,us_tech
+Etsy,etsy.com,us_tech
+eBay,ebay.com,us_tech
+Chewy,chewy.com,us_tech
+Wayfair,wayfair.com,us_tech
+Roblox,roblox.com,us_tech
+Epic Games,epicgames.com,us_tech
+Unity,unity.com,us_tech
+Electronic Arts,ea.com,us_tech
+Take-Two Interactive,taketwointeractivesoftware.com,us_tech
+Activision,activision.com,us_tech
+Qualtrics,qualtrics.com,us_tech
+Splunk,splunk.com,us_tech
+Gusto,gusto.com,us_tech
+Rippling,rippling.com,us_tech
+Deel,deel.com,us_tech
+xAI,x.ai,us_tech
+Lattice,lattice.com,us_tech
+Asana,asana.com,us_tech
+Monday.com,monday.com,us_tech
+Miro,miro.com,us_tech
+Airtable,airtable.com,us_tech
+Canva,canva.com,us_tech
+Duolingo,duolingo.com,us_tech
+Coursera,coursera.org,us_tech
+Udemy,udemy.com,us_tech
+2U,2u.com,us_tech
+Khan Academy,khanacademy.org,us_tech
+Reddit,reddit.com,us_tech
+Pinterest,pinterest.com,us_tech
+Discord,discord.com,us_tech
+Twitch,twitch.tv,us_tech
+Spotify,spotify.com,us_tech
+Roku,roku.com,us_tech
+Sentry,sentry.io,us_tech
+LaunchDarkly,launchdarkly.com,us_tech
+Intercom,intercom.com,us_tech
+Loom,loom.com,us_tech
+PagerDuty,pagerduty.com,us_tech
+Smartsheet,smartsheet.com,us_tech
+Genesys,genesys.com,us_tech
+Lemonade,lemonade.com,us_tech
+Oscar Health,hioscar.com,us_tech
+Moderna,modernatx.com,us_tech
+Illumina,illumina.com,us_tech
+23andMe,23andme.com,us_tech
+Tempus,tempus.com,us_tech
+Recursion,recursion.com,us_tech
+Circle,circle.com,us_tech
+Mercury,mercury.com,us_tech
+Harvey,harvey.ai,us_tech
+Perplexity,perplexity.ai,us_tech

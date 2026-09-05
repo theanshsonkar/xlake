@@ -239,84 +239,146 @@ INDIA_CITIES = (
     "karnataka", "maharashtra", "telangana", "tamil nadu", "gujarat", "kerala",
     "haryana", "uttar pradesh", "rajasthan", "west bengal", "punjab",
 )
-INDIA_RE = re.compile(r"\b(" + "|".join(re.escape(c) for c in INDIA_CITIES) + r")\b", re.I)
+# The primary region is deliberately a module-level setting: deployments can
+# flip the feed without changing source-specific callers or stored buckets.
+PRIMARY_REGION = "US"
 
-# Remote that genuinely includes India.
+US_STATES = (
+    "alabama", "alaska", "arizona", "arkansas", "california", "colorado",
+    "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho",
+    "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana",
+    "maine", "maryland", "massachusetts", "michigan", "minnesota",
+    "mississippi", "missouri", "montana", "nebraska", "nevada",
+    "new hampshire", "new jersey", "new mexico", "new york", "north carolina",
+    "north dakota", "ohio", "oklahoma", "oregon", "pennsylvania",
+    "rhode island", "south carolina", "south dakota", "tennessee", "texas",
+    "utah", "vermont", "virginia", "washington", "west virginia", "wisconsin",
+    "wyoming", "district of columbia",
+)
+US_CITIES = (
+    "new york", "los angeles", "chicago", "houston", "phoenix", "philadelphia",
+    "san antonio", "san diego", "dallas", "san jose", "austin", "jacksonville",
+    "fort worth", "columbus", "charlotte", "san francisco", "indianapolis",
+    "seattle", "denver", "washington", "boston", "nashville", "detroit",
+    "portland", "las vegas", "memphis", "louisville", "baltimore", "milwaukee",
+    "albuquerque", "tucson", "fresno", "sacramento", "kansas city", "atlanta",
+    "omaha", "raleigh", "miami", "cleveland", "tampa", "pittsburgh", "orlando",
+)
+INDIA_RE = re.compile(r"\b(" + "|".join(re.escape(c) for c in INDIA_CITIES) + r")\b", re.I)
+US_RE = re.compile(
+    r"\b(united\s+states|usa|u\.s\.?|us\b|us[- ]based|remote\s*\(\s*us\s*\)|"
+    + "|".join(re.escape(c) for c in US_STATES + US_CITIES) +
+    r")\b|(?<!\w),\s*(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)(?!\w)",
+    re.I,
+)
+
 REMOTE_OPEN = re.compile(
     r"\b(worldwide|world\s?wide|global(?:ly)?\s*remote|remote\s*[-–,]?\s*global|"
     r"work\s+from\s+anywhere|anywhere|any\s+location|fully\s+remote|remote\s*\(global\))\b",
     re.I,
 )
 REMOTE_ANY = re.compile(r"\b(remote|wfh|work\s+from\s+home|hybrid|online|virtual)\b", re.I)
-
-# Remote restricted to a region that excludes India -> not actionable.
 REMOTE_EXCLUDES_INDIA = re.compile(
     r"\b(remote\s*[-–,(]?\s*(us|usa|united\s+states|uk|emea|eu|europe|latam|"
     r"noram|dach|iberia|apac\s+excl|canada|australia|argentina|brazil|mexico|"
-    r"south\s+america|north\s+america))\b",
-    re.I,
-)
+    r"south\s+america|north\s+america))\b", re.I)
+REMOTE_EXCLUDES_US = re.compile(
+    r"(?:"
+    r"\bremote\b[^\n;]{0,100}\b(?:"
+    r"non[- ]us|outside\s+(?:the\s+)?(?:u\.?s\.?|united\s+states)|"
+    r"excluding\s+(?:the\s+)?(?:u\.?s\.?|united\s+states)|"
+    r"india|indian|uk|emea|eu|europe|latam|canada|australia|asia|apac|"
+    r"(?:not\s+available|not\s+eligible)(?:\s+to|\s+for|\s+in)?\s+"
+    r"(?:the\s+)?(?:u\.?s\.?|united\s+states)|"
+    r"(?:u\.?s\.?|united\s+states)\s+(?:applicants?|residents?)?\s*"
+    r"(?:are\s+)?not\s+(?:eligible|available)"
+    r")\b"
+    r")", re.I)
 
 INDIA_LOCATED = "india_located"
-INDIA_REMOTE = "india_remote"          # remote/worldwide that explicitly includes India
-REMOTE_GLOBAL = "remote_global"        # generic remote, no region bar: reachable from India
-GLOBAL_HIRING = "global_hiring"        # overseas on-site / unknown location: needs relocation
-EXCLUDED = "excluded"                  # remote restricted to a region that bars India
+INDIA_REMOTE = "india_remote"
+US_LOCATED = "us_located"
+US_REMOTE = "us_remote"
+REMOTE_GLOBAL = "remote_global"
+GLOBAL_HIRING = "global_hiring"
+EXCLUDED = "excluded"
 
 
 def location_bucket(location: str, india_source: bool = False) -> str:
-    """Which applicability bucket a posting falls into.
+    """Return a region bucket; ``india_source`` retains its legacy API name.
 
-    ``india_source`` treats blank or otherwise unspecified remote locations from
-    India-first sources as India-remote. Explicit foreign locations still retain
-    their normal global or excluded classification.
+    A true source hint makes unspecified/generic remote postings remote in the
+    configured primary region, rather than assuming the historical India feed.
     """
     loc = (location or "").strip()
+    primary_remote = US_REMOTE if PRIMARY_REGION == "US" else INDIA_REMOTE
     if not loc:
-        return INDIA_REMOTE if india_source else GLOBAL_HIRING
+        return primary_remote if india_source else GLOBAL_HIRING
+    if PRIMARY_REGION == "US" and REMOTE_EXCLUDES_US.search(loc):
+        return EXCLUDED
+    if PRIMARY_REGION == "US" and US_RE.search(loc):
+        if REMOTE_ANY.search(loc):
+            return US_REMOTE
+        return US_LOCATED
+    if PRIMARY_REGION != "US" and REMOTE_EXCLUDES_INDIA.search(loc):
+        return EXCLUDED
     if INDIA_RE.search(loc):
         return INDIA_LOCATED
     if REMOTE_OPEN.search(loc):
-        return INDIA_REMOTE
-    if REMOTE_EXCLUDES_INDIA.search(loc):
-        return EXCLUDED
+        return primary_remote if india_source else REMOTE_GLOBAL
     if REMOTE_ANY.search(loc):
-        return INDIA_REMOTE if india_source else REMOTE_GLOBAL
-    return GLOBAL_HIRING  # overseas on-site; retained and searchable, ranked lower
+        return primary_remote if india_source else REMOTE_GLOBAL
+    return GLOBAL_HIRING
 
 
-# --- Accessibility: how reachable an opportunity is for an India-based user. ---
-# The index stays comprehensive (nothing trustworthy is dropped for being
-# foreign); accessibility is what the default feed ranks by.
-ACCESS_INDIA = "india_located"           # physically in India
-ACCESS_REMOTE_GLOBAL = "remote_global"   # remote / open worldwide: reachable from India
-ACCESS_FOREIGN_ONSITE = "foreign_onsite" # on-site abroad: needs relocation/visa
-ACCESS_EXCLUDED = "excluded"             # source explicitly bars India: not eligible
+ACCESS_INDIA = "india_located"
+ACCESS_INDIA_REMOTE = "india_remote"
+ACCESS_US = "us_located"
+ACCESS_US_REMOTE = "us_remote"
+ACCESS_REMOTE_GLOBAL = "remote_global"
+ACCESS_FOREIGN_ONSITE = "foreign_onsite"
+ACCESS_EXCLUDED = "excluded"
 
 _ACCESS_BY_BUCKET = {
-    INDIA_LOCATED: ACCESS_INDIA,
-    INDIA_REMOTE: ACCESS_REMOTE_GLOBAL,
-    REMOTE_GLOBAL: ACCESS_REMOTE_GLOBAL,
-    GLOBAL_HIRING: ACCESS_FOREIGN_ONSITE,
+    INDIA_LOCATED: ACCESS_INDIA, INDIA_REMOTE: ACCESS_INDIA_REMOTE,
+    US_LOCATED: ACCESS_US, US_REMOTE: ACCESS_US_REMOTE,
+    REMOTE_GLOBAL: ACCESS_REMOTE_GLOBAL, GLOBAL_HIRING: ACCESS_FOREIGN_ONSITE,
     EXCLUDED: ACCESS_EXCLUDED,
 }
 
-# Lower rank = surfaced higher in the default feed.
-ACCESS_RANK = {ACCESS_INDIA: 0, ACCESS_REMOTE_GLOBAL: 1,
-               ACCESS_FOREIGN_ONSITE: 2, ACCESS_EXCLUDED: 3}
-
-# The default (non-noisy) feed surfaces these tiers; foreign on-site sits behind a filter.
-DEFAULT_FEED_TIERS = (ACCESS_INDIA, ACCESS_REMOTE_GLOBAL)
-
 
 def accessibility(bucket: Optional[str]) -> str:
-    """Accessibility tier for an India-based user, derived from a location bucket."""
+    """Accessibility tier using the configured primary region."""
+    if PRIMARY_REGION == "US":
+        if bucket == INDIA_REMOTE:
+            return ACCESS_INDIA_REMOTE
+        return _ACCESS_BY_BUCKET.get(bucket, ACCESS_FOREIGN_ONSITE)
+    if bucket in (US_LOCATED, US_REMOTE):
+        return ACCESS_FOREIGN_ONSITE
     return _ACCESS_BY_BUCKET.get(bucket, ACCESS_FOREIGN_ONSITE)
 
 
 def access_rank(bucket: Optional[str]) -> int:
     """Default-feed sort key (0 = highest priority)."""
-    return ACCESS_RANK[accessibility(bucket)]
+    tier = accessibility(bucket)
+    if PRIMARY_REGION == "US":
+        return {ACCESS_US: 0, ACCESS_US_REMOTE: 0,
+                ACCESS_REMOTE_GLOBAL: 1, ACCESS_INDIA: 2,
+                ACCESS_INDIA_REMOTE: 2, ACCESS_FOREIGN_ONSITE: 2,
+                ACCESS_EXCLUDED: 3}[tier]
+    return {ACCESS_INDIA: 0, ACCESS_INDIA_REMOTE: 0,
+            ACCESS_REMOTE_GLOBAL: 1, ACCESS_FOREIGN_ONSITE: 2,
+            ACCESS_EXCLUDED: 3}[tier]
+
+
+DEFAULT_FEED_TIERS = ((ACCESS_US, ACCESS_US_REMOTE, ACCESS_REMOTE_GLOBAL)
+                      if PRIMARY_REGION == "US" else
+                      (ACCESS_INDIA, ACCESS_REMOTE_GLOBAL))
+# Compatibility for quality.annotate and older callers that index this map.
+ACCESS_RANK = {ACCESS_US: 0, ACCESS_US_REMOTE: 0,
+               ACCESS_REMOTE_GLOBAL: 1, ACCESS_INDIA: 2,
+               ACCESS_INDIA_REMOTE: 2, ACCESS_FOREIGN_ONSITE: 2,
+               ACCESS_EXCLUDED: 3}
 
 
 # --------------------------------------------------------------------------- #

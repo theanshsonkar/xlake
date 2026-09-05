@@ -105,10 +105,10 @@ class TestInternshipLists(unittest.TestCase):
 
         self.assertTrue(coop["is_internship"])
         self.assertTrue(coop["technical"])
-        self.assertEqual(coop["location_bucket"], filters.GLOBAL_HIRING)
+        self.assertEqual(coop["location_bucket"], filters.US_LOCATED)
         self.assertEqual(
             filters.accessibility(coop["location_bucket"]),
-            filters.ACCESS_FOREIGN_ONSITE,
+            filters.ACCESS_US,
         )
         self.assertEqual(remote["location_bucket"], filters.REMOTE_GLOBAL)
 
@@ -220,6 +220,7 @@ class TestInternshipLists(unittest.TestCase):
             self.assertTrue(row["is_live"])
             self.assertTrue(row["is_internship"])
             self.assertIn(row["location_bucket"], {
+                filters.US_LOCATED,
                 filters.GLOBAL_HIRING,
                 filters.REMOTE_GLOBAL,
             })

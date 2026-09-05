@@ -1,4 +1,5 @@
 import os
+import os
 import sys
 import unittest
 
@@ -14,38 +15,70 @@ class TestLocationBucketSplit(unittest.TestCase):
     def test_generic_remote_non_india_is_remote_global(self):
         self.assertEqual(filters.location_bucket("Remote"), filters.REMOTE_GLOBAL)
 
-    def test_generic_remote_india_source_is_india_remote(self):
-        self.assertEqual(filters.location_bucket("Remote", india_source=True), filters.INDIA_REMOTE)
-
-    def test_worldwide_is_india_remote(self):
-        self.assertEqual(filters.location_bucket("Work from anywhere"), filters.INDIA_REMOTE)
-
-    def test_foreign_onsite_is_global_hiring(self):
-        self.assertEqual(filters.location_bucket("San Francisco, CA"), filters.GLOBAL_HIRING)
-
-    def test_region_excluded_is_excluded(self):
-        self.assertEqual(filters.location_bucket("Remote - US only"), filters.EXCLUDED)
-
     def test_blank_defaults(self):
         self.assertEqual(filters.location_bucket(""), filters.GLOBAL_HIRING)
-        self.assertEqual(filters.location_bucket("", india_source=True), filters.INDIA_REMOTE)
+        self.assertEqual(filters.location_bucket("", india_source=True), filters.US_REMOTE)
+
+    def test_generic_remote_india_source_is_primary_region_remote(self):
+        self.assertEqual(filters.location_bucket("Remote", india_source=True), filters.US_REMOTE)
+
+    def test_worldwide_is_generic_remote(self):
+        self.assertEqual(filters.location_bucket("Work from anywhere"), filters.REMOTE_GLOBAL)
+
+    def test_us_onsite_and_remote(self):
+        self.assertEqual(filters.location_bucket("San Francisco, CA"), filters.US_LOCATED)
+        self.assertEqual(filters.location_bucket("Remote - US only"), filters.US_REMOTE)
+
+    def test_us_only_remote_is_not_excluded(self):
+        self.assertEqual(filters.location_bucket("Remote - US residents only"), filters.US_REMOTE)
+        self.assertEqual(filters.location_bucket("Must be located in the United States"), filters.US_LOCATED)
+
+    def test_us_barred_remote_is_excluded(self):
+        for location in (
+            "Remote - non-US",
+            "Remote - worldwide (excluding US)",
+            "Remote - outside the US",
+            "Remote - not eligible for US applicants",
+            "Remote - not available to US residents",
+        ):
+            verdict = filters.classify("Software Engineer", location)
+            self.assertFalse(verdict.keep, location)
+            self.assertEqual(verdict.bucket, filters.EXCLUDED, location)
+            self.assertEqual(filters.access_rank(verdict.bucket), 3)
+
+    def test_india_stays_located(self):
+        self.assertEqual(filters.location_bucket("Bengaluru, India"), filters.INDIA_LOCATED)
+
+    def test_state_codes_require_context_and_avoid_word_false_positives(self):
+        self.assertEqual(filters.location_bucket("Austin, TX"), filters.US_LOCATED)
+        self.assertEqual(filters.location_bucket("IN"), filters.GLOBAL_HIRING)
+        self.assertEqual(filters.location_bucket("OR"), filters.GLOBAL_HIRING)
+        self.assertFalse(filters.US_RE.search("Software Engineer in IN or OR"))
 
 
 class TestAccessibilityTiers(unittest.TestCase):
     def test_mapping(self):
         self.assertEqual(filters.accessibility(filters.INDIA_LOCATED), filters.ACCESS_INDIA)
-        self.assertEqual(filters.accessibility(filters.INDIA_REMOTE), filters.ACCESS_REMOTE_GLOBAL)
+        self.assertEqual(filters.accessibility(filters.INDIA_REMOTE), filters.ACCESS_INDIA_REMOTE)
         self.assertEqual(filters.accessibility(filters.REMOTE_GLOBAL), filters.ACCESS_REMOTE_GLOBAL)
         self.assertEqual(filters.accessibility(filters.GLOBAL_HIRING), filters.ACCESS_FOREIGN_ONSITE)
         self.assertEqual(filters.accessibility(filters.EXCLUDED), filters.ACCESS_EXCLUDED)
 
-    def test_rank_order(self):
-        self.assertLess(filters.access_rank(filters.INDIA_LOCATED), filters.access_rank(filters.REMOTE_GLOBAL))
-        self.assertLess(filters.access_rank(filters.REMOTE_GLOBAL), filters.access_rank(filters.GLOBAL_HIRING))
-        self.assertLess(filters.access_rank(filters.GLOBAL_HIRING), filters.access_rank(filters.EXCLUDED))
+    def test_primary_region_mapping(self):
+        self.assertEqual(filters.accessibility(filters.US_LOCATED), filters.ACCESS_US)
+        self.assertEqual(filters.accessibility(filters.US_REMOTE), filters.ACCESS_US_REMOTE)
+        self.assertEqual(filters.access_rank(filters.US_LOCATED), 0)
+        self.assertEqual(filters.access_rank(filters.US_REMOTE), 0)
+        self.assertEqual(filters.access_rank(filters.REMOTE_GLOBAL), 1)
+        self.assertEqual(filters.access_rank(filters.INDIA_LOCATED), 2)
+        self.assertEqual(filters.access_rank(filters.INDIA_REMOTE), 2)
+        self.assertEqual(filters.access_rank(filters.GLOBAL_HIRING), 2)
+        self.assertEqual(filters.access_rank(filters.EXCLUDED), 3)
 
     def test_default_feed_tiers(self):
-        self.assertEqual(filters.DEFAULT_FEED_TIERS, (filters.ACCESS_INDIA, filters.ACCESS_REMOTE_GLOBAL))
+        self.assertEqual(filters.DEFAULT_FEED_TIERS,
+                         (filters.ACCESS_US, filters.ACCESS_US_REMOTE,
+                          filters.ACCESS_REMOTE_GLOBAL))
         self.assertNotIn(filters.ACCESS_FOREIGN_ONSITE, filters.DEFAULT_FEED_TIERS)
 
 
@@ -79,16 +112,28 @@ class TestHonestExcludedLabel(unittest.TestCase):
 
 class TestClassifyForeignKept(unittest.TestCase):
     def test_foreign_onsite_kept_not_hidden(self):
-        verdict = filters.classify("Software Engineer", "San Francisco, CA")
+        verdict = filters.classify("Software Engineer", "Berlin")
         self.assertTrue(verdict.keep)
         self.assertEqual(verdict.bucket, filters.GLOBAL_HIRING)
         self.assertIsNone(filters.hidden_reason("unknown", verdict.bucket, verdict.technical))
 
     def test_region_excluded_routed_out(self):
-        verdict = filters.classify("Software Engineer", "Remote - US only")
+        verdict = filters.classify("Software Engineer", "Remote - India only")
         self.assertFalse(verdict.keep)
         self.assertEqual(verdict.bucket, filters.EXCLUDED)
         self.assertEqual(filters.canonical_reason(verdict.reason), filters.HIDDEN_REGION_EXCLUDED)
+
+    def test_india_compatibility(self):
+        old = filters.PRIMARY_REGION
+        try:
+            filters.PRIMARY_REGION = "IN"
+            self.assertEqual(filters.location_bucket("Bengaluru, India"), filters.INDIA_LOCATED)
+            self.assertEqual(filters.location_bucket("Remote", india_source=True), filters.INDIA_REMOTE)
+            self.assertEqual(filters.location_bucket("Remote - US only"), filters.EXCLUDED)
+            self.assertEqual(filters.access_rank(filters.INDIA_LOCATED), 0)
+            self.assertEqual(filters.access_rank(filters.INDIA_REMOTE), 0)
+        finally:
+            filters.PRIMARY_REGION = old
 
 
 class TestQualityAccessibility(unittest.TestCase):
