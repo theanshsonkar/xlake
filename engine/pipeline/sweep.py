@@ -193,6 +193,8 @@ def _merge_store(path: str, rows: List[Dict],
             })
             if "is_internship" not in existing:
                 existing["is_internship"] = r.get("is_internship")
+            if r.get("company_domain"):
+                existing["company_domain"] = r["company_domain"]
         else:
             r = dict(r)
             r["first_seen"] = now
@@ -330,6 +332,8 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                         "eligibility_status": filters.ELIG_HIDDEN,
                         "hidden_reason": reason,
                         "source_mechanism": "board",
+                        **({"company_domain": entry.get("company_domain")}
+                           if entry.get("company_domain") else {}),
                     })
                     continue
                 row_hidden_reason = filters.hidden_reason(
@@ -370,6 +374,8 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                     "is_internship": v.is_internship,
                     "location_bucket": v.bucket,
                     "source_mechanism": "board",
+                    **({"company_domain": entry.get("company_domain")}
+                       if entry.get("company_domain") else {}),
                 })
             board_qualifying[board] += kept_this_board
             tiering.record_sweep(tier_state, entry["platform"], entry["token"],

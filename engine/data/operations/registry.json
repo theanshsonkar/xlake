@@ -5,7 +5,8 @@
   "company": "OpenAI",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "jobs.ashbyhq.com/openai"
+  "evidence": "jobs.ashbyhq.com/openai",
+  "company_domain": "openai.com"
  },
  {
   "platform": "greenhouse",
@@ -13,7 +14,8 @@
   "company": "Anthropic",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/anthropic"
+  "evidence": "job-boards.greenhouse.io/anthropic",
+  "company_domain": "anthropic.com"
  },
  {
   "platform": "ashby",
@@ -21,7 +23,8 @@
   "company": "Ramp",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "jobs.ashbyhq.com/ramp"
+  "evidence": "jobs.ashbyhq.com/ramp",
+  "company_domain": "ramp.com"
  },
  {
   "platform": "greenhouse",
@@ -29,7 +32,8 @@
   "company": "Figma",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "boards.greenhouse.io/figma"
+  "evidence": "boards.greenhouse.io/figma",
+  "company_domain": "figma.com"
  },
  {
   "platform": "ashby",
@@ -37,7 +41,8 @@
   "company": "Notion",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "jobs.ashbyhq.com/notion"
+  "evidence": "jobs.ashbyhq.com/notion",
+  "company_domain": "notion.so"
  },
  {
   "platform": "greenhouse",
@@ -45,7 +50,8 @@
   "company": "Vercel",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/vercel"
+  "evidence": "job-boards.greenhouse.io/vercel",
+  "company_domain": "vercel.com"
  },
  {
   "platform": "workday",
@@ -53,7 +59,8 @@
   "company": "Workday",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://workday.wd5.myworkdayjobs.com/Workday"
+  "evidence": "https://workday.wd5.myworkdayjobs.com/Workday",
+  "company_domain": "workday.com"
  },
  {
   "platform": "workday",
@@ -61,7 +68,8 @@
   "company": "Palo Alto Networks",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://paloaltonetworks.wd5.myworkdayjobs.com/en-US/panwexternalcareers"
+  "evidence": "https://paloaltonetworks.wd5.myworkdayjobs.com/en-US/panwexternalcareers",
+  "company_domain": "paloaltonetworks.com"
  },
  {
   "platform": "workday",
@@ -69,7 +77,8 @@
   "company": "CrowdStrike",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers"
+  "evidence": "https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers",
+  "company_domain": "crowdstrike.com"
  },
  {
   "platform": "workday",
@@ -77,7 +86,8 @@
   "company": "HPE",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe"
+  "evidence": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe",
+  "company_domain": "hpe.com"
  },
  {
   "platform": "ashby",
@@ -85,7 +95,8 @@
   "company": "UiPath",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "jobs.ashbyhq.com/uipath"
+  "evidence": "jobs.ashbyhq.com/uipath",
+  "company_domain": "uipath.com"
  },
  {
   "platform": "workday",
@@ -93,7 +104,8 @@
   "company": "Automation Anywhere",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://automationanywhere.wd5.myworkdayjobs.com/AutomationAnywhereJobs"
+  "evidence": "https://automationanywhere.wd5.myworkdayjobs.com/AutomationAnywhereJobs",
+  "company_domain": "automationanywhere.com"
  },
  {
   "platform": "greenhouse",
@@ -101,7 +113,8 @@
   "company": "C3 AI",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "boards.greenhouse.io/c3ascend"
+  "evidence": "boards.greenhouse.io/c3ascend",
+  "company_domain": "c3.ai"
  },
  {
   "platform": "greenhouse",
@@ -109,7 +122,8 @@
   "company": "DoorDash",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/doordashusa"
+  "evidence": "job-boards.greenhouse.io/doordashusa",
+  "company_domain": "doordash.com"
  },
  {
   "platform": "workday",
@@ -117,7 +131,8 @@
   "company": "eBay",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://ebay.wd5.myworkdayjobs.com/apply"
+  "evidence": "https://ebay.wd5.myworkdayjobs.com/apply",
+  "company_domain": "ebay.com"
  },
  {
   "platform": "greenhouse",
@@ -125,7 +140,8 @@
   "company": "xAI",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/xai"
+  "evidence": "job-boards.greenhouse.io/xai",
+  "company_domain": "x.ai"
  },
  {
   "platform": "greenhouse",
@@ -133,7 +149,8 @@
   "company": "Lattice",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "greenhouse.io/embed/job_board/js?for=lattice"
+  "evidence": "greenhouse.io/embed/job_board/js?for=lattice",
+  "company_domain": "lattice.com"
  },
  {
   "platform": "greenhouse",
@@ -141,7 +158,8 @@
   "company": "Duolingo",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "boards-api.greenhouse.io/v1/boards/duolingo"
+  "evidence": "boards-api.greenhouse.io/v1/boards/duolingo",
+  "company_domain": "duolingo.com"
  },
  {
   "platform": "greenhouse",
@@ -149,7 +167,8 @@
   "company": "Reddit",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/reddit"
+  "evidence": "job-boards.greenhouse.io/reddit",
+  "company_domain": "reddit.com"
  },
  {
   "platform": "ashby",
@@ -157,7 +176,8 @@
   "company": "Sentry",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "jobs.ashbyhq.com/sentry"
+  "evidence": "jobs.ashbyhq.com/sentry",
+  "company_domain": "sentry.io"
  },
  {
   "platform": "greenhouse",
@@ -165,7 +185,8 @@
   "company": "LaunchDarkly",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "boards.greenhouse.io/launchdarkly"
+  "evidence": "boards.greenhouse.io/launchdarkly",
+  "company_domain": "launchdarkly.com"
  },
  {
   "platform": "greenhouse",
@@ -173,7 +194,8 @@
   "company": "Intercom",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/intercom"
+  "evidence": "job-boards.greenhouse.io/intercom",
+  "company_domain": "intercom.com"
  },
  {
   "platform": "workday",
@@ -181,7 +203,8 @@
   "company": "Genesys",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://genesys.wd1.myworkdayjobs.com/Genesys"
+  "evidence": "https://genesys.wd1.myworkdayjobs.com/Genesys",
+  "company_domain": "genesys.com"
  },
  {
   "platform": "workday",
@@ -189,7 +212,8 @@
   "company": "Moderna",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://modernatx.wd1.myworkdayjobs.com/M_tx"
+  "evidence": "https://modernatx.wd1.myworkdayjobs.com/M_tx",
+  "company_domain": "modernatx.com"
  },
  {
   "platform": "workday",
@@ -197,7 +221,8 @@
   "company": "23andMe",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "https://23andme.wd5.myworkdayjobs.com/23"
+  "evidence": "https://23andme.wd5.myworkdayjobs.com/23",
+  "company_domain": "23andme.com"
  },
  {
   "platform": "greenhouse",
@@ -205,7 +230,8 @@
   "company": "Recursion",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "greenhouse.io/embed/job_board/js?for=recursionpharmaceuticals"
+  "evidence": "greenhouse.io/embed/job_board/js?for=recursionpharmaceuticals",
+  "company_domain": "recursion.com"
  },
  {
   "platform": "greenhouse",
@@ -213,7 +239,8 @@
   "company": "Mercury",
   "segment": "us_tech",
   "source": "resolver",
-  "evidence": "job-boards.greenhouse.io/mercury"
+  "evidence": "job-boards.greenhouse.io/mercury",
+  "company_domain": "mercury.com"
  },
  {
   "platform": "greenhouse",

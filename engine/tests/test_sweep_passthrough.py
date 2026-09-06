@@ -48,6 +48,7 @@ class TestSweepPassthrough(unittest.TestCase):
 
     def test_programmes_and_contributions_pass_through_unchanged(self):
         existing_job = self._job("https://jobs.example/acme/old", "Old title")
+        existing_job["company_domain"] = "old.acme.example"
         second_job = self._job("https://jobs.example/acme/keep", "Keep title")
         programme = {
             "record_type": "programme",
@@ -84,6 +85,7 @@ class TestSweepPassthrough(unittest.TestCase):
         before_non_jobs = copy.deepcopy([programme] + contributions)
         new_existing_job = self._job(
             "https://jobs.example/acme/old", "Updated title", "Hyderabad, India")
+        new_existing_job["company_domain"] = "new.acme.example"
         new_job = self._job("https://jobs.example/acme/new", "New title")
 
         with tempfile.TemporaryDirectory() as td:
@@ -117,6 +119,8 @@ class TestSweepPassthrough(unittest.TestCase):
                          "Updated title")
         self.assertEqual(by_url["https://jobs.example/acme/old"]["location"],
                          "Hyderabad, India")
+        self.assertEqual(by_url["https://jobs.example/acme/old"]["company_domain"],
+                         "new.acme.example")
         self.assertEqual(by_url["https://jobs.example/acme/old"]["is_live"], True)
         self.assertTrue(by_url["https://jobs.example/acme/old"].get("last_seen"))
         self.assertTrue(by_url["https://jobs.example/acme/new"].get("first_seen"))

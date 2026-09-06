@@ -65,7 +65,7 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # Fields surfaced into the `extra` jsonb, by relevance. Null/empty are dropped.
 EXTRA_KEYS = [
     # jobs / internships
-    "platform", "token", "job_id", "discipline", "skills", "salary",
+    "platform", "token", "job_id", "company_domain", "discipline", "skills", "salary",
     "season", "sponsorship", "program", "segment", "posting_age_days",
     # contributions
     "repo", "labels", "language", "difficulty", "difficulty_signal",
