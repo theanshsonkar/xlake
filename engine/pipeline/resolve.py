@@ -176,6 +176,57 @@ NOT_TOKENS = {
     "images", "cdn", "en", "search", "job", "openings", "v1", "v0", "share",
 }
 
+# Domains belonging to job-board vendors are origins of the resolver, not
+# company domains. Keep this list here so all registry writers apply the same
+# rule without deriving a domain from a company/token name.
+_ATS_VENDOR_BASES = (
+    "greenhouse.io",
+    "lever.co",
+    "ashbyhq.com",
+    "myworkdayjobs.com",
+    "myworkdaysite.com",
+    "keka.com",
+    "kekahire.com",
+    "zohorecruit.com",
+    "zohorecruit.in",
+    "darwinbox.in",
+    "darwinbox.com",
+    "smartrecruiters.com",
+    "workable.com",
+    "recruitee.com",
+    "personio.de",
+    "personio.com",
+    "eightfold.ai",
+    "freshteam.com",
+)
+
+
+def normalize_company_domain(url_or_host: object) -> Optional[str]:
+    """Return a canonical company host, or ``None`` for unusable origins."""
+    if not isinstance(url_or_host, str) or not url_or_host.strip():
+        return None
+    value = url_or_host.strip()
+    try:
+        # urlsplit treats a bare ``example.com/path`` as a path. The ``//``
+        # makes it parse as a network location while preserving URL behavior.
+        parsed = urllib.parse.urlsplit(
+            value if value.startswith("//") or "://" in value else "//" + value
+        )
+        host = parsed.hostname
+    except (TypeError, ValueError):
+        return None
+    if not host or any(char.isspace() for char in host):
+        return None
+    host = host.lower().rstrip(".")
+    if host.startswith("www."):
+        host = host[4:]
+    if not host:
+        return None
+    if any(host == base or host.endswith("." + base)
+           for base in _ATS_VENDOR_BASES):
+        return None
+    return host
+
 # Workday needs host|tenant|site, so it gets its own extractor.
 WORKDAY_RE = re.compile(
     r"https?://([a-zA-Z0-9_.-]*\.myworkday(?:jobs|site)\.com)/(?:([a-z]{2}-[A-Z]{2})/)?([a-zA-Z0-9_-]+)"
@@ -206,13 +257,17 @@ class Resolution:
     def as_registry_entry(self) -> Optional[Dict[str, str]]:
         if not (self.platform and self.token and self.readable):
             return None
-        return {
+        entry = {
             "platform": self.platform,
             "token": self.token,
             "company": self.company,
             "source": "resolver",
             "evidence": self.evidence,
         }
+        company_domain = normalize_company_domain(self.domain)
+        if company_domain:
+            entry["company_domain"] = company_domain
+        return entry
 
 
 def _fetch_page(url: str) -> Tuple[Optional[int], str, str, Optional[str]]:

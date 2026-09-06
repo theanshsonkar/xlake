@@ -94,6 +94,22 @@ def classify_mechanism(r: resolve.Resolution) -> Tuple[str, str]:
     return "page", "no_ats_detected"
 
 
+def _resolver_registry_entry(row: Dict) -> Dict:
+    """Serialize one resolved board row without deriving company identity."""
+    entry = {
+        "platform": row["platform"],
+        "token": row["token"],
+        "company": row["company"],
+        "segment": row["segment"],
+        "source": "resolver",
+        "evidence": row["evidence"],
+    }
+    company_domain = resolve.normalize_company_domain(row.get("domain"))
+    if company_domain:
+        entry["company_domain"] = company_domain
+    return entry
+
+
 def main() -> None:
     args = sys.argv[1:]
     segment: Optional[str] = None
@@ -195,11 +211,7 @@ def main() -> None:
 
     # --- write ------------------------------------------------------------- #
     os.makedirs(DATA, exist_ok=True)
-    resolver_entries = [
-        {"platform": r["platform"], "token": r["token"], "company": r["company"],
-         "segment": r["segment"], "source": "resolver", "evidence": r["evidence"]}
-        for r in board_rows
-    ]
+    resolver_entries = [_resolver_registry_entry(r) for r in board_rows]
     resolver_keys = {(r["platform"], r["token"]) for r in resolver_entries}
     try:
         with open(OUT_REGISTRY) as fh:
