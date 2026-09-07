@@ -680,23 +680,25 @@ def _fetch_failure_bucket(reason: str) -> str:
     return "exception"
 
 
-def _log_fetch_outcome(seed: Dict, final_url: Optional[str], outcome: str) -> None:
-    print(
-        "programme_fetch seed={} url={} outcome={}".format(
-            seed["programme_name"], final_url or seed["official_url"], outcome,
-        ),
-        flush=True,
+def _log_fetch_outcome(seed: Dict, final_url: Optional[str], outcome: str, error: Optional[str] = None) -> None:
+    line = "programme_fetch seed={} url={} outcome={}".format(
+        seed["programme_name"], final_url or seed["official_url"], outcome,
     )
+    if error:
+        line += " err={}".format(error)
+    print(line, flush=True)
 
 
 def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetch, checked_at: Optional[datetime] = None, lake_path: str = OPPORTUNITIES_PATH, observations_path: Optional[str] = None) -> Dict:
     records, observations = [], []
     successes = 0
     failure_counts = Counter()
+    exception_counts = Counter()
     for seed in config.source_registry:
         final_url = None
         outcome = "exception"
         fetch_succeeded = False
+        exception_detail = None
         try:
             fetched = fetch(seed["official_url"])
             html, final_url = fetched if isinstance(fetched, tuple) else (fetched, None)
@@ -708,9 +710,13 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
                 outcome = "ok state={}".format(observation.get("state", "unknown"))
         except Exception as exc:
             checked = (checked_at or datetime.now(timezone.utc)).isoformat(timespec="seconds")
-            observation = _observation(seed, checked, "failed", "{}: {}".format(type(exc).__name__, str(exc)[:160]))
+            exception_name = type(exc).__name__
+            exception_message = str(exc)[:200].replace("\\r", " ").replace("\\n", " ")
+            exception_detail = "{}: {}".format(exception_name, exception_message)
+            observation = _observation(seed, checked, "failed", "{}: {}".format(exception_name, str(exc)[:160]))
             record = None
             outcome = _fetch_failure_bucket(observation["reason"])
+            exception_counts[exception_name] += 1
         if record:
             records.append(record)
         observations.append(observation)
@@ -718,8 +724,10 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             successes += 1
         if not outcome.startswith("ok"):
             failure_counts[outcome.split()[0]] += 1
-        _log_fetch_outcome(seed, final_url, outcome)
-    failure_summary = ",".join("{}={}".format(kind, failure_counts[kind]) for kind in sorted(failure_counts)) or "none"
+        _log_fetch_outcome(seed, final_url, outcome, exception_detail)
+    failure_items = ["{}={}".format(kind, failure_counts[kind]) for kind in sorted(failure_counts)]
+    failure_items.extend("exception[{}]={}".format(kind, exception_counts[kind]) for kind in sorted(exception_counts))
+    failure_summary = ",".join(failure_items) or "none"
     print(
         "programme_fetch_summary total={} successes={} failures={}".format(
             len(config.source_registry), successes, failure_summary,
