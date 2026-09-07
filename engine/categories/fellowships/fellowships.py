@@ -3,9 +3,13 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from copy import deepcopy
 from datetime import datetime, timezone
 from typing import Callable, Dict, Iterable, List, Optional, Tuple
+
+from core import robots
+from pipeline.resolve import _fetch_page
 
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
 from categories import programme_core as _core
@@ -19,18 +23,36 @@ from categories.programme_core import (
     parse_dates, validate_verification,
 )
 
-SOURCE_REGISTRY = (
-    {"source_id": "fellowship-mlh", "programme_id": "fellowship-mlh-fellowship", "programme_name": "MLH Fellowship", "organizer": "Major League Hacking", "official_url": "https://fellowship.mlh.io/", "allowed_path_hints": [""], "check_cadence": "monthly"},
-    {"source_id": "fellowship-thiel", "programme_id": "fellowship-thiel-fellowship", "programme_name": "Thiel Fellowship", "organizer": "Thiel Foundation", "official_url": "https://thielfellowship.org/", "allowed_path_hints": [""], "check_cadence": "monthly"},
-    {"source_id": "fellowship-echoing-green", "programme_id": "fellowship-echoing-green", "programme_name": "Echoing Green Fellowship", "organizer": "Echoing Green", "official_url": "https://echoinggreen.org/fellowship/apply/", "allowed_path_hints": ["fellowship/apply", "fellowship"], "check_cadence": "monthly"},
-    {"source_id": "fellowship-kleiner-perkins", "programme_id": "fellowship-kleiner-perkins-fellows", "programme_name": "Kleiner Perkins Fellows Program", "organizer": "Kleiner Perkins", "official_url": "https://www.kleinerperkins.com/fellows/", "allowed_path_hints": ["fellows"], "check_cadence": "monthly"},
-    {"source_id": "fellowship-acumen", "programme_id": "fellowship-acumen", "programme_name": "Acumen Fellowship Program", "organizer": "Acumen Academy", "official_url": "https://acumenacademy.org/fellowship/", "allowed_path_hints": ["fellowship"], "check_cadence": "monthly"},
-    {"source_id": "fellowship-mozilla", "programme_id": "fellowship-mozilla", "programme_name": "Mozilla Fellowship Program", "organizer": "Mozilla Foundation", "official_url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/", "allowed_path_hints": ["en/what-we-do/grantmaking/fellowship"], "check_cadence": "monthly"},
-    {"source_id": "fellowship-emergent-ventures", "programme_id": "fellowship-emergent-ventures", "programme_name": "Emergent Ventures", "organizer": "Mercatus Center", "official_url": "https://www.mercatus.org/emergent-ventures", "allowed_path_hints": ["emergent-ventures"], "check_cadence": "monthly"},
-    {"source_id": "fellowship-eisenhower-global", "programme_id": "fellowship-eisenhower-global", "programme_name": "Eisenhower Fellowships Global Program", "organizer": "Eisenhower Fellowships", "official_url": "https://www.efworld.org/apply-now/", "allowed_path_hints": ["apply-now", "2027-globalprogram-eligibilty-criteria"], "check_cadence": "monthly"},
-    {"source_id": "fellowship-schmidt-science", "programme_id": "fellowship-schmidt-science", "programme_name": "Schmidt Science Fellows", "organizer": "Schmidt Sciences", "official_url": "https://schmidtsciencefellows.org/selection/who-can-apply/", "allowed_path_hints": ["selection/who-can-apply"], "check_cadence": "monthly"},
-    {"source_id": "fellowship-ashoka", "programme_id": "fellowship-ashoka", "programme_name": "Ashoka Fellowship", "organizer": "Ashoka", "official_url": "https://www.ashoka.org/en-us/program/ashoka-fellowship", "allowed_path_hints": ["en-us/program/ashoka-fellowship"], "check_cadence": "monthly"},
-)
+SEED_PATH = os.path.join(os.path.dirname(__file__), "fellowships_hubs.json")
+REQUIRED_SEED_FIELDS = ("source_id", "programme_id", "programme_name", "organizer", "official_url", "allowed_path_hints", "check_cadence")
+
+
+def _load_seed_registry(path: str = SEED_PATH) -> tuple:
+    """Load and validate data-only fellowship seeds from the checked-in registry."""
+    with open(path, encoding="utf-8") as handle:
+        seeds = json.load(handle)
+    if not isinstance(seeds, list):
+        raise ValueError("fellowship seed registry must be a JSON array")
+    seen_sources, seen_programmes = set(), set()
+    validated = []
+    for index, seed in enumerate(seeds):
+        if not isinstance(seed, dict) or any(not seed.get(field) for field in REQUIRED_SEED_FIELDS):
+            raise ValueError("seed {} is missing a required non-empty field".format(index))
+        if set(seed) != set(REQUIRED_SEED_FIELDS):
+            raise ValueError("seed {} contains fields outside the canonical schema".format(index))
+        if seed["source_id"] in seen_sources or seed["programme_id"] in seen_programmes:
+            raise ValueError("duplicate source_id or programme_id in seed {}".format(index))
+        if not seed["official_url"].startswith(("https://", "http://")):
+            raise ValueError("seed {} official_url must be an HTTP(S) URL".format(index))
+        if not isinstance(seed["allowed_path_hints"], list) or not all(isinstance(item, str) for item in seed["allowed_path_hints"]):
+            raise ValueError("seed {} allowed_path_hints must be a string list".format(index))
+        seen_sources.add(seed["source_id"])
+        seen_programmes.add(seed["programme_id"])
+        validated.append(seed)
+    return tuple(validated)
+
+
+SOURCE_REGISTRY = _load_seed_registry()
 SEEDS = SOURCE_REGISTRY
 SEED_BY_URL = {seed["official_url"]: seed for seed in SOURCE_REGISTRY}
 SOURCE_BY_ID = {seed["programme_id"]: seed for seed in SOURCE_REGISTRY}
@@ -43,7 +65,41 @@ FELLOWSHIP_CONFIG = ProgrammeConfig(
     source_registry=SOURCE_REGISTRY,
     observations_path=OBSERVATIONS_PATH,
     verifications_path=VERIFICATIONS_PATH,
+    needs_confirmation_floor=True,
 )
+
+
+_RETRYABLE_HTTP = frozenset((403, 429))
+FELLOWSHIP_BROWSER_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/605.1.15 (KHTML, like Gecko) "
+    "Version/18.6 Safari/605.1.15"
+)
+
+
+def _fellowship_fetch(url: str) -> Tuple[str, str]:
+    """Fetch with initial-URL robots checks and one polite transient retry.
+
+    Redirect destinations are returned by the shared resolver, but robots is
+    intentionally checked only for the requested URL, matching the existing
+    engine policy rather than claiming cross-host coverage.
+    """
+    allowed, why = robots.allowed(url)
+    if not allowed:
+        raise RuntimeError("robots_disallowed:{}".format(why))
+    for attempt in range(2):
+        status, final_url, html, error = _fetch_page(url, user_agent=FELLOWSHIP_BROWSER_UA)
+        transient = status is None or status in _RETRYABLE_HTTP or (status is not None and status >= 500)
+        if not error and status is not None and status < 400:
+            return html, final_url
+        if attempt == 0 and transient:
+            time.sleep(1.0)
+            allowed, why = robots.allowed(url)
+            if not allowed:
+                raise RuntimeError("robots_disallowed:{}".format(why))
+            continue
+        raise RuntimeError(error or "http_{}".format(status))
+    raise RuntimeError("fellowship_fetch_exhausted")
 
 
 def _base(seed, checked, evidence):
@@ -132,7 +188,20 @@ def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake
     return _core.merge_programmes(records, observations, lake_path, observations_path, now)
 
 
-def collect(fetch: Callable[[str], str] = _core._default_fetch, checked_at: Optional[datetime] = None, lake_path: str = OPPORTUNITIES_PATH, observations_path: str = OBSERVATIONS_PATH) -> Dict:
+def collect(fetch: Callable[[str], str] = _fellowship_fetch, checked_at: Optional[datetime] = None, lake_path: str = OPPORTUNITIES_PATH, observations_path: str = OBSERVATIONS_PATH) -> Dict:
+    global SOURCE_REGISTRY, SEEDS, SEED_BY_URL, SOURCE_BY_ID, FELLOWSHIP_CONFIG
+    SOURCE_REGISTRY = _load_seed_registry()
+    SEEDS = SOURCE_REGISTRY
+    SEED_BY_URL = {seed["official_url"]: seed for seed in SOURCE_REGISTRY}
+    SOURCE_BY_ID = {seed["programme_id"]: seed for seed in SOURCE_REGISTRY}
+    FELLOWSHIP_CONFIG = ProgrammeConfig(
+        category="fellowship",
+        opportunity_type="fellowship",
+        source_registry=SOURCE_REGISTRY,
+        observations_path=OBSERVATIONS_PATH,
+        verifications_path=VERIFICATIONS_PATH,
+        needs_confirmation_floor=True,
+    )
     result = _core.collect(
         FELLOWSHIP_CONFIG,
         fetch=fetch,

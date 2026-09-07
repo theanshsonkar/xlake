@@ -85,7 +85,37 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertEqual(parse_programme(SEEDS[4], self.fixture("riscv.html"), datetime(2026, 8, 16, tzinfo=timezone.utc))[1]["official_evidence"]["application_window"]["quote"], "Applications open: July 15 – August 5.")
         self.assertEqual(parse_programme(SEEDS[5], self.fixture("kde.html"), datetime(2026, 8, 16, tzinfo=timezone.utc))[1]["official_evidence"]["deadline"]["quote"], "Deadline for the contributors applications 2026-01-14.")
 
-    def test_parse_programme_actionability_gate_and_sparse_evidence(self):
+    def test_lexical_closed_and_future_opening_statuses(self):
+        seed = SEEDS[2]
+        checked = datetime(2026, 8, 16, tzinfo=timezone.utc)
+        record, observation = parse_programme(
+            seed, "<html><body><h1>Outreachy Fellowship</h1><p>Applications for the 2026 Fellowship are now closed.</p></body></html>", checked)
+        self.assertIsNone(record)
+        self.assertEqual(observation["state"], "closed")
+        self.assertEqual(observation["official_evidence"]["programme_status"]["quote"], "Applications for the 2026 Fellowship are now closed.")
+        for phrase in ("Applications open in September 2026.", "Applications will open soon.", "Check back for fellowship applications."):
+            record, opening = parse_programme(seed, "<html><body><h1>Outreachy Fellowship</h1><p>{}</p></body></html>".format(phrase), checked)
+            self.assertIsNotNone(record, phrase)
+            self.assertEqual(record["programme_status"], "opening_soon")
+            self.assertIsNone(record["opening_date"])
+            self.assertEqual(record["official_evidence"]["programme_status"]["quote"], phrase)
+
+    def test_generic_closed_requires_application_context(self):
+        seed = SEEDS[2]
+        checked = datetime(2026, 8, 16, tzinfo=timezone.utc)
+        for phrase in ("The fellowship office is now closed.", "The programme is now closed for maintenance."):
+            record, observation = parse_programme(
+                seed, "<html><body><h1>Outreachy Fellowship</h1><p>{}</p></body></html>".format(phrase), checked)
+            self.assertIsNone(record, phrase)
+            self.assertEqual(observation["state"], "non_actionable", phrase)
+            self.assertNotIn("programme_status", observation.get("official_evidence", {}), phrase)
+
+    def test_evidence_prefers_application_sentence_over_earlier_generic_prose(self):
+        seed = SEEDS[2]
+        html = "<html><body><h1>Outreachy Fellowship</h1><p>This fellowship supports contributors.</p><p>Applications are closed for 2026.</p></body></html>"
+        _, observation = parse_programme(seed, html, datetime(2026, 8, 16, tzinfo=timezone.utc))
+        self.assertEqual(observation["official_evidence"]["programme_status"]["quote"], "Applications are closed for 2026.")
+
         checked = datetime(2026, 8, 16, tzinfo=timezone.utc)
         record, observation = parse_programme(SEEDS[2], self.fixture("outreachy-actionable.html"), checked)
         self.assertEqual(observation["result"], "actionable")

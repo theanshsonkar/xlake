@@ -6,6 +6,7 @@ import os
 import re
 import sys
 import tempfile
+import unicodedata
 from copy import deepcopy
 from dataclasses import dataclass
 from datetime import date, datetime, timezone
@@ -22,6 +23,7 @@ class ProgrammeConfig:
     source_registry: tuple
     observations_path: str
     verifications_path: str
+    needs_confirmation_floor: bool = False
 
 
 MONTHS = (
@@ -50,6 +52,21 @@ FORMAL_PROGRAMME_TOKENS = (
 )
 ROLLING_TOKENS = ("rolling basis", "applications are rolling", "rolling application", "processed on a rolling basis")
 APPLY_LINK_TOKENS = ("apply", "application", "applications", "contributor application")
+_LEXICAL_RELEVANCE_TOKENS = ("application", "apply", "admission", "enrollment", "enrolment", "registration", "deadline", "eligibility", "cohort", "fellowship", "fellows", "programme", "program")
+_CLOSED_PATTERNS = (
+    re.compile(r"\bapplications?\s+(?:are\s+)?now\s+closed\b", re.I),
+    re.compile(r"\bapplications?\s+(?:are\s+)?closed\b", re.I),
+    re.compile(r"\bno\s+longer\s+accepting\s+applications?\b", re.I),
+    re.compile(r"\bclosed\s+for\s+(?:20\d{2}(?:\s*/\s*20\d{2})?|the\s+20\d{2}\s+(?:cohort|cycle))\b", re.I),
+)
+_GENERIC_CLOSED_PATTERN = re.compile(r"\bnow\s+closed\b", re.I)
+_CLOSED_CONTEXT_PATTERN = re.compile(r"\b(?:applications?|admissions?|enro(?:l|ll)ments?|registrations?)\b", re.I)
+_OPENING_PATTERNS = (
+    re.compile(r"\bapplications?\s+open\s+in\s+(?:20\d{2}|(?:January|February|March|April|May|June|July|August|September|October|November|December)\b)", re.I),
+    re.compile(r"\bopens?\s+(?:on\s+)?(?:20\d{2}|(?:January|February|March|April|May|June|July|August|September|October|November|December)\b)", re.I),
+    re.compile(r"\bcheck\s+back\b", re.I),
+    re.compile(r"\bwill\s+open\b", re.I),
+)
 
 def _month_number(name: str) -> int:
     return MONTHS.index(name.capitalize()) + 1
@@ -171,6 +188,12 @@ def classify_status(text: str, windows: List[Dict], today: date, formal_programm
     return "non_actionable"
 
 
+_NON_VISIBLE_TAGS = frozenset((
+    "head", "style", "script", "noscript", "template", "svg", "canvas",
+    "iframe", "object", "embed",
+))
+
+
 class _VisibleText(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -178,22 +201,52 @@ class _VisibleText(HTMLParser):
         self.links: List[Tuple[str, str]] = []
         self.href: Optional[str] = None
         self.anchor: List[str] = []
+        self._hidden_depth = 0
+        self._tag_stack: List[Tuple[str, bool]] = []
 
     def handle_starttag(self, tag, attrs):
-        if tag == "a":
-            self.href = dict(attrs).get("href")
+        tag = tag.lower()
+        attributes = dict(attrs)
+        hidden = (
+            tag in _NON_VISIBLE_TAGS
+            or "hidden" in attributes
+            or attributes.get("aria-hidden", "").lower() == "true"
+            or "display:none" in attributes.get("style", "").replace(" ", "").lower()
+            or "visibility:hidden" in attributes.get("style", "").replace(" ", "").lower()
+        )
+        self._tag_stack.append((tag, hidden))
+        if hidden:
+            self._hidden_depth += 1
+        if tag == "a" and not self._hidden_depth:
+            self.href = attributes.get("href")
             self.anchor = []
 
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+        self.handle_endtag(tag)
+
     def handle_data(self, data):
-        if data.strip():
-            self.parts.append(data.strip())
-            if self.href is not None:
-                self.anchor.append(data.strip())
+        if self._hidden_depth or not data.strip():
+            return
+        self.parts.append(data.strip())
+        if self.href is not None:
+            self.anchor.append(data.strip())
 
     def handle_endtag(self, tag):
+        tag = tag.lower()
         if tag == "a" and self.href is not None:
             self.links.append((" ".join(self.anchor), self.href))
             self.href, self.anchor = None, []
+        for index in range(len(self._tag_stack) - 1, -1, -1):
+            stacked_tag, hidden = self._tag_stack[index]
+            if stacked_tag == tag:
+                del self._tag_stack[index:]
+                if hidden:
+                    self._hidden_depth = max(0, self._hidden_depth - 1)
+                break
+
+    def handle_comment(self, data):
+        return
 
 
 def _text(html: str) -> Tuple[str, List[Tuple[str, str]]]:
@@ -202,15 +255,86 @@ def _text(html: str) -> Tuple[str, List[Tuple[str, str]]]:
     return ". ".join(parser.parts), parser.links
 
 
-def _quote_with(text: str, tokens: Iterable[str], minimum_words: int = 1) -> Optional[str]:
+def _clean_quote(quote: Optional[str]) -> str:
+    if not quote:
+        return ""
+    normalized = unicodedata.normalize("NFKC", str(quote))
+    return re.sub(r"\s+", " ", normalized).strip()
+
+
+def is_quality_evidence(quote: Optional[str]) -> bool:
+    """Return whether text is a meaningful programme-related human quote."""
+    cleaned = _clean_quote(quote)
+    if not cleaned or re.fullmatch(r"https?://\S+", cleaned, re.I):
+        return False
+    if re.search(r"[{};]|(?:^|\s)[.#][\w-]+|[\w-]+\s+h[1-6]\s*,?$", cleaned, re.I):
+        return False
+    words = re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿ0-9]+", cleaned)
+    if len(words) < 2 or len(cleaned) < 8:
+        return False
+    # Short punctuated headings/titles are not programme evidence.
+    if len(words) <= 2 and cleaned.endswith((".", "!", "?")):
+        return False
+    lowered = cleaned.casefold()
+    anchors = ("application", "apply", "deadline", "eligibility", "admission", "enrollment", "enrolment", "registration", "fellowship", "fellows", "programme", "program", "funding", "stipend")
+    strong_anchors = ("application", "apply", "deadline", "eligibility", "admission", "enrollment", "enrolment", "registration", "funding", "stipend")
+    if len(words) <= 4 and not any(anchor in lowered for anchor in strong_anchors):
+        return False
+    return any(anchor in lowered for anchor in anchors) or bool(re.search(r"[.!?]$", cleaned) and len(words) >= 8)
+
+
+def _lexical_status(text: str, today: date) -> Tuple[Optional[str], Optional[str]]:
+    """Return a high-confidence sentence-scoped lexical status, if present."""
     for _, _, sentence in _sentences(text):
-        if any(token in sentence.lower() for token in tokens) and len(re.findall(r"\b\w+\b", sentence)) >= minimum_words:
-            return sentence.strip()
+        lowered = sentence.casefold()
+        relevant = any(token in lowered for token in _LEXICAL_RELEVANCE_TOKENS)
+        if not relevant or not is_quality_evidence(sentence):
+            continue
+        closed = any(pattern.search(sentence) for pattern in _CLOSED_PATTERNS)
+        if not closed:
+            generic_closed = _GENERIC_CLOSED_PATTERN.search(sentence)
+            if generic_closed:
+                nearby = sentence[max(0, generic_closed.start() - 96):generic_closed.start()]
+                nearby += sentence[generic_closed.end():generic_closed.end() + 96]
+                closed = bool(_CLOSED_CONTEXT_PATTERN.search(nearby))
+        if closed:
+            return "closed", _clean_quote(sentence)
+        if not any(pattern.search(sentence) for pattern in _OPENING_PATTERNS):
+            continue
+        # Explicit month/year signals are only opening-soon evidence when they
+        # are demonstrably in the future.  Do not invent a day or a date.
+        year_match = re.search(r"\b(20\d{2})\b", sentence)
+        month_match = re.search(rf"\b({MONTH_PATTERN})\b", sentence, re.I)
+        if year_match and int(year_match.group(1)) < today.year:
+            continue
+        if year_match and int(year_match.group(1)) == today.year and month_match:
+            if _month_number(month_match.group(1)) < today.month:
+                continue
+        if month_match and not year_match and _month_number(month_match.group(1)) < today.month:
+            continue
+        return "opening_soon", _clean_quote(sentence)
+    return None, None
+
+
+def _quote_with(text: str, tokens: Iterable[str], minimum_words: int = 1, prefer_relevant: bool = False) -> Optional[str]:
+    candidates = []
+    token_values = tuple(token.casefold() for token in tokens)
+    for _, _, sentence in _sentences(text):
+        lowered = sentence.casefold()
+        if any(token in lowered for token in token_values) and len(re.findall(r"\b\w+\b", sentence)) >= minimum_words:
+            cleaned = _clean_quote(sentence)
+            if is_quality_evidence(cleaned):
+                relevant = any(token in lowered for token in _LEXICAL_RELEVANCE_TOKENS)
+                candidates.append((not (prefer_relevant and relevant), cleaned))
+    if candidates:
+        candidates.sort(key=lambda item: item[0])
+        return candidates[0][1]
     return None
 
 
 def _evidence(quote: Optional[str], url: str) -> Dict:
-    return {"quote": quote, "url": url} if quote else {}
+    cleaned = _clean_quote(quote)
+    return {"quote": cleaned, "url": url} if is_quality_evidence(cleaned) else {}
 
 
 def _application_url(seed_url: str, href: str, final_url: Optional[str]) -> Optional[str]:
@@ -246,11 +370,14 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
     text, links = _text(html)
     if not text.strip():
         return None, _observation(seed, checked, "failed", "empty or unparsable official response")
-    apply_link = next(((label, href) for label, href in links if any(token in label.lower() for token in APPLY_LINK_TOKENS)), None)
+    apply_link = next(((label, href) for label, href in links if any(token in (label or "").lower() for token in APPLY_LINK_TOKENS)), None)
     resolved_apply = _application_url(seed["official_url"], apply_link[1], final_url) if apply_link else None
     formal = any(token in text.lower() for token in FORMAL_PROGRAMME_TOKENS)
     windows = detect_applicant_windows(text)
     status = classify_status(text, windows, checked_at.date(), formal, resolved_apply)
+    lexical_status, lexical_quote = _lexical_status(text, checked_at.date()) if status == "non_actionable" else (None, None)
+    if lexical_status:
+        status = lexical_status
     # Explicit dated deadlines are still useful closed observations even where
     # a site uses an unusual grammatical form around "applications".
     if status == "non_actionable":
@@ -266,6 +393,30 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
             evidence = {"programme_status": _evidence(window["quote"], seed["official_url"]), "deadline": _evidence(window["quote"], seed["official_url"])}
             if window["start"] != window["end"]:
                 evidence["application_window"] = _evidence(window["quote"], seed["official_url"])
+        elif status == "closed" and lexical_quote:
+            quote_evidence = _evidence(lexical_quote, seed["official_url"])
+            if quote_evidence:
+                evidence = {"programme_status": quote_evidence}
+        # A successful formal programme page is useful even when its current
+        # application state is not machine-readable. Keep it explicitly
+        # uncertain: never invent a status/date and never treat it as live.
+        if status == "non_actionable" and config.needs_confirmation_floor and formal and not windows:
+            evidence = {
+                "official_page": _evidence(
+                    _quote_with(text, FORMAL_PROGRAMME_TOKENS, prefer_relevant=True),
+                    seed["official_url"],
+                ),
+                "programme_name": {"quote": seed["programme_name"], "url": seed["official_url"]},
+                "organizer": {"quote": seed["organizer"], "url": seed["official_url"]},
+                "official_url": {"quote": seed["official_url"], "url": seed["official_url"]},
+            }
+            record = _base(seed, checked, evidence, config)
+            record["programme_status"] = None
+            record["opening_date"] = None
+            record["deadline"] = None
+            record["needs_confirmation"] = True
+            record["is_live"] = False
+            return record, _observation(seed, checked, "needs_confirmation", "official formal programme page; current status or deadline is not stated", evidence)
         return None, _observation(seed, checked, status, "no actionable applicant window" if status == "non_actionable" else "official applicant deadline passed", evidence)
     # Every surfaced state must retain the registry's official URL. Rolling
     # additionally needs a resolvable same-origin application URL; for open
@@ -275,7 +426,7 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
         return None, _observation(seed, checked, "non_actionable", "formal programme or resolvable application evidence is absent")
 
     window = windows[0] if windows else None
-    status_quote = (_quote_with(text, ROLLING_TOKENS) if status == "rolling" else (window["quote"] if window else None))
+    status_quote = (_quote_with(text, ROLLING_TOKENS) if status == "rolling" else (window["quote"] if window else lexical_quote))
     evidence = {"programme_name": {}, "organizer": {}, "official_url": {}, "programme_status": _evidence(status_quote, seed["official_url"]), "application": _evidence(apply_link[0] if apply_link else None, resolved_apply or seed["official_url"]), "application_url": _evidence(apply_link[0] if apply_link else None, resolved_apply or seed["official_url"]), "opening_date": {}, "deadline": {}, "funding": {}, "location": {}, "remote": {}, "international_eligibility": {}, "eligibility": {}}
     record = _base(seed, checked, evidence, config)
     record["application_url"] = resolved_apply
@@ -468,6 +619,16 @@ def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake
     records, observed = list(records), list(observations)
     for record in records:
         old = programme_rows.get(record["programme_id"])
+        # An uncertain parse is not evidence that an existing live row ended.
+        # Keep the prior row untouched; new uncertain seeds are retained but
+        # explicitly non-live until a status is confirmed.
+        if record.get("needs_confirmation"):
+            if old:
+                continue
+            record = dict(record)
+            record.update({"first_seen": now, "last_seen": now, "is_live": False})
+            programme_rows[record["programme_id"]] = record
+            continue
         if old:
             first_seen = old.get("first_seen", now)
             old.update(record)
@@ -476,7 +637,12 @@ def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake
             record = dict(record)
             record.update({"first_seen": now, "last_seen": now, "is_live": True})
             programme_rows[record["programme_id"]] = record
-    successful_sources = {o["official_url"] for o in observed if o.get("result") == "non_actionable"}
+    successful_sources = {
+        o["official_url"]
+        for o in observed
+        if o.get("result") == "non_actionable"
+        and o.get("state", "non_actionable") in ("non_actionable", "closed")
+    }
     current_ids = {r.get("programme_id") for r in records}
     for row in programme_rows.values():
         if row.get("official_url") in successful_sources and row.get("programme_id") not in current_ids and row.get("is_live", True):
