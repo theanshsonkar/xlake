@@ -1,8 +1,10 @@
 import json
+import io
 import os
 import sys
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from datetime import date, datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -126,17 +128,18 @@ class TestGenericProgrammePipeline(unittest.TestCase):
             return "<html><body><p>Programme information.</p></body></html>", "https://final.example/page"
 
         with tempfile.TemporaryDirectory() as td:
-            with self.assertLogs("categories.programme_core", level="INFO") as captured:
+            captured = io.StringIO()
+            with redirect_stdout(captured):
                 result = core_collect(
                     config, fetch=fake_fetch, checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc),
                     lake_path=os.path.join(td, "lake.json"), observations_path=os.path.join(td, "observations.json"),
                 )
-        lines = [line for line in captured.output if "programme_fetch seed=" in line]
+        lines = [line for line in captured.getvalue().splitlines() if "programme_fetch seed=" in line]
         self.assertEqual(len(lines), len(seeds))
         self.assertIn("url=https://final.example/page outcome=ok state=non_actionable", lines[0])
         self.assertIn("outcome=http_403", lines[1])
         self.assertIn("outcome=empty", lines[2])
-        summary = next(line for line in captured.output if "programme_fetch_summary" in line)
+        summary = next(line for line in captured.getvalue().splitlines() if "programme_fetch_summary" in line)
         self.assertIn("total=3 successes=1", summary)
         self.assertIn("empty=1", summary)
         self.assertIn("http_403=1", summary)

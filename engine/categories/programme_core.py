@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import logging
 import os
 import re
 import sys
@@ -17,8 +16,6 @@ from typing import Callable, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urljoin, urlparse
 
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
-
-logger = logging.getLogger(__name__)
 
 @dataclass(frozen=True)
 class ProgrammeConfig:
@@ -684,9 +681,11 @@ def _fetch_failure_bucket(reason: str) -> str:
 
 
 def _log_fetch_outcome(seed: Dict, final_url: Optional[str], outcome: str) -> None:
-    logger.info(
-        "programme_fetch seed=%s url=%s outcome=%s",
-        seed["programme_name"], final_url or seed["official_url"], outcome,
+    print(
+        "programme_fetch seed={} url={} outcome={}".format(
+            seed["programme_name"], final_url or seed["official_url"], outcome,
+        ),
+        flush=True,
     )
 
 
@@ -721,9 +720,11 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             failure_counts[outcome.split()[0]] += 1
         _log_fetch_outcome(seed, final_url, outcome)
     failure_summary = ",".join("{}={}".format(kind, failure_counts[kind]) for kind in sorted(failure_counts)) or "none"
-    logger.info(
-        "programme_fetch_summary total=%d successes=%d failures=%s",
-        len(config.source_registry), successes, failure_summary,
+    print(
+        "programme_fetch_summary total={} successes={} failures={}".format(
+            len(config.source_registry), successes, failure_summary,
+        ),
+        flush=True,
     )
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     merged = merge_programmes(records, observations, lake_path, observations_path or config.observations_path, now)
