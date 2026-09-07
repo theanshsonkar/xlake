@@ -49,7 +49,7 @@ Status values: not-started / collected / verified open / verified closed / needs
 Evidence-backed records are stored in `data/operations/fellowship_programme_verifications.json` and surfaced via `python3 -m categories.fellowships.fellowships --apply-verifications`.
 
 ## Collector
-`python3 -m categories.fellowships.fellowships` runs the live collector. It is built on the shared programme engine `categories/programme_core.py`. It is not yet wired into the daily sweep.
+`python3 -m categories.fellowships.fellowships` runs the live collector. It is built on the shared programme engine `categories/programme_core.py`. It is wired into the daily sweep.
 
 ## Local commands
 Run from `engine/`:
