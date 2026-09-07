@@ -270,14 +270,14 @@ class Resolution:
         return entry
 
 
-def _fetch_page(url: str) -> Tuple[Optional[int], str, str, Optional[str]]:
+def _fetch_page(url: str, user_agent: str = UA) -> Tuple[Optional[int], str, str, Optional[str]]:
     """GET with redirects, returning (status, final_url, html, error)."""
     lock = _throttle(url)
     try:
         req = urllib.request.Request(
             url,
             headers={
-                "User-Agent": UA,
+                "User-Agent": user_agent,
                 # Careers pages are HTML; ask for it or some CDNs return JSON errors.
                 "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
                 "Accept-Language": "en-US,en;q=0.9",
