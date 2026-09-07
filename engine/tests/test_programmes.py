@@ -10,6 +10,7 @@ from categories.open_source.programmes import (
     APPLICANT_ACTION_TOKENS, SOURCE_REGISTRY, SEEDS, classify_status,
     collect, detect_applicant_windows, merge_programmes, parse_date, parse_programme,
 )
+from categories.programme_core import ProgrammeConfig, collect as core_collect
 
 FIXTURES = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "fixtures", "programmes")
 TODAY = date(2026, 8, 16)
@@ -109,6 +110,37 @@ class TestGenericProgrammePipeline(unittest.TestCase):
             self.assertIsNone(record, phrase)
             self.assertEqual(observation["state"], "non_actionable", phrase)
             self.assertNotIn("programme_status", observation.get("official_evidence", {}), phrase)
+
+    def test_collect_logs_one_line_per_seed_and_summary(self):
+        seeds = tuple(SEEDS[:3])
+        config = ProgrammeConfig(
+            category="programme", opportunity_type="programme", source_registry=seeds,
+            observations_path="", verifications_path="",
+        )
+
+        def fake_fetch(url):
+            if url == seeds[1]["official_url"]:
+                raise RuntimeError("HTTP Error 403")
+            if url == seeds[2]["official_url"]:
+                return ""
+            return "<html><body><p>Programme information.</p></body></html>", "https://final.example/page"
+
+        with tempfile.TemporaryDirectory() as td:
+            with self.assertLogs("categories.programme_core", level="INFO") as captured:
+                result = core_collect(
+                    config, fetch=fake_fetch, checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc),
+                    lake_path=os.path.join(td, "lake.json"), observations_path=os.path.join(td, "observations.json"),
+                )
+        lines = [line for line in captured.output if "programme_fetch seed=" in line]
+        self.assertEqual(len(lines), len(seeds))
+        self.assertIn("url=https://final.example/page outcome=ok state=non_actionable", lines[0])
+        self.assertIn("outcome=http_403", lines[1])
+        self.assertIn("outcome=empty", lines[2])
+        summary = next(line for line in captured.output if "programme_fetch_summary" in line)
+        self.assertIn("total=3 successes=1", summary)
+        self.assertIn("empty=1", summary)
+        self.assertIn("http_403=1", summary)
+        self.assertEqual(len(result["observations"]), len(seeds))
 
     def test_evidence_prefers_application_sentence_over_earlier_generic_prose(self):
         seed = SEEDS[2]

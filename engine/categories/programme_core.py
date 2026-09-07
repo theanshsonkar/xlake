@@ -2,11 +2,13 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
 import sys
 import tempfile
 import unicodedata
+from collections import Counter
 from copy import deepcopy
 from dataclasses import dataclass
 from datetime import date, datetime, timezone
@@ -15,6 +17,8 @@ from typing import Callable, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urljoin, urlparse
 
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
+
+logger = logging.getLogger(__name__)
 
 @dataclass(frozen=True)
 class ProgrammeConfig:
@@ -654,20 +658,73 @@ def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake
     return merged
 
 
+def _fetch_failure_bucket(reason: str) -> str:
+    """Reduce existing fetch/parse failure text to a stable log bucket."""
+    lowered = str(reason or "").lower()
+    if "robots_disallow" in lowered or "robots_block" in lowered:
+        return "robots_blocked"
+    status = re.search(r"\b(?:http[_ -]?)?(\d{3})\b", lowered)
+    if status:
+        code = int(status.group(1))
+        if code == 403:
+            return "http_403"
+        if code == 429:
+            return "http_429"
+        if 400 <= code < 500:
+            return "http_4xx"
+        if 500 <= code < 600:
+            return "http_5xx"
+    if any(token in lowered for token in ("timeout", "timed out")):
+        return "timeout"
+    if any(token in lowered for token in ("dns", "name or service", "nodename", "getaddrinfo")):
+        return "dns"
+    if any(token in lowered for token in ("tls", "ssl", "certificate")):
+        return "tls"
+    return "exception"
+
+
+def _log_fetch_outcome(seed: Dict, final_url: Optional[str], outcome: str) -> None:
+    logger.info(
+        "programme_fetch seed=%s url=%s outcome=%s",
+        seed["programme_name"], final_url or seed["official_url"], outcome,
+    )
+
+
 def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetch, checked_at: Optional[datetime] = None, lake_path: str = OPPORTUNITIES_PATH, observations_path: Optional[str] = None) -> Dict:
     records, observations = [], []
+    successes = 0
+    failure_counts = Counter()
     for seed in config.source_registry:
+        final_url = None
+        outcome = "exception"
+        fetch_succeeded = False
         try:
             fetched = fetch(seed["official_url"])
             html, final_url = fetched if isinstance(fetched, tuple) else (fetched, None)
+            fetch_succeeded = bool(html)
             record, observation = parse_programme(seed, html, checked_at, final_url, config=config)
+            if observation.get("state") == "failed":
+                outcome = "empty"
+            else:
+                outcome = "ok state={}".format(observation.get("state", "unknown"))
         except Exception as exc:
             checked = (checked_at or datetime.now(timezone.utc)).isoformat(timespec="seconds")
             observation = _observation(seed, checked, "failed", "{}: {}".format(type(exc).__name__, str(exc)[:160]))
             record = None
+            outcome = _fetch_failure_bucket(observation["reason"])
         if record:
             records.append(record)
         observations.append(observation)
+        if fetch_succeeded and outcome.startswith("ok"):
+            successes += 1
+        if not outcome.startswith("ok"):
+            failure_counts[outcome.split()[0]] += 1
+        _log_fetch_outcome(seed, final_url, outcome)
+    failure_summary = ",".join("{}={}".format(kind, failure_counts[kind]) for kind in sorted(failure_counts)) or "none"
+    logger.info(
+        "programme_fetch_summary total=%d successes=%d failures=%s",
+        len(config.source_registry), successes, failure_summary,
+    )
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     merged = merge_programmes(records, observations, lake_path, observations_path or config.observations_path, now)
     verification_now = datetime.now(timezone.utc).isoformat(timespec="seconds")
