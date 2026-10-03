@@ -188,6 +188,41 @@ class TestGroupMerging(unittest.TestCase):
         r = rules("Disallow: /\nUser-agent: *\nAllow: /\n")
         self.assertTrue(r.allows("/anything"))
 
+    def test_orphan_rule_is_ignored_and_following_group_applies(self):
+        r = rules("Disallow: /private\nUser-agent: *\nDisallow: /public\n")
+        self.assertTrue(r.allows("/private"))
+        self.assertFalse(r.allows("/public"))
+
+    def test_disallow_in_user_agent_group_still_blocks(self):
+        r = rules("User-agent: *\nDisallow: /x\n")
+        self.assertFalse(r.allows("/x"))
+
+    def test_leading_orphan_disallow_does_not_override_allow(self):
+        r = rules("Disallow: /\nUser-agent: *\nAllow: /\n")
+        self.assertTrue(r.allows("/"))
+
+    def test_blank_line_after_user_agent_keeps_following_rule_in_group(self):
+        r = rules("User-agent: *\n\nDisallow: /private\n")
+        self.assertFalse(r.allows("/private"))
+        self.assertTrue(r.allows("/"))
+
+    def test_blank_line_starts_a_new_user_agent_group(self):
+        r = rules(
+            "User-agent: a\nDisallow: /a\n\n"
+            "User-agent: *\nDisallow: /b\n"
+        )
+        self.assertTrue(r.allows("/a"))
+        self.assertFalse(r.allows("/b"))
+
+    def test_blank_line_between_disallows_keeps_both_rules(self):
+        r = rules("User-agent: *\nDisallow: /a\n\nDisallow: /b\n")
+        self.assertFalse(r.allows("/a"))
+        self.assertFalse(r.allows("/b"))
+
+    def test_leading_orphan_rule_is_ignored_before_group(self):
+        r = rules("Disallow: /x\nUser-agent: *\nAllow: /\n")
+        self.assertTrue(r.allows("/x"))
+
     def test_comments_and_empty_disallow(self):
         r = rules(
             "User-agent: *   # everyone\n"

@@ -1,0 +1,58 @@
+[
+  {
+    "hub_id": "chinasatokolo-csgraduatefellowships",
+    "url": "https://github.com/chinasatokolo/csGraduateFellowships",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-04T00:00:00Z"
+  },
+  {
+    "hub_id": "ankitshah009-all-about-grad-cs-fellowships",
+    "url": "https://github.com/ankitshah009/all_about_grad_cs_fellowships",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-04T00:00:00Z"
+  },
+  {
+    "hub_id": "jose-gael-cruz-lopez-underclassmen-opportunities",
+    "url": "https://github.com/Jose-Gael-Cruz-Lopez/underclassmen-opportunities",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-04T00:00:00Z"
+  },
+  {
+    "hub_id": "anu0012-awesome-computer-science-opportunities",
+    "url": "https://github.com/anu0012/awesome-computer-science-opportunities",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-04T00:00:00Z"
+  },
+  {
+    "hub_id": "anuvabsen1-research-internships-database",
+    "url": "https://github.com/AnuvabSen1/Research_Internships_Database",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-04T00:00:00Z"
+  },
+  {
+    "hub_id": "karanwxliaa-research-for-ug-students",
+    "url": "https://github.com/karanwxliaa/Research-for-UG-Students",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-04T00:00:00Z"
+  },
+  {
+    "hub_id": "bitsrobocon-research-internships-for-undergraduates",
+    "url": "https://github.com/BitsRobocon/Research-Internships-for-Undergraduates",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-04T00:00:00Z"
+  }
+]

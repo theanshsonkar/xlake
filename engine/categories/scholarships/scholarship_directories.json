@@ -1,0 +1,18 @@
+[
+  {
+    "hub_id": "tensvect-scholarships-and-programs",
+    "url": "https://github.com/tensvect/Scholarships-and-Programs",
+    "category": "scholarships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-04T00:00:00Z"
+  },
+  {
+    "hub_id": "abbas-syed-scholarships",
+    "url": "https://github.com/Abbas-Syed/scholarships",
+    "category": "scholarships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-04T00:00:00Z"
+  }
+]
