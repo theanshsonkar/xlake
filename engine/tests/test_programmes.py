@@ -583,5 +583,96 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         )
 
 
+    def test_merge_refreshes_existing_needs_confirmation_row_from_successful_observation(self):
+        old = {
+            "record_type": "programme", "programme_id": "needs-confirmation",
+            "official_url": "https://example.test/programme", "is_live": False,
+            "needs_confirmation": True, "last_checked_at": "2026-08-15T10:00:00+00:00",
+            "custom": {"keep": True},
+        }
+        observation = {
+            "programme_id": old["programme_id"], "official_url": old["official_url"],
+            "state": "needs_confirmation", "result": "non_actionable",
+            "checked_at": "2026-08-16T10:00:00+00:00",
+        }
+        with tempfile.TemporaryDirectory() as td:
+            lake, obs = os.path.join(td, "lake.json"), os.path.join(td, "obs.json")
+            with open(lake, "w") as fh:
+                json.dump([old], fh)
+            rows = merge_programmes([], [observation], lake, obs)
+        self.assertEqual(rows[0]["last_checked_at"], observation["checked_at"])
+        expected = dict(old)
+        expected["last_checked_at"] = observation["checked_at"]
+        self.assertEqual(rows[0], expected)
+
+    def test_merge_does_not_refresh_existing_row_from_failed_http_observation(self):
+        old = {
+            "record_type": "programme", "programme_id": "failed-http",
+            "official_url": "https://example.test/programme", "is_live": True,
+            "last_checked_at": "2026-08-15T10:00:00+00:00",
+        }
+        observation = {
+            "programme_id": old["programme_id"], "official_url": old["official_url"],
+            "state": "failed", "result": "failed", "reason": "http error",
+            "checked_at": "2026-08-16T10:00:00+00:00",
+        }
+        with tempfile.TemporaryDirectory() as td:
+            lake, obs = os.path.join(td, "lake.json"), os.path.join(td, "obs.json")
+            with open(lake, "w") as fh:
+                json.dump([old], fh)
+            rows = merge_programmes([], [observation], lake, obs)
+        self.assertEqual(rows[0]["last_checked_at"], old["last_checked_at"])
+
+    def test_merge_refreshes_and_deactivates_live_row_from_non_actionable_observation(self):
+        old = {
+            "record_type": "programme", "programme_id": "became-closed",
+            "official_url": "https://example.test/programme", "is_live": True,
+            "last_checked_at": "2026-08-15T10:00:00+00:00",
+        }
+        observation = {
+            "programme_id": old["programme_id"], "official_url": old["official_url"],
+            "state": "non_actionable", "result": "non_actionable",
+            "checked_at": "2026-08-16T10:00:00+00:00",
+        }
+        now = "2026-08-16T11:00:00+00:00"
+        with tempfile.TemporaryDirectory() as td:
+            lake, obs = os.path.join(td, "lake.json"), os.path.join(td, "obs.json")
+            with open(lake, "w") as fh:
+                json.dump([old], fh)
+            rows = merge_programmes([], [observation], lake, obs, now=now)
+        self.assertFalse(rows[0]["is_live"])
+        self.assertEqual(rows[0]["went_dead_at"], now)
+        self.assertEqual(rows[0]["last_checked_at"], observation["checked_at"])
+
+    def test_merge_does_not_lower_last_checked_at_for_older_observation(self):
+        old = {
+            "record_type": "programme", "programme_id": "older-check",
+            "official_url": "https://example.test/programme", "is_live": True,
+            "last_checked_at": "2026-08-16T10:00:00+00:00",
+        }
+        observation = {
+            "programme_id": old["programme_id"], "official_url": old["official_url"],
+            "state": "actionable", "result": "actionable",
+            "checked_at": "2026-08-15T10:00:00+00:00",
+        }
+        with tempfile.TemporaryDirectory() as td:
+            lake, obs = os.path.join(td, "lake.json"), os.path.join(td, "obs.json")
+            with open(lake, "w") as fh:
+                json.dump([old], fh)
+            rows = merge_programmes([], [observation], lake, obs)
+        self.assertEqual(rows[0]["last_checked_at"], old["last_checked_at"])
+
+    def test_merge_does_not_create_row_for_observation_without_existing_programme(self):
+        observation = {
+            "programme_id": "missing", "official_url": "https://example.test/programme",
+            "state": "closed", "result": "non_actionable",
+            "checked_at": "2026-08-16T10:00:00+00:00",
+        }
+        with tempfile.TemporaryDirectory() as td:
+            lake, obs = os.path.join(td, "lake.json"), os.path.join(td, "obs.json")
+            rows = merge_programmes([], [observation], lake, obs)
+        self.assertEqual(rows, [])
+
+
 if __name__ == "__main__":
     unittest.main()

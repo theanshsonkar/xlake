@@ -810,6 +810,26 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
     return result
 
 
+def _refresh_last_checked_at(row: Dict, checked_at) -> None:
+    candidate = _timestamp(checked_at)
+    if not candidate:
+        return
+    try:
+        candidate_value = datetime.fromisoformat(candidate.replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return
+    existing = row.get("last_checked_at")
+    if "last_checked_at" not in row:
+        row["last_checked_at"] = candidate
+        return
+    try:
+        existing_value = datetime.fromisoformat(str(existing).replace("Z", "+00:00"))
+        if candidate_value > existing_value:
+            row["last_checked_at"] = candidate
+    except (TypeError, ValueError):
+        return
+
+
 def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake_path: str = OPPORTUNITIES_PATH, observations_path: str = None, now: Optional[str] = None) -> List[Dict]:
     now = now or datetime.now(timezone.utc).isoformat(timespec="seconds")
     lake = _load_json(lake_path, [])
@@ -829,13 +849,23 @@ def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake
             programme_rows[record["programme_id"]] = record
             continue
         if old:
+            had_last_checked_at = "last_checked_at" in old
+            prior_last_checked_at = old.get("last_checked_at")
             first_seen = old.get("first_seen", now)
             old.update(record)
+            if had_last_checked_at and "last_checked_at" in record:
+                old["last_checked_at"] = prior_last_checked_at
             old.update({"first_seen": first_seen, "last_seen": now, "is_live": True})
         else:
             record = dict(record)
             record.update({"first_seen": now, "last_seen": now, "is_live": True})
             programme_rows[record["programme_id"]] = record
+    successful_states = {"actionable", "non_actionable", "closed", "needs_confirmation"}
+    for observation in observed:
+        if observation.get("state") in successful_states:
+            row = programme_rows.get(observation.get("programme_id"))
+            if row is not None:
+                _refresh_last_checked_at(row, observation.get("checked_at"))
     successful_sources = {
         o["official_url"]
         for o in observed
