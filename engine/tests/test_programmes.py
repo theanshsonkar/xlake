@@ -1,18 +1,26 @@
 import json
+import json
 import io
 import os
 import sys
 import tempfile
 import unittest
 from contextlib import redirect_stdout
+from unittest.mock import patch
 from datetime import date, datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from categories.grants import grants
+from categories.open_source import programmes as open_source_programmes
 from categories.open_source.programmes import (
     APPLICANT_ACTION_TOKENS, SOURCE_REGISTRY, SEEDS, classify_status,
     collect, detect_applicant_windows, merge_programmes, parse_date, parse_programme,
 )
-from categories.programme_core import ProgrammeConfig, collect as core_collect
+from categories.research import research
+from categories.scholarships import scholarships
+from categories.programme_core import (
+    ProgrammeConfig, _hop_links, _hop_page_matches_seed, collect as core_collect,
+)
 
 FIXTURES = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "fixtures", "programmes")
 TODAY = date(2026, 8, 16)
@@ -83,10 +91,84 @@ class TestGenericProgrammePipeline(unittest.TestCase):
                 self.assertEqual(record["application_url"], "https://fellowship.mlh.io/apply")
                 for field in ("programme_status", "application", "funding", "location", "eligibility"):
                     self.assertTrue(record["official_evidence"][field])
+            elif fixture in ("gsoc.html", "outreachy.html", "lfx.html"):
+                self.assertIsNotNone(record)
+                self.assertTrue(record["needs_confirmation"])
+                self.assertFalse(record["is_live"])
+                self.assertIsNone(record["programme_status"])
+                self.assertIsNone(record["deadline"])
+                self.assertEqual(record["official_url"], seed["official_url"])
             else:
                 self.assertIsNone(record)
         self.assertEqual(parse_programme(SEEDS[4], self.fixture("riscv.html"), datetime(2026, 8, 16, tzinfo=timezone.utc))[1]["official_evidence"]["application_window"]["quote"], "Applications open: July 15 – August 5.")
         self.assertEqual(parse_programme(SEEDS[5], self.fixture("kde.html"), datetime(2026, 8, 16, tzinfo=timezone.utc))[1]["official_evidence"]["deadline"]["quote"], "Deadline for the contributors applications 2026-01-14.")
+
+    def test_formal_unknown_pages_emit_needs_confirmation_for_all_categories(self):
+        categories = (
+            ("research", research),
+            ("scholarships", scholarships),
+            ("grants", grants),
+            ("open_source", open_source_programmes),
+        )
+        checked = datetime(2026, 8, 16, tzinfo=timezone.utc)
+        for category, module in categories:
+            with self.subTest(category=category):
+                seed = module.SOURCE_REGISTRY[0]
+
+                def fake_fetch(url):
+                    self.assertEqual(url, seed["official_url"])
+                    return (
+                        "<html><body><h1>{}</h1><p>This official programme page provides information.</p></body></html>".format(seed["programme_name"]),
+                        url,
+                    )
+
+                html, final_url = fake_fetch(seed["official_url"])
+                record, observation = module.parse_programme(seed, html, checked, final_url)
+                self.assertIsNotNone(record)
+                self.assertTrue(record["needs_confirmation"])
+                self.assertIsNone(record["programme_status"])
+                self.assertIsNone(record["deadline"])
+                self.assertFalse(record["is_live"])
+                self.assertEqual(record["official_url"], seed["official_url"])
+                self.assertEqual(observation["state"], "needs_confirmation")
+
+    def test_deadline_cues_extract_applicant_dates_and_reject_exclusions(self):
+        seed = SEEDS[0]
+        checked = datetime(2026, 8, 16, tzinfo=timezone.utc)
+        cases = (
+            ("Applicant deadlines October 16, 2026 by 8:00 p.m. Eastern time", "2026-10-16"),
+            ("next cutoff date - hard deadline: Friday 22 January 2027, 14:00 CET", "2027-01-22"),
+            ("Nominations due September 10, 2026, 11:59pm (-7 GMT) No Late Nominations Accepted", "2026-09-10"),
+            ("Student applications are due November 13, 2026.* Recommendation letters are due December 1, 2026.*", "2026-11-13"),
+            ("Applications Close Applications closed at 12:00pm ET on September 25.", "2026-09-25"),
+            ("The application closes on October 6, 2026, at 1 pm, Pacific Time.", "2026-10-06"),
+        )
+        for phrase, expected in cases:
+            with self.subTest(phrase=phrase):
+                context = "2026 fellowship application. " if phrase.startswith("Applications Close") else "fellowship application. "
+                html = "<html><body><h1>{}</h1><p>{}{}</p></body></html>".format(seed["programme_name"], context, phrase)
+                record, _ = parse_programme(seed, html, checked)
+                self.assertIsNotNone(record)
+                self.assertEqual(record["deadline"], expected)
+
+        negative_cases = (
+            "Recommendation letters are due December 1, 2026.",
+            "mentoring organization sign-up opens February 26, 2026 at 4 pm UTC",
+            "Recommendation letter deadline is Thursday, December 3, 2026 at noon ET",
+            "We welcome applications on a rolling basis.",
+            "deadline (September 19)",
+        )
+        for phrase in negative_cases:
+            with self.subTest(phrase=phrase):
+                link = '<a href="/apply">Apply</a>' if "rolling basis" in phrase else ""
+                html = "<html><body><h1>{}</h1><p>fellowship application. {} {}</p></body></html>".format(seed["programme_name"], phrase, link)
+                record, _ = parse_programme(seed, html, checked)
+                if "rolling basis" in phrase:
+                    self.assertIsNotNone(record)
+                    self.assertEqual(record["programme_status"], "rolling")
+                else:
+                    self.assertIsNotNone(record)
+                    self.assertIsNone(record["deadline"])
 
     def test_lexical_closed_and_future_opening_statuses(self):
         seed = SEEDS[2]
@@ -109,8 +191,11 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         for phrase in ("The fellowship office is now closed.", "The programme is now closed for maintenance."):
             record, observation = parse_programme(
                 seed, "<html><body><h1>Outreachy Fellowship</h1><p>{}</p></body></html>".format(phrase), checked)
-            self.assertIsNone(record, phrase)
-            self.assertEqual(observation["state"], "non_actionable", phrase)
+            self.assertIsNotNone(record, phrase)
+            self.assertTrue(record["needs_confirmation"], phrase)
+            self.assertFalse(record["is_live"], phrase)
+            self.assertIsNone(record["programme_status"], phrase)
+            self.assertEqual(observation["state"], "needs_confirmation", phrase)
             self.assertNotIn("programme_status", observation.get("official_evidence", {}), phrase)
 
     def test_collect_logs_one_line_per_seed_and_summary(self):
@@ -198,7 +283,9 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertEqual(record["application_url"], "https://fellowship.mlh.io/apply")
         external = self.fixture("mlh.html").replace('href="https://fellowship.mlh.io/apply"', 'href="https://evil.example/apply"')
         record, _ = parse_programme(SEEDS[0], external)
-        self.assertIsNone(record)
+        self.assertIsNotNone(record)
+        self.assertIsNone(record["application_url"])
+        self.assertTrue(record["needs_confirmation"])
 
     def test_merge_preserves_jobs_and_source_scoped_liveness(self):
         job = {"record_type": "job", "url": "https://jobs.example/1", "custom": {"x": 1}}
@@ -226,6 +313,226 @@ class TestGenericProgrammePipeline(unittest.TestCase):
             with open(lake, "w") as fh: json.dump({"records": []}, fh)
             with self.assertRaises(ValueError): merge_programmes([], [], lake, obs)
             with open(lake) as fh: self.assertEqual(json.load(fh), {"records": []})
+
+
+    def _run_identity_hop(self, seed, hop_url, hop_html):
+        first_html = (
+            "<h1>{}</h1><p>Official programme information.</p>"
+            "<a href='{}'>Apply</a>"
+        ).format(seed["programme_name"], hop_url.replace("https://example.test", ""))
+        config = ProgrammeConfig(
+            category="test", opportunity_type="test", source_registry=(seed,),
+            observations_path="", verifications_path="", needs_confirmation_floor=True,
+        )
+
+        def fake_fetch(url):
+            if url == seed["official_url"]:
+                return first_html, url
+            if url == hop_url:
+                return hop_html, url
+            raise AssertionError(url)
+
+        with tempfile.TemporaryDirectory() as td, patch(
+                "categories.programme_core.robots.allowed", return_value=(True, "ok")):
+            return core_collect(
+                config, fetch=fake_fetch,
+                checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc),
+                lake_path=os.path.join(td, "lake.json"),
+                observations_path=os.path.join(td, "observations.json"),
+            )
+
+    def test_second_hop_different_programme_date_is_not_promoted(self):
+        seed = dict(SEEDS[0], programme_name="Alpha Beta Fellowship", official_url="https://example.test/programme")
+        hop_url = "https://example.test/how-to-apply"
+        result = self._run_identity_hop(
+            seed, hop_url,
+            "<h1>Gamma Delta Fellowship</h1><p>Applications are due January 14, 2026.</p>",
+        )
+        record = result["records"][0]
+        self.assertIsNone(record["programme_status"])
+        self.assertIsNone(record["deadline"])
+        self.assertTrue(record["needs_confirmation"])
+        self.assertEqual(record["official_url"], seed["official_url"])
+        self.assertNotIn("second-hop", result["observations"][0]["reason"])
+
+    def test_second_hop_matching_programme_name_is_promoted(self):
+        seed = dict(SEEDS[0], programme_name="Alpha Beta Fellowship", official_url="https://example.test/programme")
+        hop_url = "https://example.test/how-to-apply"
+        result = self._run_identity_hop(
+            seed, hop_url,
+            "<h1>Alpha Beta Fellowship</h1><p>Applications are due October 6, 2026.</p>",
+        )
+        record = result["records"][0]
+        self.assertEqual(record["deadline"], "2026-10-06")
+        self.assertFalse(record["needs_confirmation"])
+        self.assertIn("second-hop", result["observations"][0]["reason"])
+
+    def test_second_hop_seed_path_prefix_is_promoted_without_name(self):
+        seed = dict(SEEDS[0], programme_name="Alpha Beta Fellowship", official_url="https://example.test/programme")
+        hop_url = "https://example.test/programme/apply"
+        result = self._run_identity_hop(
+            seed, hop_url,
+            "<h1>Fellowship programme</h1><p>Applications are due October 6, 2026.</p>",
+        )
+        self.assertEqual(result["records"][0]["deadline"], "2026-10-06")
+        self.assertIn("second-hop", result["observations"][0]["reason"])
+
+    def test_second_hop_root_seed_path_requires_name(self):
+        seed = dict(SEEDS[0], programme_name="Alpha Beta Fellowship", official_url="https://example.test/")
+        hop_url = "https://example.test/apply"
+        result = self._run_identity_hop(
+            seed, hop_url,
+            "<h1>Gamma Delta Fellowship</h1><p>Applications are due October 6, 2026.</p>",
+        )
+        record = result["records"][0]
+        self.assertIsNone(record["deadline"])
+        self.assertTrue(record["needs_confirmation"])
+        self.assertNotIn("second-hop", result["observations"][0]["reason"])
+
+    def test_hop_page_matcher_tokens_whole_words_stopwords_and_paths(self):
+        seed = {"programme_name": "Alpha Beta Fellowship", "official_url": "https://example.test/programme"}
+        self.assertTrue(_hop_page_matches_seed(seed, "https://other.test/x", "Alpha beta fellowship details"))
+        self.assertFalse(_hop_page_matches_seed(seed, "https://other.test/x", "Alphabet beta fellowship details"))
+        self.assertTrue(_hop_page_matches_seed(seed, "https://example.test/programme/updates", "No programme name"))
+        self.assertFalse(_hop_page_matches_seed(seed, "https://example.test/programmes/updates", "No programme name"))
+        stopword_seed = {"programme_name": "The Fellowship", "official_url": "https://example.test/programme"}
+        self.assertTrue(_hop_page_matches_seed(stopword_seed, "https://other.test/x", "The fellowship opportunity"))
+        self.assertFalse(_hop_page_matches_seed(stopword_seed, "https://other.test/x", "A scholarship opportunity"))
+
+
+    def _hop_config(self, seeds):
+        return ProgrammeConfig(
+            category="test", opportunity_type="test", source_registry=tuple(seeds),
+            observations_path="", verifications_path="", needs_confirmation_floor=True,
+        )
+
+    def _run_hop_collect(self, seeds, fake_fetch):
+        with tempfile.TemporaryDirectory() as td:
+            return core_collect(
+                self._hop_config(seeds), fetch=fake_fetch,
+                checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc),
+                lake_path=os.path.join(td, "lake.json"),
+                observations_path=os.path.join(td, "observations.json"),
+            )
+
+    def test_second_hop_promotes_dated_deadline_and_keeps_seed_url(self):
+        seed = dict(SEEDS[0], official_url="https://example.test/programme")
+        hop_url = "https://example.test/how-to-apply"
+        calls = []
+
+        def fake_fetch(url):
+            calls.append(url)
+            if url == seed["official_url"]:
+                return "<h1>Fellowship programme</h1><p>This official programme page provides information.</p><a href='/how-to-apply'>How to apply</a>", url
+            if url == hop_url:
+                return "<h1>MLH Fellowship Open Source Track</h1><p>Applications are due October 6, 2026.</p>", url
+            raise AssertionError(url)
+
+        with patch("categories.programme_core.robots.allowed", return_value=(True, "ok")):
+            result = self._run_hop_collect((seed,), fake_fetch)
+        record = result["records"][0]
+        self.assertEqual(record["deadline"], "2026-10-06")
+        self.assertEqual(record["official_url"], seed["official_url"])
+        self.assertEqual(record["official_evidence"]["deadline"]["url"], hop_url)
+        self.assertFalse(record["needs_confirmation"])
+        self.assertIn("second-hop", result["observations"][0]["reason"])
+        self.assertEqual(calls, [seed["official_url"], hop_url])
+
+    def test_second_hop_rejects_other_host(self):
+        seed = dict(SEEDS[0], official_url="https://example.test/programme")
+        calls = []
+
+        def fake_fetch(url):
+            calls.append(url)
+            if url == seed["official_url"]:
+                return "<h1>Fellowship programme</h1><p>Official programme information.</p><a href='https://other.test/how-to-apply'>Apply</a>", url
+            raise AssertionError(url)
+
+        with patch("categories.programme_core.robots.allowed", return_value=(True, "ok")):
+            result = self._run_hop_collect((seed,), fake_fetch)
+        self.assertEqual(calls, [seed["official_url"]])
+        self.assertTrue(result["records"][0]["needs_confirmation"])
+
+    def test_second_hop_rejects_subdomain(self):
+        seed = dict(SEEDS[0], official_url="https://example.test/programme")
+        calls = []
+
+        def fake_fetch(url):
+            calls.append(url)
+            if url == seed["official_url"]:
+                return "<h1>Fellowship programme</h1><p>Official programme information.</p><a href='https://apply.example.test/how-to-apply'>Apply</a>", url
+            raise AssertionError(url)
+
+        with patch("categories.programme_core.robots.allowed", return_value=(True, "ok")):
+            result = self._run_hop_collect((seed,), fake_fetch)
+        self.assertEqual(calls, [seed["official_url"]])
+        self.assertTrue(result["records"][0]["needs_confirmation"])
+
+    def test_second_hop_fetch_error_keeps_uncertain_result(self):
+        seed = dict(SEEDS[0], official_url="https://example.test/programme")
+        hop_url = "https://example.test/how-to-apply"
+
+        def fake_fetch(url):
+            if url == seed["official_url"]:
+                return "<h1>Fellowship programme</h1><p>Official programme information.</p><a href='/how-to-apply'>How to apply</a>", url
+            if url == hop_url:
+                raise TimeoutError("hop timeout")
+            raise AssertionError(url)
+
+        with patch("categories.programme_core.robots.allowed", return_value=(True, "ok")):
+            result = self._run_hop_collect((seed,), fake_fetch)
+        record = result["records"][0]
+        self.assertTrue(record["needs_confirmation"])
+        self.assertIsNone(record["deadline"])
+        self.assertNotIn("second-hop", result["observations"][0]["reason"])
+
+    def test_second_hop_fetches_at_most_two_links_per_seed(self):
+        seed = dict(SEEDS[0], official_url="https://example.test/programme")
+        calls = []
+
+        def fake_fetch(url):
+            calls.append(url)
+            if url == seed["official_url"]:
+                return ("<h1>Fellowship programme</h1><p>Official programme information.</p>"
+                        "<a href='/how-to-apply'>Apply</a><a href='/faq'>FAQ</a>"
+                        "<a href='/admission'>Admission</a>"), url
+            return "<h1>Fellowship programme</h1><p>Vague programme information.</p>", url
+
+        with patch("categories.programme_core.robots.allowed", return_value=(True, "ok")):
+            self._run_hop_collect((seed,), fake_fetch)
+        self.assertEqual(len(calls), 3)
+        self.assertEqual(calls[1:], ["https://example.test/faq", "https://example.test/admission"])
+        self.assertNotIn("https://example.test/how-to-apply", calls)
+
+    def test_second_hop_fetch_cap_is_enforced(self):
+        seeds = tuple(dict(SEEDS[index], official_url="https://example.test/programme{}".format(index)) for index in range(2))
+        calls = []
+
+        def fake_fetch(url):
+            calls.append(url)
+            if url in {seed["official_url"] for seed in seeds}:
+                return "<h1>Fellowship programme</h1><p>Official programme information.</p><a href='/how-to-apply'>Apply</a><a href='/faq'>FAQ</a>", url
+            return "<h1>Fellowship programme</h1><p>Vague programme information.</p>", url
+
+        with patch("categories.programme_core.robots.allowed", return_value=(True, "ok")), \
+             patch("categories.programme_core.MAX_HOP_FETCHES", 1):
+            self._run_hop_collect(seeds, fake_fetch)
+        self.assertEqual(len([url for url in calls if "/programme" not in url]), 1)
+
+    def test_hop_links_filters_origin_extensions_and_orders_shortest_path(self):
+        html = ("<a href='/deep/how-to-apply'>Apply</a>"
+                "<a href='/faq.pdf'>FAQ</a>"
+                "<a href='https://evil.test/admission'>Admission</a>"
+                "<a href='https://www.example.test/admission'>Admission</a>"
+                "<a href='#dates'>Dates</a>"
+                "<a href='mailto:a@example.test'>Application</a>"
+                "<a href='/dates'>details</a>"
+                "<a href='/x'>next-round</a>"
+                "<a href='/programme'>Programme</a>")
+        self.assertEqual(
+            _hop_links(html, "https://example.test/programme", limit=3),
+            ["https://example.test/x", "https://example.test/dates", "https://example.test/deep/how-to-apply"],
+        )
 
 
 if __name__ == "__main__":

@@ -15,6 +15,7 @@ from html.parser import HTMLParser
 from typing import Callable, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urljoin, urlparse
 
+from core import pagetext, robots
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
 
 @dataclass(frozen=True)
@@ -38,9 +39,23 @@ APPLICANT_ACTION_TOKENS = (
     "intern applications", "contributor applications", "application period",
     "rolling basis", "applications are rolling", "processed on a rolling basis",
 )
-# These are deliberately data, not source adapters.  The extra generic form
-# handles pages which put words between "deadline" and "applications".
-APPLICANT_DEADLINE_TOKENS = ("deadline for the contributors applications",)
+# These are deliberately data, not source adapters.  Each cue is checked
+# against a nearby date before it can create an applicant window.
+APPLICANT_DEADLINE_TOKENS = (
+    "deadline for the contributors applications",
+    "application deadline", "applicant deadline", "applicant deadlines",
+    "applications are due", "applications due", "application is due",
+    "nominations due", "nomination deadline", "hard deadline",
+    "cutoff date", "cut-off date", "application close on",
+    "applications close on", "application closes on", "applications closes on",
+    "application close at", "applications close at", "application closes at",
+    "applications closes at", "application closed at", "applications closed at",
+    "submission deadline", "deadline to apply", "apply by",
+)
+_DEADLINE_EXCLUSION_TOKENS = (
+    "recommend", "reference", "referee", "letter", "mentor", "mentoring",
+    "sign-up", "sign up", "host organi", "organisation sign", "organization sign",
+)
 ORGANIZER_WINDOW_TOKENS = (
     "mentor sign up", "mentors sign up", "mentoring organization",
     "mentoring organisation", "accepting proposals", "project submission",
@@ -71,6 +86,117 @@ _OPENING_PATTERNS = (
 
 def _month_number(name: str) -> int:
     return MONTHS.index(name.capitalize()) + 1
+
+
+HOP_LINK_TOKENS = (
+    "apply", "application", "deadline", "dates", "timeline", "eligib",
+    "faq", "admission", "schedule", "calendar", "cycle", "next-round",
+)
+HOP_LINK_EXTENSIONS = (".pdf", ".doc", ".docx", ".zip", ".png", ".jpg")
+HOP_LINK_LIMIT = 2
+MAX_HOP_FETCHES = 150
+
+
+class _HopLinkParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.links: List[Tuple[str, str]] = []
+        self._href: Optional[str] = None
+        self._text: List[str] = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() == "a" and self._href is None:
+            self._href = dict(attrs).get("href")
+            self._text = []
+
+    def handle_data(self, data):
+        if self._href is not None:
+            self._text.append(data)
+
+    def handle_endtag(self, tag):
+        if tag.lower() == "a" and self._href is not None:
+            self.links.append((self._href, " ".join(self._text)))
+            self._href, self._text = None, []
+
+
+_HOP_NAME_STOPWORDS = {
+    "fellowship", "fellowships", "programme", "program", "scholarship",
+    "scholarships", "scholars", "grant", "grants", "award", "awards",
+    "the", "and", "for", "of", "in", "at", "to", "international",
+    "foundation", "global", "summer", "student", "students", "research",
+}
+
+
+def _hop_page_matches_seed(seed: Dict, hop_url: str, hop_text: str) -> bool:
+    """Return whether a same-origin hop is plausibly about the seed programme."""
+    words = re.findall(r"[a-z0-9]{3,}", str(seed.get("programme_name", "")).casefold())
+    distinctive = [word for word in words if word not in _HOP_NAME_STOPWORDS]
+    if not distinctive:
+        distinctive = words
+    if not distinctive:
+        return False
+
+    page_text = pagetext.to_text(hop_text or "")
+    matched = sum(
+        bool(re.search(r"(?<![a-z0-9]){}(?![a-z0-9])".format(re.escape(token)), page_text, re.I))
+        for token in set(distinctive)
+    )
+    if matched / len(set(distinctive)) >= 0.6:
+        return True
+
+    seed_parts, hop_parts = urlparse(seed.get("official_url", "")), urlparse(hop_url or "")
+    if not seed_parts.hostname or not hop_parts.hostname:
+        return False
+    seed_path = (seed_parts.path or "/").rstrip("/")
+    hop_path = hop_parts.path or "/"
+    return (
+        seed_parts.hostname.casefold() == hop_parts.hostname.casefold()
+        and bool(seed_path)
+        and seed_path != "/"
+        and (hop_path == seed_path or hop_path.startswith(seed_path + "/"))
+    )
+
+
+def _hop_links(html: str, base_url: str, limit: int = HOP_LINK_LIMIT) -> List[str]:
+    """Return a small, same-origin set of likely programme-information links."""
+    parser = _HopLinkParser()
+    parser.feed(html or "")
+    base = urlparse(base_url)
+    if base.scheme.lower() not in ("http", "https") or not base.hostname:
+        return []
+
+    def origin(parts):
+        try:
+            port = parts.port
+        except ValueError:
+            return None
+        default_port = 443 if parts.scheme.lower() == "https" else 80
+        return (parts.scheme.lower(), parts.hostname.lower(), port or default_port)
+
+    base_origin = origin(base)
+    base_without_fragment = base._replace(fragment="").geturl()
+    candidates: List[Tuple[int, int, str]] = []
+    seen = set()
+    for index, (href, anchor) in enumerate(parser.links):
+        href = (href or "").strip()
+        if not href or href.startswith("#"):
+            continue
+        resolved = urljoin(base_url, href)
+        target = urlparse(resolved)
+        if target.scheme.lower() not in ("http", "https") or origin(target) != base_origin:
+            continue
+        target_url = target._replace(fragment="").geturl()
+        if target_url == base_without_fragment or target_url in seen:
+            continue
+        if target.path.casefold().endswith(HOP_LINK_EXTENSIONS):
+            continue
+        haystack = "{} {}".format(href, anchor).casefold()
+        if not any(token in haystack for token in HOP_LINK_TOKENS):
+            continue
+        seen.add(target_url)
+        candidates.append((len(target.path or "/"), index, target_url))
+    candidates.sort(key=lambda item: (item[0], item[1]))
+    return [url for _, _, url in candidates[:max(0, limit)]]
 
 
 def parse_dates(text: str, nearby_year: Optional[int] = None) -> List[Dict]:
@@ -104,6 +230,16 @@ def parse_dates(text: str, nearby_year: Optional[int] = None) -> List[Dict]:
             continue
         results.append({"start": value, "end": value, "quote": match.group(0), "exact": True, "span": match.span()})
         consumed.append(match.span())
+    day_first_re = re.compile(
+        rf"\b(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)?\s*"
+        rf"(?P<day>\d{{1,2}})\s+(?P<month>{MONTH_PATTERN})\s+(?P<year>20\d{{2}})\b", re.I)
+    for match in day_first_re.finditer(text):
+        if any(a <= match.start() < b for a, b in consumed):
+            continue
+        value = make(match.group("month"), match.group("day"), match.group("year"))
+        if value:
+            results.append({"start": value, "end": value, "quote": match.group(0), "exact": True, "span": match.span()})
+            consumed.append(match.span())
     full_re = re.compile(rf"\b(?P<month>{MONTH_PATTERN})\s+(?P<day>\d{{1,2}}),?\s+(?P<year>20\d{{2}})\b", re.I)
     for match in full_re.finditer(text):
         if any(a <= match.start() < b for a, b in consumed):
@@ -120,6 +256,32 @@ def parse_dates(text: str, nearby_year: Optional[int] = None) -> List[Dict]:
         if value:
             results.append({"start": value, "end": value, "quote": match.group(0), "exact": False, "span": match.span()})
     return sorted(results, key=lambda item: item["span"][0])
+
+
+def _deadline_cue_matches(sentence: str) -> List[Tuple[int, int, str]]:
+    lowered = sentence.casefold()
+    matches = []
+    for token in APPLICANT_DEADLINE_TOKENS:
+        value = token.casefold()
+        start = lowered.find(value)
+        while start >= 0:
+            matches.append((start, start + len(value), token))
+            start = lowered.find(value, start + 1)
+    return sorted(set(matches), key=lambda item: (item[0], -(item[1] - item[0])))
+
+
+def _deadline_candidate(sentence: str, nearby_year: Optional[int] = None) -> Optional[Dict]:
+    """Return the first non-excluded deadline cue with a nearby date."""
+    for cue_start, cue_end, token in _deadline_cue_matches(sentence):
+        tail = sentence[cue_end:min(len(sentence), cue_end + 100)]
+        for parsed in parse_dates(tail, nearby_year):
+            date_start = cue_end + parsed["span"][0]
+            before_date = sentence[max(0, date_start - 60):date_start].casefold()
+            if any(exclusion in before_date for exclusion in _DEADLINE_EXCLUSION_TOKENS):
+                continue
+            return {"token": token, "parsed": parsed, "cue_start": cue_start, "cue_end": cue_end}
+    return None
+
 
 
 def parse_date(text: str, nearby_year: Optional[int] = None) -> Optional[Dict]:
@@ -147,14 +309,31 @@ def detect_applicant_windows(text: str) -> List[Dict]:
     normalized = text.replace("\xa0", " ")
     for start, end, sentence in _sentences(normalized):
         lowered = sentence.lower()
-        positive = [token for token in APPLICANT_ACTION_TOKENS + APPLICANT_DEADLINE_TOKENS if token in lowered]
+        # Deadline cues are stricter than the older action vocabulary: a date
+        # must follow the cue in this sentence, and organizer language near it
+        # must not turn a recommendation/mentor date into an applicant date.
+        organizer_positions = [lowered.find(token) for token in ORGANIZER_WINDOW_TOKENS if token in lowered]
+        candidate_sentence = sentence[:min(organizer_positions)] if organizer_positions else sentence
+        deadline_cues = _deadline_cue_matches(candidate_sentence)
+        if deadline_cues:
+            nearby_year = _year_near(normalized, start)
+            candidate = _deadline_candidate(candidate_sentence, nearby_year)
+            if not candidate:
+                continue
+            parsed = candidate["parsed"]
+            candidates.append({
+                "start": parsed["start"], "end": parsed["end"],
+                "quote": candidate_sentence.strip() if candidate_sentence else parsed["quote"],
+                "date_quote": parsed["quote"], "exact": parsed["exact"] or nearby_year is not None,
+                "token": candidate["token"], "deadline_cue": True,
+            })
+            continue
+        positive = [token for token in APPLICANT_ACTION_TOKENS if token in lowered]
         if not positive:
             continue
         # A page may put an applicant event and an organizer event in one
         # rendered block. Only the text attached to the applicant token is a
         # candidate; an organizer-only block never reaches this point.
-        organizer_positions = [lowered.find(token) for token in ORGANIZER_WINDOW_TOKENS if token in lowered]
-        candidate_sentence = sentence[:min(organizer_positions)] if organizer_positions else sentence
         dates = parse_dates(candidate_sentence, _year_near(normalized, start))
         if not dates:
             # Dates can sit on an adjacent line or heading, but remain close.
@@ -317,16 +496,22 @@ def _lexical_status(text: str, today: date) -> Tuple[Optional[str], Optional[str
     return None, None
 
 
-def _quote_with(text: str, tokens: Iterable[str], minimum_words: int = 1, prefer_relevant: bool = False) -> Optional[str]:
+def _quote_with(text: str, tokens: Iterable[str], minimum_words: int = 1, prefer_relevant: bool = False, deadline_cues: bool = False) -> Optional[str]:
     candidates = []
     token_values = tuple(token.casefold() for token in tokens)
-    for _, _, sentence in _sentences(text):
+    for start, _, sentence in _sentences(text):
         lowered = sentence.casefold()
-        if any(token in lowered for token in token_values) and len(re.findall(r"\b\w+\b", sentence)) >= minimum_words:
-            cleaned = _clean_quote(sentence)
-            if is_quality_evidence(cleaned):
-                relevant = any(token in lowered for token in _LEXICAL_RELEVANCE_TOKENS)
-                candidates.append((not (prefer_relevant and relevant), cleaned))
+        if deadline_cues:
+            if not _deadline_candidate(sentence, _year_near(text, start)):
+                continue
+        elif not any(token in lowered for token in token_values):
+            continue
+        if len(re.findall(r"\b\w+\b", sentence)) < minimum_words:
+            continue
+        cleaned = _clean_quote(sentence)
+        if is_quality_evidence(cleaned):
+            relevant = any(token in lowered for token in _LEXICAL_RELEVANCE_TOKENS)
+            candidates.append((not (prefer_relevant and relevant), cleaned))
     if candidates:
         candidates.sort(key=lambda item: item[0])
         return candidates[0][1]
@@ -382,9 +567,10 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
     # Explicit dated deadlines are still useful closed observations even where
     # a site uses an unusual grammatical form around "applications".
     if status == "non_actionable":
-        deadline_quote = _quote_with(text, APPLICANT_DEADLINE_TOKENS)
+        deadline_quote = _quote_with(text, APPLICANT_DEADLINE_TOKENS, deadline_cues=True)
         if deadline_quote:
-            deadline = parse_dates(deadline_quote, _year_near(text, text.lower().find("deadline")))
+            quote_position = text.casefold().find(deadline_quote.casefold())
+            deadline = parse_dates(deadline_quote, _year_near(text, quote_position))
             if deadline and deadline[0]["end"] < checked_at.date():
                 status, windows = "closed", [{"start": deadline[0]["start"], "end": deadline[0]["end"], "quote": deadline_quote, "date_quote": deadline[0]["quote"], "exact": True, "token": APPLICANT_DEADLINE_TOKENS[0]}]
     if status not in ("open", "rolling", "opening_soon"):
@@ -437,6 +623,9 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
         record["deadline"] = window["end"].isoformat() if window["end"] != window["start"] else None
         evidence["opening_date"] = _evidence(window["quote"], seed["official_url"])
         evidence["deadline"] = _evidence(window["quote"], seed["official_url"])
+        if window.get("deadline_cue"):
+            record["deadline"] = window["end"].isoformat()
+            record["opening_date"] = None
         if record.get("deadline") is None and record.get("opening_date"):
             deadline_evidence = evidence.get("deadline", {})
             opening_evidence = evidence.get("opening_date", {})
@@ -694,6 +883,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     successes = 0
     failure_counts = Counter()
     exception_counts = Counter()
+    hop_budget = [0]
     for seed in config.source_registry:
         final_url = None
         outcome = "exception"
@@ -704,6 +894,10 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             html, final_url = fetched if isinstance(fetched, tuple) else (fetched, None)
             fetch_succeeded = bool(html)
             record, observation = parse_programme(seed, html, checked_at, final_url, config=config)
+            if fetch_succeeded:
+                record, observation = _follow_hops(
+                    seed, html, final_url, record, observation, fetch, checked_at, config, hop_budget,
+                )
             if observation.get("state") == "failed":
                 outcome = "empty"
             else:
@@ -758,3 +952,109 @@ def run_module_cli(config: ProgrammeConfig, argv=None) -> None:
     else:
         result = collect(config)
         print(json.dumps({"records": len(result["records"]), "observations": len(result["observations"])}, indent=2))
+
+
+def _rewrite_hop_evidence(evidence: Dict, hop_url: str) -> Dict:
+    rewritten = {}
+    for key, value in (evidence or {}).items():
+        if isinstance(value, dict):
+            item = dict(value)
+            if item.get("quote"):
+                item["url"] = hop_url
+            rewritten[key] = item
+        else:
+            rewritten[key] = value
+    return rewritten
+
+
+def _has_dated_evidence(record: Optional[Dict], observation: Dict) -> bool:
+    if record and (record.get("opening_date") or record.get("deadline")):
+        return True
+    evidence = observation.get("official_evidence") or {}
+    for key in ("opening_date", "deadline", "application_window", "programme_status"):
+        quote = (evidence.get(key) or {}).get("quote")
+        if quote and parse_dates(quote):
+            return True
+    return False
+
+
+def _closed_hop_record(seed: Dict, observation: Dict, checked_at: datetime, hop_url: str, config: ProgrammeConfig) -> Optional[Dict]:
+    evidence = observation.get("official_evidence") or {}
+    deadline_evidence = evidence.get("deadline") or {}
+    deadline_quote = deadline_evidence.get("quote")
+    parsed_deadline = parse_dates(deadline_quote or "", checked_at.date())
+    if not parsed_deadline:
+        return None
+    record = _base(seed, checked_at.isoformat(timespec="seconds"), _rewrite_hop_evidence(evidence, hop_url), config)
+    record["programme_status"] = "closed"
+    record["deadline"] = parsed_deadline[-1]["end"].isoformat()
+    window_evidence = evidence.get("application_window") or {}
+    parsed_window = parse_dates(window_evidence.get("quote", ""), checked_at.date())
+    if parsed_window:
+        record["opening_date"] = parsed_window[0]["start"].isoformat()
+    record["needs_confirmation"] = False
+    record["is_live"] = False
+    return record
+
+
+def _follow_hops(seed: Dict, html: str, final_url: Optional[str], record: Optional[Dict], observation: Dict,
+                 fetch: Callable[[str], str], checked_at: Optional[datetime], config: ProgrammeConfig,
+                 hop_budget: List[int]) -> Tuple[Optional[Dict], Dict]:
+    """Try bounded information-page hops without changing failed first-page results."""
+    first_page_needs_hop = (
+        observation.get("state") == "non_actionable"
+        or (
+            record is not None
+            and record.get("needs_confirmation")
+            and record.get("deadline") is None
+            and record.get("programme_status") is None
+        )
+    )
+    if not html or observation.get("state") == "failed" or not first_page_needs_hop:
+        return record, observation
+    base_url = final_url or seed["official_url"]
+    checked_value = checked_at or datetime.now(timezone.utc)
+    for hop_url in _hop_links(html, base_url, HOP_LINK_LIMIT):
+        if hop_budget[0] >= MAX_HOP_FETCHES:
+            break
+        try:
+            allowed, _why = robots.allowed(hop_url)
+        except Exception:
+            continue
+        if not allowed:
+            continue
+        hop_budget[0] += 1
+        try:
+            fetched = fetch(hop_url)
+            hop_html, hop_final_url = fetched if isinstance(fetched, tuple) else (fetched, None)
+            if not hop_html:
+                continue
+            hop_seed = dict(seed)
+            hop_seed["official_url"] = hop_url
+            hop_record, hop_observation = parse_programme(
+                hop_seed, hop_html, checked_value, hop_final_url, config=config,
+            )
+        except Exception:
+            continue
+        if not _hop_page_matches_seed(seed, hop_url, hop_html):
+            continue
+        status = hop_record.get("programme_status") if hop_record else None
+        dated = _has_dated_evidence(hop_record, hop_observation)
+        if status in ("open", "rolling", "opening_soon"):
+            promoted = deepcopy(hop_record)
+            promoted.update({
+                "programme_id": seed["programme_id"],
+                "programme_name": seed["programme_name"],
+                "organizer": seed["organizer"],
+                "official_url": seed["official_url"],
+                "official_evidence": _rewrite_hop_evidence(promoted.get("official_evidence", {}), hop_url),
+                "needs_confirmation": not dated,
+            })
+            reason = "{}; second-hop evidence from {}".format(hop_observation.get("reason", "actionable"), hop_url)
+            return promoted, _observation(seed, hop_observation["checked_at"], hop_observation["state"], reason, promoted["official_evidence"])
+        if hop_observation.get("state") == "closed" and dated:
+            promoted = _closed_hop_record(seed, hop_observation, checked_value, hop_url, config)
+            if promoted:
+                reason = "{}; second-hop evidence from {}".format(hop_observation.get("reason", "closed"), hop_url)
+                return promoted, _observation(seed, hop_observation["checked_at"], "closed", reason, promoted["official_evidence"])
+    return record, observation

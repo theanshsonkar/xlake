@@ -43,6 +43,7 @@ SCHOLARSHIP_CONFIG = ProgrammeConfig(
     source_registry=SOURCE_REGISTRY,
     observations_path=OBSERVATIONS_PATH,
     verifications_path=VERIFICATIONS_PATH,
+    needs_confirmation_floor=True,
 )
 
 
