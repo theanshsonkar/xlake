@@ -19,7 +19,7 @@ from categories.open_source.programmes import (
 from categories.research import research
 from categories.scholarships import scholarships
 from categories.programme_core import (
-    ProgrammeConfig, _hop_links, _hop_page_matches_seed, collect as core_collect,
+    ProgrammeConfig, _hop_links, _hop_page_matches_seed, _text, collect as core_collect,
 )
 
 FIXTURES = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "fixtures", "programmes")
@@ -33,6 +33,19 @@ class TestGenericProgrammePipeline(unittest.TestCase):
 
     def test_registry_is_data_only_and_keeps_six_seed_urls(self):
         self.assertGreaterEqual(len(SOURCE_REGISTRY), 6)
+
+    def test_parser_accepts_boolean_aria_hidden_attribute(self):
+        html = (
+            "<html><body><div aria-hidden></div>"
+            "<h1>Open Source Fellowship</h1>"
+            "<p>Official fellowship programme information.</p>"
+            "</body></html>"
+        )
+        record, observation = parse_programme(
+            SEEDS[0], html, datetime(2026, 8, 16, tzinfo=timezone.utc)
+        )
+        self.assertIsNotNone(record)
+        self.assertEqual(observation["state"], "needs_confirmation")
         seed_urls = {
             "https://fellowship.mlh.io/programs/open-source",
             "https://summerofcode.withgoogle.com/",
@@ -49,6 +62,41 @@ class TestGenericProgrammePipeline(unittest.TestCase):
             self.assertTrue(source["source_id"])
             self.assertTrue(source["organizer"])
             self.assertTrue(source["official_url"])
+
+    def test_visible_text_does_not_stick_after_void_embed(self):
+        text, _ = _text(
+            "<head><embed src='video'><meta charset='utf-8'><link rel='stylesheet'></head>"
+            "<body><p>Visible programme information.</p></body>"
+        )
+        self.assertIn("Visible programme information.", text)
+
+    def test_visible_text_keeps_explicit_hidden_content_hidden(self):
+        text, _ = _text(
+            "<div hidden>secret hidden text</div>"
+            "<div aria-hidden='true'>secret aria text</div>"
+            "<p>Visible programme information.</p>"
+        )
+        self.assertNotIn("secret hidden text", text)
+        self.assertNotIn("secret aria text", text)
+        self.assertIn("Visible programme information.", text)
+
+    def test_visible_text_closes_omitted_head_at_body(self):
+        text, _ = _text(
+            "<html><head><meta charset='utf-8'><title>Title</title>"
+            "<body><p>Visible programme information.</p></body></html>"
+        )
+        self.assertIn("Visible programme information.", text)
+
+    def test_visible_text_excludes_script_style_and_unclosed_iframe(self):
+        text, _ = _text(
+            "<script>script secret</script><style>.secret { display: none }</style>"
+            "<iframe>iframe secret<p>also hidden</p>"
+            "<p>Visible programme information.</p>"
+        )
+        self.assertNotIn("script secret", text)
+        self.assertNotIn("secret", text)
+        self.assertNotIn("also hidden", text)
+        self.assertNotIn("Visible programme information.", text)
 
     def test_date_parser_supports_iso_months_ranges_and_year_inheritance(self):
         self.assertEqual(parse_date("2026-01-14")["start"], date(2026, 1, 14))

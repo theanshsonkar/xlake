@@ -372,6 +372,10 @@ _NON_VISIBLE_TAGS = frozenset((
     "head", "style", "script", "noscript", "template", "svg", "canvas",
     "iframe", "object", "embed",
 ))
+_HTML_VOID_TAGS = frozenset((
+    "area", "base", "br", "col", "embed", "hr", "img", "input", "link",
+    "meta", "param", "source", "track", "wbr",
+))
 
 
 class _VisibleText(HTMLParser):
@@ -386,11 +390,16 @@ class _VisibleText(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         tag = tag.lower()
+        if tag in _HTML_VOID_TAGS:
+            return
+        if tag == "body":
+            # HTML implicitly closes an omitted head end tag here.
+            self.handle_endtag("head")
         attributes = dict(attrs)
         hidden = (
             tag in _NON_VISIBLE_TAGS
             or "hidden" in attributes
-            or attributes.get("aria-hidden", "").lower() == "true"
+            or (attributes.get("aria-hidden") or "").lower() == "true"
             or "display:none" in attributes.get("style", "").replace(" ", "").lower()
             or "visibility:hidden" in attributes.get("style", "").replace(" ", "").lower()
         )
@@ -420,9 +429,9 @@ class _VisibleText(HTMLParser):
         for index in range(len(self._tag_stack) - 1, -1, -1):
             stacked_tag, hidden = self._tag_stack[index]
             if stacked_tag == tag:
+                removed = self._tag_stack[index:]
                 del self._tag_stack[index:]
-                if hidden:
-                    self._hidden_depth = max(0, self._hidden_depth - 1)
+                self._hidden_depth = max(0, self._hidden_depth - sum(item_hidden for _, item_hidden in removed))
                 break
 
     def handle_comment(self, data):
