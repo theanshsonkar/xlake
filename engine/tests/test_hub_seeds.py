@@ -206,7 +206,7 @@ class HubSeedsTests(unittest.TestCase):
         self.assertEqual(reason, "admitted")
         self.assertEqual(name, "MLH Fellowship")
         ok, reason, name = admit_candidate(
-            "<h1>Founder Fuel - accelerator</h1><p>Apply</p>",
+            "<h1>Founder Fuel - accelerator</h1><p>Technology startups. Apply</p>",
             "https://example.org/founder-fuel", "startup_founder",
         )
         self.assertTrue(ok)
@@ -218,14 +218,14 @@ class HubSeedsTests(unittest.TestCase):
             (
                 "<title>Oxygen Accelerator | Apply</title>"
                 "<h1>EUR21,000 per team in exchange for 8% equity</h1>"
-                "<p>Apply now</p>",
+                "<p>Technology startups. Apply now</p>",
                 "https://oxygen.example/program",
                 "Oxygen Accelerator",
             ),
             (
                 "<title>Founder Fuel | Canada's leading venture accelerator</title>"
                 "<h1>We are Canada's leading venture accelerator</h1>"
-                "<p>Apply</p>",
+                "<p>Technology startups. Apply</p>",
                 "https://founderfuel.example/program",
                 "Founder Fuel",
             ),
@@ -285,6 +285,63 @@ class HubSeedsTests(unittest.TestCase):
         self.assertFalse(ok)
         self.assertEqual(reason, "no_name")
         self.assertEqual(name, "")
+
+    def test_admission_tech_relevance_has_positive_and_negative_cases(self):
+        fixtures = [
+            ("<title>Software Engineering Fellowship</title><p>Apply now</p>", True),
+            ("<title>Arts Scholarship</title><p>Apply now</p>", False),
+            ("<title>TOPS Louisiana Scholarship</title><p>Apply now</p>", False),
+            ("<title>Oregon Student Aid</title><p>Apply now</p>", False),
+            ("<title>Community Fellowship</title><p>Apply now</p>", True),
+            ("<title>Community Grant</title><p>Apply now</p>", True),
+        ]
+        for html, expected in fixtures:
+            with self.subTest(html=html):
+                ok, reason, _ = admit_candidate(html, "https://official.example/program", "scholarships")
+                self.assertEqual(ok, expected)
+                if not expected and reason not in {"no_name", "no_tech_signal"}:
+                    self.fail("unexpected rejection reason: {}".format(reason))
+
+    def test_admission_form_hosts_have_positive_and_negative_cases(self):
+        blocked = (
+            "https://tally.so/r/example",
+            "https://forms.gle/example",
+            "https://docs.google.com/forms/d/e/example/viewform",
+            "https://typeform.com/to/example",
+            "https://airtable.com/app/example",
+            "https://jotform.com/123",
+            "https://surveymonkey.com/r/example",
+            "https://linktr.ee/example",
+        )
+        for url in blocked:
+            with self.subTest(url=url):
+                ok, reason, _ = admit_candidate(
+                    "<title>Software Fellowship</title><p>Apply now</p>", url, "research"
+                )
+                self.assertFalse(ok)
+                self.assertEqual(reason, "blocked_form_host")
+        ok, reason, _ = admit_candidate(
+            "<title>Software Fellowship</title><p>Apply now</p>",
+            "https://official.example/software-fellowship", "research",
+        )
+        self.assertTrue(ok)
+        self.assertEqual(reason, "admitted")
+
+    def test_admission_stale_year_has_past_and_current_or_future_cases(self):
+        fixtures = (
+            ("<title>Summer Research Fellowship Program 2022</title><p>Apply now</p>", False),
+            ("<title>Summer Research Fellowship Program 2026</title><p>Apply now</p>", True),
+            ("<title>Summer Research Fellowship Program 2027</title><p>Apply now</p>", True),
+            ("<title>Summer Research Fellowship 2022</title><p>Apply for 2026</p>", True),
+        )
+        for html, expected in fixtures:
+            with self.subTest(html=html):
+                ok, reason, _ = admit_candidate(
+                    html, "https://official.example/summer-fellowship", "research"
+                )
+                self.assertEqual(ok, expected)
+                if not expected:
+                    self.assertEqual(reason, "stale_year")
 
 
 if __name__ == "__main__":

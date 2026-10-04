@@ -60,6 +60,34 @@ _ADMISSION_HOSTS = frozenset({
     "workday.com", "myworkdayjobs.com", "ashbyhq.com", "smartrecruiters.com",
     "bamboohr.com",
 })
+# Keep this list in one place: it is the allow signal for the page-level
+# relevance gate, rather than a category-specific collection policy.
+TECH_RELEVANCE_KEYWORDS = (
+    "computer science", "software", "engineering", "engineer", "artificial intelligence",
+    "ai", "machine learning", "deep learning", "data", "research", "stem",
+    "cybersecurity", "cyber security", "open source", "developer", "development",
+    "coding", "programming", "technology", "tech", "computing", "robotics",
+    "cloud", "quantum", "mathematics", "statistics", "informatics", "digital",
+    "algorithm", "blockchain", "bioinformatics",
+)
+_ADMISSION_FORM_HOSTS = frozenset({
+    "tally.so", "forms.gle", "typeform.com", "airtable.com", "jotform.com",
+    "surveymonkey.com", "linktr.ee",
+})
+_ADMISSION_CURRENT_YEAR = 2026
+_ADMISSION_YEAR = re.compile(r"\b(?:19|20)\d{2}\b")
+_ADMISSION_US_STATES = frozenset({
+    "alabama", "alaska", "arizona", "arkansas", "california", "colorado",
+    "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho",
+    "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana",
+    "maine", "maryland", "massachusetts", "michigan", "minnesota",
+    "mississippi", "missouri", "montana", "nebraska", "nevada", "new hampshire",
+    "new jersey", "new mexico", "new york", "north carolina", "north dakota",
+    "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island",
+    "south carolina", "south dakota", "tennessee", "texas", "utah", "vermont",
+    "virginia", "washington", "west virginia", "wisconsin", "wyoming",
+    "district of columbia",
+})
 _ADMISSION_GENERIC_NAMES = frozenset({
     "home", "research", "blog", "news", "about", "about us", "programs",
     "programmes", "apply", "learn more", "read more", "details and link to apply",
@@ -151,6 +179,49 @@ def _admission_page_fields(html: str) -> _AdmissionHTMLParser:
         pass
     parser.finish()
     return parser
+
+
+def _admission_blocked_form_host(url: str) -> bool:
+    try:
+        parsed = urlparse.urlsplit(url)
+        host = (parsed.hostname or "").casefold().rstrip(".")
+        path = (parsed.path or "/").casefold()
+    except (TypeError, ValueError):
+        return False
+    if host == "docs.google.com":
+        return path == "/forms" or path.startswith("/forms/")
+    if host in _ADMISSION_FORM_HOSTS or any(
+            host.endswith("." + blocked) for blocked in _ADMISSION_FORM_HOSTS):
+        return True
+    return False
+
+
+def _admission_contains_keyword(value: str) -> bool:
+    lowered = (value or "").casefold()
+    for keyword in TECH_RELEVANCE_KEYWORDS:
+        escaped = re.escape(keyword.casefold()).replace(r"\ ", r"\s+")
+        if re.search(r"(?<![a-z0-9]){}(?![a-z0-9])".format(escaped), lowered):
+            return True
+    return False
+
+
+def _admission_geography_locked(value: str) -> bool:
+    lowered = (value or "").casefold()
+    state_pattern = r"(?:{})".format("|".join(
+        re.escape(state) for state in sorted(_ADMISSION_US_STATES, key=len, reverse=True)
+    ))
+    if not re.search(r"\b{}\b".format(state_pattern), lowered):
+        return False
+    # State names in a university or organizer name are not by themselves a
+    # lock. These terms identify state-resident/student-only aid pages.
+    if re.search(r"\b(?:resident|residents|student|students|aid|tuition|scholarship|award)\b", lowered):
+        return True
+    return bool(re.search(r"\b(?:only|exclusive|eligib)\w*\b", lowered))
+
+
+def _admission_is_stale_year(value: str) -> bool:
+    years = [int(item) for item in _ADMISSION_YEAR.findall(value or "")]
+    return bool(years) and max(years) < _ADMISSION_CURRENT_YEAR
 
 
 def _admission_url_pattern(url: str) -> bool:
@@ -266,6 +337,8 @@ def _admission_host_overlap(name: str, url: str) -> bool:
 def admit_candidate(html: str, url: str, category: str, anchor: str = "") -> Tuple[bool, str, str]:
     """Pure page-level gate for turning a discovered link into a programme seed."""
     del category  # The programme vocabulary is intentionally shared by categories.
+    if _admission_blocked_form_host(url):
+        return False, "blocked_form_host", ""
     if _admission_url_pattern(url):
         return False, "url_pattern", ""
     page = _admission_page_fields(html)
@@ -307,8 +380,16 @@ def admit_candidate(html: str, url: str, category: str, anchor: str = "") -> Tup
     if not (_has_admission_programme_signal(return_name) or
             _has_admission_programme_signal(page.title)):
         return False, "no_programme_signal", ""
-    visible = pagetext.to_text(html or "").casefold()
-    if not any(signal in visible for signal in _ADMISSION_APPLICATION_SIGNALS):
+    visible = pagetext.to_text(html or "")
+    page_text = " ".join(filter(None, (page.title, page.og_title, page.h1, visible)))
+    if _admission_is_stale_year(page_text):
+        return False, "stale_year", ""
+    if not (_admission_contains_keyword(page_text) or
+            (_has_admission_programme_signal(return_name) and
+             re.search(r"\b(?:fellowships?|grants?)\b", page_text, re.I) and
+             not _admission_geography_locked(page_text))):
+        return False, "no_tech_signal", ""
+    if not any(signal in visible.casefold() for signal in _ADMISSION_APPLICATION_SIGNALS):
         return False, "no_application_signal", ""
     return True, "admitted", return_name
 
@@ -350,6 +431,9 @@ def admit_seeds(
             rejected.append({"url": "", "reason": "invalid_seed"})
             continue
         url = str(seed.get("official_url") or "")
+        if _admission_blocked_form_host(url):
+            rejected.append({"url": url, "reason": "blocked_form_host"})
+            continue
         if _admission_url_pattern(url):
             rejected.append({"url": url, "reason": "url_pattern"})
             continue
