@@ -190,7 +190,7 @@ class HubSeedsTests(unittest.TestCase):
 
     def test_admission_rejects_missing_application_signal(self):
         ok, reason, _ = admit_candidate(
-            "<h1>Summer Fellowship</h1><p>About this opportunity</p>",
+            "<h1>Summer Fellowship</h1><p>About this computer science opportunity</p>",
             "https://example.org/fellowship", "research",
         )
         self.assertFalse(ok)
@@ -199,7 +199,7 @@ class HubSeedsTests(unittest.TestCase):
     def test_admission_accepts_and_cleans_names(self):
         ok, reason, name = admit_candidate(
             "<title>MLH Fellowship | Major League Hacking</title>"
-            "<p>Apply now</p>",
+            "<p>Software engineering. Apply now</p>",
             "https://example.org/fellowship", "research",
         )
         self.assertTrue(ok)
@@ -239,13 +239,13 @@ class HubSeedsTests(unittest.TestCase):
             (
                 "<title>Bhumi Fellowship | Two years. One Classroom. Influence Change.</title>"
                 "<h1>Two years. One Classroom. Influence Change.</h1>"
-                "<p>Apply</p>",
+                "<p>Software engineering. Apply</p>",
                 "https://bhumi.example/fellowship",
                 "Bhumi Fellowship",
             ),
             (
                 "<title>Acerca de - 52 Parindey Fellowship</title>"
-                "<h1>Acerca de</h1><p>Apply</p>",
+                "<h1>Acerca de</h1><p>Research fellowship. Apply</p>",
                 "https://parindey.example/fellowship",
                 "52 Parindey Fellowship",
             ),
@@ -292,8 +292,8 @@ class HubSeedsTests(unittest.TestCase):
             ("<title>Arts Scholarship</title><p>Apply now</p>", False),
             ("<title>TOPS Louisiana Scholarship</title><p>Apply now</p>", False),
             ("<title>Oregon Student Aid</title><p>Apply now</p>", False),
-            ("<title>Community Fellowship</title><p>Apply now</p>", True),
-            ("<title>Community Grant</title><p>Apply now</p>", True),
+            ("<title>Community Fellowship</title><p>Apply now</p>", False),
+            ("<title>Community Grant</title><p>Apply now</p>", False),
         ]
         for html, expected in fixtures:
             with self.subTest(html=html):
@@ -332,7 +332,7 @@ class HubSeedsTests(unittest.TestCase):
             ("<title>Summer Research Fellowship Program 2022</title><p>Apply now</p>", False),
             ("<title>Summer Research Fellowship Program 2026</title><p>Apply now</p>", True),
             ("<title>Summer Research Fellowship Program 2027</title><p>Apply now</p>", True),
-            ("<title>Summer Research Fellowship 2022</title><p>Apply for 2026</p>", True),
+            ("<title>Summer Research Fellowship 2022</title><p>Apply for 2026</p>", False),
         )
         for html, expected in fixtures:
             with self.subTest(html=html):
@@ -342,7 +342,62 @@ class HubSeedsTests(unittest.TestCase):
                 self.assertEqual(ok, expected)
                 if not expected:
                     self.assertEqual(reason, "stale_year")
+    def test_admission_stale_year_uses_title_and_heading_not_body(self):
+        ok, reason, _ = admit_candidate(
+            "<title>Summer Research Fellowship Programme 2021</title>"
+            "<h1>Summer Research Fellowship Programme</h1>"
+            "<nav>Applications for 2026</nav><p>Apply now</p>",
+            "https://official.example/summer-research-fellowship-2021", "research",
+        )
+        self.assertFalse(ok)
+        self.assertEqual(reason, "stale_year")
+        ok, reason, _ = admit_candidate(
+            "<title>Summer Research Fellowship Programme 2021</title>"
+            "<h1>Summer Research Fellowship Programme 2026</h1><p>Apply now</p>",
+            "https://official.example/summer-research-fellowship-2021", "research",
+        )
+        self.assertTrue(ok)
+        self.assertEqual(reason, "admitted")
 
+    def test_admission_rejects_exact_stale_form_and_ambassador_examples(self):
+        fixtures = (
+            ("Summer Research Fellowship Programme 2021", "https://official.example/program", "stale_year"),
+            ("Facebook Fellowship 101 - Previous outline for basics for PhDs", "https://official.example/fellowship", "stale_year"),
+            ("GHC Scholarships", "https://official.example/2019-student-academic/scholarships", "stale_year"),
+            ("Codechef Representative Program", "https://official.example/representative-program", "ambassador"),
+            ("Apple PhD fellowship in AI/ML", "https://official.example/apple-scholars-aiml-2024", "stale_year"),
+            ("Dell Campus Ambassador", "https://official.example/campus-ambassador", "ambassador"),
+            ("ServiceNow Campus Leaders — Deadline: Rolling Ambassador Program", "https://official.example/campus-leaders", "ambassador"),
+            ("NSF Dristtributed Research Experiences for Undergraduates (DREU)", "https://jotform.com/242948236029866", "blocked_form_host"),
+        )
+        for title, url, expected_reason in fixtures:
+            with self.subTest(title=title):
+                ok, reason, _ = admit_candidate(
+                    "<title>{}</title><p>Apply now</p>".format(title), url, "research",
+                )
+                self.assertFalse(ok)
+                self.assertEqual(reason, expected_reason)
 
-if __name__ == "__main__":
-    unittest.main()
+    def test_admission_form_host_checks_final_url(self):
+        ok, reason, _ = admit_candidate(
+            "<title>Software Fellowship</title><p>Apply now</p>",
+            "https://official.example/software-fellowship", "research",
+            effective_url="https://forms.gle/example",
+        )
+        self.assertFalse(ok)
+        self.assertEqual(reason, "blocked_form_host")
+
+    def test_admission_keeps_expected_technical_fellowships_and_scholarships(self):
+        fixtures = (
+            ("NVIDIA Graduate Fellowship", "https://nvidia.example/graduate-fellowships"),
+            ("Google PhD Fellowship", "https://google.example/phd-fellowship"),
+            ("Women Techmakers Scholarship by Google", "https://womentechmakers.example/scholars"),
+        )
+        for title, url in fixtures:
+            with self.subTest(title=title):
+                ok, reason, name = admit_candidate(
+                    "<title>{}</title><p>Computer science research. Apply now</p>".format(title), url, "scholarships",
+                )
+                self.assertTrue(ok)
+                self.assertEqual(reason, "admitted")
+                self.assertEqual(name, title)

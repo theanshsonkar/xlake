@@ -68,7 +68,7 @@ TECH_RELEVANCE_KEYWORDS = (
     "cybersecurity", "cyber security", "open source", "developer", "development",
     "coding", "programming", "technology", "tech", "computing", "robotics",
     "cloud", "quantum", "mathematics", "statistics", "informatics", "digital",
-    "algorithm", "blockchain", "bioinformatics",
+    "algorithm", "blockchain", "bioinformatics", "techmakers",
 )
 _ADMISSION_FORM_HOSTS = frozenset({
     "tally.so", "forms.gle", "typeform.com", "airtable.com", "jotform.com",
@@ -76,6 +76,11 @@ _ADMISSION_FORM_HOSTS = frozenset({
 })
 _ADMISSION_CURRENT_YEAR = 2026
 _ADMISSION_YEAR = re.compile(r"\b(?:19|20)\d{2}\b")
+_ADMISSION_STALE_MARKER = re.compile(r"\b(?:previous|outdated|archived|archive)\b", re.IGNORECASE)
+_ADMISSION_AMBASSADOR = re.compile(
+    r"\b(?:ambassadors?|representatives?|campus[\s_-]*(?:reps?|representatives?|leaders?))\b",
+    re.IGNORECASE,
+)
 _ADMISSION_US_STATES = frozenset({
     "alabama", "alaska", "arizona", "arkansas", "california", "colorado",
     "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho",
@@ -219,9 +224,30 @@ def _admission_geography_locked(value: str) -> bool:
     return bool(re.search(r"\b(?:only|exclusive|eligib)\w*\b", lowered))
 
 
-def _admission_is_stale_year(value: str) -> bool:
-    years = [int(item) for item in _ADMISSION_YEAR.findall(value or "")]
-    return bool(years) and max(years) < _ADMISSION_CURRENT_YEAR
+def _admission_is_stale_year(title: str, h1: str, *urls: str) -> bool:
+    title_text = title or ""
+    title_years = [int(item) for item in _ADMISSION_YEAR.findall(title_text)]
+    source_years = list(title_years)
+    for url in urls:
+        try:
+            source_years.extend(
+                int(item) for item in _ADMISSION_YEAR.findall(urlparse.urlsplit(url).path or "")
+            )
+        except (TypeError, ValueError):
+            continue
+    has_past_source_year = any(year <= _ADMISSION_CURRENT_YEAR - 1 for year in source_years)
+    has_current_heading_year = any(
+        int(item) >= _ADMISSION_CURRENT_YEAR
+        for item in _ADMISSION_YEAR.findall(" ".join((title_text, h1 or "")))
+    )
+    return (has_past_source_year and not has_current_heading_year) or bool(
+        _ADMISSION_STALE_MARKER.search(title_text)
+    )
+
+
+def _admission_is_ambassador(title: str, h1: str, name: str, *urls: str) -> bool:
+    value = " ".join((title or "", h1 or "", name or "", *urls))
+    return bool(_ADMISSION_AMBASSADOR.search(value))
 
 
 def _admission_url_pattern(url: str) -> bool:
@@ -334,14 +360,25 @@ def _admission_host_overlap(name: str, url: str) -> bool:
                                    for word in words)
 
 
-def admit_candidate(html: str, url: str, category: str, anchor: str = "") -> Tuple[bool, str, str]:
+def admit_candidate(
+    html: str,
+    url: str,
+    category: str,
+    anchor: str = "",
+    effective_url: str = "",
+) -> Tuple[bool, str, str]:
     """Pure page-level gate for turning a discovered link into a programme seed."""
     del category  # The programme vocabulary is intentionally shared by categories.
-    if _admission_blocked_form_host(url):
+    checked_urls = tuple(item for item in (url, effective_url) if item)
+    if any(_admission_blocked_form_host(item) for item in checked_urls):
         return False, "blocked_form_host", ""
     if _admission_url_pattern(url):
         return False, "url_pattern", ""
     page = _admission_page_fields(html)
+    if _admission_is_stale_year(page.title, page.h1, *checked_urls):
+        return False, "stale_year", ""
+    if _admission_is_ambassador(page.title, page.h1, anchor, *checked_urls):
+        return False, "ambassador", ""
     for script in page.json_ld:
         try:
             payload = json.loads(script)
@@ -382,12 +419,14 @@ def admit_candidate(html: str, url: str, category: str, anchor: str = "") -> Tup
         return False, "no_programme_signal", ""
     visible = pagetext.to_text(html or "")
     page_text = " ".join(filter(None, (page.title, page.og_title, page.h1, visible)))
-    if _admission_is_stale_year(page_text):
+    if _admission_is_ambassador(page.title, page.h1, " ".join((return_name, anchor)), *checked_urls):
+        return False, "ambassador", ""
+    if _admission_is_stale_year(page.title, page.h1, *checked_urls):
         return False, "stale_year", ""
-    if not (_admission_contains_keyword(page_text) or
-            (_has_admission_programme_signal(return_name) and
-             re.search(r"\b(?:fellowships?|grants?)\b", page_text, re.I) and
-             not _admission_geography_locked(page_text))):
+    # Body prose remains a useful technical signal; stale-year is deliberately
+    # checked above without it so navigation/footer years cannot rescue a page.
+    relevance_text = page_text
+    if not _admission_contains_keyword(relevance_text):
         return False, "no_tech_signal", ""
     if not any(signal in visible.casefold() for signal in _ADMISSION_APPLICATION_SIGNALS):
         return False, "no_application_signal", ""
@@ -419,6 +458,7 @@ def admit_seeds(
     max_fetch: int = 120,
 ) -> Tuple[List[Dict], List[Dict[str, str]]]:
     """Fetch candidate pages politely and return only page-admitted seed records."""
+    global LAST_ADMISSION_STATS
     admitted: List[Dict] = []
     rejected: List[Dict[str, str]] = []
     host_last: Dict[str, float] = {}
@@ -478,13 +518,19 @@ def admit_seeds(
             continue
         evidence = seed.get("official_evidence")
         anchor = evidence.get("anchor_text", "") if isinstance(evidence, dict) else ""
-        ok, reason, name = admit_candidate(html, url, category, str(anchor or ""))
+        ok, reason, name = admit_candidate(
+            html, url, category, str(anchor or ""), effective_url=final_url,
+        )
         if not ok:
             rejected.append({"url": url, "reason": reason})
             continue
         admitted_seed = dict(seed)
         admitted_seed["programme_name"] = name
         admitted.append(admitted_seed)
+    LAST_ADMISSION_STATS = {
+        key: sum(1 for item in rejected if item.get("reason") == reason)
+        for reason, key in _FILTER_COUNTERS.items()
+    }
     return admitted, rejected
 
 EXTRA_EXCLUDED_DOMAINS = frozenset({
@@ -496,6 +542,15 @@ REQUIRED_SEED_FIELDS = (
     "allowed_path_hints", "check_cadence",
 )
 LAST_GENERATE_STATS: Dict[str, object] = {}
+LAST_ADMISSION_STATS: Dict[str, int] = {}
+
+
+_FILTER_COUNTERS = {
+    "blocked_form_host": "rejected_form_host",
+    "no_tech_signal": "rejected_tech",
+    "stale_year": "rejected_stale_year",
+    "ambassador": "rejected_ambassador",
+}
 
 
 def _collapsed(value: object) -> str:
