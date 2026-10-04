@@ -1,5 +1,6 @@
 import unittest
 from copy import deepcopy
+from unittest import mock
 from urllib.parse import urljoin
 
 from categories.startup_founder.harvest import (
@@ -344,28 +345,15 @@ class TestStartupFounderHarvester(unittest.TestCase):
             )
         )
 
-    def test_robots_cross_origin_redirect_is_conservatively_blocked(self):
-        class RobotsRedirectFetcher(Fetcher):
-            def __init__(self):
-                super().__init__()
-                self.calls = []
-
-            def _request_once(self, url, headers):
-                self.calls.append(url)
-                return FetchResult(
-                    "dead",
-                    status=302,
-                    final_url=url,
-                    reason="https://destination.example/robots.txt",
-                )
-
-        fetcher = RobotsRedirectFetcher()
-        allowed, reason = fetcher._robots_allows("https://source.example/program")
-
-        self.assertFalse(allowed)
-        self.assertEqual(reason, "robots_cross_origin_redirect_blocked")
-        self.assertEqual(fetcher.calls, ["https://source.example/robots.txt"])
-        self.assertEqual(set(fetcher._robots_cache), {"https://source.example:443"})
+    def test_robots_delegates_to_shared_module(self):
+        url = "https://source.example/program"
+        fetcher = Fetcher()
+        with mock.patch(
+            "categories.startup_founder.harvest.robots.allowed",
+            return_value=(False, "robots_disallow"),
+        ) as allowed:
+            self.assertEqual(fetcher._robots_allows(url), (False, "robots_disallow"))
+        allowed.assert_called_once_with(url)
 
     def test_liveness_sampling_does_not_modify_record_status_or_schema(self):
         candidate = Candidate(

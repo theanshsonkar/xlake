@@ -35,6 +35,8 @@ from urllib import error as urllib_error
 from urllib import parse as urllib_parse
 from urllib import request as urllib_request
 
+from core import robots
+
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 HUBS_PATH = Path(__file__).with_name("research_hubs.json")
@@ -44,9 +46,7 @@ USER_AGENT = (
     "(+https://github.com/theanshsonkar/xlake; "
     "contact: anshsonkar@users.noreply.github.com)"
 )
-ROBOTS_AGENT_TOKEN = "opportunityradarresearchharvester"
 REQUEST_CAP = 150
-HOST_DELAY_SECONDS = 2.0
 REQUEST_TIMEOUT_SECONDS = 20
 MAX_BODY_BYTES = 5 * 1024 * 1024
 MAX_REDIRECTS = 5
@@ -127,36 +127,6 @@ class FetchResult:
 
 
 @dataclass
-class RobotsRules:
-    allow: List[str] = field(default_factory=list)
-    disallow: List[str] = field(default_factory=list)
-
-    def allows(self, path: str) -> bool:
-        if not path.startswith("/"):
-            path = "/" + path
-        allow_length = max(
-            (self._match_length(rule, path) for rule in self.allow), default=-1
-        )
-        deny_length = max(
-            (self._match_length(rule, path) for rule in self.disallow), default=-1
-        )
-        return deny_length < 0 or allow_length >= deny_length
-
-    @staticmethod
-    def _match_length(pattern: str, path: str) -> int:
-        if not pattern:
-            return -1
-        end_anchored = pattern.endswith("$")
-        body = pattern[:-1] if end_anchored else pattern
-        expression = "".join(".*" if char == "*" else re.escape(char) for char in body)
-        expression = "^" + expression + ("$" if end_anchored else "")
-        try:
-            return len(pattern) if re.match(expression, path) else -1
-        except re.error:
-            return -1
-
-
-@dataclass
 class Candidate:
     url: str
     memberships: Dict[str, Tuple[str, str]] = field(default_factory=dict)
@@ -222,7 +192,6 @@ class Fetcher:
     def __init__(self) -> None:
         self.total_requests = 0
         self._last_request_by_origin: Dict[str, float] = {}
-        self._robots_cache: Dict[str, Tuple[bool, Optional[RobotsRules], str]] = {}
         self._opener = urllib_request.build_opener(NoRedirectHandler())
 
     def fetch(self, url: str, headers: Optional[Dict[str, str]] = None) -> FetchResult:
@@ -279,55 +248,7 @@ class Fetcher:
         parsed = parse_http_url(url)
         if parsed is None:
             return False, "invalid URL"
-        origin = origin_key_for(parsed)
-        cached = self._robots_cache.get(origin)
-        if cached is None:
-            cached = self._fetch_robots(parsed)
-            self._robots_cache[origin] = cached
-        ok, rules, reason = cached
-        if not ok or rules is None:
-            return False, reason
-        path = parsed.path or "/"
-        if parsed.query:
-            path += "?" + parsed.query
-        if not rules.allows(path):
-            return False, "robots_disallow"
-        return True, reason
-
-    def _fetch_robots(self, parsed: urllib_parse.SplitResult) -> Tuple[bool, Optional[RobotsRules], str]:
-        current = urllib_parse.urlunsplit((parsed.scheme, parsed.netloc, "/robots.txt", "", ""))
-        seen: Set[str] = set()
-        for _ in range(MAX_REDIRECTS + 1):
-            if current in seen:
-                return False, None, "robots_redirect_loop"
-            seen.add(current)
-            response = self._request_once(
-                current,
-                {"User-Agent": USER_AGENT, "Accept": "text/plain,*/*;q=0.5"},
-            )
-            if response.state == "failed":
-                return False, None, "robots_fetch_failed:{}".format(response.reason or "transport_error")
-            status = response.status or 0
-            if status in {301, 302, 303, 307, 308}:
-                if not response.reason:
-                    return False, None, "robots_redirect_missing_location"
-                current = urllib_parse.urljoin(current, response.reason)
-                if parse_http_url(current) is None:
-                    return False, None, "robots_redirect_invalid"
-                continue
-            if status == 404:
-                return True, RobotsRules(), "robots_missing_allow"
-            if status in {401, 403}:
-                return False, None, "robots_blocked_http_{}".format(status)
-            if status == 429 or 500 <= status <= 599:
-                return False, None, "robots_unavailable_http_{}".format(status)
-            if status != 200:
-                return False, None, "robots_unavailable_http_{}".format(status)
-            try:
-                return True, parse_robots(response.body), "robots_allow"
-            except ValueError as exc:
-                return False, None, "robots_parse_failed:{}".format(exc)
-        return False, None, "robots_redirect_limit"
+        return robots.allowed(url)
 
     def _request_once(self, url: str, headers: Dict[str, str]) -> FetchResult:
         parsed = parse_http_url(url)
@@ -335,10 +256,12 @@ class Fetcher:
             return FetchResult("failed", url=url, final_url=url, reason="invalid URL")
         if self.total_requests >= REQUEST_CAP:
             raise RequestCapExceeded("HTTP request cap of {} reached".format(REQUEST_CAP))
+        if robots.is_rate_limited(url):
+            return FetchResult("failed", url=url, final_url=url, reason="rate_limited_backoff")
         origin = origin_key_for(parsed)
         previous = self._last_request_by_origin.get(origin)
         if previous is not None:
-            wait = HOST_DELAY_SECONDS - (time.monotonic() - previous)
+            wait = robots.crawl_delay(url) - (time.monotonic() - previous)
             if wait > 0:
                 time.sleep(wait)
         self._last_request_by_origin[origin] = time.monotonic()
@@ -366,6 +289,11 @@ class Fetcher:
             response_headers = {
                 key.lower(): value for key, value in exc.headers.items()
             } if exc.headers else {}
+            if exc.code == 429:
+                robots.note_rate_limited(
+                    url, exc.headers.get("Retry-After") if exc.headers else None
+                )
+                location = "rate_limited_429"
             return FetchResult(
                 "dead",
                 status=exc.code,
@@ -380,58 +308,6 @@ class Fetcher:
 
 class RequestCapExceeded(RuntimeError):
     """Raised before a request could breach the global cap."""
-
-
-def parse_robots(text: str) -> RobotsRules:
-    """Parse the relevant robots group, failing on malformed directives."""
-    groups: List[Tuple[List[str], RobotsRules]] = []
-    agents: Optional[List[str]] = None
-    rules: Optional[RobotsRules] = None
-    for raw_line in text.splitlines():
-        line = raw_line.split("#", 1)[0].strip()
-        if not line:
-            agents = None
-            rules = None
-            continue
-        field, separator, value = line.partition(":")
-        if not separator:
-            raise ValueError("directive without colon")
-        field = field.strip().lower()
-        value = value.strip()
-        if field == "user-agent":
-            if agents is None:
-                agents = []
-                rules = RobotsRules()
-                groups.append((agents, rules))
-            if not value:
-                raise ValueError("empty user-agent")
-            agents.append(value.lower())
-        elif field in {"allow", "disallow"}:
-            if agents is None or rules is None:
-                raise ValueError("rule before user-agent")
-            if value:
-                getattr(rules, field).append(urllib_parse.unquote(value))
-        elif field == "crawl-delay":
-            # The harvester deliberately uses its own fixed politeness delay.
-            # Validate malformed values rather than treating them as a blank read.
-            if agents is None:
-                raise ValueError("crawl-delay before user-agent")
-            try:
-                float(value)
-            except ValueError as exc:
-                raise ValueError("invalid crawl-delay") from exc
-        else:
-            # Unknown extensions are legal robots directives and do not affect
-            # path permission, so they are ignored.
-            continue
-    selected = [
-        rules
-        for agents, rules in groups
-        if any(agent in ROBOTS_AGENT_TOKEN for agent in agents)
-    ]
-    if not selected:
-        selected = [rules for agents, rules in groups if "*" in agents]
-    return selected[0] if selected else RobotsRules()
 
 
 def parse_http_url(url: str) -> Optional[urllib_parse.SplitResult]:
