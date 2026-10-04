@@ -342,6 +342,13 @@ class HubSeedsTests(unittest.TestCase):
                 self.assertEqual(ok, expected)
                 if not expected:
                     self.assertEqual(reason, "stale_year")
+        ok, reason, _ = admit_candidate(
+            "<title>Summer Research Fellowship Program</title><p>Apply now</p>",
+            "https://official.example/summer-fellowship-2025", "research",
+        )
+        self.assertFalse(ok)
+        self.assertEqual(reason, "stale_year")
+
     def test_admission_stale_year_uses_title_and_heading_not_body(self):
         ok, reason, _ = admit_candidate(
             "<title>Summer Research Fellowship Programme 2021</title>"
@@ -356,8 +363,50 @@ class HubSeedsTests(unittest.TestCase):
             "<h1>Summer Research Fellowship Programme 2026</h1><p>Apply now</p>",
             "https://official.example/summer-research-fellowship-2021", "research",
         )
-        self.assertTrue(ok)
-        self.assertEqual(reason, "admitted")
+        self.assertFalse(ok)
+        self.assertEqual(reason, "stale_year")
+
+    def test_admission_programme_word_and_directory_cases(self):
+        rejected = (
+            "IISER-K Summer Research Programme 2025",
+            "ETH Zurich",
+            "Fellowship Finder",
+        )
+        for title in rejected:
+            with self.subTest(title=title):
+                ok, _reason, _ = admit_candidate(
+                    "<title>{}</title><h1>{}</h1>"
+                    "<p>Computer science research. Apply now</p>".format(title, title),
+                    "https://official.example/{}".format(title.casefold().replace(" ", "-")),
+                    "fellowships",
+                )
+                self.assertFalse(ok)
+
+        admitted = (
+            "NVIDIA Graduate Fellowship",
+            "Thiel Fellowship",
+            "Google PhD fellowship program",
+            "GEM Fellowship",
+            "ACM Doctoral Dissertation Award",
+            "KDE Mentorship",
+            "WorldQuant BRAIN",
+            "GREAT Program",
+        )
+        for title in admitted:
+            with self.subTest(title=title):
+                page_evidence = (
+                    "WorldQuant BRAIN is a research program for students. "
+                    if title == "WorldQuant BRAIN" else ""
+                )
+                ok, reason, name = admit_candidate(
+                    "<title>{}</title><h1>{}</h1><p>{}Computer science research. "
+                    "Apply now</p>".format(title, title, page_evidence),
+                    "https://official.example/{}".format(title.casefold().replace(" ", "-")),
+                    "fellowships",
+                )
+                self.assertTrue(ok)
+                self.assertEqual(reason, "admitted")
+                self.assertEqual(name, title)
 
     def test_admission_rejects_exact_stale_form_and_ambassador_examples(self):
         fixtures = (

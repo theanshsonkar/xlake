@@ -77,6 +77,19 @@ _ADMISSION_FORM_HOSTS = frozenset({
 _ADMISSION_CURRENT_YEAR = 2026
 _ADMISSION_YEAR = re.compile(r"\b(?:19|20)\d{2}\b")
 _ADMISSION_STALE_MARKER = re.compile(r"\b(?:previous|outdated|archived|archive)\b", re.IGNORECASE)
+_ADMISSION_PROGRAMME_WORDS = (
+    "fellowship", "scholarship", "program", "programme", "grant", "internship",
+    "residency", "award", "prize", "mentorship", "scheme", "accelerator",
+    "challenge", "bursary", "stipend", "studentship",
+)
+_ADMISSION_DIRECTORY_TERMS = re.compile(
+    r"\b(?:finder|directory|database|list\s+of|top\s+(?:10|20)|best|compare)\b",
+    re.IGNORECASE,
+)
+# WorldQuant BRAIN is the programme's branded name, while its page prose
+# identifies it as a programme. Keep this exception tied to both the exact
+# brand and page-text evidence instead of broadening the title vocabulary.
+_ADMISSION_PAGE_EVIDENCE_NAMES = frozenset({"worldquant brain"})
 _ADMISSION_AMBASSADOR = re.compile(
     r"\b(?:ambassadors?|representatives?|campus[\s_-]*(?:reps?|representatives?|leaders?))\b",
     re.IGNORECASE,
@@ -102,11 +115,7 @@ _ADMISSION_GENERIC_NAMES = frozenset({
     "faq", "faqs", "home page", "homepage", "login", "log in", "menu", "search",
     "skip to content",
 })
-_ADMISSION_PROGRAMME_NOUNS = (
-    "fellowship", "programme", "program", "accelerator", "incubator", "scholarship",
-    "grant", "award", "mentorship", "residency", "cohort", "bootcamp", "challenge",
-    "competition", "summer of", "internship", "studio", "venture", "fund", "lab",
-)
+_ADMISSION_PROGRAMME_NOUNS = _ADMISSION_PROGRAMME_WORDS
 _ADMISSION_APPLICATION_SIGNALS = (
     "apply", "application", "eligib", "deadline", "admission", "nominat", "enrol",
     "cohort", "join us",
@@ -225,9 +234,13 @@ def _admission_geography_locked(value: str) -> bool:
 
 
 def _admission_is_stale_year(title: str, h1: str, *urls: str) -> bool:
+    # H1 years are source evidence too; only a current/future title year can
+    # establish that an otherwise stale page is the current cycle.
     title_text = title or ""
     title_years = [int(item) for item in _ADMISSION_YEAR.findall(title_text)]
-    source_years = list(title_years)
+    source_years = title_years + [
+        int(item) for item in _ADMISSION_YEAR.findall(h1 or "")
+    ]
     for url in urls:
         try:
             source_years.extend(
@@ -236,11 +249,11 @@ def _admission_is_stale_year(title: str, h1: str, *urls: str) -> bool:
         except (TypeError, ValueError):
             continue
     has_past_source_year = any(year <= _ADMISSION_CURRENT_YEAR - 1 for year in source_years)
-    has_current_heading_year = any(
+    has_current_title_year = any(
         int(item) >= _ADMISSION_CURRENT_YEAR
-        for item in _ADMISSION_YEAR.findall(" ".join((title_text, h1 or "")))
+        for item in _ADMISSION_YEAR.findall(title_text)
     )
-    return (has_past_source_year and not has_current_heading_year) or bool(
+    return (has_past_source_year and not has_current_title_year) or bool(
         _ADMISSION_STALE_MARKER.search(title_text)
     )
 
@@ -286,12 +299,20 @@ def _admission_types(value: Any) -> Iterable[str]:
 
 def _has_admission_programme_signal(value: str) -> bool:
     for noun in _ADMISSION_PROGRAMME_NOUNS:
-        if noun == "summer of":
-            if re.search(r"\bsummer\s+of\b", value, re.I):
-                return True
-        elif re.search(r"(?<![A-Za-z0-9]){}(?![A-Za-z0-9])".format(re.escape(noun)), value, re.I):
+        if re.search(r"(?<![A-Za-z0-9]){}(?![A-Za-z0-9])".format(re.escape(noun)), value, re.I):
             return True
     return False
+
+
+def _admission_is_directory_page(*values: str) -> bool:
+    return bool(_ADMISSION_DIRECTORY_TERMS.search(" ".join(value or "" for value in values)))
+
+
+def _admission_has_page_programme_evidence(name: str, visible: str) -> bool:
+    return (
+        name.casefold() in _ADMISSION_PAGE_EVIDENCE_NAMES
+        and _has_admission_programme_signal(visible)
+    )
 
 
 _ADMISSION_TITLE_SPLITTER = re.compile(r" \| | - | – | — | :: | : | · ")
@@ -368,14 +389,15 @@ def admit_candidate(
     effective_url: str = "",
 ) -> Tuple[bool, str, str]:
     """Pure page-level gate for turning a discovered link into a programme seed."""
-    del category  # The programme vocabulary is intentionally shared by categories.
+    category_is_directory = category in DIRECTORY_CATEGORIES
     checked_urls = tuple(item for item in (url, effective_url) if item)
     if any(_admission_blocked_form_host(item) for item in checked_urls):
         return False, "blocked_form_host", ""
     if _admission_url_pattern(url):
         return False, "url_pattern", ""
     page = _admission_page_fields(html)
-    if _admission_is_stale_year(page.title, page.h1, *checked_urls):
+    stale_title = " ".join(filter(None, (page.title, anchor)))
+    if _admission_is_stale_year(stale_title, page.h1, *checked_urls):
         return False, "stale_year", ""
     if _admission_is_ambassador(page.title, page.h1, anchor, *checked_urls):
         return False, "ambassador", ""
@@ -389,12 +411,17 @@ def admit_candidate(
             return False, "article_or_job", ""
     if page.og_type.strip().casefold() == "article":
         return False, "article_or_job", ""
+    if _admission_is_directory_page(
+        page.title, page.h1, page.og_title, page.og_site_name, anchor, url,
+    ):
+        return False, "directory_page", ""
 
     candidates = _admission_name_candidates(page, anchor)
     # A host-labelled first segment is a useful brand name even when a later
     # title segment is marketing copy containing a programme noun.
     for raw, name in candidates:
-        if (_admission_name_passes(raw, name, require_noun=False) and
+        if (not category_is_directory and
+                _admission_name_passes(raw, name, require_noun=False) and
                 not _has_admission_programme_signal(name) and
                 _admission_host_overlap(name, url)):
             return_name = name
@@ -409,19 +436,22 @@ def admit_candidate(
     if not return_name:
         for raw, name in candidates:
             if (_admission_name_passes(raw, name, require_noun=False) and
-                    _admission_host_overlap(name, url)):
+                    ((not category_is_directory and _admission_host_overlap(name, url)) or
+                     name.casefold() in _ADMISSION_PAGE_EVIDENCE_NAMES)):
                 return_name = name
                 break
     if not return_name:
         return False, "no_name", ""
-    if not (_has_admission_programme_signal(return_name) or
-            _has_admission_programme_signal(page.title)):
-        return False, "no_programme_signal", ""
+
     visible = pagetext.to_text(html or "")
+    header_text = " ".join((page.title, page.h1))
+    page_evidence = _admission_has_page_programme_evidence(return_name, visible)
+    if not _has_admission_programme_signal(header_text) and not page_evidence:
+        return False, "no_programme_signal", ""
     page_text = " ".join(filter(None, (page.title, page.og_title, page.h1, visible)))
     if _admission_is_ambassador(page.title, page.h1, " ".join((return_name, anchor)), *checked_urls):
         return False, "ambassador", ""
-    if _admission_is_stale_year(page.title, page.h1, *checked_urls):
+    if _admission_is_stale_year(stale_title, page.h1, *checked_urls):
         return False, "stale_year", ""
     # Body prose remains a useful technical signal; stale-year is deliberately
     # checked above without it so navigation/footer years cannot rescue a page.
@@ -550,6 +580,18 @@ _FILTER_COUNTERS = {
     "no_tech_signal": "rejected_tech",
     "stale_year": "rejected_stale_year",
     "ambassador": "rejected_ambassador",
+    "directory_page": "rejected_directory",
+    "no_programme_signal": "rejected_programme_signal",
+    "no_name": "rejected_no_name",
+    "url_pattern": "rejected_url_pattern",
+    "article_or_job": "rejected_article_or_job",
+    "fetch_error": "rejected_fetch_error",
+    "no_application_signal": "rejected_application_signal",
+    "robots_disallowed": "rejected_robots",
+    "robots_error": "rejected_robots_error",
+    "rate_limited": "rejected_rate_limited",
+    "fetch_cap": "rejected_fetch_cap",
+    "invalid_seed": "rejected_invalid_seed",
 }
 
 
