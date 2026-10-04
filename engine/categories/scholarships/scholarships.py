@@ -31,6 +31,40 @@ SOURCE_REGISTRY = (
     {"source_id": "scholarship-stipendium-hungaricum", "programme_id": "scholarship-stipendium-hungaricum", "programme_name": "Stipendium Hungaricum", "organizer": "Tempus Public Foundation", "official_url": "https://stipendiumhungaricum.hu/", "allowed_path_hints": [""], "check_cadence": "monthly"},
     {"source_id": "scholarship-turkiye", "programme_id": "scholarship-turkiye", "programme_name": "Türkiye Scholarships", "organizer": "Presidency for Turks Abroad and Related Communities (YTB)", "official_url": "https://www.turkiyeburslari.gov.tr/", "allowed_path_hints": [""], "check_cadence": "monthly"},
 )
+STATIC_SOURCE_REGISTRY = SOURCE_REGISTRY
+GENERATED_SEEDS_ENV = "XLAKE_GENERATED_SEEDS_DIR"
+REQUIRED_SEED_FIELDS = ("source_id", "programme_id", "programme_name", "organizer", "official_url", "allowed_path_hints", "check_cadence")
+
+
+def _load_generated_seeds() -> tuple:
+    generated_dir = os.environ.get(GENERATED_SEEDS_ENV, "").strip()
+    if not generated_dir:
+        return ()
+    path = os.path.join(generated_dir, "scholarships.json")
+    if not os.path.isfile(path):
+        return ()
+    with open(path, encoding="utf-8") as handle:
+        seeds = json.load(handle)
+    if not isinstance(seeds, list):
+        raise ValueError("scholarship generated seed registry must be a JSON array")
+    for index, seed in enumerate(seeds):
+        if not isinstance(seed, dict) or set(seed) != set(REQUIRED_SEED_FIELDS):
+            raise ValueError("generated scholarship seed {} has an invalid schema".format(index))
+    return tuple(seeds)
+
+
+def _combined_source_registry() -> tuple:
+    result = list(STATIC_SOURCE_REGISTRY)
+    seen = {(seed["source_id"], seed["programme_id"]) for seed in result}
+    for seed in _load_generated_seeds():
+        key = (seed["source_id"], seed["programme_id"])
+        if key not in seen:
+            result.append(seed)
+            seen.add(key)
+    return tuple(result)
+
+
+SOURCE_REGISTRY = _combined_source_registry()
 SEEDS = SOURCE_REGISTRY
 SEED_BY_URL = {seed["official_url"]: seed for seed in SOURCE_REGISTRY}
 SOURCE_BY_ID = {seed["programme_id"]: seed for seed in SOURCE_REGISTRY}

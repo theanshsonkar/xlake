@@ -11,6 +11,7 @@ on:
   schedule:
     - cron: "17 1 * * *"     # 06:47 IST — the board sweep, once daily
     - cron: "37 2 * * *"    # 08:07 IST — the page-reader pass, once daily
+    - cron: "17 3 * * 0"     # 08:47 IST — weekly hub seed generation on Sundays
   workflow_dispatch:
     inputs:
       job:
@@ -34,7 +35,8 @@ jobs:
   sweep:
     if: >
       (github.event_name == 'schedule' &&
-       github.event.schedule == '17 1 * * *') ||
+       (github.event.schedule == '17 1 * * *' ||
+        github.event.schedule == '17 3 * * 0')) ||
       (github.event_name == 'workflow_dispatch' &&
        (github.event.inputs.job == 'sweep' || github.event.inputs.job == 'both'))
     runs-on: ubuntu-latest
@@ -44,6 +46,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
       AWS_DEFAULT_REGION: ap-south-1
+      XLAKE_GENERATED_SEEDS_DIR: ${{ github.workspace }}/engine/data/operations/generated_seeds
     defaults:
       run:
         working-directory: engine
@@ -87,6 +90,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: python3 -u -m categories.open_source.contributions
+
+      # Weekly only: generated files stay under operations and are loaded by
+      # the collectors below; the S3 sync publishes lake files only.
+      - name: Generate hub seeds (weekly Sunday)
+        if: github.event_name == 'schedule' && github.event.schedule == '17 3 * * 0'
+        env:
+          XLAKE_HUB_MAX_PAGES: "150"
+          XLAKE_HUB_MAX_PAGES_PER_HOST: "40"
+        run: |
+          mkdir -p data/operations/generated_seeds
+          python3 -u -m categories.hub_seeds --category fellowships --out data/operations/generated_seeds/fellowships.json
+          python3 -u -m categories.hub_seeds --category scholarships --out data/operations/generated_seeds/scholarships.json
 
       - name: Refresh Fellowships
         run: |

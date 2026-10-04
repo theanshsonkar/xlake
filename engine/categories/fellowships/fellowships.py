@@ -24,31 +24,43 @@ from categories.programme_core import (
 )
 
 SEED_PATH = os.path.join(os.path.dirname(__file__), "fellowships_hubs.json")
+GENERATED_SEEDS_ENV = "XLAKE_GENERATED_SEEDS_DIR"
 REQUIRED_SEED_FIELDS = ("source_id", "programme_id", "programme_name", "organizer", "official_url", "allowed_path_hints", "check_cadence")
 
 
+def _seed_registry_paths(path: str) -> tuple:
+    paths = [path]
+    generated_dir = os.environ.get(GENERATED_SEEDS_ENV, "").strip()
+    if generated_dir:
+        generated_path = os.path.join(generated_dir, "fellowships.json")
+        if os.path.abspath(generated_path) != os.path.abspath(path) and os.path.isfile(generated_path):
+            paths.append(generated_path)
+    return tuple(paths)
+
+
 def _load_seed_registry(path: str = SEED_PATH) -> tuple:
-    """Load and validate data-only fellowship seeds from the checked-in registry."""
-    with open(path, encoding="utf-8") as handle:
-        seeds = json.load(handle)
-    if not isinstance(seeds, list):
-        raise ValueError("fellowship seed registry must be a JSON array")
+    """Load static fellowship seeds plus an optional generated-seed overlay."""
     seen_sources, seen_programmes = set(), set()
     validated = []
-    for index, seed in enumerate(seeds):
-        if not isinstance(seed, dict) or any(not seed.get(field) for field in REQUIRED_SEED_FIELDS):
-            raise ValueError("seed {} is missing a required non-empty field".format(index))
-        if set(seed) != set(REQUIRED_SEED_FIELDS):
-            raise ValueError("seed {} contains fields outside the canonical schema".format(index))
-        if seed["source_id"] in seen_sources or seed["programme_id"] in seen_programmes:
-            raise ValueError("duplicate source_id or programme_id in seed {}".format(index))
-        if not seed["official_url"].startswith(("https://", "http://")):
-            raise ValueError("seed {} official_url must be an HTTP(S) URL".format(index))
-        if not isinstance(seed["allowed_path_hints"], list) or not all(isinstance(item, str) for item in seed["allowed_path_hints"]):
-            raise ValueError("seed {} allowed_path_hints must be a string list".format(index))
-        seen_sources.add(seed["source_id"])
-        seen_programmes.add(seed["programme_id"])
-        validated.append(seed)
+    for registry_path in _seed_registry_paths(path):
+        with open(registry_path, encoding="utf-8") as handle:
+            seeds = json.load(handle)
+        if not isinstance(seeds, list):
+            raise ValueError("fellowship seed registry must be a JSON array")
+        for index, seed in enumerate(seeds):
+            if not isinstance(seed, dict) or any(not seed.get(field) for field in REQUIRED_SEED_FIELDS):
+                raise ValueError("seed {} is missing a required non-empty field".format(index))
+            if set(seed) != set(REQUIRED_SEED_FIELDS):
+                raise ValueError("seed {} contains fields outside the canonical schema".format(index))
+            if seed["source_id"] in seen_sources or seed["programme_id"] in seen_programmes:
+                raise ValueError("duplicate source_id or programme_id in seed {}".format(index))
+            if not seed["official_url"].startswith(("https://", "http://")):
+                raise ValueError("seed {} official_url must be an HTTP(S) URL".format(index))
+            if not isinstance(seed["allowed_path_hints"], list) or not all(isinstance(item, str) for item in seed["allowed_path_hints"]):
+                raise ValueError("seed {} allowed_path_hints must be a string list".format(index))
+            seen_sources.add(seed["source_id"])
+            seen_programmes.add(seed["programme_id"])
+            validated.append(seed)
     return tuple(validated)
 
 

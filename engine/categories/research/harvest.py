@@ -46,7 +46,8 @@ USER_AGENT = (
     "(+https://github.com/theanshsonkar/xlake; "
     "contact: anshsonkar@users.noreply.github.com)"
 )
-REQUEST_CAP = 150
+REQUEST_CAP = int(os.environ.get("XLAKE_HUB_MAX_PAGES", "150"))
+REQUEST_HOST_CAP = int(os.environ.get("XLAKE_HUB_MAX_PAGES_PER_HOST", "0"))
 REQUEST_TIMEOUT_SECONDS = 20
 MAX_BODY_BYTES = 5 * 1024 * 1024
 MAX_REDIRECTS = 5
@@ -191,6 +192,7 @@ class Fetcher:
 
     def __init__(self) -> None:
         self.total_requests = 0
+        self._requests_by_host: Dict[str, int] = {}
         self._last_request_by_origin: Dict[str, float] = {}
         self._opener = urllib_request.build_opener(NoRedirectHandler())
 
@@ -256,6 +258,9 @@ class Fetcher:
             return FetchResult("failed", url=url, final_url=url, reason="invalid URL")
         if self.total_requests >= REQUEST_CAP:
             raise RequestCapExceeded("HTTP request cap of {} reached".format(REQUEST_CAP))
+        host = host_key_for(parsed)
+        if REQUEST_HOST_CAP > 0 and self._requests_by_host.get(host, 0) >= REQUEST_HOST_CAP:
+            return FetchResult("failed", url=url, final_url=url, reason="HTTP request host cap of {} reached for {}".format(REQUEST_HOST_CAP, host))
         if robots.is_rate_limited(url):
             return FetchResult("failed", url=url, final_url=url, reason="rate_limited_backoff")
         origin = origin_key_for(parsed)
@@ -266,6 +271,7 @@ class Fetcher:
                 time.sleep(wait)
         self._last_request_by_origin[origin] = time.monotonic()
         self.total_requests += 1
+        self._requests_by_host[host] = self._requests_by_host.get(host, 0) + 1
         request = urllib_request.Request(url, headers=headers, method="GET")
         try:
             with self._opener.open(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
