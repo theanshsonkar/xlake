@@ -1,0 +1,1058 @@
+[
+  {
+    "source_id": "hub-fellowships-oga-nthu-edu-tw-news-php-7dbca8",
+    "programme_id": "fellowships-hub-oga-nthu-edu-tw-news-php-7dbca8",
+    "programme_name": "Indian Student Internship Program at NTHU",
+    "organizer": "oga.nthu.edu.tw",
+    "official_url": "http://oga.nthu.edu.tw/news.php?id=233&lang=en",
+    "allowed_path_hints": [
+      "news.php"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-surge-iitk-ac-in-about-html-2cad99",
+    "programme_id": "fellowships-hub-surge-iitk-ac-in-about-html-2cad99",
+    "programme_name": "IITK SURGE Program",
+    "organizer": "surge.iitk.ac.in",
+    "official_url": "http://surge.iitk.ac.in/about.html",
+    "allowed_path_hints": [
+      "about.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iitb-ac-in-en-education-b84b9d",
+    "programme_id": "fellowships-hub-www-iitb-ac-in-en-education-b84b9d",
+    "programme_name": "IITB Research Internship Award",
+    "organizer": "iitb.ac.in",
+    "official_url": "http://www.iitb.ac.in/en/education/research-internship",
+    "allowed_path_hints": [
+      "en/education/research-internship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-ipam-ucla-edu-programs-student-research-programs-609661",
+    "programme_id": "fellowships-hub-www-ipam-ucla-edu-programs-student-research-programs-609661",
+    "programme_name": "IPAM UCLA, RIPS Program",
+    "organizer": "ipam.ucla.edu",
+    "official_url": "http://www.ipam.ucla.edu/programs/student-research-programs",
+    "allowed_path_hints": [
+      "programs/student-research-programs"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-stsci-edu-opportunities-space-astronomy-summer-program-7a36d9",
+    "programme_id": "fellowships-hub-www-stsci-edu-opportunities-space-astronomy-summer-program-7a36d9",
+    "programme_name": "Space Astronomy Summer Program, Space Telescope Science Institute (STScI)",
+    "organizer": "stsci.edu",
+    "official_url": "http://www.stsci.edu/opportunities/space-astronomy-summer-program",
+    "allowed_path_hints": [
+      "opportunities/space-astronomy-summer-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-amgenscholars-berkeley-edu-195d4d",
+    "programme_id": "fellowships-hub-amgenscholars-berkeley-edu-195d4d",
+    "programme_name": "UC Berkeley Amgen Scholars program",
+    "organizer": "amgenscholars.berkeley.edu",
+    "official_url": "https://amgenscholars.berkeley.edu/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-eecs-berkeley-edu-resources-undergrads-1182f7",
+    "programme_id": "fellowships-hub-eecs-berkeley-edu-resources-undergrads-1182f7",
+    "programme_name": "Summer Undergraduate Program in Engineering Research at Berkeley (SUPERB) (for Information Technology students",
+    "organizer": "eecs.berkeley.edu",
+    "official_url": "https://eecs.berkeley.edu/resources/undergrads/research/superb",
+    "allowed_path_hints": [
+      "resources/undergrads/research/superb"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-great-ucdavis-edu-b11220",
+    "programme_id": "fellowships-hub-great-ucdavis-edu-b11220",
+    "programme_name": "Global Research Experience in Advanced Technologies (GREAT) Program, UC Davis",
+    "organizer": "great.ucdavis.edu",
+    "official_url": "https://great.ucdavis.edu/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-ict-usc-edu-academics-internships-5d700e",
+    "programme_id": "fellowships-hub-ict-usc-edu-academics-internships-5d700e",
+    "programme_name": "ICT Summer Research Program",
+    "organizer": "ict.usc.edu",
+    "official_url": "https://ict.usc.edu/academics/internships/application",
+    "allowed_path_hints": [
+      "academics/internships/application"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-luddy-indiana-edu-research-student-research-565ba1",
+    "programme_id": "fellowships-hub-luddy-indiana-edu-research-student-research-565ba1",
+    "programme_name": "Global Talent Attraction Program (GTAP)",
+    "organizer": "luddy.indiana.edu",
+    "official_url": "https://luddy.indiana.edu/research/student-research/fellowship.html",
+    "allowed_path_hints": [
+      "research/student-research/fellowship.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-phd-pages-ist-ac-at-isternship-ecc7c5",
+    "programme_id": "fellowships-hub-phd-pages-ist-ac-at-isternship-ecc7c5",
+    "programme_name": "ISternship Summer Student Program",
+    "organizer": "phd.pages.ist.ac.at",
+    "official_url": "https://phd.pages.ist.ac.at/isternship",
+    "allowed_path_hints": [
+      "isternship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-sfp-iitm-ac-in-540af5",
+    "programme_id": "fellowships-hub-sfp-iitm-ac-in-540af5",
+    "programme_name": "IITM Summer Fellowship Programme",
+    "organizer": "sfp.iitm.ac.in",
+    "official_url": "https://sfp.iitm.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
+    "programme_id": "fellowships-hub-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
+    "programme_name": "Summer Research Program, Princeton University",
+    "organizer": "undergraduateresearch.princeton.edu",
+    "official_url": "https://undergraduateresearch.princeton.edu/programs/summer-programs?field_class_year_eligibility_value=Juniors&field_division_value=Engineering&field_princeton_status_eligibili_value=Non-Princeton+undergrads",
+    "allowed_path_hints": [
+      "programs/summer-programs"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-daad-de-go-en-1f41a3",
+    "programme_id": "fellowships-hub-www-daad-de-go-en-1f41a3",
+    "programme_name": "DAAD Wise Scholarship",
+    "organizer": "daad.de",
+    "official_url": "https://www.daad.de/go/en/stipa50015295",
+    "allowed_path_hints": [
+      "go/en/stipa50015295"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-gist-ac-kr-en-html-d00cb5",
+    "programme_id": "fellowships-hub-www-gist-ac-kr-en-html-d00cb5",
+    "programme_name": "GIST Global Internship Program (South Korea)",
+    "organizer": "gist.ac.kr",
+    "official_url": "https://www.gist.ac.kr/en/html/sub07/0702.html",
+    "allowed_path_hints": [
+      "en/html/sub07/0702.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-hzdr-de-db-cms-013d3e",
+    "programme_id": "fellowships-hub-www-hzdr-de-db-cms-013d3e",
+    "programme_name": "HZDR Dresden, Summer student program (Germany)",
+    "organizer": "hzdr.de",
+    "official_url": "https://www.hzdr.de/db/Cms?pNid=2519&pOid=34387",
+    "allowed_path_hints": [
+      "db/Cms"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iiserkol-ac-in-summer-research-1da195",
+    "programme_id": "fellowships-hub-www-iiserkol-ac-in-summer-research-1da195",
+    "programme_name": "IISER Kolkata Summer Student Research Programme",
+    "organizer": "iiserkol.ac.in",
+    "official_url": "https://www.iiserkol.ac.in/~summer.research",
+    "allowed_path_hints": [
+      "~summer.research"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-inde-campusfrance-org-charpak-lab-scholarship-f28994",
+    "programme_id": "fellowships-hub-www-inde-campusfrance-org-charpak-lab-scholarship-f28994",
+    "programme_name": "Charpak Global Scholarship",
+    "organizer": "inde.campusfrance.org",
+    "official_url": "https://www.inde.campusfrance.org/charpak-lab-scholarship",
+    "allowed_path_hints": [
+      "charpak-lab-scholarship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-inf-ethz-ch-studies-summer-research-fellowship-html-08c827",
+    "programme_id": "fellowships-hub-www-inf-ethz-ch-studies-summer-research-fellowship-html-08c827",
+    "programme_name": "Research fellowship at ETH Zurich",
+    "organizer": "inf.ethz.ch",
+    "official_url": "https://www.inf.ethz.ch/studies/summer-research-fellowship.html",
+    "allowed_path_hints": [
+      "studies/summer-research-fellowship.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iusstf-org-program-khorana-program-for-scholars-b72a7a",
+    "programme_id": "fellowships-hub-www-iusstf-org-program-khorana-program-for-scholars-b72a7a",
+    "programme_name": "Khorana Program for Scholars",
+    "organizer": "iusstf.org",
+    "official_url": "https://www.iusstf.org/program/khorana-program-for-scholars",
+    "allowed_path_hints": [
+      "program/khorana-program-for-scholars"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-purdue-edu-gradschool-diversity-b21447",
+    "programme_id": "fellowships-hub-www-purdue-edu-gradschool-diversity-b21447",
+    "programme_name": "SUMMER RESEARCH OPPORTUNITIES PROGRAM(SROP), Purdue University",
+    "organizer": "purdue.edu",
+    "official_url": "https://www.purdue.edu/gradschool/diversity/programs/summer-research-opportunities-program",
+    "allowed_path_hints": [
+      "gradschool/diversity/programs/summer-research-opportunities-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-rockefeller-edu-education-and-training-surf-ed6797",
+    "programme_id": "fellowships-hub-www-rockefeller-edu-education-and-training-surf-ed6797",
+    "programme_name": "Summer Undergraduate Research fellowship program",
+    "organizer": "rockefeller.edu",
+    "official_url": "https://www.rockefeller.edu/education-and-training/surf",
+    "allowed_path_hints": [
+      "education-and-training/surf"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-santafe-edu-engage-learn-e272ae",
+    "programme_id": "fellowships-hub-www-santafe-edu-engage-learn-e272ae",
+    "programme_name": "Santa Fe Institute Summer Research Experience",
+    "organizer": "santafe.edu",
+    "official_url": "https://www.santafe.edu/engage/learn/programs/undergraduate-complexity-research",
+    "allowed_path_hints": [
+      "engage/learn/programs/undergraduate-complexity-research"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-shastriinstitute-org-shastri-research-student-fellowship-4e27a9",
+    "programme_id": "fellowships-hub-www-shastriinstitute-org-shastri-research-student-fellowship-4e27a9",
+    "programme_name": "Shastri Research Student Fellowship",
+    "organizer": "shastriinstitute.org",
+    "official_url": "https://www.shastriinstitute.org/shastri-research-student-fellowship",
+    "allowed_path_hints": [
+      "shastri-research-student-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www2-daad-de-deutschland-stipendium-67a6c4",
+    "programme_id": "fellowships-hub-www2-daad-de-deutschland-stipendium-67a6c4",
+    "programme_name": "DAAD WISE Scholarship",
+    "organizer": "www2.daad.de",
+    "official_url": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database?detail=50015295",
+    "allowed_path_hints": [
+      "deutschland/stipendium/datenbank/en/21148-scholarship-database"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-eng-en-web-nthu-edu-tw-files-14-1130-129169-r1447-1-php-28d01d",
+    "programme_id": "fellowships-hub-eng-en-web-nthu-edu-tw-files-14-1130-129169-r1447-1-php-28d01d",
+    "programme_name": "NTHU Summer Internship Program",
+    "organizer": "eng-en.web.nthu.edu.tw",
+    "official_url": "http://eng-en.web.nthu.edu.tw/files/14-1130-129169,r1447-1.php",
+    "allowed_path_hints": [
+      "files/14-1130-129169,r1447-1.php"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-groups-oist-jp-grad-research-interns-638379",
+    "programme_id": "fellowships-hub-groups-oist-jp-grad-research-interns-638379",
+    "programme_name": "OIST Research Internship Program",
+    "organizer": "groups.oist.jp",
+    "official_url": "https://groups.oist.jp/grad/research-interns",
+    "allowed_path_hints": [
+      "grad/research-interns"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-mtbi-asu-edu-summerprogram-ff4b40",
+    "programme_id": "fellowships-hub-mtbi-asu-edu-summerprogram-ff4b40",
+    "programme_name": "MTBI Summer Program",
+    "organizer": "mtbi.asu.edu",
+    "official_url": "https://mtbi.asu.edu/summerprogram",
+    "allowed_path_hints": [
+      "summerprogram"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-cnio-es-en-education-and-career-development-10ffb3",
+    "programme_id": "fellowships-hub-www-cnio-es-en-education-and-career-development-10ffb3",
+    "programme_name": "Summer Training Program,CNIO",
+    "organizer": "cnio.es",
+    "official_url": "https://www.cnio.es/en/education-and-career-development/career-development-programmes/undergraduate-students",
+    "allowed_path_hints": [
+      "en/education-and-career-development/career-development-programmes/undergraduate-students"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-itri-org-tw-english-liststyle-aspx-9c17fa",
+    "programme_id": "fellowships-hub-www-itri-org-tw-english-liststyle-aspx-9c17fa",
+    "programme_name": "ITRI Global Internship program",
+    "organizer": "itri.org.tw",
+    "official_url": "https://www.itri.org.tw/english/ListStyle.aspx?DisplayStyle=05&MmmID=617731531432246346&SiteID=1",
+    "allowed_path_hints": [
+      "english/ListStyle.aspx"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iusstf-org-program-iusstf-viterbi-program-117932",
+    "programme_id": "fellowships-hub-www-iusstf-org-program-iusstf-viterbi-program-117932",
+    "programme_name": "Viterbi India Program",
+    "organizer": "iusstf.org",
+    "official_url": "https://www.iusstf.org/program/iusstf-viterbi-program",
+    "allowed_path_hints": [
+      "program/iusstf-viterbi-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iusstf-org-program-sn-bose-scholars-program-76a0b7",
+    "programme_id": "fellowships-hub-www-iusstf-org-program-sn-bose-scholars-program-76a0b7",
+    "programme_name": "S.N. Bose Scholarship",
+    "organizer": "iusstf.org",
+    "official_url": "https://www.iusstf.org/program/sn-bose-scholars-program",
+    "allowed_path_hints": [
+      "program/sn-bose-scholars-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-jpl-nasa-gov-edu-intern-af57b7",
+    "programme_id": "fellowships-hub-www-jpl-nasa-gov-edu-intern-af57b7",
+    "programme_name": "NASA - CalTech Summer Undergraduate Research Fellowship (SURF)",
+    "organizer": "jpl.nasa.gov",
+    "official_url": "https://www.jpl.nasa.gov/edu/intern/apply/caltech-summer-undergraduate-research-fellowship",
+    "allowed_path_hints": [
+      "edu/intern/apply/caltech-summer-undergraduate-research-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-oecd-org-careers-internship-programme-7b1d78",
+    "programme_id": "fellowships-hub-www-oecd-org-careers-internship-programme-7b1d78",
+    "programme_name": "OECD Internship Programme (France)",
+    "organizer": "oecd.org",
+    "official_url": "https://www.oecd.org/careers/internship-programme",
+    "allowed_path_hints": [
+      "careers/internship-programme"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-sfp-caltech-edu-programs-surf-b45580",
+    "programme_id": "fellowships-hub-www-sfp-caltech-edu-programs-surf-b45580",
+    "programme_name": "CalTech SURF Program",
+    "organizer": "sfp.caltech.edu",
+    "official_url": "https://www.sfp.caltech.edu/programs/surf/application_information",
+    "allowed_path_hints": [
+      "programs/surf/application_information"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-smithsonianofi-com-fellowship-opportunities-smithsonian-372c41",
+    "programme_id": "fellowships-hub-www-smithsonianofi-com-fellowship-opportunities-smithsonian-372c41",
+    "programme_name": "The Smithsonian Institution Fellowship Program (SIFP)",
+    "organizer": "smithsonianofi.com",
+    "official_url": "https://www.smithsonianofi.com/fellowship-opportunities/smithsonian-institution-fellowship-program",
+    "allowed_path_hints": [
+      "fellowship-opportunities/smithsonian-institution-fellowship-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-hertzfoundation-org-dx-fellowships-e3e4f9",
+    "programme_id": "fellowships-hub-hertzfoundation-org-dx-fellowships-e3e4f9",
+    "programme_name": "Hertz Graduate Fellowship",
+    "organizer": "hertzfoundation.org",
+    "official_url": "http://hertzfoundation.org/dx/fellowships/application.aspx",
+    "allowed_path_hints": [
+      "dx/fellowships/application.aspx"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-amgenscholars-medschl-cam-ac-uk-0db604",
+    "programme_id": "fellowships-hub-www-amgenscholars-medschl-cam-ac-uk-0db604",
+    "programme_name": "Amgen Scholars UK Programme",
+    "organizer": "amgenscholars.medschl.cam.ac.uk",
+    "official_url": "http://www.amgenscholars.medschl.cam.ac.uk/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-cense-iisc-ac-in-content-summer-program-df7b48",
+    "programme_id": "fellowships-hub-www-cense-iisc-ac-in-content-summer-program-df7b48",
+    "programme_name": "Summer Program, CeNSE IISc Bangalore",
+    "organizer": "cense.iisc.ac.in",
+    "official_url": "http://www.cense.iisc.ac.in/content/summer-program",
+    "allowed_path_hints": [
+      "content/summer-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-openphilanthropy-org-focus-global-catastrophic-risks-063366",
+    "programme_id": "fellowships-hub-www-openphilanthropy-org-focus-global-catastrophic-risks-063366",
+    "programme_name": "Open Philanthropy Project AI Fellows Program",
+    "organizer": "openphilanthropy.org",
+    "official_url": "http://www.openphilanthropy.org/focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence/open-philanthropy-project-ai-fellows-program",
+    "allowed_path_hints": [
+      "focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence/open-philanthropy-project-ai-fellows-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-sighpc-org-fellowships-b91f11",
+    "programme_id": "fellowships-hub-www-sighpc-org-fellowships-b91f11",
+    "programme_name": "ACM SIGHPC Computational & Data Science Graduate Fellowship",
+    "organizer": "sighpc.org",
+    "official_url": "http://www.sighpc.org/fellowships",
+    "allowed_path_hints": [
+      "fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-admissions-oist-jp-oist-research-internship-program-descript-0aa0b8",
+    "programme_id": "fellowships-hub-admissions-oist-jp-oist-research-internship-program-descript-0aa0b8",
+    "programme_name": "Okinawa Institute of Science and Technology, Research Internship Program",
+    "organizer": "admissions.oist.jp",
+    "official_url": "https://admissions.oist.jp/oist-research-internship-program-description",
+    "allowed_path_hints": [
+      "oist-research-internship-program-description"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-amgenscholars-ca-421ae3",
+    "programme_id": "fellowships-hub-amgenscholars-ca-421ae3",
+    "programme_name": "Amgen Scholars Canada Program",
+    "organizer": "amgenscholars.ca",
+    "official_url": "https://amgenscholars.ca/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-amgenscholars-com-46ac14",
+    "programme_id": "fellowships-hub-amgenscholars-com-46ac14",
+    "programme_name": "Amgen Scholars Program",
+    "organizer": "amgenscholars.com",
+    "official_url": "https://amgenscholars.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-cra-jotform-com-242948236029866-59ca1e",
+    "programme_id": "fellowships-hub-cra-jotform-com-242948236029866-59ca1e",
+    "programme_name": "NSF Dristtributed Research Experiences for Undergraduates (DREU)",
+    "organizer": "cra.jotform.com",
+    "official_url": "https://cra.jotform.com/242948236029866",
+    "allowed_path_hints": [
+      "242948236029866"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-engineering-stanford-edu-students-academics-equity-and-inclu-633128",
+    "programme_id": "fellowships-hub-engineering-stanford-edu-students-academics-equity-and-inclu-633128",
+    "programme_name": "Summer Undergraduate Research Fellowship (SURF), Stanford University",
+    "organizer": "engineering.stanford.edu",
+    "official_url": "https://engineering.stanford.edu/students-academics/equity-and-inclusion-initiatives/prospective-graduate-programs/summer",
+    "allowed_path_hints": [
+      "students-academics/equity-and-inclusion-initiatives/prospective-graduate-programs/summer"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-iusstf-org-iusstf-viterbi-program-9fc87c",
+    "programme_id": "fellowships-hub-iusstf-org-iusstf-viterbi-program-9fc87c",
+    "programme_name": "Viterbi India Program",
+    "organizer": "iusstf.org",
+    "official_url": "https://iusstf.org/iusstf-viterbi-program",
+    "allowed_path_hints": [
+      "iusstf-viterbi-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-ms-unimelb-edu-au-engage-vacation-scholarships-6064e0",
+    "programme_id": "fellowships-hub-ms-unimelb-edu-au-engage-vacation-scholarships-6064e0",
+    "programme_name": "University of Melbourne, Australia - Vacation Research Experience Scheme (VRES)",
+    "organizer": "ms.unimelb.edu.au",
+    "official_url": "https://ms.unimelb.edu.au/engage/vacation-scholarships/vacation-scholarships-projects",
+    "allowed_path_hints": [
+      "engage/vacation-scholarships/vacation-scholarships-projects"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-ndseg-asee-org-53af43",
+    "programme_id": "fellowships-hub-ndseg-asee-org-53af43",
+    "programme_name": "National Defense Science & Engineering Graduate Fellowship",
+    "organizer": "ndseg.asee.org",
+    "official_url": "https://ndseg.asee.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-programmes-polytechnique-edu-en-exchange-programs-cb4776",
+    "programme_id": "fellowships-hub-programmes-polytechnique-edu-en-exchange-programs-cb4776",
+    "programme_name": "Research Program for International Talents, École Polytechnique",
+    "organizer": "programmes.polytechnique.edu",
+    "official_url": "https://programmes.polytechnique.edu/en/exchange-programs/research-program-for-international-talents/program-details",
+    "allowed_path_hints": [
+      "en/exchange-programs/research-program-for-international-talents/program-details"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-qrlssp-asu-edu-summerprogram-fd77ea",
+    "programme_id": "fellowships-hub-qrlssp-asu-edu-summerprogram-fd77ea",
+    "programme_name": "QRLSSP Summer Program",
+    "organizer": "qrlssp.asu.edu",
+    "official_url": "https://qrlssp.asu.edu/summerprogram",
+    "allowed_path_hints": [
+      "summerprogram"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-research-adobe-com-scholarship-7503c7",
+    "programme_id": "fellowships-hub-research-adobe-com-scholarship-7503c7",
+    "programme_name": "Adobe Fellowship",
+    "organizer": "research.adobe.com",
+    "official_url": "https://research.adobe.com/scholarship",
+    "allowed_path_hints": [
+      "scholarship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-science-anu-edu-au-summer-research-scholars-program-applicat-346da7",
+    "programme_id": "fellowships-hub-science-anu-edu-au-summer-research-scholars-program-applicat-346da7",
+    "programme_name": "ANU, Australia - ANU Summer Research Program",
+    "organizer": "science.anu.edu.au",
+    "official_url": "https://science.anu.edu.au/summer-research-scholars-program-application",
+    "allowed_path_hints": [
+      "summer-research-scholars-program-application"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-sfp-caltech-edu-undergraduate-research-programs-08f04d",
+    "programme_id": "fellowships-hub-sfp-caltech-edu-undergraduate-research-programs-08f04d",
+    "programme_name": "CalTech SURF Program",
+    "organizer": "sfp.caltech.edu",
+    "official_url": "https://sfp.caltech.edu/undergraduate-research/programs/surf/application_information",
+    "allowed_path_hints": [
+      "undergraduate-research/programs/surf/application_information"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-sites-research-google-residency-7c3074",
+    "programme_id": "fellowships-hub-sites-research-google-residency-7c3074",
+    "programme_name": "Google AI Residency Program - Canada",
+    "organizer": "sites.research.google",
+    "official_url": "https://sites.research.google/residency",
+    "allowed_path_hints": [
+      "residency"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-snap-submittable-com-submit-115300-9c2e76",
+    "programme_id": "fellowships-hub-snap-submittable-com-submit-115300-9c2e76",
+    "programme_name": "Snap Fellowship",
+    "organizer": "snap.submittable.com",
+    "official_url": "https://snap.submittable.com/submit/115300/snap-2019-fellowship-application",
+    "allowed_path_hints": [
+      "submit/115300/snap-2019-fellowship-application"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-swissnex-org-india-thinkswiss-4196ea",
+    "programme_id": "fellowships-hub-swissnex-org-india-thinkswiss-4196ea",
+    "programme_name": "Swissnex Program",
+    "organizer": "swissnex.org",
+    "official_url": "https://swissnex.org/india/thinkswiss",
+    "allowed_path_hints": [
+      "india/thinkswiss"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-training-curie-fr-article502-html-b74203",
+    "programme_id": "fellowships-hub-training-curie-fr-article502-html-b74203",
+    "programme_name": "Institut Curie, Undergraduate Internship Program",
+    "organizer": "training.curie.fr",
+    "official_url": "https://training.curie.fr/article502.html",
+    "allowed_path_hints": [
+      "article502.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-uramscholarship-in-2e0bdc",
+    "programme_id": "fellowships-hub-uramscholarship-in-2e0bdc",
+    "programme_name": "URAM SCHOLARSHIP PROGRAM",
+    "organizer": "uramscholarship.in",
+    "official_url": "https://uramscholarship.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-wellcome-ac-uk-funding-schemes-01e58a",
+    "programme_id": "fellowships-hub-wellcome-ac-uk-funding-schemes-01e58a",
+    "programme_name": "Wellcome Trust Vacation Scholarships",
+    "organizer": "wellcome.ac.uk",
+    "official_url": "https://wellcome.ac.uk/funding/schemes/vacation-scholarships",
+    "allowed_path_hints": [
+      "funding/schemes/vacation-scholarships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-a-star-edu-sg-scholarships-for-undergraduate-studies-e13626",
+    "programme_id": "fellowships-hub-www-a-star-edu-sg-scholarships-for-undergraduate-studies-e13626",
+    "programme_name": "Singapore International Pre-Graduate Award (SIPGA)",
+    "organizer": "a-star.edu.sg",
+    "official_url": "https://www.a-star.edu.sg/Scholarships/for-undergraduate-studies/singapore-international-pre-graduate-award-sipga",
+    "allowed_path_hints": [
+      "Scholarships/for-undergraduate-studies/singapore-international-pre-graduate-award-sipga"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-bdi-ox-ac-uk-study-bdi-summer-studentship-programme-33c8e1",
+    "programme_id": "fellowships-hub-www-bdi-ox-ac-uk-study-bdi-summer-studentship-programme-33c8e1",
+    "programme_name": "University of Oxford - BDI Summer Internship Programme",
+    "organizer": "bdi.ox.ac.uk",
+    "official_url": "https://www.bdi.ox.ac.uk/study/bdi-summer-studentship-programme",
+    "allowed_path_hints": [
+      "study/bdi-summer-studentship-programme"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-bits-pilani-ac-in-goa-bgsrp-c368b7",
+    "programme_id": "fellowships-hub-www-bits-pilani-ac-in-goa-bgsrp-c368b7",
+    "programme_name": "BITS Goa Summer Research Programme",
+    "organizer": "bits-pilani.ac.in",
+    "official_url": "https://www.bits-pilani.ac.in/goa/bgsrp",
+    "allowed_path_hints": [
+      "goa/bgsrp"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-bits-pilani-ac-in-pilani-summerresearchfellowship-7774ab",
+    "programme_id": "fellowships-hub-www-bits-pilani-ac-in-pilani-summerresearchfellowship-7774ab",
+    "programme_name": "BITS Pilani, Summer Undergraduate Research Fellowship (SURF)",
+    "organizer": "bits-pilani.ac.in",
+    "official_url": "https://www.bits-pilani.ac.in/pilani/summerresearchfellowship",
+    "allowed_path_hints": [
+      "pilani/summerresearchfellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-csiro-au-en-careers-834bfb",
+    "programme_id": "fellowships-hub-www-csiro-au-en-careers-834bfb",
+    "programme_name": "CSIRO, Australia - Vacation Scholarships",
+    "organizer": "csiro.au",
+    "official_url": "https://www.csiro.au/en/careers/scholarships-student-opportunities/undergraduate-studentships/undergraduate-vacation-studentships",
+    "allowed_path_hints": [
+      "en/careers/scholarships-student-opportunities/undergraduate-studentships/undergraduate-vacation-studentships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-dssgfellowship-org-fde356",
+    "programme_id": "fellowships-hub-www-dssgfellowship-org-fde356",
+    "programme_name": "Data Science for Social Good Fellowship",
+    "organizer": "dssgfellowship.org",
+    "official_url": "https://www.dssgfellowship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-ens-psl-eu-summer-research-programme-f357dc",
+    "programme_id": "fellowships-hub-www-ens-psl-eu-summer-research-programme-f357dc",
+    "programme_name": "École Normale Supérieure (ENS) de Lyon, Summer Research Program",
+    "organizer": "ens.psl.eu",
+    "official_url": "https://www.ens.psl.eu/summer-research-programme",
+    "allowed_path_hints": [
+      "summer-research-programme"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-fastlane-nsf-gov-grfp-login-do-2741a2",
+    "programme_id": "fellowships-hub-www-fastlane-nsf-gov-grfp-login-do-2741a2",
+    "programme_name": "National Science Foundation Graduate Research Fellowship",
+    "organizer": "fastlane.nsf.gov",
+    "official_url": "https://www.fastlane.nsf.gov/grfp/Login.do",
+    "allowed_path_hints": [
+      "grfp/Login.do"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-helmholtz-hzi-de-en-research-97e81a",
+    "programme_id": "fellowships-hub-www-helmholtz-hzi-de-en-research-97e81a",
+    "programme_name": "Helmholtz Centre for Infection Research (HZI) Summer Student Program",
+    "organizer": "helmholtz-hzi.de",
+    "official_url": "https://www.helmholtz-hzi.de/en/research/research_schools/school_of_infection_research/internships/summer_student_program",
+    "allowed_path_hints": [
+      "en/research/research_schools/school_of_infection_research/internships/summer_student_program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-icts-res-in-academic-summer-research-program-aa878a",
+    "programme_id": "fellowships-hub-www-icts-res-in-academic-summer-research-program-aa878a",
+    "programme_name": "ICTS Summer research program",
+    "organizer": "icts.res.in",
+    "official_url": "https://www.icts.res.in/academic/summer-research-program",
+    "allowed_path_hints": [
+      "academic/summer-research-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iiitd-ac-in-590988",
+    "programme_id": "fellowships-hub-www-iiitd-ac-in-590988",
+    "programme_name": "IIIT Delhi, Summer Research Internship Program",
+    "organizer": "iiitd.ac.in",
+    "official_url": "https://www.iiitd.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iisc-ac-in-d37441",
+    "programme_id": "fellowships-hub-www-iisc-ac-in-d37441",
+    "programme_name": "IISc Bangalore, Summer Research Program",
+    "organizer": "iisc.ac.in",
+    "official_url": "https://www.iisc.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iiserb-ac-in-fb7b98",
+    "programme_id": "fellowships-hub-www-iiserb-ac-in-fb7b98",
+    "programme_name": "IISER Bhopal, Summer Student Research Fellowship",
+    "organizer": "iiserb.ac.in",
+    "official_url": "https://www.iiserb.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iiserkol-ac-in-07e7f1",
+    "programme_id": "fellowships-hub-www-iiserkol-ac-in-07e7f1",
+    "programme_name": "IISER Kolkata, Summer Student Research Programme",
+    "organizer": "iiserkol.ac.in",
+    "official_url": "https://www.iiserkol.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iisermohali-ac-in-02878b",
+    "programme_id": "fellowships-hub-www-iisermohali-ac-in-02878b",
+    "programme_name": "IISER Mohali, Summer Research Program",
+    "organizer": "iisermohali.ac.in",
+    "official_url": "https://www.iisermohali.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iiserpune-ac-in-540607",
+    "programme_id": "fellowships-hub-www-iiserpune-ac-in-540607",
+    "programme_name": "IISER Pune, Summer Student Program",
+    "organizer": "iiserpune.ac.in",
+    "official_url": "https://www.iiserpune.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iisertirupati-ac-in-5dc321",
+    "programme_id": "fellowships-hub-www-iisertirupati-ac-in-5dc321",
+    "programme_name": "IISER Tirupati, Summer Research Programme",
+    "organizer": "iisertirupati.ac.in",
+    "official_url": "https://www.iisertirupati.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iisertvm-ac-in-8517ab",
+    "programme_id": "fellowships-hub-www-iisertvm-ac-in-8517ab",
+    "programme_name": "IISER Thiruvananthapuram, Summer Visiting Programme",
+    "organizer": "iisertvm.ac.in",
+    "official_url": "https://www.iisertvm.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iith-ac-in-news-2023-e8ec91",
+    "programme_id": "fellowships-hub-www-iith-ac-in-news-2023-e8ec91",
+    "programme_name": "IIT Hyderabad, Summer Internship Program",
+    "organizer": "iith.ac.in",
+    "official_url": "https://www.iith.ac.in/news/2023/02/03/Summer-Undergraduate-Research-Exposure",
+    "allowed_path_hints": [
+      "news/2023/02/03/Summer-Undergraduate-Research-Exposure"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iitism-ac-in-deans-research-497b74",
+    "programme_id": "fellowships-hub-www-iitism-ac-in-deans-research-497b74",
+    "programme_name": "IIT (ISM) Dhanbad SRIP Programme",
+    "organizer": "iitism.ac.in",
+    "official_url": "https://www.iitism.ac.in/deans/research/SRIP.php",
+    "allowed_path_hints": [
+      "deans/research/SRIP.php"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-iitr-ac-in-academics-internship-b0b0f6",
+    "programme_id": "fellowships-hub-www-iitr-ac-in-academics-internship-b0b0f6",
+    "programme_name": "IIT Roorkee, Summer Internship Program",
+    "organizer": "iitr.ac.in",
+    "official_url": "https://www.iitr.ac.in/academics/internship/pages/index.html",
+    "allowed_path_hints": [
+      "academics/internship/pages/index.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-imperial-ac-uk-urop-what-is-urop-7cf1b5",
+    "programme_id": "fellowships-hub-www-imperial-ac-uk-urop-what-is-urop-7cf1b5",
+    "programme_name": "Imperial College London, Undergraduate Research Opportunities Programme (UROP)",
+    "organizer": "imperial.ac.uk",
+    "official_url": "https://www.imperial.ac.uk/urop/what-is-urop",
+    "allowed_path_hints": [
+      "urop/what-is-urop"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-imprs-cs-de-summer-internships-57a9a7",
+    "programme_id": "fellowships-hub-www-imprs-cs-de-summer-internships-57a9a7",
+    "programme_name": "International Max Planck Research School (IMPRS) Summer Internship Program",
+    "organizer": "imprs-cs.de",
+    "official_url": "https://www.imprs-cs.de/summer-internships",
+    "allowed_path_hints": [
+      "summer-internships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-ircc-iitb-ac-in-ircc-webpage-rnd-f4359e",
+    "programme_id": "fellowships-hub-www-ircc-iitb-ac-in-ircc-webpage-rnd-f4359e",
+    "programme_name": "IIT Bombay, Summer Research Program",
+    "organizer": "ircc.iitb.ac.in",
+    "official_url": "https://www.ircc.iitb.ac.in/IRCC-Webpage/rnd/SummerResearchInternship",
+    "allowed_path_hints": [
+      "IRCC-Webpage/rnd/SummerResearchInternship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-lloyds-scholars-com-94bcb2",
+    "programme_id": "fellowships-hub-www-lloyds-scholars-com-94bcb2",
+    "programme_name": "Lloyds Scholars Programme",
+    "organizer": "lloyds-scholars.com",
+    "official_url": "https://www.lloyds-scholars.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-lpi-usra-edu-lpiintern-application-5784b0",
+    "programme_id": "fellowships-hub-www-lpi-usra-edu-lpiintern-application-5784b0",
+    "programme_name": "LPI Summer Intern Program in Planetary Science",
+    "organizer": "lpi.usra.edu",
+    "official_url": "https://www.lpi.usra.edu/lpiintern/application",
+    "allowed_path_hints": [
+      "lpiintern/application"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-microsoft-com-en-us-research-52d1df",
+    "programme_id": "fellowships-hub-www-microsoft-com-en-us-research-52d1df",
+    "programme_name": "Microsoft Ada Lovelace Graduate Fellowship",
+    "organizer": "microsoft.com",
+    "official_url": "https://www.microsoft.com/en-us/research/academic-program/ada-lovelace-fellowship",
+    "allowed_path_hints": [
+      "en-us/research/academic-program/ada-lovelace-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-microsoft-com-en-us-research-bd9c53",
+    "programme_id": "fellowships-hub-www-microsoft-com-en-us-research-bd9c53",
+    "programme_name": "Microsoft Graduate Fellowship",
+    "organizer": "microsoft.com",
+    "official_url": "https://www.microsoft.com/en-us/research/academic-program/phd-fellowship-program",
+    "allowed_path_hints": [
+      "en-us/research/academic-program/phd-fellowship-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-microsoft-com-en-us-research-2838fe",
+    "programme_id": "fellowships-hub-www-microsoft-com-en-us-research-2838fe",
+    "programme_name": "Microsoft India Research Fellows Program",
+    "organizer": "microsoft.com",
+    "official_url": "https://www.microsoft.com/en-us/research/academic-program/research-fellows-program-at-microsoft-research-india",
+    "allowed_path_hints": [
+      "en-us/research/academic-program/research-fellows-program-at-microsoft-research-india"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-microsoft-com-en-us-research-346bc7",
+    "programme_id": "fellowships-hub-www-microsoft-com-en-us-research-346bc7",
+    "programme_name": "Microsoft Women's Graduate Fellowship",
+    "organizer": "microsoft.com",
+    "official_url": "https://www.microsoft.com/en-us/research/academic-program/womens-fellowship-program",
+    "allowed_path_hints": [
+      "en-us/research/academic-program/womens-fellowship-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-nserc-crsng-gc-ca-students-etudiants-ug-pc-d62251",
+    "programme_id": "fellowships-hub-www-nserc-crsng-gc-ca-students-etudiants-ug-pc-d62251",
+    "programme_name": "NSERC Undergraduate Student Research Awards (USRA)",
+    "organizer": "nserc-crsng.gc.ca",
+    "official_url": "https://www.nserc-crsng.gc.ca/Students-Etudiants/UG-PC/USRA-BRPC_eng.asp",
+    "allowed_path_hints": [
+      "Students-Etudiants/UG-PC/USRA-BRPC_eng.asp"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-pasteur-fr-en-education-df5403",
+    "programme_id": "fellowships-hub-www-pasteur-fr-en-education-df5403",
+    "programme_name": "Pasteur Institute, Pasteur-Roux-Cantarini Internship Program",
+    "organizer": "pasteur.fr",
+    "official_url": "https://www.pasteur.fr/en/education/robert-cantarini-internship-program",
+    "allowed_path_hints": [
+      "en/education/robert-cantarini-internship-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-symantec-com-about-careers-298f65",
+    "programme_id": "fellowships-hub-www-symantec-com-about-careers-298f65",
+    "programme_name": "Symantec Fellowship",
+    "organizer": "symantec.com",
+    "official_url": "https://www.symantec.com/about/careers/graduate-fellowship",
+    "allowed_path_hints": [
+      "about/careers/graduate-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-terc-edu-work-with-us-interships-1b8ab1",
+    "programme_id": "fellowships-hub-www-terc-edu-work-with-us-interships-1b8ab1",
+    "programme_name": "REU Summer TERC Scholars Program - TERC",
+    "organizer": "terc.edu",
+    "official_url": "https://www.terc.edu/work-with-us/interships/summer-terc-scholars-program",
+    "allowed_path_hints": [
+      "work-with-us/interships/summer-terc-scholars-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-ualberta-ca-admissions-programs-visiting-student-and-int-d7a6ec",
+    "programme_id": "fellowships-hub-www-ualberta-ca-admissions-programs-visiting-student-and-int-d7a6ec",
+    "programme_name": "University of Alberta Research Experience (UARE)",
+    "organizer": "ualberta.ca",
+    "official_url": "https://www.ualberta.ca/admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/index.html",
+    "allowed_path_hints": [
+      "admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/index.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-fellowships-www-universite-paris-saclay-fr-en-education-cbf27c",
+    "programme_id": "fellowships-hub-www-universite-paris-saclay-fr-en-education-cbf27c",
+    "programme_name": "Paris-Saclay University, Internship Program",
+    "organizer": "universite-paris-saclay.fr",
+    "official_url": "https://www.universite-paris-saclay.fr/en/education/doctoral-studies/internship-bourses",
+    "allowed_path_hints": [
+      "en/education/doctoral-studies/internship-bourses"
+    ],
+    "check_cadence": "monthly"
+  }
+]
