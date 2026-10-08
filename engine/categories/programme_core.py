@@ -28,12 +28,37 @@ class ProgrammeConfig:
     needs_confirmation_floor: bool = False
 
 
+
+GENERATED_SEEDS_ENV = "XLAKE_GENERATED_SEEDS_DIR"
+REQUIRED_SEED_FIELDS = (
+    "source_id", "programme_id", "programme_name", "organizer", "official_url",
+    "allowed_path_hints", "check_cadence",
+)
+
+
+def load_generated_seeds(stem: str) -> tuple:
+    """Load an optional canonical generated-seed registry for a category."""
+    generated_dir = os.environ.get(GENERATED_SEEDS_ENV, "").strip()
+    if not generated_dir:
+        return ()
+    path = os.path.join(generated_dir, "{}.json".format(stem))
+    if not os.path.isfile(path):
+        return ()
+    with open(path, encoding="utf-8") as handle:
+        seeds = json.load(handle)
+    if not isinstance(seeds, list):
+        raise ValueError("generated {} seed registry must be a JSON array".format(stem))
+    for index, seed in enumerate(seeds):
+        if not isinstance(seed, dict) or set(seed) != set(REQUIRED_SEED_FIELDS):
+            raise ValueError("generated {} seed {} has an invalid schema".format(stem, index))
+    return tuple(seeds)
 # Shared title/host quality data for generated programme seeds.  Keep this
 # category-neutral so hub discovery and collection enforce the same policy.
 PROGRAMME_NOUNS = (
     "fellowship", "fellowships", "scholar", "scholars", "scholarship",
     "scholarships", "program", "programs", "programme", "programmes",
-    "award", "awards", "grant", "grants", "residency", "residencies",
+    "award", "awards", "grant", "grants", "fund", "credits", "challenge",
+    "season of", "summer of code", "outreachy", "residency", "residencies",
     "prize", "prizes", "summer school", "summer schools", "bootcamp",
     "bootcamps", "research experience", "research experiences",
     "internship programme", "internship program", "mentorship", "mentorships",

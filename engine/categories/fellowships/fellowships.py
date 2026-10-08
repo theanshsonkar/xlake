@@ -19,34 +19,30 @@ from categories.programme_core import (
     ROLLING_TOKENS, ProgrammeConfig, _VisibleText, _application_url,
     _atomic_json, _default_fetch, _evidence, _later_timestamp, _load_json,
     _month_number, _observation, _quote_with, _sentences, _text, _timestamp,
-    _year_near, classify_status, detect_applicant_windows, parse_date,
-    parse_dates, validate_verification,
+    _year_near, classify_status, detect_applicant_windows, load_generated_seeds,
+    parse_date, parse_dates, validate_verification,
 )
 
 SEED_PATH = os.path.join(os.path.dirname(__file__), "fellowships_hubs.json")
-GENERATED_SEEDS_ENV = "XLAKE_GENERATED_SEEDS_DIR"
-REQUIRED_SEED_FIELDS = ("source_id", "programme_id", "programme_name", "organizer", "official_url", "allowed_path_hints", "check_cadence")
-
-
-def _seed_registry_paths(path: str) -> tuple:
-    paths = [path]
-    generated_dir = os.environ.get(GENERATED_SEEDS_ENV, "").strip()
-    if generated_dir:
-        generated_path = os.path.join(generated_dir, "fellowships.json")
-        if os.path.abspath(generated_path) != os.path.abspath(path) and os.path.isfile(generated_path):
-            paths.append(generated_path)
-    return tuple(paths)
+GENERATED_SEEDS_ENV = _core.GENERATED_SEEDS_ENV
+REQUIRED_SEED_FIELDS = _core.REQUIRED_SEED_FIELDS
 
 
 def _load_seed_registry(path: str = SEED_PATH) -> tuple:
     """Load static fellowship seeds plus an optional generated-seed overlay."""
+    with open(path, encoding="utf-8") as handle:
+        static_seeds = json.load(handle)
+    if not isinstance(static_seeds, list):
+        raise ValueError("fellowship seed registry must be a JSON array")
+    static_urls = {seed.get("official_url") for seed in static_seeds if isinstance(seed, dict)}
+    generated_seeds = tuple(
+        seed for seed in load_generated_seeds("fellowships")
+        if seed["official_url"] not in static_urls
+    )
+    registries = (static_seeds, generated_seeds)
     seen_sources, seen_programmes = set(), set()
     validated = []
-    for registry_path in _seed_registry_paths(path):
-        with open(registry_path, encoding="utf-8") as handle:
-            seeds = json.load(handle)
-        if not isinstance(seeds, list):
-            raise ValueError("fellowship seed registry must be a JSON array")
+    for seeds in registries:
         for index, seed in enumerate(seeds):
             if not isinstance(seed, dict) or any(not seed.get(field) for field in REQUIRED_SEED_FIELDS):
                 raise ValueError("seed {} is missing a required non-empty field".format(index))

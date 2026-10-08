@@ -15,8 +15,8 @@ from categories.programme_core import (
     ROLLING_TOKENS, ProgrammeConfig, _VisibleText, _application_url,
     _atomic_json, _default_fetch, _evidence, _later_timestamp, _load_json,
     _month_number, _observation, _quote_with, _sentences, _text, _timestamp,
-    _year_near, classify_status, detect_applicant_windows, parse_date,
-    parse_dates, validate_verification,
+    _year_near, classify_status, detect_applicant_windows, load_generated_seeds,
+    parse_date, parse_dates, validate_verification,
 )
 
 SOURCE_REGISTRY = (
@@ -26,6 +26,25 @@ SOURCE_REGISTRY = (
     {"source_id": "grant-pollination-daily-grants", "programme_id": "grant-pollination-daily-grants", "programme_name": "The Pollination Project — Daily Grants", "organizer": "The Pollination Project", "official_url": "https://thepollinationproject.org/apply/", "allowed_path_hints": ["apply"], "check_cadence": "monthly"},
     {"source_id": "grant-national-geographic-okavango-ecosystem-dynamics", "programme_id": "grant-national-geographic-okavango-ecosystem-dynamics", "programme_name": "National Geographic Society — Understanding Ecosystem Dynamics and the Ecology of the Okavango River Basin", "organizer": "National Geographic Society", "official_url": "https://funding.nationalgeographic.org/s/fundingopportunity/119Hr000000byRrIAI/understanding-ecosystem-dynamics-ecology-of-the-okavango-river-basin", "allowed_path_hints": ["s/fundingopportunity/119Hr000000byRrIAI"], "check_cadence": "monthly"},
 )
+STATIC_SOURCE_REGISTRY = SOURCE_REGISTRY
+
+
+def _combined_source_registry() -> tuple:
+    result = list(STATIC_SOURCE_REGISTRY)
+    seen_urls = {seed["official_url"] for seed in result}
+    seen_ids = {seed["source_id"] for seed in result} | {seed["programme_id"] for seed in result}
+    for seed in load_generated_seeds("grants"):
+        if (seed["official_url"] in seen_urls
+                or seed["source_id"] in seen_ids
+                or seed["programme_id"] in seen_ids):
+            continue
+        result.append(seed)
+        seen_urls.add(seed["official_url"])
+        seen_ids.update((seed["source_id"], seed["programme_id"]))
+    return tuple(result)
+
+
+SOURCE_REGISTRY = _combined_source_registry()
 SEEDS = SOURCE_REGISTRY
 SEED_BY_URL = {seed["official_url"]: seed for seed in SOURCE_REGISTRY}
 SOURCE_BY_ID = {seed["programme_id"]: seed for seed in SOURCE_REGISTRY}

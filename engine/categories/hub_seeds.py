@@ -26,11 +26,17 @@ from categories.startup_founder import harvest as startup_harvest
 try:
     from categories.fellowships import fellowships as fellowships_category
     from categories.scholarships import scholarships as scholarships_category
+    from categories.grants import grants as grants_category
+    from categories.research import research as research_category
+    from categories.open_source import programmes as open_source_category
 except ImportError:  # pragma: no cover - supports package-root imports
     from engine.categories.fellowships import fellowships as fellowships_category
     from engine.categories.scholarships import scholarships as scholarships_category
+    from engine.categories.grants import grants as grants_category
+    from engine.categories.research import research as research_category
+    from engine.categories.open_source import programmes as open_source_category
 
-DIRECTORY_CATEGORIES = frozenset(("fellowships", "scholarships"))
+DIRECTORY_CATEGORIES = frozenset(("fellowships", "scholarships", "grants"))
 DIRECTORY_TERMS = re.compile(
     r"(?:research|reu|fellowship|internship|undergraduate[\\s_-]*research|"
     r"scholarship|grant|award|program(?:me)?s?)",
@@ -765,6 +771,9 @@ def _static_seeds(category: str) -> Tuple[Dict, ...]:
     modules = {
         "fellowships": fellowships_category,
         "scholarships": scholarships_category,
+        "grants": grants_category,
+        "research": research_category,
+        "open_source": open_source_category,
     }
     module = modules.get(category)
     if module is None:
@@ -879,6 +888,9 @@ def _default_hubs_path(category: str) -> Path:
     filenames = {
         "fellowships": "fellowship_directories.json",
         "scholarships": "scholarship_directories.json",
+        "grants": "grant_directories.json",
+        "research": "research_directories.json",
+        "open_source": "open_source_directories.json",
     }
     if category in filenames:
         return Path(__file__).parent / category / filenames[category]
@@ -889,7 +901,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Generate programme seeds from category hubs")
     parser.add_argument(
         "--category", required=True,
-        choices=("research", "startup_founder", "open_source", "community", "fellowships", "scholarships"),
+        choices=("research", "startup_founder", "open_source", "community", "fellowships", "scholarships", "grants"),
     )
     parser.add_argument("--out", help="JSON output path")
     args = parser.parse_args(argv)

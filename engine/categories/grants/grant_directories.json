@@ -1,0 +1,114 @@
+[
+  {
+    "hub_id": "opengrants",
+    "url": "https://www.opengrants.io/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "grants-gov",
+    "url": "https://www.grants.gov/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "ralphtheninja-open-funding",
+    "url": "https://github.com/ralphtheninja/open-funding",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "department-of-science-and-technology",
+    "url": "https://dst.gov.in/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "ministry-of-education-scholarships-loans",
+    "url": "https://www.education.gov.in/scholarships",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "cohere-c4ai-research-grants",
+    "url": "https://cohere.com/blog/c4ai-research-grants",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "meta-llama-impact-grants",
+    "url": "https://ai.meta.com/llama/llama-impact-grants/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "ibm-academic-awards-program",
+    "url": "https://research.ibm.com/labs/yorktown-heights/ibm-academic-awards-program",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "google-academic-research-awards",
+    "url": "https://research.google/programs-and-events/google-academic-research-awards/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "google-org",
+    "url": "https://www.google.org/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "chanzuckerberg-science-funding",
+    "url": "https://chanzuckerberg.com/science/science-funding/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "sloan-grants-database",
+    "url": "https://sloan.org/grants-database",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "schmidt-science-fellows",
+    "url": "https://schmidtsciencefellows.org/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "simons-foundation-funding-opportunities",
+    "url": "https://www.simonsfoundation.org/funding-opportunities/",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  }
+]

@@ -15,8 +15,8 @@ from categories.programme_core import (
     ROLLING_TOKENS, ProgrammeConfig, _VisibleText, _application_url,
     _atomic_json, _default_fetch, _evidence, _later_timestamp, _load_json,
     _month_number, _observation, _quote_with, _sentences, _text, _timestamp,
-    _year_near, classify_status, detect_applicant_windows, parse_date,
-    parse_dates, validate_verification,
+    _year_near, classify_status, detect_applicant_windows, load_generated_seeds,
+    parse_date, parse_dates, validate_verification,
 )
 
 SOURCE_REGISTRY = (
@@ -32,35 +32,22 @@ SOURCE_REGISTRY = (
     {"source_id": "scholarship-turkiye", "programme_id": "scholarship-turkiye", "programme_name": "Türkiye Scholarships", "organizer": "Presidency for Turks Abroad and Related Communities (YTB)", "official_url": "https://www.turkiyeburslari.gov.tr/", "allowed_path_hints": [""], "check_cadence": "monthly"},
 )
 STATIC_SOURCE_REGISTRY = SOURCE_REGISTRY
-GENERATED_SEEDS_ENV = "XLAKE_GENERATED_SEEDS_DIR"
-REQUIRED_SEED_FIELDS = ("source_id", "programme_id", "programme_name", "organizer", "official_url", "allowed_path_hints", "check_cadence")
-
-
-def _load_generated_seeds() -> tuple:
-    generated_dir = os.environ.get(GENERATED_SEEDS_ENV, "").strip()
-    if not generated_dir:
-        return ()
-    path = os.path.join(generated_dir, "scholarships.json")
-    if not os.path.isfile(path):
-        return ()
-    with open(path, encoding="utf-8") as handle:
-        seeds = json.load(handle)
-    if not isinstance(seeds, list):
-        raise ValueError("scholarship generated seed registry must be a JSON array")
-    for index, seed in enumerate(seeds):
-        if not isinstance(seed, dict) or set(seed) != set(REQUIRED_SEED_FIELDS):
-            raise ValueError("generated scholarship seed {} has an invalid schema".format(index))
-    return tuple(seeds)
+GENERATED_SEEDS_ENV = _core.GENERATED_SEEDS_ENV
+REQUIRED_SEED_FIELDS = _core.REQUIRED_SEED_FIELDS
 
 
 def _combined_source_registry() -> tuple:
     result = list(STATIC_SOURCE_REGISTRY)
-    seen = {(seed["source_id"], seed["programme_id"]) for seed in result}
-    for seed in _load_generated_seeds():
-        key = (seed["source_id"], seed["programme_id"])
-        if key not in seen:
-            result.append(seed)
-            seen.add(key)
+    seen_urls = {seed["official_url"] for seed in result}
+    seen_ids = {seed["source_id"] for seed in result} | {seed["programme_id"] for seed in result}
+    for seed in load_generated_seeds("scholarships"):
+        if (seed["official_url"] in seen_urls
+                or seed["source_id"] in seen_ids
+                or seed["programme_id"] in seen_ids):
+            continue
+        result.append(seed)
+        seen_urls.add(seed["official_url"])
+        seen_ids.update((seed["source_id"], seed["programme_id"]))
     return tuple(result)
 
 

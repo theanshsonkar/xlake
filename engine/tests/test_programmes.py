@@ -57,6 +57,10 @@ class TestGenericProgrammePipeline(unittest.TestCase):
             "Santa Fe Institute Summer Research Experience",
             "Sandia National Labs Postdoctoral Fellowships",
             "Korean American Scholarship Foundation",
+            "GitHub Secure Open Source Fund",
+            "Google Summer of Code",
+            "Season of KDE",
+            "fal Research Grants",
         )
         for title, url in rejected:
             with self.subTest(title=title):

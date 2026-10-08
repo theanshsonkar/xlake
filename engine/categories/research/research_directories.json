@@ -1,0 +1,122 @@
+[
+  {
+    "hub_id": "nsf-reu",
+    "url": "https://www.nsf.gov/funding/initiatives/reu",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "pathwaystoscience-research-opportunities",
+    "url": "https://www.pathwaystoscience.org/",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "aas-internships",
+    "url": "https://aas.org/careers/internships",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "indian-academy-of-sciences",
+    "url": "https://www.ias.ac.in/",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "instem-surf",
+    "url": "https://www.instem.res.in/surf",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "openai-residency",
+    "url": "https://openai.com/residency/",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "anthropic-fellows-program-2026",
+    "url": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "deepmind-student-researcher-program",
+    "url": "https://deepmind.google/student-researcher-program/",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "google-research-programs-events",
+    "url": "https://research.google/programs-and-events/",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "meta-ai-research-request-for-proposals",
+    "url": "https://ai.meta.com/research/request-for-proposals/",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "cohere-research",
+    "url": "https://cohere.com/research",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "allenai-predoctoral-young-investigators",
+    "url": "https://allenai.org/predoctoral-young-investigators",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "amazon-science-research-awards",
+    "url": "https://www.amazon.science/research-awards/call-for-proposals",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "modal-academics",
+    "url": "https://modal.com/academics",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "csir-net",
+    "url": "https://csirnet.nta.nic.in/",
+    "category": "research",
+    "type": "hub",
+    "authoritative": true,
+    "added_at": "2026-09-01T00:00:00Z"
+  }
+]

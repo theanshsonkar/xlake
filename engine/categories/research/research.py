@@ -12,8 +12,8 @@ from categories.programme_core import (
     ROLLING_TOKENS, ProgrammeConfig, _VisibleText, _application_url,
     _atomic_json, _default_fetch, _evidence, _later_timestamp, _load_json,
     _month_number, _observation, _quote_with, _sentences, _text, _timestamp,
-    _year_near, classify_status, detect_applicant_windows, parse_date,
-    parse_dates, run_module_cli, validate_verification,
+    _year_near, classify_status, detect_applicant_windows, load_generated_seeds,
+    parse_date, parse_dates, run_module_cli, validate_verification,
 )
 
 SOURCE_REGISTRY = (
@@ -28,6 +28,25 @@ SOURCE_REGISTRY = (
     {"source_id": "riken-ipa", "programme_id": "research-riken-ipa", "programme_name": "RIKEN International Program Associate (IPA)", "organizer": "RIKEN", "official_url": "https://www.riken.jp/en/careers/programs/ipa/index.html", "allowed_path_hints": ["careers/programs/ipa", "ipa"], "check_cadence": "monthly"},
     {"source_id": "nsf-reu", "programme_id": "research-nsf-reu", "programme_name": "NSF Research Experiences for Undergraduates (REU)", "organizer": "U.S. National Science Foundation (NSF)", "official_url": "https://www.nsf.gov/funding/initiatives/reu", "allowed_path_hints": ["funding/initiatives/reu", "reu"], "check_cadence": "monthly"},
 )
+STATIC_SOURCE_REGISTRY = SOURCE_REGISTRY
+
+
+def _combined_source_registry() -> tuple:
+    result = list(STATIC_SOURCE_REGISTRY)
+    seen_urls = {seed["official_url"] for seed in result}
+    seen_ids = {seed["source_id"] for seed in result} | {seed["programme_id"] for seed in result}
+    for seed in load_generated_seeds("research"):
+        if (seed["official_url"] in seen_urls
+                or seed["source_id"] in seen_ids
+                or seed["programme_id"] in seen_ids):
+            continue
+        result.append(seed)
+        seen_urls.add(seed["official_url"])
+        seen_ids.update((seed["source_id"], seed["programme_id"]))
+    return tuple(result)
+
+
+SOURCE_REGISTRY = _combined_source_registry()
 SEEDS = SOURCE_REGISTRY
 SEED_BY_URL = {seed["official_url"]: seed for seed in SOURCE_REGISTRY}
 SOURCE_BY_ID = {seed["programme_id"]: seed for seed in SOURCE_REGISTRY}

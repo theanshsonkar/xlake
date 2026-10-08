@@ -67,6 +67,9 @@ jobs:
           mkdir -p data/operations/generated_seeds
           python3 -u -m categories.hub_seeds --category fellowships --out data/operations/generated_seeds/fellowships.json
           python3 -u -m categories.hub_seeds --category scholarships --out data/operations/generated_seeds/scholarships.json
+          python3 -u -m categories.hub_seeds --category grants --out data/operations/generated_seeds/grants.json
+          python3 -u -m categories.hub_seeds --category research --out data/operations/generated_seeds/research.json
+          python3 -u -m categories.hub_seeds --category open_source --out data/operations/generated_seeds/open_source.json
 
       - name: Refresh Open Source programmes
         if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'open-source' }}
@@ -140,10 +143,10 @@ jobs:
             data/operations/programme_verifications.json \
             data/operations/research_programme_verifications.json \
             data/operations/discovery_*.json
-          [ -f data/operations/generated_seeds/fellowships.json ] && \
-            git add data/operations/generated_seeds/fellowships.json
-          [ -f data/operations/generated_seeds/scholarships.json ] && \
-            git add data/operations/generated_seeds/scholarships.json
+          for seed in fellowships scholarships grants research open_source; do
+            [ -f "data/operations/generated_seeds/${seed}.json" ] && \
+              git add "data/operations/generated_seeds/${seed}.json"
+          done
           git diff --staged --quiet || git commit -m "daily: sweep + programmes + contributions $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase --autostash origin "$GITHUB_REF_NAME"
           git push
