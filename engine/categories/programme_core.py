@@ -46,6 +46,7 @@ _PROGRAMME_ADVICE_TITLE = re.compile(
     r"^(?:how|preparing|finding|writing|tips|guide|applying|why|what)\b", re.I,
 )
 _PROGRAMME_ADVICE_PATH_SEGMENTS = frozenset(("blog", "blogs", "advice", "tips", "guide"))
+_PROGRAMME_TITLE_YEAR = re.compile(r"\b20\d{2}\b")
 
 
 def _programme_host_is_job_board(url: str) -> bool:
@@ -96,6 +97,11 @@ def programme_title_ok(title: str, url: str, category: str = "") -> Tuple[bool, 
         return False, "job_board_host"
     if category.casefold() in {"fellowship", "fellowships"} and re.match(r"^internship\b", title_text, re.I):
         return False, "internship_title"
+    current_year = datetime.now(timezone.utc).year
+    title_years = [int(item) for item in _PROGRAMME_TITLE_YEAR.findall(title_text)]
+    if (any(year < current_year - 1 for year in title_years)
+            and not any(year >= current_year - 1 for year in title_years)):
+        return False, "stale_year"
     if not _programme_has_noun(title_text, category):
         return False, "missing_programme_noun"
     return True, "ok"

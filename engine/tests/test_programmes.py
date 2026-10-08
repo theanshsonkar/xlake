@@ -67,6 +67,30 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertFalse(programme_title_ok("Research Foundation", "https://official.example/program", "fellowship")[0])
         self.assertTrue(programme_title_ok("Research Foundation", "https://official.example/program", "scholarship")[0])
 
+    def test_generated_programme_title_gate_rejects_stale_years(self):
+        self.assertEqual(
+            programme_title_ok(
+                "Summer Research Fellowship Programme 2021",
+                "https://official.example/program",
+                "fellowship",
+            ),
+            (False, "stale_year"),
+        )
+        self.assertTrue(
+            programme_title_ok(
+                "Summer Research Fellowship Programme 2026",
+                "https://official.example/program",
+                "fellowship",
+            )[0]
+        )
+        self.assertTrue(
+            programme_title_ok(
+                "Summer Research Fellowship Programme 2025-2026",
+                "https://official.example/program",
+                "fellowship",
+            )[0]
+        )
+
     def test_registry_is_data_only_and_keeps_six_seed_urls(self):
         self.assertGreaterEqual(len(SOURCE_REGISTRY), 6)
 
