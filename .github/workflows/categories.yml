@@ -61,7 +61,7 @@ jobs:
       - name: Generate hub seeds (weekly Sunday)
         if: ${{ inputs.category == 'hubs' || github.event.schedule == '17 6 * * 0' }}
         env:
-          XLAKE_HUB_MAX_PAGES: "150"
+          XLAKE_HUB_MAX_PAGES: "400"
           XLAKE_HUB_MAX_PAGES_PER_HOST: "40"
         run: |
           mkdir -p data/operations/generated_seeds

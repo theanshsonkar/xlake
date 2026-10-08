@@ -5,13 +5,13 @@ try:
         _capped_candidates, _default_hubs_path, _policy,
         admit_candidate, candidates_to_seeds,
     )
-    from engine.categories.research.harvest import Candidate
+    from engine.categories.research.harvest import Candidate, parse_bare_urls
 except ImportError:
     from categories.hub_seeds import (
         _capped_candidates, _default_hubs_path, _policy,
         admit_candidate, candidates_to_seeds,
     )
-    from categories.research.harvest import Candidate
+    from categories.research.harvest import Candidate, parse_bare_urls
 
 
 class HubSeedsTests(unittest.TestCase):
@@ -26,6 +26,16 @@ class HubSeedsTests(unittest.TestCase):
                 "source_count": count,
             },
         }
+
+    def test_csv_bare_url_extraction(self):
+        links = parse_bare_urls(
+            'Name, Link\n"Fellowship", https://example.org/fellowship/,\n'
+            'Other, https://example.org/other).\n'
+        )
+        self.assertEqual(links, [
+            ("https://example.org/fellowship/", ""),
+            ("https://example.org/other", ""),
+        ])
 
     def test_generic_and_short_anchors_are_dropped(self):
         candidates = [

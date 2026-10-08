@@ -1,7 +1,7 @@
 [
   {
     "hub_id": "chinasatokolo-csgraduatefellowships",
-    "url": "https://github.com/chinasatokolo/csGraduateFellowships",
+    "url": "https://raw.githubusercontent.com/chinasatokolo/csGraduateFellowships/master/README.md",
     "category": "fellowships",
     "type": "hub",
     "authoritative": false,
@@ -9,7 +9,7 @@
   },
   {
     "hub_id": "ankitshah009-all-about-grad-cs-fellowships",
-    "url": "https://github.com/ankitshah009/all_about_grad_cs_fellowships",
+    "url": "https://raw.githubusercontent.com/ankitshah009/all_about_grad_cs_fellowships/master/README.md",
     "category": "fellowships",
     "type": "hub",
     "authoritative": false,
@@ -25,7 +25,7 @@
   },
   {
     "hub_id": "anu0012-awesome-computer-science-opportunities",
-    "url": "https://github.com/anu0012/awesome-computer-science-opportunities",
+    "url": "https://raw.githubusercontent.com/anu0012/awesome-computer-science-opportunities/master/README.md",
     "category": "fellowships",
     "type": "hub",
     "authoritative": false,
@@ -54,5 +54,45 @@
     "type": "hub",
     "authoritative": false,
     "added_at": "2026-10-04T00:00:00Z"
+  },
+  {
+    "hub_id": "csphdfellowships-csphdfellowships-fellowships-csv",
+    "url": "https://raw.githubusercontent.com/csphdfellowships/csphdfellowships/master/fellowships.csv",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "hub_id": "dhanus-graduate-fellowships-readme",
+    "url": "https://raw.githubusercontent.com/dhanus/graduate-fellowships/master/README.md",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "hub_id": "julian048-cs-everything-but-internships-readme",
+    "url": "https://raw.githubusercontent.com/Julian048/CS-Everything-but-Internships/master/README.md",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "hub_id": "landedjobs-ai-fellowships-and-residencies-readme",
+    "url": "https://raw.githubusercontent.com/landedjobs/ai-fellowships-and-residencies/master/README.md",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "hub_id": "junweiliang-awesome-lists-funding",
+    "url": "https://raw.githubusercontent.com/JunweiLiang/awesome_lists/master/funding.md",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-08T00:00:00Z"
   }
 ]

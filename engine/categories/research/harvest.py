@@ -499,6 +499,19 @@ def parse_markdown_links(text: str) -> List[Tuple[str, str]]:
     return links
 
 
+_BARE_HTTP_URL = re.compile(r"https?://[^\s<>\"']+", re.IGNORECASE)
+
+
+def parse_bare_urls(text: str) -> List[Tuple[str, str]]:
+    """Extract bare HTTP(S) URLs from plain-text hub bodies."""
+    links: List[Tuple[str, str]] = []
+    for match in _BARE_HTTP_URL.finditer(text or ""):
+        target = match.group(0).rstrip(".,;:!?)]}>")
+        if target:
+            links.append((target, ""))
+    return links
+
+
 def candidate_flag(anchor: str, url: str) -> bool:
     return bool(CANDIDATE_TERMS.search(anchor) or CANDIDATE_TERMS.search(url))
 
@@ -715,6 +728,8 @@ def fetch_hub(fetcher: Fetcher, hub: Dict[str, str]) -> Tuple[str, List[Tuple[st
     if result.state != "live" or result.status != 200:
         return "failed", [], result.reason or result.state
     try:
+        if urllib_parse.urlsplit(result.final_url or hub_url).path.lower().endswith((".csv", ".txt")):
+            return "processed", parse_bare_urls(result.body), "plain-text URLs; {}".format(result.reason or "robots_allow")
         return "processed", parse_html_links(result.body), "HTML anchors; {}".format(result.reason or "robots_allow")
     except (TypeError, ValueError) as exc:
         return "failed", [], "HTML parse failed: {}".format(exc)
