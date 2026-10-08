@@ -139,9 +139,11 @@ jobs:
             data/operations/programmes_observations.json \
             data/operations/programme_verifications.json \
             data/operations/research_programme_verifications.json \
-            data/operations/discovery_*.json \
-            data/operations/generated_seeds/fellowships.json \
-            data/operations/generated_seeds/scholarships.json
+            data/operations/discovery_*.json
+          [ -f data/operations/generated_seeds/fellowships.json ] && \
+            git add data/operations/generated_seeds/fellowships.json
+          [ -f data/operations/generated_seeds/scholarships.json ] && \
+            git add data/operations/generated_seeds/scholarships.json
           git diff --staged --quiet || git commit -m "daily: sweep + programmes + contributions $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase --autostash origin "$GITHUB_REF_NAME"
           git push
