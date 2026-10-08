@@ -207,9 +207,13 @@ class Supabase:
         req = urllib.request.Request(
             self.base + path, data=data, method=method,
             headers=self._headers(headers))
-        with urllib.request.urlopen(req) as resp:
-            raw = resp.read().decode()
-            return resp.status, resp.headers, raw
+        try:
+            with urllib.request.urlopen(req) as resp:
+                raw = resp.read().decode()
+                return resp.status, resp.headers, raw
+        except urllib.error.HTTPError as e:
+            e.body_text = e.read().decode(errors="replace")[:300]
+            raise
 
     def fetch_all_ids(self):
         """Return the set of all ids currently in the table (paginated)."""
@@ -238,15 +242,33 @@ class Supabase:
         double-quoted (handles commas) and percent-encoded for the query
         string.
         """
-        for i in range(0, len(ids), RETIRE_BATCH):
-            chunk = ids[i:i + RETIRE_BATCH]
+        def retire_chunk(chunk):
             in_list = ",".join(
-                '"%s"' % urllib.parse.quote(x.replace('"', ''), safe="")
+                '"%s"' % urllib.parse.quote(
+                    x.replace("\\", "\\\\").replace('"', ''), safe="")
                 for x in chunk)
-            self._request(
-                "PATCH", "/%s?id=in.(%s)" % (TABLE, in_list),
-                body={"is_live": False},
-                headers={"Prefer": "return=minimal"})
+            try:
+                self._request(
+                    "PATCH", "/%s?id=in.(%s)" % (TABLE, in_list),
+                    body={"is_live": False},
+                    headers={"Prefer": "return=minimal"})
+                return 0
+            except urllib.error.HTTPError as e:
+                if e.code not in (400, 414):
+                    raise
+                if len(chunk) > 1:
+                    middle = len(chunk) // 2
+                    return (retire_chunk(chunk[:middle]) +
+                            retire_chunk(chunk[middle:]))
+                print("RETIRE SKIP id=%s http=%s body=%s" % (
+                    repr(chunk[0])[:200], e.code,
+                    getattr(e, "body_text", "")))
+                return 1
+
+        skipped = 0
+        for i in range(0, len(ids), RETIRE_BATCH):
+            skipped += retire_chunk(ids[i:i + RETIRE_BATCH])
+        return skipped
 
 
 # --------------------------------------------------------------------------- #
@@ -352,8 +374,8 @@ def main():
         client.upsert(mapped[i:i + UPSERT_BATCH])
         print("upserted %d/%d" % (min(i + UPSERT_BATCH, len(mapped)), len(mapped)))
     to_retire = sorted(existing - serving_ids)
-    if to_retire:
-        client.retire(to_retire)
+    skipped = client.retire(to_retire) if to_retire else 0
+    print("retire skipped: %d" % skipped)
     print("done. upserted=%d soft_retired=%d" % (len(mapped), len(to_retire)))
     return 0
 
