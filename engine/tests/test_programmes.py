@@ -20,6 +20,7 @@ from categories.research import research
 from categories.scholarships import scholarships
 from categories.programme_core import (
     ProgrammeConfig, _hop_links, _hop_page_matches_seed, _text, collect as core_collect,
+    programme_title_ok,
 )
 
 FIXTURES = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "fixtures", "programmes")
@@ -30,6 +31,41 @@ class TestGenericProgrammePipeline(unittest.TestCase):
     def fixture(self, name):
         with open(os.path.join(FIXTURES, name)) as fh:
             return fh.read()
+
+    def test_generated_programme_title_gate_rejects_junk_and_accepts_good_examples(self):
+        rejected = (
+            ("How to Find, Apply to, and Win a Fellowship During Your PhD or Postdoc", "https://pfforphds.com/article"),
+            ("Preparing a Fellowship Application", "https://funding.yale.edu/advice/fellowship"),
+            ("Finding & Applying to Fellowships", "https://gograd.org/guide/fellowships"),
+            ("Writing a Research Statement for Graduate School and Fellowships", "https://h2r.cs.brown.edu/writing"),
+            ("Cornell", "https://www.cs.cornell.edu/"),
+            ("McKelvey School of Engineering", "https://engineering.wustl.edu/"),
+            ("Hanzilla Jobs (Canada)", "https://jobs.hanzilla.co/search"),
+            ("Internship At CMI", "https://cmi.example/internship"),
+        )
+        accepted = (
+            "Citadel PhD Fellowship",
+            "Graduate Fellowships for STEM Diversity (GFSD)",
+            "IISER Bhopal Summer Student Research Fellowship",
+            "Summer Undergraduate Research fellowship program",
+            "Schlumberger Foundation Faculty for the Future Fellowship",
+            "IISc Bangalore Summer Research Program",
+            "Amgen Scholars Program",
+            "NSF Graduate Research Fellowship Program",
+            "Siebel Scholars Program",
+            "Quad Fellowship",
+            "Santa Fe Institute Summer Research Experience",
+            "Sandia National Labs Postdoctoral Fellowships",
+            "Korean American Scholarship Foundation",
+        )
+        for title, url in rejected:
+            with self.subTest(title=title):
+                self.assertFalse(programme_title_ok(title, url, "fellowship")[0])
+        for title in accepted:
+            with self.subTest(title=title):
+                self.assertTrue(programme_title_ok(title, "https://official.example/program", "fellowship")[0])
+        self.assertFalse(programme_title_ok("Research Foundation", "https://official.example/program", "fellowship")[0])
+        self.assertTrue(programme_title_ok("Research Foundation", "https://official.example/program", "scholarship")[0])
 
     def test_registry_is_data_only_and_keeps_six_seed_urls(self):
         self.assertGreaterEqual(len(SOURCE_REGISTRY), 6)

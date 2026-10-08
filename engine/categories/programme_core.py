@@ -28,6 +28,79 @@ class ProgrammeConfig:
     needs_confirmation_floor: bool = False
 
 
+# Shared title/host quality data for generated programme seeds.  Keep this
+# category-neutral so hub discovery and collection enforce the same policy.
+PROGRAMME_NOUNS = (
+    "fellowship", "fellowships", "scholar", "scholars", "scholarship",
+    "scholarships", "program", "programs", "programme", "programmes",
+    "award", "awards", "grant", "grants", "residency", "residencies",
+    "prize", "prizes", "summer school", "summer schools", "bootcamp",
+    "bootcamps", "research experience", "research experiences",
+    "internship programme", "internship program", "mentorship", "mentorships",
+    "initiative", "initiatives", "foundation", "academy", "academies",
+)
+JOB_BOARD_HOSTS = (
+    "lever", "greenhouse", "workable", "linkedin", "naukri", "indeed", "hanzilla",
+)
+_PROGRAMME_ADVICE_TITLE = re.compile(
+    r"^(?:how|preparing|finding|writing|tips|guide|applying|why|what)\b", re.I,
+)
+_PROGRAMME_ADVICE_PATH_SEGMENTS = frozenset(("blog", "blogs", "advice", "tips", "guide"))
+
+
+def _programme_host_is_job_board(url: str) -> bool:
+    try:
+        parsed = urlparse(url)
+        host = (parsed.hostname or "").casefold().rstrip(".")
+    except (TypeError, ValueError):
+        return False
+    if not host or host.startswith(("jobs.", "careers.")):
+        return bool(host)
+    labels = set(host.split("."))
+    return any(board in labels for board in JOB_BOARD_HOSTS)
+
+
+def _programme_has_noun(title: str, category: str = "") -> bool:
+    lowered = str(title or "").casefold()
+    has_scholarship_or_fellowship = bool(
+        re.search(r"\b(?:fellowships?|scholarships?)\b", lowered)
+    )
+    for noun in PROGRAMME_NOUNS:
+        if noun == "foundation" and not (
+                category.casefold() in {"scholarship", "scholarships"}
+                or has_scholarship_or_fellowship):
+            continue
+        pattern = r"(?<![a-z0-9]){}(?![a-z0-9])".format(re.escape(noun))
+        if re.search(pattern, lowered):
+            return True
+    return False
+
+
+def programme_title_ok(title: str, url: str, category: str = "") -> Tuple[bool, str]:
+    """Apply one data-driven quality gate to a generated programme title."""
+    title_text = str(title or "").strip()
+    lowered = title_text.casefold()
+    if (_PROGRAMME_ADVICE_TITLE.search(title_text)
+            or "how to" in lowered
+            or "tips for" in lowered
+            or "guide to" in lowered):
+        return False, "advice_page"
+    try:
+        path = urlparse(url).path or "/"
+        path_segments = {segment.casefold() for segment in path.split("/") if segment}
+    except (TypeError, ValueError):
+        path_segments = set()
+    if path_segments & _PROGRAMME_ADVICE_PATH_SEGMENTS:
+        return False, "advice_page"
+    if _programme_host_is_job_board(url):
+        return False, "job_board_host"
+    if category.casefold() in {"fellowship", "fellowships"} and re.match(r"^internship\b", title_text, re.I):
+        return False, "internship_title"
+    if not _programme_has_noun(title_text, category):
+        return False, "missing_programme_noun"
+    return True, "ok"
+
+
 MONTHS = (
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December",
@@ -917,6 +990,11 @@ def _log_fetch_outcome(seed: Dict, final_url: Optional[str], outcome: str, error
     print(line, flush=True)
 
 
+def _is_generated_seed(seed: Dict) -> bool:
+    """Generated hub overlays use the stable ``hub-`` source-id prefix."""
+    return str(seed.get("source_id") or "").startswith("hub-")
+
+
 def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetch, checked_at: Optional[datetime] = None, lake_path: str = OPPORTUNITIES_PATH, observations_path: Optional[str] = None) -> Dict:
     records, observations = [], []
     successes = 0
@@ -928,6 +1006,20 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
         outcome = "exception"
         fetch_succeeded = False
         exception_detail = None
+        if _is_generated_seed(seed):
+            title_ok, title_reason = programme_title_ok(
+                seed.get("programme_name", ""), seed.get("official_url", ""), config.category,
+            )
+            if not title_ok:
+                checked = (checked_at or datetime.now(timezone.utc)).isoformat(timespec="seconds")
+                observation = _observation(
+                    seed, checked, "failed", "generated seed rejected: {}".format(title_reason),
+                )
+                observations.append(observation)
+                outcome = "rejected_{}".format(title_reason)
+                failure_counts[outcome] += 1
+                _log_fetch_outcome(seed, seed.get("official_url"), outcome)
+                continue
         try:
             fetched = fetch(seed["official_url"])
             html, final_url = fetched if isinstance(fetched, tuple) else (fetched, None)

@@ -45,6 +45,10 @@ GENERIC_NAMES = frozenset({
     "info", "register", "sign up",
 })
 from core import pagetext
+try:
+    from categories.programme_core import programme_title_ok
+except ImportError:  # pragma: no cover - supports package-root imports
+    from engine.categories.programme_core import programme_title_ok
 
 
 _ADMISSION_PATH_SEGMENTS = frozenset({
@@ -573,6 +577,7 @@ REQUIRED_SEED_FIELDS = (
 )
 LAST_GENERATE_STATS: Dict[str, object] = {}
 LAST_ADMISSION_STATS: Dict[str, int] = {}
+LAST_SEED_GATE_REJECTIONS: Dict[str, int] = {}
 
 
 _FILTER_COUNTERS = {
@@ -675,6 +680,8 @@ def candidates_to_seeds(
     max_total: int = 200,
 ) -> List[Dict]:
     """Purely convert harvester-shaped candidate dictionaries to seed records."""
+    global LAST_SEED_GATE_REJECTIONS
+    LAST_SEED_GATE_REJECTIONS = {}
     if max_per_host <= 0 or max_total <= 0:
         return []
     existing = {_host_path(seed.get("official_url")) for seed in existing_seeds
@@ -690,6 +697,11 @@ def candidates_to_seeds(
         normalized = _normalise_url(candidate.get("official_url"))
         if normalized is None:
             continue
+        if category in DIRECTORY_CATEGORIES:
+            title_ok, title_reason = programme_title_ok(name, normalized, category)
+            if not title_ok:
+                LAST_SEED_GATE_REJECTIONS[title_reason] = LAST_SEED_GATE_REJECTIONS.get(title_reason, 0) + 1
+                continue
         parsed = urlparse.urlsplit(normalized)
         host = (parsed.hostname or "").lower()
         if not host or _excluded_host(host) or (host, parsed.path or "/") in existing:
@@ -845,6 +857,7 @@ def generate(
         "hub_failures": failures,
         "hub_blocks": blocks,
         "http_requests": getattr(client, "total_requests", None),
+        "rejections_by_reason": dict(LAST_SEED_GATE_REJECTIONS),
     }
     destination = Path(out_path) if out_path is not None else DEFAULT_OUTPUT_DIR / (category + ".json")
     resolved = destination.expanduser().resolve()
@@ -886,7 +899,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         _static_seeds(args.category),
         out_path=Path(args.out) if args.out else None,
     )
-    print(json.dumps({"category": args.category, "seeds_generated": len(seeds)}, sort_keys=True))
+    print(json.dumps({
+        "category": args.category,
+        "seeds_generated": len(seeds),
+        "rejections_by_reason": LAST_GENERATE_STATS.get("rejections_by_reason", {}),
+    }, sort_keys=True))
     return 0
 
 
