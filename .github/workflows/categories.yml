@@ -1,0 +1,159 @@
+name: categories
+
+on:
+  schedule:
+    - cron: "47 4 * * *"     # 10:17 IST — daily non-job categories
+    - cron: "17 6 * * 0"     # 11:47 IST — weekly hub seed generation
+  workflow_dispatch:
+    inputs:
+      category:
+        description: "Which category to run"
+        required: false
+        type: choice
+        default: all
+        options:
+          - all
+          - hubs
+          - open-source
+          - fellowships
+          - scholarships
+          - grants
+          - research
+          - hackathons
+
+concurrency:
+  group: xlake-lake-writer
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  categories:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+      AWS_DEFAULT_REGION: ap-south-1
+      XLAKE_GENERATED_SEEDS_DIR: ${{ github.workspace }}/engine/data/operations/generated_seeds
+    defaults:
+      run:
+        working-directory: engine
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The canonical lake lives in S3, not git. Pull the current lake down so
+      # the collectors read/write the same local files exactly as before.
+      - name: Restore lake from S3
+        run: |
+          mkdir -p data/lake
+          aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities.json" data/lake/opportunities.json
+          aws s3 cp "s3://$AWS_S3_BUCKET/lake/hidden.json" data/lake/hidden.json
+          aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities_history.json" data/lake/opportunities_history.json
+
+      - name: Generate hub seeds (weekly Sunday)
+        if: ${{ inputs.category == 'hubs' || github.event.schedule == '17 6 * * 0' }}
+        env:
+          XLAKE_HUB_MAX_PAGES: "150"
+          XLAKE_HUB_MAX_PAGES_PER_HOST: "40"
+        run: |
+          mkdir -p data/operations/generated_seeds
+          python3 -u -m categories.hub_seeds --category fellowships --out data/operations/generated_seeds/fellowships.json
+          python3 -u -m categories.hub_seeds --category scholarships --out data/operations/generated_seeds/scholarships.json
+
+      - name: Refresh Open Source programmes
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'open-source' }}
+        run: python3 -u -m categories.open_source.programmes
+
+      - name: Refresh Open Source contributions (good-first-issues)
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'open-source' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: python3 -u -m categories.open_source.contributions
+
+      - name: Refresh Fellowships
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'fellowships' }}
+        run: |
+          python3 -u -m categories.fellowships.fellowships
+          python3 -u -m categories.fellowships.fellowships --apply-verifications
+
+      - name: Refresh Scholarships
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'scholarships' }}
+        run: |
+          python3 -u -m categories.scholarships.scholarships
+          python3 -u -m categories.scholarships.scholarships --apply-verifications
+
+      - name: Refresh Grants
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'grants' }}
+        run: |
+          python3 -u -m categories.grants.grants
+          python3 -u -m categories.grants.grants --apply-verifications
+
+      - name: Refresh Research
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'research' }}
+        working-directory: .
+        run: cd engine && python3 -m categories.research.research
+
+      - name: Refresh Hackathons
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'hackathons' }}
+        run: python3 -u -m categories.hackathons.hackathons
+
+      # Persist the lake back to S3 after ALL collectors have written it, so no
+      # record type is lost, plus a timestamped snapshot for point-in-time
+      # recovery. Placed after the last collector (not right after the sweep)
+      # because programmes/contributions/hackathons also write the lake.
+      - name: Sync lake to S3
+        run: |
+          aws s3 cp data/lake/opportunities.json "s3://$AWS_S3_BUCKET/lake/opportunities.json"
+          aws s3 cp data/lake/hidden.json "s3://$AWS_S3_BUCKET/lake/hidden.json"
+          aws s3 cp data/lake/opportunities_history.json "s3://$AWS_S3_BUCKET/lake/opportunities_history.json"
+          aws s3 cp data/lake/opportunities.json "s3://$AWS_S3_BUCKET/archive/opportunities-$(date -u +%Y%m%dT%H%M%SZ).json"
+
+      # Publish the serving rows (is_live OR needs_confirmation) into the
+      # Supabase serving table. Read-only against the lake; upserts on id and
+      # soft-retires ids no longer serving. Uses the Python stdlib only
+      # (urllib/json/hashlib) — no extra pip deps required.
+      - name: Publish to Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 -u -m pipeline.publish_supabase --execute
+
+      # opportunities.json is the canonical lake. hidden.json is its retained
+      # non-default companion; run and tier state are operational history.
+      # The lake files themselves now live in S3 (synced above) and are
+      # gitignored, so only the small operational files are committed here.
+      - name: Commit operational files
+        run: |
+          git config user.name  "opportunity-lake-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/operations/registry.json \
+            data/operations/runs.jsonl data/operations/tier_state.json \
+            data/operations/programmes_observations.json \
+            data/operations/programme_verifications.json \
+            data/operations/research_programme_verifications.json \
+            data/operations/discovery_*.json \
+            data/operations/generated_seeds/fellowships.json \
+            data/operations/generated_seeds/scholarships.json
+          git diff --staged --quiet || git commit -m "daily: sweep + programmes + contributions $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+          git push
+
+      - name: Upload artifacts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: categories-output
+          path: |
+            engine/data/lake/opportunities.json
+            engine/data/lake/hidden.json
+            engine/data/operations/runs.jsonl
+            engine/data/operations/tier_state.json
+          retention-days: 14

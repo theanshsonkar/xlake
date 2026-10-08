@@ -11,7 +11,6 @@ on:
   schedule:
     - cron: "17 1 * * *"     # 06:47 IST — the board sweep, once daily
     - cron: "37 2 * * *"    # 08:07 IST — the page-reader pass, once daily
-    - cron: "17 3 * * 0"     # 08:47 IST — weekly hub seed generation on Sundays
   workflow_dispatch:
     inputs:
       job:
@@ -24,7 +23,7 @@ on:
         default: "0"
 
 concurrency:
-  group: sweep-${{ github.ref }}
+  group: xlake-lake-writer
   cancel-in-progress: false
 
 # Both jobs commit data/*.json back to the repo, so they need write access.
@@ -34,9 +33,7 @@ permissions:
 jobs:
   sweep:
     if: >
-      (github.event_name == 'schedule' &&
-       (github.event.schedule == '17 1 * * *' ||
-        github.event.schedule == '17 3 * * 0')) ||
+      (github.event_name == 'schedule' && github.event.schedule == '17 1 * * *') ||
       (github.event_name == 'workflow_dispatch' &&
        (github.event.inputs.job == 'sweep' || github.event.inputs.job == 'both'))
     runs-on: ubuntu-latest
@@ -62,13 +59,11 @@ jobs:
       # built by resolve_companies.py), not the raw Common Crawl universe, so
       # there is no enumeration-cache step here.
       - name: Refresh community internship lists (zshah101)
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
         run: python3 -u -m categories.internships.lists
 
       # The canonical lake lives in S3, not git. Pull the current lake down so
       # the collectors read/write the same local files exactly as before.
       - name: Restore lake from S3
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
         run: |
           mkdir -p data/lake
           aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities.json" data/lake/opportunities.json
@@ -76,7 +71,6 @@ jobs:
           aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities_history.json" data/lake/opportunities_history.json
 
       - name: Sweep the resolved registry
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
         env:
           LAKE_WORKERS: "8"
           LAKE_HOST_DELAY: "0.3"
@@ -84,59 +78,13 @@ jobs:
         run: python3 -u -m pipeline.sweep
 
       - name: Show report
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
         run: tail -1 data/operations/runs.jsonl | python3 -m json.tool
-
-      - name: Refresh Open Source programmes
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
-        run: python3 -u -m categories.open_source.programmes
-
-      - name: Refresh Open Source contributions (good-first-issues)
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-        run: python3 -u -m categories.open_source.contributions
-
-      # Weekly only: generated files stay under operations and are loaded by
-      # the collectors below; the S3 sync publishes lake files only.
-      - name: Generate hub seeds (weekly Sunday)
-        if: github.event_name == 'schedule' && github.event.schedule == '17 3 * * 0'
-        env:
-          XLAKE_HUB_MAX_PAGES: "150"
-          XLAKE_HUB_MAX_PAGES_PER_HOST: "40"
-        run: |
-          mkdir -p data/operations/generated_seeds
-          python3 -u -m categories.hub_seeds --category fellowships --out data/operations/generated_seeds/fellowships.json
-          python3 -u -m categories.hub_seeds --category scholarships --out data/operations/generated_seeds/scholarships.json
-
-      - name: Refresh Fellowships
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
-        run: |
-          python3 -u -m categories.fellowships.fellowships
-          python3 -u -m categories.fellowships.fellowships --apply-verifications
-
-      - name: Refresh Scholarships
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
-        run: |
-          python3 -u -m categories.scholarships.scholarships
-          python3 -u -m categories.scholarships.scholarships --apply-verifications
-
-      - name: Refresh Grants
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
-        run: |
-          python3 -u -m categories.grants.grants
-          python3 -u -m categories.grants.grants --apply-verifications
-
-      - name: Refresh Hackathons
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
-        run: python3 -u -m categories.hackathons.hackathons
 
       # Persist the lake back to S3 after ALL collectors have written it, so no
       # record type is lost, plus a timestamped snapshot for point-in-time
       # recovery. Placed after the last collector (not right after the sweep)
       # because programmes/contributions/hackathons also write the lake.
       - name: Sync lake to S3
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
         run: |
           aws s3 cp data/lake/opportunities.json "s3://$AWS_S3_BUCKET/lake/opportunities.json"
           aws s3 cp data/lake/hidden.json "s3://$AWS_S3_BUCKET/lake/hidden.json"
@@ -148,7 +96,6 @@ jobs:
       # soft-retires ids no longer serving. Uses the Python stdlib only
       # (urllib/json/hashlib) — no extra pip deps required.
       - name: Publish to Supabase
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
@@ -159,7 +106,6 @@ jobs:
       # The lake files themselves now live in S3 (synced above) and are
       # gitignored, so only the small operational files are committed here.
       - name: Commit operational files
-        if: github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0'
         run: |
           git config user.name  "opportunity-lake-bot"
           git config user.email "bot@users.noreply.github.com"
@@ -174,7 +120,7 @@ jobs:
           git push
 
       - name: Upload artifacts
-        if: always() && (github.event_name != 'schedule' || github.event.schedule != '17 3 * * 0')
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: sweep-output
