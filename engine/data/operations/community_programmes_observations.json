@@ -512,5 +512,537 @@
     "url": "https://www.travellersuniversity.org/52-parindey-fellowship"
    }
   }
+ },
+ {
+  "source_id": "hub-community-www-cmgga-in-b443dc",
+  "programme_id": "community-hub-www-cmgga-in-b443dc",
+  "official_url": "http://www.cmgga.in/",
+  "checked_at": "2026-10-09T21:31:36+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "0) is a flagship fellowship programme of Government of Haryana.",
+    "url": "http://www.cmgga.in/"
+   },
+   "programme_name": {
+    "quote": "Chief Minister\u2019s Good Governance Associates Program (Haryana)",
+    "url": "http://www.cmgga.in/"
+   },
+   "organizer": {
+    "quote": "cmgga.in",
+    "url": "http://www.cmgga.in/"
+   },
+   "official_url": {
+    "quote": "http://www.cmgga.in/",
+    "url": "http://www.cmgga.in/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-www-cmulf-dtu-ac-in-4f2b4b",
+  "programme_id": "community-hub-www-cmulf-dtu-ac-in-4f2b4b",
+  "official_url": "http://www.cmulf.dtu.ac.in/",
+  "checked_at": "2026-10-09T21:31:36+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno -2] Name or service not known>"
+ },
+ {
+  "source_id": "hub-community-www-dalbergdesign-com-jdf-b30876",
+  "programme_id": "community-hub-www-dalbergdesign-com-jdf-b30876",
+  "official_url": "http://www.dalbergdesign.com/jdf",
+  "checked_at": "2026-10-09T21:31:37+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Fellowships are short-term (typically 3-month) opportunities with Dalberg Design, often during summer months.",
+    "url": "http://www.dalbergdesign.com/jdf"
+   },
+   "programme_name": {
+    "quote": "Dalberg Design Fellowship",
+    "url": "http://www.dalbergdesign.com/jdf"
+   },
+   "organizer": {
+    "quote": "dalbergdesign.com",
+    "url": "http://www.dalbergdesign.com/jdf"
+   },
+   "official_url": {
+    "quote": "http://www.dalbergdesign.com/jdf",
+    "url": "http://www.dalbergdesign.com/jdf"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-www-darc-dtu-ac-in-67c0d8",
+  "programme_id": "community-hub-www-darc-dtu-ac-in-67c0d8",
+  "official_url": "http://www.darc.dtu.ac.in/",
+  "checked_at": "2026-10-09T21:31:37+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-community-acumen-org-fellowships-india-22eb7a",
+  "programme_id": "community-hub-acumen-org-fellowships-india-22eb7a",
+  "official_url": "https://acumen.org/fellowships/india",
+  "checked_at": "2026-10-09T21:31:37+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-community-afsee-atlanticfellows-org-the-atlantic-fellowships-db48dc",
+  "programme_id": "community-hub-afsee-atlanticfellows-org-the-atlantic-fellowships-db48dc",
+  "official_url": "https://afsee.atlanticfellows.org/the-atlantic-fellowships",
+  "checked_at": "2026-10-09T21:31:37+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-community-aif-org-fellowship-a3b18e",
+  "programme_id": "community-hub-aif-org-fellowship-a3b18e",
+  "official_url": "https://aif.org/fellowship",
+  "checked_at": "2026-10-09T21:31:38+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The AIF Banyan Impact Fellowship.",
+    "url": "https://aif.org/fellowship"
+   },
+   "programme_name": {
+    "quote": "AIF William J. Clinton Fellowship for Service in India",
+    "url": "https://aif.org/fellowship"
+   },
+   "organizer": {
+    "quote": "aif.org",
+    "url": "https://aif.org/fellowship"
+   },
+   "official_url": {
+    "quote": "https://aif.org/fellowship",
+    "url": "https://aif.org/fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-anu-edu-in-programme-anant-fellowship-315eaf",
+  "programme_id": "community-hub-anu-edu-in-programme-anant-fellowship-315eaf",
+  "official_url": "https://anu.edu.in/programme/anant-fellowship",
+  "checked_at": "2026-10-09T21:31:54+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Anant Fellowship in Sustainability and Built Environment.",
+    "url": "https://anu.edu.in/programme/anant-fellowship"
+   },
+   "programme_name": {
+    "quote": "Anant Fellowship",
+    "url": "https://anu.edu.in/programme/anant-fellowship"
+   },
+   "organizer": {
+    "quote": "anu.edu.in",
+    "url": "https://anu.edu.in/programme/anant-fellowship"
+   },
+   "official_url": {
+    "quote": "https://anu.edu.in/programme/anant-fellowship",
+    "url": "https://anu.edu.in/programme/anant-fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-asiafoundation-org-what-we-do-asia-foundation-development-fe-cde638",
+  "programme_id": "community-hub-asiafoundation-org-what-we-do-asia-foundation-development-fe-cde638",
+  "official_url": "https://asiafoundation.org/what-we-do/asia-foundation-development-fellows",
+  "checked_at": "2026-10-09T21:32:03+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Asia Foundation Development Fellows program is a dynamic and multifaceted learning program designed for highly talented individuals under 40 from Asia and the Pacific to enhance their leadership skills, regional development knowledge, professional networks, and international exposure.",
+    "url": "https://asiafoundation.org/what-we-do/asia-foundation-development-fellows"
+   },
+   "programme_name": {
+    "quote": "Asia Foundation Development Fellows Program",
+    "url": "https://asiafoundation.org/what-we-do/asia-foundation-development-fellows"
+   },
+   "organizer": {
+    "quote": "asiafoundation.org",
+    "url": "https://asiafoundation.org/what-we-do/asia-foundation-development-fellows"
+   },
+   "official_url": {
+    "quote": "https://asiafoundation.org/what-we-do/asia-foundation-development-fellows",
+    "url": "https://asiafoundation.org/what-we-do/asia-foundation-development-fellows"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-azimpremjifoundation-org-content-fellowship-8d3a5e",
+  "programme_id": "community-hub-azimpremjifoundation-org-content-fellowship-8d3a5e",
+  "official_url": "https://azimpremjifoundation.org/content/fellowship",
+  "checked_at": "2026-10-09T21:32:03+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_403"
+ },
+ {
+  "source_id": "hub-community-buddhafellowship-com-fellowship-d9b255",
+  "programme_id": "community-hub-buddhafellowship-com-fellowship-d9b255",
+  "official_url": "https://buddhafellowship.com/fellowship",
+  "checked_at": "2026-10-09T21:32:03+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno -2] Name or service not known>"
+ },
+ {
+  "source_id": "hub-community-centre-humdata-org-data-fellows-ccecf8",
+  "programme_id": "community-hub-centre-humdata-org-data-fellows-ccecf8",
+  "official_url": "https://centre.humdata.org/data-fellows",
+  "checked_at": "2026-10-09T21:32:03+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: stale_year"
+ },
+ {
+  "source_id": "hub-community-cplindia-org-382810",
+  "programme_id": "community-hub-cplindia-org-382810",
+  "official_url": "https://cplindia.org/",
+  "checked_at": "2026-10-09T21:32:06+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Identify, Support & Nurture budding public leaders through fellowships focused on leadership and skill development.",
+    "url": "https://cplindia.org/"
+   },
+   "programme_name": {
+    "quote": "Citizens for Public Leadership Fellowship",
+    "url": "https://cplindia.org/"
+   },
+   "organizer": {
+    "quote": "cplindia.org",
+    "url": "https://cplindia.org/"
+   },
+   "official_url": {
+    "quote": "https://cplindia.org/",
+    "url": "https://cplindia.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-csip-ashoka-edu-in-research-fellowship-2023-ba00b6",
+  "programme_id": "community-hub-csip-ashoka-edu-in-research-fellowship-2023-ba00b6",
+  "official_url": "https://csip.ashoka.edu.in/research-fellowship-2023",
+  "checked_at": "2026-10-09T21:32:14+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_404"
+ },
+ {
+  "source_id": "hub-community-digitalswarajfellowship-org-5a09eb",
+  "programme_id": "community-hub-digitalswarajfellowship-org-5a09eb",
+  "official_url": "https://digitalswarajfellowship.org/",
+  "checked_at": "2026-10-09T21:32:18+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "the lack of institutions offering fellowships, courses, or specialized training for youth in the digital domain.",
+    "url": "https://digitalswarajfellowship.org/"
+   },
+   "programme_name": {
+    "quote": "Digital Swaraj Fellowship",
+    "url": "https://digitalswarajfellowship.org/"
+   },
+   "organizer": {
+    "quote": "digitalswarajfellowship.org",
+    "url": "https://digitalswarajfellowship.org/"
+   },
+   "official_url": {
+    "quote": "https://digitalswarajfellowship.org/",
+    "url": "https://digitalswarajfellowship.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-discord-com-invite-google-dev-community-8a86f7",
+  "programme_id": "community-hub-discord-com-invite-google-dev-community-8a86f7",
+  "official_url": "https://discord.com/invite/google-dev-community",
+  "checked_at": "2026-10-09T21:32:25+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-community-fellowship-bhumi-ngo-f7242f",
+  "programme_id": "community-hub-fellowship-bhumi-ngo-f7242f",
+  "official_url": "https://fellowship.bhumi.ngo/",
+  "checked_at": "2026-10-09T21:32:28+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed; second-hop evidence from https://fellowship.bhumi.ngo/faqs-contact.html",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "2027 cohort applications open on August 15, 2026.",
+    "url": "https://fellowship.bhumi.ngo/faqs-contact.html"
+   },
+   "deadline": {
+    "quote": "2027 cohort applications open on August 15, 2026.",
+    "url": "https://fellowship.bhumi.ngo/faqs-contact.html"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-fellowship-cdri-world-eligibility-html-828cf8",
+  "programme_id": "community-hub-fellowship-cdri-world-eligibility-html-828cf8",
+  "official_url": "https://fellowship.cdri.world/eligibility.html",
+  "checked_at": "2026-10-09T21:32:33+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-community-github-community-ee8349",
+  "programme_id": "community-hub-github-community-ee8349",
+  "official_url": "https://github.community/",
+  "checked_at": "2026-10-09T21:32:36+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Code accurately and faster with your AI powered pair-programmer.",
+    "url": "https://github.community/"
+   },
+   "programme_name": {
+    "quote": "Community Forum",
+    "url": "https://github.community/"
+   },
+   "organizer": {
+    "quote": "github.community",
+    "url": "https://github.community/"
+   },
+   "official_url": {
+    "quote": "https://github.community/",
+    "url": "https://github.community/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-mahades-maharashtra-gov-in-home-do-c0b3e4",
+  "programme_id": "community-hub-mahades-maharashtra-gov-in-home-do-c0b3e4",
+  "official_url": "https://mahades.maharashtra.gov.in/home.do?lang=en",
+  "checked_at": "2026-10-09T21:32:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl."
+ },
+ {
+  "source_id": "hub-community-ocimpact-com-oc-global-cordes-fellowships-5f5bcd",
+  "programme_id": "community-hub-ocimpact-com-oc-global-cordes-fellowships-5f5bcd",
+  "official_url": "https://ocimpact.com/oc-global/cordes-fellowships",
+  "checked_at": "2026-10-09T21:32:47+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_404"
+ },
+ {
+  "source_id": "hub-community-pacscenter-stanford-edu-research-digital-civil-society-lab-cffddb",
+  "programme_id": "community-hub-pacscenter-stanford-edu-research-digital-civil-society-lab-cffddb",
+  "official_url": "https://pacscenter.stanford.edu/research/digital-civil-society-lab/dcsl-non-resident-fellowships",
+  "checked_at": "2026-10-09T21:32:47+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_404"
+ },
+ {
+  "source_id": "hub-community-populareducation-in-vacancies-anil-chaudhary-research-fellow-269b26",
+  "programme_id": "community-hub-populareducation-in-vacancies-anil-chaudhary-research-fellow-269b26",
+  "official_url": "https://populareducation.in/vacancies/anil-chaudhary-research-fellowship-on-political-economy",
+  "checked_at": "2026-10-09T21:32:49+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Anil Chaudhary Research Fellowship / Last Date: 30.",
+    "url": "https://populareducation.in/vacancies/anil-chaudhary-research-fellowship-on-political-economy"
+   },
+   "programme_name": {
+    "quote": "Anil Chaudhary Research Fellowship on Political Economy",
+    "url": "https://populareducation.in/vacancies/anil-chaudhary-research-fellowship-on-political-economy"
+   },
+   "organizer": {
+    "quote": "populareducation.in",
+    "url": "https://populareducation.in/vacancies/anil-chaudhary-research-fellowship-on-political-economy"
+   },
+   "official_url": {
+    "quote": "https://populareducation.in/vacancies/anil-chaudhary-research-fellowship-on-political-economy",
+    "url": "https://populareducation.in/vacancies/anil-chaudhary-research-fellowship-on-political-economy"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-www-adivasilivesmatter-com-aipp-1de5de",
+  "programme_id": "community-hub-www-adivasilivesmatter-com-aipp-1de5de",
+  "official_url": "https://www.adivasilivesmatter.com/aipp",
+  "checked_at": "2026-10-09T21:32:50+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Adivasi Awaaz Media Fellowship is an initiative by Adivasi Lives Matter to document issues and challenges that impact the indigenous communities of India.",
+    "url": "https://www.adivasilivesmatter.com/aipp"
+   },
+   "programme_name": {
+    "quote": "Adivasi Awaaz Media Fellowship",
+    "url": "https://www.adivasilivesmatter.com/aipp"
+   },
+   "organizer": {
+    "quote": "adivasilivesmatter.com",
+    "url": "https://www.adivasilivesmatter.com/aipp"
+   },
+   "official_url": {
+    "quote": "https://www.adivasilivesmatter.com/aipp",
+    "url": "https://www.adivasilivesmatter.com/aipp"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-www-ashoka-edu-in-3cs-media-fellowship-4ef010",
+  "programme_id": "community-hub-www-ashoka-edu-in-3cs-media-fellowship-4ef010",
+  "official_url": "https://www.ashoka.edu.in/3cs-media-fellowship",
+  "checked_at": "2026-10-09T21:32:51+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_403"
+ },
+ {
+  "source_id": "hub-community-www-ashoka-org-en-in-ashoka-fellows-a91223",
+  "programme_id": "community-hub-www-ashoka-org-en-in-ashoka-fellows-a91223",
+  "official_url": "https://www.ashoka.org/en-in/ashoka-fellows",
+  "checked_at": "2026-10-09T21:32:52+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Ashoka Venture and Fellowship team believes in finding these leading social entrepreneurs early on in their trajectory, and supporting them in accelerating their social impact.",
+    "url": "https://www.ashoka.org/en-in/ashoka-fellows"
+   },
+   "programme_name": {
+    "quote": "Ashoka Fellowship",
+    "url": "https://www.ashoka.org/en-in/ashoka-fellows"
+   },
+   "organizer": {
+    "quote": "ashoka.org",
+    "url": "https://www.ashoka.org/en-in/ashoka-fellows"
+   },
+   "official_url": {
+    "quote": "https://www.ashoka.org/en-in/ashoka-fellows",
+    "url": "https://www.ashoka.org/en-in/ashoka-fellows"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-www-ashoka-org-en-in-program-e10ece",
+  "programme_id": "community-hub-www-ashoka-org-en-in-program-e10ece",
+  "official_url": "https://www.ashoka.org/en-in/program/ashoka-young-changemakers",
+  "checked_at": "2026-10-09T21:33:02+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-community-www-britishcouncil-in-study-uk-scholarships-21925c",
+  "programme_id": "community-hub-www-britishcouncil-in-study-uk-scholarships-21925c",
+  "official_url": "https://www.britishcouncil.in/study-uk/scholarships/charles-wallace-india-trust-scholarships",
+  "checked_at": "2026-10-09T21:33:02+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_403"
+ },
+ {
+  "source_id": "hub-community-www-devalt-org-fellowshipprograme-aspx-4252f2",
+  "programme_id": "community-hub-www-devalt-org-fellowshipprograme-aspx-4252f2",
+  "official_url": "https://www.devalt.org/FellowshipPrograme.aspx",
+  "checked_at": "2026-10-09T21:33:06+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_404"
+ },
+ {
+  "source_id": "hub-community-www-mongodb-com-community-forums-445268",
+  "programme_id": "community-hub-www-mongodb-com-community-forums-445268",
+  "official_url": "https://www.mongodb.com/community/forums/c/academia/students/42",
+  "checked_at": "2026-10-09T21:33:06+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-community-www-sif-org-sg-our-work-ce-39f497",
+  "programme_id": "community-hub-www-sif-org-sg-our-work-ce-39f497",
+  "official_url": "https://www.sif.org.sg/our-work/ce/afg/2020-Fellowship",
+  "checked_at": "2026-10-09T21:33:08+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "We keep our programmes dynamic and relevant.",
+    "url": "https://www.sif.org.sg/our-work/ce/afg/2020-Fellowship"
+   },
+   "programme_name": {
+    "quote": "Arts for Good Fellowship",
+    "url": "https://www.sif.org.sg/our-work/ce/afg/2020-Fellowship"
+   },
+   "organizer": {
+    "quote": "sif.org.sg",
+    "url": "https://www.sif.org.sg/our-work/ce/afg/2020-Fellowship"
+   },
+   "official_url": {
+    "quote": "https://www.sif.org.sg/our-work/ce/afg/2020-Fellowship",
+    "url": "https://www.sif.org.sg/our-work/ce/afg/2020-Fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-www-travellersuniversity-org-52-parindey-fellowship-fb78e4",
+  "programme_id": "community-hub-www-travellersuniversity-org-52-parindey-fellowship-fb78e4",
+  "official_url": "https://www.travellersuniversity.org/52-parindey-fellowship",
+  "checked_at": "2026-10-09T21:33:08+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The 52 Parindey Fellowship is an intense, immersive, 8 months long programme for youth in the pursuit of.",
+    "url": "https://www.travellersuniversity.org/52-parindey-fellowship"
+   },
+   "programme_name": {
+    "quote": "52 Parindey Fellowship",
+    "url": "https://www.travellersuniversity.org/52-parindey-fellowship"
+   },
+   "organizer": {
+    "quote": "travellersuniversity.org",
+    "url": "https://www.travellersuniversity.org/52-parindey-fellowship"
+   },
+   "official_url": {
+    "quote": "https://www.travellersuniversity.org/52-parindey-fellowship",
+    "url": "https://www.travellersuniversity.org/52-parindey-fellowship"
+   }
+  }
  }
 ]
