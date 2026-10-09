@@ -23809,5 +23809,836 @@
    "programme_status": {},
    "deadline": {}
   }
+ },
+ {
+  "source_id": "mlh-open-source",
+  "programme_id": "mlh-fellowship-open-source",
+  "official_url": "https://fellowship.mlh.io/programs/open-source",
+  "checked_at": "2026-10-09T11:32:11+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Fellowship applications are processed on a rolling basis and close a few weeks before the start of each batch.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   },
+   "application": {
+    "quote": "Apply Now",
+    "url": "https://fellowship.mlh.com/apply"
+   },
+   "application_url": {
+    "quote": "Apply Now",
+    "url": "https://fellowship.mlh.com/apply"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {
+    "quote": "Participants receive an educational stipend to offset costs during select programs.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   },
+   "location": {
+    "quote": "Our program was designed to be remote from the beginning.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   },
+   "remote": {
+    "quote": "Our program was designed to be remote from the beginning.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   },
+   "international_eligibility": {
+    "quote": "MLH is committed to building a more diverse and inclusive tech industry and providing learning opportunities to technologists who face under-representation, discrimination, or systemic bias worldwide.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   },
+   "eligibility": {
+    "quote": "Anyone who meets these eligibility requirements is welcome to apply.",
+    "url": "https://fellowship.mlh.io/programs/open-source"
+   }
+  }
+ },
+ {
+  "source_id": "google-summer-of-code",
+  "programme_id": "google-summer-of-code",
+  "official_url": "https://summerofcode.withgoogle.com/",
+  "checked_at": "2026-10-09T11:32:11+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Google Summer of Code is a global, online program focused on bringing new contributors into open source software development.",
+    "url": "https://summerofcode.withgoogle.com/"
+   },
+   "programme_name": {
+    "quote": "Google Summer of Code",
+    "url": "https://summerofcode.withgoogle.com/"
+   },
+   "organizer": {
+    "quote": "Google",
+    "url": "https://summerofcode.withgoogle.com/"
+   },
+   "official_url": {
+    "quote": "https://summerofcode.withgoogle.com/",
+    "url": "https://summerofcode.withgoogle.com/"
+   }
+  }
+ },
+ {
+  "source_id": "outreachy",
+  "programme_id": "outreachy",
+  "official_url": "https://www.outreachy.org/",
+  "checked_at": "2026-10-09T11:32:12+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Outreachy internship projects may include programming, research, user experience, documentation, graphical design, data science, marketing, user advocacy, event planning, and more!",
+    "url": "https://www.outreachy.org/"
+   },
+   "programme_name": {
+    "quote": "Outreachy",
+    "url": "https://www.outreachy.org/"
+   },
+   "organizer": {
+    "quote": "Outreachy",
+    "url": "https://www.outreachy.org/"
+   },
+   "official_url": {
+    "quote": "https://www.outreachy.org/",
+    "url": "https://www.outreachy.org/"
+   }
+  }
+ },
+ {
+  "source_id": "lfx-mentorship",
+  "programme_id": "lfx-mentorship",
+  "official_url": "https://lfx.linuxfoundation.org/tools/mentorship",
+  "checked_at": "2026-10-09T11:32:16+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "LFX Mentorship",
+    "url": "https://lfx.linuxfoundation.org/tools/mentorship"
+   },
+   "organizer": {
+    "quote": "The Linux Foundation",
+    "url": "https://lfx.linuxfoundation.org/tools/mentorship"
+   },
+   "official_url": {
+    "quote": "https://lfx.linuxfoundation.org/tools/mentorship",
+    "url": "https://lfx.linuxfoundation.org/tools/mentorship"
+   }
+  }
+ },
+ {
+  "source_id": "riscv-international-mentorship",
+  "programme_id": "riscv-international-mentorship",
+  "official_url": "https://riscv.org/community/mentorship/",
+  "checked_at": "2026-10-09T11:32:17+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {},
+   "application": {
+    "quote": "Applications Applications",
+    "url": "https://riscv.org/community/mentorship/"
+   },
+   "application_url": {
+    "quote": "Applications Applications",
+    "url": "https://riscv.org/community/mentorship/"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {
+    "quote": "For more information about the mentorship program, including eligibility and stipends, please read the.",
+    "url": "https://riscv.org/community/mentorship/"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {
+    "quote": "The program is funded by RISC-V International.",
+    "url": "https://riscv.org/community/mentorship/"
+   },
+   "eligibility": {
+    "quote": "For more information about the mentorship program, including eligibility and stipends, please read the.",
+    "url": "https://riscv.org/community/mentorship/"
+   }
+  }
+ },
+ {
+  "source_id": "kde-season-of-kde",
+  "programme_id": "kde-season-of-kde",
+  "official_url": "https://season.kde.org/",
+  "checked_at": "2026-10-09T11:32:20+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Season of KDE is an outreach program hosted by the KDE community.",
+    "url": "https://season.kde.org/"
+   },
+   "programme_name": {
+    "quote": "KDE Season of KDE",
+    "url": "https://season.kde.org/"
+   },
+   "organizer": {
+    "quote": "KDE",
+    "url": "https://season.kde.org/"
+   },
+   "official_url": {
+    "quote": "https://season.kde.org/",
+    "url": "https://season.kde.org/"
+   }
+  }
+ },
+ {
+  "source_id": "summer-of-bitcoin",
+  "programme_id": "summer-of-bitcoin",
+  "official_url": "https://www.summerofbitcoin.org/",
+  "checked_at": "2026-10-09T11:32:21+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "julia-summer-of-code",
+  "programme_id": "julia-summer-of-code",
+  "official_url": "https://julialang.org/jsoc/",
+  "checked_at": "2026-10-09T11:32:22+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Julia Seasons of Contributions (JSoC) are the seasonal programs for funding and/or mentoring developers to contribute to the open source ecosystem.",
+    "url": "https://julialang.org/jsoc/"
+   },
+   "programme_name": {
+    "quote": "Julia Summer of Code",
+    "url": "https://julialang.org/jsoc/"
+   },
+   "organizer": {
+    "quote": "Julia Language",
+    "url": "https://julialang.org/jsoc/"
+   },
+   "official_url": {
+    "quote": "https://julialang.org/jsoc/",
+    "url": "https://julialang.org/jsoc/"
+   }
+  }
+ },
+ {
+  "source_id": "ospp",
+  "programme_id": "ospp",
+  "official_url": "https://summer-ospp.ac.cn/",
+  "checked_at": "2026-10-09T11:32:27+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "linux-kernel-mentorship",
+  "programme_id": "linux-kernel-mentorship",
+  "official_url": "https://wiki.linuxfoundation.org/lkmp",
+  "checked_at": "2026-10-09T11:32:28+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_403"
+ },
+ {
+  "source_id": "hyperledger-mentorship",
+  "programme_id": "hyperledger-mentorship",
+  "official_url": "https://wiki.hyperledger.org/display/INTERN/",
+  "checked_at": "2026-10-09T11:32:30+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "mentee application period on.",
+    "url": "https://wiki.hyperledger.org/display/INTERN/"
+   },
+   "deadline": {
+    "quote": "mentee application period on.",
+    "url": "https://wiki.hyperledger.org/display/INTERN/"
+   }
+  }
+ },
+ {
+  "source_id": "open-mainframe-mentorship",
+  "programme_id": "open-mainframe-mentorship",
+  "official_url": "https://www.openmainframeproject.org/projects/mentorship-program",
+  "checked_at": "2026-10-09T11:32:33+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_404"
+ },
+ {
+  "source_id": "hacktoberfest",
+  "programme_id": "hacktoberfest",
+  "official_url": "https://hacktoberfest.com/",
+  "checked_at": "2026-10-09T11:32:33+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "24-pull-requests",
+  "programme_id": "24-pull-requests",
+  "official_url": "https://24pullrequests.com/",
+  "checked_at": "2026-10-09T11:32:36+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "igalia-coding-experience",
+  "programme_id": "igalia-coding-experience",
+  "official_url": "https://www.igalia.com/coding-experience/",
+  "checked_at": "2026-10-09T11:32:38+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "programmers and learning with them.",
+    "url": "https://www.igalia.com/coding-experience/"
+   },
+   "programme_name": {
+    "quote": "Igalia Coding Experience",
+    "url": "https://www.igalia.com/coding-experience/"
+   },
+   "organizer": {
+    "quote": "Igalia",
+    "url": "https://www.igalia.com/coding-experience/"
+   },
+   "official_url": {
+    "quote": "https://www.igalia.com/coding-experience/",
+    "url": "https://www.igalia.com/coding-experience/"
+   }
+  }
+ },
+ {
+  "source_id": "xorg-evoc",
+  "programme_id": "xorg-evoc",
+  "official_url": "https://www.x.org/wiki/XorgEVoC/",
+  "checked_at": "2026-10-09T11:32:40+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "That program provides approximately US$5000 to students to spend their summer developing code for an open source project.",
+    "url": "https://www.x.org/wiki/XorgEVoC/"
+   },
+   "programme_name": {
+    "quote": "X.Org Endless Vacation of Code",
+    "url": "https://www.x.org/wiki/XorgEVoC/"
+   },
+   "organizer": {
+    "quote": "X.Org Foundation",
+    "url": "https://www.x.org/wiki/XorgEVoC/"
+   },
+   "official_url": {
+    "quote": "https://www.x.org/wiki/XorgEVoC/",
+    "url": "https://www.x.org/wiki/XorgEVoC/"
+   }
+  }
+ },
+ {
+  "source_id": "processing-foundation-fellowship",
+  "programme_id": "processing-foundation-fellowship",
+  "official_url": "https://processingfoundation.org/fellowships/",
+  "checked_at": "2026-10-09T11:32:43+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Since 2013, the Processing Foundation Fellowship has supported emerging artists, educators, and coders in imagining more just and equitable relationships with technology.",
+    "url": "https://processingfoundation.org/fellowships/"
+   },
+   "programme_name": {
+    "quote": "Processing Foundation Fellowship",
+    "url": "https://processingfoundation.org/fellowships/"
+   },
+   "organizer": {
+    "quote": "Processing Foundation",
+    "url": "https://processingfoundation.org/fellowships/"
+   },
+   "official_url": {
+    "quote": "https://processingfoundation.org/fellowships/",
+    "url": "https://processingfoundation.org/fellowships/"
+   }
+  }
+ },
+ {
+  "source_id": "fossasia-codeheat",
+  "programme_id": "fossasia-codeheat",
+  "official_url": "https://codeheat.org/",
+  "checked_at": "2026-10-09T11:32:46+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Areeb had become the chief technologist in the organization where he has mentored hundreds of young developers in coding programs.",
+    "url": "https://codeheat.org/"
+   },
+   "programme_name": {
+    "quote": "FOSSASIA Codeheat",
+    "url": "https://codeheat.org/"
+   },
+   "organizer": {
+    "quote": "FOSSASIA",
+    "url": "https://codeheat.org/"
+   },
+   "official_url": {
+    "quote": "https://codeheat.org/",
+    "url": "https://codeheat.org/"
+   }
+  }
+ },
+ {
+  "source_id": "c4gt",
+  "programme_id": "c4gt",
+  "official_url": "https://www.codeforgovtech.in/",
+  "checked_at": "2026-10-09T11:32:47+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "gssoc",
+  "programme_id": "gssoc",
+  "official_url": "https://gssoc.girlscript.org/",
+  "checked_at": "2026-10-09T11:32:48+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "social-summer-of-code",
+  "programme_id": "social-summer-of-code",
+  "official_url": "https://socialsummerofcode.com/",
+  "checked_at": "2026-10-09T11:32:50+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1010)>"
+ },
+ {
+  "source_id": "social-winter-of-code",
+  "programme_id": "social-winter-of-code",
+  "official_url": "https://swoc.in/",
+  "checked_at": "2026-10-09T11:32:50+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The coding period runs 1 January to 30 March 2027, and certificates unlock when the programme ends.",
+    "url": "https://swoc.in/"
+   },
+   "programme_name": {
+    "quote": "Social Winter of Code",
+    "url": "https://swoc.in/"
+   },
+   "organizer": {
+    "quote": "Social",
+    "url": "https://swoc.in/"
+   },
+   "official_url": {
+    "quote": "https://swoc.in/",
+    "url": "https://swoc.in/"
+   }
+  }
+ },
+ {
+  "source_id": "fossee-summer-fellowship",
+  "programme_id": "fossee-summer-fellowship",
+  "official_url": "https://fossee.in/",
+  "checked_at": "2026-10-09T11:32:52+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Python is a general-purpose, high-level, remarkably powerful dynamic programming language that is used in a wide variety of application domains.",
+    "url": "https://fossee.in/"
+   },
+   "programme_name": {
+    "quote": "FOSSEE Summer Fellowship",
+    "url": "https://fossee.in/"
+   },
+   "organizer": {
+    "quote": "FOSSEE, IIT Bombay",
+    "url": "https://fossee.in/"
+   },
+   "official_url": {
+    "quote": "https://fossee.in/",
+    "url": "https://fossee.in/"
+   }
+  }
+ },
+ {
+  "source_id": "kwoc",
+  "programme_id": "kwoc",
+  "official_url": "https://kwoc.kossiitkgp.org/",
+  "checked_at": "2026-10-09T11:32:53+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "devscript-woc",
+  "programme_id": "devscript-woc",
+  "official_url": "https://devscript.tech/woc/",
+  "checked_at": "2026-10-09T11:32:53+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno -2] Name or service not known>"
+ },
+ {
+  "source_id": "dwoc",
+  "programme_id": "dwoc",
+  "official_url": "https://dwoc.io/",
+  "checked_at": "2026-10-09T11:32:55+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "foss-overflow",
+  "programme_id": "foss-overflow",
+  "official_url": "https://fossoverflow.dev/",
+  "checked_at": "2026-10-09T11:33:01+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "jgec-woc",
+  "programme_id": "jgec-woc",
+  "official_url": "https://jwoc.tech/",
+  "checked_at": "2026-10-09T11:33:01+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno -2] Name or service not known>"
+ },
+ {
+  "source_id": "njack-woc",
+  "programme_id": "njack-woc",
+  "official_url": "https://njackwinterofcode.github.io/",
+  "checked_at": "2026-10-09T11:33:02+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "NWoC (NJACK Winter of Code) is a program by NJACK (The Official Computer Science Club of IIT Patna) that helps students understand the paradigm of Open Source contribution and gives them real world software development experience.",
+    "url": "https://njackwinterofcode.github.io/"
+   },
+   "programme_name": {
+    "quote": "NJACK Winter of Code",
+    "url": "https://njackwinterofcode.github.io/"
+   },
+   "organizer": {
+    "quote": "NJACK, IIT Patna",
+    "url": "https://njackwinterofcode.github.io/"
+   },
+   "official_url": {
+    "quote": "https://njackwinterofcode.github.io/",
+    "url": "https://njackwinterofcode.github.io/"
+   }
+  }
+ },
+ {
+  "source_id": "opencode-iiita",
+  "programme_id": "opencode-iiita",
+  "official_url": "https://opencodeiiita.github.io/",
+  "checked_at": "2026-10-09T11:33:03+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: http_404"
+ },
+ {
+  "source_id": "cross-woc",
+  "programme_id": "cross-woc",
+  "official_url": "https://crosswoc.ieeedtu.in/",
+  "checked_at": "2026-10-09T11:33:03+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid f"
+ },
+ {
+  "source_id": "summer-of-nix",
+  "programme_id": "summer-of-nix",
+  "official_url": "https://summer.nixos.org/",
+  "checked_at": "2026-10-09T11:33:05+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "This northern-hemisphere-summer program is designed for students and early-career professionals.",
+    "url": "https://summer.nixos.org/"
+   },
+   "programme_name": {
+    "quote": "Summer of Nix",
+    "url": "https://summer.nixos.org/"
+   },
+   "organizer": {
+    "quote": "NixOS Foundation",
+    "url": "https://summer.nixos.org/"
+   },
+   "official_url": {
+    "quote": "https://summer.nixos.org/",
+    "url": "https://summer.nixos.org/"
+   }
+  }
+ },
+ {
+  "source_id": "ethereum-protocol-fellowship",
+  "programme_id": "ethereum-protocol-fellowship",
+  "official_url": "https://ps.ethereum.foundation/fellowship",
+  "checked_at": "2026-10-09T11:33:06+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "EPF and EPS are Protocol Support's two programs for bringing new contributors into Ethereum core development \u2014 one for learning the protocol, one for building it.",
+    "url": "https://ps.ethereum.foundation/fellowship"
+   },
+   "programme_name": {
+    "quote": "Ethereum Protocol Fellowship",
+    "url": "https://ps.ethereum.foundation/fellowship"
+   },
+   "organizer": {
+    "quote": "Ethereum Foundation",
+    "url": "https://ps.ethereum.foundation/fellowship"
+   },
+   "official_url": {
+    "quote": "https://ps.ethereum.foundation/fellowship",
+    "url": "https://ps.ethereum.foundation/fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "sovereign-tech-fellowship",
+  "programme_id": "sovereign-tech-fellowship",
+  "official_url": "https://www.sovereign.tech/programs/fellowship",
+  "checked_at": "2026-10-09T11:33:07+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "The application period ended on April 6, 2026.",
+    "url": "https://www.sovereign.tech/programs/fellowship"
+   },
+   "deadline": {
+    "quote": "The application period ended on April 6, 2026.",
+    "url": "https://www.sovereign.tech/programs/fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "sequoia-oss-fellowship",
+  "programme_id": "sequoia-oss-fellowship",
+  "official_url": "https://www.sequoiacap.com/oss",
+  "checked_at": "2026-10-09T11:33:09+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "We will take applications and accept fellows on a rolling basis.",
+    "url": "https://www.sequoiacap.com/oss"
+   },
+   "application": {
+    "quote": "Apply to be a Fellow",
+    "url": "https://sequoiacap.com/oss#apply"
+   },
+   "application_url": {
+    "quote": "Apply to be a Fellow",
+    "url": "https://sequoiacap.com/oss#apply"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "djangonaut-space",
+  "programme_id": "djangonaut-space",
+  "official_url": "https://djangonaut.space/",
+  "checked_at": "2026-10-09T11:33:09+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The programme has run since January 2024 with more than 6 sessions successfully completed.",
+    "url": "https://djangonaut.space/"
+   },
+   "programme_name": {
+    "quote": "Djangonaut Space",
+    "url": "https://djangonaut.space/"
+   },
+   "organizer": {
+    "quote": "Djangonaut Space",
+    "url": "https://djangonaut.space/"
+   },
+   "official_url": {
+    "quote": "https://djangonaut.space/",
+    "url": "https://djangonaut.space/"
+   }
+  }
+ },
+ {
+  "source_id": "swift-mentorship",
+  "programme_id": "swift-mentorship",
+  "official_url": "https://www.swift.org/mentorship/",
+  "checked_at": "2026-10-09T11:33:10+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Swift Mentorship Program is designed to encourage developers to actively participate in the Swift open source community through direct mentorship with experienced developers.",
+    "url": "https://www.swift.org/mentorship/"
+   },
+   "programme_name": {
+    "quote": "Swift Mentorship Program",
+    "url": "https://www.swift.org/mentorship/"
+   },
+   "organizer": {
+    "quote": "Swift.org",
+    "url": "https://www.swift.org/mentorship/"
+   },
+   "official_url": {
+    "quote": "https://www.swift.org/mentorship/",
+    "url": "https://www.swift.org/mentorship/"
+   }
+  }
+ },
+ {
+  "source_id": "kubernetes-release-shadow",
+  "programme_id": "kubernetes-release-shadow",
+  "official_url": "https://github.com/kubernetes/sig-release/blob/master/release-team/shadows.md",
+  "checked_at": "2026-10-09T11:33:11+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": ": The main goal of the Shadow program is to train new Leads.",
+    "url": "https://github.com/kubernetes/sig-release/blob/master/release-team/shadows.md"
+   },
+   "programme_name": {
+    "quote": "Kubernetes Release Shadow Program",
+    "url": "https://github.com/kubernetes/sig-release/blob/master/release-team/shadows.md"
+   },
+   "organizer": {
+    "quote": "Kubernetes (CNCF)",
+    "url": "https://github.com/kubernetes/sig-release/blob/master/release-team/shadows.md"
+   },
+   "official_url": {
+    "quote": "https://github.com/kubernetes/sig-release/blob/master/release-team/shadows.md",
+    "url": "https://github.com/kubernetes/sig-release/blob/master/release-team/shadows.md"
+   }
+  }
+ },
+ {
+  "source_id": "open-source-research-experience",
+  "programme_id": "open-source-research-experience",
+  "official_url": "https://ucsc-ospo.github.io/osre/",
+  "checked_at": "2026-10-09T11:33:13+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Open Source Research Experience (OSRE) program by the Open Source Program Office (OSPO) UC Santa Cruz provides support for undergraduate and graduate students contributing to open source research efforts.",
+    "url": "https://ucsc-ospo.github.io/osre/"
+   },
+   "programme_name": {
+    "quote": "Open Source Research Experience",
+    "url": "https://ucsc-ospo.github.io/osre/"
+   },
+   "organizer": {
+    "quote": "UC Santa Cruz Open Source Program Office",
+    "url": "https://ucsc-ospo.github.io/osre/"
+   },
+   "official_url": {
+    "quote": "https://ucsc-ospo.github.io/osre/",
+    "url": "https://ucsc-ospo.github.io/osre/"
+   }
+  }
+ },
+ {
+  "source_id": "sktime-mentorship",
+  "programme_id": "sktime-mentorship",
+  "official_url": "https://www.sktime.net/docs/get-involved/mentoring/",
+  "checked_at": "2026-10-09T11:33:14+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "We accept applications on a rolling basis and we will be in touch with you shortly!",
+    "url": "https://www.sktime.net/docs/get-involved/mentoring/"
+   },
+   "application": {
+    "quote": "How to apply",
+    "url": "https://www.sktime.net/docs/get-involved/mentoring/#how-to-apply"
+   },
+   "application_url": {
+    "quote": "How to apply",
+    "url": "https://www.sktime.net/docs/get-involved/mentoring/#how-to-apply"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "european-summer-of-code",
+  "programme_id": "european-summer-of-code",
+  "official_url": "https://www.esoc.dev/",
+  "checked_at": "2026-10-09T11:33:16+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {},
+   "deadline": {}
+  }
  }
 ]
