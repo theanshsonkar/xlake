@@ -6,8 +6,10 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 import sys
 import time
+from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, List, Optional, Sequence, Tuple
@@ -826,6 +828,130 @@ def _candidate_dicts(candidates, hubs) -> List[Dict]:
     return converted
 
 
+def _run_timestamp(value: Optional[object] = None) -> str:
+    if isinstance(value, datetime):
+        return value.astimezone(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    if value is not None:
+        return str(value)
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def _seed_key(seed: Dict) -> Optional[str]:
+    value = seed.get("official_url") or seed.get("url")
+    normalized = _normalise_url(value)
+    return normalized or (_collapsed(value) or None)
+
+
+def _parse_timestamp(value: object) -> Optional[datetime]:
+    if not isinstance(value, str) or not value.strip():
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def merge_generated_seeds(
+    category: str,
+    produced: Iterable[Dict],
+    destination: Path,
+    *,
+    raw_links: int = 0,
+    admitted: Optional[int] = None,
+    successful_fetches: int = 1,
+    now: Optional[object] = None,
+) -> Tuple[List[Dict], Dict[str, int]]:
+    """Merge this run's seeds into the category's durable generated registry."""
+    run_at = _run_timestamp(now)
+    destination = Path(destination)
+    existing: List[Dict] = []
+    if destination.exists():
+        try:
+            with destination.open("r", encoding="utf-8") as handle:
+                loaded = json.load(handle)
+            if not isinstance(loaded, list) or not all(isinstance(item, dict) for item in loaded):
+                raise ValueError("generated seeds must be a list of objects")
+            existing = loaded
+        except (OSError, ValueError, TypeError, json.JSONDecodeError):
+            backup = destination.with_name(destination.stem + ".bak" + destination.suffix)
+            shutil.copyfile(destination, backup)
+            existing = []
+
+    existing_by_url: Dict[str, Dict] = {}
+    for entry in existing:
+        key = _seed_key(entry)
+        if key is not None:
+            existing_by_url[key] = dict(entry)
+    produced_by_url: Dict[str, Dict] = {}
+    for entry in produced:
+        if not isinstance(entry, dict):
+            continue
+        key = _seed_key(entry)
+        if key is not None:
+            produced_by_url[key] = dict(entry)
+
+    merged: Dict[str, Dict] = {}
+    new_count = 0
+    refreshed_count = 0
+    for key, entry in produced_by_url.items():
+        old = existing_by_url.get(key)
+        if old is None:
+            current = dict(entry)
+            current["first_seen"] = run_at
+            current["last_seen"] = run_at
+            new_count += 1
+        else:
+            current = dict(entry)
+            current["first_seen"] = old.get("first_seen") or old.get("added_at") or run_at
+            current["last_seen"] = run_at
+            for field in ("added_at", "generated_at"):
+                if field in old:
+                    current[field] = old[field]
+            refreshed_count += 1
+        merged[key] = current
+
+    cutoff = datetime.fromisoformat(run_at.replace("Z", "+00:00")) - timedelta(days=56)
+    kept_count = 0
+    expired_count = 0
+    for key, old in existing_by_url.items():
+        if key in produced_by_url:
+            continue
+        current = dict(old)
+        if not current.get("last_seen"):
+            current["last_seen"] = current.get("generated_at") or current.get("added_at") or run_at
+        last_seen = _parse_timestamp(current.get("last_seen"))
+        if successful_fetches > 0 and last_seen is not None and last_seen < cutoff:
+            expired_count += 1
+            continue
+        merged[key] = current
+        kept_count += 1
+
+    ordered = [merged[key] for key in sorted(merged)]
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with destination.open("w", encoding="utf-8") as handle:
+        json.dump(ordered, handle, indent=2, ensure_ascii=False)
+        handle.write("\n")
+    counters = {
+        "raw_links": int(raw_links),
+        "admitted": int(admitted if admitted is not None else len(produced_by_url)),
+        "new": new_count,
+        "refreshed": refreshed_count,
+        "kept": kept_count,
+        "expired": expired_count,
+        "total": len(ordered),
+    }
+    print(
+        "hub_seeds {}: raw_links={} admitted={} new={} refreshed={} kept={} expired={} total={}".format(
+            category, counters["raw_links"], counters["admitted"], counters["new"],
+            counters["refreshed"], counters["kept"], counters["expired"], counters["total"],
+        )
+    )
+    return ordered, counters
+
+
 def generate(
     category: str,
     hubs_path: Path,
@@ -878,10 +1004,18 @@ def generate(
     else:
         raise ValueError("out_path must not be under engine/data/lake")
     destination.parent.mkdir(parents=True, exist_ok=True)
-    with destination.open("w", encoding="utf-8") as handle:
-        json.dump(seeds, handle, indent=2, ensure_ascii=False)
-        handle.write("\n")
-    return seeds
+    successful_pages = sum(1 for state in states.values() if state == "processed")
+    merged, merge_stats = merge_generated_seeds(
+        category,
+        seeds,
+        destination,
+        raw_links=len(discovered),
+        admitted=len(seeds),
+        successful_fetches=successful_pages,
+    )
+    LAST_GENERATE_STATS.update(merge_stats)
+    LAST_GENERATE_STATS["successful_pages"] = successful_pages
+    return merged
 
 
 def _default_hubs_path(category: str) -> Path:

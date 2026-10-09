@@ -1,15 +1,19 @@
+import json
+import tempfile
 import unittest
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 try:
     from engine.categories.hub_seeds import (
         _capped_candidates, _default_hubs_path, _policy,
-        admit_candidate, candidates_to_seeds,
+        admit_candidate, candidates_to_seeds, merge_generated_seeds,
     )
     from engine.categories.research.harvest import Candidate, parse_bare_urls
 except ImportError:
     from categories.hub_seeds import (
         _capped_candidates, _default_hubs_path, _policy,
-        admit_candidate, candidates_to_seeds,
+        admit_candidate, candidates_to_seeds, merge_generated_seeds,
     )
     from categories.research.harvest import Candidate, parse_bare_urls
 
@@ -26,6 +30,71 @@ class HubSeedsTests(unittest.TestCase):
                 "source_count": count,
             },
         }
+
+    def _seed(self, url, **extra):
+        seed = {
+            "source_id": "source-" + url.rsplit("/", 1)[-1],
+            "programme_id": "programme-" + url.rsplit("/", 1)[-1],
+            "programme_name": "Useful Fellowship",
+            "organizer": "example.org",
+            "official_url": url,
+            "allowed_path_hints": ["program"],
+            "check_cadence": "monthly",
+        }
+        seed.update(extra)
+        return seed
+
+    def test_merge_new_seed_keeps_existing_entries(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "fellowships.json"
+            existing = [self._seed("https://example.org/old-{}".format(index)) for index in range(3)]
+            path.write_text(json.dumps(existing), encoding="utf-8")
+            merged, stats = merge_generated_seeds(
+                "fellowships", [self._seed("https://example.org/new")], path,
+                raw_links=1, admitted=1, now="2026-10-10T00:00:00Z",
+            )
+            self.assertEqual(len(merged), 4)
+            self.assertEqual(stats["new"], 1)
+            self.assertEqual(stats["kept"], 3)
+
+    def test_merge_refreshes_last_seen_and_preserves_first_seen(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "fellowships.json"
+            url = "https://example.org/program"
+            path.write_text(json.dumps([self._seed(
+                url, first_seen="2026-01-01T00:00:00Z", last_seen="2026-09-01T00:00:00Z",
+            )]), encoding="utf-8")
+            merged, stats = merge_generated_seeds(
+                "fellowships", [self._seed(url, programme_name="Updated Fellowship")], path,
+                now="2026-10-10T00:00:00Z",
+            )
+            self.assertEqual(merged[0]["first_seen"], "2026-01-01T00:00:00Z")
+            self.assertEqual(merged[0]["last_seen"], "2026-10-10T00:00:00Z")
+            self.assertEqual(stats["refreshed"], 1)
+
+    def test_merge_expires_seed_older_than_56_days(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "fellowships.json"
+            now = datetime(2026, 10, 10, tzinfo=timezone.utc)
+            old = (now - timedelta(days=60)).isoformat().replace("+00:00", "Z")
+            path.write_text(json.dumps([self._seed("https://example.org/old", last_seen=old)]), encoding="utf-8")
+            merged, stats = merge_generated_seeds(
+                "fellowships", [], path, now=now,
+            )
+            self.assertEqual(merged, [])
+            self.assertEqual(stats["expired"], 1)
+
+    def test_merge_zero_successful_fetch_does_not_expire(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "fellowships.json"
+            now = datetime(2026, 10, 10, tzinfo=timezone.utc)
+            old = (now - timedelta(days=60)).isoformat().replace("+00:00", "Z")
+            path.write_text(json.dumps([self._seed("https://example.org/old", last_seen=old)]), encoding="utf-8")
+            merged, stats = merge_generated_seeds(
+                "fellowships", [], path, successful_fetches=0, now=now,
+            )
+            self.assertEqual(len(merged), 1)
+            self.assertEqual(stats["expired"], 0)
 
     def test_csv_bare_url_extraction(self):
         links = parse_bare_urls(
