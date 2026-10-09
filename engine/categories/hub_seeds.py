@@ -31,12 +31,16 @@ try:
     from categories.grants import grants as grants_category
     from categories.research import research as research_category
     from categories.open_source import programmes as open_source_category
+    from categories.community import programmes as community_category
+    from categories.startup_founder import programmes as startup_founder_category
 except ImportError:  # pragma: no cover - supports package-root imports
     from engine.categories.fellowships import fellowships as fellowships_category
     from engine.categories.scholarships import scholarships as scholarships_category
     from engine.categories.grants import grants as grants_category
     from engine.categories.research import research as research_category
     from engine.categories.open_source import programmes as open_source_category
+    from engine.categories.community import programmes as community_category
+    from engine.categories.startup_founder import programmes as startup_founder_category
 
 DIRECTORY_CATEGORIES = frozenset(("fellowships", "scholarships", "grants"))
 DIRECTORY_TERMS = re.compile(
@@ -44,11 +48,12 @@ DIRECTORY_TERMS = re.compile(
     r"scholarship|grant|award|program(?:me)?s?)",
     re.IGNORECASE,
 )
-COMMUNITY_TERMS = re.compile(
-    r"(?:community|ambassadors?|clubs?|champions?|developer\s+group|"
-    r"student\s+developers?|mentorship|fellowships?|program(?:me)?)",
-    re.IGNORECASE,
-)
+try:
+    from categories.programme_core import COMMUNITY_SPECIFIC_NOUN_PATTERN
+except ImportError:  # pragma: no cover - supports package-root imports
+    from engine.categories.programme_core import COMMUNITY_SPECIFIC_NOUN_PATTERN
+
+COMMUNITY_TERMS = re.compile(COMMUNITY_SPECIFIC_NOUN_PATTERN, re.IGNORECASE)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "engine" / "data" / "operations" / "generated_seeds"
@@ -322,9 +327,9 @@ def _has_admission_programme_signal(value: str) -> bool:
 
 
 def _has_admission_programme_signal_for_category(value: str, category: str) -> bool:
-    return (
-        category == "community" and COMMUNITY_TERMS.search(value or "") is not None
-    ) or _has_admission_programme_signal(value)
+    if category == "community":
+        return COMMUNITY_TERMS.search(value or "") is not None
+    return _has_admission_programme_signal(value)
 
 
 def _admission_is_directory_page(*values: str) -> bool:
@@ -821,11 +826,24 @@ def _static_seeds(category: str) -> Tuple[Dict, ...]:
         "grants": grants_category,
         "research": research_category,
         "open_source": open_source_category,
+        "community": community_category,
+        "startup_founder": startup_founder_category,
     }
     module = modules.get(category)
     if module is None:
         return ()
-    return tuple(getattr(module, "SOURCE_REGISTRY", ()))
+    static = getattr(module, "STATIC_SOURCE_REGISTRY", None)
+    if static is not None:
+        return tuple(static)
+    loader = getattr(module, "_load_seed_registry", None)
+    if loader is None:
+        return tuple(getattr(module, "SOURCE_REGISTRY", ()))
+    previous = os.environ.pop(GENERATED_SEEDS_ENV, None)
+    try:
+        return tuple(loader())
+    finally:
+        if previous is not None:
+            os.environ[GENERATED_SEEDS_ENV] = previous
 
 
 def _capped_candidates(candidates, hubs, cap: int):

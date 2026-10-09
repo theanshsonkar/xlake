@@ -1,18 +1,20 @@
 import json
+import os
 import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from unittest.mock import patch
 
 try:
     from engine.categories.hub_seeds import (
-        _capped_candidates, _default_hubs_path, _policy,
+        _capped_candidates, _default_hubs_path, _policy, _static_seeds,
         admit_candidate, candidates_to_seeds, merge_generated_seeds,
     )
     from engine.categories.research.harvest import Candidate, parse_bare_urls
 except ImportError:
     from categories.hub_seeds import (
-        _capped_candidates, _default_hubs_path, _policy,
+        _capped_candidates, _default_hubs_path, _policy, _static_seeds,
         admit_candidate, candidates_to_seeds, merge_generated_seeds,
     )
     from categories.research.harvest import Candidate, parse_bare_urls
@@ -71,6 +73,32 @@ class HubSeedsTests(unittest.TestCase):
             self.assertEqual(merged[0]["first_seen"], "2026-01-01T00:00:00Z")
             self.assertEqual(merged[0]["last_seen"], "2026-10-10T00:00:00Z")
             self.assertEqual(stats["refreshed"], 1)
+
+    def test_generated_seed_is_refreshed_when_re_found_with_env_enabled(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "community.json"
+            url = "https://refresh.example/community"
+            path.write_text(json.dumps([self._seed(
+                url, programme_name="Refresh Community", first_seen="2026-01-01T00:00:00Z",
+                last_seen="2026-09-01T00:00:00Z",
+            )]), encoding="utf-8")
+            candidate = self.candidate("Refresh Community", url)
+            with patch.dict("os.environ", {"XLAKE_GENERATED_SEEDS_DIR": directory}, clear=False):
+                static = _static_seeds("community")
+                produced = candidates_to_seeds("community", [candidate], static)
+                merged, stats = merge_generated_seeds(
+                    "community", produced, path, now="2026-10-10T00:00:00Z",
+                )
+            self.assertNotIn(url, {seed["official_url"] for seed in static})
+            self.assertEqual(stats["admitted"], 1)
+            self.assertEqual(stats["refreshed"], 1)
+            self.assertEqual(merged[0]["last_seen"], "2026-10-10T00:00:00Z")
+
+    def test_community_admission_rejects_generic_fellowship_signal(self):
+        html = "<title>Dalberg Fellowship</title><h1>Dalberg Fellowship</h1><p>Apply for this fellowship in technology.</p>"
+        ok, reason, _ = admit_candidate(html, "https://dalberg.example/fellowship", "community")
+        self.assertFalse(ok)
+        self.assertIn(reason, {"no_programme_signal", "no_name"})
 
     def test_merge_expires_seed_older_than_56_days(self):
         with tempfile.TemporaryDirectory() as directory:

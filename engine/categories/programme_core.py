@@ -71,18 +71,20 @@ PROGRAMME_NOUNS = (
     "internship programme", "internship program", "mentorship", "mentorships",
     "initiative", "initiatives", "foundation", "academy", "academies",
 )
+COMMUNITY_SPECIFIC_NOUN_PATTERN = (
+    r"(?<![a-z0-9])(?:community|communities|ambassadors?|clubs?|"
+    r"champions?|developer\s+groups?|student\s+developers?|"
+    r"developer\s+experts?|gdg|mlh|chapters?|heroes?|captains?|"
+    r"campus\s+experts?|campus\s+leaders?|superheroes?|builders|mvp)"
+    r"(?![a-z0-9])"
+)
+
 _CATEGORY_PROGRAMME_NOUNS = {
     "startup-founder": (
         "accelerator", "accelerators", "incubator", "incubators", "startup",
         "startups", "founder", "founders", "launchpad", "activate", "venture",
         "ventures", "demo day", "cohort", "batch", "credits", "studio",
         "pre-accelerator", "for startups", "startup school",
-    ),
-    "community": (
-        "community", "communities", "ambassador", "ambassadors", "club", "clubs",
-        "champion", "champions", "developer group", "developer groups",
-        "student developer", "student developers", "developer expert",
-        "developer experts", "gdg", "mlh", "leads", "chapter", "chapters",
     ),
 }
 JOB_BOARD_HOSTS = (
@@ -160,6 +162,8 @@ def _programme_host_is_job_board(url: str) -> bool:
 def _programme_has_noun(title: str, category: str = "") -> bool:
     lowered = str(title or "").casefold()
     category_key = str(category or "").casefold().replace("_", "-")
+    if category_key == "community":
+        return re.search(COMMUNITY_SPECIFIC_NOUN_PATTERN, lowered) is not None
     nouns = PROGRAMME_NOUNS + _CATEGORY_PROGRAMME_NOUNS.get(category_key, ())
     has_scholarship_or_fellowship = bool(
         re.search(r"\b(?:fellowships?|scholarships?)\b", lowered)
@@ -573,12 +577,13 @@ class _VisibleText(HTMLParser):
             # HTML implicitly closes an omitted head end tag here.
             self.handle_endtag("head")
         attributes = dict(attrs)
+        style = (attributes.get("style") or "").replace(" ", "").lower()
         hidden = (
             tag in _NON_VISIBLE_TAGS
             or "hidden" in attributes
             or (attributes.get("aria-hidden") or "").lower() == "true"
-            or "display:none" in attributes.get("style", "").replace(" ", "").lower()
-            or "visibility:hidden" in attributes.get("style", "").replace(" ", "").lower()
+            or "display:none" in style
+            or "visibility:hidden" in style
         )
         self._tag_stack.append((tag, hidden))
         if hidden:
@@ -1087,6 +1092,66 @@ def _fetch_failure_bucket(reason: str) -> str:
     return "exception"
 
 
+_COMMON_MULTI_PART_SUFFIXES = frozenset((
+    "ac.uk", "co.in", "co.jp", "co.nz", "co.uk", "com.au", "com.br",
+    "com.cn", "com.sg", "edu.au", "edu.cn", "gov.au", "gov.in", "gov.uk",
+    "net.au", "org.au", "org.cn", "org.in", "org.uk",
+))
+
+
+def _registrable_host(url: object) -> str:
+    try:
+        host = (urlparse(str(url)).hostname or "").casefold().rstrip(".")
+    except (TypeError, ValueError):
+        return ""
+    labels = [label for label in host.split(".") if label]
+    if len(labels) <= 2:
+        return ".".join(labels)
+    suffix = ".".join(labels[-2:])
+    return ".".join(labels[-3:]) if suffix in _COMMON_MULTI_PART_SUFFIXES else suffix
+
+
+def _normalised_programme_name(value: object) -> str:
+    name = unicodedata.normalize("NFKC", str(value or "")).casefold()
+    name = re.sub(r"^the\s+", "", name)
+    name = re.sub(r"['’]s\b", "", name)
+    name = re.sub(r"[^\w\s]", "", name, flags=re.UNICODE)
+    return re.sub(r"\s+", " ", name).strip()
+
+
+def _programme_dedupe_key(record: Dict) -> Tuple[str, str]:
+    return _registrable_host(record.get("official_url")), _normalised_programme_name(
+        record.get("programme_name")
+    )
+
+
+def _programme_information_score(record: Dict) -> Tuple[int, int, int]:
+    status = record.get("programme_status")
+    return (
+        int(record.get("deadline") not in (None, "")),
+        int(status not in (None, "", "needs_confirmation")),
+        len(str(record.get("description") or "")),
+    )
+
+
+def _dedupe_programme_records(records: Iterable[Dict]) -> List[Dict]:
+    winners: Dict[Tuple[str, str], Dict] = {}
+    order: List[Tuple[str, str]] = []
+    for record in records:
+        if not isinstance(record, dict) or record.get("record_type") != "programme":
+            continue
+        key = _programme_dedupe_key(record)
+        if not key[0] or not key[1]:
+            continue
+        previous = winners.get(key)
+        if previous is None:
+            order.append(key)
+            winners[key] = record
+        elif _programme_information_score(record) > _programme_information_score(previous):
+            winners[key] = record
+    return [winners[key] for key in order]
+
+
 def _log_fetch_outcome(seed: Dict, final_url: Optional[str], outcome: str, error: Optional[str] = None) -> None:
     line = "programme_fetch seed={} url={} outcome={}".format(
         seed["programme_name"], final_url or seed["official_url"], outcome,
@@ -1183,6 +1248,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
         if not outcome.startswith("ok"):
             failure_counts[outcome.split()[0]] += 1
         _log_fetch_outcome(seed, final_url, outcome, exception_detail)
+    records = _dedupe_programme_records(records)
     _merge_routed_research_seeds(routed_research)
     print("hub_seeds {}: routed_research={}".format(config.category, len(routed_research)), flush=True)
     failure_items = ["{}={}".format(kind, failure_counts[kind]) for kind in sorted(failure_counts)]

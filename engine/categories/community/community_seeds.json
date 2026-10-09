@@ -1,0 +1,146 @@
+[
+  {
+    "source_id": "community-aws-community-builders",
+    "programme_id": "community-aws-community-builders",
+    "programme_name": "AWS Community Builders",
+    "organizer": "Amazon Web Services",
+    "official_url": "https://aws.amazon.com/developer/community/community-builders/",
+    "allowed_path_hints": ["developer/community/community-builders"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-aws-cloud-clubs",
+    "programme_id": "community-aws-cloud-clubs",
+    "programme_name": "AWS Cloud Clubs",
+    "organizer": "Amazon Web Services",
+    "official_url": "https://aws.amazon.com/developer/community/students/cloudclubs/",
+    "allowed_path_hints": ["developer/community/students/cloudclubs"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-google-developer-experts",
+    "programme_id": "community-google-developer-experts",
+    "programme_name": "Google Developer Experts",
+    "organizer": "Google",
+    "official_url": "https://developers.google.com/community/experts",
+    "allowed_path_hints": ["community/experts"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-women-techmakers-ambassadors",
+    "programme_id": "community-women-techmakers-ambassadors",
+    "programme_name": "Women Techmakers Ambassadors",
+    "organizer": "Google",
+    "official_url": "https://developers.google.com/womentechmakers/ambassadors",
+    "allowed_path_hints": ["womentechmakers/ambassadors"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-microsoft-learn-student-ambassadors",
+    "programme_id": "community-microsoft-learn-student-ambassadors",
+    "programme_name": "Microsoft Learn Student Ambassadors",
+    "organizer": "Microsoft",
+    "official_url": "https://mvp.microsoft.com/studentambassadors",
+    "allowed_path_hints": ["studentambassadors"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-microsoft-mvp",
+    "programme_id": "community-microsoft-mvp",
+    "programme_name": "Microsoft MVP",
+    "organizer": "Microsoft",
+    "official_url": "https://mvp.microsoft.com/",
+    "allowed_path_hints": [""],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-github-campus-experts",
+    "programme_id": "community-github-campus-experts",
+    "programme_name": "GitHub Campus Experts",
+    "organizer": "GitHub",
+    "official_url": "https://education.github.com/experts",
+    "allowed_path_hints": ["experts"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-github-stars",
+    "programme_id": "community-github-stars",
+    "programme_name": "GitHub Stars",
+    "organizer": "GitHub",
+    "official_url": "https://stars.github.com/",
+    "allowed_path_hints": [""],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-postman-student-program",
+    "programme_id": "community-postman-student-program",
+    "programme_name": "Postman Student Program",
+    "organizer": "Postman",
+    "official_url": "https://www.postman.com/company/student-program/",
+    "allowed_path_hints": ["company/student-program"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-docker-captains",
+    "programme_id": "community-docker-captains",
+    "programme_name": "Docker Captains",
+    "organizer": "Docker",
+    "official_url": "https://www.docker.com/community/captains/",
+    "allowed_path_hints": ["community/captains"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-cncf-ambassadors",
+    "programme_id": "community-cncf-ambassadors",
+    "programme_name": "CNCF Ambassadors",
+    "organizer": "Cloud Native Computing Foundation",
+    "official_url": "https://www.cncf.io/people/ambassadors/",
+    "allowed_path_hints": ["people/ambassadors"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-twilio-champions",
+    "programme_id": "community-twilio-champions",
+    "programme_name": "Twilio Champions",
+    "organizer": "Twilio",
+    "official_url": "https://www.twilio.com/en-us/champions",
+    "allowed_path_hints": ["en-us/champions"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-mongodb-champions",
+    "programme_id": "community-mongodb-champions",
+    "programme_name": "MongoDB Champions",
+    "organizer": "MongoDB",
+    "official_url": "https://www.mongodb.com/community/champions",
+    "allowed_path_hints": ["community/champions"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-gitlab-heroes",
+    "programme_id": "community-gitlab-heroes",
+    "programme_name": "GitLab Heroes",
+    "organizer": "GitLab",
+    "official_url": "https://about.gitlab.com/community/heroes/",
+    "allowed_path_hints": ["community/heroes"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-grafana-champions",
+    "programme_id": "community-grafana-champions",
+    "programme_name": "Grafana Champions",
+    "organizer": "Grafana Labs",
+    "official_url": "https://grafana.com/community/champions/",
+    "allowed_path_hints": ["community/champions"],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-snowflake-data-superheroes",
+    "programme_id": "community-snowflake-data-superheroes",
+    "programme_name": "Snowflake Data Superheroes",
+    "organizer": "Snowflake",
+    "official_url": "https://www.snowflake.com/en/data-superheroes/",
+    "allowed_path_hints": ["en/data-superheroes"],
+    "check_cadence": "monthly"
+  }
+]

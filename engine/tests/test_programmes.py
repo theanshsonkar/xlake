@@ -19,7 +19,7 @@ from categories.open_source.programmes import (
 from categories.research import research
 from categories.scholarships import scholarships
 from categories.programme_core import (
-    ProgrammeConfig, _hop_links, _hop_page_matches_seed, _text, collect as core_collect,
+    ProgrammeConfig, _dedupe_programme_records, _hop_links, _hop_page_matches_seed, _text, collect as core_collect,
     programme_title_ok, should_route_research_seed,
 )
 
@@ -82,6 +82,36 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertFalse(programme_title_ok("AWS Activate", "https://official.example/program", "grants")[0])
         self.assertFalse(programme_title_ok("Microsoft Learn Student Ambassadors", "https://official.example/program", "fellowships")[0])
 
+    def test_community_title_gate_requires_specific_community_noun(self):
+        self.assertTrue(programme_title_ok("Google Developer Groups", "https://example.test/program", "community")[0])
+        self.assertTrue(programme_title_ok("AWS Community Builders", "https://example.test/program", "community")[0])
+        for title in ("Dalberg Fellowship", "Student Award Program", "Social Impact Fellowship"):
+            with self.subTest(title=title):
+                self.assertEqual(
+                    programme_title_ok(title, "https://example.test/program", "community"),
+                    (False, "missing_programme_noun"),
+                )
+
+    def test_visible_text_accepts_valueless_style_attribute(self):
+        text, _ = _text('<div style><p>Developer community programme</p></div>')
+        self.assertIn("Developer community programme", text)
+
+    def test_same_run_programme_dedupe_keeps_most_informative_record(self):
+        records = [
+            {
+                "record_type": "programme", "programme_name": "The Founder Institute",
+                "official_url": "https://fi.co/", "programme_status": "needs_confirmation",
+                "deadline": None, "description": "short",
+            },
+            {
+                "record_type": "programme", "programme_name": "Founder's Institute",
+                "official_url": "https://fi.co/s/denver", "programme_status": "open",
+                "deadline": "2026-12-01", "description": "longer description",
+            },
+        ]
+        deduped = _dedupe_programme_records(records)
+        self.assertEqual(len(deduped), 1)
+        self.assertEqual(deduped[0]["deadline"], "2026-12-01")
     def test_generated_programme_title_gate_rejects_stale_years(self):
         self.assertEqual(
             programme_title_ok(

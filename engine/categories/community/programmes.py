@@ -19,9 +19,16 @@ from categories.programme_core import (
     parse_date, parse_dates, validate_verification,
 )
 
-# There is no non-hub hand-picked seed registry for this category.  Hub files
-# are discovery inputs, not official programme seeds.
-STATIC_SOURCE_REGISTRY = ()
+def _load_static_seed_registry() -> tuple:
+    path = os.path.join(os.path.dirname(__file__), "community_seeds.json")
+    with open(path, encoding="utf-8") as handle:
+        seeds = json.load(handle)
+    if not isinstance(seeds, list):
+        raise ValueError("community seed registry must be a JSON array")
+    return tuple(seeds)
+
+
+STATIC_SOURCE_REGISTRY = _load_static_seed_registry()
 
 
 def _combined_source_registry() -> tuple:

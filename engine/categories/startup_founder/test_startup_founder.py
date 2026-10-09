@@ -3,6 +3,7 @@ from copy import deepcopy
 from unittest import mock
 from urllib.parse import urljoin
 
+from categories.programme_core import _text
 from categories.startup_founder.harvest import (
     Candidate,
     FetchResult,
@@ -69,8 +70,13 @@ def github_test_hub():
 
 
 class TestStartupFounderHarvester(unittest.TestCase):
+    def test_visible_text_handles_valueless_style_attribute(self):
+        text, _ = _text('<div style><p>Startup programme information</p></div>')
+        self.assertIn("Startup programme information", text)
+
     def test_config_loads_the_expanded_worldwide_hubs(self):
-        self.assertEqual(load_hubs(), [
+        hubs = load_hubs()
+        self.assertEqual(hubs[:12], [
             {
                 "hub_id": "ahmadnassri-awesome-accelerators",
                 "url": "https://github.com/ahmadnassri/awesome-accelerators",
@@ -168,6 +174,7 @@ class TestStartupFounderHarvester(unittest.TestCase):
                 "added_at": "2026-09-01T00:00:00Z",
             },
         ])
+        self.assertGreater(len(hubs), 12)
 
     def test_raw_master_takes_precedence_and_reports_markdown_links(self):
         hub = github_test_hub()
