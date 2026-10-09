@@ -8,7 +8,8 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-bssw-io-pages-bssw-fellowship-program-037614",
@@ -19,7 +20,8 @@
     "allowed_path_hints": [
       "pages/bssw-fellowship-program"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-foundation-mozilla-org-en-what-we-fund-0f89fa",
@@ -30,7 +32,8 @@
     "allowed_path_hints": [
       "en/what-we-fund/awards/mozilla-technology-fund-mtf"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-interledger-org-ambassadors-4734ae",
@@ -41,7 +44,8 @@
     "allowed_path_hints": [
       "ambassadors"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-programs-c369c9",
@@ -52,7 +56,8 @@
     "allowed_path_hints": [
       "wiki/Grants:Programs/Wikimedia_Research_%26_Technology_Fund"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-start-a3a9f2",
@@ -63,7 +68,8 @@
     "allowed_path_hints": [
       "wiki/Grants:Start"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-metamaskgrants-org-c19df3",
@@ -74,7 +80,8 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-ocean-sagepub-com-concept-grants-7556d8",
@@ -85,7 +92,8 @@
     "allowed_path_hints": [
       "concept-grants"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-research-cisco-com-open-rfps-af03de",
@@ -96,7 +104,8 @@
     "allowed_path_hints": [
       "open-rfps"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-research-google-outreach-4be4f7",
@@ -107,7 +116,8 @@
     "allowed_path_hints": [
       "outreach"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-research-google-programs-and-events-phd-fellowship-62693b",
@@ -118,7 +128,8 @@
     "allowed_path_hints": [
       "programs-and-events/phd-fellowship"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-sloan-org-grants-apply-005a70",
@@ -129,7 +140,8 @@
     "allowed_path_hints": [
       "grants/apply"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-sovereigntechfund-de-programs-fellowship-88c835",
@@ -140,7 +152,8 @@
     "allowed_path_hints": [
       "programs/fellowship"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-web3-foundation-4fccff",
@@ -151,7 +164,8 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-www-cisco-com-c-en-9d3093",
@@ -162,7 +176,8 @@
     "allowed_path_hints": [
       "c/en/us/about/csr/community/nonprofits/product-grant-program.html"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   },
   {
     "source_id": "hub-grants-www-top10vpn-com-research-grant-d51033",
@@ -173,6 +188,7 @@
     "allowed_path_hints": [
       "research-grant"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:36:58Z"
   }
 ]
