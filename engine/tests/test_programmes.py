@@ -71,6 +71,17 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertFalse(programme_title_ok("Research Foundation", "https://official.example/program", "fellowship")[0])
         self.assertTrue(programme_title_ok("Research Foundation", "https://official.example/program", "scholarship")[0])
 
+    def test_category_aware_programme_title_nouns(self):
+        for title in ("Y Combinator Startup School", "AWS Activate"):
+            with self.subTest(category="startup-founder", title=title):
+                self.assertTrue(programme_title_ok(title, "https://official.example/program", "startup-founder")[0])
+                self.assertTrue(programme_title_ok(title, "https://official.example/program", "startup_founder")[0])
+        for title in ("Google Developer Groups", "Microsoft Learn Student Ambassadors"):
+            with self.subTest(category="community", title=title):
+                self.assertTrue(programme_title_ok(title, "https://official.example/program", "community")[0])
+        self.assertFalse(programme_title_ok("AWS Activate", "https://official.example/program", "grants")[0])
+        self.assertFalse(programme_title_ok("Microsoft Learn Student Ambassadors", "https://official.example/program", "fellowships")[0])
+
     def test_generated_programme_title_gate_rejects_stale_years(self):
         self.assertEqual(
             programme_title_ok(
@@ -387,6 +398,29 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertIn("empty=1", summary)
         self.assertIn("http_403=1", summary)
         self.assertEqual(len(result["observations"]), len(seeds))
+
+    def test_collect_treats_request_cap_as_capped_skip(self):
+        seed = SEEDS[0]
+        config = ProgrammeConfig(
+            category="startup-founder", opportunity_type="programme", source_registry=(seed,),
+            observations_path="", verifications_path="",
+        )
+
+        def capped_fetch(_url):
+            raise RuntimeError("HTTP request cap of 150 reached")
+
+        with tempfile.TemporaryDirectory() as td:
+            captured = io.StringIO()
+            with redirect_stdout(captured):
+                core_collect(
+                    config, fetch=capped_fetch,
+                    checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc),
+                    lake_path=os.path.join(td, "lake.json"),
+                    observations_path=os.path.join(td, "observations.json"),
+                )
+        summary = next(line for line in captured.getvalue().splitlines() if "programme_fetch_summary" in line)
+        self.assertIn("capped=1", summary)
+        self.assertNotIn("exception[RuntimeError]", summary)
 
     def test_evidence_prefers_application_sentence_over_earlier_generic_prose(self):
         seed = SEEDS[2]

@@ -71,6 +71,20 @@ PROGRAMME_NOUNS = (
     "internship programme", "internship program", "mentorship", "mentorships",
     "initiative", "initiatives", "foundation", "academy", "academies",
 )
+_CATEGORY_PROGRAMME_NOUNS = {
+    "startup-founder": (
+        "accelerator", "accelerators", "incubator", "incubators", "startup",
+        "startups", "founder", "founders", "launchpad", "activate", "venture",
+        "ventures", "demo day", "cohort", "batch", "credits", "studio",
+        "pre-accelerator", "for startups", "startup school",
+    ),
+    "community": (
+        "community", "communities", "ambassador", "ambassadors", "club", "clubs",
+        "champion", "champions", "developer group", "developer groups",
+        "student developer", "student developers", "developer expert",
+        "developer experts", "gdg", "mlh", "leads", "chapter", "chapters",
+    ),
+}
 JOB_BOARD_HOSTS = (
     "lever", "greenhouse", "workable", "linkedin", "naukri", "indeed", "hanzilla",
     "myworkdayjobs", "myworkdaysite", "icims", "taleo", "smartrecruiters",
@@ -145,10 +159,12 @@ def _programme_host_is_job_board(url: str) -> bool:
 
 def _programme_has_noun(title: str, category: str = "") -> bool:
     lowered = str(title or "").casefold()
+    category_key = str(category or "").casefold().replace("_", "-")
+    nouns = PROGRAMME_NOUNS + _CATEGORY_PROGRAMME_NOUNS.get(category_key, ())
     has_scholarship_or_fellowship = bool(
         re.search(r"\b(?:fellowships?|scholarships?)\b", lowered)
     )
-    for noun in PROGRAMME_NOUNS:
+    for noun in nouns:
         if noun == "foundation" and not (
                 category.casefold() in {"scholarship", "scholarships"}
                 or has_scholarship_or_fellowship):
@@ -1047,6 +1063,8 @@ def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake
 def _fetch_failure_bucket(reason: str) -> str:
     """Reduce existing fetch/parse failure text to a stable log bucket."""
     lowered = str(reason or "").lower()
+    if "request cap" in lowered or "request host cap" in lowered or "per-host cap" in lowered or "per host cap" in lowered:
+        return "capped"
     if "robots_disallow" in lowered or "robots_block" in lowered:
         return "robots_blocked"
     status = re.search(r"\b(?:http[_ -]?)?(\d{3})\b", lowered)
@@ -1152,8 +1170,11 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             exception_detail = "{}: {}".format(exception_name, exception_message)
             observation = _observation(seed, checked, "failed", "{}: {}".format(exception_name, str(exc)[:160]))
             record = None
-            outcome = _fetch_failure_bucket(observation["reason"])
-            exception_counts[exception_name] += 1
+            if _fetch_failure_bucket(observation["reason"]) == "capped":
+                outcome = "capped"
+            else:
+                outcome = _fetch_failure_bucket(observation["reason"])
+                exception_counts[exception_name] += 1
         if record:
             records.append(record)
         observations.append(observation)
