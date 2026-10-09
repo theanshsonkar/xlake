@@ -1,0 +1,376 @@
+[
+  {
+    "source_id": "hub-open_source-badges-frapsoft-com-os-v2-5d4714",
+    "programme_id": "open_source-hub-badges-frapsoft-com-os-v2-5d4714",
+    "programme_name": "![Open Source Love",
+    "organizer": "badges.frapsoft.com",
+    "official_url": "https://badges.frapsoft.com/os/v2/open-source.svg?v=103",
+    "allowed_path_hints": [
+      "os/v2/open-source.svg"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-fellowship-mlh-io-3522d4",
+    "programme_id": "open_source-hub-fellowship-mlh-io-3522d4",
+    "programme_name": "**MLH Fellowship**",
+    "organizer": "fellowship.mlh.io",
+    "official_url": "https://fellowship.mlh.io/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-hashnode-com-n-opensource-a55755",
+    "programme_id": "open_source-hub-hashnode-com-n-opensource-a55755",
+    "programme_name": "Hashnode",
+    "organizer": "hashnode.com",
+    "official_url": "https://hashnode.com/n/opensource",
+    "allowed_path_hints": [
+      "n/opensource"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-img-shields-io-badge-contributions-welcome-brightgreen-svg-2d0cd4",
+    "programme_id": "open_source-hub-img-shields-io-badge-contributions-welcome-brightgreen-svg-2d0cd4",
+    "programme_name": "![Contributions Welcome",
+    "organizer": "img.shields.io",
+    "official_url": "https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat",
+    "allowed_path_hints": [
+      "badge/contributions-welcome-brightgreen.svg"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-mentorship-lfx-linuxfoundation-org-a9c83e",
+    "programme_id": "open_source-hub-mentorship-lfx-linuxfoundation-org-a9c83e",
+    "programme_name": "**LFX Mentorship**",
+    "organizer": "mentorship.lfx.linuxfoundation.org",
+    "official_url": "https://mentorship.lfx.linuxfoundation.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-opensource-guide-720aa7",
+    "programme_id": "open_source-hub-opensource-guide-720aa7",
+    "programme_name": "opensource.guide",
+    "organizer": "opensource.guide",
+    "official_url": "https://opensource.guide/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-opensource-guide-how-to-contribute-f4b61b",
+    "programme_id": "open_source-hub-opensource-guide-how-to-contribute-f4b61b",
+    "programme_name": "How to Contribute to Open Source",
+    "organizer": "opensource.guide",
+    "official_url": "https://opensource.guide/how-to-contribute",
+    "allowed_path_hints": [
+      "how-to-contribute"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-stackoverflow-com-questions-tagged-12e2fa",
+    "programme_id": "open_source-hub-stackoverflow-com-questions-tagged-12e2fa",
+    "programme_name": "Stack Overflow",
+    "organizer": "stackoverflow.com",
+    "official_url": "https://stackoverflow.com/questions/tagged/open-source",
+    "allowed_path_hints": [
+      "questions/tagged/open-source"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-www-freecodecamp-org-news-the-definitive-guide-to-contributi-dd8981",
+    "programme_id": "open_source-hub-www-freecodecamp-org-news-the-definitive-guide-to-contributi-dd8981",
+    "programme_name": "The Definitive Guide to Contributing to Open Source",
+    "organizer": "freecodecamp.org",
+    "official_url": "https://www.freecodecamp.org/news/the-definitive-guide-to-contributing-to-open-source-900d5f9f2282",
+    "allowed_path_hints": [
+      "news/the-definitive-guide-to-contributing-to-open-source-900d5f9f2282"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-sigmm-org-resources-software-bdaa1a",
+    "programme_id": "open_source-hub-sigmm-org-resources-software-bdaa1a",
+    "programme_name": "**ACM MM Open Source Software Competition**",
+    "organizer": "sigmm.org",
+    "official_url": "http://sigmm.org/Resources/software/ossc",
+    "allowed_path_hints": [
+      "Resources/software/ossc"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-app-codeforgovtech-in-46f8bd",
+    "programme_id": "open_source-hub-app-codeforgovtech-in-46f8bd",
+    "programme_name": "**Code for GovTech (C4GT) – Dedicated Mentoring Program (DMP)**",
+    "organizer": "app.codeforgovtech.in",
+    "official_url": "https://app.codeforgovtech.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-app-lfx-dev-15ec40",
+    "programme_id": "open_source-hub-app-lfx-dev-15ec40",
+    "programme_name": "Log in",
+    "organizer": "app.lfx.dev",
+    "official_url": "https://app.lfx.dev/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-blog-ethereum-org-2026-04-05accc",
+    "programme_id": "open_source-hub-blog-ethereum-org-2026-04-05accc",
+    "programme_name": "**Ethereum Protocol Fellowship**",
+    "organizer": "blog.ethereum.org",
+    "official_url": "https://blog.ethereum.org/2026/04/30/epf-7",
+    "allowed_path_hints": [
+      "2026/04/30/epf-7"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-changelog-lfx-dev-0086fc",
+    "programme_id": "open_source-hub-changelog-lfx-dev-0086fc",
+    "programme_name": "Changelog",
+    "organizer": "changelog.lfx.dev",
+    "official_url": "https://changelog.lfx.dev/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-egghead-io-courses-how-to-contribute-to-an-open-source-proje-fb82cf",
+    "programme_id": "open_source-hub-egghead-io-courses-how-to-contribute-to-an-open-source-proje-fb82cf",
+    "programme_name": "Egghead.io Open Source Course",
+    "organizer": "egghead.io",
+    "official_url": "https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github",
+    "allowed_path_hints": [
+      "courses/how-to-contribute-to-an-open-source-project-on-github"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-ethereum-org-contributing-translation-program-8fb22d",
+    "programme_id": "open_source-hub-ethereum-org-contributing-translation-program-8fb22d",
+    "programme_name": "Ethereum Translation Program",
+    "organizer": "ethereum.org",
+    "official_url": "https://ethereum.org/contributing/translation-program",
+    "allowed_path_hints": [
+      "contributing/translation-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-gssoc-girlscript-tech-cc02db",
+    "programme_id": "open_source-hub-gssoc-girlscript-tech-cc02db",
+    "programme_name": "**GirlScript Summer of Code (GSSoC)**",
+    "organizer": "gssoc.girlscript.tech",
+    "official_url": "https://gssoc.girlscript.tech/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-huggingface-co-blog-ambassadors-eaace7",
+    "programme_id": "open_source-hub-huggingface-co-blog-ambassadors-eaace7",
+    "programme_name": "Student Ambassador Program",
+    "organizer": "huggingface.co",
+    "official_url": "https://huggingface.co/blog/ambassadors",
+    "allowed_path_hints": [
+      "blog/ambassadors"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-huggingface-co-blog-omlx-fb8ad8",
+    "programme_id": "open_source-hub-huggingface-co-blog-omlx-fb8ad8",
+    "programme_name": "mlx open-source community Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community +1 88 Se",
+    "organizer": "huggingface.co",
+    "official_url": "https://huggingface.co/blog/omlx",
+    "allowed_path_hints": [
+      "blog/omlx"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-huggingface-co-login-6b8c4e",
+    "programme_id": "open_source-hub-huggingface-co-login-6b8c4e",
+    "programme_name": "Upvote 16",
+    "organizer": "huggingface.co",
+    "official_url": "https://huggingface.co/login?next=%2Fblog%2Ffellowship",
+    "allowed_path_hints": [
+      "login"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-kubestellar-io-en-programs-fc713b",
+    "programme_id": "open_source-hub-kubestellar-io-en-programs-fc713b",
+    "programme_name": "⁠**KubeStellar IFoS (Interns for Open Source)**",
+    "organizer": "kubestellar.io",
+    "official_url": "https://kubestellar.io/en/programs/ifos",
+    "allowed_path_hints": [
+      "en/programs/ifos"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-lab-codingblocks-com-boss-cd97d1",
+    "programme_id": "open_source-hub-lab-codingblocks-com-boss-cd97d1",
+    "programme_name": "**BOSS (Bountiful Open Source Summer)**",
+    "organizer": "lab.codingblocks.com",
+    "official_url": "https://lab.codingblocks.com/boss",
+    "allowed_path_hints": [
+      "boss"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-lf-decentralized-trust-mentorships-github-io-mentorship-prog-ccaa43",
+    "programme_id": "open_source-hub-lf-decentralized-trust-mentorships-github-io-mentorship-prog-ccaa43",
+    "programme_name": "**LF Decentralized Trust Mentorship**",
+    "organizer": "lf-decentralized-trust-mentorships.github.io",
+    "official_url": "https://lf-decentralized-trust-mentorships.github.io/mentorship-program/main",
+    "allowed_path_hints": [
+      "mentorship-program/main"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-numfocus-org-programs-john-hunter-technology-fellowship-565dfe",
+    "programme_id": "open_source-hub-numfocus-org-programs-john-hunter-technology-fellowship-565dfe",
+    "programme_name": "**John Hunter Matplotlib Fellowship**",
+    "organizer": "numfocus.org",
+    "official_url": "https://numfocus.org/programs/john-hunter-technology-fellowship",
+    "allowed_path_hints": [
+      "programs/john-hunter-technology-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-openmainframeproject-org-community-mentorship-program-1bb5bd",
+    "programme_id": "open_source-hub-openmainframeproject-org-community-mentorship-program-1bb5bd",
+    "programme_name": "**Open Mainframe Project Mentorship**",
+    "organizer": "openmainframeproject.org",
+    "official_url": "https://openmainframeproject.org/community/mentorship-program",
+    "allowed_path_hints": [
+      "community/mentorship-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-taione-org-fellowship-about-e2c2d9",
+    "programme_id": "open_source-hub-taione-org-fellowship-about-e2c2d9",
+    "programme_name": "**Taiwan Fellowship Program**",
+    "organizer": "taione.org",
+    "official_url": "https://taione.org/fellowship/about",
+    "allowed_path_hints": [
+      "fellowship/about"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-www-gsocorganizations-dev-7a7fe2",
+    "programme_id": "open_source-hub-www-gsocorganizations-dev-7a7fe2",
+    "programme_name": "gsocorganizations.dev",
+    "organizer": "gsocorganizations.dev",
+    "official_url": "https://www.gsocorganizations.dev/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-www-millenniumfellows-org-702885",
+    "programme_id": "open_source-hub-www-millenniumfellows-org-702885",
+    "programme_name": "**Millennium Fellowship**",
+    "organizer": "millenniumfellows.org",
+    "official_url": "https://www.millenniumfellows.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-www-outreachy-org-alums-159506",
+    "programme_id": "open_source-hub-www-outreachy-org-alums-159506",
+    "programme_name": "Past Interns",
+    "organizer": "outreachy.org",
+    "official_url": "https://www.outreachy.org/alums",
+    "allowed_path_hints": [
+      "alums"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-www-outreachy-org-apply-0526f7",
+    "programme_id": "open_source-hub-www-outreachy-org-apply-0526f7",
+    "programme_name": "Apply to Outreachy",
+    "organizer": "outreachy.org",
+    "official_url": "https://www.outreachy.org/apply",
+    "allowed_path_hints": [
+      "apply"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-www-outreachy-org-apply-project-selection-7f614e",
+    "programme_id": "open_source-hub-www-outreachy-org-apply-project-selection-7f614e",
+    "programme_name": "Current Projects",
+    "organizer": "outreachy.org",
+    "official_url": "https://www.outreachy.org/apply/project-selection",
+    "allowed_path_hints": [
+      "apply/project-selection"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-www-outreachy-org-blog-f1f3ba",
+    "programme_id": "open_source-hub-www-outreachy-org-blog-f1f3ba",
+    "programme_name": "Blog",
+    "organizer": "outreachy.org",
+    "official_url": "https://www.outreachy.org/blog",
+    "allowed_path_hints": [
+      "blog"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-www-outreachy-org-blog-2023-08-08-822cb6",
+    "programme_id": "open_source-hub-www-outreachy-org-blog-2023-08-08-822cb6",
+    "programme_name": "Details and link to apply",
+    "organizer": "outreachy.org",
+    "official_url": "https://www.outreachy.org/blog/2023-08-08/december-2023-initial-applications-open",
+    "allowed_path_hints": [
+      "blog/2023-08-08/december-2023-initial-applications-open"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-open_source-www-sktime-net-en-latest-522dc3",
+    "programme_id": "open_source-hub-www-sktime-net-en-latest-522dc3",
+    "programme_name": "**sktime Mentoring Program**",
+    "organizer": "sktime.net",
+    "official_url": "https://www.sktime.net/en/latest/get_involved/mentoring.html",
+    "allowed_path_hints": [
+      "en/latest/get_involved/mentoring.html"
+    ],
+    "check_cadence": "monthly"
+  }
+]

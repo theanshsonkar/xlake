@@ -1,0 +1,178 @@
+[
+  {
+    "source_id": "hub-grants-www-sfari-org-0356fe",
+    "programme_id": "grants-hub-www-sfari-org-0356fe",
+    "programme_name": "Autism Research Initiative",
+    "organizer": "sfari.org",
+    "official_url": "http://www.sfari.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-bssw-io-pages-bssw-fellowship-program-037614",
+    "programme_id": "grants-hub-bssw-io-pages-bssw-fellowship-program-037614",
+    "programme_name": "`BBSw Fellowship Program`",
+    "organizer": "bssw.io",
+    "official_url": "https://bssw.io/pages/bssw-fellowship-program",
+    "allowed_path_hints": [
+      "pages/bssw-fellowship-program"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-foundation-mozilla-org-en-what-we-fund-0f89fa",
+    "programme_id": "grants-hub-foundation-mozilla-org-en-what-we-fund-0f89fa",
+    "programme_name": "`Mozilla Technology Fund (MTF)`",
+    "organizer": "foundation.mozilla.org",
+    "official_url": "https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund-mtf",
+    "allowed_path_hints": [
+      "en/what-we-fund/awards/mozilla-technology-fund-mtf"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-interledger-org-ambassadors-4734ae",
+    "programme_id": "grants-hub-interledger-org-ambassadors-4734ae",
+    "programme_name": "`Interledger Ambassador Program`",
+    "organizer": "interledger.org",
+    "official_url": "https://interledger.org/ambassadors",
+    "allowed_path_hints": [
+      "ambassadors"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-programs-c369c9",
+    "programme_id": "grants-hub-meta-wikimedia-org-wiki-grants-programs-c369c9",
+    "programme_name": "Research fund",
+    "organizer": "meta.wikimedia.org",
+    "official_url": "https://meta.wikimedia.org/wiki/Grants:Programs/Wikimedia_Research_%26_Technology_Fund",
+    "allowed_path_hints": [
+      "wiki/Grants:Programs/Wikimedia_Research_%26_Technology_Fund"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-start-a3a9f2",
+    "programme_id": "grants-hub-meta-wikimedia-org-wiki-grants-start-a3a9f2",
+    "programme_name": "`Wikimedia Grants`",
+    "organizer": "meta.wikimedia.org",
+    "official_url": "https://meta.wikimedia.org/wiki/Grants:Start",
+    "allowed_path_hints": [
+      "wiki/Grants:Start"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-metamaskgrants-org-c19df3",
+    "programme_id": "grants-hub-metamaskgrants-org-c19df3",
+    "programme_name": "`Metamask Grants`",
+    "organizer": "metamaskgrants.org",
+    "official_url": "https://metamaskgrants.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-ocean-sagepub-com-concept-grants-7556d8",
+    "programme_id": "grants-hub-ocean-sagepub-com-concept-grants-7556d8",
+    "programme_name": "`Sage Concept Grants`",
+    "organizer": "ocean.sagepub.com",
+    "official_url": "https://ocean.sagepub.com/concept-grants",
+    "allowed_path_hints": [
+      "concept-grants"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-research-cisco-com-open-rfps-af03de",
+    "programme_id": "grants-hub-research-cisco-com-open-rfps-af03de",
+    "programme_name": "`Cisco Research Grants`",
+    "organizer": "research.cisco.com",
+    "official_url": "https://research.cisco.com/open-rfps",
+    "allowed_path_hints": [
+      "open-rfps"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-research-google-outreach-4be4f7",
+    "programme_id": "grants-hub-research-google-outreach-4be4f7",
+    "programme_name": "`Google Research Outreach Program`",
+    "organizer": "research.google",
+    "official_url": "https://research.google/outreach",
+    "allowed_path_hints": [
+      "outreach"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-research-google-programs-and-events-phd-fellowship-62693b",
+    "programme_id": "grants-hub-research-google-programs-and-events-phd-fellowship-62693b",
+    "programme_name": "Google PhD Fellowship",
+    "organizer": "research.google",
+    "official_url": "https://research.google/programs-and-events/phd-fellowship",
+    "allowed_path_hints": [
+      "programs-and-events/phd-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-sloan-org-grants-apply-005a70",
+    "programme_id": "grants-hub-sloan-org-grants-apply-005a70",
+    "programme_name": "grant program",
+    "organizer": "sloan.org",
+    "official_url": "https://sloan.org/grants/apply",
+    "allowed_path_hints": [
+      "grants/apply"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-sovereigntechfund-de-programs-fellowship-88c835",
+    "programme_id": "grants-hub-sovereigntechfund-de-programs-fellowship-88c835",
+    "programme_name": "`Sovereign Tech Fund - Maintainer Fellowships`",
+    "organizer": "sovereigntechfund.de",
+    "official_url": "https://sovereigntechfund.de/programs/fellowship",
+    "allowed_path_hints": [
+      "programs/fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-web3-foundation-4fccff",
+    "programme_id": "grants-hub-web3-foundation-4fccff",
+    "programme_name": "`Web3 Foundation Grants`",
+    "organizer": "web3.foundation",
+    "official_url": "https://web3.foundation/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-www-cisco-com-c-en-9d3093",
+    "programme_id": "grants-hub-www-cisco-com-c-en-9d3093",
+    "programme_name": "`CISCO Grant Program`",
+    "organizer": "cisco.com",
+    "official_url": "https://www.cisco.com/c/en/us/about/csr/community/nonprofits/product-grant-program.html",
+    "allowed_path_hints": [
+      "c/en/us/about/csr/community/nonprofits/product-grant-program.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-grants-www-top10vpn-com-research-grant-d51033",
+    "programme_id": "grants-hub-www-top10vpn-com-research-grant-d51033",
+    "programme_name": "`Top10vpn Research Grant`",
+    "organizer": "top10vpn.com",
+    "official_url": "https://www.top10vpn.com/research-grant",
+    "allowed_path_hints": [
+      "research-grant"
+    ],
+    "check_cadence": "monthly"
+  }
+]

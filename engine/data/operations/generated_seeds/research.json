@@ -1,0 +1,145 @@
+[
+  {
+    "source_id": "hub-research-ai-google-research-800bdd",
+    "programme_id": "research-hub-ai-google-research-800bdd",
+    "programme_name": "Research",
+    "organizer": "ai.google",
+    "official_url": "https://ai.google/research",
+    "allowed_path_hints": [
+      "research"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-asta-allen-ai-e6214b",
+    "programme_id": "research-hub-asta-allen-ai-e6214b",
+    "programme_name": "Research with Asta",
+    "organizer": "asta.allen.ai",
+    "official_url": "https://asta.allen.ai/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-blog-google-translate-goog-intl-de-de-b11f7e",
+    "programme_id": "research-hub-blog-google-translate-goog-intl-de-de-b11f7e",
+    "programme_name": "Google and TU Munich are investing in cybersecurity research Read blog post",
+    "organizer": "blog-google.translate.goog",
+    "official_url": "https://blog-google.translate.goog/intl/de-de/unternehmen/technologie/google-tu-munchen-tum-investition-cybersecurity-forschung?_x_tr_hl=de&_x_tr_pto=wapp&_x_tr_sl=auto&_x_tr_tl=en",
+    "allowed_path_hints": [
+      "intl/de-de/unternehmen/technologie/google-tu-munchen-tum-investition-cybersecurity-forschung"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-blog-google-technology-research-815346",
+    "programme_id": "research-hub-blog-google-technology-research-815346",
+    "programme_name": "Meet the Ph.D. students changing the face of computing Read blog post",
+    "organizer": "blog.google",
+    "official_url": "https://blog.google/technology/research/meet-phd-students-changing-face-computing",
+    "allowed_path_hints": [
+      "technology/research/meet-phd-students-changing-face-computing"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-blog-google-technology-research-4b0da1",
+    "programme_id": "research-hub-blog-google-technology-research-4b0da1",
+    "programme_name": "Mentorship inspires Deyrel Diaz and future researchers Read blog post",
+    "organizer": "blog.google",
+    "official_url": "https://blog.google/technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers",
+    "allowed_path_hints": [
+      "technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-blog-google-technology-research-0906a3",
+    "programme_id": "research-hub-blog-google-technology-research-0906a3",
+    "programme_name": "Supporting academics working to create positive societal impact with technology Google's T&S Research team collaborates ",
+    "organizer": "blog.google",
+    "official_url": "https://blog.google/technology/research/our-first-trust-safety-research-awards-grantees",
+    "allowed_path_hints": [
+      "technology/research/our-first-trust-safety-research-awards-grantees"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-blog-google-technology-research-3e68c2",
+    "programme_id": "research-hub-blog-google-technology-research-3e68c2",
+    "programme_name": "Read blog post",
+    "organizer": "blog.google",
+    "official_url": "https://blog.google/technology/research/rajavi-mishra-becoming-computer-science-researcher",
+    "allowed_path_hints": [
+      "technology/research/rajavi-mishra-becoming-computer-science-researcher"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-deepmind-google-research-13360c",
+    "programme_id": "research-hub-deepmind-google-research-13360c",
+    "programme_name": "Research",
+    "organizer": "deepmind.google",
+    "official_url": "https://deepmind.google/research",
+    "allowed_path_hints": [
+      "research"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-huggingface-co-coherelabs-65fbae",
+    "programme_id": "research-hub-huggingface-co-coherelabs-65fbae",
+    "programme_name": "Cohere Labs Hugging Face Space Explore and interact with our models directly on our Hugging Face Space, making AI resear",
+    "organizer": "huggingface.co",
+    "official_url": "https://huggingface.co/CohereLabs",
+    "allowed_path_hints": [
+      "CohereLabs"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-research-google-50efb5",
+    "programme_id": "research-hub-research-google-50efb5",
+    "programme_name": "Google Research Explore our research",
+    "organizer": "research.google",
+    "official_url": "https://research.google/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-www-aises-org-content-aire-57a382",
+    "programme_id": "research-hub-www-aises-org-content-aire-57a382",
+    "programme_name": "AISES Increasing awareness and interest in computer science research among 130+ Indigenous undergraduate students across",
+    "organizer": "aises.org",
+    "official_url": "https://www.aises.org/content/aire",
+    "allowed_path_hints": [
+      "content/aire"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-www-research-gov-research-web-986731",
+    "programme_id": "research-hub-www-research-gov-research-web-986731",
+    "programme_name": "Research.gov",
+    "organizer": "research.gov",
+    "official_url": "https://www.research.gov/research-web",
+    "allowed_path_hints": [
+      "research-web"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-research-www-utep-edu-newsfeed-2022-8801d0",
+    "programme_id": "research-hub-www-utep-edu-newsfeed-2022-8801d0",
+    "programme_name": "CAHSI-Google Institutional Research Program In 2021, Hispanic students earned 6% of Bachelor's degrees in North America ",
+    "organizer": "utep.edu",
+    "official_url": "https://www.utep.edu/newsfeed/2022/utep-led-alliance-receives-4.8m-from-google-to-increase-hispanic-participation-in-computing-research.html",
+    "allowed_path_hints": [
+      "newsfeed/2022/utep-led-alliance-receives-4.8m-from-google-to-increase-hispanic-participation-in-computing-research.html"
+    ],
+    "check_cadence": "monthly"
+  }
+]
