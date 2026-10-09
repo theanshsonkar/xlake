@@ -1,5 +1,18 @@
 [
   {
+    "source_id": "hub-community-www-cmgga-in-b443dc",
+    "programme_id": "community-hub-www-cmgga-in-b443dc",
+    "programme_name": "Chief Minister’s Good Governance Associates Program (Haryana)",
+    "organizer": "cmgga.in",
+    "official_url": "http://www.cmgga.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
+  },
+  {
     "source_id": "hub-community-www-cmulf-dtu-ac-in-4f2b4b",
     "programme_id": "community-hub-www-cmulf-dtu-ac-in-4f2b4b",
     "programme_name": "Chief Minister’s Urban Leaders Fellowship (CMULF)",
@@ -8,7 +21,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-www-dalbergdesign-com-jdf-b30876",
@@ -19,7 +34,9 @@
     "allowed_path_hints": [
       "jdf"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-www-darc-dtu-ac-in-67c0d8",
@@ -30,7 +47,8 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-acumen-org-fellowships-india-22eb7a",
@@ -41,7 +59,9 @@
     "allowed_path_hints": [
       "fellowships/india"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-afsee-atlanticfellows-org-the-atlantic-fellowships-db48dc",
@@ -52,7 +72,9 @@
     "allowed_path_hints": [
       "the-atlantic-fellowships"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-aif-org-fellowship-a3b18e",
@@ -63,7 +85,9 @@
     "allowed_path_hints": [
       "fellowship"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-anu-edu-in-programme-anant-fellowship-315eaf",
@@ -74,7 +98,22 @@
     "allowed_path_hints": [
       "programme/anant-fellowship"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
+  },
+  {
+    "source_id": "hub-community-asiafoundation-org-what-we-do-asia-foundation-development-fe-cde638",
+    "programme_id": "community-hub-asiafoundation-org-what-we-do-asia-foundation-development-fe-cde638",
+    "programme_name": "Asia Foundation Development Fellows Program",
+    "organizer": "asiafoundation.org",
+    "official_url": "https://asiafoundation.org/what-we-do/asia-foundation-development-fellows",
+    "allowed_path_hints": [
+      "what-we-do/asia-foundation-development-fellows"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-azimpremjifoundation-org-content-fellowship-8d3a5e",
@@ -85,7 +124,9 @@
     "allowed_path_hints": [
       "content/fellowship"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-buddhafellowship-com-fellowship-d9b255",
@@ -96,7 +137,22 @@
     "allowed_path_hints": [
       "fellowship"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
+  },
+  {
+    "source_id": "hub-community-centre-humdata-org-data-fellows-ccecf8",
+    "programme_id": "community-hub-centre-humdata-org-data-fellows-ccecf8",
+    "programme_name": "Centre for Humanitarian Data (UNOCHA) — Data Fellows Programme 2020",
+    "organizer": "centre.humdata.org",
+    "official_url": "https://centre.humdata.org/data-fellows",
+    "allowed_path_hints": [
+      "data-fellows"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-cplindia-org-382810",
@@ -107,7 +163,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-csip-ashoka-edu-in-research-fellowship-2023-ba00b6",
@@ -118,7 +176,9 @@
     "allowed_path_hints": [
       "research-fellowship-2023"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-digitalswarajfellowship-org-5a09eb",
@@ -129,7 +189,21 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:26:09Z"
+  },
+  {
+    "source_id": "hub-community-discord-com-invite-google-dev-community-8a86f7",
+    "programme_id": "community-hub-discord-com-invite-google-dev-community-8a86f7",
+    "programme_name": "Join now",
+    "organizer": "discord.com",
+    "official_url": "https://discord.com/invite/google-dev-community",
+    "allowed_path_hints": [
+      "invite/google-dev-community"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-fellowship-bhumi-ngo-f7242f",
@@ -140,7 +214,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-fellowship-cdri-world-eligibility-html-828cf8",
@@ -151,7 +227,22 @@
     "allowed_path_hints": [
       "eligibility.html"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
+  },
+  {
+    "source_id": "hub-community-github-community-ee8349",
+    "programme_id": "community-hub-github-community-ee8349",
+    "programme_name": "Community Forum",
+    "organizer": "github.community",
+    "official_url": "https://github.community/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-mahades-maharashtra-gov-in-home-do-c0b3e4",
@@ -162,7 +253,9 @@
     "allowed_path_hints": [
       "home.do"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-ocimpact-com-oc-global-cordes-fellowships-5f5bcd",
@@ -173,7 +266,9 @@
     "allowed_path_hints": [
       "oc-global/cordes-fellowships"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-pacscenter-stanford-edu-research-digital-civil-society-lab-cffddb",
@@ -184,7 +279,8 @@
     "allowed_path_hints": [
       "research/digital-civil-society-lab/dcsl-non-resident-fellowships"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-populareducation-in-vacancies-anil-chaudhary-research-fellow-269b26",
@@ -195,7 +291,9 @@
     "allowed_path_hints": [
       "vacancies/anil-chaudhary-research-fellowship-on-political-economy"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-www-adivasilivesmatter-com-aipp-1de5de",
@@ -206,7 +304,9 @@
     "allowed_path_hints": [
       "aipp"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-www-ashoka-edu-in-3cs-media-fellowship-4ef010",
@@ -217,7 +317,9 @@
     "allowed_path_hints": [
       "3cs-media-fellowship"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-www-ashoka-org-en-in-ashoka-fellows-a91223",
@@ -228,7 +330,22 @@
     "allowed_path_hints": [
       "en-in/ashoka-fellows"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
+  },
+  {
+    "source_id": "hub-community-www-ashoka-org-en-in-program-e10ece",
+    "programme_id": "community-hub-www-ashoka-org-en-in-program-e10ece",
+    "programme_name": "Ashoka Young Changemakers",
+    "organizer": "ashoka.org",
+    "official_url": "https://www.ashoka.org/en-in/program/ashoka-young-changemakers",
+    "allowed_path_hints": [
+      "en-in/program/ashoka-young-changemakers"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-www-britishcouncil-in-study-uk-scholarships-21925c",
@@ -239,7 +356,9 @@
     "allowed_path_hints": [
       "study-uk/scholarships/charles-wallace-india-trust-scholarships"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-www-devalt-org-fellowshipprograme-aspx-4252f2",
@@ -250,7 +369,21 @@
     "allowed_path_hints": [
       "FellowshipPrograme.aspx"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:26:09Z"
+  },
+  {
+    "source_id": "hub-community-www-mongodb-com-community-forums-445268",
+    "programme_id": "community-hub-www-mongodb-com-community-forums-445268",
+    "programme_name": "MongoDB support",
+    "organizer": "mongodb.com",
+    "official_url": "https://www.mongodb.com/community/forums/c/academia/students/42",
+    "allowed_path_hints": [
+      "community/forums/c/academia/students/42"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-www-sif-org-sg-our-work-ce-39f497",
@@ -261,7 +394,9 @@
     "allowed_path_hints": [
       "our-work/ce/afg/2020-Fellowship"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   },
   {
     "source_id": "hub-community-www-travellersuniversity-org-52-parindey-fellowship-fb78e4",
@@ -272,6 +407,8 @@
     "allowed_path_hints": [
       "52-parindey-fellowship"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-09T20:26:09Z"
   }
 ]

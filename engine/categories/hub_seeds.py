@@ -44,6 +44,11 @@ DIRECTORY_TERMS = re.compile(
     r"scholarship|grant|award|program(?:me)?s?)",
     re.IGNORECASE,
 )
+COMMUNITY_TERMS = re.compile(
+    r"(?:community|ambassadors?|clubs?|champions?|developer\s+group|"
+    r"student\s+developers?|mentorship|fellowships?|program(?:me)?)",
+    re.IGNORECASE,
+)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "engine" / "data" / "operations" / "generated_seeds"
@@ -54,9 +59,9 @@ GENERIC_NAMES = frozenset({
 })
 from core import pagetext
 try:
-    from categories.programme_core import programme_title_ok
+    from categories.programme_core import programme_title_ok, should_route_research_seed
 except ImportError:  # pragma: no cover - supports package-root imports
-    from engine.categories.programme_core import programme_title_ok
+    from engine.categories.programme_core import programme_title_ok, should_route_research_seed
 
 
 _ADMISSION_PATH_SEGMENTS = frozenset({
@@ -316,6 +321,12 @@ def _has_admission_programme_signal(value: str) -> bool:
     return False
 
 
+def _has_admission_programme_signal_for_category(value: str, category: str) -> bool:
+    return (
+        category == "community" and COMMUNITY_TERMS.search(value or "") is not None
+    ) or _has_admission_programme_signal(value)
+
+
 def _admission_is_directory_page(*values: str) -> bool:
     return bool(_ADMISSION_DIRECTORY_TERMS.search(" ".join(value or "" for value in values)))
 
@@ -411,7 +422,7 @@ def admit_candidate(
     stale_title = " ".join(filter(None, (page.title, anchor)))
     if _admission_is_stale_year(stale_title, page.h1, *checked_urls):
         return False, "stale_year", ""
-    if _admission_is_ambassador(page.title, page.h1, anchor, *checked_urls):
+    if category != "community" and _admission_is_ambassador(page.title, page.h1, anchor, *checked_urls):
         return False, "ambassador", ""
     for script in page.json_ld:
         try:
@@ -434,7 +445,7 @@ def admit_candidate(
     for raw, name in candidates:
         if (not category_is_directory and
                 _admission_name_passes(raw, name, require_noun=False) and
-                not _has_admission_programme_signal(name) and
+                not _has_admission_programme_signal_for_category(name, category) and
                 _admission_host_overlap(name, url)):
             return_name = name
             break
@@ -442,12 +453,17 @@ def admit_candidate(
         return_name = ""
     if not return_name:
         for raw, name in candidates:
-            if _admission_name_passes(raw, name):
+            if (_admission_name_passes(raw, name)
+                    or (category == "community"
+                        and _admission_name_passes(raw, name, require_noun=False)
+                        and _has_admission_programme_signal_for_category(name, category))):
                 return_name = name
                 break
     if not return_name:
         for raw, name in candidates:
             if (_admission_name_passes(raw, name, require_noun=False) and
+                    (_has_admission_programme_signal_for_category(name, category) or
+                     name.casefold() in _ADMISSION_PAGE_EVIDENCE_NAMES) and
                     ((not category_is_directory and _admission_host_overlap(name, url)) or
                      name.casefold() in _ADMISSION_PAGE_EVIDENCE_NAMES)):
                 return_name = name
@@ -458,17 +474,20 @@ def admit_candidate(
     visible = pagetext.to_text(html or "")
     header_text = " ".join((page.title, page.h1))
     page_evidence = _admission_has_page_programme_evidence(return_name, visible)
-    if not _has_admission_programme_signal(header_text) and not page_evidence:
+    if (not _has_admission_programme_signal_for_category(header_text, category)
+            and not page_evidence):
         return False, "no_programme_signal", ""
     page_text = " ".join(filter(None, (page.title, page.og_title, page.h1, visible)))
-    if _admission_is_ambassador(page.title, page.h1, " ".join((return_name, anchor)), *checked_urls):
+    if (category != "community"
+            and _admission_is_ambassador(page.title, page.h1, " ".join((return_name, anchor)), *checked_urls)):
         return False, "ambassador", ""
     if _admission_is_stale_year(stale_title, page.h1, *checked_urls):
         return False, "stale_year", ""
     # Body prose remains a useful technical signal; stale-year is deliberately
     # checked above without it so navigation/footer years cannot rescue a page.
     relevance_text = page_text
-    if not _admission_contains_keyword(relevance_text):
+    if (not _admission_contains_keyword(relevance_text)
+            and not (category == "community" and COMMUNITY_TERMS.search(relevance_text))):
         return False, "no_tech_signal", ""
     if not any(signal in visible.casefold() for signal in _ADMISSION_APPLICATION_SIGNALS):
         return False, "no_application_signal", ""
@@ -586,6 +605,7 @@ REQUIRED_SEED_FIELDS = (
 LAST_GENERATE_STATS: Dict[str, object] = {}
 LAST_ADMISSION_STATS: Dict[str, int] = {}
 LAST_SEED_GATE_REJECTIONS: Dict[str, int] = {}
+LAST_ROUTED_RESEARCH_SEEDS: List[Dict] = []
 
 
 _FILTER_COUNTERS = {
@@ -680,6 +700,25 @@ def _candidate_name(candidate: Dict) -> str:
     return _collapsed(anchor or candidate.get("programme_name"))
 
 
+def _seed_record(category: str, normalized: str, candidate: Dict) -> Dict:
+    parsed = urlparse.urlsplit(normalized)
+    host = (parsed.hostname or "").lower()
+    name = _candidate_name(candidate)[:120]
+    prefix = _slug_prefix(normalized)
+    digest = hashlib.sha1(normalized.encode("utf-8")).hexdigest()[:6]
+    slug = prefix + "-" + digest
+    path = (parsed.path or "/").strip("/")
+    return {
+        "source_id": "hub-{}-{}".format(category, slug),
+        "programme_id": "{}-hub-{}".format(category, slug),
+        "programme_name": name,
+        "organizer": host[4:] if host.startswith("www.") else host,
+        "official_url": normalized,
+        "allowed_path_hints": [path] if path else [""],
+        "check_cadence": "monthly",
+    }
+
+
 def candidates_to_seeds(
     category: str,
     candidates: Iterable[Dict],
@@ -687,15 +726,17 @@ def candidates_to_seeds(
     max_per_host: int = 5,
     max_total: int = 200,
 ) -> List[Dict]:
-    """Purely convert harvester-shaped candidate dictionaries to seed records."""
-    global LAST_SEED_GATE_REJECTIONS
+    """Convert harvester candidates, routing academic internships to research."""
+    global LAST_SEED_GATE_REJECTIONS, LAST_ROUTED_RESEARCH_SEEDS
     LAST_SEED_GATE_REJECTIONS = {}
+    LAST_ROUTED_RESEARCH_SEEDS = []
     if max_per_host <= 0 or max_total <= 0:
         return []
     existing = {_host_path(seed.get("official_url")) for seed in existing_seeds
                 if isinstance(seed, dict)}
     existing.discard(None)
     chosen: Dict[str, Tuple[int, str, Dict]] = {}
+    routed: Dict[str, Tuple[int, str, Dict]] = {}
     for candidate in candidates:
         if not isinstance(candidate, dict):
             continue
@@ -708,6 +749,14 @@ def candidates_to_seeds(
         if category in DIRECTORY_CATEGORIES:
             title_ok, title_reason = programme_title_ok(name, normalized, category)
             if not title_ok:
+                route_seed = {"programme_name": name, "official_url": normalized}
+                if should_route_research_seed(route_seed, category, title_reason):
+                    count = _source_count(candidate)
+                    tie_key = (name.casefold(), normalized)
+                    previous = routed.get(normalized)
+                    if previous is None or (count, "", tie_key) > (previous[0], "", previous[1]):
+                        routed[normalized] = (count, tie_key, candidate)
+                    continue
                 LAST_SEED_GATE_REJECTIONS[title_reason] = LAST_SEED_GATE_REJECTIONS.get(title_reason, 0) + 1
                 continue
         parsed = urlparse.urlsplit(normalized)
@@ -720,31 +769,25 @@ def candidates_to_seeds(
         if previous is None or (count, "", tie_key) > (previous[0], "", previous[1]):
             chosen[normalized] = (count, tie_key, candidate)
 
-    ordered = sorted(chosen.items(), key=lambda item: (-item[1][0], item[0]))
-    result: List[Dict] = []
-    host_counts: Dict[str, int] = {}
-    for normalized, (count, _, candidate) in ordered:
-        parsed = urlparse.urlsplit(normalized)
-        host = (parsed.hostname or "").lower()
-        if host_counts.get(host, 0) >= max_per_host:
-            continue
-        name = _candidate_name(candidate)[:120]
-        prefix = _slug_prefix(normalized)
-        digest = hashlib.sha1(normalized.encode("utf-8")).hexdigest()[:6]
-        slug = prefix + "-" + digest
-        path = (parsed.path or "/").strip("/")
-        result.append({
-            "source_id": "hub-{}-{}".format(category, slug),
-            "programme_id": "{}-hub-{}".format(category, slug),
-            "programme_name": name,
-            "organizer": host[4:] if host.startswith("www.") else host,
-            "official_url": normalized,
-            "allowed_path_hints": [path] if path else [""],
-            "check_cadence": "monthly",
-        })
-        host_counts[host] = host_counts.get(host, 0) + 1
-        if len(result) >= max_total:
-            break
+    def build_seed_list(entries: Dict[str, Tuple[int, str, Dict]], category_name: str) -> List[Dict]:
+        ordered = sorted(entries.items(), key=lambda item: (-item[1][0], item[0]))
+        result: List[Dict] = []
+        host_counts: Dict[str, int] = {}
+        for normalized, (_, _, candidate) in ordered:
+            parsed = urlparse.urlsplit(normalized)
+            host = (parsed.hostname or "").lower()
+            if host_counts.get(host, 0) >= max_per_host:
+                continue
+            result.append(_seed_record(category_name, normalized, candidate))
+            host_counts[host] = host_counts.get(host, 0) + 1
+            if len(result) >= max_total:
+                break
+        return result
+
+    result = build_seed_list(chosen, category)
+    LAST_ROUTED_RESEARCH_SEEDS = build_seed_list(routed, "research")
+    if LAST_ROUTED_RESEARCH_SEEDS:
+        LAST_SEED_GATE_REJECTIONS["routed_research"] = len(LAST_ROUTED_RESEARCH_SEEDS)
     return result
 
 
@@ -764,6 +807,8 @@ def _policy(category: str):
         return open_source_harvest.OPEN_SOURCE_TERMS, True
     if category == "startup_founder":
         return startup_harvest.CANDIDATE_TERMS, False
+    if category == "community":
+        return COMMUNITY_TERMS, False
     if category in DIRECTORY_CATEGORIES:
         return DIRECTORY_TERMS, False
     return research_harvest.CANDIDATE_TERMS, False
@@ -980,6 +1025,7 @@ def generate(
         category, _candidate_dicts(capped, hubs), existing_seeds,
         max_total=max_total,
     )
+    routed_research = list(LAST_ROUTED_RESEARCH_SEEDS)
     LAST_GENERATE_STATS = {
         "category": category,
         "hubs_loaded": len(hubs),
@@ -993,6 +1039,7 @@ def generate(
         "hub_blocks": blocks,
         "http_requests": getattr(client, "total_requests", None),
         "rejections_by_reason": dict(LAST_SEED_GATE_REJECTIONS),
+        "routed_research": len(routed_research),
     }
     destination = Path(out_path) if out_path is not None else DEFAULT_OUTPUT_DIR / (category + ".json")
     resolved = destination.expanduser().resolve()
@@ -1014,6 +1061,12 @@ def generate(
         successful_fetches=successful_pages,
     )
     LAST_GENERATE_STATS.update(merge_stats)
+    if routed_research:
+        merge_generated_seeds(
+            "research", routed_research, destination.with_name("research.json"),
+            raw_links=len(routed_research), admitted=len(routed_research), successful_fetches=0,
+        )
+    print("hub_seeds {}: routed_research={}".format(category, len(routed_research)))
     LAST_GENERATE_STATS["successful_pages"] = successful_pages
     return merged
 
@@ -1025,6 +1078,8 @@ def _default_hubs_path(category: str) -> Path:
         "grants": "grant_directories.json",
         "research": "research_directories.json",
         "open_source": "open_source_directories.json",
+        "startup_founder": "startup_founder_hubs.json",
+        "community": "community_hubs.json",
     }
     if category in filenames:
         return Path(__file__).parent / category / filenames[category]

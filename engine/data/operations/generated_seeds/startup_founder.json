@@ -1,27 +1,5 @@
 [
   {
-    "source_id": "hub-startup_founder-madronavl-com-2ae970",
-    "programme_id": "startup_founder-hub-madronavl-com-2ae970",
-    "programme_name": "Madrona Venture Labs",
-    "organizer": "madronavl.com",
-    "official_url": "http://madronavl.com/",
-    "allowed_path_hints": [
-      ""
-    ],
-    "check_cadence": "monthly"
-  },
-  {
-    "source_id": "hub-startup_founder-www-rencenter-org-ea3e5e",
-    "programme_id": "startup_founder-hub-www-rencenter-org-ea3e5e",
-    "programme_name": "Renaissance Entrepreneurship Centers",
-    "organizer": "rencenter.org",
-    "official_url": "http://www.rencenter.org/",
-    "allowed_path_hints": [
-      ""
-    ],
-    "check_cadence": "monthly"
-  },
-  {
     "source_id": "hub-startup_founder-accelerator-london-com-8de612",
     "programme_id": "startup_founder-hub-accelerator-london-com-8de612",
     "programme_name": "Accelerator London",
@@ -30,7 +8,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-acceleratoracademy-com-7c8916",
@@ -41,7 +21,22 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-alchemistaccelerator-com-7f981f",
+    "programme_id": "startup_founder-hub-alchemistaccelerator-com-7f981f",
+    "programme_name": "The Alchemist Accelerator",
+    "organizer": "alchemistaccelerator.com",
+    "official_url": "http://alchemistaccelerator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-ati-utexas-edu-3d0439",
@@ -52,7 +47,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-berlinstartupacademy-com-b9ca3c",
@@ -63,7 +60,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-betakit-com-resources-canadian-accelerator-programs-e189fb",
@@ -74,7 +73,9 @@
     "allowed_path_hints": [
       "resources/canadian-accelerator-programs/name/entrepreneurshipalacrity"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-dallasventurepartners-com-community-b84db5",
@@ -85,7 +86,35 @@
     "allowed_path_hints": [
       "community"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-digitalhealthaccelerator-com-aaaf6c",
+    "programme_id": "startup_founder-hub-digitalhealthaccelerator-com-aaaf6c",
+    "programme_name": "New York Digital Health Accelerator",
+    "organizer": "digitalhealthaccelerator.com",
+    "official_url": "http://digitalhealthaccelerator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-downtown-vegas-tech-coaccelerator-las-vegas-4703af",
+    "programme_id": "startup_founder-hub-downtown-vegas-tech-coaccelerator-las-vegas-4703af",
+    "programme_name": "Techco Las Vegas",
+    "organizer": "downtown.vegas",
+    "official_url": "http://downtown.vegas/tech-coaccelerator-las-vegas",
+    "allowed_path_hints": [
+      "tech-coaccelerator-las-vegas"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-ecomachinesventures-com-dae2cf",
@@ -96,7 +125,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-egbi-org-888878",
@@ -107,7 +138,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-elmspringaccelerator-com-f72279",
@@ -118,7 +151,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-entrepreneurship-mit-edu-accelerator-d3e514",
@@ -129,7 +164,22 @@
     "allowed_path_hints": [
       "accelerator"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-eranyc-com-39e2ca",
+    "programme_id": "startup_founder-hub-eranyc-com-39e2ca",
+    "programme_name": "Enterpreneurs Roundtable Accelerator",
+    "organizer": "eranyc.com",
+    "official_url": "http://eranyc.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-executivebusinessaccelerator-com-executive-business-accelera-3b968f",
@@ -140,7 +190,22 @@
     "allowed_path_hints": [
       "executive-business-accelerator-en"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-fi-co-4b4c62",
+    "programme_id": "startup_founder-hub-fi-co-4b4c62",
+    "programme_name": "The Founder Institute",
+    "organizer": "fi.co",
+    "official_url": "http://fi.co/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-fi-co-9541ee",
@@ -151,7 +216,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-fi-co-s-denver-24cf9e",
@@ -162,7 +229,22 @@
     "allowed_path_hints": [
       "s/denver"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-fi-co-s-seattle-4a1dfa",
+    "programme_id": "startup_founder-hub-fi-co-s-seattle-4a1dfa",
+    "programme_name": "Founder Institute",
+    "organizer": "fi.co",
+    "official_url": "http://fi.co/s/seattle",
+    "allowed_path_hints": [
+      "s/seattle"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-founderfuel-com-71c023",
@@ -173,7 +255,22 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-founderspad-com-53fb1b",
+    "programme_id": "startup_founder-hub-founderspad-com-53fb1b",
+    "programme_name": "Founders Pad",
+    "organizer": "founderspad.com",
+    "official_url": "http://founderspad.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-insightpd-com-accelerator-insight-accelerator-labs-4c60ac",
@@ -184,7 +281,22 @@
     "allowed_path_hints": [
       "accelerator/insight-accelerator-labs"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-ironyardventures-com-current-programs-dd973d",
+    "programme_id": "startup_founder-hub-ironyardventures-com-current-programs-dd973d",
+    "programme_name": "Iron Yard",
+    "organizer": "ironyardventures.com",
+    "official_url": "http://ironyardventures.com/current-programs",
+    "allowed_path_hints": [
+      "current-programs"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-launchdfw-com-startup-resources-accelerators-8425dc",
@@ -195,7 +307,22 @@
     "allowed_path_hints": [
       "startup-resources/accelerators"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-madronavl-com-2ae970",
+    "programme_id": "startup_founder-hub-madronavl-com-2ae970",
+    "programme_name": "Madrona Venture Labs",
+    "organizer": "madronavl.com",
+    "official_url": "http://madronavl.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-mewe360-com-home-d26edb",
@@ -206,7 +333,61 @@
     "allowed_path_hints": [
       "home"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-mognodb-com-startup-accelerator-628b96",
+    "programme_id": "startup_founder-hub-mognodb-com-startup-accelerator-628b96",
+    "programme_name": "MongoDB for Startups",
+    "organizer": "mognodb.com",
+    "official_url": "http://mognodb.com/startup-accelerator",
+    "allowed_path_hints": [
+      "startup-accelerator"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-oregonrain-org-65a973",
+    "programme_id": "startup_founder-hub-oregonrain-org-65a973",
+    "programme_name": "Regional Accelerator and Innovation Network (RAIN)",
+    "organizer": "oregonrain.org",
+    "official_url": "http://oregonrain.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-rgaaccelerator-com-connecteddevices-2d1f84",
+    "programme_id": "startup_founder-hub-rgaaccelerator-com-connecteddevices-2d1f84",
+    "programme_name": "R/GA Connected Devices Accelerator (Techstars)",
+    "organizer": "rgaaccelerator.com",
+    "official_url": "http://rgaaccelerator.com/connecteddevices",
+    "allowed_path_hints": [
+      "connecteddevices"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-springu-is-home-seattle-188054",
+    "programme_id": "startup_founder-hub-springu-is-home-seattle-188054",
+    "programme_name": "Kick Incubator",
+    "organizer": "springu.is",
+    "official_url": "http://springu.is/home/seattle",
+    "allowed_path_hints": [
+      "home/seattle"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-starburst-aero-91672e",
@@ -217,7 +398,22 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-startl-org-accelerator-65fcc7",
+    "programme_id": "startup_founder-hub-startl-org-accelerator-65fcc7",
+    "programme_name": "Startl",
+    "organizer": "startl.org",
+    "official_url": "http://startl.org/accelerator",
+    "allowed_path_hints": [
+      "accelerator"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-ventureshot-com-c740fb",
@@ -228,7 +424,48 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-web-unlv-edu-accelerator-c066c8",
+    "programme_id": "startup_founder-hub-web-unlv-edu-accelerator-c066c8",
+    "programme_name": "University of Las Vegas",
+    "organizer": "web.unlv.edu",
+    "official_url": "http://web.unlv.edu/accelerator",
+    "allowed_path_hints": [
+      "accelerator"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-acceleratorcorp-com-adfc80",
+    "programme_id": "startup_founder-hub-www-acceleratorcorp-com-adfc80",
+    "programme_name": "Accelerator Corp.",
+    "organizer": "acceleratorcorp.com",
+    "official_url": "http://www.acceleratorcorp.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-boomtownaccelerator-com-5cab5a",
+    "programme_id": "startup_founder-hub-www-boomtownaccelerator-com-5cab5a",
+    "programme_name": "BoomTown Accelerator",
+    "organizer": "boomtownaccelerator.com",
+    "official_url": "http://www.boomtownaccelerator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-canadasmusicincubator-com-5689ec",
@@ -239,7 +476,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-city-ac-uk-business-services-research-and-consultancy-00a597",
@@ -250,7 +489,9 @@
     "allowed_path_hints": [
       "business-services/research-and-consultancy/incubation/london-incubator"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-creagenincubator-com-3d34ac",
@@ -261,7 +502,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-dreamit-com-66c7ce",
@@ -272,7 +515,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-fashionincubator-com-47a6d3",
@@ -283,7 +528,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-gaminginc-ca-c9a785",
@@ -294,7 +541,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-gdhcc-com-7c99cd",
@@ -305,7 +554,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-hhaccelerator-com-c6f072",
@@ -316,7 +567,87 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-hubventures-org-6d3b78",
+    "programme_id": "startup_founder-hub-www-hubventures-org-6d3b78",
+    "programme_name": "Hub Ventures",
+    "organizer": "hubventures.org",
+    "official_url": "http://www.hubventures.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-illumina-com-science-accelerator-html-358d1f",
+    "programme_id": "startup_founder-hub-www-illumina-com-science-accelerator-html-358d1f",
+    "programme_name": "Illumina Accelerator Program",
+    "organizer": "illumina.com",
+    "official_url": "http://www.illumina.com/science/accelerator.html",
+    "allowed_path_hints": [
+      "science/accelerator.html"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-inc39-com-c87980",
+    "programme_id": "startup_founder-hub-www-inc39-com-c87980",
+    "programme_name": "Incubator 39",
+    "organizer": "inc39.com",
+    "official_url": "http://www.inc39.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-joinffl-com-dc9938",
+    "programme_id": "startup_founder-hub-www-joinffl-com-dc9938",
+    "programme_name": "FFL Startup Accelerator",
+    "organizer": "joinffl.com",
+    "official_url": "http://www.joinffl.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-kaplanedtechaccelerator-com-s3-website-us-east-1-amazona-a9f4a2",
+    "programme_id": "startup_founder-hub-www-kaplanedtechaccelerator-com-s3-website-us-east-1-amazona-a9f4a2",
+    "programme_name": "Kaplan EdTech Accelerator (Techstars)",
+    "organizer": "kaplanedtechaccelerator.com.s3-website-us-east-1.amazonaws.com",
+    "official_url": "http://www.kaplanedtechaccelerator.com.s3-website-us-east-1.amazonaws.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-newme-in-87378b",
+    "programme_id": "startup_founder-hub-www-newme-in-87378b",
+    "programme_name": "New Me Accelerator",
+    "organizer": "newme.in",
+    "official_url": "http://www.newme.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-newventuresbc-com-ef463f",
@@ -327,7 +658,22 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-otradi-org-0f9c7d",
+    "programme_id": "startup_founder-hub-www-otradi-org-0f9c7d",
+    "programme_name": "OTRADI Bioscience Incubator",
+    "organizer": "otradi.org",
+    "official_url": "http://www.otradi.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-oxygenaccelerator-com-36f23a",
@@ -338,7 +684,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-paulgraham-com-growth-html-0bf2ee",
@@ -349,7 +697,9 @@
     "allowed_path_hints": [
       "growth.html"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-paulgraham-com-startupideas-html-2c48a4",
@@ -360,7 +710,22 @@
     "allowed_path_hints": [
       "startupideas.html"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-rencenter-org-ea3e5e",
+    "programme_id": "startup_founder-hub-www-rencenter-org-ea3e5e",
+    "programme_name": "Renaissance Entrepreneurship Centers",
+    "organizer": "rencenter.org",
+    "official_url": "http://www.rencenter.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-revtechaccelerator-com-0b5507",
@@ -371,7 +736,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-sfu-ca-io-venture-e7f53d",
@@ -382,7 +749,35 @@
     "allowed_path_hints": [
       "io/venture/venture-connection.html"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-startupnext-co-d1f4d3",
+    "programme_id": "startup_founder-hub-www-startupnext-co-d1f4d3",
+    "programme_name": "Startup Next",
+    "organizer": "startupnext.co",
+    "official_url": "http://www.startupnext.co/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-surfincubator-com-d24fb5",
+    "programme_id": "startup_founder-hub-www-surfincubator-com-d24fb5",
+    "programme_name": "SURF Incubator",
+    "organizer": "surfincubator.com",
+    "official_url": "http://www.surfincubator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-thedec-co-dee55f",
@@ -393,7 +788,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-ucdenver-edu-academics-colleges-0d3190",
@@ -404,7 +801,9 @@
     "allowed_path_hints": [
       "academics/colleges/business/about/Centers/bard/incubator/Pages/Incubator.aspx"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-urbanchamber-org-pages-servicesandprograms-7f1442",
@@ -415,7 +814,22 @@
     "allowed_path_hints": [
       "pages/ServicesandPrograms"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-usbusinessincubator-com-about-0325dc",
+    "programme_id": "startup_founder-hub-www-usbusinessincubator-com-about-0325dc",
+    "programme_name": "US Business Incubator",
+    "organizer": "usbusinessincubator.com",
+    "official_url": "http://www.usbusinessincubator.com/about",
+    "allowed_path_hints": [
+      "about"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-venturelabs-ca-ab5d31",
@@ -426,7 +840,35 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-vmsaccelerators-com-f0131e",
+    "programme_id": "startup_founder-hub-www-vmsaccelerators-com-f0131e",
+    "programme_name": "VMSA Accelerator",
+    "organizer": "vmsaccelerators.com",
+    "official_url": "http://www.vmsaccelerators.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-wcti-org-d80178",
+    "programme_id": "startup_founder-hub-www-wcti-org-d80178",
+    "programme_name": "Worcester CleanTech Incubator",
+    "organizer": "wcti.org",
+    "official_url": "http://www.wcti.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-yedinstitute-org-e53e76",
@@ -437,7 +879,22 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-zahncenternyc-com-930d75",
+    "programme_id": "startup_founder-hub-www-zahncenternyc-com-930d75",
+    "programme_name": "CUNY Zahn Center for Entrepreneurship",
+    "organizer": "zahncenternyc.com",
+    "official_url": "http://www.zahncenternyc.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-aka-ms-startuphelp-12b40c",
@@ -448,7 +905,9 @@
     "allowed_path_hints": [
       "startuphelp"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-austintexas-gov-soulyatx-ec17a6",
@@ -459,7 +918,22 @@
     "allowed_path_hints": [
       "soulyatx"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-auth0-com-startups-vip-3be21b",
+    "programme_id": "startup_founder-hub-auth0-com-startups-vip-3be21b",
+    "programme_name": "$864k in credits $21.6k/participant",
+    "organizer": "auth0.com",
+    "official_url": "https://auth0.com/startups/vip",
+    "allowed_path_hints": [
+      "startups/vip"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-bethnalgreenventures-com-6bcb1f",
@@ -470,7 +944,22 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-cfda-com-programs-designers-d7b551",
+    "programme_id": "startup_founder-hub-cfda-com-programs-designers-d7b551",
+    "programme_name": "CFDA Fashion Incubator",
+    "organizer": "cfda.com",
+    "official_url": "https://cfda.com/programs/designers/cfda-fashion-incubator",
+    "allowed_path_hints": [
+      "programs/designers/cfda-fashion-incubator"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-dbx4startups-com-436054",
@@ -481,7 +970,35 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-foundersfund-com-b75854",
+    "programme_id": "startup_founder-hub-foundersfund-com-b75854",
+    "programme_name": "Founders Fund",
+    "organizer": "foundersfund.com",
+    "official_url": "https://foundersfund.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-kiro-dev-startups-f69490",
+    "programme_id": "startup_founder-hub-kiro-dev-startups-f69490",
+    "programme_name": "Learn More Build and deploy faster with Kiro credits designed for startups Apply today",
+    "organizer": "kiro.dev",
+    "official_url": "https://kiro.dev/startups",
+    "allowed_path_hints": [
+      "startups"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-krash-io-stories-2014-f05b0b",
@@ -492,7 +1009,9 @@
     "allowed_path_hints": [
       "stories/2014/08/boston-startup-incubator-roundup"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-paris-numa-co-startups-fe95d1",
@@ -503,7 +1022,22 @@
     "allowed_path_hints": [
       "startups"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-salesforceventures-com-543c8f",
+    "programme_id": "startup_founder-hub-salesforceventures-com-543c8f",
+    "programme_name": "Salesforce Ventures",
+    "organizer": "salesforceventures.com",
+    "official_url": "https://salesforceventures.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-startupsafaryberlin2016-sched-org-event-6q8h-c2a2ec",
@@ -514,7 +1048,9 @@
     "allowed_path_hints": [
       "event/6q8h/you-is-now-meet-the-startup-accelerator-of-the-scout24-portals"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-startupschool-org-f423a5",
@@ -525,7 +1061,9 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-startupshub-notion-site-1c1590db1742802ba5e3ca6411499628-4c694f",
@@ -536,7 +1074,8 @@
     "allowed_path_hints": [
       "1c1590db1742802ba5e3ca6411499628"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-startupshub-notion-site-1c1590db1742802ba5e3ca6411499628-dd3b09",
@@ -547,7 +1086,8 @@
     "allowed_path_hints": [
       "1c1590db1742802ba5e3ca6411499628"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-techcrunch-com-2026-08-75010c",
@@ -558,7 +1098,22 @@
     "allowed_path_hints": [
       "2026/08/12/blacksmiths-valuation-jumps-10x-to-550m-as-ai-coding-fuels-software-validation"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-codeforamerica-org-dfd5a9",
+    "programme_id": "startup_founder-hub-www-codeforamerica-org-dfd5a9",
+    "programme_name": "Code for America Accelerator",
+    "organizer": "codeforamerica.org",
+    "official_url": "https://www.codeforamerica.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-eonetwork-org-germany-berlin-fc4dbe",
@@ -569,7 +1124,35 @@
     "allowed_path_hints": [
       "germany-berlin"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-eonetwork-org-seattle-63b256",
+    "programme_id": "startup_founder-hub-www-eonetwork-org-seattle-63b256",
+    "programme_name": "Entrepreneurs’ Organization",
+    "organizer": "eonetwork.org",
+    "official_url": "https://www.eonetwork.org/seattle",
+    "allowed_path_hints": [
+      "seattle"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-founderlabs-org-354b0e",
+    "programme_id": "startup_founder-hub-www-founderlabs-org-354b0e",
+    "programme_name": "Founder Labs (Mobile)",
+    "organizer": "founderlabs.org",
+    "official_url": "https://www.founderlabs.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-googleforentrepreneurs-com-startup-communities-notman-ho-fadc1c",
@@ -580,7 +1163,9 @@
     "allowed_path_hints": [
       "startup-communities/notman-house"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-hubraum-com-programs-incubator-berlin-960af5",
@@ -591,7 +1176,22 @@
     "allowed_path_hints": [
       "programs/incubator-berlin"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-indexventures-com-b619cf",
+    "programme_id": "startup_founder-hub-www-indexventures-com-b619cf",
+    "programme_name": "Index Ventures",
+    "organizer": "indexventures.com",
+    "official_url": "https://www.indexventures.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-marsdd-com-bap-b24158",
@@ -602,7 +1202,9 @@
     "allowed_path_hints": [
       "bap"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-microsoftaccelerator-com-locations-berlin-d955c6",
@@ -613,7 +1215,9 @@
     "allowed_path_hints": [
       "locations/berlin"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-notion-so-notion-for-startup-terms-936b74c0323745a186b14-b118d3",
@@ -624,7 +1228,22 @@
     "allowed_path_hints": [
       "Notion-for-Startup-Terms-936b74c0323745a186b1497747074020"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-nventures-ai-91a6f6",
+    "programme_id": "startup_founder-hub-www-nventures-ai-91a6f6",
+    "programme_name": "Venture Capital (NVentures)",
+    "organizer": "nventures.ai",
+    "official_url": "https://www.nventures.ai/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-paypal-incubator-com-fea1d0",
@@ -635,7 +1254,22 @@
     "allowed_path_hints": [
       ""
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
+  },
+  {
+    "source_id": "hub-startup_founder-www-pdx-edu-impactentrepreneurs-incubator-126cae",
+    "programme_id": "startup_founder-hub-www-pdx-edu-impactentrepreneurs-incubator-126cae",
+    "programme_name": "Portland State Social Innovation Incubator",
+    "organizer": "pdx.edu",
+    "official_url": "https://www.pdx.edu/impactentrepreneurs/incubator",
+    "allowed_path_hints": [
+      "impactentrepreneurs/incubator"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   },
   {
     "source_id": "hub-startup_founder-www-umassd-edu-innovate-809534",
@@ -646,6 +1280,8 @@
     "allowed_path_hints": [
       "innovate"
     ],
-    "check_cadence": "monthly"
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:27:05Z",
+    "last_seen": "2026-10-09T20:27:05Z"
   }
 ]

@@ -529,3 +529,22 @@ class HubSeedsTests(unittest.TestCase):
                 self.assertTrue(ok)
                 self.assertEqual(reason, "admitted")
                 self.assertEqual(name, title)
+
+    def test_community_admits_developer_student_club_and_ambassador(self):
+        ok, reason, name = admit_candidate(
+            "<title>Google Developer Student Clubs Lead</title>"
+            "<p>Developer community applications. Apply now</p>",
+            "https://developers.google.com/community/gdsc",
+            "community",
+        )
+        self.assertTrue(ok)
+        self.assertEqual(reason, "admitted")
+        self.assertEqual(name, "Google Developer Student Clubs Lead")
+
+        ok, reason, _ = admit_candidate(
+            "<title>Google Campus Ambassador</title><p>Computer science. Apply now</p>",
+            "https://google.example/campus-ambassador",
+            "fellowships",
+        )
+        self.assertFalse(ok)
+        self.assertEqual(reason, "ambassador")

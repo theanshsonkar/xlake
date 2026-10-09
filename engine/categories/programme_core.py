@@ -1,6 +1,7 @@
 """Generic, data-driven collection of official open-source programmes."""
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
@@ -49,9 +50,15 @@ def load_generated_seeds(stem: str) -> tuple:
     if not isinstance(seeds, list):
         raise ValueError("generated {} seed registry must be a JSON array".format(stem))
     for index, seed in enumerate(seeds):
-        if not isinstance(seed, dict) or set(seed) != set(REQUIRED_SEED_FIELDS):
+        optional_fields = {"first_seen", "last_seen", "added_at", "generated_at"}
+        if (not isinstance(seed, dict)
+                or set(seed) - set(REQUIRED_SEED_FIELDS) - optional_fields
+                or not set(REQUIRED_SEED_FIELDS) <= set(seed)):
             raise ValueError("generated {} seed {} has an invalid schema".format(stem, index))
-    return tuple(seeds)
+    return tuple(
+        {field: seed[field] for field in REQUIRED_SEED_FIELDS}
+        for seed in seeds
+    )
 # Shared title/host quality data for generated programme seeds.  Keep this
 # category-neutral so hub discovery and collection enforce the same policy.
 PROGRAMME_NOUNS = (
@@ -66,12 +73,62 @@ PROGRAMME_NOUNS = (
 )
 JOB_BOARD_HOSTS = (
     "lever", "greenhouse", "workable", "linkedin", "naukri", "indeed", "hanzilla",
+    "myworkdayjobs", "myworkdaysite", "icims", "taleo", "smartrecruiters",
+    "ashbyhq", "jobvite", "bamboohr", "successfactors", "ultipro", "eightfold",
 )
 _PROGRAMME_ADVICE_TITLE = re.compile(
     r"^(?:how|preparing|finding|writing|tips|guide|applying|why|what)\b", re.I,
 )
 _PROGRAMME_ADVICE_PATH_SEGMENTS = frozenset(("blog", "blogs", "advice", "tips", "guide"))
 _PROGRAMME_TITLE_YEAR = re.compile(r"\b20\d{2}\b")
+_RESEARCH_INTERNSHIP_TITLE = re.compile(
+    r"\b(?:research|summer)\s+(?:internship|intern|student|students|programme|program|school)\b"
+    r"|\bundergraduate research\b|\bresearch experience\b"
+    r"|\bsummer (?:internship|students?)\b|\bglobalink\b"
+    r"|\binternship program(?:me)?\b",
+    re.IGNORECASE,
+)
+_RESEARCH_ACADEMIC_SUFFIXES = (
+    "mpg.de", "mitacs.ca", "cern.ch", "weizmann.ac.il", "studyintaiwan.org",
+    "amgenscholars.com", "iisc.ac.in", "isical.ac.in", "iitd.ac.in", "barc.gov.in",
+    "nims.go.jp", "shastriinstitute.org",
+)
+
+
+def _research_academic_host(url: str) -> bool:
+    try:
+        host = (urlparse(url).hostname or "").casefold().rstrip(".")
+    except (TypeError, ValueError):
+        return False
+    if not host:
+        return False
+    if (host.endswith(".edu") or re.search(r"\.edu\.[a-z]{2}$", host)
+            or re.search(r"\.ac\.[a-z]{2}$", host)
+            or host.endswith((".ac.in", ".res.in", ".gov", ".nic.in"))
+            or re.search(r"\.gov\.[a-z]{2}$", host)):
+        return True
+    return any(host == suffix or host.endswith("." + suffix)
+               for suffix in _RESEARCH_ACADEMIC_SUFFIXES)
+
+
+def should_route_research_seed(seed: Dict, category: str, reason: str) -> bool:
+    """Return whether a missing-noun hub seed belongs in research instead."""
+    if (category.casefold() not in {"fellowship", "fellowships", "scholarship", "scholarships"}
+            or reason != "missing_programme_noun"):
+        return False
+    title = str(seed.get("programme_name") or "")
+    url = str(seed.get("official_url") or "")
+    return bool(_RESEARCH_INTERNSHIP_TITLE.search(title)) and (
+        _research_academic_host(url) and not _programme_host_is_job_board(url)
+    )
+
+
+def _routed_research_seed(seed: Dict) -> Dict:
+    routed = dict(seed)
+    digest = hashlib.sha1(str(seed.get("official_url") or "").encode("utf-8")).hexdigest()[:12]
+    routed["source_id"] = "hub-research-routed-" + digest
+    routed["programme_id"] = "research-hub-routed-" + digest
+    return routed
 
 
 def _programme_host_is_job_board(url: str) -> bool:
@@ -1026,8 +1083,28 @@ def _is_generated_seed(seed: Dict) -> bool:
     return str(seed.get("source_id") or "").startswith("hub-")
 
 
+def _merge_routed_research_seeds(seeds: Iterable[Dict]) -> None:
+    routed = list(seeds)
+    if not routed:
+        return
+    try:
+        from categories.hub_seeds import merge_generated_seeds
+    except ImportError:  # pragma: no cover - supports package-root imports
+        from engine.categories.hub_seeds import merge_generated_seeds
+    generated_dir = os.environ.get(GENERATED_SEEDS_ENV, "").strip()
+    if not generated_dir:
+        generated_dir = os.path.abspath(os.path.join(
+            os.path.dirname(__file__), "..", "data", "operations", "generated_seeds",
+        ))
+    merge_generated_seeds(
+        "research", routed, os.path.join(generated_dir, "research.json"),
+        raw_links=len(routed), admitted=len(routed), successful_fetches=0,
+    )
+
+
 def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetch, checked_at: Optional[datetime] = None, lake_path: str = OPPORTUNITIES_PATH, observations_path: Optional[str] = None) -> Dict:
     records, observations = [], []
+    routed_research = []
     successes = 0
     failure_counts = Counter()
     exception_counts = Counter()
@@ -1047,7 +1124,11 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
                     seed, checked, "failed", "generated seed rejected: {}".format(title_reason),
                 )
                 observations.append(observation)
-                outcome = "rejected_{}".format(title_reason)
+                if should_route_research_seed(seed, config.category, title_reason):
+                    routed_research.append(_routed_research_seed(seed))
+                    outcome = "routed_research"
+                else:
+                    outcome = "rejected_{}".format(title_reason)
                 failure_counts[outcome] += 1
                 _log_fetch_outcome(seed, seed.get("official_url"), outcome)
                 continue
@@ -1081,6 +1162,8 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
         if not outcome.startswith("ok"):
             failure_counts[outcome.split()[0]] += 1
         _log_fetch_outcome(seed, final_url, outcome, exception_detail)
+    _merge_routed_research_seeds(routed_research)
+    print("hub_seeds {}: routed_research={}".format(config.category, len(routed_research)), flush=True)
     failure_items = ["{}={}".format(kind, failure_counts[kind]) for kind in sorted(failure_counts)]
     failure_items.extend("exception[{}]={}".format(kind, exception_counts[kind]) for kind in sorted(exception_counts))
     failure_summary = ",".join(failure_items) or "none"
@@ -1095,7 +1178,8 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     verification_now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     merged = apply_verifications(merged, load_verifications(config.verifications_path), verification_now, config=config)
     _atomic_json(lake_path, merged)
-    return {"records": records, "observations": observations, "merged_count": len(merged)}
+    return {"records": records, "observations": observations, "merged_count": len(merged),
+            "routed_research": len(routed_research)}
 
 
 def _apply_verifications_cli(config: ProgrammeConfig) -> None:

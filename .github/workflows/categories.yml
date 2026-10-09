@@ -70,6 +70,8 @@ jobs:
           python3 -u -m categories.hub_seeds --category fellowships --out data/operations/generated_seeds/fellowships.json
           python3 -u -m categories.hub_seeds --category scholarships --out data/operations/generated_seeds/scholarships.json
           python3 -u -m categories.hub_seeds --category grants --out data/operations/generated_seeds/grants.json
+          python3 -u -m categories.hub_seeds --category startup_founder --out data/operations/generated_seeds/startup_founder.json
+          python3 -u -m categories.hub_seeds --category community --out data/operations/generated_seeds/community.json
           python3 -u -m categories.hub_seeds --category research --out data/operations/generated_seeds/research.json
           python3 -u -m categories.hub_seeds --category open_source --out data/operations/generated_seeds/open_source.json
 

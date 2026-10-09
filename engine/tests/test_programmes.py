@@ -20,7 +20,7 @@ from categories.research import research
 from categories.scholarships import scholarships
 from categories.programme_core import (
     ProgrammeConfig, _hop_links, _hop_page_matches_seed, _text, collect as core_collect,
-    programme_title_ok,
+    programme_title_ok, should_route_research_seed,
 )
 
 FIXTURES = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "fixtures", "programmes")
@@ -138,11 +138,57 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         text, _ = _text(
             "<div hidden>secret hidden text</div>"
             "<div aria-hidden='true'>secret aria text</div>"
+
             "<p>Visible programme information.</p>"
         )
         self.assertNotIn("secret hidden text", text)
         self.assertNotIn("secret aria text", text)
         self.assertIn("Visible programme information.", text)
+
+    def test_academic_internship_missing_noun_routes_to_research_registry(self):
+        cases = (
+            ("MITACS Globalink", "https://www.mitacs.ca/program", True),
+            ("IIT Ropar Summer Internship", "https://onlineportal.iitrpr.ac.in/intern", True),
+            ("UX Research Internship, Red Hat", "https://us-redhat.icims.com/jobs/1", False),
+            ("Allen Institute for AI, Research and Engineering Internships", "https://allenai.org/internships", False),
+        )
+        for title, url, expected in cases:
+            with self.subTest(title=title):
+                ok, reason = programme_title_ok(title, url, "fellowship")
+                self.assertFalse(ok)
+                self.assertEqual(
+                    should_route_research_seed(
+                        {"programme_name": title, "official_url": url}, "fellowship", reason,
+                    ),
+                    expected,
+                )
+
+        seed = {
+            "source_id": "hub-fellowships-test",
+            "programme_id": "fellowships-hub-test",
+            "programme_name": "MITACS Globalink",
+            "organizer": "mitacs.ca",
+            "official_url": "https://www.mitacs.ca/program",
+            "allowed_path_hints": ["program"],
+            "check_cadence": "monthly",
+        }
+        config = ProgrammeConfig(
+            category="fellowship", opportunity_type="fellowship", source_registry=(seed,),
+            observations_path="", verifications_path="", needs_confirmation_floor=True,
+        )
+        with tempfile.TemporaryDirectory() as td, patch.dict(
+            os.environ, {"XLAKE_GENERATED_SEEDS_DIR": td}, clear=False,
+        ):
+            result = core_collect(
+                config, fetch=lambda _url: "should not fetch",
+                lake_path=os.path.join(td, "lake.json"),
+                observations_path=os.path.join(td, "observations.json"),
+            )
+            with open(os.path.join(td, "research.json"), encoding="utf-8") as handle:
+                routed = json.load(handle)
+        self.assertEqual(result["routed_research"], 1)
+        self.assertEqual(len(routed), 1)
+        self.assertEqual(routed[0]["official_url"], seed["official_url"])
 
     def test_visible_text_closes_omitted_head_at_body(self):
         text, _ = _text(
