@@ -110,5 +110,37 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "alihesari-awesome-developer-grants-readme",
+    "url": "https://raw.githubusercontent.com/alihesari/awesome-developer-grants/main/README.md",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "hub_id": "eric-prog-gpu-grants-readme",
+    "url": "https://raw.githubusercontent.com/eric-prog/GPU-Grants/main/README.md",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "hub_id": "github-india-open-source-grants",
+    "url": "https://raw.githubusercontent.com/github/india/main/Open%20Source/GRANTS.md",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "hub_id": "mdozmorov-grants-notes-readme",
+    "url": "https://raw.githubusercontent.com/mdozmorov/Grants_notes/master/README.md",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-08T00:00:00Z"
   }
 ]

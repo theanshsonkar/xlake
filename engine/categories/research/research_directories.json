@@ -118,5 +118,21 @@
     "type": "hub",
     "authoritative": true,
     "added_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "hub_id": "julian048-cs-everything-but-internships-readme",
+    "url": "https://raw.githubusercontent.com/Julian048/CS-Everything-but-Internships/main/README.md",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "hub_id": "anu0012-awesome-computer-science-opportunities-readme",
+    "url": "https://raw.githubusercontent.com/anu0012/awesome-computer-science-opportunities/master/README.md",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-08T00:00:00Z"
   }
 ]
