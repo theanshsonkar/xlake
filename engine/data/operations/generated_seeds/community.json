@@ -1,0 +1,277 @@
+[
+  {
+    "source_id": "hub-community-www-cmulf-dtu-ac-in-4f2b4b",
+    "programme_id": "community-hub-www-cmulf-dtu-ac-in-4f2b4b",
+    "programme_name": "Chief Minister’s Urban Leaders Fellowship (CMULF)",
+    "organizer": "cmulf.dtu.ac.in",
+    "official_url": "http://www.cmulf.dtu.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-www-dalbergdesign-com-jdf-b30876",
+    "programme_id": "community-hub-www-dalbergdesign-com-jdf-b30876",
+    "programme_name": "Dalberg Design Fellowship",
+    "organizer": "dalbergdesign.com",
+    "official_url": "http://www.dalbergdesign.com/jdf",
+    "allowed_path_hints": [
+      "jdf"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-www-darc-dtu-ac-in-67c0d8",
+    "programme_id": "community-hub-www-darc-dtu-ac-in-67c0d8",
+    "programme_name": "Delhi Assembly Research Centre",
+    "organizer": "darc.dtu.ac.in",
+    "official_url": "http://www.darc.dtu.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-acumen-org-fellowships-india-22eb7a",
+    "programme_id": "community-hub-acumen-org-fellowships-india-22eb7a",
+    "programme_name": "Acumen Regional Fellows India",
+    "organizer": "acumen.org",
+    "official_url": "https://acumen.org/fellowships/india",
+    "allowed_path_hints": [
+      "fellowships/india"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-afsee-atlanticfellows-org-the-atlantic-fellowships-db48dc",
+    "programme_id": "community-hub-afsee-atlanticfellows-org-the-atlantic-fellowships-db48dc",
+    "programme_name": "Atlantic Fellows for Social and Economic Equity",
+    "organizer": "afsee.atlanticfellows.org",
+    "official_url": "https://afsee.atlanticfellows.org/the-atlantic-fellowships",
+    "allowed_path_hints": [
+      "the-atlantic-fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-aif-org-fellowship-a3b18e",
+    "programme_id": "community-hub-aif-org-fellowship-a3b18e",
+    "programme_name": "AIF William J. Clinton Fellowship for Service in India",
+    "organizer": "aif.org",
+    "official_url": "https://aif.org/fellowship",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-anu-edu-in-programme-anant-fellowship-315eaf",
+    "programme_id": "community-hub-anu-edu-in-programme-anant-fellowship-315eaf",
+    "programme_name": "Anant Fellowship",
+    "organizer": "anu.edu.in",
+    "official_url": "https://anu.edu.in/programme/anant-fellowship",
+    "allowed_path_hints": [
+      "programme/anant-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-azimpremjifoundation-org-content-fellowship-8d3a5e",
+    "programme_id": "community-hub-azimpremjifoundation-org-content-fellowship-8d3a5e",
+    "programme_name": "Azim Premji Foundation Fellowship",
+    "organizer": "azimpremjifoundation.org",
+    "official_url": "https://azimpremjifoundation.org/content/fellowship",
+    "allowed_path_hints": [
+      "content/fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-buddhafellowship-com-fellowship-d9b255",
+    "programme_id": "community-hub-buddhafellowship-com-fellowship-d9b255",
+    "programme_name": "Buddha Fellowship",
+    "organizer": "buddhafellowship.com",
+    "official_url": "https://buddhafellowship.com/fellowship",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-cplindia-org-382810",
+    "programme_id": "community-hub-cplindia-org-382810",
+    "programme_name": "Citizens for Public Leadership Fellowship",
+    "organizer": "cplindia.org",
+    "official_url": "https://cplindia.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-csip-ashoka-edu-in-research-fellowship-2023-ba00b6",
+    "programme_id": "community-hub-csip-ashoka-edu-in-research-fellowship-2023-ba00b6",
+    "programme_name": "CSIP Research Fellowship",
+    "organizer": "csip.ashoka.edu.in",
+    "official_url": "https://csip.ashoka.edu.in/research-fellowship-2023",
+    "allowed_path_hints": [
+      "research-fellowship-2023"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-digitalswarajfellowship-org-5a09eb",
+    "programme_id": "community-hub-digitalswarajfellowship-org-5a09eb",
+    "programme_name": "Digital Swaraj Fellowship",
+    "organizer": "digitalswarajfellowship.org",
+    "official_url": "https://digitalswarajfellowship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-fellowship-bhumi-ngo-f7242f",
+    "programme_id": "community-hub-fellowship-bhumi-ngo-f7242f",
+    "programme_name": "Bhumi Fellowship",
+    "organizer": "fellowship.bhumi.ngo",
+    "official_url": "https://fellowship.bhumi.ngo/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-fellowship-cdri-world-eligibility-html-828cf8",
+    "programme_id": "community-hub-fellowship-cdri-world-eligibility-html-828cf8",
+    "programme_name": "Coalition for Disaster Resilient Infrastructure (CDRI) Fellowship",
+    "organizer": "fellowship.cdri.world",
+    "official_url": "https://fellowship.cdri.world/eligibility.html",
+    "allowed_path_hints": [
+      "eligibility.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-mahades-maharashtra-gov-in-home-do-c0b3e4",
+    "programme_id": "community-hub-mahades-maharashtra-gov-in-home-do-c0b3e4",
+    "programme_name": "Chief Minister Fellowship Program (Maharashtra)",
+    "organizer": "mahades.maharashtra.gov.in",
+    "official_url": "https://mahades.maharashtra.gov.in/home.do?lang=en",
+    "allowed_path_hints": [
+      "home.do"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-ocimpact-com-oc-global-cordes-fellowships-5f5bcd",
+    "programme_id": "community-hub-ocimpact-com-oc-global-cordes-fellowships-5f5bcd",
+    "programme_name": "Cordes Fellowship",
+    "organizer": "ocimpact.com",
+    "official_url": "https://ocimpact.com/oc-global/cordes-fellowships",
+    "allowed_path_hints": [
+      "oc-global/cordes-fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-pacscenter-stanford-edu-research-digital-civil-society-lab-cffddb",
+    "programme_id": "community-hub-pacscenter-stanford-edu-research-digital-civil-society-lab-cffddb",
+    "programme_name": "Digital Civil Society Lab Non-resident Fellowship",
+    "organizer": "pacscenter.stanford.edu",
+    "official_url": "https://pacscenter.stanford.edu/research/digital-civil-society-lab/dcsl-non-resident-fellowships",
+    "allowed_path_hints": [
+      "research/digital-civil-society-lab/dcsl-non-resident-fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-populareducation-in-vacancies-anil-chaudhary-research-fellow-269b26",
+    "programme_id": "community-hub-populareducation-in-vacancies-anil-chaudhary-research-fellow-269b26",
+    "programme_name": "Anil Chaudhary Research Fellowship on Political Economy",
+    "organizer": "populareducation.in",
+    "official_url": "https://populareducation.in/vacancies/anil-chaudhary-research-fellowship-on-political-economy",
+    "allowed_path_hints": [
+      "vacancies/anil-chaudhary-research-fellowship-on-political-economy"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-www-adivasilivesmatter-com-aipp-1de5de",
+    "programme_id": "community-hub-www-adivasilivesmatter-com-aipp-1de5de",
+    "programme_name": "Adivasi Awaaz Media Fellowship",
+    "organizer": "adivasilivesmatter.com",
+    "official_url": "https://www.adivasilivesmatter.com/aipp",
+    "allowed_path_hints": [
+      "aipp"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-www-ashoka-edu-in-3cs-media-fellowship-4ef010",
+    "programme_id": "community-hub-www-ashoka-edu-in-3cs-media-fellowship-4ef010",
+    "programme_name": "3CS Media Fellowship",
+    "organizer": "ashoka.edu.in",
+    "official_url": "https://www.ashoka.edu.in/3cs-media-fellowship",
+    "allowed_path_hints": [
+      "3cs-media-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-www-ashoka-org-en-in-ashoka-fellows-a91223",
+    "programme_id": "community-hub-www-ashoka-org-en-in-ashoka-fellows-a91223",
+    "programme_name": "Ashoka Fellowship",
+    "organizer": "ashoka.org",
+    "official_url": "https://www.ashoka.org/en-in/ashoka-fellows",
+    "allowed_path_hints": [
+      "en-in/ashoka-fellows"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-www-britishcouncil-in-study-uk-scholarships-21925c",
+    "programme_id": "community-hub-www-britishcouncil-in-study-uk-scholarships-21925c",
+    "programme_name": "Charles Wallace India Trust Fellowship in Creative Writing",
+    "organizer": "britishcouncil.in",
+    "official_url": "https://www.britishcouncil.in/study-uk/scholarships/charles-wallace-india-trust-scholarships",
+    "allowed_path_hints": [
+      "study-uk/scholarships/charles-wallace-india-trust-scholarships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-www-devalt-org-fellowshipprograme-aspx-4252f2",
+    "programme_id": "community-hub-www-devalt-org-fellowshipprograme-aspx-4252f2",
+    "programme_name": "Development Alternative’s Fellowship",
+    "organizer": "devalt.org",
+    "official_url": "https://www.devalt.org/FellowshipPrograme.aspx",
+    "allowed_path_hints": [
+      "FellowshipPrograme.aspx"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-www-sif-org-sg-our-work-ce-39f497",
+    "programme_id": "community-hub-www-sif-org-sg-our-work-ce-39f497",
+    "programme_name": "Arts for Good Fellowship",
+    "organizer": "sif.org.sg",
+    "official_url": "https://www.sif.org.sg/our-work/ce/afg/2020-Fellowship",
+    "allowed_path_hints": [
+      "our-work/ce/afg/2020-Fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-community-www-travellersuniversity-org-52-parindey-fellowship-fb78e4",
+    "programme_id": "community-hub-www-travellersuniversity-org-52-parindey-fellowship-fb78e4",
+    "programme_name": "52 Parindey Fellowship",
+    "organizer": "travellersuniversity.org",
+    "official_url": "https://www.travellersuniversity.org/52-parindey-fellowship",
+    "allowed_path_hints": [
+      "52-parindey-fellowship"
+    ],
+    "check_cadence": "monthly"
+  }
+]

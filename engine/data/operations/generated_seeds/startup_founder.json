@@ -1,0 +1,651 @@
+[
+  {
+    "source_id": "hub-startup_founder-madronavl-com-2ae970",
+    "programme_id": "startup_founder-hub-madronavl-com-2ae970",
+    "programme_name": "Madrona Venture Labs",
+    "organizer": "madronavl.com",
+    "official_url": "http://madronavl.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-rencenter-org-ea3e5e",
+    "programme_id": "startup_founder-hub-www-rencenter-org-ea3e5e",
+    "programme_name": "Renaissance Entrepreneurship Centers",
+    "organizer": "rencenter.org",
+    "official_url": "http://www.rencenter.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-accelerator-london-com-8de612",
+    "programme_id": "startup_founder-hub-accelerator-london-com-8de612",
+    "programme_name": "Accelerator London",
+    "organizer": "accelerator-london.com",
+    "official_url": "http://accelerator-london.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-acceleratoracademy-com-7c8916",
+    "programme_id": "startup_founder-hub-acceleratoracademy-com-7c8916",
+    "programme_name": "Accelerator Academy",
+    "organizer": "acceleratoracademy.com",
+    "official_url": "http://acceleratoracademy.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-ati-utexas-edu-3d0439",
+    "programme_id": "startup_founder-hub-ati-utexas-edu-3d0439",
+    "programme_name": "Austin Technology Incubator",
+    "organizer": "ati.utexas.edu",
+    "official_url": "http://ati.utexas.edu/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-berlinstartupacademy-com-b9ca3c",
+    "programme_id": "startup_founder-hub-berlinstartupacademy-com-b9ca3c",
+    "programme_name": "Berlin Startup Academy",
+    "organizer": "berlinstartupacademy.com",
+    "official_url": "http://berlinstartupacademy.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-betakit-com-resources-canadian-accelerator-programs-e189fb",
+    "programme_id": "startup_founder-hub-betakit-com-resources-canadian-accelerator-programs-e189fb",
+    "programme_name": "ENTREPRENEURSHIP@ALACRITY",
+    "organizer": "betakit.com",
+    "official_url": "http://betakit.com/resources/canadian-accelerator-programs/name/entrepreneurshipalacrity",
+    "allowed_path_hints": [
+      "resources/canadian-accelerator-programs/name/entrepreneurshipalacrity"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-dallasventurepartners-com-community-b84db5",
+    "programme_id": "startup_founder-hub-dallasventurepartners-com-community-b84db5",
+    "programme_name": "Dallas Venture Partners",
+    "organizer": "dallasventurepartners.com",
+    "official_url": "http://dallasventurepartners.com/community",
+    "allowed_path_hints": [
+      "community"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-ecomachinesventures-com-dae2cf",
+    "programme_id": "startup_founder-hub-ecomachinesventures-com-dae2cf",
+    "programme_name": "EcoMachines Incubator",
+    "organizer": "ecomachinesventures.com",
+    "official_url": "http://ecomachinesventures.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-egbi-org-888878",
+    "programme_id": "startup_founder-hub-egbi-org-888878",
+    "programme_name": "Economic Growth Business Incubator",
+    "organizer": "egbi.org",
+    "official_url": "http://egbi.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-elmspringaccelerator-com-f72279",
+    "programme_id": "startup_founder-hub-elmspringaccelerator-com-f72279",
+    "programme_name": "Elmspring Accelerator",
+    "organizer": "elmspringaccelerator.com",
+    "official_url": "http://elmspringaccelerator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-entrepreneurship-mit-edu-accelerator-d3e514",
+    "programme_id": "startup_founder-hub-entrepreneurship-mit-edu-accelerator-d3e514",
+    "programme_name": "Martin Trust Center for MIT Entrepreneurship",
+    "organizer": "entrepreneurship.mit.edu",
+    "official_url": "http://entrepreneurship.mit.edu/accelerator",
+    "allowed_path_hints": [
+      "accelerator"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-executivebusinessaccelerator-com-executive-business-accelera-3b968f",
+    "programme_id": "startup_founder-hub-executivebusinessaccelerator-com-executive-business-accelera-3b968f",
+    "programme_name": "Executive Business Accelerator - Up4Startup",
+    "organizer": "executivebusinessaccelerator.com",
+    "official_url": "http://executivebusinessaccelerator.com/executive-business-accelerator-en",
+    "allowed_path_hints": [
+      "executive-business-accelerator-en"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-fi-co-9541ee",
+    "programme_id": "startup_founder-hub-fi-co-9541ee",
+    "programme_name": "Founder Institute",
+    "organizer": "fi.co",
+    "official_url": "http://fi.co/?target=toronto",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-fi-co-s-denver-24cf9e",
+    "programme_id": "startup_founder-hub-fi-co-s-denver-24cf9e",
+    "programme_name": "Founder's Institute",
+    "organizer": "fi.co",
+    "official_url": "http://fi.co/s/denver",
+    "allowed_path_hints": [
+      "s/denver"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-founderfuel-com-71c023",
+    "programme_id": "startup_founder-hub-founderfuel-com-71c023",
+    "programme_name": "Founder Fuel",
+    "organizer": "founderfuel.com",
+    "official_url": "http://founderfuel.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-insightpd-com-accelerator-insight-accelerator-labs-4c60ac",
+    "programme_id": "startup_founder-hub-insightpd-com-accelerator-insight-accelerator-labs-4c60ac",
+    "programme_name": "Insight Accelerator Labs",
+    "organizer": "insightpd.com",
+    "official_url": "http://insightpd.com/accelerator/insight-accelerator-labs",
+    "allowed_path_hints": [
+      "accelerator/insight-accelerator-labs"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-launchdfw-com-startup-resources-accelerators-8425dc",
+    "programme_id": "startup_founder-hub-launchdfw-com-startup-resources-accelerators-8425dc",
+    "programme_name": "Launch",
+    "organizer": "launchdfw.com",
+    "official_url": "http://launchdfw.com/startup-resources/accelerators",
+    "allowed_path_hints": [
+      "startup-resources/accelerators"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-mewe360-com-home-d26edb",
+    "programme_id": "startup_founder-hub-mewe360-com-home-d26edb",
+    "programme_name": "Mewe360º Incubator",
+    "organizer": "mewe360.com",
+    "official_url": "http://mewe360.com/home",
+    "allowed_path_hints": [
+      "home"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-starburst-aero-91672e",
+    "programme_id": "startup_founder-hub-starburst-aero-91672e",
+    "programme_name": "Starburst Accelerator",
+    "organizer": "starburst.aero",
+    "official_url": "http://starburst.aero/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-ventureshot-com-c740fb",
+    "programme_id": "startup_founder-hub-ventureshot-com-c740fb",
+    "programme_name": "Venture Shot",
+    "organizer": "ventureshot.com",
+    "official_url": "http://ventureshot.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-canadasmusicincubator-com-5689ec",
+    "programme_id": "startup_founder-hub-www-canadasmusicincubator-com-5689ec",
+    "programme_name": "Canada’s Music Incubator",
+    "organizer": "canadasmusicincubator.com",
+    "official_url": "http://www.canadasmusicincubator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-city-ac-uk-business-services-research-and-consultancy-00a597",
+    "programme_id": "startup_founder-hub-www-city-ac-uk-business-services-research-and-consultancy-00a597",
+    "programme_name": "London City Incubator",
+    "organizer": "city.ac.uk",
+    "official_url": "http://www.city.ac.uk/business-services/research-and-consultancy/incubation/london-incubator",
+    "allowed_path_hints": [
+      "business-services/research-and-consultancy/incubation/london-incubator"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-creagenincubator-com-3d34ac",
+    "programme_id": "startup_founder-hub-www-creagenincubator-com-3d34ac",
+    "programme_name": "CreaGen Life Science Incubator",
+    "organizer": "creagenincubator.com",
+    "official_url": "http://www.creagenincubator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-dreamit-com-66c7ce",
+    "programme_id": "startup_founder-hub-www-dreamit-com-66c7ce",
+    "programme_name": "Dreamit Ventures",
+    "organizer": "dreamit.com",
+    "official_url": "http://www.dreamit.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-fashionincubator-com-47a6d3",
+    "programme_id": "startup_founder-hub-www-fashionincubator-com-47a6d3",
+    "programme_name": "Toronto Fashion Incubator",
+    "organizer": "fashionincubator.com",
+    "official_url": "http://www.fashionincubator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-gaminginc-ca-c9a785",
+    "programme_id": "startup_founder-hub-www-gaminginc-ca-c9a785",
+    "programme_name": "George Brown College – Digital Media and Gaming Incubator",
+    "organizer": "gaminginc.ca",
+    "official_url": "http://www.gaminginc.ca/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-gdhcc-com-7c99cd",
+    "programme_id": "startup_founder-hub-www-gdhcc-com-7c99cd",
+    "programme_name": "Greater Dallas Hispanic Chamber of Commerce Incubator Program",
+    "organizer": "gdhcc.com",
+    "official_url": "http://www.gdhcc.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-hhaccelerator-com-c6f072",
+    "programme_id": "startup_founder-hub-www-hhaccelerator-com-c6f072",
+    "programme_name": "Hacking Health",
+    "organizer": "hhaccelerator.com",
+    "official_url": "http://www.hhaccelerator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-newventuresbc-com-ef463f",
+    "programme_id": "startup_founder-hub-www-newventuresbc-com-ef463f",
+    "programme_name": "New Ventures BC, Vancouver",
+    "organizer": "newventuresbc.com",
+    "official_url": "http://www.newventuresbc.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-oxygenaccelerator-com-36f23a",
+    "programme_id": "startup_founder-hub-www-oxygenaccelerator-com-36f23a",
+    "programme_name": "Oxygen Accelerator",
+    "organizer": "oxygenaccelerator.com",
+    "official_url": "http://www.oxygenaccelerator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-paulgraham-com-growth-html-0bf2ee",
+    "programme_id": "startup_founder-hub-www-paulgraham-com-growth-html-0bf2ee",
+    "programme_name": "Startup = Growth ›",
+    "organizer": "paulgraham.com",
+    "official_url": "http://www.paulgraham.com/growth.html",
+    "allowed_path_hints": [
+      "growth.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-paulgraham-com-startupideas-html-2c48a4",
+    "programme_id": "startup_founder-hub-www-paulgraham-com-startupideas-html-2c48a4",
+    "programme_name": "How to Get Startup Ideas ›",
+    "organizer": "paulgraham.com",
+    "official_url": "http://www.paulgraham.com/startupideas.html",
+    "allowed_path_hints": [
+      "startupideas.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-revtechaccelerator-com-0b5507",
+    "programme_id": "startup_founder-hub-www-revtechaccelerator-com-0b5507",
+    "programme_name": "RevTech",
+    "organizer": "revtechaccelerator.com",
+    "official_url": "http://www.revtechaccelerator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-sfu-ca-io-venture-e7f53d",
+    "programme_id": "startup_founder-hub-www-sfu-ca-io-venture-e7f53d",
+    "programme_name": "SFU TIME Ventures",
+    "organizer": "sfu.ca",
+    "official_url": "http://www.sfu.ca/io/venture/venture-connection.html",
+    "allowed_path_hints": [
+      "io/venture/venture-connection.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-thedec-co-dee55f",
+    "programme_id": "startup_founder-hub-www-thedec-co-dee55f",
+    "programme_name": "The Dallas Entrepreneur Center (DEC)",
+    "organizer": "thedec.co",
+    "official_url": "http://www.thedec.co/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-ucdenver-edu-academics-colleges-0d3190",
+    "programme_id": "startup_founder-hub-www-ucdenver-edu-academics-colleges-0d3190",
+    "programme_name": "Bard Business Center",
+    "organizer": "ucdenver.edu",
+    "official_url": "http://www.ucdenver.edu/academics/colleges/business/about/Centers/bard/incubator/Pages/Incubator.aspx",
+    "allowed_path_hints": [
+      "academics/colleges/business/about/Centers/bard/incubator/Pages/Incubator.aspx"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-urbanchamber-org-pages-servicesandprograms-7f1442",
+    "programme_id": "startup_founder-hub-www-urbanchamber-org-pages-servicesandprograms-7f1442",
+    "programme_name": "City of Las Vegas' business incubator",
+    "organizer": "urbanchamber.org",
+    "official_url": "http://www.urbanchamber.org/pages/ServicesandPrograms",
+    "allowed_path_hints": [
+      "pages/ServicesandPrograms"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-venturelabs-ca-ab5d31",
+    "programme_id": "startup_founder-hub-www-venturelabs-ca-ab5d31",
+    "programme_name": "VentureLabs, Vancouver",
+    "organizer": "venturelabs.ca",
+    "official_url": "http://www.venturelabs.ca/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-yedinstitute-org-e53e76",
+    "programme_id": "startup_founder-hub-www-yedinstitute-org-e53e76",
+    "programme_name": "York Entrepreneurship Development Institute Accelerator",
+    "organizer": "yedinstitute.org",
+    "official_url": "http://www.yedinstitute.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-aka-ms-startuphelp-12b40c",
+    "programme_id": "startup_founder-hub-aka-ms-startuphelp-12b40c",
+    "programme_name": "Support",
+    "organizer": "aka.ms",
+    "official_url": "https://aka.ms/startuphelp",
+    "allowed_path_hints": [
+      "startuphelp"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-austintexas-gov-soulyatx-ec17a6",
+    "programme_id": "startup_founder-hub-austintexas-gov-soulyatx-ec17a6",
+    "programme_name": "Soul-y Austin Business District Incubator",
+    "organizer": "austintexas.gov",
+    "official_url": "https://austintexas.gov/soulyatx",
+    "allowed_path_hints": [
+      "soulyatx"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-bethnalgreenventures-com-6bcb1f",
+    "programme_id": "startup_founder-hub-bethnalgreenventures-com-6bcb1f",
+    "programme_name": "Bethnal Green Ventures",
+    "organizer": "bethnalgreenventures.com",
+    "official_url": "https://bethnalgreenventures.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-dbx4startups-com-436054",
+    "programme_id": "startup_founder-hub-dbx4startups-com-436054",
+    "programme_name": "Startup Events Join Databricks and our VC partners for Founders Dinners, meetups and hands-on workshops in a city near y",
+    "organizer": "dbx4startups.com",
+    "official_url": "https://dbx4startups.com/?itm_category=home&itm_page=home&itm_source=www",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-krash-io-stories-2014-f05b0b",
+    "programme_id": "startup_founder-hub-krash-io-stories-2014-f05b0b",
+    "programme_name": "MD Idea Lab Incubator",
+    "organizer": "krash.io",
+    "official_url": "https://krash.io/stories/2014/08/boston-startup-incubator-roundup",
+    "allowed_path_hints": [
+      "stories/2014/08/boston-startup-incubator-roundup"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-paris-numa-co-startups-fe95d1",
+    "programme_id": "startup_founder-hub-paris-numa-co-startups-fe95d1",
+    "programme_name": "Le Camping",
+    "organizer": "paris.numa.co",
+    "official_url": "https://paris.numa.co/startups",
+    "allowed_path_hints": [
+      "startups"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-startupsafaryberlin2016-sched-org-event-6q8h-c2a2ec",
+    "programme_id": "startup_founder-hub-startupsafaryberlin2016-sched-org-event-6q8h-c2a2ec",
+    "programme_name": "Startup accelerator of the Scout24 portals",
+    "organizer": "startupsafaryberlin2016.sched.org",
+    "official_url": "https://startupsafaryberlin2016.sched.org/event/6q8h/you-is-now-meet-the-startup-accelerator-of-the-scout24-portals",
+    "allowed_path_hints": [
+      "event/6q8h/you-is-now-meet-the-startup-accelerator-of-the-scout24-portals"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-startupschool-org-f423a5",
+    "programme_id": "startup_founder-hub-startupschool-org-f423a5",
+    "programme_name": "Startup School",
+    "organizer": "startupschool.org",
+    "official_url": "https://startupschool.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-startupshub-notion-site-1c1590db1742802ba5e3ca6411499628-4c694f",
+    "programme_id": "startup_founder-hub-startupshub-notion-site-1c1590db1742802ba5e3ca6411499628-4c694f",
+    "programme_name": "application",
+    "organizer": "startupshub.notion.site",
+    "official_url": "https://startupshub.notion.site/1c1590db1742802ba5e3ca6411499628",
+    "allowed_path_hints": [
+      "1c1590db1742802ba5e3ca6411499628"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-startupshub-notion-site-1c1590db1742802ba5e3ca6411499628-dd3b09",
+    "programme_id": "startup_founder-hub-startupshub-notion-site-1c1590db1742802ba5e3ca6411499628-dd3b09",
+    "programme_name": "Apply to become a partner →",
+    "organizer": "startupshub.notion.site",
+    "official_url": "https://startupshub.notion.site/1c1590db1742802ba5e3ca6411499628?pvs=105",
+    "allowed_path_hints": [
+      "1c1590db1742802ba5e3ca6411499628"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-techcrunch-com-2026-08-75010c",
+    "programme_id": "startup_founder-hub-techcrunch-com-2026-08-75010c",
+    "programme_name": "AI code-testing startup Blacksmith's valuation jumps almost 10x in less than a year | TechCrunch ›",
+    "organizer": "techcrunch.com",
+    "official_url": "https://techcrunch.com/2026/08/12/blacksmiths-valuation-jumps-10x-to-550m-as-ai-coding-fuels-software-validation",
+    "allowed_path_hints": [
+      "2026/08/12/blacksmiths-valuation-jumps-10x-to-550m-as-ai-coding-fuels-software-validation"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-eonetwork-org-germany-berlin-fc4dbe",
+    "programme_id": "startup_founder-hub-www-eonetwork-org-germany-berlin-fc4dbe",
+    "programme_name": "EO Accelerator",
+    "organizer": "eonetwork.org",
+    "official_url": "https://www.eonetwork.org/germany-berlin",
+    "allowed_path_hints": [
+      "germany-berlin"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-googleforentrepreneurs-com-startup-communities-notman-ho-fadc1c",
+    "programme_id": "startup_founder-hub-www-googleforentrepreneurs-com-startup-communities-notman-ho-fadc1c",
+    "programme_name": "Notman House",
+    "organizer": "googleforentrepreneurs.com",
+    "official_url": "https://www.googleforentrepreneurs.com/startup-communities/notman-house",
+    "allowed_path_hints": [
+      "startup-communities/notman-house"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-hubraum-com-programs-incubator-berlin-960af5",
+    "programme_id": "startup_founder-hub-www-hubraum-com-programs-incubator-berlin-960af5",
+    "programme_name": "hub:raum",
+    "organizer": "hubraum.com",
+    "official_url": "https://www.hubraum.com/programs/incubator-berlin",
+    "allowed_path_hints": [
+      "programs/incubator-berlin"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-marsdd-com-bap-b24158",
+    "programme_id": "startup_founder-hub-www-marsdd-com-bap-b24158",
+    "programme_name": "Business Accelerator Program",
+    "organizer": "marsdd.com",
+    "official_url": "https://www.marsdd.com/bap",
+    "allowed_path_hints": [
+      "bap"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-microsoftaccelerator-com-locations-berlin-d955c6",
+    "programme_id": "startup_founder-hub-www-microsoftaccelerator-com-locations-berlin-d955c6",
+    "programme_name": "Microsoft Ventures",
+    "organizer": "microsoftaccelerator.com",
+    "official_url": "https://www.microsoftaccelerator.com/locations/berlin",
+    "allowed_path_hints": [
+      "locations/berlin"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-notion-so-notion-for-startup-terms-936b74c0323745a186b14-b118d3",
+    "programme_id": "startup_founder-hub-www-notion-so-notion-for-startup-terms-936b74c0323745a186b14-b118d3",
+    "programme_name": "full terms and conditions",
+    "organizer": "notion.so",
+    "official_url": "https://www.notion.so/Notion-for-Startup-Terms-936b74c0323745a186b1497747074020",
+    "allowed_path_hints": [
+      "Notion-for-Startup-Terms-936b74c0323745a186b1497747074020"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-paypal-incubator-com-fea1d0",
+    "programme_id": "startup_founder-hub-www-paypal-incubator-com-fea1d0",
+    "programme_name": "PayPal’s StartTank Boston",
+    "organizer": "paypal-incubator.com",
+    "official_url": "https://www.paypal-incubator.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hub-startup_founder-www-umassd-edu-innovate-809534",
+    "programme_id": "startup_founder-hub-www-umassd-edu-innovate-809534",
+    "programme_name": "UMass Dartmouth’s Center for Innovation and Entrepreneurship (CIE)",
+    "organizer": "umassd.edu",
+    "official_url": "https://www.umassd.edu/innovate",
+    "allowed_path_hints": [
+      "innovate"
+    ],
+    "check_cadence": "monthly"
+  }
+]

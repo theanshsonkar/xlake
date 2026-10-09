@@ -18,6 +18,8 @@ on:
           - fellowships
           - scholarships
           - grants
+          - startup-founder
+          - community
           - research
           - hackathons
 
@@ -99,6 +101,18 @@ jobs:
           python3 -u -m categories.grants.grants
           python3 -u -m categories.grants.grants --apply-verifications
 
+      - name: Refresh Startup & Founder programmes
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'startup-founder' }}
+        run: |
+          python3 -u -m categories.startup_founder.programmes
+          python3 -u -m categories.startup_founder.programmes --apply-verifications
+
+      - name: Refresh Community programmes
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'community' }}
+        run: |
+          python3 -u -m categories.community.programmes
+          python3 -u -m categories.community.programmes --apply-verifications
+
       - name: Refresh Research
         if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'research' }}
         working-directory: .
@@ -142,11 +156,11 @@ jobs:
             data/operations/programmes_observations.json \
             data/operations/programme_verifications.json \
             data/operations/research_programme_verifications.json \
-            data/operations/discovery_*.json
-          for seed in fellowships scholarships grants research open_source; do
-            [ -f "data/operations/generated_seeds/${seed}.json" ] && \
-              git add "data/operations/generated_seeds/${seed}.json"
-          done
+            data/operations/discovery_*.json \
+            data/operations/grant_programmes_observations.json \
+            data/operations/startup_founder_programmes_observations.json \
+            data/operations/community_programmes_observations.json
+          git add data/operations/generated_seeds/*.json
           git diff --staged --quiet || git commit -m "daily: sweep + programmes + contributions $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase --autostash origin "$GITHUB_REF_NAME"
           git push
