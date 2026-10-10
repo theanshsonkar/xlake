@@ -22,6 +22,11 @@ on:
           - startup
           - community
           - hackathons
+      retire_force:
+        description: "Comma-separated categories allowed to bypass the retirement guard"
+        required: false
+        type: string
+        default: ''
 
 concurrency:
   group: xlake-lake-writer
@@ -102,6 +107,8 @@ jobs:
 
       - name: Refresh Open Source programmes
         if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'open_source' }}
+        env:
+          XLAKE_RETIRE_FORCE: ${{ inputs.retire_force }}
         run: python3 -u -m categories.open_source.programmes
 
       - name: Refresh Open Source contributions (good-first-issues)
@@ -112,36 +119,48 @@ jobs:
 
       - name: Refresh Fellowships
         if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'fellowships' }}
+        env:
+          XLAKE_RETIRE_FORCE: ${{ inputs.retire_force }}
         run: |
           python3 -u -m categories.fellowships.fellowships
           python3 -u -m categories.fellowships.fellowships --apply-verifications
 
       - name: Refresh Scholarships
         if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'scholarships' }}
+        env:
+          XLAKE_RETIRE_FORCE: ${{ inputs.retire_force }}
         run: |
           python3 -u -m categories.scholarships.scholarships
           python3 -u -m categories.scholarships.scholarships --apply-verifications
 
       - name: Refresh Grants
         if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'grants' }}
+        env:
+          XLAKE_RETIRE_FORCE: ${{ inputs.retire_force }}
         run: |
           python3 -u -m categories.grants.grants
           python3 -u -m categories.grants.grants --apply-verifications
 
       - name: Refresh Startup & Founder programmes
         if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'startup' }}
+        env:
+          XLAKE_RETIRE_FORCE: ${{ inputs.retire_force }}
         run: |
           python3 -u -m categories.startup_founder.programmes
           python3 -u -m categories.startup_founder.programmes --apply-verifications
 
       - name: Refresh Community programmes
         if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'community' }}
+        env:
+          XLAKE_RETIRE_FORCE: ${{ inputs.retire_force }}
         run: |
           python3 -u -m categories.community.programmes
           python3 -u -m categories.community.programmes --apply-verifications
 
       - name: Refresh Research
         if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'research' }}
+        env:
+          XLAKE_RETIRE_FORCE: ${{ inputs.retire_force }}
         working-directory: .
         run: cd engine && python3 -m categories.research.research
 

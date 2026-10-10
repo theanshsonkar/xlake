@@ -627,16 +627,37 @@ class TestGenericProgrammePipeline(unittest.TestCase):
     def test_retire_orphans_guard_skips_when_more_than_forty_percent_would_retire(self):
         rows = [
             {"record_type": "programme", "category": "grant", "programme_id": str(index),
+             "programme_name": "Programme {}".format(index),
              "official_url": "https://{}.example/grant".format(index), "is_live": True}
             for index in range(5)
         ]
         captured = io.StringIO()
         with redirect_stdout(captured):
             retire_orphans("grant", ["https://0.example/grant", "https://1.example/grant"], rows, "now")
-        self.assertIn("retire_orphans grant: skipped guard", captured.getvalue())
-        self.assertIn("category_rows=5 retire=3", captured.getvalue())
+        output = captured.getvalue()
+        self.assertIn("retire_orphans grant: candidate Programme 2 | https://2.example/grant", output)
+        self.assertIn("retire_orphans grant: skipped guard", output)
+        self.assertIn("category_rows=5 retire=3", output)
         self.assertTrue(all(row["is_live"] for row in rows))
         self.assertTrue(all("hidden_reason" not in row for row in rows))
+
+    def test_retire_orphans_force_override_bypasses_forty_percent_guard(self):
+        rows = [
+            {"record_type": "programme", "category": "grant", "programme_id": str(index),
+             "programme_name": "Programme {}".format(index),
+             "official_url": "https://{}.example/grant".format(index), "is_live": True}
+            for index in range(5)
+        ]
+        captured = io.StringIO()
+        with patch.dict(os.environ, {"XLAKE_RETIRE_FORCE": " fellowship, GRANT "}):
+            with redirect_stdout(captured):
+                retire_orphans("grant", ["https://0.example/grant", "https://1.example/grant"], rows, "now")
+        output = captured.getvalue()
+        self.assertIn("retire_orphans grant: candidate Programme 2 | https://2.example/grant", output)
+        self.assertIn("retire_orphans grant: guard overridden", output)
+        self.assertNotIn("skipped guard", output)
+        self.assertEqual(sum(not row["is_live"] for row in rows), 3)
+        self.assertTrue(all(row.get("hidden_reason") == "source_removed" for row in rows[2:]))
 
     def test_retire_orphans_reappearing_seed_unhides_row(self):
         rows = [{
@@ -655,9 +676,11 @@ class TestGenericProgrammePipeline(unittest.TestCase):
             "official_url": "https://old.example/grant", "is_live": True,
         }]
         captured = io.StringIO()
-        with redirect_stdout(captured):
-            retire_orphans("grant", [], rows, "now")
+        with patch.dict(os.environ, {"XLAKE_RETIRE_FORCE": "grant"}):
+            with redirect_stdout(captured):
+                retire_orphans("grant", [], rows, "now")
         self.assertIn("retire_orphans grant: skipped guard", captured.getvalue())
+        self.assertNotIn("guard overridden", captured.getvalue())
         self.assertTrue(rows[0]["is_live"])
         self.assertNotIn("hidden_reason", rows[0])
 

@@ -1162,11 +1162,25 @@ def retire_orphans(category: str, current_seed_urls: Iterable[str], lake_rows: L
         }
         if not row_urls.intersection(current_urls) and row.get("hidden_reason") != "source_removed":
             candidates.append(row)
+    for row in candidates[:60]:
+        title = row.get("programme_name") or row.get("title") or row.get("name") or row.get("programme_id") or ""
+        url = row.get("official_url") or row.get("url") or ""
+        print("retire_orphans {}: candidate {} | {}".format(
+            category, str(title)[:70], url), flush=True)
+
+    forced_categories = {
+        item.strip().casefold()
+        for item in os.environ.get("XLAKE_RETIRE_FORCE", "").split(",")
+        if item.strip()
+    }
+    force_retire = category.casefold() in forced_categories
     if category_rows and len(candidates) / len(category_rows) > 0.4:
-        print("retire_orphans {}: skipped guard".format(category), flush=True)
-        print("retire_orphans {}: guard category_rows={} retire={}".format(
-            category, len(category_rows), len(candidates)), flush=True)
-        return lake_rows
+        if not force_retire:
+            print("retire_orphans {}: skipped guard".format(category), flush=True)
+            print("retire_orphans {}: guard category_rows={} retire={}".format(
+                category, len(category_rows), len(candidates)), flush=True)
+            return lake_rows
+        print("retire_orphans {}: guard overridden".format(category), flush=True)
 
     retired = 0
     for row in category_rows:
