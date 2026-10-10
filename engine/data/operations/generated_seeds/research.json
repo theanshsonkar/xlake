@@ -1,1595 +1,1581 @@
 [
- {
-  "source_id": "hub-research-eng-en-site-nthu-edu-tw-p-412-1060-3215-php-d15ff3",
-  "programme_id": "research-hub-eng-en-site-nthu-edu-tw-p-412-1060-3215-php-d15ff3",
-  "programme_name": "NTHU Summer Internship Program",
-  "organizer": "eng-en.site.nthu.edu.tw",
-  "official_url": "http://eng-en.site.nthu.edu.tw/p/412-1060-3215.php",
-  "allowed_path_hints": [
-   "p/412-1060-3215.php"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-eng-en-web-nthu-edu-tw-files-14-1130-129169-r1447-1-php-28d01d",
-  "programme_id": "research-hub-eng-en-web-nthu-edu-tw-files-14-1130-129169-r1447-1-php-28d01d",
-  "programme_name": "NTHU Summer Internship Program",
-  "organizer": "eng-en.web.nthu.edu.tw",
-  "official_url": "http://eng-en.web.nthu.edu.tw/files/14-1130-129169,r1447-1.php",
-  "allowed_path_hints": [
-   "files/14-1130-129169,r1447-1.php"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-oga-nthu-edu-tw-news-php-7dbca8",
-  "programme_id": "research-hub-oga-nthu-edu-tw-news-php-7dbca8",
-  "programme_name": "Indian Student Internship Program at NTHU",
-  "organizer": "oga.nthu.edu.tw",
-  "official_url": "http://oga.nthu.edu.tw/news.php?id=233&lang=en",
-  "allowed_path_hints": [
-   "news.php"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-research-nvidia-com-graduate-fellowships-980520",
-  "programme_id": "research-hub-research-nvidia-com-graduate-fellowships-980520",
-  "programme_name": "NVIDIA Graduate Fellowships",
-  "organizer": "research.nvidia.com",
-  "official_url": "http://research.nvidia.com/graduate-fellowships",
-  "allowed_path_hints": [
-   "graduate-fellowships"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-spike-unist-ac-kr-main-main-php-a42b4d",
-  "programme_id": "research-hub-spike-unist-ac-kr-main-main-php-a42b4d",
-  "programme_name": "KAUST Summer Internship",
-  "organizer": "spike.unist.ac.kr",
-  "official_url": "http://spike.unist.ac.kr/main/main.php",
-  "allowed_path_hints": [
-   "main/main.php"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-thielfellowship-org-41d873",
-  "programme_id": "research-hub-thielfellowship-org-41d873",
-  "programme_name": "Thiel Fellowship for young innovators",
-  "organizer": "thielfellowship.org",
-  "official_url": "http://thielfellowship.org/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-web-japps-ias-ac-in-fellowship2018-index-html-c3b573",
-  "programme_id": "research-hub-web-japps-ias-ac-in-fellowship2018-index-html-c3b573",
-  "programme_name": "Summer Research Fellowship Programme 2018",
-  "organizer": "web-japps.ias.ac.in",
-  "official_url": "http://web-japps.ias.ac.in:8080/fellowship2018/index.html",
-  "allowed_path_hints": [
-   "fellowship2018/index.html"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-iitb-ac-in-en-education-b84b9d",
-  "programme_id": "research-hub-www-iitb-ac-in-en-education-b84b9d",
-  "programme_name": "IITB Research Internship Award",
-  "organizer": "iitb.ac.in",
-  "official_url": "http://www.iitb.ac.in/en/education/research-internship",
-  "allowed_path_hints": [
-   "en/education/research-internship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 1
- },
- {
-  "source_id": "hub-research-www-iitb-ac-in-en-education-e63d02",
-  "programme_id": "research-hub-www-iitb-ac-in-en-education-e63d02",
-  "programme_name": "IIT Bombay, Research Internship Program (",
-  "organizer": "iitb.ac.in",
-  "official_url": "http://www.iitb.ac.in/en/education/research-internship)(http://www.iitb.ac.in/newacadhome/toTraining.jsp)(https://www.it.iitb.ac.in/summerinternship2020/selectionlist.html",
-  "allowed_path_hints": [
-   "en/education/research-internship)(http://www.iitb.ac.in/newacadhome/toTraining.jsp)(https://www.it.iitb.ac.in/summerinternship2020/selectionlist.html"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-www-inde-campusfrance-org-en-page-64e379",
-  "programme_id": "research-hub-www-inde-campusfrance-org-en-page-64e379",
-  "programme_name": "Charpak Global Scholarship",
-  "organizer": "inde.campusfrance.org",
-  "official_url": "http://www.inde.campusfrance.org/en/page/charpak-research-internship-program",
-  "allowed_path_hints": [
-   "en/page/charpak-research-internship-program"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-www-inde-campusfrance-org-charpak-research-interns-986032",
-  "programme_id": "research-hub-www-inde-campusfrance-org-charpak-research-interns-986032",
-  "programme_name": "Charpak Global Scholarship, France (",
-  "organizer": "inde.campusfrance.org",
-  "official_url": "http://www.inde.campusfrance.org/\u2026/charpak-research-interns\u2026",
-  "allowed_path_hints": [
-   "\u2026/charpak-research-interns\u2026"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-ipam-ucla-edu-programs-student-research-programs-609661",
-  "programme_id": "research-hub-www-ipam-ucla-edu-programs-student-research-programs-609661",
-  "programme_name": "IPAM UCLA, RIPS Program",
-  "organizer": "ipam.ucla.edu",
-  "official_url": "http://www.ipam.ucla.edu/programs/student-research-programs",
-  "allowed_path_hints": [
-   "programs/student-research-programs"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-admissions-kaust-edu-sa-study-internships-70c7bd",
-  "programme_id": "research-hub-admissions-kaust-edu-sa-study-internships-70c7bd",
-  "programme_name": "KAUST",
-  "organizer": "admissions.kaust.edu.sa",
-  "official_url": "https://admissions.kaust.edu.sa/study/internships",
-  "allowed_path_hints": [
-   "study/internships"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-admissions-oist-jp-oist-research-internship-program-descript-0aa0b8",
-  "programme_id": "research-hub-admissions-oist-jp-oist-research-internship-program-descript-0aa0b8",
-  "programme_name": "OIST Research Internship Program",
-  "organizer": "admissions.oist.jp",
-  "official_url": "https://admissions.oist.jp/oist-research-internship-program-description",
-  "allowed_path_hints": [
-   "oist-research-internship-program-description"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-ai-google-research-800bdd",
-  "programme_id": "research-hub-ai-google-research-800bdd",
-  "programme_name": "Research",
-  "organizer": "ai.google",
-  "official_url": "https://ai.google/research",
-  "allowed_path_hints": [
-   "research"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-apply-mpi-sws-org-register-internship-c0ea39",
-  "programme_id": "research-hub-apply-mpi-sws-org-register-internship-c0ea39",
-  "programme_name": "Max Planck Institute for Software Systems",
-  "organizer": "apply.mpi-sws.org",
-  "official_url": "https://apply.mpi-sws.org/register/internship",
-  "allowed_path_hints": [
-   "register/internship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-asta-allen-ai-e6214b",
-  "programme_id": "research-hub-asta-allen-ai-e6214b",
-  "programme_name": "Research with Asta",
-  "organizer": "asta.allen.ai",
-  "official_url": "https://asta.allen.ai/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-blog-google-translate-goog-intl-de-de-b11f7e",
-  "programme_id": "research-hub-blog-google-translate-goog-intl-de-de-b11f7e",
-  "programme_name": "Google and TU Munich are investing in cybersecurity research Read blog post",
-  "organizer": "blog-google.translate.goog",
-  "official_url": "https://blog-google.translate.goog/intl/de-de/unternehmen/technologie/google-tu-munchen-tum-investition-cybersecurity-forschung?_x_tr_hl=de&_x_tr_pto=wapp&_x_tr_sl=auto&_x_tr_tl=en",
-  "allowed_path_hints": [
-   "intl/de-de/unternehmen/technologie/google-tu-munchen-tum-investition-cybersecurity-forschung"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-blog-google-technology-research-815346",
-  "programme_id": "research-hub-blog-google-technology-research-815346",
-  "programme_name": "Meet the Ph.D. students changing the face of computing Read blog post",
-  "organizer": "blog.google",
-  "official_url": "https://blog.google/technology/research/meet-phd-students-changing-face-computing",
-  "allowed_path_hints": [
-   "technology/research/meet-phd-students-changing-face-computing"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-blog-google-technology-research-4b0da1",
-  "programme_id": "research-hub-blog-google-technology-research-4b0da1",
-  "programme_name": "Mentorship inspires Deyrel Diaz and future researchers Read blog post",
-  "organizer": "blog.google",
-  "official_url": "https://blog.google/technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers",
-  "allowed_path_hints": [
-   "technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-blog-google-technology-research-0906a3",
-  "programme_id": "research-hub-blog-google-technology-research-0906a3",
-  "programme_name": "Supporting academics working to create positive societal impact with technology Google's T&S Research team collaborates",
-  "organizer": "blog.google",
-  "official_url": "https://blog.google/technology/research/our-first-trust-safety-research-awards-grantees",
-  "allowed_path_hints": [
-   "technology/research/our-first-trust-safety-research-awards-grantees"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-blog-google-technology-research-3e68c2",
-  "programme_id": "research-hub-blog-google-technology-research-3e68c2",
-  "programme_name": "Read blog post",
-  "organizer": "blog.google",
-  "official_url": "https://blog.google/technology/research/rajavi-mishra-becoming-computer-science-researcher",
-  "allowed_path_hints": [
-   "technology/research/rajavi-mishra-becoming-computer-science-researcher"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-careers-pruna-ai-jobs-5116044-working-student-master-thesis-1e15db",
-  "programme_id": "research-hub-careers-pruna-ai-jobs-5116044-working-student-master-thesis-1e15db",
-  "programme_name": "Pruna AI",
-  "organizer": "careers.pruna.ai",
-  "official_url": "https://careers.pruna.ai/jobs/5116044-working-student-master-thesis-internship",
-  "allowed_path_hints": [
-   "jobs/5116044-working-student-master-thesis-internship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-careers-smartrecruiters-com-cern-tech-89e81e",
-  "programme_id": "research-hub-careers-smartrecruiters-com-cern-tech-89e81e",
-  "programme_name": "CERN Technical Internship",
-  "organizer": "careers.smartrecruiters.com",
-  "official_url": "https://careers.smartrecruiters.com/CERN/tech",
-  "allowed_path_hints": [
-   "CERN/tech"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-cohere-com-research-scholars-program-586f4f",
-  "programme_id": "research-hub-cohere-com-research-scholars-program-586f4f",
-  "programme_name": "Cohere",
-  "organizer": "cohere.com",
-  "official_url": "https://cohere.com/research/scholars-program",
-  "allowed_path_hints": [
-   "research/scholars-program"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-deepmind-google-research-13360c",
-  "programme_id": "research-hub-deepmind-google-research-13360c",
-  "programme_name": "Research",
-  "organizer": "deepmind.google",
-  "official_url": "https://deepmind.google/research",
-  "allowed_path_hints": [
-   "research"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-dssg-uchicago-edu-b0d723",
-  "programme_id": "research-hub-dssg-uchicago-edu-b0d723",
-  "programme_name": "The Data Science for Social Good Fellowship",
-  "organizer": "dssg.uchicago.edu",
-  "official_url": "https://dssg.uchicago.edu/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-dst-gov-in-scientific-programmes-scientific-engineering-rese-ef3a17",
-  "programme_id": "research-hub-dst-gov-in-scientific-programmes-scientific-engineering-rese-ef3a17",
-  "programme_name": "Swarnajayanti fellowships scheme",
-  "organizer": "dst.gov.in",
-  "official_url": "https://dst.gov.in/scientific-programmes/scientific-engineering-research/human-resource-development-and-nurturing-young-talent-swarnajayanti-fellowships-scheme",
-  "allowed_path_hints": [
-   "scientific-programmes/scientific-engineering-research/human-resource-development-and-nurturing-young-talent-swarnajayanti-fellowships-scheme"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-ece-duke-edu-undergrad-reu-6b7e1e",
-  "programme_id": "research-hub-ece-duke-edu-undergrad-reu-6b7e1e",
-  "programme_name": "Duke ECE SURP",
-  "organizer": "ece.duke.edu",
-  "official_url": "https://ece.duke.edu/undergrad/reu",
-  "allowed_path_hints": [
-   "undergrad/reu"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-employability-uq-edu-au-summer-winter-research-4d17b6",
-  "programme_id": "research-hub-employability-uq-edu-au-summer-winter-research-4d17b6",
-  "programme_name": "UQ Summer and Winter Research Programme",
-  "organizer": "employability.uq.edu.au",
-  "official_url": "https://employability.uq.edu.au/summer-winter-research",
-  "allowed_path_hints": [
-   "summer-winter-research"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-engineering-nyu-edu-research-student-research-6223bb",
-  "programme_id": "research-hub-engineering-nyu-edu-research-student-research-6223bb",
-  "programme_name": "Hybrid NanoTechnology, New York University",
-  "organizer": "engineering.nyu.edu",
-  "official_url": "https://engineering.nyu.edu/research/student-research/undergraduate-summer-research-program",
-  "allowed_path_hints": [
-   "research/student-research/undergraduate-summer-research-program"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-fellowship-mlh-io-3522d4",
-  "programme_id": "research-hub-fellowship-mlh-io-3522d4",
-  "programme_name": "MLH Fellowship",
-  "organizer": "fellowship.mlh.io",
-  "official_url": "https://fellowship.mlh.io/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-fellowship-mlh-io-programs-explorer-a94585",
-  "programme_id": "research-hub-fellowship-mlh-io-programs-explorer-a94585",
-  "programme_name": "MLH Fellowship",
-  "organizer": "fellowship.mlh.io",
-  "official_url": "https://fellowship.mlh.io/programs/explorer",
-  "allowed_path_hints": [
-   "programs/explorer"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-fellowships-deshaw-com-4da8f0",
-  "programme_id": "research-hub-fellowships-deshaw-com-4da8f0",
-  "programme_name": "DE Shaw & Co Discovery Fellowship",
-  "organizer": "fellowships.deshaw.com",
-  "official_url": "https://fellowships.deshaw.com/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-fokos-info-en-home-299a9c",
-  "programme_id": "research-hub-fokos-info-en-home-299a9c",
-  "programme_name": "Ludwig Prandtl Internship, Germany (MPIDS) (",
-  "organizer": "fokos.info",
-  "official_url": "https://fokos.info/en/home/stipendium",
-  "allowed_path_hints": [
-   "en/home/stipendium"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-groups-oist-jp-grad-research-interns-638379",
-  "programme_id": "research-hub-groups-oist-jp-grad-research-interns-638379",
-  "programme_name": "OIST Research Internship Program",
-  "organizer": "groups.oist.jp",
-  "official_url": "https://groups.oist.jp/grad/research-interns",
-  "allowed_path_hints": [
-   "grad/research-interns"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-hackny-org-fellows-program-366a74",
-  "programme_id": "research-hub-hackny-org-fellows-program-366a74",
-  "programme_name": "HackNY Fellowship",
-  "organizer": "hackny.org",
-  "official_url": "https://hackny.org/fellows-program",
-  "allowed_path_hints": [
-   "fellows-program"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-huggingface-co-coherelabs-65fbae",
-  "programme_id": "research-hub-huggingface-co-coherelabs-65fbae",
-  "programme_name": "Cohere Labs Hugging Face Space Explore and interact with our models directly on our Hugging Face Space, making AI resear",
-  "organizer": "huggingface.co",
-  "official_url": "https://huggingface.co/CohereLabs",
-  "allowed_path_hints": [
-   "CohereLabs"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-inf-ethz-ch-studies-summer-research-fellowship-html-fc433e",
-  "programme_id": "research-hub-inf-ethz-ch-studies-summer-research-fellowship-html-fc433e",
-  "programme_name": "ETH Zurich",
-  "organizer": "inf.ethz.ch",
-  "official_url": "https://inf.ethz.ch/studies/summer-research-fellowship.html",
-  "allowed_path_hints": [
-   "studies/summer-research-fellowship.html"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-japan-internships-com-9490c4",
-  "programme_id": "research-hub-japan-internships-com-9490c4",
-  "programme_name": "Sakae Japan Internship Program",
-  "organizer": "japan-internships.com",
-  "official_url": "https://japan-internships.com/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-jobs-cisco-com-jobs-projectdetail-49f5c7",
-  "programme_id": "research-hub-jobs-cisco-com-jobs-projectdetail-49f5c7",
-  "programme_name": "Cisco Summer internship",
-  "organizer": "jobs.cisco.com",
-  "official_url": "https://jobs.cisco.com/jobs/ProjectDetail/Software-Engineer-Bachelor-s-Intern-United-States/1295250?source=Pitt+CSC&tags=CDC+SnNG+students-and-new-graduate-programs",
-  "allowed_path_hints": [
-   "jobs/ProjectDetail/Software-Engineer-Bachelor-s-Intern-United-States/1295250"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-jobs-lever-co-trailofbits-5c836c41-04d0-4f16-8f7d-e3cfdc3319-f2fdf4",
-  "programme_id": "research-hub-jobs-lever-co-trailofbits-5c836c41-04d0-4f16-8f7d-e3cfdc3319-f2fdf4",
-  "programme_name": "Vulnerability Research",
-  "organizer": "jobs.lever.co",
-  "official_url": "https://jobs.lever.co/trailofbits/5c836c41-04d0-4f16-8f7d-e3cfdc33191b",
-  "allowed_path_hints": [
-   "trailofbits/5c836c41-04d0-4f16-8f7d-e3cfdc33191b"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-labs-oracle-com-pls-apex-1ca0e5",
-  "programme_id": "research-hub-labs-oracle-com-pls-apex-1ca0e5",
-  "programme_name": "Oracle",
-  "organizer": "labs.oracle.com",
-  "official_url": "https://labs.oracle.com/pls/apex/r/labs/labs/internships",
-  "allowed_path_hints": [
-   "pls/apex/r/labs/labs/internships"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-mae-osu-edu-riya-5d4581",
-  "programme_id": "research-hub-mae-osu-edu-riya-5d4581",
-  "programme_name": "Research Internship for Young Academics (RIYA) Program",
-  "organizer": "mae.osu.edu",
-  "official_url": "https://mae.osu.edu/RIYA",
-  "allowed_path_hints": [
-   "RIYA"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-nigintern-nig-ac-jp-1e26aa",
-  "programme_id": "research-hub-nigintern-nig-ac-jp-1e26aa",
-  "programme_name": "NIG Summer Internship, JAPAN",
-  "organizer": "nigintern.nig.ac.jp",
-  "official_url": "https://nigintern.nig.ac.jp/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-onlineportal-iitrpr-ac-in-sia-21-b4ebde",
-  "programme_id": "research-hub-onlineportal-iitrpr-ac-in-sia-21-b4ebde",
-  "programme_name": "IIT Ropar Summer Internship",
-  "organizer": "onlineportal.iitrpr.ac.in",
-  "official_url": "https://onlineportal.iitrpr.ac.in/sia-21",
-  "allowed_path_hints": [
-   "sia-21"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T14:02:44Z",
-  "last_seen": "2026-10-10T14:02:44Z",
-  "dead_strikes": 1
- },
- {
-  "source_id": "hub-research-onlineportal-iitrpr-ac-in-sia-21-ccb8f4",
-  "programme_id": "research-hub-onlineportal-iitrpr-ac-in-sia-21-ccb8f4",
-  "programme_name": "IIT Ropar Summer Internship, IIT Ropar",
-  "organizer": "onlineportal.iitrpr.ac.in",
-  "official_url": "https://onlineportal.iitrpr.ac.in/sia-21)[",
-  "allowed_path_hints": [
-   "sia-21)["
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T14:02:44Z",
-  "last_seen": "2026-10-10T14:02:44Z",
-  "dead_strikes": 1
- },
- {
-  "source_id": "hub-research-pg-ust-hk-prospective-students-programs-6fe9bd",
-  "programme_id": "research-hub-pg-ust-hk-prospective-students-programs-6fe9bd",
-  "programme_name": "IVISP, HKUST",
-  "organizer": "pg.ust.hk",
-  "official_url": "https://pg.ust.hk/prospective-students/programs/short-term-study/international-visiting-internship-student-program",
-  "allowed_path_hints": [
-   "prospective-students/programs/short-term-study/international-visiting-internship-student-program"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T14:04:39Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 1
- },
- {
-  "source_id": "hub-research-programmes-polytechnique-edu-en-exchange-programs-a72684",
-  "programme_id": "research-hub-programmes-polytechnique-edu-en-exchange-programs-a72684",
-  "programme_name": "\u00c9cole Polytechnique",
-  "organizer": "programmes.polytechnique.edu",
-  "official_url": "https://programmes.polytechnique.edu/en/exchange-programs/research-program-for-international-talents/how-to-apply",
-  "allowed_path_hints": [
-   "en/exchange-programs/research-program-for-international-talents/how-to-apply"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
-  "programme_id": "research-hub-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
-  "programme_name": "Adobe India Women-in-Technology Scholarship",
-  "organizer": "research.adobe.com",
-  "official_url": "https://research.adobe.com/adobe-india-women-in-technology-scholarship",
-  "allowed_path_hints": [
-   "adobe-india-women-in-technology-scholarship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-research-fb-com-programs-fellowship-c0478b",
-  "programme_id": "research-hub-research-fb-com-programs-fellowship-c0478b",
-  "programme_name": "The Facebook Fellowship Program",
-  "organizer": "research.fb.com",
-  "official_url": "https://research.fb.com/programs/fellowship",
-  "allowed_path_hints": [
-   "programs/fellowship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-research-google-50efb5",
-  "programme_id": "research-hub-research-google-50efb5",
-  "programme_name": "Google Research Explore our research",
-  "organizer": "research.google",
-  "official_url": "https://research.google/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-researcher-watson-ibm-com-researcher-view-group-subpage-php-e64921",
-  "programme_id": "research-hub-researcher-watson-ibm-com-researcher-view-group-subpage-php-e64921",
-  "programme_name": "IBM Blue Mix",
-  "organizer": "researcher.watson.ibm.com",
-  "official_url": "https://researcher.watson.ibm.com/researcher/view_group_subpage.php?id=8101",
-  "allowed_path_hints": [
-   "researcher/view_group_subpage.php"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-rig-internships-de-b856a1",
-  "programme_id": "research-hub-rig-internships-de-b856a1",
-  "programme_name": "Robotics Institute Germany",
-  "organizer": "rig-internships.de",
-  "official_url": "https://rig-internships.de/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-sfp-caltech-edu-undergraduate-research-programs-08f04d",
-  "programme_id": "research-hub-sfp-caltech-edu-undergraduate-research-programs-08f04d",
-  "programme_name": "CalTech SURF Program",
-  "organizer": "sfp.caltech.edu",
-  "official_url": "https://sfp.caltech.edu/undergraduate-research/programs/surf/application_information",
-  "allowed_path_hints": [
-   "undergraduate-research/programs/surf/application_information"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-sfp-iitm-ac-in-540af5",
-  "programme_id": "research-hub-sfp-iitm-ac-in-540af5",
-  "programme_name": "IITM - Summer Fellowship Programme",
-  "organizer": "sfp.iitm.ac.in",
-  "official_url": "https://sfp.iitm.ac.in/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-simonsfoundation-wd1-myworkdayjobs-com-en-us-simonsfoundatio-2c149a",
-  "programme_id": "research-hub-simonsfoundation-wd1-myworkdayjobs-com-en-us-simonsfoundatio-2c149a",
-  "programme_name": "Data Visualization Programming Summer Student Internship in New York City",
-  "organizer": "simonsfoundation.wd1.myworkdayjobs.com",
-  "official_url": "https://simonsfoundation.wd1.myworkdayjobs.com/en-US/simonsfoundationcareers/job/162-Fifth-Avenue/Data-Visualization-Intern--SCC_R0000579",
-  "allowed_path_hints": [
-   "en-US/simonsfoundationcareers/job/162-Fifth-Avenue/Data-Visualization-Intern--SCC_R0000579"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-summer-yonsei-ac-kr-home-program-b6ee66",
-  "programme_id": "research-hub-summer-yonsei-ac-kr-home-program-b6ee66",
-  "programme_name": "Research internship @ Yonsei University",
-  "organizer": "summer.yonsei.ac.kr",
-  "official_url": "https://summer.yonsei.ac.kr/home/program/internship02.asp",
-  "allowed_path_hints": [
-   "home/program/internship02.asp"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T14:02:44Z",
-  "last_seen": "2026-10-10T14:02:44Z",
-  "dead_strikes": 1
- },
- {
-  "source_id": "hub-research-sure-gatech-edu-apply-400d26",
-  "programme_id": "research-hub-sure-gatech-edu-apply-400d26",
-  "programme_name": "Summer Undergraduate Research in Engineering/Sciences (SURE",
-  "organizer": "sure.gatech.edu",
-  "official_url": "https://sure.gatech.edu/apply",
-  "allowed_path_hints": [
-   "apply"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-10T14:02:44Z"
- },
- {
-  "source_id": "hub-research-susaventures-com-summer-fellows-236d23",
-  "programme_id": "research-hub-susaventures-com-summer-fellows-236d23",
-  "programme_name": "Susa Summer Fellowship",
-  "organizer": "susaventures.com",
-  "official_url": "https://susaventures.com/summer-fellows",
-  "allowed_path_hints": [
-   "summer-fellows"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-routed-374d1cebd040",
-  "programme_id": "research-hub-routed-374d1cebd040",
-  "programme_name": "Swiss Summer Student Particle Physics",
-  "organizer": "swiss.sspp.program.phys.ethz.ch",
-  "official_url": "https://swiss.sspp.program.phys.ethz.ch/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "needs_page_noun": true,
-  "first_seen": "2026-10-10T09:43:18Z",
-  "last_seen": "2026-10-10T14:28:51Z"
- },
- {
-  "source_id": "hub-research-tech-cornell-edu-impact-break-through-tech-ed7e9b",
-  "programme_id": "research-hub-tech-cornell-edu-impact-break-through-tech-ed7e9b",
-  "programme_name": "Break Through Tech AI Fellowship",
-  "organizer": "tech.cornell.edu",
-  "official_url": "https://tech.cornell.edu/impact/break-through-tech/break-through-ai",
-  "allowed_path_hints": [
-   "impact/break-through-tech/break-through-ai"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-tusur-ru-en-research-762ad3",
-  "programme_id": "research-hub-tusur-ru-en-research-762ad3",
-  "programme_name": "TUSUR University",
-  "organizer": "tusur.ru",
-  "official_url": "https://tusur.ru/en/research/research-internships",
-  "allowed_path_hints": [
-   "en/research/research-internships"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
-  "programme_id": "research-hub-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
-  "programme_name": "Summer Research Program, Princeton University",
-  "organizer": "undergraduateresearch.princeton.edu",
-  "official_url": "https://undergraduateresearch.princeton.edu/programs/summer-programs?field_class_year_eligibility_value=Juniors&field_division_value=Engineering&field_princeton_status_eligibili_value=Non-Princeton+undergrads",
-  "allowed_path_hints": [
-   "programs/summer-programs"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-us-redhat-icims-com-jobs-83084-52c799",
-  "programme_id": "research-hub-us-redhat-icims-com-jobs-83084-52c799",
-  "programme_name": "UX Research Internship, Red Hat",
-  "organizer": "us-redhat.icims.com",
-  "official_url": "https://us-redhat.icims.com/jobs/83084/remote-us-nc/job",
-  "allowed_path_hints": [
-   "jobs/83084/remote-us-nc/job"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-warwick-ac-uk-fac-sci-36469d",
-  "programme_id": "research-hub-warwick-ac-uk-fac-sci-36469d",
-  "programme_name": "Warwick Statistics Internship Scheme",
-  "organizer": "warwick.ac.uk",
-  "official_url": "https://warwick.ac.uk/fac/sci/statistics/research/internships",
-  "allowed_path_hints": [
-   "fac/sci/statistics/research/internships"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-warwick-ac-uk-research-data-science-0a2997",
-  "programme_id": "research-hub-warwick-ac-uk-research-data-science-0a2997",
-  "programme_name": "DSSGx UK Summer Fellowship",
-  "organizer": "warwick.ac.uk",
-  "official_url": "https://warwick.ac.uk/research/data-science/warwick-data/dssgx",
-  "allowed_path_hints": [
-   "research/data-science/warwick-data/dssgx"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-web-japps-ias-ac-in-fellowship2021-application-instructions-f7fd38",
-  "programme_id": "research-hub-web-japps-ias-ac-in-fellowship2021-application-instructions-f7fd38",
-  "programme_name": "Summer Research Fellowship Programme 2021",
-  "organizer": "web-japps.ias.ac.in",
-  "official_url": "https://web-japps.ias.ac.in:8443/fellowship2021/application_instructions.jsp",
-  "allowed_path_hints": [
-   "fellowship2021/application_instructions.jsp"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-websim-worldquantchallenge-com-en-cms-a7c16f",
-  "programme_id": "research-hub-websim-worldquantchallenge-com-en-cms-a7c16f",
-  "programme_name": "Quantitative Research Summer Internship",
-  "organizer": "websim.worldquantchallenge.com",
-  "official_url": "https://websim.worldquantchallenge.com/en/cms/wqc/summerprograms/india",
-  "allowed_path_hints": [
-   "en/cms/wqc/summerprograms/india"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-8vc-com-fellowships-8396f8",
-  "programme_id": "research-hub-www-8vc-com-fellowships-8396f8",
-  "programme_name": "8VC Fellowship",
-  "organizer": "8vc.com",
-  "official_url": "https://www.8vc.com/fellowships",
-  "allowed_path_hints": [
-   "fellowships"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-aalto-fi-en-aalto-science-institute-asci-b93e55",
-  "programme_id": "research-hub-www-aalto-fi-en-aalto-science-institute-asci-b93e55",
-  "programme_name": "Aalto Science Institute",
-  "organizer": "aalto.fi",
-  "official_url": "https://www.aalto.fi/en/aalto-science-institute-asci/aalto-science-institute-international-summer-research-programme",
-  "allowed_path_hints": [
-   "en/aalto-science-institute-asci/aalto-science-institute-international-summer-research-programme"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-aalto-fi-en-aalto-science-institute-9a782f",
-  "programme_id": "research-hub-www-aalto-fi-en-aalto-science-institute-9a782f",
-  "programme_name": "Aalto Univerity, Finland (",
-  "organizer": "aalto.fi",
-  "official_url": "https://www.aalto.fi/en/aalto-science-institute/aalto-science-institute-asci-internship-programme",
-  "allowed_path_hints": [
-   "en/aalto-science-institute/aalto-science-institute-asci-internship-programme"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-aises-org-content-aire-57a382",
-  "programme_id": "research-hub-www-aises-org-content-aire-57a382",
-  "programme_name": "AISES Increasing awareness and interest in computer science research among 130+ Indigenous undergraduate students across",
-  "organizer": "aises.org",
-  "official_url": "https://www.aises.org/content/aire",
-  "allowed_path_hints": [
-   "content/aire"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-amazon-jobs-jobs-10574677-bf8960",
-  "programme_id": "research-hub-www-amazon-jobs-jobs-10574677-bf8960",
-  "programme_name": "Senior Research Science Manager, Last Mile Science and Analytics",
-  "organizer": "amazon.jobs",
-  "official_url": "https://www.amazon.jobs/jobs/10574677/senior-research-science-manager-last-mile-science-and-analytics?cmpid=bsp-amazon-science",
-  "allowed_path_hints": [
-   "jobs/10574677/senior-research-science-manager-last-mile-science-and-analytics"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-bvp-com-bessemer-fellows-ee2f77",
-  "programme_id": "research-hub-www-bvp-com-bessemer-fellows-ee2f77",
-  "programme_name": "Bessemer Fellowship",
-  "organizer": "bvp.com",
-  "official_url": "https://www.bvp.com/bessemer-fellows",
-  "allowed_path_hints": [
-   "bessemer-fellows"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-cis-mpg-de-internships-23a74a",
-  "programme_id": "research-hub-www-cis-mpg-de-internships-23a74a",
-  "programme_name": "Max Planck Institute for Software Systems",
-  "organizer": "cis.mpg.de",
-  "official_url": "https://www.cis.mpg.de/internships",
-  "allowed_path_hints": [
-   "internships"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-cmi-ac-in-admissions-internships-php-3c84a4",
-  "programme_id": "research-hub-www-cmi-ac-in-admissions-internships-php-3c84a4",
-  "programme_name": "Internhip At CMI",
-  "organizer": "cmi.ac.in",
-  "official_url": "https://www.cmi.ac.in/admissions/internships.php",
-  "allowed_path_hints": [
-   "admissions/internships.php"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-codingitforward-com-fellowship-1a937f",
-  "programme_id": "research-hub-www-codingitforward-com-fellowship-1a937f",
-  "programme_name": "Civic Digital Fellowship",
-  "organizer": "codingitforward.com",
-  "official_url": "https://www.codingitforward.com/fellowship",
-  "allowed_path_hints": [
-   "fellowship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-crg-eu-en-content-04a66c",
-  "programme_id": "research-hub-www-crg-eu-en-content-04a66c",
-  "programme_name": "CRG Summer Internship",
-  "organizer": "crg.eu",
-  "official_url": "https://www.crg.eu/en/content/training-undergraduates/crg-summer-internship-programme",
-  "allowed_path_hints": [
-   "en/content/training-undergraduates/crg-summer-internship-programme"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-cse-gatech-edu-research-cruise-9d9e64",
-  "programme_id": "research-hub-www-cse-gatech-edu-research-cruise-9d9e64",
-  "programme_name": "CRUISE Program",
-  "organizer": "cse.gatech.edu",
-  "official_url": "https://www.cse.gatech.edu/research/cruise",
-  "allowed_path_hints": [
-   "research/cruise"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T13:06:19Z",
-  "last_seen": "2026-10-10T14:04:39Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-research-www-dssgfellowship-org-fde356",
-  "programme_id": "research-hub-www-dssgfellowship-org-fde356",
-  "programme_name": "Data Science for Social Good Fellowship",
-  "organizer": "dssgfellowship.org",
-  "official_url": "https://www.dssgfellowship.org/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-emmabowenfoundation-org-apply-460ba2",
-  "programme_id": "research-hub-www-emmabowenfoundation-org-apply-460ba2",
-  "programme_name": "Emma Bowen Foundation Fellowship",
-  "organizer": "emmabowenfoundation.org",
-  "official_url": "https://www.emmabowenfoundation.org/apply",
-  "allowed_path_hints": [
-   "apply"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-engineering-unsw-edu-au-civil-engineering-study-with-us-e934dd",
-  "programme_id": "research-hub-www-engineering-unsw-edu-au-civil-engineering-study-with-us-e934dd",
-  "programme_name": "UNSW Civil and Environmental Engineering Research Internship",
-  "organizer": "engineering.unsw.edu.au",
-  "official_url": "https://www.engineering.unsw.edu.au/civil-engineering/study-with-us/international-exchange/research-internship-to-unsw-for-international-students",
-  "allowed_path_hints": [
-   "civil-engineering/study-with-us/international-exchange/research-internship-to-unsw-for-international-students"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-ggvc-com-ggv-nextgen-fellow-fd1f5f",
-  "programme_id": "research-hub-www-ggvc-com-ggv-nextgen-fellow-fd1f5f",
-  "programme_name": "GGV NextGen Fellowship",
-  "organizer": "ggvc.com",
-  "official_url": "https://www.ggvc.com/ggv-nextgen-fellow",
-  "allowed_path_hints": [
-   "ggv-nextgen-fellow"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-iiitb-ac-in-summer-internship-04df56",
-  "programme_id": "research-hub-www-iiitb-ac-in-summer-internship-04df56",
-  "programme_name": "IIIT Bangalore",
-  "organizer": "iiitb.ac.in",
-  "official_url": "https://www.iiitb.ac.in/summer-internship",
-  "allowed_path_hints": [
-   "summer-internship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-iiitd-ac-in-placement-internships-434899",
-  "programme_id": "research-hub-www-iiitd-ac-in-placement-internships-434899",
-  "programme_name": "IIITD Summer Intersnhip",
-  "organizer": "iiitd.ac.in",
-  "official_url": "https://www.iiitd.ac.in/placement/internships",
-  "allowed_path_hints": [
-   "placement/internships"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-iiserkol-ac-in-summer-research-1da195",
-  "programme_id": "research-hub-www-iiserkol-ac-in-summer-research-1da195",
-  "programme_name": "IISER Kolkata Summer Student Research Programme",
-  "organizer": "iiserkol.ac.in",
-  "official_url": "https://www.iiserkol.ac.in/~summer.research",
-  "allowed_path_hints": [
-   "~summer.research"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-iitrpr-ac-in-sites-default-51c0e8",
-  "programme_id": "research-hub-www-iitrpr-ac-in-sites-default-51c0e8",
-  "programme_name": "IIT Ropar Summer Internship[ [Information]",
-  "organizer": "iitrpr.ac.in",
-  "official_url": "https://www.iitrpr.ac.in/sites/default/files/Advertisement%20for%20Summer%20Internship%202021.pdf",
-  "allowed_path_hints": [
-   "sites/default/files/Advertisement%20for%20Summer%20Internship%202021.pdf"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-10T14:02:44Z"
- },
- {
-  "source_id": "hub-research-www-impactlabs-io-fellowship-7f1e15",
-  "programme_id": "research-hub-www-impactlabs-io-fellowship-7f1e15",
-  "programme_name": "Impact Labs Fellowship",
-  "organizer": "impactlabs.io",
-  "official_url": "https://www.impactlabs.io/fellowship",
-  "allowed_path_hints": [
-   "fellowship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-inria-fr-en-do-internship-98f222",
-  "programme_id": "research-hub-www-inria-fr-en-do-internship-98f222",
-  "programme_name": "Inria France",
-  "organizer": "inria.fr",
-  "official_url": "https://www.inria.fr/en/do-internship",
-  "allowed_path_hints": [
-   "en/do-internship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-insidesherpa-com-virtual-internships-prototype-17ed83",
-  "programme_id": "research-hub-www-insidesherpa-com-virtual-internships-prototype-17ed83",
-  "programme_name": "Y Combinator",
-  "organizer": "insidesherpa.com",
-  "official_url": "https://www.insidesherpa.com/virtual-internships/prototype/oRMogWRHeewqHzA7u/College-students%3A-Learn-how-to-work-at-a-YC-startup-",
-  "allowed_path_hints": [
-   "virtual-internships/prototype/oRMogWRHeewqHzA7u/College-students%3A-Learn-how-to-work-at-a-YC-startup-"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-insidesherpa-com-virtual-internships-theme-f7570a",
-  "programme_id": "research-hub-www-insidesherpa-com-virtual-internships-theme-f7570a",
-  "programme_name": "KPMG Data Science Virtual Internship",
-  "organizer": "insidesherpa.com",
-  "official_url": "https://www.insidesherpa.com/virtual-internships/theme/m7W4GMqeT3bh9Nb2c/KPMG-Data-Analytics-Virtual-Internship",
-  "allowed_path_hints": [
-   "virtual-internships/theme/m7W4GMqeT3bh9Nb2c/KPMG-Data-Analytics-Virtual-Internship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-internships-yesatyale-org-students-beccb8",
-  "programme_id": "research-hub-www-internships-yesatyale-org-students-beccb8",
-  "programme_name": "YES Internships",
-  "organizer": "internships.yesatyale.org",
-  "official_url": "https://www.internships.yesatyale.org/students",
-  "allowed_path_hints": [
-   "students"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-isical-ac-in-rcbose-internship-f53b91",
-  "programme_id": "research-hub-www-isical-ac-in-rcbose-internship-f53b91",
-  "programme_name": "ISI Kolkata Summer Internship",
-  "organizer": "isical.ac.in",
-  "official_url": "https://www.isical.ac.in/~rcbose/internship/index.html",
-  "allowed_path_hints": [
-   "~rcbose/internship/index.html"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-jpl-nasa-gov-edu-intern-af57b7",
-  "programme_id": "research-hub-www-jpl-nasa-gov-edu-intern-af57b7",
-  "programme_name": "NASA - CalTech Summer Undergraduate Research Fellowship (SURF",
-  "organizer": "jpl.nasa.gov",
-  "official_url": "https://www.jpl.nasa.gov/edu/intern/apply/caltech-summer-undergraduate-research-fellowship",
-  "allowed_path_hints": [
-   "edu/intern/apply/caltech-summer-undergraduate-research-fellowship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-microsoft-com-en-us-research-db263e",
-  "programme_id": "research-hub-www-microsoft-com-en-us-research-db263e",
-  "programme_name": "Fellowships at Microsoft Research Asia",
-  "organizer": "microsoft.com",
-  "official_url": "https://www.microsoft.com/en-us/research/academic-program/fellowships-microsoft-research-asia",
-  "allowed_path_hints": [
-   "en-us/research/academic-program/fellowships-microsoft-research-asia"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-mitacs-ca-en-programs-de62ed",
-  "programme_id": "research-hub-www-mitacs-ca-en-programs-de62ed",
-  "programme_name": "MITACS Gloablink",
-  "organizer": "mitacs.ca",
-  "official_url": "https://www.mitacs.ca/en/programs/globalink/globalink-research-internship",
-  "allowed_path_hints": [
-   "en/programs/globalink/globalink-research-internship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-mitacs-ca-globa-e18074",
-  "programme_id": "research-hub-www-mitacs-ca-globa-e18074",
-  "programme_name": "Mitacs Globalink Research Internships, Canada (",
-  "organizer": "mitacs.ca",
-  "official_url": "https://www.mitacs.ca/\u2026/globa\u2026/globalink-research-internship",
-  "allowed_path_hints": [
-   "\u2026/globa\u2026/globalink-research-internship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-mpi-sws-org-research-careers-8fbefd",
-  "programme_id": "research-hub-www-mpi-sws-org-research-careers-8fbefd",
-  "programme_name": "Max Plack Institute of Software Systems Internship (",
-  "organizer": "mpi-sws.org",
-  "official_url": "https://www.mpi-sws.org/research-careers",
-  "allowed_path_hints": [
-   "research-careers"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-ntu-edu-sg-about-us-global-3828fd",
-  "programme_id": "research-hub-www-ntu-edu-sg-about-us-global-3828fd",
-  "programme_name": "NTU Singapore",
-  "organizer": "ntu.edu.sg",
-  "official_url": "https://www.ntu.edu.sg/about-us/global/global-connect-fellowship/programme-details",
-  "allowed_path_hints": [
-   "about-us/global/global-connect-fellowship/programme-details"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-oist-jp-admissions-research-internship-132f2c",
-  "programme_id": "research-hub-www-oist-jp-admissions-research-internship-132f2c",
-  "programme_name": "OIST",
-  "organizer": "oist.jp",
-  "official_url": "https://www.oist.jp/admissions/research-internship/program-description",
-  "allowed_path_hints": [
-   "admissions/research-internship/program-description"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-postgraduate-study-cam-ac-uk-events-internships-8eaded",
-  "programme_id": "research-hub-www-postgraduate-study-cam-ac-uk-events-internships-8eaded",
-  "programme_name": "Cambridge",
-  "organizer": "postgraduate.study.cam.ac.uk",
-  "official_url": "https://www.postgraduate.study.cam.ac.uk/events/internships",
-  "allowed_path_hints": [
-   "events/internships"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-research-gov-research-web-986731",
-  "programme_id": "research-hub-www-research-gov-research-web-986731",
-  "programme_name": "Research.gov",
-  "organizer": "research.gov",
-  "official_url": "https://www.research.gov/research-web",
-  "allowed_path_hints": [
-   "research-web"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-research-ibm-com-university-awards-9332fe",
-  "programme_id": "research-hub-www-research-ibm-com-university-awards-9332fe",
-  "programme_name": "IBM PhD Fellowship",
-  "organizer": "research.ibm.com",
-  "official_url": "https://www.research.ibm.com/university/awards/fellowships.html",
-  "allowed_path_hints": [
-   "university/awards/fellowships.html"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-rockefeller-edu-education-and-training-surf-ed6797",
-  "programme_id": "research-hub-www-rockefeller-edu-education-and-training-surf-ed6797",
-  "programme_name": "Summer Undergraduate Research fellowship program",
-  "organizer": "rockefeller.edu",
-  "official_url": "https://www.rockefeller.edu/education-and-training/surf",
-  "allowed_path_hints": [
-   "education-and-training/surf"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-santafe-edu-engage-learn-e272ae",
-  "programme_id": "research-hub-www-santafe-edu-engage-learn-e272ae",
-  "programme_name": "Santa Fe Institute Summer Research Experience",
-  "organizer": "santafe.edu",
-  "official_url": "https://www.santafe.edu/engage/learn/programs/undergraduate-complexity-research",
-  "allowed_path_hints": [
-   "engage/learn/programs/undergraduate-complexity-research"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-santafe-edu-engage-learn-e1ef6c",
-  "programme_id": "research-hub-www-santafe-edu-engage-learn-e1ef6c",
-  "programme_name": "Santa Fe Institute Summer Research Experience",
-  "organizer": "santafe.edu",
-  "official_url": "https://www.santafe.edu/engage/learn/schools/research-experiences-undergraduates",
-  "allowed_path_hints": [
-   "engage/learn/schools/research-experiences-undergraduates"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-science-unsw-edu-au-student-life-student-opportunities-2c3d36",
-  "programme_id": "research-hub-www-science-unsw-edu-au-student-life-student-opportunities-2c3d36",
-  "programme_name": "UNSW Research Internship (Australia",
-  "organizer": "science.unsw.edu.au",
-  "official_url": "https://www.science.unsw.edu.au/student-life/student-opportunities/research-internships",
-  "allowed_path_hints": [
-   "student-life/student-opportunities/research-internships"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T14:02:44Z",
-  "last_seen": "2026-10-10T14:02:44Z",
-  "dead_strikes": 1
- },
- {
-  "source_id": "hub-research-www-shastriinstitute-org-shastri-student-internship-project-6141dc",
-  "programme_id": "research-hub-www-shastriinstitute-org-shastri-student-internship-project-6141dc",
-  "programme_name": "Shastri Student Internship Project",
-  "organizer": "shastriinstitute.org",
-  "official_url": "https://www.shastriinstitute.org/Shastri_Student_Internship_Project",
-  "allowed_path_hints": [
-   "Shastri_Student_Internship_Project"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-shastriinstitute-org-shastri-research-student-fellowship-4e27a9",
-  "programme_id": "research-hub-www-shastriinstitute-org-shastri-research-student-fellowship-4e27a9",
-  "programme_name": "Shastri Research Student Fellowship",
-  "organizer": "shastriinstitute.org",
-  "official_url": "https://www.shastriinstitute.org/shastri-research-student-fellowship",
-  "allowed_path_hints": [
-   "shastri-research-student-fellowship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-smithsonianofi-com-fellowship-opportunities-smithsonian-372c41",
-  "programme_id": "research-hub-www-smithsonianofi-com-fellowship-opportunities-smithsonian-372c41",
-  "programme_name": "The Smithsonian Institution Fellowship Program (SIFP)(",
-  "organizer": "smithsonianofi.com",
-  "official_url": "https://www.smithsonianofi.com/fellowship-opportunities/smithsonian-institution-fellowship-program",
-  "allowed_path_hints": [
-   "fellowship-opportunities/smithsonian-institution-fellowship-program"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-sserd-org-internship-e05f59",
-  "programme_id": "research-hub-www-sserd-org-internship-e05f59",
-  "programme_name": "SSERD Research Intern",
-  "organizer": "sserd.org",
-  "official_url": "https://www.sserd.org/internship",
-  "allowed_path_hints": [
-   "internship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-ualberta-ca-admissions-programs-visiting-student-and-int-f66b68",
-  "programme_id": "research-hub-www-ualberta-ca-admissions-programs-visiting-student-and-int-f66b68",
-  "programme_name": "University of Alberta Research Experience",
-  "organizer": "ualberta.ca",
-  "official_url": "https://www.ualberta.ca/admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/how-to-apply.html",
-  "allowed_path_hints": [
-   "admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/how-to-apply.html"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-ualberta-ca-admissions-programs-visiting-student-and-int-ffe209",
-  "programme_id": "research-hub-www-ualberta-ca-admissions-programs-visiting-student-and-int-ffe209",
-  "programme_name": "University of Alberta (",
-  "organizer": "ualberta.ca",
-  "official_url": "https://www.ualberta.ca/admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/important-dates.html",
-  "allowed_path_hints": [
-   "admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/important-dates.html"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-ugc-ac-in-ef-434256",
-  "programme_id": "research-hub-www-ugc-ac-in-ef-434256",
-  "programme_name": "Emeritus fellowship",
-  "organizer": "ugc.ac.in",
-  "official_url": "https://www.ugc.ac.in/ef",
-  "allowed_path_hints": [
-   "ef"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-ugc-ac-in-oldpdf-xiplanpdf-674fcb",
-  "programme_id": "research-hub-www-ugc-ac-in-oldpdf-xiplanpdf-674fcb",
-  "programme_name": "Junior research fellowship in engineering and technology",
-  "organizer": "ugc.ac.in",
-  "official_url": "https://www.ugc.ac.in/oldpdf/xiplanpdf/JRFE-T.pdf",
-  "allowed_path_hints": [
-   "oldpdf/xiplanpdf/JRFE-T.pdf"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-ugc-ac-in-oldpdf-xiplanpdf-a96d55",
-  "programme_id": "research-hub-www-ugc-ac-in-oldpdf-xiplanpdf-a96d55",
-  "programme_name": "UGC research fellowships in science for meritorious students",
-  "organizer": "ugc.ac.in",
-  "official_url": "https://www.ugc.ac.in/oldpdf/xiplanpdf/meritorious%20students.pdf",
-  "allowed_path_hints": [
-   "oldpdf/xiplanpdf/meritorious%20students.pdf"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-ugc-ac-in-oldpdf-xplanpdf-fc020c",
-  "programme_id": "research-hub-www-ugc-ac-in-oldpdf-xplanpdf-fc020c",
-  "programme_name": "Junior research fellowship in science, humanities and social science",
-  "organizer": "ugc.ac.in",
-  "official_url": "https://www.ugc.ac.in/oldpdf/xplanpdf/JRFscience.pdf",
-  "allowed_path_hints": [
-   "oldpdf/xplanpdf/JRFscience.pdf"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:05:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-utep-edu-newsfeed-2022-8801d0",
-  "programme_id": "research-hub-www-utep-edu-newsfeed-2022-8801d0",
-  "programme_name": "CAHSI-Google Institutional Research Program In 2021, Hispanic students earned 6% of Bachelor's degrees in North America",
-  "organizer": "utep.edu",
-  "official_url": "https://www.utep.edu/newsfeed/2022/utep-led-alliance-receives-4.8m-from-google-to-increase-hispanic-participation-in-computing-research.html",
-  "allowed_path_hints": [
-   "newsfeed/2022/utep-led-alliance-receives-4.8m-from-google-to-increase-hispanic-participation-in-computing-research.html"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:38:08Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- },
- {
-  "source_id": "hub-research-www-weizmann-ac-il-feinberg-admissions-c56b6c",
-  "programme_id": "research-hub-www-weizmann-ac-il-feinberg-admissions-c56b6c",
-  "programme_name": "Summer Intern at the Kupcinet Getz International Summer Science School of the Weizmann Institute of Science",
-  "organizer": "weizmann.ac.il",
-  "official_url": "https://www.weizmann.ac.il/feinberg/admissions/kupcinet-getz-international-summer-school/about-program-0",
-  "allowed_path_hints": [
-   "feinberg/admissions/kupcinet-getz-international-summer-school/about-program-0"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-10T14:02:44Z"
- },
- {
-  "source_id": "hub-research-www8-gsb-columbia-edu-programs-pre-doctoral-research-18922c",
-  "programme_id": "research-hub-www8-gsb-columbia-edu-programs-pre-doctoral-research-18922c",
-  "programme_name": "Columbia Buisness Summer Internship",
-  "organizer": "www8.gsb.columbia.edu",
-  "official_url": "https://www8.gsb.columbia.edu/programs/pre-doctoral-research/summer-research-internship",
-  "allowed_path_hints": [
-   "programs/pre-doctoral-research/summer-research-internship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-10T14:04:39Z"
- }
+  {
+    "source_id": "hub-research-eng-en-site-nthu-edu-tw-p-412-1060-3215-php-d15ff3",
+    "programme_id": "research-hub-eng-en-site-nthu-edu-tw-p-412-1060-3215-php-d15ff3",
+    "programme_name": "NTHU Summer Internship Program",
+    "organizer": "eng-en.site.nthu.edu.tw",
+    "official_url": "http://eng-en.site.nthu.edu.tw/p/412-1060-3215.php",
+    "allowed_path_hints": [
+      "p/412-1060-3215.php"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-eng-en-web-nthu-edu-tw-files-14-1130-129169-r1447-1-php-28d01d",
+    "programme_id": "research-hub-eng-en-web-nthu-edu-tw-files-14-1130-129169-r1447-1-php-28d01d",
+    "programme_name": "NTHU Summer Internship Program",
+    "organizer": "eng-en.web.nthu.edu.tw",
+    "official_url": "http://eng-en.web.nthu.edu.tw/files/14-1130-129169,r1447-1.php",
+    "allowed_path_hints": [
+      "files/14-1130-129169,r1447-1.php"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-oga-nthu-edu-tw-news-php-7dbca8",
+    "programme_id": "research-hub-oga-nthu-edu-tw-news-php-7dbca8",
+    "programme_name": "Indian Student Internship Program at NTHU",
+    "organizer": "oga.nthu.edu.tw",
+    "official_url": "http://oga.nthu.edu.tw/news.php?id=233&lang=en",
+    "allowed_path_hints": [
+      "news.php"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-research-nvidia-com-graduate-fellowships-980520",
+    "programme_id": "research-hub-research-nvidia-com-graduate-fellowships-980520",
+    "programme_name": "NVIDIA Graduate Fellowships",
+    "organizer": "research.nvidia.com",
+    "official_url": "http://research.nvidia.com/graduate-fellowships",
+    "allowed_path_hints": [
+      "graduate-fellowships"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-spike-unist-ac-kr-main-main-php-a42b4d",
+    "programme_id": "research-hub-spike-unist-ac-kr-main-main-php-a42b4d",
+    "programme_name": "KAUST Summer Internship",
+    "organizer": "spike.unist.ac.kr",
+    "official_url": "http://spike.unist.ac.kr/main/main.php",
+    "allowed_path_hints": [
+      "main/main.php"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-thielfellowship-org-41d873",
+    "programme_id": "research-hub-thielfellowship-org-41d873",
+    "programme_name": "Thiel Fellowship for young innovators",
+    "organizer": "thielfellowship.org",
+    "official_url": "http://thielfellowship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-web-japps-ias-ac-in-fellowship2018-index-html-c3b573",
+    "programme_id": "research-hub-web-japps-ias-ac-in-fellowship2018-index-html-c3b573",
+    "programme_name": "Summer Research Fellowship Programme 2018",
+    "organizer": "web-japps.ias.ac.in",
+    "official_url": "http://web-japps.ias.ac.in:8080/fellowship2018/index.html",
+    "allowed_path_hints": [
+      "fellowship2018/index.html"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-iitb-ac-in-en-education-b84b9d",
+    "programme_id": "research-hub-www-iitb-ac-in-en-education-b84b9d",
+    "programme_name": "IITB Research Internship Award",
+    "organizer": "iitb.ac.in",
+    "official_url": "http://www.iitb.ac.in/en/education/research-internship",
+    "allowed_path_hints": [
+      "en/education/research-internship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T13:06:19Z",
+    "last_seen": "2026-10-10T15:00:46Z",
+    "dead_strikes": 1
+  },
+  {
+    "source_id": "hub-research-www-iitb-ac-in-en-education-e63d02",
+    "programme_id": "research-hub-www-iitb-ac-in-en-education-e63d02",
+    "programme_name": "IIT Bombay, Research Internship Program (",
+    "organizer": "iitb.ac.in",
+    "official_url": "http://www.iitb.ac.in/en/education/research-internship)(http://www.iitb.ac.in/newacadhome/toTraining.jsp)(https://www.it.iitb.ac.in/summerinternship2020/selectionlist.html",
+    "allowed_path_hints": [
+      "en/education/research-internship)(http://www.iitb.ac.in/newacadhome/toTraining.jsp)(https://www.it.iitb.ac.in/summerinternship2020/selectionlist.html"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-inde-campusfrance-org-en-page-64e379",
+    "programme_id": "research-hub-www-inde-campusfrance-org-en-page-64e379",
+    "programme_name": "Charpak Global Scholarship",
+    "organizer": "inde.campusfrance.org",
+    "official_url": "http://www.inde.campusfrance.org/en/page/charpak-research-internship-program",
+    "allowed_path_hints": [
+      "en/page/charpak-research-internship-program"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-inde-campusfrance-org-charpak-research-interns-986032",
+    "programme_id": "research-hub-www-inde-campusfrance-org-charpak-research-interns-986032",
+    "programme_name": "Charpak Global Scholarship, France (",
+    "organizer": "inde.campusfrance.org",
+    "official_url": "http://www.inde.campusfrance.org/…/charpak-research-interns…",
+    "allowed_path_hints": [
+      "…/charpak-research-interns…"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-ipam-ucla-edu-programs-student-research-programs-609661",
+    "programme_id": "research-hub-www-ipam-ucla-edu-programs-student-research-programs-609661",
+    "programme_name": "IPAM UCLA, RIPS Program",
+    "organizer": "ipam.ucla.edu",
+    "official_url": "http://www.ipam.ucla.edu/programs/student-research-programs",
+    "allowed_path_hints": [
+      "programs/student-research-programs"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-admissions-kaust-edu-sa-study-internships-70c7bd",
+    "programme_id": "research-hub-admissions-kaust-edu-sa-study-internships-70c7bd",
+    "programme_name": "KAUST",
+    "organizer": "admissions.kaust.edu.sa",
+    "official_url": "https://admissions.kaust.edu.sa/study/internships",
+    "allowed_path_hints": [
+      "study/internships"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-admissions-oist-jp-oist-research-internship-program-descript-0aa0b8",
+    "programme_id": "research-hub-admissions-oist-jp-oist-research-internship-program-descript-0aa0b8",
+    "programme_name": "OIST Research Internship Program",
+    "organizer": "admissions.oist.jp",
+    "official_url": "https://admissions.oist.jp/oist-research-internship-program-description",
+    "allowed_path_hints": [
+      "oist-research-internship-program-description"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-ai-google-research-800bdd",
+    "programme_id": "research-hub-ai-google-research-800bdd",
+    "programme_name": "Research",
+    "organizer": "ai.google",
+    "official_url": "https://ai.google/research",
+    "allowed_path_hints": [
+      "research"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-apply-mpi-sws-org-register-internship-c0ea39",
+    "programme_id": "research-hub-apply-mpi-sws-org-register-internship-c0ea39",
+    "programme_name": "Max Planck Institute for Software Systems",
+    "organizer": "apply.mpi-sws.org",
+    "official_url": "https://apply.mpi-sws.org/register/internship",
+    "allowed_path_hints": [
+      "register/internship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-asta-allen-ai-e6214b",
+    "programme_id": "research-hub-asta-allen-ai-e6214b",
+    "programme_name": "Research with Asta",
+    "organizer": "asta.allen.ai",
+    "official_url": "https://asta.allen.ai/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-blog-google-translate-goog-intl-de-de-b11f7e",
+    "programme_id": "research-hub-blog-google-translate-goog-intl-de-de-b11f7e",
+    "programme_name": "Google and TU Munich are investing in cybersecurity research Read blog post",
+    "organizer": "blog-google.translate.goog",
+    "official_url": "https://blog-google.translate.goog/intl/de-de/unternehmen/technologie/google-tu-munchen-tum-investition-cybersecurity-forschung?_x_tr_hl=de&_x_tr_pto=wapp&_x_tr_sl=auto&_x_tr_tl=en",
+    "allowed_path_hints": [
+      "intl/de-de/unternehmen/technologie/google-tu-munchen-tum-investition-cybersecurity-forschung"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-blog-google-technology-research-815346",
+    "programme_id": "research-hub-blog-google-technology-research-815346",
+    "programme_name": "Meet the Ph.D. students changing the face of computing Read blog post",
+    "organizer": "blog.google",
+    "official_url": "https://blog.google/technology/research/meet-phd-students-changing-face-computing",
+    "allowed_path_hints": [
+      "technology/research/meet-phd-students-changing-face-computing"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-blog-google-technology-research-4b0da1",
+    "programme_id": "research-hub-blog-google-technology-research-4b0da1",
+    "programme_name": "Mentorship inspires Deyrel Diaz and future researchers Read blog post",
+    "organizer": "blog.google",
+    "official_url": "https://blog.google/technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers",
+    "allowed_path_hints": [
+      "technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-blog-google-technology-research-0906a3",
+    "programme_id": "research-hub-blog-google-technology-research-0906a3",
+    "programme_name": "Supporting academics working to create positive societal impact with technology Google's T&S Research team collaborates",
+    "organizer": "blog.google",
+    "official_url": "https://blog.google/technology/research/our-first-trust-safety-research-awards-grantees",
+    "allowed_path_hints": [
+      "technology/research/our-first-trust-safety-research-awards-grantees"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-blog-google-technology-research-3e68c2",
+    "programme_id": "research-hub-blog-google-technology-research-3e68c2",
+    "programme_name": "Read blog post",
+    "organizer": "blog.google",
+    "official_url": "https://blog.google/technology/research/rajavi-mishra-becoming-computer-science-researcher",
+    "allowed_path_hints": [
+      "technology/research/rajavi-mishra-becoming-computer-science-researcher"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-careers-pruna-ai-jobs-5116044-working-student-master-thesis-1e15db",
+    "programme_id": "research-hub-careers-pruna-ai-jobs-5116044-working-student-master-thesis-1e15db",
+    "programme_name": "Pruna AI",
+    "organizer": "careers.pruna.ai",
+    "official_url": "https://careers.pruna.ai/jobs/5116044-working-student-master-thesis-internship",
+    "allowed_path_hints": [
+      "jobs/5116044-working-student-master-thesis-internship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-careers-smartrecruiters-com-cern-tech-89e81e",
+    "programme_id": "research-hub-careers-smartrecruiters-com-cern-tech-89e81e",
+    "programme_name": "CERN Technical Internship",
+    "organizer": "careers.smartrecruiters.com",
+    "official_url": "https://careers.smartrecruiters.com/CERN/tech",
+    "allowed_path_hints": [
+      "CERN/tech"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-cohere-com-research-scholars-program-586f4f",
+    "programme_id": "research-hub-cohere-com-research-scholars-program-586f4f",
+    "programme_name": "Cohere",
+    "organizer": "cohere.com",
+    "official_url": "https://cohere.com/research/scholars-program",
+    "allowed_path_hints": [
+      "research/scholars-program"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-deepmind-google-research-13360c",
+    "programme_id": "research-hub-deepmind-google-research-13360c",
+    "programme_name": "Research",
+    "organizer": "deepmind.google",
+    "official_url": "https://deepmind.google/research",
+    "allowed_path_hints": [
+      "research"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-dssg-uchicago-edu-b0d723",
+    "programme_id": "research-hub-dssg-uchicago-edu-b0d723",
+    "programme_name": "The Data Science for Social Good Fellowship",
+    "organizer": "dssg.uchicago.edu",
+    "official_url": "https://dssg.uchicago.edu/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-dst-gov-in-scientific-programmes-scientific-engineering-rese-ef3a17",
+    "programme_id": "research-hub-dst-gov-in-scientific-programmes-scientific-engineering-rese-ef3a17",
+    "programme_name": "Swarnajayanti fellowships scheme",
+    "organizer": "dst.gov.in",
+    "official_url": "https://dst.gov.in/scientific-programmes/scientific-engineering-research/human-resource-development-and-nurturing-young-talent-swarnajayanti-fellowships-scheme",
+    "allowed_path_hints": [
+      "scientific-programmes/scientific-engineering-research/human-resource-development-and-nurturing-young-talent-swarnajayanti-fellowships-scheme"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-ece-duke-edu-undergrad-reu-6b7e1e",
+    "programme_id": "research-hub-ece-duke-edu-undergrad-reu-6b7e1e",
+    "programme_name": "Duke ECE SURP",
+    "organizer": "ece.duke.edu",
+    "official_url": "https://ece.duke.edu/undergrad/reu",
+    "allowed_path_hints": [
+      "undergrad/reu"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-employability-uq-edu-au-summer-winter-research-4d17b6",
+    "programme_id": "research-hub-employability-uq-edu-au-summer-winter-research-4d17b6",
+    "programme_name": "UQ Summer and Winter Research Programme",
+    "organizer": "employability.uq.edu.au",
+    "official_url": "https://employability.uq.edu.au/summer-winter-research",
+    "allowed_path_hints": [
+      "summer-winter-research"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-engineering-nyu-edu-research-student-research-6223bb",
+    "programme_id": "research-hub-engineering-nyu-edu-research-student-research-6223bb",
+    "programme_name": "Hybrid NanoTechnology, New York University",
+    "organizer": "engineering.nyu.edu",
+    "official_url": "https://engineering.nyu.edu/research/student-research/undergraduate-summer-research-program",
+    "allowed_path_hints": [
+      "research/student-research/undergraduate-summer-research-program"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-fellowship-mlh-io-3522d4",
+    "programme_id": "research-hub-fellowship-mlh-io-3522d4",
+    "programme_name": "MLH Fellowship",
+    "organizer": "fellowship.mlh.io",
+    "official_url": "https://fellowship.mlh.io/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-fellowship-mlh-io-programs-explorer-a94585",
+    "programme_id": "research-hub-fellowship-mlh-io-programs-explorer-a94585",
+    "programme_name": "MLH Fellowship",
+    "organizer": "fellowship.mlh.io",
+    "official_url": "https://fellowship.mlh.io/programs/explorer",
+    "allowed_path_hints": [
+      "programs/explorer"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-fellowships-deshaw-com-4da8f0",
+    "programme_id": "research-hub-fellowships-deshaw-com-4da8f0",
+    "programme_name": "DE Shaw & Co Discovery Fellowship",
+    "organizer": "fellowships.deshaw.com",
+    "official_url": "https://fellowships.deshaw.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-fokos-info-en-home-299a9c",
+    "programme_id": "research-hub-fokos-info-en-home-299a9c",
+    "programme_name": "Ludwig Prandtl Internship, Germany (MPIDS) (",
+    "organizer": "fokos.info",
+    "official_url": "https://fokos.info/en/home/stipendium",
+    "allowed_path_hints": [
+      "en/home/stipendium"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-groups-oist-jp-grad-research-interns-638379",
+    "programme_id": "research-hub-groups-oist-jp-grad-research-interns-638379",
+    "programme_name": "OIST Research Internship Program",
+    "organizer": "groups.oist.jp",
+    "official_url": "https://groups.oist.jp/grad/research-interns",
+    "allowed_path_hints": [
+      "grad/research-interns"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-hackny-org-fellows-program-366a74",
+    "programme_id": "research-hub-hackny-org-fellows-program-366a74",
+    "programme_name": "HackNY Fellowship",
+    "organizer": "hackny.org",
+    "official_url": "https://hackny.org/fellows-program",
+    "allowed_path_hints": [
+      "fellows-program"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-huggingface-co-coherelabs-65fbae",
+    "programme_id": "research-hub-huggingface-co-coherelabs-65fbae",
+    "programme_name": "Cohere Labs Hugging Face Space Explore and interact with our models directly on our Hugging Face Space, making AI resear",
+    "organizer": "huggingface.co",
+    "official_url": "https://huggingface.co/CohereLabs",
+    "allowed_path_hints": [
+      "CohereLabs"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-inf-ethz-ch-studies-summer-research-fellowship-html-fc433e",
+    "programme_id": "research-hub-inf-ethz-ch-studies-summer-research-fellowship-html-fc433e",
+    "programme_name": "ETH Zurich",
+    "organizer": "inf.ethz.ch",
+    "official_url": "https://inf.ethz.ch/studies/summer-research-fellowship.html",
+    "allowed_path_hints": [
+      "studies/summer-research-fellowship.html"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-japan-internships-com-9490c4",
+    "programme_id": "research-hub-japan-internships-com-9490c4",
+    "programme_name": "Sakae Japan Internship Program",
+    "organizer": "japan-internships.com",
+    "official_url": "https://japan-internships.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-jobs-cisco-com-jobs-projectdetail-49f5c7",
+    "programme_id": "research-hub-jobs-cisco-com-jobs-projectdetail-49f5c7",
+    "programme_name": "Cisco Summer internship",
+    "organizer": "jobs.cisco.com",
+    "official_url": "https://jobs.cisco.com/jobs/ProjectDetail/Software-Engineer-Bachelor-s-Intern-United-States/1295250?source=Pitt+CSC&tags=CDC+SnNG+students-and-new-graduate-programs",
+    "allowed_path_hints": [
+      "jobs/ProjectDetail/Software-Engineer-Bachelor-s-Intern-United-States/1295250"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-jobs-lever-co-trailofbits-5c836c41-04d0-4f16-8f7d-e3cfdc3319-f2fdf4",
+    "programme_id": "research-hub-jobs-lever-co-trailofbits-5c836c41-04d0-4f16-8f7d-e3cfdc3319-f2fdf4",
+    "programme_name": "Vulnerability Research",
+    "organizer": "jobs.lever.co",
+    "official_url": "https://jobs.lever.co/trailofbits/5c836c41-04d0-4f16-8f7d-e3cfdc33191b",
+    "allowed_path_hints": [
+      "trailofbits/5c836c41-04d0-4f16-8f7d-e3cfdc33191b"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-labs-oracle-com-pls-apex-1ca0e5",
+    "programme_id": "research-hub-labs-oracle-com-pls-apex-1ca0e5",
+    "programme_name": "Oracle",
+    "organizer": "labs.oracle.com",
+    "official_url": "https://labs.oracle.com/pls/apex/r/labs/labs/internships",
+    "allowed_path_hints": [
+      "pls/apex/r/labs/labs/internships"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-mae-osu-edu-riya-5d4581",
+    "programme_id": "research-hub-mae-osu-edu-riya-5d4581",
+    "programme_name": "Research Internship for Young Academics (RIYA) Program",
+    "organizer": "mae.osu.edu",
+    "official_url": "https://mae.osu.edu/RIYA",
+    "allowed_path_hints": [
+      "RIYA"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-nigintern-nig-ac-jp-1e26aa",
+    "programme_id": "research-hub-nigintern-nig-ac-jp-1e26aa",
+    "programme_name": "NIG Summer Internship, JAPAN",
+    "organizer": "nigintern.nig.ac.jp",
+    "official_url": "https://nigintern.nig.ac.jp/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-onlineportal-iitrpr-ac-in-sia-21-b4ebde",
+    "programme_id": "research-hub-onlineportal-iitrpr-ac-in-sia-21-b4ebde",
+    "programme_name": "IIT Ropar Summer Internship",
+    "organizer": "onlineportal.iitrpr.ac.in",
+    "official_url": "https://onlineportal.iitrpr.ac.in/sia-21",
+    "allowed_path_hints": [
+      "sia-21"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T14:02:44Z",
+    "last_seen": "2026-10-10T14:58:45Z",
+    "dead_strikes": 1
+  },
+  {
+    "source_id": "hub-research-onlineportal-iitrpr-ac-in-sia-21-ccb8f4",
+    "programme_id": "research-hub-onlineportal-iitrpr-ac-in-sia-21-ccb8f4",
+    "programme_name": "IIT Ropar Summer Internship, IIT Ropar",
+    "organizer": "onlineportal.iitrpr.ac.in",
+    "official_url": "https://onlineportal.iitrpr.ac.in/sia-21)[",
+    "allowed_path_hints": [
+      "sia-21)["
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T14:02:44Z",
+    "last_seen": "2026-10-10T14:58:45Z",
+    "dead_strikes": 1
+  },
+  {
+    "source_id": "hub-research-pg-ust-hk-prospective-students-programs-6fe9bd",
+    "programme_id": "research-hub-pg-ust-hk-prospective-students-programs-6fe9bd",
+    "programme_name": "IVISP, HKUST",
+    "organizer": "pg.ust.hk",
+    "official_url": "https://pg.ust.hk/prospective-students/programs/short-term-study/international-visiting-internship-student-program",
+    "allowed_path_hints": [
+      "prospective-students/programs/short-term-study/international-visiting-internship-student-program"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T14:04:39Z",
+    "last_seen": "2026-10-10T15:00:46Z",
+    "dead_strikes": 1
+  },
+  {
+    "source_id": "hub-research-programmes-polytechnique-edu-en-exchange-programs-a72684",
+    "programme_id": "research-hub-programmes-polytechnique-edu-en-exchange-programs-a72684",
+    "programme_name": "École Polytechnique",
+    "organizer": "programmes.polytechnique.edu",
+    "official_url": "https://programmes.polytechnique.edu/en/exchange-programs/research-program-for-international-talents/how-to-apply",
+    "allowed_path_hints": [
+      "en/exchange-programs/research-program-for-international-talents/how-to-apply"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
+    "programme_id": "research-hub-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
+    "programme_name": "Adobe India Women-in-Technology Scholarship",
+    "organizer": "research.adobe.com",
+    "official_url": "https://research.adobe.com/adobe-india-women-in-technology-scholarship",
+    "allowed_path_hints": [
+      "adobe-india-women-in-technology-scholarship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-research-fb-com-programs-fellowship-c0478b",
+    "programme_id": "research-hub-research-fb-com-programs-fellowship-c0478b",
+    "programme_name": "The Facebook Fellowship Program",
+    "organizer": "research.fb.com",
+    "official_url": "https://research.fb.com/programs/fellowship",
+    "allowed_path_hints": [
+      "programs/fellowship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-research-google-50efb5",
+    "programme_id": "research-hub-research-google-50efb5",
+    "programme_name": "Google Research Explore our research",
+    "organizer": "research.google",
+    "official_url": "https://research.google/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-researcher-watson-ibm-com-researcher-view-group-subpage-php-e64921",
+    "programme_id": "research-hub-researcher-watson-ibm-com-researcher-view-group-subpage-php-e64921",
+    "programme_name": "IBM Blue Mix",
+    "organizer": "researcher.watson.ibm.com",
+    "official_url": "https://researcher.watson.ibm.com/researcher/view_group_subpage.php?id=8101",
+    "allowed_path_hints": [
+      "researcher/view_group_subpage.php"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-rig-internships-de-b856a1",
+    "programme_id": "research-hub-rig-internships-de-b856a1",
+    "programme_name": "Robotics Institute Germany",
+    "organizer": "rig-internships.de",
+    "official_url": "https://rig-internships.de/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-sfp-caltech-edu-undergraduate-research-programs-08f04d",
+    "programme_id": "research-hub-sfp-caltech-edu-undergraduate-research-programs-08f04d",
+    "programme_name": "CalTech SURF Program",
+    "organizer": "sfp.caltech.edu",
+    "official_url": "https://sfp.caltech.edu/undergraduate-research/programs/surf/application_information",
+    "allowed_path_hints": [
+      "undergraduate-research/programs/surf/application_information"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-sfp-iitm-ac-in-540af5",
+    "programme_id": "research-hub-sfp-iitm-ac-in-540af5",
+    "programme_name": "IITM - Summer Fellowship Programme",
+    "organizer": "sfp.iitm.ac.in",
+    "official_url": "https://sfp.iitm.ac.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-simonsfoundation-wd1-myworkdayjobs-com-en-us-simonsfoundatio-2c149a",
+    "programme_id": "research-hub-simonsfoundation-wd1-myworkdayjobs-com-en-us-simonsfoundatio-2c149a",
+    "programme_name": "Data Visualization Programming Summer Student Internship in New York City",
+    "organizer": "simonsfoundation.wd1.myworkdayjobs.com",
+    "official_url": "https://simonsfoundation.wd1.myworkdayjobs.com/en-US/simonsfoundationcareers/job/162-Fifth-Avenue/Data-Visualization-Intern--SCC_R0000579",
+    "allowed_path_hints": [
+      "en-US/simonsfoundationcareers/job/162-Fifth-Avenue/Data-Visualization-Intern--SCC_R0000579"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-summer-yonsei-ac-kr-home-program-b6ee66",
+    "programme_id": "research-hub-summer-yonsei-ac-kr-home-program-b6ee66",
+    "programme_name": "Research internship @ Yonsei University",
+    "organizer": "summer.yonsei.ac.kr",
+    "official_url": "https://summer.yonsei.ac.kr/home/program/internship02.asp",
+    "allowed_path_hints": [
+      "home/program/internship02.asp"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T14:02:44Z",
+    "last_seen": "2026-10-10T14:58:45Z",
+    "dead_strikes": 1
+  },
+  {
+    "source_id": "hub-research-sure-gatech-edu-apply-400d26",
+    "programme_id": "research-hub-sure-gatech-edu-apply-400d26",
+    "programme_name": "Summer Undergraduate Research in Engineering/Sciences (SURE",
+    "organizer": "sure.gatech.edu",
+    "official_url": "https://sure.gatech.edu/apply",
+    "allowed_path_hints": [
+      "apply"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:25:24Z",
+    "last_seen": "2026-10-10T14:58:45Z"
+  },
+  {
+    "source_id": "hub-research-susaventures-com-summer-fellows-236d23",
+    "programme_id": "research-hub-susaventures-com-summer-fellows-236d23",
+    "programme_name": "Susa Summer Fellowship",
+    "organizer": "susaventures.com",
+    "official_url": "https://susaventures.com/summer-fellows",
+    "allowed_path_hints": [
+      "summer-fellows"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-swiss-sspp-program-phys-ethz-ch-374d1c",
+    "programme_id": "research-hub-swiss-sspp-program-phys-ethz-ch-374d1c",
+    "programme_name": "Swiss Summer Student Particle Physics",
+    "organizer": "swiss.sspp.program.phys.ethz.ch",
+    "official_url": "https://swiss.sspp.program.phys.ethz.ch/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:43:18Z",
+    "last_seen": "2026-10-10T14:58:45Z"
+  },
+  {
+    "source_id": "hub-research-tech-cornell-edu-impact-break-through-tech-ed7e9b",
+    "programme_id": "research-hub-tech-cornell-edu-impact-break-through-tech-ed7e9b",
+    "programme_name": "Break Through Tech AI Fellowship",
+    "organizer": "tech.cornell.edu",
+    "official_url": "https://tech.cornell.edu/impact/break-through-tech/break-through-ai",
+    "allowed_path_hints": [
+      "impact/break-through-tech/break-through-ai"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-tusur-ru-en-research-762ad3",
+    "programme_id": "research-hub-tusur-ru-en-research-762ad3",
+    "programme_name": "TUSUR University",
+    "organizer": "tusur.ru",
+    "official_url": "https://tusur.ru/en/research/research-internships",
+    "allowed_path_hints": [
+      "en/research/research-internships"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
+    "programme_id": "research-hub-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
+    "programme_name": "Summer Research Program, Princeton University",
+    "organizer": "undergraduateresearch.princeton.edu",
+    "official_url": "https://undergraduateresearch.princeton.edu/programs/summer-programs?field_class_year_eligibility_value=Juniors&field_division_value=Engineering&field_princeton_status_eligibili_value=Non-Princeton+undergrads",
+    "allowed_path_hints": [
+      "programs/summer-programs"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-us-redhat-icims-com-jobs-83084-52c799",
+    "programme_id": "research-hub-us-redhat-icims-com-jobs-83084-52c799",
+    "programme_name": "UX Research Internship, Red Hat",
+    "organizer": "us-redhat.icims.com",
+    "official_url": "https://us-redhat.icims.com/jobs/83084/remote-us-nc/job",
+    "allowed_path_hints": [
+      "jobs/83084/remote-us-nc/job"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-warwick-ac-uk-fac-sci-36469d",
+    "programme_id": "research-hub-warwick-ac-uk-fac-sci-36469d",
+    "programme_name": "Warwick Statistics Internship Scheme",
+    "organizer": "warwick.ac.uk",
+    "official_url": "https://warwick.ac.uk/fac/sci/statistics/research/internships",
+    "allowed_path_hints": [
+      "fac/sci/statistics/research/internships"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-warwick-ac-uk-research-data-science-0a2997",
+    "programme_id": "research-hub-warwick-ac-uk-research-data-science-0a2997",
+    "programme_name": "DSSGx UK Summer Fellowship",
+    "organizer": "warwick.ac.uk",
+    "official_url": "https://warwick.ac.uk/research/data-science/warwick-data/dssgx",
+    "allowed_path_hints": [
+      "research/data-science/warwick-data/dssgx"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-web-japps-ias-ac-in-fellowship2021-application-instructions-f7fd38",
+    "programme_id": "research-hub-web-japps-ias-ac-in-fellowship2021-application-instructions-f7fd38",
+    "programme_name": "Summer Research Fellowship Programme 2021",
+    "organizer": "web-japps.ias.ac.in",
+    "official_url": "https://web-japps.ias.ac.in:8443/fellowship2021/application_instructions.jsp",
+    "allowed_path_hints": [
+      "fellowship2021/application_instructions.jsp"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-websim-worldquantchallenge-com-en-cms-a7c16f",
+    "programme_id": "research-hub-websim-worldquantchallenge-com-en-cms-a7c16f",
+    "programme_name": "Quantitative Research Summer Internship",
+    "organizer": "websim.worldquantchallenge.com",
+    "official_url": "https://websim.worldquantchallenge.com/en/cms/wqc/summerprograms/india",
+    "allowed_path_hints": [
+      "en/cms/wqc/summerprograms/india"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-8vc-com-fellowships-8396f8",
+    "programme_id": "research-hub-www-8vc-com-fellowships-8396f8",
+    "programme_name": "8VC Fellowship",
+    "organizer": "8vc.com",
+    "official_url": "https://www.8vc.com/fellowships",
+    "allowed_path_hints": [
+      "fellowships"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-aalto-fi-en-aalto-science-institute-asci-b93e55",
+    "programme_id": "research-hub-www-aalto-fi-en-aalto-science-institute-asci-b93e55",
+    "programme_name": "Aalto Science Institute",
+    "organizer": "aalto.fi",
+    "official_url": "https://www.aalto.fi/en/aalto-science-institute-asci/aalto-science-institute-international-summer-research-programme",
+    "allowed_path_hints": [
+      "en/aalto-science-institute-asci/aalto-science-institute-international-summer-research-programme"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-aalto-fi-en-aalto-science-institute-9a782f",
+    "programme_id": "research-hub-www-aalto-fi-en-aalto-science-institute-9a782f",
+    "programme_name": "Aalto Univerity, Finland (",
+    "organizer": "aalto.fi",
+    "official_url": "https://www.aalto.fi/en/aalto-science-institute/aalto-science-institute-asci-internship-programme",
+    "allowed_path_hints": [
+      "en/aalto-science-institute/aalto-science-institute-asci-internship-programme"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-aises-org-content-aire-57a382",
+    "programme_id": "research-hub-www-aises-org-content-aire-57a382",
+    "programme_name": "AISES Increasing awareness and interest in computer science research among 130+ Indigenous undergraduate students across",
+    "organizer": "aises.org",
+    "official_url": "https://www.aises.org/content/aire",
+    "allowed_path_hints": [
+      "content/aire"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-amazon-jobs-jobs-10574677-bf8960",
+    "programme_id": "research-hub-www-amazon-jobs-jobs-10574677-bf8960",
+    "programme_name": "Senior Research Science Manager, Last Mile Science and Analytics",
+    "organizer": "amazon.jobs",
+    "official_url": "https://www.amazon.jobs/jobs/10574677/senior-research-science-manager-last-mile-science-and-analytics?cmpid=bsp-amazon-science",
+    "allowed_path_hints": [
+      "jobs/10574677/senior-research-science-manager-last-mile-science-and-analytics"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T14:04:39Z"
+  },
+  {
+    "source_id": "hub-research-www-bvp-com-bessemer-fellows-ee2f77",
+    "programme_id": "research-hub-www-bvp-com-bessemer-fellows-ee2f77",
+    "programme_name": "Bessemer Fellowship",
+    "organizer": "bvp.com",
+    "official_url": "https://www.bvp.com/bessemer-fellows",
+    "allowed_path_hints": [
+      "bessemer-fellows"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-cis-mpg-de-internships-23a74a",
+    "programme_id": "research-hub-www-cis-mpg-de-internships-23a74a",
+    "programme_name": "Max Planck Institute for Software Systems",
+    "organizer": "cis.mpg.de",
+    "official_url": "https://www.cis.mpg.de/internships",
+    "allowed_path_hints": [
+      "internships"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-cmi-ac-in-admissions-internships-php-3c84a4",
+    "programme_id": "research-hub-www-cmi-ac-in-admissions-internships-php-3c84a4",
+    "programme_name": "Internhip At CMI",
+    "organizer": "cmi.ac.in",
+    "official_url": "https://www.cmi.ac.in/admissions/internships.php",
+    "allowed_path_hints": [
+      "admissions/internships.php"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-codingitforward-com-fellowship-1a937f",
+    "programme_id": "research-hub-www-codingitforward-com-fellowship-1a937f",
+    "programme_name": "Civic Digital Fellowship",
+    "organizer": "codingitforward.com",
+    "official_url": "https://www.codingitforward.com/fellowship",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-crg-eu-en-content-04a66c",
+    "programme_id": "research-hub-www-crg-eu-en-content-04a66c",
+    "programme_name": "CRG Summer Internship",
+    "organizer": "crg.eu",
+    "official_url": "https://www.crg.eu/en/content/training-undergraduates/crg-summer-internship-programme",
+    "allowed_path_hints": [
+      "en/content/training-undergraduates/crg-summer-internship-programme"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-cse-gatech-edu-research-cruise-9d9e64",
+    "programme_id": "research-hub-www-cse-gatech-edu-research-cruise-9d9e64",
+    "programme_name": "CRUISE Program",
+    "organizer": "cse.gatech.edu",
+    "official_url": "https://www.cse.gatech.edu/research/cruise",
+    "allowed_path_hints": [
+      "research/cruise"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T15:00:46Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-dssgfellowship-org-fde356",
+    "programme_id": "research-hub-www-dssgfellowship-org-fde356",
+    "programme_name": "Data Science for Social Good Fellowship",
+    "organizer": "dssgfellowship.org",
+    "official_url": "https://www.dssgfellowship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-emmabowenfoundation-org-apply-460ba2",
+    "programme_id": "research-hub-www-emmabowenfoundation-org-apply-460ba2",
+    "programme_name": "Emma Bowen Foundation Fellowship",
+    "organizer": "emmabowenfoundation.org",
+    "official_url": "https://www.emmabowenfoundation.org/apply",
+    "allowed_path_hints": [
+      "apply"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-engineering-unsw-edu-au-civil-engineering-study-with-us-e934dd",
+    "programme_id": "research-hub-www-engineering-unsw-edu-au-civil-engineering-study-with-us-e934dd",
+    "programme_name": "UNSW Civil and Environmental Engineering Research Internship",
+    "organizer": "engineering.unsw.edu.au",
+    "official_url": "https://www.engineering.unsw.edu.au/civil-engineering/study-with-us/international-exchange/research-internship-to-unsw-for-international-students",
+    "allowed_path_hints": [
+      "civil-engineering/study-with-us/international-exchange/research-internship-to-unsw-for-international-students"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:25:24Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-ggvc-com-ggv-nextgen-fellow-fd1f5f",
+    "programme_id": "research-hub-www-ggvc-com-ggv-nextgen-fellow-fd1f5f",
+    "programme_name": "GGV NextGen Fellowship",
+    "organizer": "ggvc.com",
+    "official_url": "https://www.ggvc.com/ggv-nextgen-fellow",
+    "allowed_path_hints": [
+      "ggv-nextgen-fellow"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-iiitb-ac-in-summer-internship-04df56",
+    "programme_id": "research-hub-www-iiitb-ac-in-summer-internship-04df56",
+    "programme_name": "IIIT Bangalore",
+    "organizer": "iiitb.ac.in",
+    "official_url": "https://www.iiitb.ac.in/summer-internship",
+    "allowed_path_hints": [
+      "summer-internship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-iiitd-ac-in-placement-internships-434899",
+    "programme_id": "research-hub-www-iiitd-ac-in-placement-internships-434899",
+    "programme_name": "IIITD Summer Intersnhip",
+    "organizer": "iiitd.ac.in",
+    "official_url": "https://www.iiitd.ac.in/placement/internships",
+    "allowed_path_hints": [
+      "placement/internships"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:25:24Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-iiserkol-ac-in-summer-research-1da195",
+    "programme_id": "research-hub-www-iiserkol-ac-in-summer-research-1da195",
+    "programme_name": "IISER Kolkata Summer Student Research Programme",
+    "organizer": "iiserkol.ac.in",
+    "official_url": "https://www.iiserkol.ac.in/~summer.research",
+    "allowed_path_hints": [
+      "~summer.research"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-iitrpr-ac-in-sites-default-51c0e8",
+    "programme_id": "research-hub-www-iitrpr-ac-in-sites-default-51c0e8",
+    "programme_name": "IIT Ropar Summer Internship[ [Information]",
+    "organizer": "iitrpr.ac.in",
+    "official_url": "https://www.iitrpr.ac.in/sites/default/files/Advertisement%20for%20Summer%20Internship%202021.pdf",
+    "allowed_path_hints": [
+      "sites/default/files/Advertisement%20for%20Summer%20Internship%202021.pdf"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:03:34Z",
+    "last_seen": "2026-10-10T14:58:45Z"
+  },
+  {
+    "source_id": "hub-research-www-impactlabs-io-fellowship-7f1e15",
+    "programme_id": "research-hub-www-impactlabs-io-fellowship-7f1e15",
+    "programme_name": "Impact Labs Fellowship",
+    "organizer": "impactlabs.io",
+    "official_url": "https://www.impactlabs.io/fellowship",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-inria-fr-en-do-internship-98f222",
+    "programme_id": "research-hub-www-inria-fr-en-do-internship-98f222",
+    "programme_name": "Inria France",
+    "organizer": "inria.fr",
+    "official_url": "https://www.inria.fr/en/do-internship",
+    "allowed_path_hints": [
+      "en/do-internship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-insidesherpa-com-virtual-internships-prototype-17ed83",
+    "programme_id": "research-hub-www-insidesherpa-com-virtual-internships-prototype-17ed83",
+    "programme_name": "Y Combinator",
+    "organizer": "insidesherpa.com",
+    "official_url": "https://www.insidesherpa.com/virtual-internships/prototype/oRMogWRHeewqHzA7u/College-students%3A-Learn-how-to-work-at-a-YC-startup-",
+    "allowed_path_hints": [
+      "virtual-internships/prototype/oRMogWRHeewqHzA7u/College-students%3A-Learn-how-to-work-at-a-YC-startup-"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-insidesherpa-com-virtual-internships-theme-f7570a",
+    "programme_id": "research-hub-www-insidesherpa-com-virtual-internships-theme-f7570a",
+    "programme_name": "KPMG Data Science Virtual Internship",
+    "organizer": "insidesherpa.com",
+    "official_url": "https://www.insidesherpa.com/virtual-internships/theme/m7W4GMqeT3bh9Nb2c/KPMG-Data-Analytics-Virtual-Internship",
+    "allowed_path_hints": [
+      "virtual-internships/theme/m7W4GMqeT3bh9Nb2c/KPMG-Data-Analytics-Virtual-Internship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-internships-yesatyale-org-students-beccb8",
+    "programme_id": "research-hub-www-internships-yesatyale-org-students-beccb8",
+    "programme_name": "YES Internships",
+    "organizer": "internships.yesatyale.org",
+    "official_url": "https://www.internships.yesatyale.org/students",
+    "allowed_path_hints": [
+      "students"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-isical-ac-in-rcbose-internship-f53b91",
+    "programme_id": "research-hub-www-isical-ac-in-rcbose-internship-f53b91",
+    "programme_name": "ISI Kolkata Summer Internship",
+    "organizer": "isical.ac.in",
+    "official_url": "https://www.isical.ac.in/~rcbose/internship/index.html",
+    "allowed_path_hints": [
+      "~rcbose/internship/index.html"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:25:24Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-jpl-nasa-gov-edu-intern-af57b7",
+    "programme_id": "research-hub-www-jpl-nasa-gov-edu-intern-af57b7",
+    "programme_name": "NASA - CalTech Summer Undergraduate Research Fellowship (SURF",
+    "organizer": "jpl.nasa.gov",
+    "official_url": "https://www.jpl.nasa.gov/edu/intern/apply/caltech-summer-undergraduate-research-fellowship",
+    "allowed_path_hints": [
+      "edu/intern/apply/caltech-summer-undergraduate-research-fellowship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-microsoft-com-en-us-research-db263e",
+    "programme_id": "research-hub-www-microsoft-com-en-us-research-db263e",
+    "programme_name": "Fellowships at Microsoft Research Asia",
+    "organizer": "microsoft.com",
+    "official_url": "https://www.microsoft.com/en-us/research/academic-program/fellowships-microsoft-research-asia",
+    "allowed_path_hints": [
+      "en-us/research/academic-program/fellowships-microsoft-research-asia"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-mitacs-ca-en-programs-de62ed",
+    "programme_id": "research-hub-www-mitacs-ca-en-programs-de62ed",
+    "programme_name": "MITACS Gloablink",
+    "organizer": "mitacs.ca",
+    "official_url": "https://www.mitacs.ca/en/programs/globalink/globalink-research-internship",
+    "allowed_path_hints": [
+      "en/programs/globalink/globalink-research-internship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:25:24Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-mitacs-ca-globa-e18074",
+    "programme_id": "research-hub-www-mitacs-ca-globa-e18074",
+    "programme_name": "Mitacs Globalink Research Internships, Canada (",
+    "organizer": "mitacs.ca",
+    "official_url": "https://www.mitacs.ca/…/globa…/globalink-research-internship",
+    "allowed_path_hints": [
+      "…/globa…/globalink-research-internship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-mpi-sws-org-research-careers-8fbefd",
+    "programme_id": "research-hub-www-mpi-sws-org-research-careers-8fbefd",
+    "programme_name": "Max Plack Institute of Software Systems Internship (",
+    "organizer": "mpi-sws.org",
+    "official_url": "https://www.mpi-sws.org/research-careers",
+    "allowed_path_hints": [
+      "research-careers"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-ntu-edu-sg-about-us-global-3828fd",
+    "programme_id": "research-hub-www-ntu-edu-sg-about-us-global-3828fd",
+    "programme_name": "NTU Singapore",
+    "organizer": "ntu.edu.sg",
+    "official_url": "https://www.ntu.edu.sg/about-us/global/global-connect-fellowship/programme-details",
+    "allowed_path_hints": [
+      "about-us/global/global-connect-fellowship/programme-details"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-oist-jp-admissions-research-internship-132f2c",
+    "programme_id": "research-hub-www-oist-jp-admissions-research-internship-132f2c",
+    "programme_name": "OIST",
+    "organizer": "oist.jp",
+    "official_url": "https://www.oist.jp/admissions/research-internship/program-description",
+    "allowed_path_hints": [
+      "admissions/research-internship/program-description"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-postgraduate-study-cam-ac-uk-events-internships-8eaded",
+    "programme_id": "research-hub-www-postgraduate-study-cam-ac-uk-events-internships-8eaded",
+    "programme_name": "Cambridge",
+    "organizer": "postgraduate.study.cam.ac.uk",
+    "official_url": "https://www.postgraduate.study.cam.ac.uk/events/internships",
+    "allowed_path_hints": [
+      "events/internships"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-research-gov-research-web-986731",
+    "programme_id": "research-hub-www-research-gov-research-web-986731",
+    "programme_name": "Research.gov",
+    "organizer": "research.gov",
+    "official_url": "https://www.research.gov/research-web",
+    "allowed_path_hints": [
+      "research-web"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-research-ibm-com-university-awards-9332fe",
+    "programme_id": "research-hub-www-research-ibm-com-university-awards-9332fe",
+    "programme_name": "IBM PhD Fellowship",
+    "organizer": "research.ibm.com",
+    "official_url": "https://www.research.ibm.com/university/awards/fellowships.html",
+    "allowed_path_hints": [
+      "university/awards/fellowships.html"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-rockefeller-edu-education-and-training-surf-ed6797",
+    "programme_id": "research-hub-www-rockefeller-edu-education-and-training-surf-ed6797",
+    "programme_name": "Summer Undergraduate Research fellowship program",
+    "organizer": "rockefeller.edu",
+    "official_url": "https://www.rockefeller.edu/education-and-training/surf",
+    "allowed_path_hints": [
+      "education-and-training/surf"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-santafe-edu-engage-learn-e272ae",
+    "programme_id": "research-hub-www-santafe-edu-engage-learn-e272ae",
+    "programme_name": "Santa Fe Institute Summer Research Experience",
+    "organizer": "santafe.edu",
+    "official_url": "https://www.santafe.edu/engage/learn/programs/undergraduate-complexity-research",
+    "allowed_path_hints": [
+      "engage/learn/programs/undergraduate-complexity-research"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-santafe-edu-engage-learn-e1ef6c",
+    "programme_id": "research-hub-www-santafe-edu-engage-learn-e1ef6c",
+    "programme_name": "Santa Fe Institute Summer Research Experience",
+    "organizer": "santafe.edu",
+    "official_url": "https://www.santafe.edu/engage/learn/schools/research-experiences-undergraduates",
+    "allowed_path_hints": [
+      "engage/learn/schools/research-experiences-undergraduates"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-science-unsw-edu-au-student-life-student-opportunities-2c3d36",
+    "programme_id": "research-hub-www-science-unsw-edu-au-student-life-student-opportunities-2c3d36",
+    "programme_name": "UNSW Research Internship (Australia",
+    "organizer": "science.unsw.edu.au",
+    "official_url": "https://www.science.unsw.edu.au/student-life/student-opportunities/research-internships",
+    "allowed_path_hints": [
+      "student-life/student-opportunities/research-internships"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T14:02:44Z",
+    "last_seen": "2026-10-10T14:58:45Z",
+    "dead_strikes": 1
+  },
+  {
+    "source_id": "hub-research-www-shastriinstitute-org-shastri-student-internship-project-6141dc",
+    "programme_id": "research-hub-www-shastriinstitute-org-shastri-student-internship-project-6141dc",
+    "programme_name": "Shastri Student Internship Project",
+    "organizer": "shastriinstitute.org",
+    "official_url": "https://www.shastriinstitute.org/Shastri_Student_Internship_Project",
+    "allowed_path_hints": [
+      "Shastri_Student_Internship_Project"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-shastriinstitute-org-shastri-research-student-fellowship-4e27a9",
+    "programme_id": "research-hub-www-shastriinstitute-org-shastri-research-student-fellowship-4e27a9",
+    "programme_name": "Shastri Research Student Fellowship",
+    "organizer": "shastriinstitute.org",
+    "official_url": "https://www.shastriinstitute.org/shastri-research-student-fellowship",
+    "allowed_path_hints": [
+      "shastri-research-student-fellowship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-smithsonianofi-com-fellowship-opportunities-smithsonian-372c41",
+    "programme_id": "research-hub-www-smithsonianofi-com-fellowship-opportunities-smithsonian-372c41",
+    "programme_name": "The Smithsonian Institution Fellowship Program (SIFP)(",
+    "organizer": "smithsonianofi.com",
+    "official_url": "https://www.smithsonianofi.com/fellowship-opportunities/smithsonian-institution-fellowship-program",
+    "allowed_path_hints": [
+      "fellowship-opportunities/smithsonian-institution-fellowship-program"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-sserd-org-internship-e05f59",
+    "programme_id": "research-hub-www-sserd-org-internship-e05f59",
+    "programme_name": "SSERD Research Intern",
+    "organizer": "sserd.org",
+    "official_url": "https://www.sserd.org/internship",
+    "allowed_path_hints": [
+      "internship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-ualberta-ca-admissions-programs-visiting-student-and-int-f66b68",
+    "programme_id": "research-hub-www-ualberta-ca-admissions-programs-visiting-student-and-int-f66b68",
+    "programme_name": "University of Alberta Research Experience",
+    "organizer": "ualberta.ca",
+    "official_url": "https://www.ualberta.ca/admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/how-to-apply.html",
+    "allowed_path_hints": [
+      "admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/how-to-apply.html"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-ualberta-ca-admissions-programs-visiting-student-and-int-ffe209",
+    "programme_id": "research-hub-www-ualberta-ca-admissions-programs-visiting-student-and-int-ffe209",
+    "programme_name": "University of Alberta (",
+    "organizer": "ualberta.ca",
+    "official_url": "https://www.ualberta.ca/admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/important-dates.html",
+    "allowed_path_hints": [
+      "admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/important-dates.html"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-ugc-ac-in-ef-434256",
+    "programme_id": "research-hub-www-ugc-ac-in-ef-434256",
+    "programme_name": "Emeritus fellowship",
+    "organizer": "ugc.ac.in",
+    "official_url": "https://www.ugc.ac.in/ef",
+    "allowed_path_hints": [
+      "ef"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-ugc-ac-in-oldpdf-xiplanpdf-674fcb",
+    "programme_id": "research-hub-www-ugc-ac-in-oldpdf-xiplanpdf-674fcb",
+    "programme_name": "Junior research fellowship in engineering and technology",
+    "organizer": "ugc.ac.in",
+    "official_url": "https://www.ugc.ac.in/oldpdf/xiplanpdf/JRFE-T.pdf",
+    "allowed_path_hints": [
+      "oldpdf/xiplanpdf/JRFE-T.pdf"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-ugc-ac-in-oldpdf-xiplanpdf-a96d55",
+    "programme_id": "research-hub-www-ugc-ac-in-oldpdf-xiplanpdf-a96d55",
+    "programme_name": "UGC research fellowships in science for meritorious students",
+    "organizer": "ugc.ac.in",
+    "official_url": "https://www.ugc.ac.in/oldpdf/xiplanpdf/meritorious%20students.pdf",
+    "allowed_path_hints": [
+      "oldpdf/xiplanpdf/meritorious%20students.pdf"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-ugc-ac-in-oldpdf-xplanpdf-fc020c",
+    "programme_id": "research-hub-www-ugc-ac-in-oldpdf-xplanpdf-fc020c",
+    "programme_name": "Junior research fellowship in science, humanities and social science",
+    "organizer": "ugc.ac.in",
+    "official_url": "https://www.ugc.ac.in/oldpdf/xplanpdf/JRFscience.pdf",
+    "allowed_path_hints": [
+      "oldpdf/xplanpdf/JRFscience.pdf"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-utep-edu-newsfeed-2022-8801d0",
+    "programme_id": "research-hub-www-utep-edu-newsfeed-2022-8801d0",
+    "programme_name": "CAHSI-Google Institutional Research Program In 2021, Hispanic students earned 6% of Bachelor's degrees in North America",
+    "organizer": "utep.edu",
+    "official_url": "https://www.utep.edu/newsfeed/2022/utep-led-alliance-receives-4.8m-from-google-to-increase-hispanic-participation-in-computing-research.html",
+    "allowed_path_hints": [
+      "newsfeed/2022/utep-led-alliance-receives-4.8m-from-google-to-increase-hispanic-participation-in-computing-research.html"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  },
+  {
+    "source_id": "hub-research-www-weizmann-ac-il-feinberg-admissions-c56b6c",
+    "programme_id": "research-hub-www-weizmann-ac-il-feinberg-admissions-c56b6c",
+    "programme_name": "Summer Intern at the Kupcinet Getz International Summer Science School of the Weizmann Institute of Science",
+    "organizer": "weizmann.ac.il",
+    "official_url": "https://www.weizmann.ac.il/feinberg/admissions/kupcinet-getz-international-summer-school/about-program-0",
+    "allowed_path_hints": [
+      "feinberg/admissions/kupcinet-getz-international-summer-school/about-program-0"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:25:24Z",
+    "last_seen": "2026-10-10T14:58:45Z"
+  },
+  {
+    "source_id": "hub-research-www8-gsb-columbia-edu-programs-pre-doctoral-research-18922c",
+    "programme_id": "research-hub-www8-gsb-columbia-edu-programs-pre-doctoral-research-18922c",
+    "programme_name": "Columbia Buisness Summer Internship",
+    "organizer": "www8.gsb.columbia.edu",
+    "official_url": "https://www8.gsb.columbia.edu/programs/pre-doctoral-research/summer-research-internship",
+    "allowed_path_hints": [
+      "programs/pre-doctoral-research/summer-research-internship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:45:01Z",
+    "last_seen": "2026-10-10T15:00:46Z"
+  }
 ]
