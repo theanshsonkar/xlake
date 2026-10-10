@@ -1,54 +1,54 @@
 [
- {
-  "source_id": "hub-community-app-advocu-com-gdg-join-8726e9",
-  "programme_id": "community-hub-app-advocu-com-gdg-join-8726e9",
-  "programme_name": "Lead a GDG",
-  "organizer": "app.advocu.com",
-  "official_url": "https://app.advocu.com/gdg/join",
-  "allowed_path_hints": [
-   "gdg/join"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:37:53Z",
-  "last_seen": "2026-10-10T13:05:55Z"
- },
- {
-  "source_id": "hub-community-discord-com-invite-google-dev-community-8a86f7",
-  "programme_id": "community-hub-discord-com-invite-google-dev-community-8a86f7",
-  "programme_name": "Join now",
-  "organizer": "discord.com",
-  "official_url": "https://discord.com/invite/google-dev-community",
-  "allowed_path_hints": [
-   "invite/google-dev-community"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:37:53Z",
-  "last_seen": "2026-10-10T13:05:55Z"
- },
- {
-  "source_id": "hub-community-github-community-ee8349",
-  "programme_id": "community-hub-github-community-ee8349",
-  "programme_name": "Community Forum",
-  "organizer": "github.community",
-  "official_url": "https://github.community/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-09T20:26:09Z",
-  "last_seen": "2026-10-10T13:05:55Z"
- },
- {
-  "source_id": "hub-community-www-mongodb-com-community-forums-445268",
-  "programme_id": "community-hub-www-mongodb-com-community-forums-445268",
-  "programme_name": "MongoDB support",
-  "organizer": "mongodb.com",
-  "official_url": "https://www.mongodb.com/community/forums/c/academia/students/42",
-  "allowed_path_hints": [
-   "community/forums/c/academia/students/42"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:37:53Z",
-  "last_seen": "2026-10-10T13:05:55Z"
- }
+  {
+    "source_id": "hub-community-app-advocu-com-gdg-join-8726e9",
+    "programme_id": "community-hub-app-advocu-com-gdg-join-8726e9",
+    "programme_name": "Lead a GDG",
+    "organizer": "app.advocu.com",
+    "official_url": "https://app.advocu.com/gdg/join",
+    "allowed_path_hints": [
+      "gdg/join"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:37:53Z",
+    "last_seen": "2026-10-10T14:04:16Z"
+  },
+  {
+    "source_id": "hub-community-discord-com-invite-google-dev-community-8a86f7",
+    "programme_id": "community-hub-discord-com-invite-google-dev-community-8a86f7",
+    "programme_name": "Join now",
+    "organizer": "discord.com",
+    "official_url": "https://discord.com/invite/google-dev-community",
+    "allowed_path_hints": [
+      "invite/google-dev-community"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:37:53Z",
+    "last_seen": "2026-10-10T14:04:16Z"
+  },
+  {
+    "source_id": "hub-community-github-community-ee8349",
+    "programme_id": "community-hub-github-community-ee8349",
+    "programme_name": "Community Forum",
+    "organizer": "github.community",
+    "official_url": "https://github.community/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:26:09Z",
+    "last_seen": "2026-10-10T14:04:16Z"
+  },
+  {
+    "source_id": "hub-community-www-mongodb-com-community-forums-445268",
+    "programme_id": "community-hub-www-mongodb-com-community-forums-445268",
+    "programme_name": "MongoDB support",
+    "organizer": "mongodb.com",
+    "official_url": "https://www.mongodb.com/community/forums/c/academia/students/42",
+    "allowed_path_hints": [
+      "community/forums/c/academia/students/42"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:37:53Z",
+    "last_seen": "2026-10-10T14:04:16Z"
+  }
 ]
