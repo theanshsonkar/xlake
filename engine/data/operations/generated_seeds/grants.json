@@ -10,7 +10,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-www-sfari-org-0356fe",
@@ -23,7 +23,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-a16z-com-supporting-the-open-source-ai-community-c5ee66",
@@ -36,7 +36,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-aigrant-org-70110f",
@@ -49,7 +49,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-asntech-github-io-postdoc-funding-schemes-b27a74",
@@ -62,7 +62,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-awesome-re-badge-svg-https-awesome-re-a70360",
@@ -75,7 +75,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-blog-sentry-io-2019-01-1abbd0",
+    "programme_id": "grants-hub-blog-sentry-io-2019-01-1abbd0",
+    "programme_name": "Sentry Open Source Grant",
+    "organizer": "blog.sentry.io",
+    "official_url": "https://blog.sentry.io/2019/01/29/apply-sentry-open-source-grant",
+    "allowed_path_hints": [
+      "2019/01/29/apply-sentry-open-source-grant"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-bssw-io-pages-bssw-fellowship-program-037614",
@@ -88,7 +101,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-chanzuckerberg-com-rfa-essential-open-source-software-for-sc-20a56f",
+    "programme_id": "grants-hub-chanzuckerberg-com-rfa-essential-open-source-software-for-sc-20a56f",
+    "programme_name": "Chan-Zuckerberg Initiative grant program for open source software in science",
+    "organizer": "chanzuckerberg.com",
+    "official_url": "https://chanzuckerberg.com/rfa/essential-open-source-software-for-science",
+    "allowed_path_hints": [
+      "rfa/essential-open-source-software-for-science"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-datascience-nih-gov-data-scholars-2021-3a9770",
@@ -101,7 +127,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-ebpf-foundation-ebpf-foundation-announces-inaugural-communit-6b02eb",
+    "programme_id": "grants-hub-ebpf-foundation-ebpf-foundation-announces-inaugural-communit-6b02eb",
+    "programme_name": "eBPF Fellowship",
+    "organizer": "ebpf.foundation",
+    "official_url": "https://ebpf.foundation/ebpf-foundation-announces-inaugural-community-advocacy-fellowship-recipients",
+    "allowed_path_hints": [
+      "ebpf-foundation-announces-inaugural-community-advocacy-fellowship-recipients"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-ecrcentral-org-fundings-bffd7b",
@@ -114,7 +153,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-fal-ai-grants-4f4304",
@@ -127,7 +166,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-fellowship-mlh-com-f5df6d",
@@ -140,7 +179,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-fossunited-org-grants-fellowships-889299",
+    "programme_id": "grants-hub-fossunited-org-grants-fellowships-889299",
+    "programme_name": "FOSS United Fellowships",
+    "organizer": "fossunited.org",
+    "official_url": "https://fossunited.org/grants/fellowships",
+    "allowed_path_hints": [
+      "grants/fellowships"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-foundation-mozilla-org-en-what-we-fund-0f89fa",
@@ -153,7 +205,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-futo-org-grants-d574a8",
+    "programme_id": "grants-hub-futo-org-grants-d574a8",
+    "programme_name": "FUTO Grants",
+    "organizer": "futo.org",
+    "official_url": "https://futo.org/grants",
+    "allowed_path_hints": [
+      "grants"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-futo-tech-grants-f1fa7b",
@@ -166,7 +231,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-gem-coop-fellowship-008a42",
+    "programme_id": "grants-hub-gem-coop-fellowship-008a42",
+    "programme_name": "Gem Fellowship",
+    "organizer": "gem.coop",
+    "official_url": "https://gem.coop/fellowship",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-github-blog-2021-09-12-recipients-open-source-grants-github-e1188f",
@@ -179,7 +257,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-gradient-ai-research-grant-10397f",
@@ -192,7 +270,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-grants-nih-gov-news-virtual-learning-5651df",
@@ -205,7 +283,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-handshake-org-9006fd",
+    "programme_id": "grants-hub-handshake-org-9006fd",
+    "programme_name": "Handshake community grant program",
+    "organizer": "handshake.org",
+    "official_url": "https://handshake.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-huggingface-co-docs-hub-89740a",
@@ -218,7 +309,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-interledger-org-ambassadors-4734ae",
@@ -231,7 +322,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-lambda-ai-research-666b3c",
@@ -244,7 +335,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-landing-hostkey-com-grant-for-scientific-projects-formhtml-574f04",
@@ -257,7 +348,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-programs-c369c9",
@@ -270,7 +361,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-start-a3a9f2",
@@ -283,7 +374,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-metamaskgrants-org-c19df3",
@@ -296,7 +387,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-nebius-com-nebius-research-credits-program-0e0c65",
@@ -309,7 +400,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-nsfpolicyoutreach-com-resource-center-eeef20",
@@ -322,7 +413,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-numfocus-org-programs-small-development-grants-edce9e",
@@ -335,7 +426,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-ocean-sagepub-com-concept-grants-7556d8",
@@ -348,7 +439,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-research-cisco-com-open-rfps-af03de",
@@ -361,7 +452,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-research-google-outreach-4be4f7",
@@ -374,7 +465,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-research-google-programs-and-events-d69832",
@@ -387,7 +478,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-research-google-programs-and-events-phd-fellowship-62693b",
@@ -400,7 +491,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-researchtraining-nih-gov-a2586a",
@@ -413,7 +504,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-sequoiacap-com-1b378a",
+    "programme_id": "grants-hub-sequoiacap-com-1b378a",
+    "programme_name": "Sequoia Open Source Fellowship _agnostic_, global active Sequoia Capital (USA)",
+    "organizer": "sequoiacap.com",
+    "official_url": "https://sequoiacap.com/)|",
+    "allowed_path_hints": [
+      ")|"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-sloan-org-grants-apply-005a70",
@@ -426,7 +530,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-solana-org-grants-9b8f39",
@@ -439,7 +543,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-sovereigntechfund-de-programs-fellowship-88c835",
@@ -452,7 +556,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-thielfellowship-org-ff5410",
@@ -465,7 +569,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-trelis-com-trelis-ai-grants-f363b0",
@@ -478,7 +582,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-web3-foundation-4fccff",
@@ -491,7 +595,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-www-amazon-science-research-awards-32ca5b",
@@ -504,7 +608,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-www-cisco-com-c-en-9d3093",
@@ -517,7 +621,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-www-djangoproject-com-fundraising-a31e85",
+    "programme_id": "grants-hub-www-djangoproject-com-fundraising-a31e85",
+    "programme_name": "Django Fellowship Program",
+    "organizer": "djangoproject.com",
+    "official_url": "https://www.djangoproject.com/fundraising",
+    "allowed_path_hints": [
+      "fundraising"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-www-isocfoundation-org-grant-programme-research-grant-progra-9dc2f6",
@@ -530,7 +647,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-www-mozilla-org-en-us-moss-351f7e",
+    "programme_id": "grants-hub-www-mozilla-org-en-us-moss-351f7e",
+    "programme_name": "Mozilla Open Source Support Awards",
+    "organizer": "mozilla.org",
+    "official_url": "https://www.mozilla.org/en-US/moss",
+    "allowed_path_hints": [
+      "en-US/moss"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-www-nsf-gov-publications-pub-summ-jsp-cb70d4",
@@ -543,7 +673,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-www-nsf-gov-pubs-2018-86e04c",
@@ -556,7 +686,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-www-nsf-gov-pubs-2019-4eb61e",
@@ -569,7 +699,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-www-scaleway-com-en-startup-program-1d7dd5",
@@ -582,7 +712,59 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-www-sequoiacap-com-oss-ba455f",
+    "programme_id": "grants-hub-www-sequoiacap-com-oss-ba455f",
+    "programme_name": "Sequoia Open Source Fellowship",
+    "organizer": "sequoiacap.com",
+    "official_url": "https://www.sequoiacap.com/oss",
+    "allowed_path_hints": [
+      "oss"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-www-sequoiacap-com-oss-9a2815",
+    "programme_id": "grants-hub-www-sequoiacap-com-oss-9a2815",
+    "programme_name": "Sequoia Open Source Fellowship](https://sequoiacap.com/) URL",
+    "organizer": "sequoiacap.com",
+    "official_url": "https://www.sequoiacap.com/oss/)|",
+    "allowed_path_hints": [
+      "oss/)|"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-www-software-ac-uk-programmes-research-software-maintenance-b30ef4",
+    "programme_id": "grants-hub-www-software-ac-uk-programmes-research-software-maintenance-b30ef4",
+    "programme_name": "Research Software Maintenance Fund",
+    "organizer": "software.ac.uk",
+    "official_url": "https://www.software.ac.uk/programmes/research-software-maintenance-fund",
+    "allowed_path_hints": [
+      "programmes/research-software-maintenance-fund"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
+  },
+  {
+    "source_id": "hub-grants-www-sovereign-tech-programs-fellowship-abcb25",
+    "programme_id": "grants-hub-www-sovereign-tech-programs-fellowship-abcb25",
+    "programme_name": "Sovereign Tech Fellowship",
+    "organizer": "sovereign.tech",
+    "official_url": "https://www.sovereign.tech/programs/fellowship",
+    "allowed_path_hints": [
+      "programs/fellowship"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T11:55:07Z",
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-www-sovereign-tech-programs-fund-f6867d",
@@ -595,7 +777,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-www-together-ai-forms-research-credits-program-request-26ae19",
@@ -608,7 +790,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-www-top10vpn-com-research-grant-d51033",
@@ -621,7 +803,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-youtu-be-iuiayvggfza-e22e6e",
@@ -634,7 +816,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   },
   {
     "source_id": "hub-grants-zcashcommunitygrants-org-e2d75a",
@@ -647,6 +829,6 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:04:00Z",
-    "last_seen": "2026-10-10T09:43:44Z"
+    "last_seen": "2026-10-10T11:55:07Z"
   }
 ]
