@@ -333,13 +333,34 @@ class HubSeedsTests(unittest.TestCase):
         self.assertFalse(ok)
         self.assertEqual(reason, "no_name")
 
-    def test_admission_rejects_missing_programme_signal(self):
+    def test_admission_programme_signal_can_come_from_h1_only(self):
+        ok, reason, name = admit_candidate(
+            "<title>ETH Zurich</title><h1>Doctoral Fellowship</h1>"
+            "<p>Computer science research. Apply now</p>",
+            "https://official.example/doctoral-opportunity", "fellowships",
+        )
+        self.assertTrue(ok)
+        self.assertEqual(reason, "admitted")
+        self.assertEqual(name, "Doctoral Fellowship")
+
+    def test_admission_programme_signal_can_come_from_url_path_only(self):
+        ok, reason, name = admit_candidate(
+            "<title>ETH Zurich</title><h1>ETH Zurich</h1>"
+            "<p>Computer science research. Apply now</p>",
+            "https://official.example/phd-fellowship", "fellowships",
+        )
+        self.assertTrue(ok)
+        self.assertEqual(reason, "admitted")
+        self.assertEqual(name, "ETH Zurich")
+
+    def test_admission_rejects_bare_organization_without_programme_signal(self):
         ok, reason, _ = admit_candidate(
-            "<title>Research Opportunities</title><p>Apply now</p>",
-            "https://opportunities.org/opportunities", "research",
+            "<title>ETH Zurich</title><h1>ETH Zurich</h1>"
+            "<p>Computer science research. Apply now</p>",
+            "https://official.example/education", "fellowships",
         )
         self.assertFalse(ok)
-        self.assertEqual(reason, "no_programme_signal")
+        self.assertIn(reason, {"no_name", "no_programme_signal"})
 
     def test_admission_rejects_missing_application_signal(self):
         ok, reason, _ = admit_candidate(

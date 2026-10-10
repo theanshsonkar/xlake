@@ -59,6 +59,7 @@ COMMUNITY_TERMS = re.compile(COMMUNITY_SPECIFIC_NOUN_PATTERN, re.IGNORECASE)
 REPO_ROOT = Path(__file__).resolve().parents[2]
 GENERATED_SEEDS_ENV = "XLAKE_GENERATED_SEEDS_DIR"
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "engine" / "data" / "operations" / "generated_seeds"
+GENERATED_SEEDS_ENV = "XLAKE_GENERATED_SEEDS_DIR"
 GENERIC_NAMES = frozenset({
     "apply", "apply now", "learn more", "read more", "more", "website",
     "click here", "here", "link", "home", "visit", "visit site", "details",
@@ -476,12 +477,27 @@ def admit_candidate(
                 return_name = name
                 break
     if not return_name:
+        try:
+            path_text = urlparse.urlsplit(url).path or ""
+        except (TypeError, ValueError):
+            path_text = ""
+        if _has_admission_programme_signal_for_category(path_text, category):
+            for raw, name in candidates:
+                if _admission_name_passes(raw, name, require_noun=False):
+                    return_name = name
+                    break
+    if not return_name:
         return False, "no_name", ""
 
     visible = pagetext.to_text(html or "")
-    header_text = " ".join((page.title, page.h1))
+    header_text = " ".join((page.title, page.og_title, page.h1))
+    try:
+        path_text = urlparse.urlsplit(url).path or ""
+    except (TypeError, ValueError):
+        path_text = ""
     page_evidence = _admission_has_page_programme_evidence(return_name, visible)
     if (not _has_admission_programme_signal_for_category(header_text, category)
+            and not _has_admission_programme_signal_for_category(path_text, category)
             and not page_evidence):
         return False, "no_programme_signal", ""
     page_text = " ".join(filter(None, (page.title, page.og_title, page.h1, visible)))
@@ -856,7 +872,7 @@ def _static_seeds(category: str) -> Tuple[Dict, ...]:
             os.environ[GENERATED_SEEDS_ENV] = previous
 
 
-def _capped_candidates(candidates, hubs, cap: int):
+def _capped_candidates(candidates, hubs, cap: int, github_cap: Optional[int] = None):
     if cap <= 0:
         return []
     hub_caps = {}
@@ -865,7 +881,9 @@ def _capped_candidates(candidates, hubs, cap: int):
             host = (urlparse.urlsplit(str(hub["url"])).hostname or "").casefold().rstrip(".")
         except (TypeError, ValueError):
             host = ""
-        hub_caps[str(hub["hub_id"])] = 150 if host == "github.com" else cap
+        hub_caps[str(hub["hub_id"])] = (
+            github_cap if github_cap is not None else 150
+        ) if host == "github.com" else cap
     positions: Dict[str, Dict[str, int]] = {str(hub["hub_id"]): {} for hub in hubs}
     for candidate in candidates:
         for hub_id in candidate.memberships:
@@ -1052,12 +1070,19 @@ def generate(
         print("hub seed generation: skipping {}: {}".format(category, exc), file=sys.stderr)
         LAST_GENERATE_STATS = {"category": category, "hubs_loaded": 0, "candidates_found": 0, "seeds_generated": 0, "error": str(exc)}
         return []
-    client = fetcher or research_harvest.Fetcher()
+    client = fetcher or research_harvest.Fetcher(
+        request_cap=400 if category == "fellowships" else None,
+        request_host_cap=40 if category == "fellowships" else None,
+    )
     terms, authoritative = _policy(category)
     discovered, states, reasons, counts, failures, blocks = research_harvest.discover_candidates(
         hubs, client, candidate_terms=terms, authoritative_same_origin=authoritative
     )
-    capped = _capped_candidates(discovered, hubs, per_hub_cap)
+    capped = _capped_candidates(
+        discovered, hubs,
+        400 if category == "fellowships" else per_hub_cap,
+        github_cap=400 if category == "fellowships" else None,
+    )
     max_total = 300 if category in DIRECTORY_CATEGORIES else 200
     candidate_dicts = _candidate_dicts(capped, hubs)
     seeds = candidates_to_seeds(
@@ -1083,19 +1108,22 @@ def generate(
         for hub in hubs
     ]
     routed_research = list(LAST_ROUTED_RESEARCH_SEEDS)
+    rejection_counts = dict(LAST_SEED_GATE_REJECTIONS)
     LAST_GENERATE_STATS = {
         "category": category,
         "hubs_loaded": len(hubs),
         "raw_candidates_found": len(discovered),
         "candidates_found": len(capped),
+        "cap_skipped": max(0, len(discovered) - len(capped)),
         "seeds_generated": len(seeds),
+        "admitted_titles": [seed.get("programme_name", "") for seed in seeds],
         "hub_states": states,
         "hub_reasons": reasons,
         "hub_candidate_counts": counts,
         "hub_failures": failures,
         "hub_blocks": blocks,
         "http_requests": getattr(client, "total_requests", None),
-        "rejections_by_reason": dict(LAST_SEED_GATE_REJECTIONS),
+        "rejections_by_reason": rejection_counts,
         "routed_research": len(routed_research),
         "hub_stats": hub_stats,
     }
