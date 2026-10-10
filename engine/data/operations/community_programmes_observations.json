@@ -2223,5 +2223,419 @@
   "result": "failed",
   "state": "failed",
   "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "community-aws-community-builders",
+  "programme_id": "community-aws-community-builders",
+  "official_url": "https://aws.amazon.com/developer/community/community-builders/",
+  "checked_at": "2026-10-10T14:41:58+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The AWS Community Builders program offers technical resources, education, and networking opportunities to AWS technical enthusiasts and emerging thought leaders who are passionate about sharing knowledge and connecting with the technical community.",
+    "url": "https://aws.amazon.com/developer/community/community-builders/"
+   },
+   "programme_name": {
+    "quote": "AWS Community Builders",
+    "url": "https://aws.amazon.com/developer/community/community-builders/"
+   },
+   "organizer": {
+    "quote": "Amazon Web Services",
+    "url": "https://aws.amazon.com/developer/community/community-builders/"
+   },
+   "official_url": {
+    "quote": "https://aws.amazon.com/developer/community/community-builders/",
+    "url": "https://aws.amazon.com/developer/community/community-builders/"
+   }
+  }
+ },
+ {
+  "source_id": "community-aws-cloud-clubs",
+  "programme_id": "community-aws-cloud-clubs",
+  "official_url": "https://aws.amazon.com/developer/community/students/cloudclubs/",
+  "checked_at": "2026-10-10T14:42:01+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Check out our FAQs for more information on the program and leadership.",
+    "url": "https://aws.amazon.com/developer/community/students/cloudclubs/"
+   },
+   "programme_name": {
+    "quote": "AWS Cloud Clubs",
+    "url": "https://aws.amazon.com/developer/community/students/cloudclubs/"
+   },
+   "organizer": {
+    "quote": "Amazon Web Services",
+    "url": "https://aws.amazon.com/developer/community/students/cloudclubs/"
+   },
+   "official_url": {
+    "quote": "https://aws.amazon.com/developer/community/students/cloudclubs/",
+    "url": "https://aws.amazon.com/developer/community/students/cloudclubs/"
+   }
+  }
+ },
+ {
+  "source_id": "community-google-developer-experts",
+  "programme_id": "community-google-developer-experts",
+  "official_url": "https://developers.google.com/community/experts",
+  "checked_at": "2026-10-10T14:42:03+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Google Developer Experts (GDE) program is a global community of experienced developers who love to share their knowledge and passion with others.",
+    "url": "https://developers.google.com/community/experts"
+   },
+   "programme_name": {
+    "quote": "Google Developer Experts",
+    "url": "https://developers.google.com/community/experts"
+   },
+   "organizer": {
+    "quote": "Google",
+    "url": "https://developers.google.com/community/experts"
+   },
+   "official_url": {
+    "quote": "https://developers.google.com/community/experts",
+    "url": "https://developers.google.com/community/experts"
+   }
+  }
+ },
+ {
+  "source_id": "community-women-techmakers-ambassadors",
+  "programme_id": "community-women-techmakers-ambassadors",
+  "official_url": "https://developers.google.com/womentechmakers/ambassadors",
+  "checked_at": "2026-10-10T14:42:06+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications are closed and expected to open in May.",
+    "url": "https://developers.google.com/womentechmakers/ambassadors"
+   }
+  }
+ },
+ {
+  "source_id": "community-microsoft-learn-student-ambassadors",
+  "programme_id": "community-microsoft-learn-student-ambassadors",
+  "official_url": "https://mvp.microsoft.com/studentambassadors",
+  "checked_at": "2026-10-10T14:42:06+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "community-microsoft-mvp",
+  "programme_id": "community-microsoft-mvp",
+  "official_url": "https://mvp.microsoft.com/",
+  "checked_at": "2026-10-10T14:42:08+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "community-github-campus-experts",
+  "programme_id": "community-github-campus-experts",
+  "official_url": "https://education.github.com/experts",
+  "checked_at": "2026-10-10T14:42:09+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "GitHub Campus Experts",
+    "url": "https://education.github.com/experts"
+   },
+   "organizer": {
+    "quote": "GitHub",
+    "url": "https://education.github.com/experts"
+   },
+   "official_url": {
+    "quote": "https://education.github.com/experts",
+    "url": "https://education.github.com/experts"
+   }
+  }
+ },
+ {
+  "source_id": "community-github-stars",
+  "programme_id": "community-github-stars",
+  "official_url": "https://stars.github.com/",
+  "checked_at": "2026-10-10T14:42:10+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Recognize and lift up the people who inspire and educate your communities with the GitHub Stars program.",
+    "url": "https://stars.github.com/"
+   },
+   "programme_name": {
+    "quote": "GitHub Stars",
+    "url": "https://stars.github.com/"
+   },
+   "organizer": {
+    "quote": "GitHub",
+    "url": "https://stars.github.com/"
+   },
+   "official_url": {
+    "quote": "https://stars.github.com/",
+    "url": "https://stars.github.com/"
+   }
+  }
+ },
+ {
+  "source_id": "community-postman-student-program",
+  "programme_id": "community-postman-student-program",
+  "official_url": "https://www.postman.com/company/student-program/",
+  "checked_at": "2026-10-10T14:42:12+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Postman Student Program",
+    "url": "https://www.postman.com/company/student-program/"
+   },
+   "organizer": {
+    "quote": "Postman",
+    "url": "https://www.postman.com/company/student-program/"
+   },
+   "official_url": {
+    "quote": "https://www.postman.com/company/student-program/",
+    "url": "https://www.postman.com/company/student-program/"
+   }
+  }
+ },
+ {
+  "source_id": "community-docker-captains",
+  "programme_id": "community-docker-captains",
+  "official_url": "https://www.docker.com/community/captains/",
+  "checked_at": "2026-10-10T14:42:16+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Join the Docker Captains Program.",
+    "url": "https://www.docker.com/community/captains/"
+   },
+   "programme_name": {
+    "quote": "Docker Captains",
+    "url": "https://www.docker.com/community/captains/"
+   },
+   "organizer": {
+    "quote": "Docker",
+    "url": "https://www.docker.com/community/captains/"
+   },
+   "official_url": {
+    "quote": "https://www.docker.com/community/captains/",
+    "url": "https://www.docker.com/community/captains/"
+   }
+  }
+ },
+ {
+  "source_id": "community-cncf-ambassadors",
+  "programme_id": "community-cncf-ambassadors",
+  "official_url": "https://www.cncf.io/people/ambassadors/",
+  "checked_at": "2026-10-10T14:42:18+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Watch our free online programs for the latest insights into cloud native technologies and projects.",
+    "url": "https://www.cncf.io/people/ambassadors/"
+   },
+   "programme_name": {
+    "quote": "CNCF Ambassadors",
+    "url": "https://www.cncf.io/people/ambassadors/"
+   },
+   "organizer": {
+    "quote": "Cloud Native Computing Foundation",
+    "url": "https://www.cncf.io/people/ambassadors/"
+   },
+   "official_url": {
+    "quote": "https://www.cncf.io/people/ambassadors/",
+    "url": "https://www.cncf.io/people/ambassadors/"
+   }
+  }
+ },
+ {
+  "source_id": "community-twilio-champions",
+  "programme_id": "community-twilio-champions",
+  "official_url": "https://www.twilio.com/en-us/champions",
+  "checked_at": "2026-10-10T14:42:21+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Twilio Champions program recognizes expert developers from all over the world who actively:.",
+    "url": "https://www.twilio.com/en-us/champions"
+   },
+   "programme_name": {
+    "quote": "Twilio Champions",
+    "url": "https://www.twilio.com/en-us/champions"
+   },
+   "organizer": {
+    "quote": "Twilio",
+    "url": "https://www.twilio.com/en-us/champions"
+   },
+   "official_url": {
+    "quote": "https://www.twilio.com/en-us/champions",
+    "url": "https://www.twilio.com/en-us/champions"
+   }
+  }
+ },
+ {
+  "source_id": "community-mongodb-champions",
+  "programme_id": "community-mongodb-champions",
+  "official_url": "https://www.mongodb.com/community/champions",
+  "checked_at": "2026-10-10T14:42:21+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Start by applying for our Creators Program.",
+    "url": "https://www.mongodb.com/community/champions"
+   },
+   "programme_name": {
+    "quote": "MongoDB Champions",
+    "url": "https://www.mongodb.com/community/champions"
+   },
+   "organizer": {
+    "quote": "MongoDB",
+    "url": "https://www.mongodb.com/community/champions"
+   },
+   "official_url": {
+    "quote": "https://www.mongodb.com/community/champions",
+    "url": "https://www.mongodb.com/community/champions"
+   }
+  }
+ },
+ {
+  "source_id": "community-gitlab-heroes",
+  "programme_id": "community-gitlab-heroes",
+  "official_url": "https://about.gitlab.com/community/heroes/",
+  "checked_at": "2026-10-10T14:42:22+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "community-grafana-champions",
+  "programme_id": "community-grafana-champions",
+  "official_url": "https://grafana.com/community/champions/",
+  "checked_at": "2026-10-10T14:42:22+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Grafana Champions Program celebrates community experts, amplifies their invaluable contributions and fosters a collaborative partnership with the Grafana team.",
+    "url": "https://grafana.com/community/champions/"
+   },
+   "programme_name": {
+    "quote": "Grafana Champions",
+    "url": "https://grafana.com/community/champions/"
+   },
+   "organizer": {
+    "quote": "Grafana Labs",
+    "url": "https://grafana.com/community/champions/"
+   },
+   "official_url": {
+    "quote": "https://grafana.com/community/champions/",
+    "url": "https://grafana.com/community/champions/"
+   }
+  }
+ },
+ {
+  "source_id": "community-snowflake-data-superheroes",
+  "programme_id": "community-snowflake-data-superheroes",
+  "official_url": "https://www.snowflake.com/en/data-superheroes/",
+  "checked_at": "2026-10-10T14:42:24+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Data Superheroes will have the opportunity to develop their superpowers through Snowflake training courses and participate in advanced certification programs.",
+    "url": "https://www.snowflake.com/en/data-superheroes/"
+   },
+   "programme_name": {
+    "quote": "Snowflake Data Superheroes",
+    "url": "https://www.snowflake.com/en/data-superheroes/"
+   },
+   "organizer": {
+    "quote": "Snowflake",
+    "url": "https://www.snowflake.com/en/data-superheroes/"
+   },
+   "official_url": {
+    "quote": "https://www.snowflake.com/en/data-superheroes/",
+    "url": "https://www.snowflake.com/en/data-superheroes/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-app-advocu-com-gdg-join-8726e9",
+  "programme_id": "community-hub-app-advocu-com-gdg-join-8726e9",
+  "official_url": "https://app.advocu.com/gdg/join",
+  "checked_at": "2026-10-10T14:42:26+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-community-discord-com-invite-google-dev-community-8a86f7",
+  "programme_id": "community-hub-discord-com-invite-google-dev-community-8a86f7",
+  "official_url": "https://discord.com/invite/google-dev-community",
+  "checked_at": "2026-10-10T14:42:26+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-community-github-community-ee8349",
+  "programme_id": "community-hub-github-community-ee8349",
+  "official_url": "https://github.community/",
+  "checked_at": "2026-10-10T14:42:29+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Code accurately and faster with your AI powered pair-programmer.",
+    "url": "https://github.community/"
+   },
+   "programme_name": {
+    "quote": "Community Forum",
+    "url": "https://github.community/"
+   },
+   "organizer": {
+    "quote": "github.community",
+    "url": "https://github.community/"
+   },
+   "official_url": {
+    "quote": "https://github.community/",
+    "url": "https://github.community/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-community-www-mongodb-com-community-forums-445268",
+  "programme_id": "community-hub-www-mongodb-com-community-forums-445268",
+  "official_url": "https://www.mongodb.com/community/forums/c/academia/students/42",
+  "checked_at": "2026-10-10T14:42:33+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
  }
 ]

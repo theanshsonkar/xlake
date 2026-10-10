@@ -7327,5 +7327,2474 @@
   "result": "failed",
   "state": "failed",
   "reason": "http_403"
+ },
+ {
+  "source_id": "mitacs-globalink-gri",
+  "programme_id": "research-mitacs-globalink-research-internship",
+  "official_url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/",
+  "checked_at": "2026-10-10T14:43:07+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Application period at Tec: August 3 \u2013 September 3.",
+    "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
+   },
+   "application": {
+    "quote": "How To Apply",
+    "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/#how_to_apply"
+   },
+   "application_url": {
+    "quote": "How To Apply",
+    "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/#how_to_apply"
+   },
+   "opening_date": {
+    "quote": "Application period at Tec: August 3 \u2013 September 3.",
+    "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
+   },
+   "deadline": {
+    "quote": "Application period at Tec: August 3 \u2013 September 3.",
+    "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
+   },
+   "funding": {
+    "quote": "Stipend for housing (amount varies depending on country of origin).",
+    "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {
+    "quote": "Access Canada\u2019s dynamic and innovative research landscape, gain valuable hands-on research experience in your chosen field, and open the door to exciting international opportunities in the future through a Globalink Research Internship.",
+    "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
+   },
+   "eligibility": {
+    "quote": "for each country in the Eligibility section.",
+    "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/"
+   }
+  }
+ },
+ {
+  "source_id": "daad-rise-germany",
+  "programme_id": "research-daad-rise-germany",
+  "official_url": "https://www.daad.de/rise/en/",
+  "checked_at": "2026-10-10T14:43:08+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "cern-summer-student",
+  "programme_id": "research-cern-summer-student",
+  "official_url": "https://home.cern/summer-student-programme/",
+  "checked_at": "2026-10-10T14:43:11+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The programme is currently open for applications.",
+    "url": "https://home.cern/summer-student-programme/"
+   },
+   "programme_name": {
+    "quote": "CERN Summer Student Programme",
+    "url": "https://home.cern/summer-student-programme/"
+   },
+   "organizer": {
+    "quote": "CERN",
+    "url": "https://home.cern/summer-student-programme/"
+   },
+   "official_url": {
+    "quote": "https://home.cern/summer-student-programme/",
+    "url": "https://home.cern/summer-student-programme/"
+   }
+  }
+ },
+ {
+  "source_id": "desy-summer-student",
+  "programme_id": "research-desy-summer-student",
+  "official_url": "https://summerstudents.desy.de/",
+  "checked_at": "2026-10-10T14:43:13+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://summerstudents.desy.de/application/",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Applications for the 2027 programme will open later this year.",
+    "url": "https://summerstudents.desy.de/application/"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "eth-zurich-ssrf",
+  "programme_id": "research-eth-zurich-summer-research-fellowship",
+  "official_url": "https://www.inf.ethz.ch/studies/summer-research-fellowship.html",
+  "checked_at": "2026-10-10T14:43:17+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "ETH Student Summer Research Fellowship.",
+    "url": "https://www.inf.ethz.ch/studies/summer-research-fellowship.html"
+   },
+   "programme_name": {
+    "quote": "ETH Zurich Student Summer Research Fellowship",
+    "url": "https://www.inf.ethz.ch/studies/summer-research-fellowship.html"
+   },
+   "organizer": {
+    "quote": "ETH Zurich \u2013 Department of Computer Science",
+    "url": "https://www.inf.ethz.ch/studies/summer-research-fellowship.html"
+   },
+   "official_url": {
+    "quote": "https://www.inf.ethz.ch/studies/summer-research-fellowship.html",
+    "url": "https://www.inf.ethz.ch/studies/summer-research-fellowship.html"
+   }
+  }
+ },
+ {
+  "source_id": "epfl-summer",
+  "programme_id": "research-epfl-summer-research",
+  "official_url": "https://summer.epfl.ch/",
+  "checked_at": "2026-10-10T14:43:18+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://summer.epfl.ch/apply.html",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Applications will open as late as.",
+    "url": "https://summer.epfl.ch/apply.html"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "Are students from other disciplines eligible for this programme?",
+    "url": "https://summer.epfl.ch/apply.html"
+   }
+  }
+ },
+ {
+  "source_id": "amgen-scholars",
+  "programme_id": "research-amgen-scholars",
+  "official_url": "https://amgenscholars.com/",
+  "checked_at": "2026-10-10T14:43:20+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "An Undergraduate Summer Research Program in Science and Biotechnology.",
+    "url": "https://amgenscholars.com/"
+   },
+   "programme_name": {
+    "quote": "Amgen Scholars Program",
+    "url": "https://amgenscholars.com/"
+   },
+   "organizer": {
+    "quote": "Amgen Foundation",
+    "url": "https://amgenscholars.com/"
+   },
+   "official_url": {
+    "quote": "https://amgenscholars.com/",
+    "url": "https://amgenscholars.com/"
+   }
+  }
+ },
+ {
+  "source_id": "caltech-surf",
+  "programme_id": "research-caltech-surf",
+  "official_url": "https://sfp.caltech.edu/undergraduate-research/programs/surf",
+  "checked_at": "2026-10-10T14:43:21+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Caltech Accountability Partners Program (CAPP).",
+    "url": "https://sfp.caltech.edu/undergraduate-research/programs/surf"
+   },
+   "programme_name": {
+    "quote": "Caltech Summer Undergraduate Research Fellowships (SURF)",
+    "url": "https://sfp.caltech.edu/undergraduate-research/programs/surf"
+   },
+   "organizer": {
+    "quote": "Caltech \u2013 Student-Faculty Programs",
+    "url": "https://sfp.caltech.edu/undergraduate-research/programs/surf"
+   },
+   "official_url": {
+    "quote": "https://sfp.caltech.edu/undergraduate-research/programs/surf",
+    "url": "https://sfp.caltech.edu/undergraduate-research/programs/surf"
+   }
+  }
+ },
+ {
+  "source_id": "riken-ipa",
+  "programme_id": "research-riken-ipa",
+  "official_url": "https://www.riken.jp/en/careers/programs/ipa/index.html",
+  "checked_at": "2026-10-10T14:43:42+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "An International Program Associate (IPA) is a non-Japanese doctoral candidate attending a Japanese or overseas graduate school participating in RIKEN\u2019s joint graduate school program.",
+    "url": "https://www.riken.jp/en/careers/programs/ipa/index.html"
+   },
+   "programme_name": {
+    "quote": "RIKEN International Program Associate (IPA)",
+    "url": "https://www.riken.jp/en/careers/programs/ipa/index.html"
+   },
+   "organizer": {
+    "quote": "RIKEN",
+    "url": "https://www.riken.jp/en/careers/programs/ipa/index.html"
+   },
+   "official_url": {
+    "quote": "https://www.riken.jp/en/careers/programs/ipa/index.html",
+    "url": "https://www.riken.jp/en/careers/programs/ipa/index.html"
+   }
+  }
+ },
+ {
+  "source_id": "nsf-reu",
+  "programme_id": "research-nsf-reu",
+  "official_url": "https://www.nsf.gov/funding/initiatives/reu",
+  "checked_at": "2026-10-10T14:43:42+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "National Science Foundation Research Experiences for Undergraduates (NSF REU) program supports intensive research by undergraduate students in any area of research funded by NSF.",
+    "url": "https://www.nsf.gov/funding/initiatives/reu"
+   },
+   "programme_name": {
+    "quote": "NSF Research Experiences for Undergraduates (REU)",
+    "url": "https://www.nsf.gov/funding/initiatives/reu"
+   },
+   "organizer": {
+    "quote": "U.S. National Science Foundation (NSF)",
+    "url": "https://www.nsf.gov/funding/initiatives/reu"
+   },
+   "official_url": {
+    "quote": "https://www.nsf.gov/funding/initiatives/reu",
+    "url": "https://www.nsf.gov/funding/initiatives/reu"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-eng-en-site-nthu-edu-tw-p-412-1060-3215-php-d15ff3",
+  "programme_id": "research-hub-eng-en-site-nthu-edu-tw-p-412-1060-3215-php-d15ff3",
+  "official_url": "http://eng-en.site.nthu.edu.tw/p/412-1060-3215.php",
+  "checked_at": "2026-10-10T14:43:49+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "NTHU Summer Internship Program",
+    "url": "http://eng-en.site.nthu.edu.tw/p/412-1060-3215.php"
+   },
+   "organizer": {
+    "quote": "eng-en.site.nthu.edu.tw",
+    "url": "http://eng-en.site.nthu.edu.tw/p/412-1060-3215.php"
+   },
+   "official_url": {
+    "quote": "http://eng-en.site.nthu.edu.tw/p/412-1060-3215.php",
+    "url": "http://eng-en.site.nthu.edu.tw/p/412-1060-3215.php"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-eng-en-web-nthu-edu-tw-files-14-1130-129169-r1447-1-php-28d01d",
+  "programme_id": "research-hub-eng-en-web-nthu-edu-tw-files-14-1130-129169-r1447-1-php-28d01d",
+  "official_url": "http://eng-en.web.nthu.edu.tw/files/14-1130-129169,r1447-1.php",
+  "checked_at": "2026-10-10T14:43:50+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-oga-nthu-edu-tw-news-php-7dbca8",
+  "programme_id": "research-hub-oga-nthu-edu-tw-news-php-7dbca8",
+  "official_url": "http://oga.nthu.edu.tw/news.php?id=233&lang=en",
+  "checked_at": "2026-10-10T14:43:51+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-research-nvidia-com-graduate-fellowships-980520",
+  "programme_id": "research-hub-research-nvidia-com-graduate-fellowships-980520",
+  "official_url": "http://research.nvidia.com/graduate-fellowships",
+  "checked_at": "2026-10-10T14:43:52+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "2027\u20132028 applications open September 30, 2026.",
+    "url": "http://research.nvidia.com/graduate-fellowships"
+   },
+   "deadline": {
+    "quote": "2027\u20132028 applications open September 30, 2026.",
+    "url": "http://research.nvidia.com/graduate-fellowships"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-spike-unist-ac-kr-main-main-php-a42b4d",
+  "programme_id": "research-hub-spike-unist-ac-kr-main-main-php-a42b4d",
+  "official_url": "http://spike.unist.ac.kr/main/main.php",
+  "checked_at": "2026-10-10T14:43:56+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-thielfellowship-org-41d873",
+  "programme_id": "research-hub-thielfellowship-org-41d873",
+  "official_url": "http://thielfellowship.org/",
+  "checked_at": "2026-10-10T14:43:58+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Thiel Fellowship gives $250,000 to young people who want to build new things instead of sitting in a classroom.",
+    "url": "http://thielfellowship.org/"
+   },
+   "programme_name": {
+    "quote": "Thiel Fellowship for young innovators",
+    "url": "http://thielfellowship.org/"
+   },
+   "organizer": {
+    "quote": "thielfellowship.org",
+    "url": "http://thielfellowship.org/"
+   },
+   "official_url": {
+    "quote": "http://thielfellowship.org/",
+    "url": "http://thielfellowship.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-web-japps-ias-ac-in-fellowship2018-index-html-c3b573",
+  "programme_id": "research-hub-web-japps-ias-ac-in-fellowship2018-index-html-c3b573",
+  "official_url": "http://web-japps.ias.ac.in:8080/fellowship2018/index.html",
+  "checked_at": "2026-10-10T14:43:59+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: stale_year"
+ },
+ {
+  "source_id": "hub-research-www-iitb-ac-in-en-education-b84b9d",
+  "programme_id": "research-hub-www-iitb-ac-in-en-education-b84b9d",
+  "official_url": "http://www.iitb.ac.in/en/education/research-internship",
+  "checked_at": "2026-10-10T14:44:00+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: ConnectionResetError: [Errno 104] Connection reset by peer"
+ },
+ {
+  "source_id": "hub-research-www-iitb-ac-in-en-education-e63d02",
+  "programme_id": "research-hub-www-iitb-ac-in-en-education-e63d02",
+  "official_url": "http://www.iitb.ac.in/en/education/research-internship)(http://www.iitb.ac.in/newacadhome/toTraining.jsp)(https://www.it.iitb.ac.in/summerinternship2020/selectionlist.html",
+  "checked_at": "2026-10-10T14:44:07+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-www-inde-campusfrance-org-en-page-64e379",
+  "programme_id": "research-hub-www-inde-campusfrance-org-en-page-64e379",
+  "official_url": "http://www.inde.campusfrance.org/en/page/charpak-research-internship-program",
+  "checked_at": "2026-10-10T14:44:13+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-www-inde-campusfrance-org-charpak-research-interns-986032",
+  "programme_id": "research-hub-www-inde-campusfrance-org-charpak-research-interns-986032",
+  "official_url": "http://www.inde.campusfrance.org/\u2026/charpak-research-interns\u2026",
+  "checked_at": "2026-10-10T14:44:14+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: UnicodeEncodeError: 'ascii' codec can't encode character '\\u2026' in position 5: ordinal not in range(128)"
+ },
+ {
+  "source_id": "hub-research-www-ipam-ucla-edu-programs-student-research-programs-609661",
+  "programme_id": "research-hub-www-ipam-ucla-edu-programs-student-research-programs-609661",
+  "official_url": "http://www.ipam.ucla.edu/programs/student-research-programs",
+  "checked_at": "2026-10-10T14:44:15+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "IPAM offers several versions of its Research in Industrial Projects for Students (RIPS) program, a summer research experience for students of math and related disciplines.",
+    "url": "http://www.ipam.ucla.edu/programs/student-research-programs"
+   },
+   "programme_name": {
+    "quote": "IPAM UCLA, RIPS Program",
+    "url": "http://www.ipam.ucla.edu/programs/student-research-programs"
+   },
+   "organizer": {
+    "quote": "ipam.ucla.edu",
+    "url": "http://www.ipam.ucla.edu/programs/student-research-programs"
+   },
+   "official_url": {
+    "quote": "http://www.ipam.ucla.edu/programs/student-research-programs",
+    "url": "http://www.ipam.ucla.edu/programs/student-research-programs"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-admissions-kaust-edu-sa-study-internships-70c7bd",
+  "programme_id": "research-hub-admissions-kaust-edu-sa-study-internships-70c7bd",
+  "official_url": "https://admissions.kaust.edu.sa/study/internships",
+  "checked_at": "2026-10-10T14:44:17+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Visiting Student Research Program (VSRP) at KAUST offers internships for 3rd and 4th-year bachelor\u2019s and master\u2019s students in science, technology, engineering, and mathematics (STEM).",
+    "url": "https://admissions.kaust.edu.sa/study/internships"
+   },
+   "programme_name": {
+    "quote": "KAUST",
+    "url": "https://admissions.kaust.edu.sa/study/internships"
+   },
+   "organizer": {
+    "quote": "admissions.kaust.edu.sa",
+    "url": "https://admissions.kaust.edu.sa/study/internships"
+   },
+   "official_url": {
+    "quote": "https://admissions.kaust.edu.sa/study/internships",
+    "url": "https://admissions.kaust.edu.sa/study/internships"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-admissions-oist-jp-oist-research-internship-program-descript-0aa0b8",
+  "programme_id": "research-hub-admissions-oist-jp-oist-research-internship-program-descript-0aa0b8",
+  "official_url": "https://admissions.oist.jp/oist-research-internship-program-description",
+  "checked_at": "2026-10-10T14:44:23+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {},
+   "deadline": {}
+  }
+ },
+ {
+  "source_id": "hub-research-ai-google-research-800bdd",
+  "programme_id": "research-hub-ai-google-research-800bdd",
+  "official_url": "https://ai.google/research",
+  "checked_at": "2026-10-10T14:44:24+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-apply-mpi-sws-org-register-internship-c0ea39",
+  "programme_id": "research-hub-apply-mpi-sws-org-register-internship-c0ea39",
+  "official_url": "https://apply.mpi-sws.org/register/internship",
+  "checked_at": "2026-10-10T14:44:28+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Max Planck Institute for Software Systems",
+    "url": "https://apply.mpi-sws.org/register/internship"
+   },
+   "organizer": {
+    "quote": "apply.mpi-sws.org",
+    "url": "https://apply.mpi-sws.org/register/internship"
+   },
+   "official_url": {
+    "quote": "https://apply.mpi-sws.org/register/internship",
+    "url": "https://apply.mpi-sws.org/register/internship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-asta-allen-ai-e6214b",
+  "programme_id": "research-hub-asta-allen-ai-e6214b",
+  "official_url": "https://asta.allen.ai/",
+  "checked_at": "2026-10-10T14:44:28+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "missing_programme_noun_page"
+ },
+ {
+  "source_id": "hub-research-blog-google-translate-goog-intl-de-de-b11f7e",
+  "programme_id": "research-hub-blog-google-translate-goog-intl-de-de-b11f7e",
+  "official_url": "https://blog-google.translate.goog/intl/de-de/unternehmen/technologie/google-tu-munchen-tum-investition-cybersecurity-forschung?_x_tr_hl=de&_x_tr_pto=wapp&_x_tr_sl=auto&_x_tr_tl=en",
+  "checked_at": "2026-10-10T14:44:29+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "missing_programme_noun_page"
+ },
+ {
+  "source_id": "hub-research-blog-google-technology-research-815346",
+  "programme_id": "research-hub-blog-google-technology-research-815346",
+  "official_url": "https://blog.google/technology/research/meet-phd-students-changing-face-computing",
+  "checked_at": "2026-10-10T14:44:30+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "program, I taught introductory programming and human-computer interaction at a private, alternative high school.",
+    "url": "https://blog.google/technology/research/meet-phd-students-changing-face-computing"
+   },
+   "programme_name": {
+    "quote": "Meet the Ph.D. students changing the face of computing Read blog post",
+    "url": "https://blog.google/technology/research/meet-phd-students-changing-face-computing"
+   },
+   "organizer": {
+    "quote": "blog.google",
+    "url": "https://blog.google/technology/research/meet-phd-students-changing-face-computing"
+   },
+   "official_url": {
+    "quote": "https://blog.google/technology/research/meet-phd-students-changing-face-computing",
+    "url": "https://blog.google/technology/research/meet-phd-students-changing-face-computing"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-blog-google-technology-research-4b0da1",
+  "programme_id": "research-hub-blog-google-technology-research-4b0da1",
+  "official_url": "https://blog.google/technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers",
+  "checked_at": "2026-10-10T14:44:33+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Program Manager, Research Solutions & University Relations.",
+    "url": "https://blog.google/technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers"
+   },
+   "programme_name": {
+    "quote": "Mentorship inspires Deyrel Diaz and future researchers Read blog post",
+    "url": "https://blog.google/technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers"
+   },
+   "organizer": {
+    "quote": "blog.google",
+    "url": "https://blog.google/technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers"
+   },
+   "official_url": {
+    "quote": "https://blog.google/technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers",
+    "url": "https://blog.google/technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-blog-google-technology-research-0906a3",
+  "programme_id": "research-hub-blog-google-technology-research-0906a3",
+  "official_url": "https://blog.google/technology/research/our-first-trust-safety-research-awards-grantees",
+  "checked_at": "2026-10-10T14:44:35+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-blog-google-technology-research-3e68c2",
+  "programme_id": "research-hub-blog-google-technology-research-3e68c2",
+  "official_url": "https://blog.google/technology/research/rajavi-mishra-becoming-computer-science-researcher",
+  "checked_at": "2026-10-10T14:44:38+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Program Manager, Research Solutions & University Relations.",
+    "url": "https://blog.google/technology/research/rajavi-mishra-becoming-computer-science-researcher"
+   },
+   "programme_name": {
+    "quote": "Read blog post",
+    "url": "https://blog.google/technology/research/rajavi-mishra-becoming-computer-science-researcher"
+   },
+   "organizer": {
+    "quote": "blog.google",
+    "url": "https://blog.google/technology/research/rajavi-mishra-becoming-computer-science-researcher"
+   },
+   "official_url": {
+    "quote": "https://blog.google/technology/research/rajavi-mishra-becoming-computer-science-researcher",
+    "url": "https://blog.google/technology/research/rajavi-mishra-becoming-computer-science-researcher"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-careers-pruna-ai-jobs-5116044-working-student-master-thesis-1e15db",
+  "programme_id": "research-hub-careers-pruna-ai-jobs-5116044-working-student-master-thesis-1e15db",
+  "official_url": "https://careers.pruna.ai/jobs/5116044-working-student-master-thesis-internship",
+  "checked_at": "2026-10-10T14:44:39+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-careers-smartrecruiters-com-cern-tech-89e81e",
+  "programme_id": "research-hub-careers-smartrecruiters-com-cern-tech-89e81e",
+  "official_url": "https://careers.smartrecruiters.com/CERN/tech",
+  "checked_at": "2026-10-10T14:44:39+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-cohere-com-research-scholars-program-586f4f",
+  "programme_id": "research-hub-cohere-com-research-scholars-program-586f4f",
+  "official_url": "https://cohere.com/research/scholars-program",
+  "checked_at": "2026-10-10T14:44:40+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Applications for the Scholars Program are currently closed but consider joining our Open Science community to collaborate with our team and community.",
+    "url": "https://cohere.com/research/scholars-program"
+   },
+   "programme_name": {
+    "quote": "Cohere",
+    "url": "https://cohere.com/research/scholars-program"
+   },
+   "organizer": {
+    "quote": "cohere.com",
+    "url": "https://cohere.com/research/scholars-program"
+   },
+   "official_url": {
+    "quote": "https://cohere.com/research/scholars-program",
+    "url": "https://cohere.com/research/scholars-program"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-deepmind-google-research-13360c",
+  "programme_id": "research-hub-deepmind-google-research-13360c",
+  "official_url": "https://deepmind.google/research",
+  "checked_at": "2026-10-10T14:44:43+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Research",
+    "url": "https://deepmind.google/research"
+   },
+   "organizer": {
+    "quote": "deepmind.google",
+    "url": "https://deepmind.google/research"
+   },
+   "official_url": {
+    "quote": "https://deepmind.google/research",
+    "url": "https://deepmind.google/research"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-dssg-uchicago-edu-b0d723",
+  "programme_id": "research-hub-dssg-uchicago-edu-b0d723",
+  "official_url": "https://dssg.uchicago.edu/",
+  "checked_at": "2026-10-10T14:44:48+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "tls"
+ },
+ {
+  "source_id": "hub-research-dst-gov-in-scientific-programmes-scientific-engineering-rese-ef3a17",
+  "programme_id": "research-hub-dst-gov-in-scientific-programmes-scientific-engineering-rese-ef3a17",
+  "official_url": "https://dst.gov.in/scientific-programmes/scientific-engineering-research/human-resource-development-and-nurturing-young-talent-swarnajayanti-fellowships-scheme",
+  "checked_at": "2026-10-10T14:44:51+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-ece-duke-edu-undergrad-reu-6b7e1e",
+  "programme_id": "research-hub-ece-duke-edu-undergrad-reu-6b7e1e",
+  "official_url": "https://ece.duke.edu/undergrad/reu",
+  "checked_at": "2026-10-10T14:44:55+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Duke ECE SURP",
+    "url": "https://ece.duke.edu/undergrad/reu"
+   },
+   "organizer": {
+    "quote": "ece.duke.edu",
+    "url": "https://ece.duke.edu/undergrad/reu"
+   },
+   "official_url": {
+    "quote": "https://ece.duke.edu/undergrad/reu",
+    "url": "https://ece.duke.edu/undergrad/reu"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-employability-uq-edu-au-summer-winter-research-4d17b6",
+  "programme_id": "research-hub-employability-uq-edu-au-summer-winter-research-4d17b6",
+  "official_url": "https://employability.uq.edu.au/summer-winter-research",
+  "checked_at": "2026-10-10T14:45:01+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {},
+   "application": {
+    "quote": "Eligibility and How to Apply",
+    "url": "https://employability.uq.edu.au/summer-winter-research"
+   },
+   "application_url": {
+    "quote": "Eligibility and How to Apply",
+    "url": "https://employability.uq.edu.au/summer-winter-research"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {
+    "quote": "Participate in a six (6) week research experience during the Summer Vacation period and receive a $3,000 grant.",
+    "url": "https://employability.uq.edu.au/summer-winter-research"
+   },
+   "location": {
+    "quote": "\"Through this program, I have been able to apply a real-world, hands-on experience in public health to enhance the health and wellbeing of First Nations people and remote communities in Queensland.",
+    "url": "https://employability.uq.edu.au/summer-winter-research"
+   },
+   "remote": {
+    "quote": "\"Through this program, I have been able to apply a real-world, hands-on experience in public health to enhance the health and wellbeing of First Nations people and remote communities in Queensland.",
+    "url": "https://employability.uq.edu.au/summer-winter-research"
+   },
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "Eligibility and How to Apply.",
+    "url": "https://employability.uq.edu.au/summer-winter-research"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-engineering-nyu-edu-research-student-research-6223bb",
+  "programme_id": "research-hub-engineering-nyu-edu-research-student-research-6223bb",
+  "official_url": "https://engineering.nyu.edu/research/student-research/undergraduate-summer-research-program",
+  "checked_at": "2026-10-10T14:45:02+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Placements into projects will be made on a rolling basis starting in mid-March through the end of April.",
+    "url": "https://engineering.nyu.edu/research/student-research/undergraduate-summer-research-program"
+   },
+   "application": {
+    "quote": "Application Process",
+    "url": "https://engineering.nyu.edu/research/student-research/undergraduate-summer-research-program#chapter-id-26791"
+   },
+   "application_url": {
+    "quote": "Application Process",
+    "url": "https://engineering.nyu.edu/research/student-research/undergraduate-summer-research-program#chapter-id-26791"
+   },
+   "opening_date": {
+    "quote": "Placements into projects will be made on a rolling basis starting in mid-March through the end of April.",
+    "url": "https://engineering.nyu.edu/research/student-research/undergraduate-summer-research-program"
+   },
+   "deadline": {
+    "quote": "Placements into projects will be made on a rolling basis starting in mid-March through the end of April.",
+    "url": "https://engineering.nyu.edu/research/student-research/undergraduate-summer-research-program"
+   },
+   "funding": {
+    "quote": "Selected students will receive a stipend to work full-time on one project.",
+    "url": "https://engineering.nyu.edu/research/student-research/undergraduate-summer-research-program"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "permanent residents are also eligible to apply.",
+    "url": "https://engineering.nyu.edu/research/student-research/undergraduate-summer-research-program"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-fellowship-mlh-io-3522d4",
+  "programme_id": "research-hub-fellowship-mlh-io-3522d4",
+  "official_url": "https://fellowship.mlh.io/",
+  "checked_at": "2026-10-10T14:45:06+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "We offer fellows an educational stipend to help offset expenses while they participate in the program.",
+    "url": "https://fellowship.mlh.io/"
+   },
+   "programme_name": {
+    "quote": "MLH Fellowship",
+    "url": "https://fellowship.mlh.io/"
+   },
+   "organizer": {
+    "quote": "fellowship.mlh.io",
+    "url": "https://fellowship.mlh.io/"
+   },
+   "official_url": {
+    "quote": "https://fellowship.mlh.io/",
+    "url": "https://fellowship.mlh.io/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-fellowship-mlh-io-programs-explorer-a94585",
+  "programme_id": "research-hub-fellowship-mlh-io-programs-explorer-a94585",
+  "official_url": "https://fellowship.mlh.io/programs/explorer",
+  "checked_at": "2026-10-10T14:45:07+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-fellowships-deshaw-com-4da8f0",
+  "programme_id": "research-hub-fellowships-deshaw-com-4da8f0",
+  "official_url": "https://fellowships.deshaw.com/",
+  "checked_at": "2026-10-10T14:45:08+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "We encourage undergraduate and graduate students from all schools and fields of study to apply to our internship program.",
+    "url": "https://fellowships.deshaw.com/"
+   },
+   "programme_name": {
+    "quote": "DE Shaw & Co Discovery Fellowship",
+    "url": "https://fellowships.deshaw.com/"
+   },
+   "organizer": {
+    "quote": "fellowships.deshaw.com",
+    "url": "https://fellowships.deshaw.com/"
+   },
+   "official_url": {
+    "quote": "https://fellowships.deshaw.com/",
+    "url": "https://fellowships.deshaw.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-fokos-info-en-home-299a9c",
+  "programme_id": "research-hub-fokos-info-en-home-299a9c",
+  "official_url": "https://fokos.info/en/home/stipendium",
+  "checked_at": "2026-10-10T14:45:08+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: internship_title"
+ },
+ {
+  "source_id": "hub-research-groups-oist-jp-grad-research-interns-638379",
+  "programme_id": "research-hub-groups-oist-jp-grad-research-interns-638379",
+  "official_url": "https://groups.oist.jp/grad/research-interns",
+  "checked_at": "2026-10-10T14:45:08+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-hackny-org-fellows-program-366a74",
+  "programme_id": "research-hub-hackny-org-fellows-program-366a74",
+  "official_url": "https://hackny.org/fellows-program",
+  "checked_at": "2026-10-10T14:45:09+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "From 2011 to 2025, the hackNY Fellows Program was a co-living summer experience for full-time tech interns in New York City.",
+    "url": "https://hackny.org/fellows-program"
+   },
+   "programme_name": {
+    "quote": "HackNY Fellowship",
+    "url": "https://hackny.org/fellows-program"
+   },
+   "organizer": {
+    "quote": "hackny.org",
+    "url": "https://hackny.org/fellows-program"
+   },
+   "official_url": {
+    "quote": "https://hackny.org/fellows-program",
+    "url": "https://hackny.org/fellows-program"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-huggingface-co-coherelabs-65fbae",
+  "programme_id": "research-hub-huggingface-co-coherelabs-65fbae",
+  "official_url": "https://huggingface.co/CohereLabs",
+  "checked_at": "2026-10-10T14:45:10+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-inf-ethz-ch-studies-summer-research-fellowship-html-fc433e",
+  "programme_id": "research-hub-inf-ethz-ch-studies-summer-research-fellowship-html-fc433e",
+  "official_url": "https://inf.ethz.ch/studies/summer-research-fellowship.html",
+  "checked_at": "2026-10-10T14:45:11+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "ETH Student Summer Research Fellowship.",
+    "url": "https://inf.ethz.ch/studies/summer-research-fellowship.html"
+   },
+   "programme_name": {
+    "quote": "ETH Zurich",
+    "url": "https://inf.ethz.ch/studies/summer-research-fellowship.html"
+   },
+   "organizer": {
+    "quote": "inf.ethz.ch",
+    "url": "https://inf.ethz.ch/studies/summer-research-fellowship.html"
+   },
+   "official_url": {
+    "quote": "https://inf.ethz.ch/studies/summer-research-fellowship.html",
+    "url": "https://inf.ethz.ch/studies/summer-research-fellowship.html"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-japan-internships-com-9490c4",
+  "programme_id": "research-hub-japan-internships-com-9490c4",
+  "official_url": "https://japan-internships.com/",
+  "checked_at": "2026-10-10T14:45:13+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "You may be eligible for many opportunities through our program!",
+    "url": "https://japan-internships.com/"
+   },
+   "programme_name": {
+    "quote": "Sakae Japan Internship Program",
+    "url": "https://japan-internships.com/"
+   },
+   "organizer": {
+    "quote": "japan-internships.com",
+    "url": "https://japan-internships.com/"
+   },
+   "official_url": {
+    "quote": "https://japan-internships.com/",
+    "url": "https://japan-internships.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-jobs-cisco-com-jobs-projectdetail-49f5c7",
+  "programme_id": "research-hub-jobs-cisco-com-jobs-projectdetail-49f5c7",
+  "official_url": "https://jobs.cisco.com/jobs/ProjectDetail/Software-Engineer-Bachelor-s-Intern-United-States/1295250?source=Pitt+CSC&tags=CDC+SnNG+students-and-new-graduate-programs",
+  "checked_at": "2026-10-10T14:45:15+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-jobs-lever-co-trailofbits-5c836c41-04d0-4f16-8f7d-e3cfdc3319-f2fdf4",
+  "programme_id": "research-hub-jobs-lever-co-trailofbits-5c836c41-04d0-4f16-8f7d-e3cfdc3319-f2fdf4",
+  "official_url": "https://jobs.lever.co/trailofbits/5c836c41-04d0-4f16-8f7d-e3cfdc33191b",
+  "checked_at": "2026-10-10T14:45:15+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-labs-oracle-com-pls-apex-1ca0e5",
+  "programme_id": "research-hub-labs-oracle-com-pls-apex-1ca0e5",
+  "official_url": "https://labs.oracle.com/pls/apex/r/labs/labs/internships",
+  "checked_at": "2026-10-10T14:45:15+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-mae-osu-edu-riya-5d4581",
+  "programme_id": "research-hub-mae-osu-edu-riya-5d4581",
+  "official_url": "https://mae.osu.edu/RIYA",
+  "checked_at": "2026-10-10T14:45:15+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "To be considered for the RIYA internship in the summer of 2027 (application closed).",
+    "url": "https://mae.osu.edu/RIYA"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-nigintern-nig-ac-jp-1e26aa",
+  "programme_id": "research-hub-nigintern-nig-ac-jp-1e26aa",
+  "official_url": "https://nigintern.nig.ac.jp/",
+  "checked_at": "2026-10-10T14:45:33+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "timeout"
+ },
+ {
+  "source_id": "hub-research-onlineportal-iitrpr-ac-in-sia-21-b4ebde",
+  "programme_id": "research-hub-onlineportal-iitrpr-ac-in-sia-21-b4ebde",
+  "official_url": "https://onlineportal.iitrpr.ac.in/sia-21",
+  "checked_at": "2026-10-10T14:45:34+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-onlineportal-iitrpr-ac-in-sia-21-ccb8f4",
+  "programme_id": "research-hub-onlineportal-iitrpr-ac-in-sia-21-ccb8f4",
+  "official_url": "https://onlineportal.iitrpr.ac.in/sia-21)[",
+  "checked_at": "2026-10-10T14:45:35+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-pg-ust-hk-prospective-students-programs-6fe9bd",
+  "programme_id": "research-hub-pg-ust-hk-prospective-students-programs-6fe9bd",
+  "official_url": "https://pg.ust.hk/prospective-students/programs/short-term-study/international-visiting-internship-student-program",
+  "checked_at": "2026-10-10T14:45:39+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-programmes-polytechnique-edu-en-exchange-programs-a72684",
+  "programme_id": "research-hub-programmes-polytechnique-edu-en-exchange-programs-a72684",
+  "official_url": "https://programmes.polytechnique.edu/en/exchange-programs/research-program-for-international-talents/how-to-apply",
+  "checked_at": "2026-10-10T14:45:41+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "About the Ing\u00e9nieur Polytechnicien Program.",
+    "url": "https://programmes.polytechnique.edu/en/exchange-programs/research-program-for-international-talents/how-to-apply"
+   },
+   "programme_name": {
+    "quote": "\u00c9cole Polytechnique",
+    "url": "https://programmes.polytechnique.edu/en/exchange-programs/research-program-for-international-talents/how-to-apply"
+   },
+   "organizer": {
+    "quote": "programmes.polytechnique.edu",
+    "url": "https://programmes.polytechnique.edu/en/exchange-programs/research-program-for-international-talents/how-to-apply"
+   },
+   "official_url": {
+    "quote": "https://programmes.polytechnique.edu/en/exchange-programs/research-program-for-international-talents/how-to-apply",
+    "url": "https://programmes.polytechnique.edu/en/exchange-programs/research-program-for-international-talents/how-to-apply"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
+  "programme_id": "research-hub-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
+  "official_url": "https://research.adobe.com/adobe-india-women-in-technology-scholarship",
+  "checked_at": "2026-10-10T14:45:47+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-research-fb-com-programs-fellowship-c0478b",
+  "programme_id": "research-hub-research-fb-com-programs-fellowship-c0478b",
+  "official_url": "https://research.fb.com/programs/fellowship",
+  "checked_at": "2026-10-10T14:45:48+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-research-google-50efb5",
+  "programme_id": "research-hub-research-google-50efb5",
+  "official_url": "https://research.google/",
+  "checked_at": "2026-10-10T14:45:49+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Supporting the next generation of researchers through a wide range of programming.",
+    "url": "https://research.google/"
+   },
+   "programme_name": {
+    "quote": "Google Research Explore our research",
+    "url": "https://research.google/"
+   },
+   "organizer": {
+    "quote": "research.google",
+    "url": "https://research.google/"
+   },
+   "official_url": {
+    "quote": "https://research.google/",
+    "url": "https://research.google/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-researcher-watson-ibm-com-researcher-view-group-subpage-php-e64921",
+  "programme_id": "research-hub-researcher-watson-ibm-com-researcher-view-group-subpage-php-e64921",
+  "official_url": "https://researcher.watson.ibm.com/researcher/view_group_subpage.php?id=8101",
+  "checked_at": "2026-10-10T14:45:50+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "We\u2019re building AI models, designing program analysis techniques, optimizing software engineering, and contributing to the field of AI for Code.",
+    "url": "https://researcher.watson.ibm.com/researcher/view_group_subpage.php?id=8101"
+   },
+   "programme_name": {
+    "quote": "IBM Blue Mix",
+    "url": "https://researcher.watson.ibm.com/researcher/view_group_subpage.php?id=8101"
+   },
+   "organizer": {
+    "quote": "researcher.watson.ibm.com",
+    "url": "https://researcher.watson.ibm.com/researcher/view_group_subpage.php?id=8101"
+   },
+   "official_url": {
+    "quote": "https://researcher.watson.ibm.com/researcher/view_group_subpage.php?id=8101",
+    "url": "https://researcher.watson.ibm.com/researcher/view_group_subpage.php?id=8101"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-rig-internships-de-b856a1",
+  "programme_id": "research-hub-rig-internships-de-b856a1",
+  "official_url": "https://rig-internships.de/",
+  "checked_at": "2026-10-10T14:45:54+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Robotics Institute Germany Internships (RIGI) program invites students from all over the world to join a world-class research environment at the.",
+    "url": "https://rig-internships.de/"
+   },
+   "programme_name": {
+    "quote": "Robotics Institute Germany",
+    "url": "https://rig-internships.de/"
+   },
+   "organizer": {
+    "quote": "rig-internships.de",
+    "url": "https://rig-internships.de/"
+   },
+   "official_url": {
+    "quote": "https://rig-internships.de/",
+    "url": "https://rig-internships.de/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-sfp-caltech-edu-undergraduate-research-programs-08f04d",
+  "programme_id": "research-hub-sfp-caltech-edu-undergraduate-research-programs-08f04d",
+  "official_url": "https://sfp.caltech.edu/undergraduate-research/programs/surf/application_information",
+  "checked_at": "2026-10-10T14:45:59+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "The SURF 2027 application will open on November 1st.",
+    "url": "https://sfp.caltech.edu/undergraduate-research/programs/surf/application_information"
+   },
+   "application": {
+    "quote": "Application Information",
+    "url": "https://sfp.caltech.edu/undergraduate-research/programs/surf/application_information"
+   },
+   "application_url": {
+    "quote": "Application Information",
+    "url": "https://sfp.caltech.edu/undergraduate-research/programs/surf/application_information"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-research-sfp-iitm-ac-in-540af5",
+  "programme_id": "research-hub-sfp-iitm-ac-in-540af5",
+  "official_url": "https://sfp.iitm.ac.in/",
+  "checked_at": "2026-10-10T14:45:59+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-simonsfoundation-wd1-myworkdayjobs-com-en-us-simonsfoundatio-2c149a",
+  "programme_id": "research-hub-simonsfoundation-wd1-myworkdayjobs-com-en-us-simonsfoundatio-2c149a",
+  "official_url": "https://simonsfoundation.wd1.myworkdayjobs.com/en-US/simonsfoundationcareers/job/162-Fifth-Avenue/Data-Visualization-Intern--SCC_R0000579",
+  "checked_at": "2026-10-10T14:45:59+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-summer-yonsei-ac-kr-home-program-b6ee66",
+  "programme_id": "research-hub-summer-yonsei-ac-kr-home-program-b6ee66",
+  "official_url": "https://summer.yonsei.ac.kr/home/program/internship02.asp",
+  "checked_at": "2026-10-10T14:46:02+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-sure-gatech-edu-apply-400d26",
+  "programme_id": "research-hub-sure-gatech-edu-apply-400d26",
+  "official_url": "https://sure.gatech.edu/apply",
+  "checked_at": "2026-10-10T14:46:03+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "The SURE application will OPEN on October 15.",
+    "url": "https://sure.gatech.edu/apply"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-research-susaventures-com-summer-fellows-236d23",
+  "programme_id": "research-hub-susaventures-com-summer-fellows-236d23",
+  "official_url": "https://susaventures.com/summer-fellows",
+  "checked_at": "2026-10-10T14:46:04+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-routed-374d1cebd040",
+  "programme_id": "research-hub-routed-374d1cebd040",
+  "official_url": "https://swiss.sspp.program.phys.ethz.ch/",
+  "checked_at": "2026-10-10T14:46:05+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Swiss Summer Student Program in Particle Physics.",
+    "url": "https://swiss.sspp.program.phys.ethz.ch/"
+   },
+   "programme_name": {
+    "quote": "Swiss Summer Student Particle Physics",
+    "url": "https://swiss.sspp.program.phys.ethz.ch/"
+   },
+   "organizer": {
+    "quote": "swiss.sspp.program.phys.ethz.ch",
+    "url": "https://swiss.sspp.program.phys.ethz.ch/"
+   },
+   "official_url": {
+    "quote": "https://swiss.sspp.program.phys.ethz.ch/",
+    "url": "https://swiss.sspp.program.phys.ethz.ch/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-tech-cornell-edu-impact-break-through-tech-ed7e9b",
+  "programme_id": "research-hub-tech-cornell-edu-impact-break-through-tech-ed7e9b",
+  "official_url": "https://tech.cornell.edu/impact/break-through-tech/break-through-ai",
+  "checked_at": "2026-10-10T14:46:07+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Break Through Tech\u2019s AI Program.",
+    "url": "https://tech.cornell.edu/impact/break-through-tech/break-through-ai"
+   },
+   "programme_name": {
+    "quote": "Break Through Tech AI Fellowship",
+    "url": "https://tech.cornell.edu/impact/break-through-tech/break-through-ai"
+   },
+   "organizer": {
+    "quote": "tech.cornell.edu",
+    "url": "https://tech.cornell.edu/impact/break-through-tech/break-through-ai"
+   },
+   "official_url": {
+    "quote": "https://tech.cornell.edu/impact/break-through-tech/break-through-ai",
+    "url": "https://tech.cornell.edu/impact/break-through-tech/break-through-ai"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-tusur-ru-en-research-762ad3",
+  "programme_id": "research-hub-tusur-ru-en-research-762ad3",
+  "official_url": "https://tusur.ru/en/research/research-internships",
+  "checked_at": "2026-10-10T14:46:13+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The practical experience obtained in the course of internships must be compatible with students\u2019 degree programs at their home universities.",
+    "url": "https://tusur.ru/en/research/research-internships"
+   },
+   "programme_name": {
+    "quote": "TUSUR University",
+    "url": "https://tusur.ru/en/research/research-internships"
+   },
+   "organizer": {
+    "quote": "tusur.ru",
+    "url": "https://tusur.ru/en/research/research-internships"
+   },
+   "official_url": {
+    "quote": "https://tusur.ru/en/research/research-internships",
+    "url": "https://tusur.ru/en/research/research-internships"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
+  "programme_id": "research-hub-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
+  "official_url": "https://undergraduateresearch.princeton.edu/programs/summer-programs?field_class_year_eligibility_value=Juniors&field_division_value=Engineering&field_princeton_status_eligibili_value=Non-Princeton+undergrads",
+  "checked_at": "2026-10-10T14:46:19+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-research-us-redhat-icims-com-jobs-83084-52c799",
+  "programme_id": "research-hub-us-redhat-icims-com-jobs-83084-52c799",
+  "official_url": "https://us-redhat.icims.com/jobs/83084/remote-us-nc/job",
+  "checked_at": "2026-10-10T14:46:19+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-warwick-ac-uk-fac-sci-36469d",
+  "programme_id": "research-hub-warwick-ac-uk-fac-sci-36469d",
+  "official_url": "https://warwick.ac.uk/fac/sci/statistics/research/internships",
+  "checked_at": "2026-10-10T14:46:22+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications for the Summer Research Programme and URSS are now closed for 2026 (for information about URSS see.",
+    "url": "https://warwick.ac.uk/fac/sci/statistics/research/internships"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-warwick-ac-uk-research-data-science-0a2997",
+  "programme_id": "research-hub-warwick-ac-uk-research-data-science-0a2997",
+  "official_url": "https://warwick.ac.uk/research/data-science/warwick-data/dssgx",
+  "checked_at": "2026-10-10T14:46:25+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications for DSSG 2023 are now closed.",
+    "url": "https://warwick.ac.uk/research/data-science/warwick-data/dssgx"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-web-japps-ias-ac-in-fellowship2021-application-instructions-f7fd38",
+  "programme_id": "research-hub-web-japps-ias-ac-in-fellowship2021-application-instructions-f7fd38",
+  "official_url": "https://web-japps.ias.ac.in:8443/fellowship2021/application_instructions.jsp",
+  "checked_at": "2026-10-10T14:46:25+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: stale_year"
+ },
+ {
+  "source_id": "hub-research-websim-worldquantchallenge-com-en-cms-a7c16f",
+  "programme_id": "research-hub-websim-worldquantchallenge-com-en-cms-a7c16f",
+  "official_url": "https://websim.worldquantchallenge.com/en/cms/wqc/summerprograms/india",
+  "checked_at": "2026-10-10T14:46:25+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Our BRAIN Research Consultant Program is now available in.",
+    "url": "https://websim.worldquantchallenge.com/en/cms/wqc/summerprograms/india"
+   },
+   "programme_name": {
+    "quote": "Quantitative Research Summer Internship",
+    "url": "https://websim.worldquantchallenge.com/en/cms/wqc/summerprograms/india"
+   },
+   "organizer": {
+    "quote": "websim.worldquantchallenge.com",
+    "url": "https://websim.worldquantchallenge.com/en/cms/wqc/summerprograms/india"
+   },
+   "official_url": {
+    "quote": "https://websim.worldquantchallenge.com/en/cms/wqc/summerprograms/india",
+    "url": "https://websim.worldquantchallenge.com/en/cms/wqc/summerprograms/india"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-8vc-com-fellowships-8396f8",
+  "programme_id": "research-hub-www-8vc-com-fellowships-8396f8",
+  "official_url": "https://www.8vc.com/fellowships",
+  "checked_at": "2026-10-10T14:46:26+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The 8VC Fellowship is a unique, immersive, three-month internship program that places undergraduate students in contributing roles at some of the world's most innovative startups.",
+    "url": "https://www.8vc.com/fellowships"
+   },
+   "programme_name": {
+    "quote": "8VC Fellowship",
+    "url": "https://www.8vc.com/fellowships"
+   },
+   "organizer": {
+    "quote": "8vc.com",
+    "url": "https://www.8vc.com/fellowships"
+   },
+   "official_url": {
+    "quote": "https://www.8vc.com/fellowships",
+    "url": "https://www.8vc.com/fellowships"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-aalto-fi-en-aalto-science-institute-asci-b93e55",
+  "programme_id": "research-hub-www-aalto-fi-en-aalto-science-institute-asci-b93e55",
+  "official_url": "https://www.aalto.fi/en/aalto-science-institute-asci/aalto-science-institute-international-summer-research-programme",
+  "checked_at": "2026-10-10T14:46:27+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {},
+   "application": {
+    "quote": "Apply to Aalto",
+    "url": "https://www.aalto.fi/en/study-at-aalto"
+   },
+   "application_url": {
+    "quote": "Apply to Aalto",
+    "url": "https://www.aalto.fi/en/study-at-aalto"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {
+    "quote": "paid time off: depends on the contract (typically 2 days per one month of working).",
+    "url": "https://www.aalto.fi/en/aalto-science-institute-asci/aalto-science-institute-international-summer-research-programme"
+   },
+   "location": {
+    "quote": "Aalto University, Otaniemi, Espoo / Helsinki, Finland (remote employment is not possible).",
+    "url": "https://www.aalto.fi/en/aalto-science-institute-asci/aalto-science-institute-international-summer-research-programme"
+   },
+   "remote": {
+    "quote": "Aalto University, Otaniemi, Espoo / Helsinki, Finland (remote employment is not possible).",
+    "url": "https://www.aalto.fi/en/aalto-science-institute-asci/aalto-science-institute-international-summer-research-programme"
+   },
+   "international_eligibility": {
+    "quote": "AScI International Summer Research Programme.",
+    "url": "https://www.aalto.fi/en/aalto-science-institute-asci/aalto-science-institute-international-summer-research-programme"
+   },
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-research-www-aalto-fi-en-aalto-science-institute-9a782f",
+  "programme_id": "research-hub-www-aalto-fi-en-aalto-science-institute-9a782f",
+  "official_url": "https://www.aalto.fi/en/aalto-science-institute/aalto-science-institute-asci-internship-programme",
+  "checked_at": "2026-10-10T14:46:28+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://www.aalto.fi/en/admissions",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Application periods for studies starting in 2027.",
+    "url": "https://www.aalto.fi/en/admissions"
+   },
+   "application": {
+    "quote": "Apply to Aalto",
+    "url": "https://www.aalto.fi/en/admissions"
+   },
+   "application_url": {
+    "quote": "Apply to Aalto",
+    "url": "https://www.aalto.fi/en/admissions"
+   },
+   "opening_date": {
+    "quote": "Application periods for studies starting in 2027.",
+    "url": "https://www.aalto.fi/en/admissions"
+   },
+   "deadline": {
+    "quote": "Application periods for studies starting in 2027.",
+    "url": "https://www.aalto.fi/en/admissions"
+   },
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-research-www-aises-org-content-aire-57a382",
+  "programme_id": "research-hub-www-aises-org-content-aire-57a382",
+  "official_url": "https://www.aises.org/content/aire",
+  "checked_at": "2026-10-10T14:46:30+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Through resources, scholarships, internships, mentorship programming, helpful webinars, and networking opportunities, AISES provides Indigenous STEM students with all of the tools to succeed.",
+    "url": "https://www.aises.org/content/aire"
+   },
+   "programme_name": {
+    "quote": "AISES Increasing awareness and interest in computer science research among 130+ Indigenous undergraduate students across",
+    "url": "https://www.aises.org/content/aire"
+   },
+   "organizer": {
+    "quote": "aises.org",
+    "url": "https://www.aises.org/content/aire"
+   },
+   "official_url": {
+    "quote": "https://www.aises.org/content/aire",
+    "url": "https://www.aises.org/content/aire"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-amazon-jobs-jobs-10574677-bf8960",
+  "programme_id": "research-hub-www-amazon-jobs-jobs-10574677-bf8960",
+  "official_url": "https://www.amazon.jobs/jobs/10574677/senior-research-science-manager-last-mile-science-and-analytics?cmpid=bsp-amazon-science",
+  "checked_at": "2026-10-10T14:46:32+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Robust program management and research science skills.",
+    "url": "https://www.amazon.jobs/jobs/10574677/senior-research-science-manager-last-mile-science-and-analytics?cmpid=bsp-amazon-science"
+   },
+   "programme_name": {
+    "quote": "Senior Research Science Manager, Last Mile Science and Analytics",
+    "url": "https://www.amazon.jobs/jobs/10574677/senior-research-science-manager-last-mile-science-and-analytics?cmpid=bsp-amazon-science"
+   },
+   "organizer": {
+    "quote": "amazon.jobs",
+    "url": "https://www.amazon.jobs/jobs/10574677/senior-research-science-manager-last-mile-science-and-analytics?cmpid=bsp-amazon-science"
+   },
+   "official_url": {
+    "quote": "https://www.amazon.jobs/jobs/10574677/senior-research-science-manager-last-mile-science-and-analytics?cmpid=bsp-amazon-science",
+    "url": "https://www.amazon.jobs/jobs/10574677/senior-research-science-manager-last-mile-science-and-analytics?cmpid=bsp-amazon-science"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-bvp-com-bessemer-fellows-ee2f77",
+  "programme_id": "research-hub-www-bvp-com-bessemer-fellows-ee2f77",
+  "official_url": "https://www.bvp.com/bessemer-fellows",
+  "checked_at": "2026-10-10T14:46:36+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-www-cis-mpg-de-internships-23a74a",
+  "programme_id": "research-hub-www-cis-mpg-de-internships-23a74a",
+  "official_url": "https://www.cis.mpg.de/internships",
+  "checked_at": "2026-10-10T14:46:39+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "We process applications for internships starting in the summer months and those starting outside the summer months differently.",
+    "url": "https://www.cis.mpg.de/internships"
+   },
+   "programme_name": {
+    "quote": "Max Planck Institute for Software Systems",
+    "url": "https://www.cis.mpg.de/internships"
+   },
+   "organizer": {
+    "quote": "cis.mpg.de",
+    "url": "https://www.cis.mpg.de/internships"
+   },
+   "official_url": {
+    "quote": "https://www.cis.mpg.de/internships",
+    "url": "https://www.cis.mpg.de/internships"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-cmi-ac-in-admissions-internships-php-3c84a4",
+  "programme_id": "research-hub-www-cmi-ac-in-admissions-internships-php-3c84a4",
+  "official_url": "https://www.cmi.ac.in/admissions/internships.php",
+  "checked_at": "2026-10-10T14:46:44+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Students will be paid a fellowship.",
+    "url": "https://www.cmi.ac.in/admissions/internships.php"
+   },
+   "programme_name": {
+    "quote": "Internhip At CMI",
+    "url": "https://www.cmi.ac.in/admissions/internships.php"
+   },
+   "organizer": {
+    "quote": "cmi.ac.in",
+    "url": "https://www.cmi.ac.in/admissions/internships.php"
+   },
+   "official_url": {
+    "quote": "https://www.cmi.ac.in/admissions/internships.php",
+    "url": "https://www.cmi.ac.in/admissions/internships.php"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-codingitforward-com-fellowship-1a937f",
+  "programme_id": "research-hub-www-codingitforward-com-fellowship-1a937f",
+  "official_url": "https://www.codingitforward.com/fellowship",
+  "checked_at": "2026-10-10T14:46:48+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Coding it Forward\u2019s paid, ten-week Fellowship empowers early-career technologists to innovate in local, state, and federal government offices across the United States.",
+    "url": "https://www.codingitforward.com/fellowship"
+   },
+   "programme_name": {
+    "quote": "Civic Digital Fellowship",
+    "url": "https://www.codingitforward.com/fellowship"
+   },
+   "organizer": {
+    "quote": "codingitforward.com",
+    "url": "https://www.codingitforward.com/fellowship"
+   },
+   "official_url": {
+    "quote": "https://www.codingitforward.com/fellowship",
+    "url": "https://www.codingitforward.com/fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-crg-eu-en-content-04a66c",
+  "programme_id": "research-hub-www-crg-eu-en-content-04a66c",
+  "official_url": "https://www.crg.eu/en/content/training-undergraduates/crg-summer-internship-programme",
+  "checked_at": "2026-10-10T14:46:54+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "10th Summer Internship Programme for Undergraduate Students.",
+    "url": "https://www.crg.eu/en/content/training-undergraduates/crg-summer-internship-programme"
+   },
+   "programme_name": {
+    "quote": "CRG Summer Internship",
+    "url": "https://www.crg.eu/en/content/training-undergraduates/crg-summer-internship-programme"
+   },
+   "organizer": {
+    "quote": "crg.eu",
+    "url": "https://www.crg.eu/en/content/training-undergraduates/crg-summer-internship-programme"
+   },
+   "official_url": {
+    "quote": "https://www.crg.eu/en/content/training-undergraduates/crg-summer-internship-programme",
+    "url": "https://www.crg.eu/en/content/training-undergraduates/crg-summer-internship-programme"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-cse-gatech-edu-research-cruise-9d9e64",
+  "programme_id": "research-hub-www-cse-gatech-edu-research-cruise-9d9e64",
+  "official_url": "https://www.cse.gatech.edu/research/cruise",
+  "checked_at": "2026-10-10T14:46:55+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-www-dssgfellowship-org-fde356",
+  "programme_id": "research-hub-www-dssgfellowship-org-fde356",
+  "official_url": "https://www.dssgfellowship.org/",
+  "checked_at": "2026-10-10T14:46:55+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "tls"
+ },
+ {
+  "source_id": "hub-research-www-emmabowenfoundation-org-apply-460ba2",
+  "programme_id": "research-hub-www-emmabowenfoundation-org-apply-460ba2",
+  "official_url": "https://www.emmabowenfoundation.org/apply",
+  "checked_at": "2026-10-10T14:46:56+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Applications are reviewed on a rolling basis based on our partners\u2019 requests, placement locations, and their individual hiring timelines.",
+    "url": "https://www.emmabowenfoundation.org/apply"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "You are eligible to apply for the EBF Fellows Program if you meet ALL of the following requirements:.",
+    "url": "https://www.emmabowenfoundation.org/apply"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-engineering-unsw-edu-au-civil-engineering-study-with-us-e934dd",
+  "programme_id": "research-hub-www-engineering-unsw-edu-au-civil-engineering-study-with-us-e934dd",
+  "official_url": "https://www.engineering.unsw.edu.au/civil-engineering/study-with-us/international-exchange/research-internship-to-unsw-for-international-students",
+  "checked_at": "2026-10-10T14:47:00+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Bachelor of Engineering (Honours) Program Rules.",
+    "url": "https://www.engineering.unsw.edu.au/civil-engineering/study-with-us/international-exchange/research-internship-to-unsw-for-international-students"
+   },
+   "programme_name": {
+    "quote": "UNSW Civil and Environmental Engineering Research Internship",
+    "url": "https://www.engineering.unsw.edu.au/civil-engineering/study-with-us/international-exchange/research-internship-to-unsw-for-international-students"
+   },
+   "organizer": {
+    "quote": "engineering.unsw.edu.au",
+    "url": "https://www.engineering.unsw.edu.au/civil-engineering/study-with-us/international-exchange/research-internship-to-unsw-for-international-students"
+   },
+   "official_url": {
+    "quote": "https://www.engineering.unsw.edu.au/civil-engineering/study-with-us/international-exchange/research-internship-to-unsw-for-international-students",
+    "url": "https://www.engineering.unsw.edu.au/civil-engineering/study-with-us/international-exchange/research-internship-to-unsw-for-international-students"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-ggvc-com-ggv-nextgen-fellow-fd1f5f",
+  "programme_id": "research-hub-www-ggvc-com-ggv-nextgen-fellow-fd1f5f",
+  "official_url": "https://www.ggvc.com/ggv-nextgen-fellow",
+  "checked_at": "2026-10-10T14:47:11+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-www-iiitb-ac-in-summer-internship-04df56",
+  "programme_id": "research-hub-www-iiitb-ac-in-summer-internship-04df56",
+  "official_url": "https://www.iiitb.ac.in/summer-internship",
+  "checked_at": "2026-10-10T14:47:15+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Long Term Programmes (11-14 months).",
+    "url": "https://www.iiitb.ac.in/summer-internship"
+   },
+   "programme_name": {
+    "quote": "IIIT Bangalore",
+    "url": "https://www.iiitb.ac.in/summer-internship"
+   },
+   "organizer": {
+    "quote": "iiitb.ac.in",
+    "url": "https://www.iiitb.ac.in/summer-internship"
+   },
+   "official_url": {
+    "quote": "https://www.iiitb.ac.in/summer-internship",
+    "url": "https://www.iiitb.ac.in/summer-internship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-iiitd-ac-in-placement-internships-434899",
+  "programme_id": "research-hub-www-iiitd-ac-in-placement-internships-434899",
+  "official_url": "https://www.iiitd.ac.in/placement/internships",
+  "checked_at": "2026-10-10T14:47:21+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "tls"
+ },
+ {
+  "source_id": "hub-research-www-iiserkol-ac-in-summer-research-1da195",
+  "programme_id": "research-hub-www-iiserkol-ac-in-summer-research-1da195",
+  "official_url": "https://www.iiserkol.ac.in/~summer.research",
+  "checked_at": "2026-10-10T14:47:26+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Online application closed !",
+    "url": "https://www.iiserkol.ac.in/~summer.research"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-iitrpr-ac-in-sites-default-51c0e8",
+  "programme_id": "research-hub-www-iitrpr-ac-in-sites-default-51c0e8",
+  "official_url": "https://www.iitrpr.ac.in/sites/default/files/Advertisement%20for%20Summer%20Internship%202021.pdf",
+  "checked_at": "2026-10-10T14:47:28+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "missing_programme_noun_page"
+ },
+ {
+  "source_id": "hub-research-www-impactlabs-io-fellowship-7f1e15",
+  "programme_id": "research-hub-www-impactlabs-io-fellowship-7f1e15",
+  "official_url": "https://www.impactlabs.io/fellowship",
+  "checked_at": "2026-10-10T14:47:28+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications for The 2025 Impact Fellowship are now closed.",
+    "url": "https://www.impactlabs.io/fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-inria-fr-en-do-internship-98f222",
+  "programme_id": "research-hub-www-inria-fr-en-do-internship-98f222",
+  "official_url": "https://www.inria.fr/en/do-internship",
+  "checked_at": "2026-10-10T14:47:30+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Directrice ex\u00e9cutive de l\u2019Agence de programmes.",
+    "url": "https://www.inria.fr/en/do-internship"
+   },
+   "programme_name": {
+    "quote": "Inria France",
+    "url": "https://www.inria.fr/en/do-internship"
+   },
+   "organizer": {
+    "quote": "inria.fr",
+    "url": "https://www.inria.fr/en/do-internship"
+   },
+   "official_url": {
+    "quote": "https://www.inria.fr/en/do-internship",
+    "url": "https://www.inria.fr/en/do-internship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-insidesherpa-com-virtual-internships-prototype-17ed83",
+  "programme_id": "research-hub-www-insidesherpa-com-virtual-internships-prototype-17ed83",
+  "official_url": "https://www.insidesherpa.com/virtual-internships/prototype/oRMogWRHeewqHzA7u/College-students%3A-Learn-how-to-work-at-a-YC-startup-",
+  "checked_at": "2026-10-10T14:47:31+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Y Combinator",
+    "url": "https://www.insidesherpa.com/virtual-internships/prototype/oRMogWRHeewqHzA7u/College-students%3A-Learn-how-to-work-at-a-YC-startup-"
+   },
+   "organizer": {
+    "quote": "insidesherpa.com",
+    "url": "https://www.insidesherpa.com/virtual-internships/prototype/oRMogWRHeewqHzA7u/College-students%3A-Learn-how-to-work-at-a-YC-startup-"
+   },
+   "official_url": {
+    "quote": "https://www.insidesherpa.com/virtual-internships/prototype/oRMogWRHeewqHzA7u/College-students%3A-Learn-how-to-work-at-a-YC-startup-",
+    "url": "https://www.insidesherpa.com/virtual-internships/prototype/oRMogWRHeewqHzA7u/College-students%3A-Learn-how-to-work-at-a-YC-startup-"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-insidesherpa-com-virtual-internships-theme-f7570a",
+  "programme_id": "research-hub-www-insidesherpa-com-virtual-internships-theme-f7570a",
+  "official_url": "https://www.insidesherpa.com/virtual-internships/theme/m7W4GMqeT3bh9Nb2c/KPMG-Data-Analytics-Virtual-Internship",
+  "checked_at": "2026-10-10T14:47:32+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: internship_title"
+ },
+ {
+  "source_id": "hub-research-www-internships-yesatyale-org-students-beccb8",
+  "programme_id": "research-hub-www-internships-yesatyale-org-students-beccb8",
+  "official_url": "https://www.internships.yesatyale.org/students",
+  "checked_at": "2026-10-10T14:47:32+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: internship_title"
+ },
+ {
+  "source_id": "hub-research-www-isical-ac-in-rcbose-internship-f53b91",
+  "programme_id": "research-hub-www-isical-ac-in-rcbose-internship-f53b91",
+  "official_url": "https://www.isical.ac.in/~rcbose/internship/index.html",
+  "checked_at": "2026-10-10T14:48:14+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "timeout"
+ },
+ {
+  "source_id": "hub-research-www-jpl-nasa-gov-edu-intern-af57b7",
+  "programme_id": "research-hub-www-jpl-nasa-gov-edu-intern-af57b7",
+  "official_url": "https://www.jpl.nasa.gov/edu/intern/apply/caltech-summer-undergraduate-research-fellowship",
+  "checked_at": "2026-10-10T14:48:14+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-research-www-microsoft-com-en-us-research-db263e",
+  "programme_id": "research-hub-www-microsoft-com-en-us-research-db263e",
+  "official_url": "https://www.microsoft.com/en-us/research/academic-program/fellowships-microsoft-research-asia",
+  "checked_at": "2026-10-10T14:48:16+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed; second-hop evidence from https://www.microsoft.com/en-us/research/academic-program/fellowships-microsoft-research-asia/how-to-apply/",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "application period closes on Friday, June 10, 2022, at 11:59 PM Beijing Time.",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/fellowships-microsoft-research-asia/how-to-apply/"
+   },
+   "deadline": {
+    "quote": "application period closes on Friday, June 10, 2022, at 11:59 PM Beijing Time.",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/fellowships-microsoft-research-asia/how-to-apply/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-mitacs-ca-en-programs-de62ed",
+  "programme_id": "research-hub-www-mitacs-ca-en-programs-de62ed",
+  "official_url": "https://www.mitacs.ca/en/programs/globalink/globalink-research-internship",
+  "checked_at": "2026-10-10T14:48:20+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Application period at Tec: August 3 \u2013 September 3.",
+    "url": "https://www.mitacs.ca/en/programs/globalink/globalink-research-internship"
+   },
+   "application": {
+    "quote": "How To Apply",
+    "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/#how_to_apply"
+   },
+   "application_url": {
+    "quote": "How To Apply",
+    "url": "https://www.mitacs.ca/our-programs/globalink-research-internship-students/#how_to_apply"
+   },
+   "opening_date": {
+    "quote": "Application period at Tec: August 3 \u2013 September 3.",
+    "url": "https://www.mitacs.ca/en/programs/globalink/globalink-research-internship"
+   },
+   "deadline": {
+    "quote": "Application period at Tec: August 3 \u2013 September 3.",
+    "url": "https://www.mitacs.ca/en/programs/globalink/globalink-research-internship"
+   },
+   "funding": {
+    "quote": "Stipend for housing (amount varies depending on country of origin).",
+    "url": "https://www.mitacs.ca/en/programs/globalink/globalink-research-internship"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {
+    "quote": "Access Canada\u2019s dynamic and innovative research landscape, gain valuable hands-on research experience in your chosen field, and open the door to exciting international opportunities in the future through a Globalink Research Internship.",
+    "url": "https://www.mitacs.ca/en/programs/globalink/globalink-research-internship"
+   },
+   "eligibility": {
+    "quote": "for each country in the Eligibility section.",
+    "url": "https://www.mitacs.ca/en/programs/globalink/globalink-research-internship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-mitacs-ca-globa-e18074",
+  "programme_id": "research-hub-www-mitacs-ca-globa-e18074",
+  "official_url": "https://www.mitacs.ca/\u2026/globa\u2026/globalink-research-internship",
+  "checked_at": "2026-10-10T14:48:21+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: UnicodeEncodeError: 'ascii' codec can't encode character '\\u2026' in position 5: ordinal not in range(128)"
+ },
+ {
+  "source_id": "hub-research-www-mpi-sws-org-research-careers-8fbefd",
+  "programme_id": "research-hub-www-mpi-sws-org-research-careers-8fbefd",
+  "official_url": "https://www.mpi-sws.org/research-careers",
+  "checked_at": "2026-10-10T14:48:24+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Max Planck Institute for Software Systems (MPI-SWS) has multiple openings for Postdoctoral Fellows in the areas of programming languages & verification, distributed & mobile systems, real-time & embedded systems, security & privacy, natural language processing, and social computing.",
+    "url": "https://www.mpi-sws.org/research-careers"
+   },
+   "programme_name": {
+    "quote": "Max Plack Institute of Software Systems Internship (",
+    "url": "https://www.mpi-sws.org/research-careers"
+   },
+   "organizer": {
+    "quote": "mpi-sws.org",
+    "url": "https://www.mpi-sws.org/research-careers"
+   },
+   "official_url": {
+    "quote": "https://www.mpi-sws.org/research-careers",
+    "url": "https://www.mpi-sws.org/research-careers"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-ntu-edu-sg-about-us-global-3828fd",
+  "programme_id": "research-hub-www-ntu-edu-sg-about-us-global-3828fd",
+  "official_url": "https://www.ntu.edu.sg/about-us/global/global-connect-fellowship/programme-details",
+  "checked_at": "2026-10-10T14:48:27+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Research Programmes Admission Guide.",
+    "url": "https://www.ntu.edu.sg/about-us/global/global-connect-fellowship/programme-details"
+   },
+   "programme_name": {
+    "quote": "NTU Singapore",
+    "url": "https://www.ntu.edu.sg/about-us/global/global-connect-fellowship/programme-details"
+   },
+   "organizer": {
+    "quote": "ntu.edu.sg",
+    "url": "https://www.ntu.edu.sg/about-us/global/global-connect-fellowship/programme-details"
+   },
+   "official_url": {
+    "quote": "https://www.ntu.edu.sg/about-us/global/global-connect-fellowship/programme-details",
+    "url": "https://www.ntu.edu.sg/about-us/global/global-connect-fellowship/programme-details"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-oist-jp-admissions-research-internship-132f2c",
+  "programme_id": "research-hub-www-oist-jp-admissions-research-internship-132f2c",
+  "official_url": "https://www.oist.jp/admissions/research-internship/program-description",
+  "checked_at": "2026-10-10T14:48:30+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Apply to Research Internship.",
+    "url": "https://www.oist.jp/admissions/research-internship/program-description"
+   },
+   "programme_name": {
+    "quote": "OIST",
+    "url": "https://www.oist.jp/admissions/research-internship/program-description"
+   },
+   "organizer": {
+    "quote": "oist.jp",
+    "url": "https://www.oist.jp/admissions/research-internship/program-description"
+   },
+   "official_url": {
+    "quote": "https://www.oist.jp/admissions/research-internship/program-description",
+    "url": "https://www.oist.jp/admissions/research-internship/program-description"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-postgraduate-study-cam-ac-uk-events-internships-8eaded",
+  "programme_id": "research-hub-www-postgraduate-study-cam-ac-uk-events-internships-8eaded",
+  "official_url": "https://www.postgraduate.study.cam.ac.uk/events/internships",
+  "checked_at": "2026-10-10T14:48:33+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications are now closed.",
+    "url": "https://www.postgraduate.study.cam.ac.uk/events/internships"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-research-gov-research-web-986731",
+  "programme_id": "research-hub-www-research-gov-research-web-986731",
+  "official_url": "https://www.research.gov/research-web",
+  "checked_at": "2026-10-10T14:48:34+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Apply to fellowships & training.",
+    "url": "https://www.research.gov/research-web"
+   },
+   "programme_name": {
+    "quote": "Research.gov",
+    "url": "https://www.research.gov/research-web"
+   },
+   "organizer": {
+    "quote": "research.gov",
+    "url": "https://www.research.gov/research-web"
+   },
+   "official_url": {
+    "quote": "https://www.research.gov/research-web",
+    "url": "https://www.research.gov/research-web"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-research-ibm-com-university-awards-9332fe",
+  "programme_id": "research-hub-www-research-ibm-com-university-awards-9332fe",
+  "official_url": "https://www.research.ibm.com/university/awards/fellowships.html",
+  "checked_at": "2026-10-10T14:48:36+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "IBM PhD Fellowship Award promote research, innovation, and the building of social, scientific, and technology-based collaboration with universities.",
+    "url": "https://www.research.ibm.com/university/awards/fellowships.html"
+   },
+   "programme_name": {
+    "quote": "IBM PhD Fellowship",
+    "url": "https://www.research.ibm.com/university/awards/fellowships.html"
+   },
+   "organizer": {
+    "quote": "research.ibm.com",
+    "url": "https://www.research.ibm.com/university/awards/fellowships.html"
+   },
+   "official_url": {
+    "quote": "https://www.research.ibm.com/university/awards/fellowships.html",
+    "url": "https://www.research.ibm.com/university/awards/fellowships.html"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-rockefeller-edu-education-and-training-surf-ed6797",
+  "programme_id": "research-hub-www-rockefeller-edu-education-and-training-surf-ed6797",
+  "official_url": "https://www.rockefeller.edu/education-and-training/surf",
+  "checked_at": "2026-10-10T14:48:37+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Learn more about our flexible, supportive academic programs.",
+    "url": "https://www.rockefeller.edu/education-and-training/surf"
+   },
+   "programme_name": {
+    "quote": "Summer Undergraduate Research fellowship program",
+    "url": "https://www.rockefeller.edu/education-and-training/surf"
+   },
+   "organizer": {
+    "quote": "rockefeller.edu",
+    "url": "https://www.rockefeller.edu/education-and-training/surf"
+   },
+   "official_url": {
+    "quote": "https://www.rockefeller.edu/education-and-training/surf",
+    "url": "https://www.rockefeller.edu/education-and-training/surf"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-santafe-edu-engage-learn-e272ae",
+  "programme_id": "research-hub-www-santafe-edu-engage-learn-e272ae",
+  "official_url": "https://www.santafe.edu/engage/learn/programs/undergraduate-complexity-research",
+  "checked_at": "2026-10-10T14:48:43+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The SFI Undergraduate Complexity Research (UCR) program is a 10-week residential experience in complexity science research.",
+    "url": "https://www.santafe.edu/engage/learn/programs/undergraduate-complexity-research"
+   },
+   "programme_name": {
+    "quote": "Santa Fe Institute Summer Research Experience",
+    "url": "https://www.santafe.edu/engage/learn/programs/undergraduate-complexity-research"
+   },
+   "organizer": {
+    "quote": "santafe.edu",
+    "url": "https://www.santafe.edu/engage/learn/programs/undergraduate-complexity-research"
+   },
+   "official_url": {
+    "quote": "https://www.santafe.edu/engage/learn/programs/undergraduate-complexity-research",
+    "url": "https://www.santafe.edu/engage/learn/programs/undergraduate-complexity-research"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-santafe-edu-engage-learn-e1ef6c",
+  "programme_id": "research-hub-www-santafe-edu-engage-learn-e1ef6c",
+  "official_url": "https://www.santafe.edu/engage/learn/schools/research-experiences-undergraduates",
+  "checked_at": "2026-10-10T14:48:47+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "This site is supported by the Miller Omega Program.",
+    "url": "https://www.santafe.edu/engage/learn/schools/research-experiences-undergraduates"
+   },
+   "programme_name": {
+    "quote": "Santa Fe Institute Summer Research Experience",
+    "url": "https://www.santafe.edu/engage/learn/schools/research-experiences-undergraduates"
+   },
+   "organizer": {
+    "quote": "santafe.edu",
+    "url": "https://www.santafe.edu/engage/learn/schools/research-experiences-undergraduates"
+   },
+   "official_url": {
+    "quote": "https://www.santafe.edu/engage/learn/schools/research-experiences-undergraduates",
+    "url": "https://www.santafe.edu/engage/learn/schools/research-experiences-undergraduates"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-science-unsw-edu-au-student-life-student-opportunities-2c3d36",
+  "programme_id": "research-hub-www-science-unsw-edu-au-student-life-student-opportunities-2c3d36",
+  "official_url": "https://www.science.unsw.edu.au/student-life/student-opportunities/research-internships",
+  "checked_at": "2026-10-10T14:48:51+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-www-shastriinstitute-org-shastri-student-internship-project-6141dc",
+  "programme_id": "research-hub-www-shastriinstitute-org-shastri-student-internship-project-6141dc",
+  "official_url": "https://www.shastriinstitute.org/Shastri_Student_Internship_Project",
+  "checked_at": "2026-10-10T14:48:53+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Shastri Programme Development Grant (Academic Program/Activities).",
+    "url": "https://www.shastriinstitute.org/Shastri_Student_Internship_Project"
+   },
+   "programme_name": {
+    "quote": "Shastri Student Internship Project",
+    "url": "https://www.shastriinstitute.org/Shastri_Student_Internship_Project"
+   },
+   "organizer": {
+    "quote": "shastriinstitute.org",
+    "url": "https://www.shastriinstitute.org/Shastri_Student_Internship_Project"
+   },
+   "official_url": {
+    "quote": "https://www.shastriinstitute.org/Shastri_Student_Internship_Project",
+    "url": "https://www.shastriinstitute.org/Shastri_Student_Internship_Project"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-shastriinstitute-org-shastri-research-student-fellowship-4e27a9",
+  "programme_id": "research-hub-www-shastriinstitute-org-shastri-research-student-fellowship-4e27a9",
+  "official_url": "https://www.shastriinstitute.org/shastri-research-student-fellowship",
+  "checked_at": "2026-10-10T14:48:57+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-research-www-smithsonianofi-com-fellowship-opportunities-smithsonian-372c41",
+  "programme_id": "research-hub-www-smithsonianofi-com-fellowship-opportunities-smithsonian-372c41",
+  "official_url": "https://www.smithsonianofi.com/fellowship-opportunities/smithsonian-institution-fellowship-program",
+  "checked_at": "2026-10-10T14:48:57+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno 111] Connection refused>"
+ },
+ {
+  "source_id": "hub-research-www-sserd-org-internship-e05f59",
+  "programme_id": "research-hub-www-sserd-org-internship-e05f59",
+  "official_url": "https://www.sserd.org/internship",
+  "checked_at": "2026-10-10T14:48:58+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-research-www-ualberta-ca-admissions-programs-visiting-student-and-int-f66b68",
+  "programme_id": "research-hub-www-ualberta-ca-admissions-programs-visiting-student-and-int-f66b68",
+  "official_url": "https://www.ualberta.ca/admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/how-to-apply.html",
+  "checked_at": "2026-10-10T14:48:58+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-research-www-ualberta-ca-admissions-programs-visiting-student-and-int-ffe209",
+  "programme_id": "research-hub-www-ualberta-ca-admissions-programs-visiting-student-and-int-ffe209",
+  "official_url": "https://www.ualberta.ca/admissions-programs/visiting-student-and-internship-programs/research-internships/ualberta-research-experience/important-dates.html",
+  "checked_at": "2026-10-10T14:48:59+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-research-www-ugc-ac-in-ef-434256",
+  "programme_id": "research-hub-www-ugc-ac-in-ef-434256",
+  "official_url": "https://www.ugc.ac.in/ef",
+  "checked_at": "2026-10-10T14:49:04+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Emeritus fellowship",
+    "url": "https://www.ugc.ac.in/ef"
+   },
+   "organizer": {
+    "quote": "ugc.ac.in",
+    "url": "https://www.ugc.ac.in/ef"
+   },
+   "official_url": {
+    "quote": "https://www.ugc.ac.in/ef",
+    "url": "https://www.ugc.ac.in/ef"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-ugc-ac-in-oldpdf-xiplanpdf-674fcb",
+  "programme_id": "research-hub-www-ugc-ac-in-oldpdf-xiplanpdf-674fcb",
+  "official_url": "https://www.ugc.ac.in/oldpdf/xiplanpdf/JRFE-T.pdf",
+  "checked_at": "2026-10-10T14:49:06+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-www-ugc-ac-in-oldpdf-xiplanpdf-a96d55",
+  "programme_id": "research-hub-www-ugc-ac-in-oldpdf-xiplanpdf-a96d55",
+  "official_url": "https://www.ugc.ac.in/oldpdf/xiplanpdf/meritorious%20students.pdf",
+  "checked_at": "2026-10-10T14:49:08+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Microsoft Word - UGC Research Fellowship in Science for meritorious students.",
+    "url": "https://www.ugc.ac.in/oldpdf/xiplanpdf/meritorious%20students.pdf"
+   },
+   "programme_name": {
+    "quote": "UGC research fellowships in science for meritorious students",
+    "url": "https://www.ugc.ac.in/oldpdf/xiplanpdf/meritorious%20students.pdf"
+   },
+   "organizer": {
+    "quote": "ugc.ac.in",
+    "url": "https://www.ugc.ac.in/oldpdf/xiplanpdf/meritorious%20students.pdf"
+   },
+   "official_url": {
+    "quote": "https://www.ugc.ac.in/oldpdf/xiplanpdf/meritorious%20students.pdf",
+    "url": "https://www.ugc.ac.in/oldpdf/xiplanpdf/meritorious%20students.pdf"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-ugc-ac-in-oldpdf-xplanpdf-fc020c",
+  "programme_id": "research-hub-www-ugc-ac-in-oldpdf-xplanpdf-fc020c",
+  "official_url": "https://www.ugc.ac.in/oldpdf/xplanpdf/JRFscience.pdf",
+  "checked_at": "2026-10-10T14:49:10+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-www-utep-edu-newsfeed-2022-8801d0",
+  "programme_id": "research-hub-www-utep-edu-newsfeed-2022-8801d0",
+  "official_url": "https://www.utep.edu/newsfeed/2022/utep-led-alliance-receives-4.8m-from-google-to-increase-hispanic-participation-in-computing-research.html",
+  "checked_at": "2026-10-10T14:49:10+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: stale_year"
+ },
+ {
+  "source_id": "hub-research-www-weizmann-ac-il-feinberg-admissions-c56b6c",
+  "programme_id": "research-hub-www-weizmann-ac-il-feinberg-admissions-c56b6c",
+  "official_url": "https://www.weizmann.ac.il/feinberg/admissions/kupcinet-getz-international-summer-school/about-program-0",
+  "checked_at": "2026-10-10T14:49:15+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "missing_programme_noun_page"
+ },
+ {
+  "source_id": "hub-research-www8-gsb-columbia-edu-programs-pre-doctoral-research-18922c",
+  "programme_id": "research-hub-www8-gsb-columbia-edu-programs-pre-doctoral-research-18922c",
+  "official_url": "https://www8.gsb.columbia.edu/programs/pre-doctoral-research/summer-research-internship",
+  "checked_at": "2026-10-10T14:49:16+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
  }
 ]
