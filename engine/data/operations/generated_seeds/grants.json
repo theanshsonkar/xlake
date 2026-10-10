@@ -9,7 +9,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-bssw-io-pages-bssw-fellowship-program-037614",
@@ -21,7 +22,8 @@
       "pages/bssw-fellowship-program"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-foundation-mozilla-org-en-what-we-fund-0f89fa",
@@ -33,7 +35,8 @@
       "en/what-we-fund/awards/mozilla-technology-fund-mtf"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-interledger-org-ambassadors-4734ae",
@@ -45,7 +48,8 @@
       "ambassadors"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-programs-c369c9",
@@ -57,7 +61,8 @@
       "wiki/Grants:Programs/Wikimedia_Research_%26_Technology_Fund"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-start-a3a9f2",
@@ -69,7 +74,8 @@
       "wiki/Grants:Start"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-metamaskgrants-org-c19df3",
@@ -81,7 +87,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-ocean-sagepub-com-concept-grants-7556d8",
@@ -93,7 +100,8 @@
       "concept-grants"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-research-cisco-com-open-rfps-af03de",
@@ -105,7 +113,8 @@
       "open-rfps"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-research-google-outreach-4be4f7",
@@ -117,7 +126,8 @@
       "outreach"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-research-google-programs-and-events-phd-fellowship-62693b",
@@ -129,7 +139,8 @@
       "programs-and-events/phd-fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-sloan-org-grants-apply-005a70",
@@ -141,7 +152,8 @@
       "grants/apply"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-sovereigntechfund-de-programs-fellowship-88c835",
@@ -153,7 +165,8 @@
       "programs/fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-web3-foundation-4fccff",
@@ -165,7 +178,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-www-cisco-com-c-en-9d3093",
@@ -177,7 +191,8 @@
       "c/en/us/about/csr/community/nonprofits/product-grant-program.html"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   },
   {
     "source_id": "hub-grants-www-top10vpn-com-research-grant-d51033",
@@ -189,6 +204,7 @@
       "research-grant"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:58Z"
+    "first_seen": "2026-10-10T08:36:56Z",
+    "last_seen": "2026-10-10T08:36:56Z"
   }
 ]

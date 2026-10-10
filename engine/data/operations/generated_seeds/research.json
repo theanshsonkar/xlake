@@ -9,7 +9,8 @@
       "research"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-asta-allen-ai-e6214b",
@@ -21,7 +22,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-blog-google-translate-goog-intl-de-de-b11f7e",
@@ -33,7 +35,8 @@
       "intl/de-de/unternehmen/technologie/google-tu-munchen-tum-investition-cybersecurity-forschung"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-blog-google-technology-research-815346",
@@ -45,7 +48,8 @@
       "technology/research/meet-phd-students-changing-face-computing"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-blog-google-technology-research-4b0da1",
@@ -57,7 +61,8 @@
       "technology/research/mentorship-inspires-deyrel-diaz-and-future-researchers"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-blog-google-technology-research-0906a3",
@@ -69,7 +74,8 @@
       "technology/research/our-first-trust-safety-research-awards-grantees"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-blog-google-technology-research-3e68c2",
@@ -81,7 +87,8 @@
       "technology/research/rajavi-mishra-becoming-computer-science-researcher"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-deepmind-google-research-13360c",
@@ -93,7 +100,8 @@
       "research"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-huggingface-co-coherelabs-65fbae",
@@ -105,7 +113,8 @@
       "CohereLabs"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-onlineportal-iitrpr-ac-in-sia-21-b4ebde",
@@ -118,7 +127,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:25:24Z",
-    "last_seen": "2026-10-09T20:36:33Z"
+    "last_seen": "2026-10-10T08:36:32Z"
   },
   {
     "source_id": "hub-research-research-google-50efb5",
@@ -143,7 +152,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:25:24Z",
-    "last_seen": "2026-10-09T20:36:33Z"
+    "last_seen": "2026-10-10T08:36:32Z"
   },
   {
     "source_id": "hub-research-sure-gatech-edu-apply-400d26",
@@ -156,7 +165,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:25:24Z",
-    "last_seen": "2026-10-09T20:36:33Z"
+    "last_seen": "2026-10-10T08:36:32Z"
   },
   {
     "source_id": "hub-research-www-aises-org-content-aire-57a382",
@@ -168,7 +177,8 @@
       "content/aire"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-www-engineering-unsw-edu-au-civil-engineering-study-with-us-e934dd",
@@ -181,7 +191,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:25:24Z",
-    "last_seen": "2026-10-09T20:36:33Z"
+    "last_seen": "2026-10-10T08:36:32Z"
   },
   {
     "source_id": "hub-research-www-iiitd-ac-in-placement-internships-434899",
@@ -194,7 +204,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:25:24Z",
-    "last_seen": "2026-10-09T20:36:33Z"
+    "last_seen": "2026-10-10T08:36:32Z"
   },
   {
     "source_id": "hub-research-www-isical-ac-in-rcbose-internship-f53b91",
@@ -207,7 +217,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:25:24Z",
-    "last_seen": "2026-10-09T20:36:33Z"
+    "last_seen": "2026-10-10T08:36:32Z"
   },
   {
     "source_id": "hub-research-www-mitacs-ca-en-programs-de62ed",
@@ -220,7 +230,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:25:24Z",
-    "last_seen": "2026-10-09T20:36:33Z"
+    "last_seen": "2026-10-10T08:36:32Z"
   },
   {
     "source_id": "hub-research-www-research-gov-research-web-986731",
@@ -232,7 +242,8 @@
       "research-web"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-www-science-unsw-edu-au-student-life-student-opportunities-2c3d36",
@@ -245,7 +256,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:25:24Z",
-    "last_seen": "2026-10-09T20:36:33Z"
+    "last_seen": "2026-10-10T08:36:32Z"
   },
   {
     "source_id": "hub-research-www-utep-edu-newsfeed-2022-8801d0",
@@ -257,7 +268,8 @@
       "newsfeed/2022/utep-led-alliance-receives-4.8m-from-google-to-increase-hispanic-participation-in-computing-research.html"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:25:24Z"
+    "first_seen": "2026-10-10T08:38:08Z",
+    "last_seen": "2026-10-10T08:38:08Z"
   },
   {
     "source_id": "hub-research-www-weizmann-ac-il-feinberg-admissions-c56b6c",
@@ -270,6 +282,6 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:25:24Z",
-    "last_seen": "2026-10-09T20:36:33Z"
+    "last_seen": "2026-10-10T08:36:32Z"
   }
 ]

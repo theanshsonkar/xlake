@@ -9,7 +9,8 @@
       "wdts/scgsr"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-sites-nationalacademies-org-pga-fordfellowships-0f7325",
@@ -21,7 +22,8 @@
       "pga/fordfellowships/index.htm"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-thielfellowship-org-41d873",
@@ -33,7 +35,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-gemfellowship-org-6de8bd",
@@ -45,7 +48,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-hudson-trading-com-fellowship-229bab",
@@ -57,7 +61,8 @@
       "fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-linksim-org-8f5145",
@@ -69,7 +74,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-npsc-org-index-html-f4dfeb",
@@ -81,7 +87,8 @@
       "index.html"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-abidlabs-github-io-fellowship-1c2af9",
@@ -93,7 +100,8 @@
       "fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-academy-oracle-com-en-about-scholarships-html-969657",
@@ -105,7 +113,8 @@
       "en/about-scholarships.html"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-ai-google-research-outreach-3dd877",
@@ -117,7 +126,8 @@
       "research/outreach/phd-fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-apps-grad-illinois-edu-fellowship-finder-7a2737",
@@ -129,7 +139,8 @@
       "fellowship-finder"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-awards-acm-org-doctoral-dissertation-nominations-2df153",
@@ -141,7 +152,8 @@
       "doctoral-dissertation/nominations"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-awards-acm-org-hpc-fellows-0b0cd9",
@@ -153,7 +165,8 @@
       "hpc-fellows"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-buildyourfuture-withgoogle-com-scholarships-generation-googl-7c127a",
@@ -165,7 +178,8 @@
       "scholarships/generation-google-scholarship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-cra-org-ccc-leadership-development-72f579",
@@ -177,7 +191,8 @@
       "ccc/leadership-development/cifellows"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-eatcs-org-index-php-dissertation-award-d69554",
@@ -189,7 +204,8 @@
       "index.php/dissertation-award"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-frontera-portal-tacc-utexas-edu-fellowship-d3eb7a",
@@ -201,7 +217,8 @@
       "fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-gfsd-onlineapplications-net-applications-96407f",
@@ -213,7 +230,8 @@
       "applications"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-ghc-anitab-org-2019-student-academic-scholarships-d96dfd",
@@ -225,7 +243,8 @@
       "2019-student-academic/scholarships"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-hertzfoundation-org-fellowships-application-680e58",
@@ -237,7 +256,8 @@
       "fellowships/application"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-ieee-itss-org-awards-best-dissertation-201bb9",
@@ -249,7 +269,8 @@
       "awards/best-dissertation"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-pathwaystoscience-org-pdf-enhancingyourfellowshipapplication-e8c2a9",
@@ -261,7 +282,8 @@
       "pdf/EnhancingYourFellowshipApplication.pdf"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-phdfellowship-splashthat-com-5cda95",
@@ -273,7 +295,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-research-adobe-com-fellowship-68d538",
@@ -285,7 +308,8 @@
       "fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-research-fb-com-programs-fellowship-c0478b",
@@ -297,7 +321,8 @@
       "programs/fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-scholarships-uncf-org-program-details-149886",
@@ -309,7 +334,8 @@
       "Program/Details/9eb15008-3567-45ed-b62f-aa14c784b09a"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-season-kde-org-419388",
@@ -322,7 +348,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:36:39Z",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-sites-nationalacademies-org-pga-fellowships-83341e",
@@ -334,7 +360,8 @@
       "PGA/Fellowships/AFRL/index.htm"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-smartscholarshipprod-service-now-com-smart-472d06",
@@ -346,7 +373,8 @@
       "smart"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-snapresearchfs-splashthat-com-df0b94",
@@ -358,7 +386,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-studentpartners-microsoft-com-en-us-6e515e",
@@ -370,7 +399,8 @@
       "en-us"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-wagsonline-org-technology-award-announcement-4ced00",
@@ -382,7 +412,8 @@
       "technology-award-announcement"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-wiki-lfnetworking-org-display-ln-3f0a86",
@@ -394,7 +425,8 @@
       "display/LN/LF+Networking+Internships"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-wiki-linuxfoundation-org-lkmp-8b5a2f",
@@ -406,7 +438,8 @@
       "lkmp"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-aauw-org-what-we-do-educational-funding-and-awards-c11ce1",
@@ -418,7 +451,8 @@
       "what-we-do/educational-funding-and-awards/american-fellowships"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-codechef-com-snackdown-2016-707ab8",
@@ -430,7 +464,8 @@
       "snackdown/2016/srp"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-computer-org-volunteering-awards-aee6f7",
@@ -442,7 +477,8 @@
       "volunteering/awards/scholarships/merwin"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-csail-mit-edu-meteor-967665",
@@ -454,7 +490,8 @@
       "meteor"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-eacsl-org-ackermann-award-5b1ffd",
@@ -466,7 +503,8 @@
       "ackermann-award"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-fftf-slb-com-8b30e9",
@@ -478,7 +516,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-fsf-org-volunteer-internships-713bf8",
@@ -490,7 +529,8 @@
       "volunteer/internships"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-geeksforgeeks-org-campus-ambassador-program-by-geeksforg-facbb2",
@@ -502,7 +542,8 @@
       "campus-ambassador-program-by-geeksforgeeks"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-hackerearth-com-docs-wiki-573541",
@@ -514,7 +555,8 @@
       "docs/wiki/campus/introduction"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-hackerrank-com-campus-ambassador-program-c72310",
@@ -526,7 +568,8 @@
       "campus-ambassador-program"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-janestreet-com-apply-graduate-research-fellowship-6aa579",
@@ -538,7 +581,8 @@
       "apply-graduate-research-fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-krellinst-org-csgf-300943",
@@ -550,7 +594,8 @@
       "csgf"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-madisontrust-com-client-resources-articles-87cf2b",
@@ -562,7 +607,8 @@
       "client-resources/articles/scholarships-for-women-in-stem"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-microsoft-com-en-us-research-52d1df",
@@ -574,7 +620,8 @@
       "en-us/research/academic-program/ada-lovelace-fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-microsoft-com-en-us-research-8ecc68",
@@ -586,7 +633,8 @@
       "en-us/research/academic-program/faculty-fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-microsoft-com-en-us-research-7d4d7a",
@@ -598,7 +646,8 @@
       "en-us/research/academic-program/phd-fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-nanog-org-outreach-scholarship-program-95fb43",
@@ -610,7 +659,8 @@
       "outreach/scholarship-program"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-nature-com-collections-jcpghfmqlz-85cc35",
@@ -622,7 +672,8 @@
       "collections/jcpghfmqlz/applynow"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-ndsegfellowships-org-application-362be4",
@@ -634,7 +685,8 @@
       "application"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-nsf-gov-cise-csgrad4us-0dbf82",
@@ -646,7 +698,8 @@
       "cise/CSGrad4US"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-nsfgrfp-org-9f1ebb",
@@ -658,7 +711,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-nvidia-com-en-us-research-bd2095",
@@ -670,7 +724,8 @@
       "en-us/research/graduate-fellowships"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-openmainframeproject-org-projects-internship-program-aff82f",
@@ -682,7 +737,8 @@
       "projects/internship-program"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-openphilanthropy-org-focus-global-catastrophic-risks-e1ecd6",
@@ -694,7 +750,8 @@
       "focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence/the-open-phil-ai-fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-pdsoros-org-070a3e",
@@ -706,7 +763,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-peointernational-org-psa-eligibility-requirements-b8942e",
@@ -718,7 +776,8 @@
       "psa-eligibility-requirements"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-profellow-com-96b879",
@@ -730,7 +789,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-qualcomm-com-invention-research-d17790",
@@ -742,7 +802,8 @@
       "invention/research/university-relations/innovation-fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-research-ibm-com-university-awards-9332fe",
@@ -754,7 +815,8 @@
       "university/awards/fellowships.html"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-research-ibm-com-university-awards-775314",
@@ -766,7 +828,8 @@
       "university/awards/masters_fellowship.html"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-sandia-gov-careers-career-possibilities-c42ea6",
@@ -778,7 +841,8 @@
       "careers/career-possibilities/students-and-postdocs/fellowships/john-von-neumann-fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-sighpc-org-fellowships-05c526",
@@ -790,7 +854,8 @@
       "fellowships"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-sigplan-org-awards-dissertation-837fde",
@@ -802,7 +867,8 @@
       "Awards/Dissertation"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-ssrc-org-programs-data-fluencies-5dba1c",
@@ -814,7 +880,8 @@
       "programs/data-fluencies/data-fluencies-dissertation-grants"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-symantec-com-about-careers-298f65",
@@ -826,7 +893,8 @@
       "about/careers/graduate-fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-techatbloomberg-com-bloomberg-data-science-ph-d-fellowsh-56f42a",
@@ -838,7 +906,8 @@
       "bloomberg-data-science-ph-d-fellowship"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-twosigma-com-community-academic-partnerships-e53a2c",
@@ -850,7 +919,8 @@
       "community/academic-partnerships/graduate-students/phd-fellowships"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-udacity-com-scholarships-474763",
@@ -862,7 +932,8 @@
       "scholarships"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-wit-university-b19ba7",
@@ -874,7 +945,8 @@
       ""
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   },
   {
     "source_id": "hub-scholarships-www-womentechmakers-com-scholars-bf7337",
@@ -886,6 +958,7 @@
       "scholars"
     ],
     "check_cadence": "monthly",
-    "last_seen": "2026-10-09T20:36:39Z"
+    "first_seen": "2026-10-10T08:36:39Z",
+    "last_seen": "2026-10-10T08:36:39Z"
   }
 ]
