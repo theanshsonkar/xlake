@@ -733,13 +733,14 @@ def _clean_seed_name(value: object) -> str:
     name = re.sub(r"\]\([^)]*(?:\)|$)", "", name)
     name = re.sub(r"https?://\S+", "", name, flags=re.IGNORECASE)
     name = re.sub(r"`", "", name)
+    name = name.replace("**", "").replace("__", "")
     emphasis = re.search(r"(?<!\w)([_*])([^_*]+)\1", name)
     if emphasis:
         name = name[:emphasis.start()]
-    name = name.replace("**", "").replace("__", "")
     name = re.sub(r"[*_]", "", name)
     name = re.sub(r"^\s*\d+[.)]?\s+", "", name)
-    name = re.sub(r"\s+", " ", name).strip(" -–—:;,.)|")
+    name = re.sub(r"^\s*#{1,6}\s+", "", name)
+    name = re.sub(r"\s+", " ", name).strip(" -–—:;,.)|[")
     return name
 
 
@@ -1001,14 +1002,18 @@ def merge_generated_seeds(
     for entry in existing:
         key = _seed_key(entry)
         if key is not None:
-            existing_by_url[key] = dict(entry)
+            current = dict(entry)
+            current["programme_name"] = _clean_seed_name(current.get("programme_name"))
+            existing_by_url[key] = current
     produced_by_url: Dict[str, Dict] = {}
     for entry in produced:
         if not isinstance(entry, dict):
             continue
         key = _seed_key(entry)
         if key is not None:
-            produced_by_url[key] = dict(entry)
+            current = dict(entry)
+            current["programme_name"] = _clean_seed_name(current.get("programme_name"))
+            produced_by_url[key] = current
 
     merged: Dict[str, Dict] = {}
     suppressed: Set[str] = set()

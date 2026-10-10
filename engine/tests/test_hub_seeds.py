@@ -82,6 +82,23 @@ class HubSeedsTests(unittest.TestCase):
         self.assertEqual(observed[0].request_cap, 400)
         self.assertEqual(observed[0].request_host_cap, 40)
 
+    def test_merge_cleans_persisted_seed_names(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "grants.json"
+            path.write_text(json.dumps([self._seed(
+                "https://example.org/old",
+                programme_name="**Old Grant**",
+            )]), encoding="utf-8")
+            produced = [self._seed(
+                "https://example.org/new",
+                programme_name="1 New Grant _global_, details",
+            )]
+            merged, _stats = merge_generated_seeds("grants", produced, path)
+            self.assertEqual(
+                {item["programme_name"] for item in merged},
+                {"Old Grant", "New Grant"},
+            )
+
     def test_fetcher_request_cap_stops_fetching(self):
         fetcher = research_harvest.Fetcher(request_cap=1)
         live = FetchResult("live", status=200, final_url="https://example.org/one", body="")
