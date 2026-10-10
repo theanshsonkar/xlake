@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from datetime import datetime
 from typing import Callable, Dict, Iterable, List, Optional, Tuple
 
@@ -113,5 +114,13 @@ def collect(fetch: Callable[[str], str] = _core._default_fetch, checked_at: Opti
     return result
 
 
+def _run_research_cli() -> None:
+    if "--apply-verifications" in sys.argv[1:]:
+        run_module_cli(RESEARCH_CONFIG)
+        return
+    result = collect()
+    print(json.dumps({"records": len(result["records"]), "observations": len(result["observations"])}, indent=2))
+
+
 if __name__ == "__main__":
-    run_module_cli(RESEARCH_CONFIG)
+    _run_research_cli()
