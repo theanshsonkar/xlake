@@ -1,5 +1,18 @@
 [
   {
+    "source_id": "hub-grants-www-hope-funds-org-grants-eligibility-and-application-4c9141",
+    "programme_id": "grants-hub-www-hope-funds-org-grants-eligibility-and-application-4c9141",
+    "programme_name": "**The Hope Funds for Cancer Research postdoctoral fellowship**",
+    "organizer": "hope-funds.org",
+    "official_url": "http://www.hope-funds.org/grants/eligibility-and-application",
+    "allowed_path_hints": [
+      "grants/eligibility-and-application"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
     "source_id": "hub-grants-www-sfari-org-0356fe",
     "programme_id": "grants-hub-www-sfari-org-0356fe",
     "programme_name": "Autism Research Initiative",
@@ -10,7 +23,59 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-a16z-com-supporting-the-open-source-ai-community-c5ee66",
+    "programme_id": "grants-hub-a16z-com-supporting-the-open-source-ai-community-c5ee66",
+    "programme_name": "a16z - 16z Open Source AI Grant program",
+    "organizer": "a16z.com",
+    "official_url": "https://a16z.com/supporting-the-open-source-ai-community",
+    "allowed_path_hints": [
+      "supporting-the-open-source-ai-community"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-aigrant-org-70110f",
+    "programme_id": "grants-hub-aigrant-org-70110f",
+    "programme_name": "AI Grant",
+    "organizer": "aigrant.org",
+    "official_url": "https://aigrant.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-asntech-github-io-postdoc-funding-schemes-b27a74",
+    "programme_id": "grants-hub-asntech-github-io-postdoc-funding-schemes-b27a74",
+    "programme_name": "**Funding schemes and travel grant opportunities for postdocs**",
+    "organizer": "asntech.github.io",
+    "official_url": "https://asntech.github.io/postdoc-funding-schemes",
+    "allowed_path_hints": [
+      "postdoc-funding-schemes"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-awesome-re-badge-svg-https-awesome-re-a70360",
+    "programme_id": "grants-hub-awesome-re-badge-svg-https-awesome-re-a70360",
+    "programme_name": "# Awesome Developer Grants [![Awesome](",
+    "organizer": "awesome.re",
+    "official_url": "https://awesome.re/badge.svg)](https://awesome.re",
+    "allowed_path_hints": [
+      "badge.svg)](https://awesome.re"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-bssw-io-pages-bssw-fellowship-program-037614",
@@ -23,7 +88,59 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-datascience-nih-gov-data-scholars-2021-3a9770",
+    "programme_id": "grants-hub-datascience-nih-gov-data-scholars-2021-3a9770",
+    "programme_name": "Data and Technology Advancement (DATA) National Service Scholar Program: Data Scientists Advancing Biomedical Research",
+    "organizer": "datascience.nih.gov",
+    "official_url": "https://datascience.nih.gov/data-scholars-2021",
+    "allowed_path_hints": [
+      "data-scholars-2021"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-ecrcentral-org-fundings-bffd7b",
+    "programme_id": "grants-hub-ecrcentral-org-fundings-bffd7b",
+    "programme_name": "**A database of \\~700 funding schemes and fellowships for postdocs and early career researchers**",
+    "organizer": "ecrcentral.org",
+    "official_url": "https://ecrcentral.org/fundings",
+    "allowed_path_hints": [
+      "fundings"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-fal-ai-grants-4f4304",
+    "programme_id": "grants-hub-fal-ai-grants-4f4304",
+    "programme_name": "Fal ai - fal Research Grants",
+    "organizer": "fal.ai",
+    "official_url": "https://fal.ai/grants",
+    "allowed_path_hints": [
+      "grants"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-fellowship-mlh-com-f5df6d",
+    "programme_id": "grants-hub-fellowship-mlh-com-f5df6d",
+    "programme_name": "MLH Fellowship",
+    "organizer": "fellowship.mlh.com",
+    "official_url": "https://fellowship.mlh.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-foundation-mozilla-org-en-what-we-fund-0f89fa",
@@ -36,7 +153,72 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-futo-tech-grants-f1fa7b",
+    "programme_id": "grants-hub-futo-tech-grants-f1fa7b",
+    "programme_name": "FUTO Grants",
+    "organizer": "futo.tech",
+    "official_url": "https://futo.tech/grants",
+    "allowed_path_hints": [
+      "grants"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-github-blog-2021-09-12-recipients-open-source-grants-github-e1188f",
+    "programme_id": "grants-hub-github-blog-2021-09-12-recipients-open-source-grants-github-e1188f",
+    "programme_name": "First recipients of GitHub Grants for Open Source have been announced!",
+    "organizer": "github.blog",
+    "official_url": "https://github.blog/2021-09-12-recipients-open-source-grants-github-sponsors-india",
+    "allowed_path_hints": [
+      "2021-09-12-recipients-open-source-grants-github-sponsors-india"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-gradient-ai-research-grant-10397f",
+    "programme_id": "grants-hub-gradient-ai-research-grant-10397f",
+    "programme_name": "Gradient - Research Grant",
+    "organizer": "gradient.ai",
+    "official_url": "https://gradient.ai/research-grant",
+    "allowed_path_hints": [
+      "research-grant"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-grants-nih-gov-news-virtual-learning-5651df",
+    "programme_id": "grants-hub-grants-nih-gov-news-virtual-learning-5651df",
+    "programme_name": "All About Grants Podcasts",
+    "organizer": "grants.nih.gov",
+    "official_url": "https://grants.nih.gov/news/virtual-learning/podcasts.htm",
+    "allowed_path_hints": [
+      "news/virtual-learning/podcasts.htm"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-huggingface-co-docs-hub-89740a",
+    "programme_id": "grants-hub-huggingface-co-docs-hub-89740a",
+    "programme_name": "Hugging Face Community GPU Grants",
+    "organizer": "huggingface.co",
+    "official_url": "https://huggingface.co/docs/hub/spaces-gpus",
+    "allowed_path_hints": [
+      "docs/hub/spaces-gpus"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-interledger-org-ambassadors-4734ae",
@@ -49,7 +231,33 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-lambda-ai-research-666b3c",
+    "programme_id": "grants-hub-lambda-ai-research-666b3c",
+    "programme_name": "Lambda Research Grants",
+    "organizer": "lambda.ai",
+    "official_url": "https://lambda.ai/research",
+    "allowed_path_hints": [
+      "research"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-landing-hostkey-com-grant-for-scientific-projects-formhtml-574f04",
+    "programme_id": "grants-hub-landing-hostkey-com-grant-for-scientific-projects-formhtml-574f04",
+    "programme_name": "[HOSTKEY GPU Grant Program for Research Projects and Startups] (",
+    "organizer": "landing.hostkey.com",
+    "official_url": "https://landing.hostkey.com/grant_for_scientific_projects_formhtml",
+    "allowed_path_hints": [
+      "grant_for_scientific_projects_formhtml"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-programs-c369c9",
@@ -62,7 +270,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-start-a3a9f2",
@@ -75,7 +283,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-metamaskgrants-org-c19df3",
@@ -88,7 +296,46 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-nebius-com-nebius-research-credits-program-0e0c65",
+    "programme_id": "grants-hub-nebius-com-nebius-research-credits-program-0e0c65",
+    "programme_name": "Nebius research credits program",
+    "organizer": "nebius.com",
+    "official_url": "https://nebius.com/nebius-research-credits-program",
+    "allowed_path_hints": [
+      "nebius-research-credits-program"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-nsfpolicyoutreach-com-resource-center-eeef20",
+    "programme_id": "grants-hub-nsfpolicyoutreach-com-resource-center-eeef20",
+    "programme_name": "NSF policy/grant resources",
+    "organizer": "nsfpolicyoutreach.com",
+    "official_url": "https://nsfpolicyoutreach.com/resource-center",
+    "allowed_path_hints": [
+      "resource-center"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-numfocus-org-programs-small-development-grants-edce9e",
+    "programme_id": "grants-hub-numfocus-org-programs-small-development-grants-edce9e",
+    "programme_name": "NumFOCUS Small Development Grants",
+    "organizer": "numfocus.org",
+    "official_url": "https://numfocus.org/programs/small-development-grants",
+    "allowed_path_hints": [
+      "programs/small-development-grants"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-ocean-sagepub-com-concept-grants-7556d8",
@@ -101,7 +348,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-research-cisco-com-open-rfps-af03de",
@@ -114,7 +361,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-research-google-outreach-4be4f7",
@@ -127,7 +374,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-research-google-programs-and-events-d69832",
+    "programme_id": "grants-hub-research-google-programs-and-events-d69832",
+    "programme_name": "Google Research Programs",
+    "organizer": "research.google",
+    "official_url": "https://research.google/programs-and-events",
+    "allowed_path_hints": [
+      "programs-and-events"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-research-google-programs-and-events-phd-fellowship-62693b",
@@ -140,7 +400,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-researchtraining-nih-gov-a2586a",
+    "programme_id": "grants-hub-researchtraining-nih-gov-a2586a",
+    "programme_name": "**NIH Research Training and Career Development Programs**",
+    "organizer": "researchtraining.nih.gov",
+    "official_url": "https://researchtraining.nih.gov/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-sloan-org-grants-apply-005a70",
@@ -153,7 +426,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-solana-org-grants-9b8f39",
+    "programme_id": "grants-hub-solana-org-grants-9b8f39",
+    "programme_name": "Solana Foundation Grants",
+    "organizer": "solana.org",
+    "official_url": "https://solana.org/grants",
+    "allowed_path_hints": [
+      "grants"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-sovereigntechfund-de-programs-fellowship-88c835",
@@ -166,7 +452,33 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-thielfellowship-org-ff5410",
+    "programme_id": "grants-hub-thielfellowship-org-ff5410",
+    "programme_name": "Thiel Fellowship",
+    "organizer": "thielfellowship.org",
+    "official_url": "https://thielfellowship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-trelis-com-trelis-ai-grants-f363b0",
+    "programme_id": "grants-hub-trelis-com-trelis-ai-grants-f363b0",
+    "programme_name": "Trelis Research - Trelis AI Grants",
+    "organizer": "trelis.com",
+    "official_url": "https://trelis.com/trelis-ai-grants",
+    "allowed_path_hints": [
+      "trelis-ai-grants"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-web3-foundation-4fccff",
@@ -179,7 +491,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-www-amazon-science-research-awards-32ca5b",
+    "programme_id": "grants-hub-www-amazon-science-research-awards-32ca5b",
+    "programme_name": "Amazon Research Awards",
+    "organizer": "amazon.science",
+    "official_url": "https://www.amazon.science/research-awards",
+    "allowed_path_hints": [
+      "research-awards"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-www-cisco-com-c-en-9d3093",
@@ -192,7 +517,98 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-www-isocfoundation-org-grant-programme-research-grant-progra-9dc2f6",
+    "programme_id": "grants-hub-www-isocfoundation-org-grant-programme-research-grant-progra-9dc2f6",
+    "programme_name": "Internet Society Foundation Research Grants",
+    "organizer": "isocfoundation.org",
+    "official_url": "https://www.isocfoundation.org/grant-programme/research-grant-programme",
+    "allowed_path_hints": [
+      "grant-programme/research-grant-programme"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-www-nsf-gov-publications-pub-summ-jsp-cb70d4",
+    "programme_id": "grants-hub-www-nsf-gov-publications-pub-summ-jsp-cb70d4",
+    "programme_name": "**Faculty Early Career Development Program (CAREER)**",
+    "organizer": "nsf.gov",
+    "official_url": "https://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf17537",
+    "allowed_path_hints": [
+      "publications/pub_summ.jsp"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-www-nsf-gov-pubs-2018-86e04c",
+    "programme_id": "grants-hub-www-nsf-gov-pubs-2018-86e04c",
+    "programme_name": "**Joint DMS/NIGMS Initiative to Support Research at the Interface of the Biological and Mathematical Sciences (DMS/NIGMS",
+    "organizer": "nsf.gov",
+    "official_url": "https://www.nsf.gov/pubs/2018/nsf18566/nsf18566.htm",
+    "allowed_path_hints": [
+      "pubs/2018/nsf18566/nsf18566.htm"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-www-nsf-gov-pubs-2019-4eb61e",
+    "programme_id": "grants-hub-www-nsf-gov-pubs-2019-4eb61e",
+    "programme_name": "**Joint DMS/NLM Initiative on Generalizable Data Science Methods for Biomedical Research (DMS/NLM)**",
+    "organizer": "nsf.gov",
+    "official_url": "https://www.nsf.gov/pubs/2019/nsf19500/nsf19500.htm",
+    "allowed_path_hints": [
+      "pubs/2019/nsf19500/nsf19500.htm"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-www-scaleway-com-en-startup-program-1d7dd5",
+    "programme_id": "grants-hub-www-scaleway-com-en-startup-program-1d7dd5",
+    "programme_name": "Scaleway Startup Program",
+    "organizer": "scaleway.com",
+    "official_url": "https://www.scaleway.com/en/startup-program",
+    "allowed_path_hints": [
+      "en/startup-program"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-www-sovereign-tech-programs-fund-f6867d",
+    "programme_id": "grants-hub-www-sovereign-tech-programs-fund-f6867d",
+    "programme_name": "Sovereign Tech Fund",
+    "organizer": "sovereign.tech",
+    "official_url": "https://www.sovereign.tech/programs/fund",
+    "allowed_path_hints": [
+      "programs/fund"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-www-together-ai-forms-research-credits-program-request-26ae19",
+    "programme_id": "grants-hub-www-together-ai-forms-research-credits-program-request-26ae19",
+    "programme_name": "together.ai Research Credits Program Request",
+    "organizer": "together.ai",
+    "official_url": "https://www.together.ai/forms/research-credits-program-request",
+    "allowed_path_hints": [
+      "forms/research-credits-program-request"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   },
   {
     "source_id": "hub-grants-www-top10vpn-com-research-grant-d51033",
@@ -205,6 +621,32 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:36:56Z",
-    "last_seen": "2026-10-10T08:36:56Z"
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-youtu-be-iuiayvggfza-e22e6e",
+    "programme_id": "grants-hub-youtu-be-iuiayvggfza-e22e6e",
+    "programme_name": "Grant Writing 101",
+    "organizer": "youtu.be",
+    "official_url": "https://youtu.be/IUIAYVgGfZA",
+    "allowed_path_hints": [
+      "IUIAYVgGfZA"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
+  },
+  {
+    "source_id": "hub-grants-zcashcommunitygrants-org-e2d75a",
+    "programme_id": "grants-hub-zcashcommunitygrants-org-e2d75a",
+    "programme_name": "Zcash Community Grants",
+    "organizer": "zcashcommunitygrants.org",
+    "official_url": "https://zcashcommunitygrants.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:04:00Z",
+    "last_seen": "2026-10-10T09:04:00Z"
   }
 ]
