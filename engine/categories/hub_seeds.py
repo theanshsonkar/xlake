@@ -96,13 +96,25 @@ TECH_RELEVANCE_KEYWORDS = (
     "mathematics", "statistics", "informatics", "digital", "algorithm", "blockchain",
     "bioinformatics", "techmakers",
 )
-_GRANT_NAME_TECH_KEYWORDS = tuple(
-    keyword for keyword in TECH_RELEVANCE_KEYWORDS
-    if keyword not in {"data", "research", "stem", "mathematics", "statistics", "bioinformatics"}
-)
+_GRANT_NAME_TECH_KEYWORDS = tuple(dict.fromkeys(
+    tuple(
+        keyword for keyword in TECH_RELEVANCE_KEYWORDS
+        if keyword not in {"data", "research", "stem", "mathematics", "statistics", "bioinformatics"}
+    ) + (
+        "open source", "software", "developer", "developers", "code", "ai",
+        "artificial intelligence", "machine learning", "compute", "gpu", "cloud",
+        "blockchain", "web3", "crypto", "protocol", "internet", "security",
+        "data science", "research credits", "computing", "engineering", "technology",
+    )
+))
 _GRANT_GENERIC_NAME_PREFIXES = re.compile(
     r"^\s*(?:funding schemes|list of|opportunities for)\b", re.IGNORECASE,
 )
+_GRANT_LIST_NAME_TERMS = re.compile(r"\b(?:database\s+of|funding\s+schemes)\b", re.IGNORECASE)
+_GRANT_NON_TECH_NEGATIVE_KEYWORDS = (
+    "cancer", "autism", "biomedical", "clinical", "disease", "patient", "podcast", "podcasts",
+)
+_GRANT_NEWS_TITLE_KEYWORDS = ("announces", "recipients")
 
 
 def _grant_name_passes(name: str) -> bool:
@@ -126,8 +138,8 @@ _ADMISSION_CURRENT_YEAR = 2026
 _ADMISSION_YEAR = re.compile(r"\b(?:19|20)\d{2}\b")
 _ADMISSION_STALE_MARKER = re.compile(r"\b(?:previous|outdated|archived|archive)\b", re.IGNORECASE)
 _ADMISSION_PROGRAMME_WORDS = (
-    "fellowship", "scholarship", "program", "programme", "grant", "internship",
-    "residency", "award", "prize", "mentorship", "scheme", "accelerator",
+    "fellowship", "fellowships", "scholarship", "scholarships", "program", "programs", "programme", "programmes", "grant", "grants", "internship",
+    "residency", "residencies", "award", "awards", "prize", "prizes", "mentorship", "scheme", "accelerator",
     "challenge", "bursary", "stipend", "studentship",
 )
 _ADMISSION_DIRECTORY_TERMS = re.compile(
@@ -179,6 +191,7 @@ class _AdmissionHTMLParser(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.h1 = ""
         self.title = ""
+        self.meta_description = ""
         self.og_type = ""
         self.og_site_name = ""
         self.og_title = ""
@@ -192,7 +205,9 @@ class _AdmissionHTMLParser(HTMLParser):
         values = {str(key).lower(): value or "" for key, value in attrs}
         if lowered == "meta":
             prop = (values.get("property") or values.get("name") or "").casefold()
-            if prop == "og:type" and not self.og_type:
+            if prop == "description" and not self.meta_description:
+                self.meta_description = values.get("content", "")
+            elif prop == "og:type" and not self.og_type:
                 self.og_type = values.get("content", "")
             elif prop == "og:site_name" and not self.og_site_name:
                 self.og_site_name = values.get("content", "")
@@ -576,10 +591,19 @@ def admit_candidate(
     generic_reason = _seed_filter_reason(category, return_name, url)
     if generic_reason in {"list_page", "news_page"}:
         return False, generic_reason, ""
-    if not _admission_name_passes_for_category(return_name, category):
+    if category == "grants":
+        if (_GRANT_GENERIC_NAME_PREFIXES.match(return_name)
+                or _GRANT_LIST_NAME_TERMS.search(return_name)):
+            return False, "directory_page", ""
+        if _admission_contains_keywords(page.title, _GRANT_NEWS_TITLE_KEYWORDS):
+            return False, "news_page", ""
+        if _admission_contains_keywords(
+                " ".join((return_name, page.title)), _GRANT_NON_TECH_NEGATIVE_KEYWORDS):
+            return False, "non_tech_signal", ""
+    elif not _admission_name_passes_for_category(return_name, category):
         return False, "no_tech_signal", ""
 
-    visible = pagetext.to_text(html or "")
+    visible = pagetext.to_text(html or "")[:5000]
     header_text = " ".join((page.title, page.og_title, page.h1))
     try:
         path_text = urlparse.urlsplit(url).path or ""
@@ -590,7 +614,9 @@ def admit_candidate(
             and not _has_admission_programme_signal_for_category(path_text, category)
             and not page_evidence):
         return False, "no_programme_signal", ""
-    page_text = " ".join(filter(None, (page.title, page.og_title, page.h1, visible)))
+    page_text = " ".join(filter(None, (
+        page.title, page.meta_description, page.og_title, page.h1, visible,
+    )))
     if (category != "community"
             and _admission_is_ambassador(page.title, page.h1, " ".join((return_name, anchor)), *checked_urls)):
         return False, "ambassador", ""
@@ -599,7 +625,13 @@ def admit_candidate(
     # Body prose remains a useful technical signal; stale-year is deliberately
     # checked above without it so navigation/footer years cannot rescue a page.
     relevance_text = page_text
-    if (not _admission_contains_keyword(relevance_text)
+    if category == "grants":
+        relevant = _grant_name_passes(return_name) or _admission_contains_keywords(
+            relevance_text, _GRANT_NAME_TECH_KEYWORDS,
+        )
+    else:
+        relevant = _admission_contains_keyword(relevance_text)
+    if (not relevant
             and not (category == "community" and COMMUNITY_TERMS.search(relevance_text))):
         return False, "no_tech_signal", ""
     if not any(signal in visible.casefold() for signal in _ADMISSION_APPLICATION_SIGNALS):
@@ -724,6 +756,7 @@ LAST_ROUTED_RESEARCH_SEEDS: List[Dict] = []
 _FILTER_COUNTERS = {
     "blocked_form_host": "rejected_form_host",
     "no_tech_signal": "rejected_tech",
+    "non_tech_signal": "rejected_non_tech",
     "stale_year": "rejected_stale_year",
     "ambassador": "rejected_ambassador",
     "directory_page": "rejected_directory",

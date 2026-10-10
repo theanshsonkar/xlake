@@ -172,6 +172,42 @@ class HubSeedsTests(unittest.TestCase):
         self.assertFalse(ok)
         self.assertIn(reason, {"no_programme_signal", "no_name"})
 
+    def test_grants_use_page_text_tech_relevance_and_reject_non_tech_lists(self):
+        tech_grants = (
+            "FUTO Grants", "Solana Foundation Grants", "Metamask Grants",
+            "Zcash Community Grants", "Lambda Research Grants",
+            "Nebius research credits program", "Amazon Research Awards",
+            "Wikimedia Grants", "Internet Society Foundation Research Grants",
+            "FOSS United Fellowships", "Django Fellowship Program", "CISCO Grant Program",
+        )
+        for name in tech_grants:
+            html = (
+                "<title>{}</title>"
+                "<meta name=\"description\" content=\"A software and computing opportunity.\">"
+                "<p>Applications are open for this grant supporting software development.</p>"
+            ).format(name)
+            with self.subTest(name=name):
+                ok, reason, admitted_name = admit_candidate(
+                    html, "https://example.org/{}".format(name.lower().replace(" ", "-")), "grants",
+                )
+                self.assertTrue(ok, reason)
+                self.assertEqual(admitted_name, name)
+
+        rejected = (
+            ("The Hope Funds for Cancer Research", "<title>{}</title><p>Applications are open for software.</p>"),
+            ("SFARI Autism Research", "<title>{}</title><p>Applications are open for artificial intelligence.</p>"),
+            ("A database of ~700 funding schemes", "<title>{}</title><p>Applications are open for software.</p>"),
+            ("All About Grants Podcasts", "<title>{}</title><p>Applications are open for software.</p>"),
+            ("eBPF announces grant recipients", "<title>{}</title><p>Applications are open for software.</p>"),
+        )
+        for name, template in rejected:
+            with self.subTest(name=name):
+                ok, reason, _ = admit_candidate(
+                    template.format(name), "https://example.org/grant", "grants",
+                )
+                self.assertFalse(ok)
+                self.assertIn(reason, {"directory_page", "news_page", "non_tech_signal"})
+
     def test_grants_require_tech_named_programmes_and_reject_generic_lists(self):
         cases = (
             ("The Hope Funds for Cancer Research postdoctoral fellowship", False),
@@ -179,9 +215,6 @@ class HubSeedsTests(unittest.TestCase):
             ("Funding schemes and travel grant opportunities for postdocs", False),
             ("Sentry Open Source Grant", True),
             ("a16z Open Source AI Grant program", True),
-            # FUTO Grants has no pure keyword in its name; the name-only gate
-            # intentionally rejects it rather than whitelisting the brand.
-            ("FUTO Grants", False),
         )
         for name, expected in cases:
             html = "<title>{}</title><h1>{}</h1><p>Applications are open.</p>".format(name, name)
@@ -193,7 +226,9 @@ class HubSeedsTests(unittest.TestCase):
                 if expected:
                     self.assertEqual(admitted_name, name)
                 else:
-                    self.assertIn(reason, {"no_tech_signal", "no_name"})
+                    self.assertIn(reason, {
+                        "directory_page", "no_tech_signal", "no_name", "non_tech_signal",
+                    })
 
     def test_merge_expires_seed_older_than_56_days(self):
         with tempfile.TemporaryDirectory() as directory:
