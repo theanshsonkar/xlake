@@ -107,10 +107,16 @@ _RESEARCH_INTERNSHIP_TITLE = re.compile(
     r"|\binternship program(?:me)?\b",
     re.IGNORECASE,
 )
+_RESEARCH_TITLE_SIGNAL = re.compile(
+    r"(?<![a-z0-9])(?:research|summer|surf|sure|surge|reu|labs?|"
+    r"institutes?|fellowships?|program(?:me)?s?|schools?)(?![a-z0-9])",
+    re.IGNORECASE,
+)
 _RESEARCH_ACADEMIC_SUFFIXES = (
-    "mpg.de", "mitacs.ca", "cern.ch", "weizmann.ac.il", "studyintaiwan.org",
-    "amgenscholars.com", "iisc.ac.in", "isical.ac.in", "iitd.ac.in", "barc.gov.in",
-    "nims.go.jp", "shastriinstitute.org",
+    "mpg.de", "cern.ch", "ist.ac.at", "epfl.ch", "ethz.ch", "oist.jp",
+    "kaust.edu.sa", "mitacs.ca", "daad.de", "weizmann.ac.il",
+    "studyintaiwan.org", "amgenscholars.com", "iisc.ac.in", "isical.ac.in",
+    "iitd.ac.in", "barc.gov.in", "nims.go.jp", "shastriinstitute.org",
 )
 
 
@@ -128,6 +134,10 @@ def _research_academic_host(url: str) -> bool:
         return True
     return any(host == suffix or host.endswith("." + suffix)
                for suffix in _RESEARCH_ACADEMIC_SUFFIXES)
+
+
+def _research_title_or_url_signal(title: str, url: str) -> bool:
+    return bool(_RESEARCH_TITLE_SIGNAL.search("{} {}".format(title or "", url or "")))
 
 
 def should_route_research_seed(seed: Dict, category: str, reason: str) -> bool:
@@ -200,8 +210,12 @@ def programme_title_ok(title: str, url: str, category: str = "") -> Tuple[bool, 
         return False, "advice_page"
     if _programme_host_is_job_board(url):
         return False, "job_board_host"
-    if category.casefold() in {"fellowship", "fellowships"} and re.match(r"^internship\b", title_text, re.I):
+    category_key = category.casefold()
+    if category_key in {"fellowship", "fellowships"} and re.match(r"^internship\b", title_text, re.I):
         return False, "internship_title"
+    if category_key in {"research", "researches"} and re.search(r"\bintern(?:ship|ships?|s?)\b", title_text, re.I):
+        if not (_research_title_or_url_signal(title_text, url) or _research_academic_host(url)):
+            return False, "internship_title"
     current_year = datetime.now(timezone.utc).year
     title_years = [int(item) for item in _PROGRAMME_TITLE_YEAR.findall(title_text)]
     if (any(year < current_year - 1 for year in title_years)
@@ -630,8 +644,8 @@ def _text(html: str) -> Tuple[str, List[Tuple[str, str]]]:
 
 
 _PAGE_PROGRAMME_NOUN = re.compile(
-    r"\b(?:fellowships?|scholarships?|awards?|grants?|program(?:me)?s?|"
-    r"residencies?|studentships?|prizes?)\b",
+    r"\b(?:research|internships?|fellowships?|scholar(?:s|ships?)?|awards?|"
+    r"grants?|program(?:me)?s?|summer\s+schools?|residencies?|studentships?|prizes?)\b",
     re.IGNORECASE,
 )
 
@@ -1283,7 +1297,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             )
             if not title_ok:
                 if (title_reason == "missing_programme_noun"
-                        and config.category.casefold() in {"fellowship", "fellowships"}
+                        and config.category.casefold() in {"fellowship", "fellowships", "research"}
                         and not should_route_research_seed(seed, config.category, title_reason)):
                     seed = dict(seed)
                     seed["needs_page_noun"] = True

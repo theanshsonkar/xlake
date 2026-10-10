@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import os
 from datetime import datetime
 from typing import Callable, Dict, Iterable, List, Optional, Tuple
@@ -83,14 +84,33 @@ def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake
     return _core.merge_programmes(records, observations, lake_path, observations_path, now)
 
 
+def _print_research_stats(stats: Dict) -> None:
+    title_rejected = dict(stats.get("title_rejected") or {})
+    records_by_status = dict(stats.get("records_by_status") or {})
+    print("RESEARCH_STATS")
+    print("hand_seeds={}".format(stats.get("hand_seeds", 0)))
+    print("generated_seeds={}".format(stats.get("generated_seeds", 0)))
+    print("title_rejected_by_reason={}".format(json.dumps(title_rejected, sort_keys=True)))
+    print("page_noun_accepted={}".format(stats.get("page_noun_accepted", 0)))
+    print("page_noun_dropped={}".format(stats.get("page_noun_dropped", 0)))
+    print("fetched={}".format(stats.get("fetched", 0)))
+    print("fetch_errors={}".format(stats.get("fetch_errors", 0)))
+    print("robots_blocked={}".format(stats.get("robots_blocked", 0)))
+    print("cap_skips={}".format(stats.get("cap_skips", 0)))
+    print("records_by_status={}".format(json.dumps(records_by_status, sort_keys=True)))
+    print("records_with_deadline={}".format(stats.get("records_with_deadline", 0)))
+
+
 def collect(fetch: Callable[[str], str] = _core._default_fetch, checked_at: Optional[datetime] = None, lake_path: str = OPPORTUNITIES_PATH, observations_path: str = OBSERVATIONS_PATH) -> Dict:
-    return _core.collect(
+    result = _core.collect(
         RESEARCH_CONFIG,
         fetch=fetch,
         checked_at=checked_at,
         lake_path=lake_path,
         observations_path=observations_path,
     )
+    _print_research_stats(result.get("stats", {}))
+    return result
 
 
 if __name__ == "__main__":

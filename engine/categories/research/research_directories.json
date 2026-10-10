@@ -134,5 +134,85 @@
     "type": "hub",
     "authoritative": false,
     "added_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "hub_id": "kumarrishabh-research-internships-for-undergraduates",
+    "url": "https://raw.githubusercontent.com/KumarRishabh/Research-Internships-for-Undergraduates/master/README.md",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "x-syndicate-research-internships-for-undergraduates",
+    "url": "https://raw.githubusercontent.com/x-syndicate/Research-Internships-for-Undergraduates/master/README.md",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "sushant-varanasi-research-internships-for-undergraduates",
+    "url": "https://raw.githubusercontent.com/sushant-varanasi/Research-Internships-for-Undergraduates/master/README.md",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "vvignesh17-research-internship-programs",
+    "url": "https://raw.githubusercontent.com/vvignesh17/List-of-all-Research-Internship-Program-for-IIT-and-NITs/master/README.md",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "theanshulcode-research-internship-programs",
+    "url": "https://raw.githubusercontent.com/theanshulcode/List-of-all-Research-Internship-Program-for-IIT-and-NITs/master/README.md",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "nennomp-research-programmes",
+    "url": "https://raw.githubusercontent.com/NennoMP/research-programmes/main/README.md",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "p3jitnath-research-gist",
+    "url": "https://gist.githubusercontent.com/p3jitnath/3325244601d7223b1fdb63f30b25c5c6/raw",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "anuvabsen1-research-internships-database",
+    "url": "https://raw.githubusercontent.com/AnuvabSen1/Research_Internships_Database/main/README.md",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "karanwxliaa-research-for-ug-students",
+    "url": "https://raw.githubusercontent.com/karanwxliaa/Research-for-UG-Students/main/README.md",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "bitsrobocon-research-internships-for-undergraduates",
+    "url": "https://raw.githubusercontent.com/BitsRobocon/Research-Internships-for-Undergraduates/master/README.md",
+    "category": "research",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
   }
 ]

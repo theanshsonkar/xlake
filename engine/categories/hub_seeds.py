@@ -1114,7 +1114,7 @@ def generate(
             "research", routed_research, destination.with_name("research.json"),
             raw_links=len(routed_research), admitted=len(routed_research), successful_fetches=0,
         )
-    if category == "fellowships":
+    if category in {"fellowships", "research"}:
         print("HUB_STATS")
         for item in hub_stats:
             print("hub_url={} links_found={} seeds_produced={}".format(

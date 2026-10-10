@@ -12,7 +12,7 @@ try:
         admit_candidate, candidates_to_seeds, merge_generated_seeds,
     )
     from engine.categories.research.harvest import (
-        Candidate, parse_bare_urls, parse_csv_links, parse_markdown_links,
+        Candidate, parse_bare_urls, parse_csv_links, parse_document_links, parse_markdown_links,
     )
 except ImportError:
     from categories.hub_seeds import (
@@ -20,7 +20,7 @@ except ImportError:
         admit_candidate, candidates_to_seeds, merge_generated_seeds,
     )
     from categories.research.harvest import (
-        Candidate, parse_bare_urls, parse_csv_links, parse_markdown_links,
+        Candidate, parse_bare_urls, parse_csv_links, parse_document_links, parse_markdown_links,
     )
 
 
@@ -155,6 +155,19 @@ class HubSeedsTests(unittest.TestCase):
         self.assertEqual(
             parse_csv_links(csv_text),
             [("https://example.org/csv-fellowship", "CSV Fellowship")],
+        )
+
+    def test_extensionless_raw_markdown_and_headerless_csv(self):
+        self.assertIn(
+            ("https://example.org/raw-research", "Raw Research"),
+            parse_document_links(
+                "- Raw Research https://example.org/raw-research",
+                "https://gist.githubusercontent.com/example/id/raw",
+            ),
+        )
+        self.assertEqual(
+            parse_csv_links("CSV Research,https://example.org/csv-research\n"),
+            [("https://example.org/csv-research", "CSV Research")],
         )
 
     def test_csv_bare_url_extraction(self):

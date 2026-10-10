@@ -82,6 +82,53 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertFalse(programme_title_ok("AWS Activate", "https://official.example/program", "grants")[0])
         self.assertFalse(programme_title_ok("Microsoft Learn Student Ambassadors", "https://official.example/program", "fellowships")[0])
 
+    def test_research_title_gate_and_page_noun_fallback(self):
+        self.assertEqual(
+            programme_title_ok("Software Engineering Intern", "https://careers.example.com/jobs/1", "research"),
+            (False, "job_board_host"),
+        )
+        self.assertEqual(
+            programme_title_ok("SURGE", "https://www.iitk.ac.in/research/surge", "research"),
+            (False, "missing_programme_noun"),
+        )
+        seeds = (
+            {
+                "source_id": "hub-research-surge-test", "programme_id": "research-surge-test",
+                "programme_name": "SURGE", "organizer": "IIT Kanpur",
+                "official_url": "https://www.iitk.ac.in/research/surge",
+                "allowed_path_hints": ["research/surge"], "check_cadence": "monthly",
+            },
+            {
+                "source_id": "hub-research-isternship-test", "programme_id": "research-isternship-test",
+                "programme_name": "ISTernship", "organizer": "IST Austria",
+                "official_url": "https://phd.pages.ist.ac.at/isternship/",
+                "allowed_path_hints": ["isternship"], "check_cadence": "monthly",
+            },
+        )
+        config = ProgrammeConfig(
+            category="research", opportunity_type="research_programme", source_registry=seeds,
+            observations_path="", verifications_path="", needs_confirmation_floor=True,
+        )
+        pages = {
+            seeds[0]["official_url"]: (
+                "<title>SURGE</title><h1>SURGE</h1><p>Summer Undergraduate Research programme "
+                "applications are open from August 1 to December 1, 2026.</p><a href='/apply'>Apply</a>"
+            ),
+            seeds[1]["official_url"]: (
+                "<title>ISTernship</title><h1>ISTernship</h1><p>This internship programme "
+                "accepts applications from August 1 to December 1, 2026.</p><a href='/apply'>Apply</a>"
+            ),
+        }
+        with tempfile.TemporaryDirectory() as td:
+            result = core_collect(
+                config, fetch=lambda url: (pages[url], url),
+                checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc),
+                lake_path=os.path.join(td, "lake.json"),
+                observations_path=os.path.join(td, "observations.json"),
+            )
+        self.assertEqual(len(result["records"]), 2)
+        self.assertEqual(result["stats"]["page_noun_accepted"], 2)
+
     def test_community_title_gate_requires_specific_community_noun(self):
         self.assertTrue(programme_title_ok("Google Developer Groups", "https://example.test/program", "community")[0])
         self.assertTrue(programme_title_ok("AWS Community Builders", "https://example.test/program", "community")[0])

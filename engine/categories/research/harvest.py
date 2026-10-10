@@ -560,10 +560,13 @@ def parse_csv_links(text: str) -> List[Tuple[str, str]]:
     )
     links: List[Tuple[str, str]] = []
     seen: Set[str] = set()
-    for row in rows[1:]:
-        title = clean_text(row[name_index]) if name_index is not None and name_index < len(row) else ""
-        for cell in row:
-            for match in _BARE_HTTP_URL.finditer(cell or ""):
+    for row in rows:
+        url_cells = [cell or "" for cell in row]
+        title = clean_text(row[name_index]) if name_index is not None and name_index < len(row) else clean_text(
+            " ".join(cell for cell in url_cells if not _BARE_HTTP_URL.search(cell))
+        )
+        for cell in url_cells:
+            for match in _BARE_HTTP_URL.finditer(cell):
                 target = match.group(0).rstrip(".,;:!?)]}>")
                 if target and target not in seen:
                     seen.add(target)
@@ -572,14 +575,21 @@ def parse_csv_links(text: str) -> List[Tuple[str, str]]:
 
 
 def parse_document_links(text: str, url: str) -> List[Tuple[str, str]]:
-    """Extract links according to a hub document's file extension."""
-    path = urllib_parse.urlsplit(url).path.casefold()
+    """Extract links from HTML or a raw document, including extensionless raw URLs."""
+    parsed = urllib_parse.urlsplit(url)
+    path = parsed.path.casefold()
+    host = (parsed.hostname or "").casefold().rstrip(".")
     if path.endswith(".csv"):
         return parse_csv_links(text)
     if path.endswith((".md", ".markdown")):
         return parse_markdown_links(text)
     if path.endswith(".txt"):
         return parse_bare_urls(text)
+    # GitHub and Gist raw endpoints commonly end in /raw with no filename.
+    # They are documents, not HTML pages; keep this local to known raw hosts
+    # rather than weakening HTML parsing or robots policy for arbitrary URLs.
+    if host in {"raw.githubusercontent.com", "gist.githubusercontent.com"}:
+        return parse_markdown_links(text)
     return parse_html_links(text)
 
 
@@ -801,7 +811,9 @@ def fetch_hub(fetcher: Fetcher, hub: Dict[str, str]) -> Tuple[str, List[Tuple[st
     try:
         links = parse_document_links(result.body, result.final_url or hub_url)
         document_path = urllib_parse.urlsplit(result.final_url or hub_url).path.casefold()
-        if document_path.endswith((".csv", ".md", ".markdown", ".txt")):
+        document_host = (urllib_parse.urlsplit(result.final_url or hub_url).hostname or "").casefold().rstrip(".")
+        if (document_path.endswith((".csv", ".md", ".markdown", ".txt"))
+                or document_host in {"raw.githubusercontent.com", "gist.githubusercontent.com"}):
             reason_prefix = "document links"
         else:
             reason_prefix = "HTML anchors"
