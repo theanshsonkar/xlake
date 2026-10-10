@@ -9,18 +9,20 @@ from unittest.mock import patch
 try:
     from engine.categories.hub_seeds import (
         _capped_candidates, _default_hubs_path, _policy, _static_seeds,
-        admit_candidate, candidates_to_seeds, merge_generated_seeds,
+        admit_candidate, candidates_to_seeds, generate, merge_generated_seeds,
     )
+    from engine.categories.research import harvest as research_harvest
     from engine.categories.research.harvest import (
-        Candidate, parse_bare_urls, parse_csv_links, parse_document_links, parse_markdown_links,
+        Candidate, FetchResult, parse_bare_urls, parse_csv_links, parse_document_links, parse_markdown_links,
     )
 except ImportError:
     from categories.hub_seeds import (
         _capped_candidates, _default_hubs_path, _policy, _static_seeds,
-        admit_candidate, candidates_to_seeds, merge_generated_seeds,
+        admit_candidate, candidates_to_seeds, generate, merge_generated_seeds,
     )
+    from categories.research import harvest as research_harvest
     from categories.research.harvest import (
-        Candidate, parse_bare_urls, parse_csv_links, parse_document_links, parse_markdown_links,
+        Candidate, FetchResult, parse_bare_urls, parse_csv_links, parse_document_links, parse_markdown_links,
     )
 
 
@@ -54,6 +56,48 @@ class HubSeedsTests(unittest.TestCase):
         seeds = _static_seeds("fellowships")
         self.assertTrue(seeds)
         self.assertTrue(all(seed.get("official_url", "").startswith(("http://", "https://")) for seed in seeds))
+
+    def test_generate_constructs_hub_fetcher_with_request_caps(self):
+        hubs = [{
+            "hub_id": "fellowship-hub",
+            "url": "https://hub.example/fellowships",
+            "category": "fellowships",
+            "type": "hub",
+            "added_at": "2026-10-10T00:00:00Z",
+        }]
+        with tempfile.TemporaryDirectory() as directory:
+            hubs_path = Path(directory) / "hubs.json"
+            output_path = Path(directory) / "fellowships.json"
+            hubs_path.write_text(json.dumps(hubs), encoding="utf-8")
+            observed = []
+
+            def discover(hub_list, fetcher, **kwargs):
+                observed.append(fetcher)
+                return [], {hub_list[0]["hub_id"]: "failed"}, {hub_list[0]["hub_id"]: "capped"}, {hub_list[0]["hub_id"]: None}, 1, 0
+
+            with patch.object(research_harvest, "discover_candidates", side_effect=discover):
+                self.assertEqual(generate("fellowships", hubs_path, [], out_path=output_path), [])
+
+        self.assertEqual(len(observed), 1)
+        self.assertEqual(observed[0].request_cap, 400)
+        self.assertEqual(observed[0].request_host_cap, 40)
+
+    def test_fetcher_request_cap_stops_fetching(self):
+        fetcher = research_harvest.Fetcher(request_cap=1)
+        live = FetchResult("live", status=200, final_url="https://example.org/one", body="")
+
+        def request_once(_url, _headers):
+            fetcher.total_requests += 1
+            return live
+
+        with patch.object(fetcher, "_robots_allows", return_value=(True, "robots_allow")):
+            with patch.object(fetcher, "_request_once", side_effect=request_once) as request_mock:
+                self.assertEqual(fetcher.fetch("https://example.org/one").state, "live")
+                capped = fetcher.fetch("https://example.org/two")
+
+        self.assertEqual(request_mock.call_count, 1)
+        self.assertEqual(capped.state, "failed")
+        self.assertIn("HTTP request cap of 1 reached", capped.reason)
 
     def test_merge_new_seed_keeps_existing_entries(self):
         with tempfile.TemporaryDirectory() as directory:

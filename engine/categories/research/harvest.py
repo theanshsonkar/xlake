@@ -192,14 +192,25 @@ class NoRedirectHandler(urllib_request.HTTPRedirectHandler):
 class Fetcher:
     """One bounded, robots-aware urllib client shared by the whole run."""
 
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        request_cap: int | None = None,
+        request_host_cap: int | None = None,
+    ) -> None:
         self.total_requests = 0
+        self.request_cap = REQUEST_CAP if request_cap is None else request_cap
+        self.request_host_cap = REQUEST_HOST_CAP if request_host_cap is None else request_host_cap
         self._requests_by_host: Dict[str, int] = {}
         self._last_request_by_origin: Dict[str, float] = {}
         self._opener = urllib_request.build_opener(NoRedirectHandler())
 
     def fetch(self, url: str, headers: Optional[Dict[str, str]] = None) -> FetchResult:
         """Fetch content, checking robots before every hop and every origin."""
+        if self.request_cap is not None and self.total_requests >= self.request_cap:
+            return FetchResult(
+                "failed", url=url, final_url=url,
+                reason="HTTP request cap of {} reached".format(self.request_cap),
+            )
         current = url
         seen: Set[str] = set()
         robots_reasons: List[str] = []
@@ -258,11 +269,14 @@ class Fetcher:
         parsed = parse_http_url(url)
         if parsed is None:
             return FetchResult("failed", url=url, final_url=url, reason="invalid URL")
-        if self.total_requests >= REQUEST_CAP:
-            raise RequestCapExceeded("HTTP request cap of {} reached".format(REQUEST_CAP))
+        if self.request_cap is not None and self.total_requests >= self.request_cap:
+            return FetchResult(
+                "failed", url=url, final_url=url,
+                reason="HTTP request cap of {} reached".format(self.request_cap),
+            )
         host = host_key_for(parsed)
-        if REQUEST_HOST_CAP > 0 and self._requests_by_host.get(host, 0) >= REQUEST_HOST_CAP:
-            return FetchResult("failed", url=url, final_url=url, reason="HTTP request host cap of {} reached for {}".format(REQUEST_HOST_CAP, host))
+        if self.request_host_cap > 0 and self._requests_by_host.get(host, 0) >= self.request_host_cap:
+            return FetchResult("failed", url=url, final_url=url, reason="HTTP request host cap of {} reached for {}".format(self.request_host_cap, host))
         if robots.is_rate_limited(url):
             return FetchResult("failed", url=url, final_url=url, reason="rate_limited_backoff")
         origin = origin_key_for(parsed)
