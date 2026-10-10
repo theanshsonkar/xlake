@@ -11,13 +11,17 @@ try:
         _capped_candidates, _default_hubs_path, _policy, _static_seeds,
         admit_candidate, candidates_to_seeds, merge_generated_seeds,
     )
-    from engine.categories.research.harvest import Candidate, parse_bare_urls
+    from engine.categories.research.harvest import (
+        Candidate, parse_bare_urls, parse_csv_links, parse_markdown_links,
+    )
 except ImportError:
     from categories.hub_seeds import (
         _capped_candidates, _default_hubs_path, _policy, _static_seeds,
         admit_candidate, candidates_to_seeds, merge_generated_seeds,
     )
-    from categories.research.harvest import Candidate, parse_bare_urls
+    from categories.research.harvest import (
+        Candidate, parse_bare_urls, parse_csv_links, parse_markdown_links,
+    )
 
 
 class HubSeedsTests(unittest.TestCase):
@@ -128,6 +132,30 @@ class HubSeedsTests(unittest.TestCase):
             )
             self.assertEqual(len(merged), 1)
             self.assertEqual(stats["expired"], 0)
+
+    def test_markdown_link_extraction(self):
+        self.assertEqual(
+            parse_markdown_links("[AI Fellowship](https://example.org/ai-fellowship)"),
+            [("https://example.org/ai-fellowship", "AI Fellowship")],
+        )
+        self.assertIn(
+            ("https://example.org/bare-fellowship", "Bare Fellowship"),
+            parse_markdown_links("- Bare Fellowship https://example.org/bare-fellowship"),
+        )
+
+    def test_html_anchor_in_markdown_table_extraction(self):
+        markdown = "| Name | Link |\n| --- | --- |\n| <a href=\"https://example.org/table-fellowship\">Table Fellowship</a> | listed |"
+        self.assertIn(
+            ("https://example.org/table-fellowship", "Table Fellowship"),
+            parse_markdown_links(markdown),
+        )
+
+    def test_csv_row_uses_name_as_title(self):
+        csv_text = "name,url\nCSV Fellowship,https://example.org/csv-fellowship\n"
+        self.assertEqual(
+            parse_csv_links(csv_text),
+            [("https://example.org/csv-fellowship", "CSV Fellowship")],
+        )
 
     def test_csv_bare_url_extraction(self):
         links = parse_bare_urls(

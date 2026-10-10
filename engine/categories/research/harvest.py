@@ -17,8 +17,10 @@ from __future__ import annotations
 
 import argparse
 import base64
+import csv
 import hashlib
 import html
+import io
 import json
 import os
 import re
@@ -487,15 +489,45 @@ def parse_html_links(text: str) -> List[Tuple[str, str]]:
     return parser.links
 
 
+def _bare_url_title(text: str, start: int, end: int) -> str:
+    line_start = text.rfind("\n", 0, start) + 1
+    line_end = text.find("\n", end)
+    if line_end < 0:
+        line_end = len(text)
+    line = text[line_start:line_end]
+    relative_start = start - line_start
+    relative_end = end - line_start
+    title = line[:relative_start] + " " + line[relative_end:]
+    title = re.sub(r"<[^>]*>", " ", title)
+    title = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", title)
+    title = re.sub(r"^\s*(?:[-*+] |\d+[.)] )", "", title)
+    title = title.replace("|", " ")
+    title = clean_text(title)
+    return title.strip(" -–—:;,.")
+
+
 def parse_markdown_links(text: str) -> List[Tuple[str, str]]:
+    """Extract markdown links, HTML anchors, and bare URLs from markdown."""
     links: List[Tuple[str, str]] = []
+    seen: Set[str] = set()
+
+    def add(target: str, title: str) -> None:
+        target = clean_text(target)
+        if target and target not in seen:
+            seen.add(target)
+            links.append((target, clean_text(title)))
+
     pattern = re.compile(
         r"(?<!!)(?:\[([^\]]+)\])\(\s*(?:<([^>]+)>|([^\s)]+))[^)]*\)",
         re.MULTILINE,
     )
-    for match in pattern.finditer(text):
-        target = match.group(2) or match.group(3) or ""
-        links.append((target, clean_text(match.group(1))))
+    for match in pattern.finditer(text or ""):
+        add(match.group(2) or match.group(3) or "", match.group(1) or "")
+    for target, title in parse_html_links(text or ""):
+        add(target, title)
+    for match in _BARE_HTTP_URL.finditer(text or ""):
+        target = match.group(0).rstrip(".,;:!?)]}>")
+        add(target, _bare_url_title(text or "", match.start(), match.end()))
     return links
 
 
@@ -510,6 +542,45 @@ def parse_bare_urls(text: str) -> List[Tuple[str, str]]:
         if target:
             links.append((target, ""))
     return links
+
+
+def parse_csv_links(text: str) -> List[Tuple[str, str]]:
+    """Extract URL cells from CSV rows, using each row's name as its title."""
+    try:
+        rows = list(csv.reader(io.StringIO(text or "")))
+    except (csv.Error, TypeError):
+        return parse_bare_urls(text)
+    if not rows:
+        return []
+    headers = [clean_text(value).casefold() for value in rows[0]]
+    name_index = next(
+        (index for index, value in enumerate(headers)
+         if value in {"name", "title", "fellowship", "programme", "program"}),
+        None,
+    )
+    links: List[Tuple[str, str]] = []
+    seen: Set[str] = set()
+    for row in rows[1:]:
+        title = clean_text(row[name_index]) if name_index is not None and name_index < len(row) else ""
+        for cell in row:
+            for match in _BARE_HTTP_URL.finditer(cell or ""):
+                target = match.group(0).rstrip(".,;:!?)]}>")
+                if target and target not in seen:
+                    seen.add(target)
+                    links.append((target, title))
+    return links
+
+
+def parse_document_links(text: str, url: str) -> List[Tuple[str, str]]:
+    """Extract links according to a hub document's file extension."""
+    path = urllib_parse.urlsplit(url).path.casefold()
+    if path.endswith(".csv"):
+        return parse_csv_links(text)
+    if path.endswith((".md", ".markdown")):
+        return parse_markdown_links(text)
+    if path.endswith(".txt"):
+        return parse_bare_urls(text)
+    return parse_html_links(text)
 
 
 def candidate_flag(anchor: str, url: str) -> bool:
@@ -688,7 +759,7 @@ def fetch_hub(fetcher: Fetcher, hub: Dict[str, str]) -> Tuple[str, List[Tuple[st
             if api_metadata and isinstance(api_metadata.get("path"), str):
                 path = api_metadata["path"]
             base = github_readme_base(hub_url, api_metadata, branch, path)
-            return "processed", resolve_links(parse_markdown_links(markdown), base), "github_api_readme; {}".format(api_reason)
+            return "processed", resolve_links(parse_document_links(markdown, path), base), "github_api_readme; {}".format(api_reason)
 
         branch = repo_metadata.get("default_branch") if repo_metadata else None
         path = api_metadata.get("path") if api_metadata else None
@@ -703,7 +774,7 @@ def fetch_hub(fetcher: Fetcher, hub: Dict[str, str]) -> Tuple[str, List[Tuple[st
             raw_result = fetcher.fetch(raw_url, {"Accept": "text/plain"})
             if raw_result.state == "live" and raw_result.status == 200:
                 base = github_readme_base(hub_url, api_metadata, branch, path)
-                return "processed", resolve_links(parse_markdown_links(raw_result.body), base), "github_raw_fallback; {}".format(raw_result.reason or "robots_allow")
+                return "processed", resolve_links(parse_document_links(raw_result.body, path), base), "github_raw_fallback; {}".format(raw_result.reason or "robots_allow")
 
         fallback = fetcher.fetch(hub_url, {"Accept": "text/html, text/plain;q=0.9"})
         if fallback.state == "live" and fallback.status == 200:
@@ -728,11 +799,15 @@ def fetch_hub(fetcher: Fetcher, hub: Dict[str, str]) -> Tuple[str, List[Tuple[st
     if result.state != "live" or result.status != 200:
         return "failed", [], result.reason or result.state
     try:
-        if urllib_parse.urlsplit(result.final_url or hub_url).path.lower().endswith((".csv", ".txt")):
-            return "processed", parse_bare_urls(result.body), "plain-text URLs; {}".format(result.reason or "robots_allow")
-        return "processed", parse_html_links(result.body), "HTML anchors; {}".format(result.reason or "robots_allow")
+        links = parse_document_links(result.body, result.final_url or hub_url)
+        document_path = urllib_parse.urlsplit(result.final_url or hub_url).path.casefold()
+        if document_path.endswith((".csv", ".md", ".markdown", ".txt")):
+            reason_prefix = "document links"
+        else:
+            reason_prefix = "HTML anchors"
+        return "processed", links, "{}; {}".format(reason_prefix, result.reason or "robots_allow")
     except (TypeError, ValueError) as exc:
-        return "failed", [], "HTML parse failed: {}".format(exc)
+        return "failed", [], "document parse failed: {}".format(exc)
 
 
 def discover_candidates(

@@ -9,7 +9,7 @@
   },
   {
     "hub_id": "ankitshah009-all-about-grad-cs-fellowships",
-    "url": "https://raw.githubusercontent.com/ankitshah009/all_about_grad_cs_fellowships/master/README.md",
+    "url": "https://raw.githubusercontent.com/ankitshah009/all_about_grad_cs_fellowships/main/README.md",
     "category": "fellowships",
     "type": "hub",
     "authoritative": false,
@@ -57,7 +57,7 @@
   },
   {
     "hub_id": "csphdfellowships-csphdfellowships-fellowships-csv",
-    "url": "https://raw.githubusercontent.com/csphdfellowships/csphdfellowships/master/fellowships.csv",
+    "url": "https://raw.githubusercontent.com/csphdfellowships/csphdfellowships/main/fellowships.csv",
     "category": "fellowships",
     "type": "hub",
     "authoritative": false,
@@ -73,7 +73,7 @@
   },
   {
     "hub_id": "julian048-cs-everything-but-internships-readme",
-    "url": "https://raw.githubusercontent.com/Julian048/CS-Everything-but-Internships/master/README.md",
+    "url": "https://raw.githubusercontent.com/Julian048/CS-Everything-but-Internships/main/README.md",
     "category": "fellowships",
     "type": "hub",
     "authoritative": false,
@@ -81,7 +81,7 @@
   },
   {
     "hub_id": "landedjobs-ai-fellowships-and-residencies-readme",
-    "url": "https://raw.githubusercontent.com/landedjobs/ai-fellowships-and-residencies/master/README.md",
+    "url": "https://raw.githubusercontent.com/landedjobs/ai-fellowships-and-residencies/main/README.md",
     "category": "fellowships",
     "type": "hub",
     "authoritative": false,
@@ -89,7 +89,7 @@
   },
   {
     "hub_id": "junweiliang-awesome-lists-funding",
-    "url": "https://raw.githubusercontent.com/JunweiLiang/awesome_lists/master/funding.md",
+    "url": "https://raw.githubusercontent.com/JunweiLiang/awesome_lists/main/funding.md",
     "category": "fellowships",
     "type": "hub",
     "authoritative": false,
