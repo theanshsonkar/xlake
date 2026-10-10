@@ -381,6 +381,33 @@ def _seed_filter_reason(category: str, name: object, url: object) -> Optional[st
     return None
 
 
+def _merge_seed_filter_reason(category: str, name: object, url: object) -> Optional[str]:
+    """Apply only durable name/URL negatives when re-filtering stored seeds.
+
+    Page admission may establish technical relevance from body text, so the
+    positive category-name gate must never be reapplied during a merge.
+    """
+    if _is_github_list_url(url):
+        return "list_page"
+    cleaned = _clean_seed_name(name)
+    lowered = cleaned.casefold()
+    if lowered.startswith("awesome "):
+        return "list_page"
+    if _is_news_style_name(cleaned):
+        return "news_page"
+    if category == "grants":
+        if (_GRANT_GENERIC_NAME_PREFIXES.match(cleaned)
+                or _GRANT_LIST_NAME_TERMS.search(cleaned)):
+            return "list_page"
+        if _admission_contains_keywords(cleaned, _GRANT_NEWS_TITLE_KEYWORDS):
+            return "news_page"
+        if _admission_contains_keywords(cleaned, _GRANT_NON_TECH_NEGATIVE_KEYWORDS):
+            return "non_tech_signal"
+    if _admission_is_stale_year(cleaned, "", str(url or "")):
+        return "stale_year"
+    return None
+
+
 def _admission_is_ambassador(title: str, h1: str, name: str, *urls: str) -> bool:
     value = " ".join((title or "", h1 or "", name or "", *urls))
     return bool(_ADMISSION_AMBASSADOR.search(value))
@@ -732,6 +759,7 @@ def admit_seeds(
             continue
         admitted_seed = dict(seed)
         admitted_seed["programme_name"] = name
+        admitted_seed["tech_ok"] = True
         admitted.append(admitted_seed)
     LAST_ADMISSION_STATS = {
         key: sum(1 for item in rejected if item.get("reason") == reason)
@@ -1118,7 +1146,13 @@ def _seed_first_seen(entry: Dict) -> Optional[datetime]:
     return None
 
 
-def _dedupe_seed_entries(category: str, entries: Iterable[Dict]) -> List[Dict]:
+def _dedupe_seed_entries(
+    category: str,
+    entries: Iterable[Dict],
+    drop_counts: Optional[Dict[str, int]] = None,
+    *,
+    merge_filter: bool = False,
+) -> List[Dict]:
     """Clean, filter, and collapse entries sharing a name or URL identity."""
     winners: List[Dict] = []
     for entry in entries:
@@ -1129,7 +1163,12 @@ def _dedupe_seed_entries(category: str, entries: Iterable[Dict]) -> List[Dict]:
             continue
         current = dict(entry)
         current["programme_name"] = _clean_seed_name(current.get("programme_name"))
-        if _seed_filter_reason(category, current["programme_name"], current.get("official_url")):
+        reason = (_merge_seed_filter_reason if merge_filter else _seed_filter_reason)(
+            category, current["programme_name"], current.get("official_url"),
+        )
+        if reason:
+            if drop_counts is not None:
+                drop_counts[reason] = drop_counts.get(reason, 0) + 1
             continue
         name_key = _seed_name_key(current["programme_name"])
         if not name_key:
@@ -1168,7 +1207,7 @@ def merge_generated_seeds(
     admitted: Optional[int] = None,
     successful_fetches: int = 1,
     now: Optional[object] = None,
-) -> Tuple[List[Dict], Dict[str, int]]:
+) -> Tuple[List[Dict], Dict[str, object]]:
     """Merge this run's seeds into the category's durable generated registry."""
     run_at = _run_timestamp(now)
     destination = Path(destination)
@@ -1185,8 +1224,13 @@ def merge_generated_seeds(
             shutil.copyfile(destination, backup)
             existing = []
 
-    existing_entries = _dedupe_seed_entries(category, existing)
-    produced_entries = _dedupe_seed_entries(category, produced)
+    merge_drop_reasons: Dict[str, int] = {}
+    existing_entries = _dedupe_seed_entries(
+        category, existing, merge_drop_reasons, merge_filter=True,
+    )
+    produced_entries = _dedupe_seed_entries(
+        category, produced, merge_drop_reasons, merge_filter=True,
+    )
     existing_by_url = {_seed_key(entry): entry for entry in existing_entries}
     merged: Dict[str, Dict] = {}
     matched_existing: Set[str] = set()
@@ -1220,6 +1264,8 @@ def merge_generated_seeds(
             else:
                 current = dict(old)
                 current["last_seen"] = run_at
+                if entry.get("tech_ok") is True:
+                    current["tech_ok"] = True
             refreshed_count += 1
         else:
             current = dict(entry)
@@ -1260,12 +1306,15 @@ def merge_generated_seeds(
         "kept": kept_count,
         "expired": expired_count,
         "dead_skipped": len(suppressed),
+        "merge_dropped": sum(merge_drop_reasons.values()),
+        "merge_drop_reasons": merge_drop_reasons,
         "total": len(ordered),
     }
     print(
-        "hub_seeds {}: raw_links={} admitted={} new={} refreshed={} kept={} expired={} total={}".format(
+        "hub_seeds {}: raw_links={} admitted={} new={} refreshed={} kept={} expired={} merge_dropped={} total={}".format(
             category, counters["raw_links"], counters["admitted"], counters["new"],
-            counters["refreshed"], counters["kept"], counters["expired"], counters["total"],
+            counters["refreshed"], counters["kept"], counters["expired"],
+            counters["merge_dropped"], counters["total"],
         )
     )
     return ordered, counters

@@ -10,7 +10,7 @@ try:
     from engine.categories.hub_seeds import (
         _capped_candidates, _clean_seed_name, _default_hubs_path, _policy, _static_seeds,
         _is_github_list_url, _is_news_style_name, _seed_name_key, _seed_url_key,
-        admit_candidate, candidates_to_seeds, generate, merge_generated_seeds,
+        admit_candidate, admit_seeds, candidates_to_seeds, generate, merge_generated_seeds,
     )
     from engine.categories.research import harvest as research_harvest
     from engine.categories.research.harvest import (
@@ -20,7 +20,7 @@ except ImportError:
     from categories.hub_seeds import (
         _capped_candidates, _clean_seed_name, _default_hubs_path, _policy, _static_seeds,
         _is_github_list_url, _is_news_style_name, _seed_name_key, _seed_url_key,
-        admit_candidate, candidates_to_seeds, generate, merge_generated_seeds,
+        admit_candidate, admit_seeds, candidates_to_seeds, generate, merge_generated_seeds,
     )
     from categories.research import harvest as research_harvest
     from categories.research.harvest import (
@@ -207,6 +207,33 @@ class HubSeedsTests(unittest.TestCase):
                 )
                 self.assertFalse(ok)
                 self.assertIn(reason, {"directory_page", "news_page", "non_tech_signal"})
+
+    def test_page_verified_grant_survives_merge_but_biomedical_seed_drops(self):
+        url = "https://futo.example/grants"
+        html = (
+            "<title>FUTO Grants</title>"
+            "<p>Applications are open for software development and computing projects.</p>"
+        )
+        admitted, rejected = admit_seeds(
+            "grants", [self._seed(url)],
+            lambda _url: (200, url, html, ""),
+            lambda _url: True,
+        )
+        self.assertEqual(rejected, [])
+        self.assertEqual(len(admitted), 1)
+        self.assertTrue(admitted[0]["tech_ok"])
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "grants.json"
+            path.write_text(json.dumps([self._seed(
+                "https://autism.example/research",
+                programme_name="Autism Research Initiative",
+            )]), encoding="utf-8")
+            merged, stats = merge_generated_seeds(
+                "grants", admitted, path, now="2026-10-10T00:00:00Z",
+            )
+        self.assertEqual([seed["programme_name"] for seed in merged], ["FUTO Grants"])
+        self.assertEqual(stats["merge_dropped"], 1)
+        self.assertEqual(stats["merge_drop_reasons"], {"non_tech_signal": 1})
 
     def test_grants_require_tech_named_programmes_and_reject_generic_lists(self):
         cases = (

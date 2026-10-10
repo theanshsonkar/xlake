@@ -50,7 +50,7 @@ def load_generated_seeds(stem: str) -> tuple:
     if not isinstance(seeds, list):
         raise ValueError("generated {} seed registry must be a JSON array".format(stem))
     for index, seed in enumerate(seeds):
-        optional_fields = {"first_seen", "last_seen", "added_at", "generated_at", "needs_page_noun", "dead_strikes"}
+        optional_fields = {"first_seen", "last_seen", "added_at", "generated_at", "needs_page_noun", "dead_strikes", "tech_ok"}
         if (not isinstance(seed, dict)
                 or set(seed) - set(REQUIRED_SEED_FIELDS) - optional_fields
                 or not set(REQUIRED_SEED_FIELDS) <= set(seed)):
@@ -62,6 +62,8 @@ def load_generated_seeds(stem: str) -> tuple:
             value["needs_page_noun"] = True
         if seed.get("dead_strikes"):
             value["dead_strikes"] = int(seed["dead_strikes"])
+        if seed.get("tech_ok") is True:
+            value["tech_ok"] = True
         normalized.append(value)
     return tuple(normalized)
 # Shared title/host quality data for generated programme seeds.  Keep this
