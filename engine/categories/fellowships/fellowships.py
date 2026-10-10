@@ -46,7 +46,7 @@ def _load_seed_registry(path: str = SEED_PATH) -> tuple:
         for index, seed in enumerate(seeds):
             if not isinstance(seed, dict) or any(not seed.get(field) for field in REQUIRED_SEED_FIELDS):
                 raise ValueError("seed {} is missing a required non-empty field".format(index))
-            if set(seed) != set(REQUIRED_SEED_FIELDS):
+            if set(seed) - set(REQUIRED_SEED_FIELDS) - {"needs_page_noun"} or not set(REQUIRED_SEED_FIELDS) <= set(seed):
                 raise ValueError("seed {} contains fields outside the canonical schema".format(index))
             if seed["source_id"] in seen_sources or seed["programme_id"] in seen_programmes:
                 raise ValueError("duplicate source_id or programme_id in seed {}".format(index))
@@ -182,6 +182,23 @@ def _postprocess(rows: Iterable[Dict], verifications: Iterable[Dict]) -> List[Di
     return result
 
 
+def _print_fellowship_stats(stats: Dict) -> None:
+    title_rejected = dict(stats.get("title_rejected") or {})
+    records_by_status = dict(stats.get("records_by_status") or {})
+    print("FELLOWSHIP_STATS")
+    print("hand_seeds={}".format(stats.get("hand_seeds", 0)))
+    print("generated_seeds={}".format(stats.get("generated_seeds", 0)))
+    print("title_rejected_by_reason={}".format(json.dumps(title_rejected, sort_keys=True)))
+    print("page_noun_accepted={}".format(stats.get("page_noun_accepted", 0)))
+    print("page_noun_dropped={}".format(stats.get("page_noun_dropped", 0)))
+    print("fetched={}".format(stats.get("fetched", 0)))
+    print("fetch_errors={}".format(stats.get("fetch_errors", 0)))
+    print("robots_blocked={}".format(stats.get("robots_blocked", 0)))
+    print("cap_skips={}".format(stats.get("cap_skips", 0)))
+    print("records_by_status={}".format(json.dumps(records_by_status, sort_keys=True)))
+    print("records_with_deadline={}".format(stats.get("records_with_deadline", 0)))
+
+
 def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now) -> List[Dict]:
     verifications = list(verifications)
     applied = _core.apply_verifications(rows, verifications, now, config=FELLOWSHIP_CONFIG)
@@ -224,6 +241,7 @@ def collect(fetch: Callable[[str], str] = _fellowship_fetch, checked_at: Optiona
     )
     _atomic_json(lake_path, merged)
     result["merged"] = merged
+    _print_fellowship_stats(result.get("stats", {}))
     return result
 
 

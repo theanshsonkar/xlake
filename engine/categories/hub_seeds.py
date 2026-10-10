@@ -713,7 +713,7 @@ def _seed_record(category: str, normalized: str, candidate: Dict) -> Dict:
     digest = hashlib.sha1(normalized.encode("utf-8")).hexdigest()[:6]
     slug = prefix + "-" + digest
     path = (parsed.path or "/").strip("/")
-    return {
+    record = {
         "source_id": "hub-{}-{}".format(category, slug),
         "programme_id": "{}-hub-{}".format(category, slug),
         "programme_name": name,
@@ -722,6 +722,9 @@ def _seed_record(category: str, normalized: str, candidate: Dict) -> Dict:
         "allowed_path_hints": [path] if path else [""],
         "check_cadence": "monthly",
     }
+    if candidate.get("_needs_page_noun"):
+        record["needs_page_noun"] = True
+    return record
 
 
 def candidates_to_seeds(
@@ -762,8 +765,13 @@ def candidates_to_seeds(
                     if previous is None or (count, "", tie_key) > (previous[0], "", previous[1]):
                         routed[normalized] = (count, tie_key, candidate)
                     continue
-                LAST_SEED_GATE_REJECTIONS[title_reason] = LAST_SEED_GATE_REJECTIONS.get(title_reason, 0) + 1
-                continue
+                if (title_reason == "missing_programme_noun"
+                        and category in {"fellowships", "fellowship"}):
+                    candidate = dict(candidate)
+                    candidate["_needs_page_noun"] = True
+                else:
+                    LAST_SEED_GATE_REJECTIONS[title_reason] = LAST_SEED_GATE_REJECTIONS.get(title_reason, 0) + 1
+                    continue
         parsed = urlparse.urlsplit(normalized)
         host = (parsed.hostname or "").lower()
         if not host or _excluded_host(host) or (host, parsed.path or "/") in existing:
@@ -1039,10 +1047,29 @@ def generate(
     )
     capped = _capped_candidates(discovered, hubs, per_hub_cap)
     max_total = 300 if category in DIRECTORY_CATEGORIES else 200
+    candidate_dicts = _candidate_dicts(capped, hubs)
     seeds = candidates_to_seeds(
-        category, _candidate_dicts(capped, hubs), existing_seeds,
+        category, candidate_dicts, existing_seeds,
         max_total=max_total,
     )
+    seed_urls = {seed.get("official_url") for seed in seeds}
+    hub_seed_counts = {str(hub["hub_id"]): 0 for hub in hubs}
+    for candidate in candidate_dicts:
+        if candidate.get("official_url") not in seed_urls:
+            continue
+        evidence = candidate.get("official_evidence") or {}
+        for corroborating in evidence.get("corroborating_hubs", ()):
+            hub_id = str(corroborating.get("hub_id"))
+            if hub_id in hub_seed_counts:
+                hub_seed_counts[hub_id] += 1
+    hub_stats = [
+        {
+            "hub_url": str(hub["url"]),
+            "links_found": int(counts.get(str(hub["hub_id"]) or "", 0) or 0),
+            "seeds_produced": hub_seed_counts.get(str(hub["hub_id"]), 0),
+        }
+        for hub in hubs
+    ]
     routed_research = list(LAST_ROUTED_RESEARCH_SEEDS)
     LAST_GENERATE_STATS = {
         "category": category,
@@ -1058,6 +1085,7 @@ def generate(
         "http_requests": getattr(client, "total_requests", None),
         "rejections_by_reason": dict(LAST_SEED_GATE_REJECTIONS),
         "routed_research": len(routed_research),
+        "hub_stats": hub_stats,
     }
     destination = Path(out_path) if out_path is not None else DEFAULT_OUTPUT_DIR / (category + ".json")
     resolved = destination.expanduser().resolve()
@@ -1084,6 +1112,12 @@ def generate(
             "research", routed_research, destination.with_name("research.json"),
             raw_links=len(routed_research), admitted=len(routed_research), successful_fetches=0,
         )
+    if category == "fellowships":
+        print("HUB_STATS")
+        for item in hub_stats:
+            print("hub_url={} links_found={} seeds_produced={}".format(
+                item["hub_url"], item["links_found"], item["seeds_produced"],
+            ))
     print("hub_seeds {}: routed_research={}".format(category, len(routed_research)))
     LAST_GENERATE_STATS["successful_pages"] = successful_pages
     return merged

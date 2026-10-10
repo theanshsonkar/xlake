@@ -846,6 +846,90 @@ class TestGenericProgrammePipeline(unittest.TestCase):
             lake, obs = os.path.join(td, "lake.json"), os.path.join(td, "obs.json")
             rows = merge_programmes([], [observation], lake, obs)
         self.assertEqual(rows, [])
+    def test_missing_noun_fellowship_uses_page_h1_evidence(self):
+        seed = {
+            "source_id": "hub-fellowships-hertz-test",
+            "programme_id": "fellowships-hertz-test",
+            "programme_name": "Hertz Foundation",
+            "organizer": "hertz.example",
+            "official_url": "https://hertz.example/fellowship",
+            "allowed_path_hints": ["fellowship"],
+            "check_cadence": "monthly",
+        }
+        config = ProgrammeConfig(
+            category="fellowship", opportunity_type="fellowship", source_registry=(seed,),
+            observations_path="", verifications_path="", needs_confirmation_floor=True,
+        )
+        html = (
+            "<title>Hertz Foundation</title><h1>Hertz Fellowship</h1>"
+            "<p>Applications are open from August 1 to December 1, 2026.</p>"
+            "<a href='/apply'>Apply</a>"
+        )
+        with tempfile.TemporaryDirectory() as td:
+            result = core_collect(
+                config, fetch=lambda _url: (html, seed["official_url"]),
+                checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc),
+                lake_path=os.path.join(td, "lake.json"),
+                observations_path=os.path.join(td, "observations.json"),
+            )
+        self.assertEqual(len(result["records"]), 1)
+        self.assertEqual(result["stats"]["page_noun_accepted"], 1)
+
+    def test_missing_noun_fellowship_without_page_evidence_is_dropped(self):
+        seed = {
+            "source_id": "hub-fellowships-eth-test",
+            "programme_id": "fellowships-eth-test",
+            "programme_name": "ETH Zurich",
+            "organizer": "eth.example",
+            "official_url": "https://eth.example/students",
+            "allowed_path_hints": ["students"],
+            "check_cadence": "monthly",
+        }
+        config = ProgrammeConfig(
+            category="fellowship", opportunity_type="fellowship", source_registry=(seed,),
+            observations_path="", verifications_path="", needs_confirmation_floor=True,
+        )
+        html = (
+            "<title>ETH Zurich</title><h1>ETH Zurich</h1>"
+            "<p>Applications are open from August 1 to December 1, 2026.</p>"
+            "<a href='/apply'>Apply</a>"
+        )
+        with tempfile.TemporaryDirectory() as td:
+            result = core_collect(
+                config, fetch=lambda _url: (html, seed["official_url"]),
+                checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc),
+                lake_path=os.path.join(td, "lake.json"),
+                observations_path=os.path.join(td, "observations.json"),
+            )
+        self.assertEqual(result["records"], [])
+        self.assertEqual(result["observations"][0]["reason"], "missing_programme_noun_page")
+        self.assertEqual(result["stats"]["page_noun_dropped"], 1)
+
+    def test_missing_noun_fellowship_stale_year_remains_hard_rejection(self):
+        seed = {
+            "source_id": "hub-fellowships-guide-test",
+            "programme_id": "fellowships-guide-test",
+            "programme_name": "Some Guide 2020",
+            "organizer": "guide.example",
+            "official_url": "https://guide.example/program",
+            "allowed_path_hints": ["program"],
+            "check_cadence": "monthly",
+        }
+        config = ProgrammeConfig(
+            category="fellowship", opportunity_type="fellowship", source_registry=(seed,),
+            observations_path="", verifications_path="", needs_confirmation_floor=True,
+        )
+        calls = []
+        with tempfile.TemporaryDirectory() as td:
+            result = core_collect(
+                config, fetch=lambda url: calls.append(url),
+                checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc),
+                lake_path=os.path.join(td, "lake.json"),
+                observations_path=os.path.join(td, "observations.json"),
+            )
+        self.assertEqual(calls, [])
+        self.assertEqual(result["observations"][0]["reason"], "generated seed rejected: stale_year")
+        self.assertEqual(result["stats"]["title_rejected"], {"stale_year": 1})
 
 
 if __name__ == "__main__":

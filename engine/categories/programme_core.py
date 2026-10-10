@@ -50,15 +50,18 @@ def load_generated_seeds(stem: str) -> tuple:
     if not isinstance(seeds, list):
         raise ValueError("generated {} seed registry must be a JSON array".format(stem))
     for index, seed in enumerate(seeds):
-        optional_fields = {"first_seen", "last_seen", "added_at", "generated_at"}
+        optional_fields = {"first_seen", "last_seen", "added_at", "generated_at", "needs_page_noun"}
         if (not isinstance(seed, dict)
                 or set(seed) - set(REQUIRED_SEED_FIELDS) - optional_fields
                 or not set(REQUIRED_SEED_FIELDS) <= set(seed)):
             raise ValueError("generated {} seed {} has an invalid schema".format(stem, index))
-    return tuple(
-        {field: seed[field] for field in REQUIRED_SEED_FIELDS}
-        for seed in seeds
-    )
+    normalized = []
+    for seed in seeds:
+        value = {field: seed[field] for field in REQUIRED_SEED_FIELDS}
+        if seed.get("needs_page_noun"):
+            value["needs_page_noun"] = True
+        normalized.append(value)
+    return tuple(normalized)
 # Shared title/host quality data for generated programme seeds.  Keep this
 # category-neutral so hub discovery and collection enforce the same policy.
 PROGRAMME_NOUNS = (
@@ -626,6 +629,72 @@ def _text(html: str) -> Tuple[str, List[Tuple[str, str]]]:
     return ". ".join(parser.parts), parser.links
 
 
+_PAGE_PROGRAMME_NOUN = re.compile(
+    r"\b(?:fellowships?|scholarships?|awards?|grants?|program(?:me)?s?|"
+    r"residencies?|studentships?|prizes?)\b",
+    re.IGNORECASE,
+)
+
+
+class _PageEvidence(HTMLParser):
+    """Capture the first title and h1 without changing visible-text parsing."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.title = ""
+        self.h1 = ""
+        self._capture = None
+        self._buffer = []
+
+    def handle_starttag(self, tag, attrs):
+        lowered = tag.lower()
+        if lowered == "title" and not self.title and self._capture is None:
+            self._capture = "title"
+            self._buffer = []
+        elif lowered == "h1" and not self.h1 and self._capture is None:
+            self._capture = "h1"
+            self._buffer = []
+
+    def handle_endtag(self, tag):
+        lowered = tag.lower()
+        if self._capture == lowered:
+            value = _clean_quote(" ".join(self._buffer))
+            if self._capture == "title":
+                self.title = value
+            else:
+                self.h1 = value
+            self._capture = None
+            self._buffer = []
+
+    def handle_data(self, data):
+        if self._capture is not None:
+            self._buffer.append(data)
+
+    def finish(self):
+        if self._capture:
+            value = _clean_quote(" ".join(self._buffer))
+            if self._capture == "title":
+                self.title = value
+            else:
+                self.h1 = value
+            self._capture = None
+            self._buffer = []
+
+
+def _page_has_programme_noun(html: str) -> bool:
+    parser = _PageEvidence()
+    try:
+        parser.feed(html or "")
+        parser.close()
+    except (TypeError, ValueError):
+        pass
+    parser.finish()
+    visible, _links = _text(html or "")
+    return any(_PAGE_PROGRAMME_NOUN.search(value or "") for value in (
+        parser.title, parser.h1, visible[:3000],
+    ))
+
+
 def _clean_quote(quote: Optional[str]) -> str:
     if not quote:
         return ""
@@ -1191,6 +1260,17 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     successes = 0
     failure_counts = Counter()
     exception_counts = Counter()
+    stats = {
+        "hand_seeds": sum(1 for seed in config.source_registry if not _is_generated_seed(seed)),
+        "generated_seeds": sum(1 for seed in config.source_registry if _is_generated_seed(seed)),
+        "title_rejected": Counter(),
+        "page_noun_accepted": 0,
+        "page_noun_dropped": 0,
+        "fetched": 0,
+        "fetch_errors": 0,
+        "robots_blocked": 0,
+        "cap_skips": 0,
+    }
     hop_budget = [0]
     for seed in config.source_registry:
         final_url = None
@@ -1202,32 +1282,51 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
                 seed.get("programme_name", ""), seed.get("official_url", ""), config.category,
             )
             if not title_ok:
-                checked = (checked_at or datetime.now(timezone.utc)).isoformat(timespec="seconds")
-                observation = _observation(
-                    seed, checked, "failed", "generated seed rejected: {}".format(title_reason),
-                )
-                observations.append(observation)
-                if should_route_research_seed(seed, config.category, title_reason):
-                    routed_research.append(_routed_research_seed(seed))
-                    outcome = "routed_research"
+                if (title_reason == "missing_programme_noun"
+                        and config.category.casefold() in {"fellowship", "fellowships"}
+                        and not should_route_research_seed(seed, config.category, title_reason)):
+                    seed = dict(seed)
+                    seed["needs_page_noun"] = True
                 else:
-                    outcome = "rejected_{}".format(title_reason)
-                failure_counts[outcome] += 1
-                _log_fetch_outcome(seed, seed.get("official_url"), outcome)
-                continue
+                    stats["title_rejected"][title_reason] += 1
+                    checked = (checked_at or datetime.now(timezone.utc)).isoformat(timespec="seconds")
+                    observation = _observation(
+                        seed, checked, "failed", "generated seed rejected: {}".format(title_reason),
+                    )
+                    observations.append(observation)
+                    if should_route_research_seed(seed, config.category, title_reason):
+                        routed_research.append(_routed_research_seed(seed))
+                        outcome = "routed_research"
+                    else:
+                        outcome = "rejected_{}".format(title_reason)
+                    failure_counts[outcome] += 1
+                    _log_fetch_outcome(seed, seed.get("official_url"), outcome)
+                    continue
         try:
             fetched = fetch(seed["official_url"])
+            stats["fetched"] += 1
             html, final_url = fetched if isinstance(fetched, tuple) else (fetched, None)
             fetch_succeeded = bool(html)
-            record, observation = parse_programme(seed, html, checked_at, final_url, config=config)
-            if fetch_succeeded:
-                record, observation = _follow_hops(
-                    seed, html, final_url, record, observation, fetch, checked_at, config, hop_budget,
+            if seed.get("needs_page_noun") and not _page_has_programme_noun(html or ""):
+                checked = (checked_at or datetime.now(timezone.utc)).isoformat(timespec="seconds")
+                observation = _observation(
+                    seed, checked, "failed", "missing_programme_noun_page",
                 )
-            if observation.get("state") == "failed":
-                outcome = "empty"
+                record = None
+                outcome = "rejected_missing_programme_noun_page"
+                stats["page_noun_dropped"] += 1
             else:
-                outcome = "ok state={}".format(observation.get("state", "unknown"))
+                if seed.get("needs_page_noun"):
+                    stats["page_noun_accepted"] += 1
+                record, observation = parse_programme(seed, html, checked_at, final_url, config=config)
+                if fetch_succeeded:
+                    record, observation = _follow_hops(
+                        seed, html, final_url, record, observation, fetch, checked_at, config, hop_budget,
+                    )
+                if observation.get("state") == "failed":
+                    outcome = "empty"
+                else:
+                    outcome = "ok state={}".format(observation.get("state", "unknown"))
         except Exception as exc:
             checked = (checked_at or datetime.now(timezone.utc)).isoformat(timespec="seconds")
             exception_name = type(exc).__name__
@@ -1235,10 +1334,16 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             exception_detail = "{}: {}".format(exception_name, exception_message)
             observation = _observation(seed, checked, "failed", "{}: {}".format(exception_name, str(exc)[:160]))
             record = None
-            if _fetch_failure_bucket(observation["reason"]) == "capped":
+            bucket = _fetch_failure_bucket(observation["reason"])
+            if bucket == "capped":
                 outcome = "capped"
+                stats["cap_skips"] += 1
+            elif bucket == "robots_blocked":
+                outcome = bucket
+                stats["robots_blocked"] += 1
             else:
-                outcome = _fetch_failure_bucket(observation["reason"])
+                outcome = bucket
+                stats["fetch_errors"] += 1
                 exception_counts[exception_name] += 1
         if record:
             records.append(record)
@@ -1250,6 +1355,17 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
         _log_fetch_outcome(seed, final_url, outcome, exception_detail)
     records = _dedupe_programme_records(records)
     _merge_routed_research_seeds(routed_research)
+    status_counts = Counter()
+    for record in records:
+        if record.get("needs_confirmation") or record.get("programme_status") in (None, ""):
+            status_counts["needs_confirmation"] += 1
+        else:
+            status_counts[record.get("programme_status", "needs_confirmation")] += 1
+    stats["records_by_status"] = {
+        status: status_counts.get(status, 0)
+        for status in ("open", "rolling", "opening_soon", "closed", "needs_confirmation")
+    }
+    stats["records_with_deadline"] = sum(1 for record in records if record.get("deadline"))
     print("hub_seeds {}: routed_research={}".format(config.category, len(routed_research)), flush=True)
     failure_items = ["{}={}".format(kind, failure_counts[kind]) for kind in sorted(failure_counts)]
     failure_items.extend("exception[{}]={}".format(kind, exception_counts[kind]) for kind in sorted(exception_counts))
@@ -1266,7 +1382,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     merged = apply_verifications(merged, load_verifications(config.verifications_path), verification_now, config=config)
     _atomic_json(lake_path, merged)
     return {"records": records, "observations": observations, "merged_count": len(merged),
-            "routed_research": len(routed_research)}
+            "routed_research": len(routed_research), "stats": stats}
 
 
 def _apply_verifications_cli(config: ProgrammeConfig) -> None:

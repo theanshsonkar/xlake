@@ -94,5 +94,21 @@
     "type": "hub",
     "authoritative": false,
     "added_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "hub_id": "nennomp-research-programmes-readme",
+    "url": "https://raw.githubusercontent.com/NennoMP/research-programmes/main/README.md",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "tensvect-scholarships-and-programs-readme",
+    "url": "https://raw.githubusercontent.com/tensvect/Scholarships-and-Programs/master/README.md",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
   }
 ]
