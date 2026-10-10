@@ -161,6 +161,7 @@ jobs:
             data/operations/programmes_observations.json \
             data/operations/programme_verifications.json \
             data/operations/research_programme_verifications.json \
+            data/operations/research_programmes_observations.json \
             data/operations/discovery_*.json \
             data/operations/grant_programmes_observations.json \
             data/operations/startup_founder_programmes_observations.json \

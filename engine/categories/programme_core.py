@@ -1172,7 +1172,7 @@ def _fetch_failure_bucket(reason: str) -> str:
             return "http_5xx"
     if any(token in lowered for token in ("timeout", "timed out")):
         return "timeout"
-    if any(token in lowered for token in ("dns", "name or service", "nodename", "getaddrinfo")):
+    if any(token in lowered for token in ("dns", "name or service", "no address associated", "nodename", "getaddrinfo")):
         return "dns"
     if any(token in lowered for token in ("tls", "ssl", "certificate")):
         return "tls"
