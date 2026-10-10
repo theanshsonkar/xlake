@@ -1097,6 +1097,101 @@ def _refresh_last_checked_at(row: Dict, checked_at) -> None:
         return
 
 
+def _normalise_programme_url(value: object) -> str:
+    """Normalize programme URLs for seed identity comparison."""
+    try:
+        parsed = urlparse(str(value or "").strip())
+        host = (parsed.hostname or "").casefold().rstrip(".")
+        if host.startswith("www."):
+            host = host[4:]
+        if not host or parsed.scheme.casefold() not in ("http", "https"):
+            return ""
+        path = parsed.path.rstrip("/") or "/"
+        port = parsed.port
+        if port and port not in (80, 443):
+            host = "{}:{}".format(host, port)
+        return host + path
+    except (AttributeError, TypeError, ValueError):
+        return ""
+
+
+def _programme_row_urls(row: Dict) -> List[str]:
+    """Return direct and nested URLs recorded for a programme row."""
+    urls = []
+
+    def visit(value, key=""):
+        if isinstance(value, dict):
+            for child_key, child_value in value.items():
+                visit(child_value, child_key)
+        elif isinstance(value, (list, tuple)):
+            for child_value in value:
+                visit(child_value, key)
+        elif isinstance(value, str) and (key == "url" or key.endswith("_url") or key in {
+                "official_url", "final_url", "hop_url", "redirect_url"}):
+            urls.append(value)
+
+    visit(row)
+    return urls
+
+
+def retire_orphans(category: str, current_seed_urls: Iterable[str], lake_rows: List[Dict], now: str) -> List[Dict]:
+    """Hide retained programme rows whose source seed no longer exists."""
+    current_urls = set()
+    for value in current_seed_urls or ():
+        if isinstance(value, dict):
+            value = value.get("official_url")
+        normalized = _normalise_programme_url(value)
+        if normalized:
+            current_urls.add(normalized)
+
+    category_rows = [
+        row for row in lake_rows
+        if isinstance(row, dict)
+        and row.get("record_type") == "programme"
+        and row.get("category") == category
+    ]
+    if not current_urls:
+        print("retire_orphans {}: skipped guard".format(category), flush=True)
+        return lake_rows
+
+    candidates = []
+    for row in category_rows:
+        row_urls = {
+            normalized for value in _programme_row_urls(row)
+            if (normalized := _normalise_programme_url(value))
+        }
+        if not row_urls.intersection(current_urls) and row.get("hidden_reason") != "source_removed":
+            candidates.append(row)
+    if category_rows and len(candidates) / len(category_rows) > 0.4:
+        print("retire_orphans {}: skipped guard".format(category), flush=True)
+        print("retire_orphans {}: guard category_rows={} retire={}".format(
+            category, len(category_rows), len(candidates)), flush=True)
+        return lake_rows
+
+    retired = 0
+    for row in category_rows:
+        row_urls = {
+            normalized for value in _programme_row_urls(row)
+            if (normalized := _normalise_programme_url(value))
+        }
+        if row_urls.intersection(current_urls):
+            if row.get("hidden_reason") == "source_removed":
+                row["hidden_reason"] = None
+                row["is_live"] = True
+                row.pop("went_dead_at", None)
+            continue
+        if row.get("hidden_reason") == "source_removed":
+            continue
+        row["is_live"] = False
+        row["went_dead_at"] = now
+        row["hidden_reason"] = "source_removed"
+        retired += 1
+
+    print("retire_orphans {}: retired={} kept={}".format(
+        category, retired, len(category_rows) - retired), flush=True)
+    return lake_rows
+
+
 def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake_path: str = OPPORTUNITIES_PATH, observations_path: str = None, now: Optional[str] = None) -> List[Dict]:
     now = now or datetime.now(timezone.utc).isoformat(timespec="seconds")
     lake = _load_json(lake_path, [])
@@ -1497,6 +1592,11 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     )
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     merged = merge_programmes(records, observations, lake_path, observations_path or config.observations_path, now)
+    current_seed_urls = [seed.get("official_url") for seed in config.source_registry]
+    for current_item in records + observations:
+        current_seed_urls.extend(_programme_row_urls(current_item))
+    merged = retire_orphans(config.category, current_seed_urls, merged, now)
+    _atomic_json(lake_path, merged)
     verification_now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     merged = apply_verifications(merged, load_verifications(config.verifications_path), verification_now, config=config)
     _atomic_json(lake_path, merged)

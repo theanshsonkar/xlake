@@ -20,7 +20,7 @@ from categories.research import research
 from categories.scholarships import scholarships
 from categories.programme_core import (
     ProgrammeConfig, _dedupe_programme_records, _hop_links, _hop_page_matches_seed, _text, collect as core_collect,
-    programme_title_ok, should_route_research_seed,
+    programme_title_ok, retire_orphans, should_route_research_seed,
 )
 
 FIXTURES = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "fixtures", "programmes")
@@ -588,7 +588,90 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertIsNone(record["application_url"])
         self.assertTrue(record["needs_confirmation"])
 
-    def test_merge_preserves_jobs_and_source_scoped_liveness(self):
+    def test_retire_orphans_hides_removed_seed_without_deleting_it(self):
+        rows = [
+            {"record_type": "programme", "category": "grant", "programme_id": "removed", "official_url": "https://removed.example/grant", "is_live": True},
+            {"record_type": "programme", "category": "grant", "programme_id": "kept", "official_url": "https://kept.example/grant", "is_live": True},
+            {"record_type": "programme", "category": "grant", "programme_id": "kept-2", "official_url": "https://kept-2.example/grant", "is_live": True},
+            {"record_type": "programme", "category": "grant", "programme_id": "kept-3", "official_url": "https://kept-3.example/grant", "is_live": True},
+            {"record_type": "job", "category": "grant", "official_url": "https://removed.example/grant", "is_live": True},
+            {"record_type": "internship", "category": "grant", "official_url": "https://removed.example/grant", "is_live": True},
+        ]
+        result = retire_orphans(
+            "grant",
+            ["https://kept.example/grant", "https://kept-2.example/grant", "https://kept-3.example/grant"],
+            rows,
+            "2026-08-20T00:00:00+00:00",
+        )
+        removed = next(row for row in result if row.get("programme_id") == "removed")
+        kept = next(row for row in result if row.get("programme_id") == "kept")
+        self.assertEqual(len(result), 6)
+        self.assertFalse(removed["is_live"])
+        self.assertEqual(removed["hidden_reason"], "source_removed")
+        self.assertEqual(removed["went_dead_at"], "2026-08-20T00:00:00+00:00")
+        self.assertTrue(kept["is_live"])
+        self.assertNotIn("hidden_reason", kept)
+        self.assertTrue(result[2]["is_live"])
+        self.assertTrue(result[3]["is_live"])
+
+    def test_retire_orphans_normalizes_seed_url_variants(self):
+        rows = [{
+            "record_type": "programme", "category": "grant", "programme_id": "kept",
+            "official_url": "https://example.test/grants/",
+            "is_live": True,
+        }]
+        retire_orphans("grant", ["HTTP://WWW.EXAMPLE.TEST/grants/?utm_source=x#apply"], rows, "now")
+        self.assertTrue(rows[0]["is_live"])
+        self.assertNotIn("hidden_reason", rows[0])
+
+    def test_retire_orphans_guard_skips_when_more_than_forty_percent_would_retire(self):
+        rows = [
+            {"record_type": "programme", "category": "grant", "programme_id": str(index),
+             "official_url": "https://{}.example/grant".format(index), "is_live": True}
+            for index in range(5)
+        ]
+        captured = io.StringIO()
+        with redirect_stdout(captured):
+            retire_orphans("grant", ["https://0.example/grant", "https://1.example/grant"], rows, "now")
+        self.assertIn("retire_orphans grant: skipped guard", captured.getvalue())
+        self.assertIn("category_rows=5 retire=3", captured.getvalue())
+        self.assertTrue(all(row["is_live"] for row in rows))
+        self.assertTrue(all("hidden_reason" not in row for row in rows))
+
+    def test_retire_orphans_reappearing_seed_unhides_row(self):
+        rows = [{
+            "record_type": "programme", "category": "grant", "programme_id": "returned",
+            "official_url": "https://returned.example/grant", "is_live": False,
+            "hidden_reason": "source_removed", "went_dead_at": "2026-08-19T00:00:00+00:00",
+        }]
+        retire_orphans("grant", ["https://returned.example/grant/"], rows, "2026-08-20T00:00:00+00:00")
+        self.assertTrue(rows[0]["is_live"])
+        self.assertIsNone(rows[0]["hidden_reason"])
+        self.assertNotIn("went_dead_at", rows[0])
+
+    def test_retire_orphans_empty_seed_guard_preserves_all_rows(self):
+        rows = [{
+            "record_type": "programme", "category": "grant", "programme_id": "old",
+            "official_url": "https://old.example/grant", "is_live": True,
+        }]
+        captured = io.StringIO()
+        with redirect_stdout(captured):
+            retire_orphans("grant", [], rows, "now")
+        self.assertIn("retire_orphans grant: skipped guard", captured.getvalue())
+        self.assertTrue(rows[0]["is_live"])
+        self.assertNotIn("hidden_reason", rows[0])
+
+    def test_retire_orphans_keeps_recorded_hop_url(self):
+        rows = [{
+            "record_type": "programme", "category": "grant", "programme_id": "hop",
+            "official_url": "https://old.example/grant", "application_url": None,
+            "official_evidence": {"programme_status": {"url": "https://www.current.example/apply/#dates"}},
+            "is_live": True,
+        }]
+        retire_orphans("grant", ["https://current.example/apply"], rows, "now")
+        self.assertTrue(rows[0]["is_live"])
+        self.assertNotIn("hidden_reason", rows[0])
+
         job = {"record_type": "job", "url": "https://jobs.example/1", "custom": {"x": 1}}
         first = {"record_type": "programme", "programme_id": "old", "official_url": SEEDS[0]["official_url"], "is_live": True}
         second = {"record_type": "programme", "programme_id": "other", "official_url": "https://other.example", "is_live": True}
