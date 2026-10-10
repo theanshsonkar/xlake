@@ -14,13 +14,13 @@ on:
         options:
           - all
           - hubs
-          - open-source
           - fellowships
           - scholarships
           - grants
-          - startup-founder
-          - community
           - research
+          - open_source
+          - startup
+          - community
           - hackathons
 
 concurrency:
@@ -61,26 +61,51 @@ jobs:
           aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities_history.json" data/lake/opportunities_history.json
 
       - name: Generate hub seeds (weekly Sunday)
-        if: ${{ inputs.category == 'hubs' || github.event.schedule == '17 6 * * 0' }}
+        if: ${{ inputs.category == 'hubs' || github.event.schedule == '17 6 * * 0' || inputs.category == 'fellowships' || inputs.category == 'scholarships' || inputs.category == 'grants' || inputs.category == 'research' || inputs.category == 'open_source' || inputs.category == 'startup' || inputs.category == 'community' }}
         env:
           XLAKE_HUB_MAX_PAGES: "400"
           XLAKE_HUB_MAX_PAGES_PER_HOST: "40"
         run: |
           mkdir -p data/operations/generated_seeds
-          python3 -u -m categories.hub_seeds --category fellowships --out data/operations/generated_seeds/fellowships.json
-          python3 -u -m categories.hub_seeds --category scholarships --out data/operations/generated_seeds/scholarships.json
-          python3 -u -m categories.hub_seeds --category grants --out data/operations/generated_seeds/grants.json
-          python3 -u -m categories.hub_seeds --category startup_founder --out data/operations/generated_seeds/startup_founder.json
-          python3 -u -m categories.hub_seeds --category community --out data/operations/generated_seeds/community.json
-          python3 -u -m categories.hub_seeds --category research --out data/operations/generated_seeds/research.json
-          python3 -u -m categories.hub_seeds --category open_source --out data/operations/generated_seeds/open_source.json
+          case "${{ inputs.category }}" in
+            fellowships)
+              python3 -u -m categories.hub_seeds --category fellowships --out data/operations/generated_seeds/fellowships.json
+              ;;
+            scholarships)
+              python3 -u -m categories.hub_seeds --category scholarships --out data/operations/generated_seeds/scholarships.json
+              ;;
+            grants)
+              python3 -u -m categories.hub_seeds --category grants --out data/operations/generated_seeds/grants.json
+              ;;
+            research)
+              python3 -u -m categories.hub_seeds --category research --out data/operations/generated_seeds/research.json
+              ;;
+            open_source)
+              python3 -u -m categories.hub_seeds --category open_source --out data/operations/generated_seeds/open_source.json
+              ;;
+            startup)
+              python3 -u -m categories.hub_seeds --category startup_founder --out data/operations/generated_seeds/startup_founder.json
+              ;;
+            community)
+              python3 -u -m categories.hub_seeds --category community --out data/operations/generated_seeds/community.json
+              ;;
+            *)
+              python3 -u -m categories.hub_seeds --category fellowships --out data/operations/generated_seeds/fellowships.json
+              python3 -u -m categories.hub_seeds --category scholarships --out data/operations/generated_seeds/scholarships.json
+              python3 -u -m categories.hub_seeds --category grants --out data/operations/generated_seeds/grants.json
+              python3 -u -m categories.hub_seeds --category startup_founder --out data/operations/generated_seeds/startup_founder.json
+              python3 -u -m categories.hub_seeds --category community --out data/operations/generated_seeds/community.json
+              python3 -u -m categories.hub_seeds --category research --out data/operations/generated_seeds/research.json
+              python3 -u -m categories.hub_seeds --category open_source --out data/operations/generated_seeds/open_source.json
+              ;;
+          esac
 
       - name: Refresh Open Source programmes
-        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'open-source' }}
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'open_source' }}
         run: python3 -u -m categories.open_source.programmes
 
       - name: Refresh Open Source contributions (good-first-issues)
-        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'open-source' }}
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'open_source' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: python3 -u -m categories.open_source.contributions
@@ -104,7 +129,7 @@ jobs:
           python3 -u -m categories.grants.grants --apply-verifications
 
       - name: Refresh Startup & Founder programmes
-        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'startup-founder' }}
+        if: ${{ github.event_name == 'schedule' || inputs.category == 'all' || inputs.category == 'startup' }}
         run: |
           python3 -u -m categories.startup_founder.programmes
           python3 -u -m categories.startup_founder.programmes --apply-verifications
