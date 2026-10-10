@@ -10,7 +10,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-aigrant-org-70110f",
@@ -23,7 +23,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-awesome-re-badge-svg-https-awesome-re-a70360",
@@ -36,8 +36,8 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:59:18Z",
-  "last_seen": "2026-10-10T14:59:18Z",
-  "dead_strikes": 1
+  "last_seen": "2026-10-10T16:04:57Z",
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-grants-blog-sentry-io-2019-01-1abbd0",
@@ -50,8 +50,8 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:59:18Z",
-  "last_seen": "2026-10-10T14:59:18Z",
-  "dead_strikes": 1
+  "last_seen": "2026-10-10T16:04:57Z",
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-grants-chanzuckerberg-com-rfa-essential-open-source-software-for-sc-20a56f",
@@ -64,7 +64,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:55:07Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-datascience-nih-gov-data-scholars-2021-3a9770",
@@ -90,7 +90,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-foundation-mozilla-org-en-what-we-fund-0f89fa",
@@ -103,7 +103,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T08:36:56Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-github-blog-2021-09-12-recipients-open-source-grants-github-e1188f",
@@ -116,7 +116,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-huggingface-co-docs-hub-89740a",
@@ -129,7 +129,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-landing-hostkey-com-grant-for-scientific-projects-formhtml-574f04",
@@ -142,7 +142,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-numfocus-org-programs-small-development-grants-edce9e",
@@ -155,7 +155,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-researchtraining-nih-gov-a2586a",
@@ -181,8 +181,8 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:59:18Z",
-  "last_seen": "2026-10-10T14:59:18Z",
-  "dead_strikes": 1
+  "last_seen": "2026-10-10T16:04:57Z",
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-grants-sovereigntechfund-de-programs-fellowship-88c835",
@@ -195,7 +195,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T08:36:56Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-trelis-com-trelis-ai-grants-f363b0",
@@ -208,7 +208,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-web3-foundation-4fccff",
@@ -221,7 +221,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T08:36:56Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-www-mozilla-org-en-us-moss-351f7e",
@@ -234,7 +234,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:55:07Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-www-nsf-gov-publications-pub-summ-jsp-cb70d4",
@@ -260,7 +260,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:55:07Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-www-sequoiacap-com-oss-9a2815",
@@ -273,8 +273,8 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:59:18Z",
-  "last_seen": "2026-10-10T14:59:18Z",
-  "dead_strikes": 1
+  "last_seen": "2026-10-10T16:04:57Z",
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-grants-www-software-ac-uk-programmes-research-software-maintenance-b30ef4",
@@ -287,7 +287,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:55:07Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-www-sovereign-tech-programs-fellowship-abcb25",
@@ -300,7 +300,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:55:07Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-www-sovereign-tech-programs-fund-f6867d",
@@ -313,7 +313,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  },
  {
   "source_id": "hub-grants-www-together-ai-forms-research-credits-program-request-26ae19",
@@ -326,6 +326,6 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T14:59:18Z"
+  "last_seen": "2026-10-10T16:04:57Z"
  }
 ]
