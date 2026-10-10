@@ -87,16 +87,16 @@ class HubSeedsTests(unittest.TestCase):
             path = Path(directory) / "grants.json"
             path.write_text(json.dumps([self._seed(
                 "https://example.org/old",
-                programme_name="**Old Grant**",
+                programme_name="**Old Software Grant**",
             )]), encoding="utf-8")
             produced = [self._seed(
                 "https://example.org/new",
-                programme_name="1 New Grant _global_, details",
+                programme_name="1 New Software Grant _global_, details",
             )]
             merged, _stats = merge_generated_seeds("grants", produced, path)
             self.assertEqual(
                 {item["programme_name"] for item in merged},
-                {"Old Grant", "New Grant"},
+                {"Old Software Grant", "New Software Grant"},
             )
 
     def test_fetcher_request_cap_stops_fetching(self):
@@ -169,6 +169,29 @@ class HubSeedsTests(unittest.TestCase):
         ok, reason, _ = admit_candidate(html, "https://dalberg.example/fellowship", "community")
         self.assertFalse(ok)
         self.assertIn(reason, {"no_programme_signal", "no_name"})
+
+    def test_grants_require_tech_named_programmes_and_reject_generic_lists(self):
+        cases = (
+            ("The Hope Funds for Cancer Research postdoctoral fellowship", False),
+            ("Autism Research Initiative", False),
+            ("Funding schemes and travel grant opportunities for postdocs", False),
+            ("Sentry Open Source Grant", True),
+            ("a16z Open Source AI Grant program", True),
+            # FUTO Grants has no pure keyword in its name; the name-only gate
+            # intentionally rejects it rather than whitelisting the brand.
+            ("FUTO Grants", False),
+        )
+        for name, expected in cases:
+            html = "<title>{}</title><h1>{}</h1><p>Applications are open.</p>".format(name, name)
+            with self.subTest(name=name):
+                ok, reason, admitted_name = admit_candidate(
+                    html, "https://example.org/{}".format(name.lower().replace(" ", "-")), "grants",
+                )
+                self.assertEqual(ok, expected)
+                if expected:
+                    self.assertEqual(admitted_name, name)
+                else:
+                    self.assertIn(reason, {"no_tech_signal", "no_name"})
 
     def test_merge_expires_seed_older_than_56_days(self):
         with tempfile.TemporaryDirectory() as directory:

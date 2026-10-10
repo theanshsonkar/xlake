@@ -92,9 +92,32 @@ TECH_RELEVANCE_KEYWORDS = (
     "ai", "machine learning", "deep learning", "data", "research", "stem",
     "cybersecurity", "cyber security", "open source", "developer", "development",
     "coding", "programming", "technology", "tech", "computing", "robotics",
-    "cloud", "quantum", "mathematics", "statistics", "informatics", "digital",
-    "algorithm", "blockchain", "bioinformatics", "techmakers",
+    "cloud", "compute", "gpu", "web3", "security", "data science", "quantum",
+    "mathematics", "statistics", "informatics", "digital", "algorithm", "blockchain",
+    "bioinformatics", "techmakers",
 )
+_GRANT_NAME_TECH_KEYWORDS = tuple(
+    keyword for keyword in TECH_RELEVANCE_KEYWORDS
+    if keyword not in {"data", "research", "stem", "mathematics", "statistics", "bioinformatics"}
+)
+_GRANT_GENERIC_NAME_PREFIXES = re.compile(
+    r"^\s*(?:funding schemes|list of|opportunities for)\b", re.IGNORECASE,
+)
+
+
+def _grant_name_passes(name: str) -> bool:
+    """Keep grants to named technical opportunities, not generic lists."""
+    cleaned = _collapsed(name)
+    return bool(cleaned) and not _GRANT_GENERIC_NAME_PREFIXES.match(cleaned) and _admission_contains_keywords(
+        cleaned, _GRANT_NAME_TECH_KEYWORDS,
+    )
+
+
+def _admission_name_passes_for_category(name: str, category: str) -> bool:
+    if category == "grants":
+        return _grant_name_passes(name)
+    return True
+
 _ADMISSION_FORM_HOSTS = frozenset({
     "tally.so", "forms.gle", "typeform.com", "airtable.com", "jotform.com",
     "surveymonkey.com", "linktr.ee",
@@ -235,13 +258,17 @@ def _admission_blocked_form_host(url: str) -> bool:
     return False
 
 
-def _admission_contains_keyword(value: str) -> bool:
+def _admission_contains_keywords(value: str, keywords: Sequence[str]) -> bool:
     lowered = (value or "").casefold()
-    for keyword in TECH_RELEVANCE_KEYWORDS:
+    for keyword in keywords:
         escaped = re.escape(keyword.casefold()).replace(r"\ ", r"\s+")
         if re.search(r"(?<![a-z0-9]){}(?![a-z0-9])".format(escaped), lowered):
             return True
     return False
+
+
+def _admission_contains_keyword(value: str) -> bool:
+    return _admission_contains_keywords(value, TECH_RELEVANCE_KEYWORDS)
 
 
 def _admission_geography_locked(value: str) -> bool:
@@ -488,6 +515,8 @@ def admit_candidate(
                     break
     if not return_name:
         return False, "no_name", ""
+    if not _admission_name_passes_for_category(return_name, category):
+        return False, "no_tech_signal", ""
 
     visible = pagetext.to_text(html or "")
     header_text = " ".join((page.title, page.og_title, page.h1))
@@ -1004,6 +1033,8 @@ def merge_generated_seeds(
         if key is not None:
             current = dict(entry)
             current["programme_name"] = _clean_seed_name(current.get("programme_name"))
+            if not _admission_name_passes_for_category(current["programme_name"], category):
+                continue
             existing_by_url[key] = current
     produced_by_url: Dict[str, Dict] = {}
     for entry in produced:
@@ -1013,6 +1044,8 @@ def merge_generated_seeds(
         if key is not None:
             current = dict(entry)
             current["programme_name"] = _clean_seed_name(current.get("programme_name"))
+            if not _admission_name_passes_for_category(current["programme_name"], category):
+                continue
             produced_by_url[key] = current
 
     merged: Dict[str, Dict] = {}
