@@ -133,6 +133,10 @@ jobs:
           done
           for attempt in 1 2 3 4 5; do
             git fetch origin main
+            git reset --hard HEAD
+            if [ "${#paths[@]}" -gt 0 ]; then
+              git clean -fd -- "${paths[@]}"
+            fi
             git checkout -B ci-save origin/main
             while IFS= read -r p; do
               p=${p#./}
@@ -232,6 +236,10 @@ jobs:
           done
           for attempt in 1 2 3 4 5; do
             git fetch origin main
+            git reset --hard HEAD
+            if [ "${#paths[@]}" -gt 0 ]; then
+              git clean -fd -- "${paths[@]}"
+            fi
             git checkout -B ci-save origin/main
             while IFS= read -r p; do
               p=${p#./}
