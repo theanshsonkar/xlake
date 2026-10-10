@@ -46,7 +46,7 @@ def _load_seed_registry(path: str = SEED_PATH) -> tuple:
         for index, seed in enumerate(seeds):
             if not isinstance(seed, dict) or any(not seed.get(field) for field in REQUIRED_SEED_FIELDS):
                 raise ValueError("seed {} is missing a required non-empty field".format(index))
-            if set(seed) - set(REQUIRED_SEED_FIELDS) - {"needs_page_noun"} or not set(REQUIRED_SEED_FIELDS) <= set(seed):
+            if set(seed) - set(REQUIRED_SEED_FIELDS) - {"needs_page_noun", "dead_strikes"} or not set(REQUIRED_SEED_FIELDS) <= set(seed):
                 raise ValueError("seed {} contains fields outside the canonical schema".format(index))
             if seed["source_id"] in seen_sources or seed["programme_id"] in seen_programmes:
                 raise ValueError("duplicate source_id or programme_id in seed {}".format(index))

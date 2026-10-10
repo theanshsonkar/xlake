@@ -967,10 +967,14 @@ def merge_generated_seeds(
             produced_by_url[key] = dict(entry)
 
     merged: Dict[str, Dict] = {}
+    suppressed: Set[str] = set()
     new_count = 0
     refreshed_count = 0
     for key, entry in produced_by_url.items():
         old = existing_by_url.get(key)
+        if old is not None and int(old.get("dead_strikes") or 0) >= 2:
+            suppressed.add(key)
+            continue
         if old is None:
             current = dict(entry)
             current["first_seen"] = run_at
@@ -980,6 +984,8 @@ def merge_generated_seeds(
             current = dict(entry)
             current["first_seen"] = old.get("first_seen") or old.get("added_at") or run_at
             current["last_seen"] = run_at
+            if old.get("dead_strikes"):
+                current["dead_strikes"] = int(old["dead_strikes"])
             for field in ("added_at", "generated_at"):
                 if field in old:
                     current[field] = old[field]
@@ -990,6 +996,9 @@ def merge_generated_seeds(
     kept_count = 0
     expired_count = 0
     for key, old in existing_by_url.items():
+        if int(old.get("dead_strikes") or 0) >= 2:
+            suppressed.add(key)
+            continue
         if key in produced_by_url:
             continue
         current = dict(old)
@@ -1014,6 +1023,7 @@ def merge_generated_seeds(
         "refreshed": refreshed_count,
         "kept": kept_count,
         "expired": expired_count,
+        "dead_skipped": len(suppressed),
         "total": len(ordered),
     }
     print(

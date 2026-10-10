@@ -50,7 +50,7 @@ def load_generated_seeds(stem: str) -> tuple:
     if not isinstance(seeds, list):
         raise ValueError("generated {} seed registry must be a JSON array".format(stem))
     for index, seed in enumerate(seeds):
-        optional_fields = {"first_seen", "last_seen", "added_at", "generated_at", "needs_page_noun"}
+        optional_fields = {"first_seen", "last_seen", "added_at", "generated_at", "needs_page_noun", "dead_strikes"}
         if (not isinstance(seed, dict)
                 or set(seed) - set(REQUIRED_SEED_FIELDS) - optional_fields
                 or not set(REQUIRED_SEED_FIELDS) <= set(seed)):
@@ -60,6 +60,8 @@ def load_generated_seeds(stem: str) -> tuple:
         value = {field: seed[field] for field in REQUIRED_SEED_FIELDS}
         if seed.get("needs_page_noun"):
             value["needs_page_noun"] = True
+        if seed.get("dead_strikes"):
+            value["dead_strikes"] = int(seed["dead_strikes"])
         normalized.append(value)
     return tuple(normalized)
 # Shared title/host quality data for generated programme seeds.  Keep this
@@ -1158,6 +1160,8 @@ def _fetch_failure_bucket(reason: str) -> str:
     status = re.search(r"\b(?:http[_ -]?)?(\d{3})\b", lowered)
     if status:
         code = int(status.group(1))
+        if code == 404:
+            return "http_404"
         if code == 403:
             return "http_403"
         if code == 429:
@@ -1177,7 +1181,7 @@ def _fetch_failure_bucket(reason: str) -> str:
 
 _COMMON_MULTI_PART_SUFFIXES = frozenset((
     "ac.uk", "co.in", "co.jp", "co.nz", "co.uk", "com.au", "com.br",
-    "com.cn", "com.sg", "edu.au", "edu.cn", "gov.au", "gov.in", "gov.uk",
+    "com.cn", "com.sg", "edu.au", "edu.cn", "edu.tw", "gov.au", "gov.in", "gov.uk",
     "net.au", "org.au", "org.cn", "org.in", "org.uk",
 ))
 
@@ -1202,37 +1206,130 @@ def _normalised_programme_name(value: object) -> str:
     return re.sub(r"\s+", " ", name).strip()
 
 
-def _programme_dedupe_key(record: Dict) -> Tuple[str, str]:
-    return _registrable_host(record.get("official_url")), _normalised_programme_name(
-        record.get("programme_name")
-    )
+def _normalised_programme_tokens(value: object) -> set:
+    name = unicodedata.normalize("NFKC", str(value or "")).casefold()
+    name = re.sub(r"\b20\d{2}\b", " ", name)
+    name = re.sub(r"['’]s\b", "", name)
+    name = re.sub(r"\bprogram(?:me)?s?\b", " ", name)
+    name = re.sub(r"[^\w\s]", " ", name, flags=re.UNICODE)
+    return {token for token in re.split(r"\s+", name) if token and token != "the"}
 
 
-def _programme_information_score(record: Dict) -> Tuple[int, int, int]:
-    status = record.get("programme_status")
+def _programme_titles_match(left: Dict, right: Dict) -> bool:
+    left_tokens = _normalised_programme_tokens(left.get("programme_name"))
+    right_tokens = _normalised_programme_tokens(right.get("programme_name"))
+    if not left_tokens or not right_tokens:
+        return False
+    return len(left_tokens & right_tokens) / len(left_tokens | right_tokens) >= 0.8
+
+
+def _canonical_url_length(record: Dict) -> int:
+    try:
+        parsed = urlparse(str(record.get("official_url") or ""))
+        canonical = parsed._replace(fragment="").geturl()
+    except (TypeError, ValueError):
+        canonical = str(record.get("official_url") or "")
+    return len(canonical)
+
+
+def _programme_information_score(record: Dict) -> Tuple[int, int, int, int]:
+    status = str(record.get("programme_status") or "").casefold()
+    actionable = status in {"open", "rolling", "opening_soon"}
     return (
         int(record.get("deadline") not in (None, "")),
-        int(status not in (None, "", "needs_confirmation")),
+        int(actionable),
+        -_canonical_url_length(record),
         len(str(record.get("description") or "")),
     )
 
 
 def _dedupe_programme_records(records: Iterable[Dict]) -> List[Dict]:
-    winners: Dict[Tuple[str, str], Dict] = {}
-    order: List[Tuple[str, str]] = []
+    winners: List[Dict] = []
     for record in records:
         if not isinstance(record, dict) or record.get("record_type") != "programme":
             continue
-        key = _programme_dedupe_key(record)
-        if not key[0] or not key[1]:
+        domain = _registrable_host(record.get("official_url"))
+        if not domain or not _normalised_programme_tokens(record.get("programme_name")):
             continue
-        previous = winners.get(key)
-        if previous is None:
-            order.append(key)
-            winners[key] = record
-        elif _programme_information_score(record) > _programme_information_score(previous):
-            winners[key] = record
-    return [winners[key] for key in order]
+        match_index = next(
+            (index for index, previous in enumerate(winners)
+             if _registrable_host(previous.get("official_url")) == domain
+             and _programme_titles_match(previous, record)),
+            None,
+        )
+        if match_index is None:
+            winners.append(record)
+            continue
+        previous = winners[match_index]
+        previous_has_information = bool(previous.get("deadline")) or str(previous.get("programme_status") or "").casefold() in {"open", "rolling", "opening_soon"}
+        record_has_information = bool(record.get("deadline")) or str(record.get("programme_status") or "").casefold() in {"open", "rolling", "opening_soon"}
+        if record_has_information and not previous_has_information:
+            winners[match_index] = record
+        elif record_has_information == previous_has_information and _programme_information_score(record) > _programme_information_score(previous):
+            winners[match_index] = record
+        elif not record_has_information and not previous_has_information and _canonical_url_length(record) < _canonical_url_length(previous):
+            winners[match_index] = record
+    return winners
+
+
+def _http_404_retry_url(url: str) -> Optional[str]:
+    try:
+        parsed = urlparse(url)
+        if parsed.scheme not in ("http", "https") or not parsed.hostname:
+            return None
+        path = parsed.path or "/"
+        if parsed.scheme == "http":
+            scheme = "https"
+            path = path.rstrip("/") or "/"
+        elif path.endswith("/") and path != "/":
+            scheme = parsed.scheme
+            path = path.rstrip("/")
+        else:
+            return None
+        variant = parsed._replace(scheme=scheme, path=path, fragment="").geturl()
+        variant_parts = urlparse(variant)
+        return variant if variant_parts.hostname.casefold() == parsed.hostname.casefold() else None
+    except (AttributeError, TypeError, ValueError):
+        return None
+
+
+def _fetch_with_404_retry(fetch: Callable[[str], str], url: str):
+    try:
+        return fetch(url)
+    except Exception as first_error:
+        if _fetch_failure_bucket(str(first_error)) != "http_404":
+            raise
+        retry_url = _http_404_retry_url(url)
+        if not retry_url:
+            raise
+        return fetch(retry_url)
+
+
+def _update_generated_dead_strikes(config: ProgrammeConfig, observations: Iterable[Dict]) -> None:
+    """Persist consecutive generated-seed 404/DNS failures for hub generation."""
+    generated_dir = os.environ.get(GENERATED_SEEDS_ENV, "").strip()
+    if not generated_dir:
+        generated_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "operations", "generated_seeds"))
+    stem = {"fellowship": "fellowships", "scholarship": "scholarships", "grant": "grants"}.get(config.category, config.category)
+    path = os.path.join(generated_dir, stem + ".json")
+    if not os.path.isfile(path):
+        return
+    try:
+        with open(path, encoding="utf-8") as handle:
+            entries = json.load(handle)
+    except (OSError, ValueError, TypeError, json.JSONDecodeError):
+        return
+    by_url = {item.get("official_url"): item for item in entries if isinstance(item, dict)}
+    for observation in observations:
+        entry = by_url.get(observation.get("official_url"))
+        if entry is None or not _is_generated_seed(entry):
+            continue
+        reason = str(observation.get("reason") or "")
+        if observation.get("state") == "dead" and reason in {"http_404", "dns"}:
+            entry["dead_strikes"] = int(entry.get("dead_strikes") or 0) + 1
+        elif observation.get("state") != "failed":
+            entry.pop("dead_strikes", None)
+    _atomic_json(path, entries)
 
 
 def _log_fetch_outcome(seed: Dict, final_url: Optional[str], outcome: str, error: Optional[str] = None) -> None:
@@ -1317,7 +1414,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
                     _log_fetch_outcome(seed, seed.get("official_url"), outcome)
                     continue
         try:
-            fetched = fetch(seed["official_url"])
+            fetched = _fetch_with_404_retry(fetch, seed["official_url"])
             stats["fetched"] += 1
             html, final_url = fetched if isinstance(fetched, tuple) else (fetched, None)
             fetch_succeeded = bool(html)
@@ -1346,9 +1443,13 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             exception_name = type(exc).__name__
             exception_message = str(exc)[:200].replace("\\r", " ").replace("\\n", " ")
             exception_detail = "{}: {}".format(exception_name, exception_message)
-            observation = _observation(seed, checked, "failed", "{}: {}".format(exception_name, str(exc)[:160]))
+            bucket = _fetch_failure_bucket("{}: {}".format(exception_name, str(exc)))
+            dead_link = bucket in {"http_404", "dns"}
+            observation = _observation(
+                seed, checked, "dead" if dead_link else "failed",
+                bucket if dead_link else "{}: {}".format(exception_name, str(exc)[:160]),
+            )
             record = None
-            bucket = _fetch_failure_bucket(observation["reason"])
             if bucket == "capped":
                 outcome = "capped"
                 stats["cap_skips"] += 1
@@ -1368,6 +1469,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             failure_counts[outcome.split()[0]] += 1
         _log_fetch_outcome(seed, final_url, outcome, exception_detail)
     records = _dedupe_programme_records(records)
+    _update_generated_dead_strikes(config, observations)
     _merge_routed_research_seeds(routed_research)
     status_counts = Counter()
     for record in records:

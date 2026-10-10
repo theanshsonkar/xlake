@@ -978,6 +978,48 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertEqual(result["observations"][0]["reason"], "generated seed rejected: stale_year")
         self.assertEqual(result["stats"]["title_rejected"], {"stale_year": 1})
 
-
 if __name__ == "__main__":
     unittest.main()
+    def test_near_duplicate_merge_is_same_domain_and_jaccard_scoped(self):
+        records = [
+            {
+                "record_type": "programme", "programme_name": "NTHU Summer Internship Program 2026",
+                "official_url": "https://eng-en.web.nthu.edu.tw/program/long", "programme_status": "needs_confirmation",
+                "deadline": None,
+            },
+            {
+                "record_type": "programme", "programme_name": "NTHU Summer Internship Programme",
+                "official_url": "https://www.nthu.edu.tw/program", "programme_status": "open",
+                "deadline": "2026-12-01",
+            },
+            {
+                "record_type": "programme", "programme_name": "Indian Student Internship Program at NTHU",
+                "official_url": "https://oga.nthu.edu.tw/news.php?id=233", "programme_status": "needs_confirmation",
+                "deadline": None,
+            },
+        ]
+        deduped = _dedupe_programme_records(records)
+        self.assertEqual(len(deduped), 2)
+        self.assertEqual(deduped[0]["deadline"], "2026-12-01")
+        self.assertEqual(deduped[1]["programme_name"], "Indian Student Internship Program at NTHU")
+
+    def test_http_404_retry_uses_same_host_https_variant(self):
+        seed = dict(SEEDS[0], source_id="hub-research-retry", programme_id="research-retry", official_url="http://retry.example/program/")
+        config = ProgrammeConfig(
+            category="research", opportunity_type="research_programme", source_registry=(seed,),
+            observations_path="", verifications_path="",
+        )
+        calls = []
+        def fetch(url):
+            calls.append(url)
+            if len(calls) == 1:
+                raise RuntimeError("http_404")
+            return "<html><body><h1>Research Programme</h1><p>Applications are rolling.</p></body></html>", url
+        with tempfile.TemporaryDirectory() as td:
+            result = core_collect(
+                config, fetch=fetch, checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc),
+                lake_path=os.path.join(td, "lake.json"), observations_path=os.path.join(td, "observations.json"),
+            )
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(calls[1].split("://", 1)[0], "https")
+        self.assertEqual(result["stats"]["fetched"], 1)

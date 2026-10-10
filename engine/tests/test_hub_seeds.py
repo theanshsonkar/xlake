@@ -622,3 +622,13 @@ class HubSeedsTests(unittest.TestCase):
         )
         self.assertFalse(ok)
         self.assertEqual(reason, "ambassador")
+    def test_merge_skips_generated_seed_after_two_dead_strikes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "research.json"
+            dead = self._seed("https://example.org/dead", dead_strikes=2)
+            path.write_text(json.dumps([dead]), encoding="utf-8")
+            merged, stats = merge_generated_seeds(
+                "research", [dead], path, now="2026-10-10T00:00:00Z",
+            )
+        self.assertEqual(merged, [])
+        self.assertEqual(stats["dead_skipped"], 1)
