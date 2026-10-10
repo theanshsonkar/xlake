@@ -142,5 +142,29 @@
     "type": "hub",
     "authoritative": false,
     "added_at": "2026-10-08T00:00:00Z"
+  },
+  {
+    "hub_id": "eugeneia-awesome-open-source-funding-readme",
+    "url": "https://raw.githubusercontent.com/eugeneia/awesome-open-source-funding/master/README.md",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "mechko-awesome-maintainer-funding-readme",
+    "url": "https://raw.githubusercontent.com/mechko/awesome-maintainer-funding/main/README.md",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "nayafia-lemonade-stand-readme",
+    "url": "https://raw.githubusercontent.com/nayafia/lemonade-stand/master/README.md",
+    "category": "grants",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-10T00:00:00Z"
   }
 ]
