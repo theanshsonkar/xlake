@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import shutil
 import sys
@@ -56,6 +57,7 @@ except ImportError:  # pragma: no cover - supports package-root imports
 COMMUNITY_TERMS = re.compile(COMMUNITY_SPECIFIC_NOUN_PATTERN, re.IGNORECASE)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+GENERATED_SEEDS_ENV = "XLAKE_GENERATED_SEEDS_DIR"
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "engine" / "data" / "operations" / "generated_seeds"
 GENERIC_NAMES = frozenset({
     "apply", "apply now", "learn more", "read more", "more", "website",

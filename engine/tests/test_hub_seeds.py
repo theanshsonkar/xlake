@@ -46,6 +46,11 @@ class HubSeedsTests(unittest.TestCase):
         seed.update(extra)
         return seed
 
+    def test_static_fellowship_seeds_load_without_network(self):
+        seeds = _static_seeds("fellowships")
+        self.assertTrue(seeds)
+        self.assertTrue(all(seed.get("official_url", "").startswith(("http://", "https://")) for seed in seeds))
+
     def test_merge_new_seed_keeps_existing_entries(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "fellowships.json"
