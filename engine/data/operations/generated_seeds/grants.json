@@ -10,7 +10,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T16:04:57Z"
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-aigrant-org-70110f",
@@ -23,35 +23,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T16:04:57Z"
- },
- {
-  "source_id": "hub-grants-awesome-re-badge-svg-https-awesome-re-a70360",
-  "programme_id": "grants-hub-awesome-re-badge-svg-https-awesome-re-a70360",
-  "programme_name": "Awesome Developer Grants",
-  "organizer": "awesome.re",
-  "official_url": "https://awesome.re/badge.svg)](https://awesome.re",
-  "allowed_path_hints": [
-   "badge.svg)](https://awesome.re"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T14:59:18Z",
-  "last_seen": "2026-10-10T16:04:57Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-grants-blog-sentry-io-2019-01-1abbd0",
-  "programme_id": "grants-hub-blog-sentry-io-2019-01-1abbd0",
-  "programme_name": "Sentry Open Source Grant",
-  "organizer": "blog.sentry.io",
-  "official_url": "https://blog.sentry.io/2019/01/29/apply-sentry-open-source-grant",
-  "allowed_path_hints": [
-   "2019/01/29/apply-sentry-open-source-grant"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T14:59:18Z",
-  "last_seen": "2026-10-10T16:04:57Z",
-  "dead_strikes": 2
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-chanzuckerberg-com-rfa-essential-open-source-software-for-sc-20a56f",
@@ -64,7 +36,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:55:07Z",
-  "last_seen": "2026-10-10T16:04:57Z"
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-datascience-nih-gov-data-scholars-2021-3a9770",
@@ -90,12 +62,12 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T16:04:57Z"
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-foundation-mozilla-org-en-what-we-fund-0f89fa",
   "programme_id": "grants-hub-foundation-mozilla-org-en-what-we-fund-0f89fa",
-  "programme_name": "Mozilla Technology Fund (MTF",
+  "programme_name": "Mozilla Technology Fund",
   "organizer": "foundation.mozilla.org",
   "official_url": "https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund-mtf",
   "allowed_path_hints": [
@@ -103,20 +75,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T08:36:56Z",
-  "last_seen": "2026-10-10T16:04:57Z"
- },
- {
-  "source_id": "hub-grants-github-blog-2021-09-12-recipients-open-source-grants-github-e1188f",
-  "programme_id": "grants-hub-github-blog-2021-09-12-recipients-open-source-grants-github-e1188f",
-  "programme_name": "First recipients of GitHub Grants for Open Source have been announced!",
-  "organizer": "github.blog",
-  "official_url": "https://github.blog/2021-09-12-recipients-open-source-grants-github-sponsors-india",
-  "allowed_path_hints": [
-   "2021-09-12-recipients-open-source-grants-github-sponsors-india"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T16:04:57Z"
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-huggingface-co-docs-hub-89740a",
@@ -129,12 +88,12 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T16:04:57Z"
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-landing-hostkey-com-grant-for-scientific-projects-formhtml-574f04",
   "programme_id": "grants-hub-landing-hostkey-com-grant-for-scientific-projects-formhtml-574f04",
-  "programme_name": "HOSTKEY GPU Grant Program for Research Projects and Startups] (",
+  "programme_name": "HOSTKEY GPU Grant Program for Research Projects and Startups]",
   "organizer": "landing.hostkey.com",
   "official_url": "https://landing.hostkey.com/grant_for_scientific_projects_formhtml",
   "allowed_path_hints": [
@@ -142,86 +101,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T16:04:57Z"
- },
- {
-  "source_id": "hub-grants-numfocus-org-programs-small-development-grants-edce9e",
-  "programme_id": "grants-hub-numfocus-org-programs-small-development-grants-edce9e",
-  "programme_name": "NumFOCUS Small Development Grants",
-  "organizer": "numfocus.org",
-  "official_url": "https://numfocus.org/programs/small-development-grants",
-  "allowed_path_hints": [
-   "programs/small-development-grants"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T16:04:57Z"
- },
- {
-  "source_id": "hub-grants-researchtraining-nih-gov-a2586a",
-  "programme_id": "grants-hub-researchtraining-nih-gov-a2586a",
-  "programme_name": "NIH Research Training and Career Development Programs",
-  "organizer": "researchtraining.nih.gov",
-  "official_url": "https://researchtraining.nih.gov/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T14:03:15Z"
- },
- {
-  "source_id": "hub-grants-sequoiacap-com-1b378a",
-  "programme_id": "grants-hub-sequoiacap-com-1b378a",
-  "programme_name": "Sequoia Open Source Fellowship",
-  "organizer": "sequoiacap.com",
-  "official_url": "https://sequoiacap.com/)|",
-  "allowed_path_hints": [
-   ")|"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T14:59:18Z",
-  "last_seen": "2026-10-10T16:04:57Z",
-  "dead_strikes": 2
- },
- {
-  "source_id": "hub-grants-sovereigntechfund-de-programs-fellowship-88c835",
-  "programme_id": "grants-hub-sovereigntechfund-de-programs-fellowship-88c835",
-  "programme_name": "Sovereign Tech Fund - Maintainer Fellowships",
-  "organizer": "sovereigntechfund.de",
-  "official_url": "https://sovereigntechfund.de/programs/fellowship",
-  "allowed_path_hints": [
-   "programs/fellowship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:36:56Z",
-  "last_seen": "2026-10-10T16:04:57Z"
- },
- {
-  "source_id": "hub-grants-trelis-com-trelis-ai-grants-f363b0",
-  "programme_id": "grants-hub-trelis-com-trelis-ai-grants-f363b0",
-  "programme_name": "Trelis Research - Trelis AI Grants",
-  "organizer": "trelis.com",
-  "official_url": "https://trelis.com/trelis-ai-grants",
-  "allowed_path_hints": [
-   "trelis-ai-grants"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T16:04:57Z"
- },
- {
-  "source_id": "hub-grants-web3-foundation-4fccff",
-  "programme_id": "grants-hub-web3-foundation-4fccff",
-  "programme_name": "Web3 Foundation Grants",
-  "organizer": "web3.foundation",
-  "official_url": "https://web3.foundation/",
-  "allowed_path_hints": [
-   ""
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T08:36:56Z",
-  "last_seen": "2026-10-10T16:04:57Z"
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-www-mozilla-org-en-us-moss-351f7e",
@@ -234,16 +114,42 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:55:07Z",
-  "last_seen": "2026-10-10T16:04:57Z"
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-www-nsf-gov-publications-pub-summ-jsp-cb70d4",
   "programme_id": "grants-hub-www-nsf-gov-publications-pub-summ-jsp-cb70d4",
-  "programme_name": "Faculty Early Career Development Program (CAREER",
+  "programme_name": "Faculty Early Career Development Program",
   "organizer": "nsf.gov",
   "official_url": "https://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf17537",
   "allowed_path_hints": [
    "publications/pub_summ.jsp"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-10T09:04:00Z",
+  "last_seen": "2026-10-10T14:03:15Z"
+ },
+ {
+  "source_id": "hub-grants-numfocus-org-programs-small-development-grants-edce9e",
+  "programme_id": "grants-hub-numfocus-org-programs-small-development-grants-edce9e",
+  "programme_name": "NumFOCUS Small Development Grants",
+  "organizer": "numfocus.org",
+  "official_url": "https://numfocus.org/programs/small-development-grants",
+  "allowed_path_hints": [
+   "programs/small-development-grants"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-10T09:04:00Z",
+  "last_seen": "2026-10-10T16:16:55Z"
+ },
+ {
+  "source_id": "hub-grants-researchtraining-nih-gov-a2586a",
+  "programme_id": "grants-hub-researchtraining-nih-gov-a2586a",
+  "programme_name": "NIH Research Training and Career Development Programs",
+  "organizer": "researchtraining.nih.gov",
+  "official_url": "https://researchtraining.nih.gov/",
+  "allowed_path_hints": [
+   ""
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
@@ -260,21 +166,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:55:07Z",
-  "last_seen": "2026-10-10T16:04:57Z"
- },
- {
-  "source_id": "hub-grants-www-sequoiacap-com-oss-9a2815",
-  "programme_id": "grants-hub-www-sequoiacap-com-oss-9a2815",
-  "programme_name": "Sequoia Open Source Fellowship URL",
-  "organizer": "sequoiacap.com",
-  "official_url": "https://www.sequoiacap.com/oss/)|",
-  "allowed_path_hints": [
-   "oss/)|"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T14:59:18Z",
-  "last_seen": "2026-10-10T16:04:57Z",
-  "dead_strikes": 2
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-www-software-ac-uk-programmes-research-software-maintenance-b30ef4",
@@ -287,7 +179,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:55:07Z",
-  "last_seen": "2026-10-10T16:04:57Z"
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-www-sovereign-tech-programs-fellowship-abcb25",
@@ -300,7 +192,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:55:07Z",
-  "last_seen": "2026-10-10T16:04:57Z"
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-www-sovereign-tech-programs-fund-f6867d",
@@ -313,7 +205,20 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T16:04:57Z"
+  "last_seen": "2026-10-10T16:16:55Z"
+ },
+ {
+  "source_id": "hub-grants-sovereigntechfund-de-programs-fellowship-88c835",
+  "programme_id": "grants-hub-sovereigntechfund-de-programs-fellowship-88c835",
+  "programme_name": "Sovereign Tech Fund - Maintainer Fellowships",
+  "organizer": "sovereigntechfund.de",
+  "official_url": "https://sovereigntechfund.de/programs/fellowship",
+  "allowed_path_hints": [
+   "programs/fellowship"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-10T08:36:56Z",
+  "last_seen": "2026-10-10T16:16:55Z"
  },
  {
   "source_id": "hub-grants-www-together-ai-forms-research-credits-program-request-26ae19",
@@ -326,6 +231,32 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:04:00Z",
-  "last_seen": "2026-10-10T16:04:57Z"
+  "last_seen": "2026-10-10T16:16:55Z"
+ },
+ {
+  "source_id": "hub-grants-trelis-com-trelis-ai-grants-f363b0",
+  "programme_id": "grants-hub-trelis-com-trelis-ai-grants-f363b0",
+  "programme_name": "Trelis Research - Trelis AI Grants",
+  "organizer": "trelis.com",
+  "official_url": "https://trelis.com/trelis-ai-grants",
+  "allowed_path_hints": [
+   "trelis-ai-grants"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-10T09:04:00Z",
+  "last_seen": "2026-10-10T16:16:55Z"
+ },
+ {
+  "source_id": "hub-grants-web3-foundation-4fccff",
+  "programme_id": "grants-hub-web3-foundation-4fccff",
+  "programme_name": "Web3 Foundation Grants",
+  "organizer": "web3.foundation",
+  "official_url": "https://web3.foundation/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-10T08:36:56Z",
+  "last_seen": "2026-10-10T16:16:55Z"
  }
 ]
