@@ -9,6 +9,7 @@ from unittest.mock import patch
 try:
     from engine.categories.hub_seeds import (
         _capped_candidates, _clean_seed_name, _default_hubs_path, _policy, _static_seeds,
+        _is_github_list_url, _is_news_style_name, _seed_name_key, _seed_url_key,
         admit_candidate, candidates_to_seeds, generate, merge_generated_seeds,
     )
     from engine.categories.research import harvest as research_harvest
@@ -18,6 +19,7 @@ try:
 except ImportError:
     from categories.hub_seeds import (
         _capped_candidates, _clean_seed_name, _default_hubs_path, _policy, _static_seeds,
+        _is_github_list_url, _is_news_style_name, _seed_name_key, _seed_url_key,
         admit_candidate, candidates_to_seeds, generate, merge_generated_seeds,
     )
     from categories.research import harvest as research_harvest
@@ -227,7 +229,70 @@ class HubSeedsTests(unittest.TestCase):
             parse_markdown_links("- Bare Fellowship https://example.org/bare-fellowship"),
         )
 
-    def test_clean_seed_name_removes_markdown_junk_from_exact_examples(self):
+    def test_grant_candidates_reject_github_lists_and_awesome_names(self):
+        candidates = [
+            self.candidate("Awesome Developer Grants", "https://grants.example/awesome-list"),
+            self.candidate("Open Source Grant", "https://github.com/example/awesome-grants"),
+            self.candidate("Real Open Source Grant", "https://official.example/grant"),
+        ]
+        seeds = candidates_to_seeds("grants", candidates, [])
+        self.assertEqual([seed["programme_name"] for seed in seeds], ["Real Open Source Grant"])
+        self.assertTrue(_is_github_list_url("https://github.com/example/repo/blob/main/README.md"))
+        self.assertTrue(_is_github_list_url("https://awesome.example/awesome-list"))
+
+    def test_news_style_names_are_rejected_generically(self):
+        for name in (
+            "First recipients of GitHub Grants for Open Source have been announced!",
+            "Announcing the Open Source Grant",
+            "Introducing the Developer Grant",
+            "Open Source Grants have been announced",
+        ):
+            with self.subTest(name=name):
+                self.assertTrue(_is_news_style_name(name))
+                ok, reason, _ = admit_candidate(
+                    "<title>{}</title><p>Applications are open for software.</p>".format(name),
+                    "https://official.example/grant", "grants",
+                )
+                self.assertFalse(ok)
+                self.assertIn(reason, {"news_page", "no_name"})
+
+    def test_seed_name_cleanup_strips_labels_and_dangling_parentheses(self):
+        self.assertEqual(_clean_seed_name("Sequoia Open Source Fellowship URL"), "Sequoia Open Source Fellowship")
+        self.assertEqual(_clean_seed_name("Mozilla Technology Fund (MTF"), "Mozilla Technology Fund")
+        self.assertEqual(
+            _clean_seed_name("Faculty Early Career Development Program (CAREER"),
+            "Faculty Early Career Development Program",
+        )
+
+    def test_seed_identities_ignore_requested_url_variants_and_name_punctuation(self):
+        self.assertEqual(_seed_name_key("Open-Source Grant!"), _seed_name_key("open source grant"))
+        self.assertEqual(
+            _seed_url_key("HTTP://WWW.Example.org/program/?utm_source=x&cycle=2026"),
+            _seed_url_key("https://example.org/program"),
+        )
+
+    def test_merge_deduplicates_name_or_url_using_earliest_first_seen(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "grants.json"
+            path.write_text(json.dumps([
+                self._seed(
+                    "https://www.sequoiacap.com/oss",
+                    programme_name="Sequoia Open Source Fellowship",
+                    first_seen="2026-01-01T00:00:00Z",
+                ),
+                self._seed(
+                    "https://other.example/duplicate?source=hub",
+                    programme_name="Sequoia Open Source Fellowship URL",
+                    first_seen="2026-02-01T00:00:00Z",
+                ),
+            ]), encoding="utf-8")
+            merged, _stats = merge_generated_seeds(
+                "grants", [], path, now="2026-10-10T00:00:00Z",
+            )
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(merged[0]["programme_name"], "Sequoia Open Source Fellowship")
+        self.assertEqual(merged[0]["first_seen"], "2026-01-01T00:00:00Z")
+
         self.assertEqual(
             _clean_seed_name(
                 "1 Swedish Institute Scholarships for Global Professionals ![#adff6e]( `Masters` Jan Swedish Institute Sweden"

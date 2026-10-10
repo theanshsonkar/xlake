@@ -13,7 +13,7 @@ import time
 from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
-from typing import Any, Callable, Dict, Iterable, List, Optional, Sequence, Tuple
+from typing import Any, Callable, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 from urllib import parse as urlparse
 
 # Existing category modules use ``categories``/``core`` as top-level imports.
@@ -310,6 +310,62 @@ def _admission_is_stale_year(title: str, h1: str, *urls: str) -> bool:
     )
 
 
+def _is_github_list_url(url: object) -> bool:
+    """Reject GitHub repositories/README pages and obvious awesome lists."""
+    try:
+        parsed = urlparse.urlsplit(str(url or ""))
+        host = (parsed.hostname or "").casefold().rstrip(".")
+        path = (parsed.path or "").casefold()
+    except (TypeError, ValueError):
+        return False
+    if host == "github.com" or host.endswith(".github.com"):
+        return len([part for part in path.split("/") if part]) >= 2
+    return bool(re.search(r"(?:^|[-_/])awesome[-_]list(?:[-_/]|$)", path))
+
+
+_NEWS_STYLE_NAME_PREFIXES = ("first recipients", "announcing", "introducing")
+
+
+def _is_news_style_name(name: object) -> bool:
+    lowered = _collapsed(name).casefold()
+    return lowered.startswith(_NEWS_STYLE_NAME_PREFIXES) or " have been " in lowered or " announced" in lowered
+
+
+def _seed_name_key(value: object) -> str:
+    """Return a case-insensitive key with punctuation and spacing removed."""
+    return re.sub(r"[^\w]+", "", _collapsed(value).casefold(), flags=re.UNICODE)
+
+
+def _seed_url_key(value: object) -> Optional[str]:
+    """Return a URL identity independent of scheme, www, query, and slash."""
+    normalized = _normalise_url(value)
+    if normalized is None:
+        return None
+    parsed = urlparse.urlsplit(normalized)
+    host = (parsed.hostname or "").casefold().removeprefix("www.")
+    try:
+        port = parsed.port
+    except ValueError:
+        return None
+    default_port = 443 if parsed.scheme.casefold() == "https" else 80
+    netloc = host if port in {None, default_port} else "{}:{}".format(host, port)
+    path = (parsed.path or "/").rstrip("/") or "/"
+    return "{}{}".format(netloc, path)
+
+
+def _seed_filter_reason(category: str, name: object, url: object) -> Optional[str]:
+    if _is_github_list_url(url):
+        return "list_page"
+    cleaned = _clean_seed_name(name)
+    if cleaned.casefold().startswith("awesome "):
+        return "list_page"
+    if _is_news_style_name(cleaned):
+        return "news_page"
+    if not _admission_name_passes_for_category(cleaned, category):
+        return "category_name"
+    return None
+
+
 def _admission_is_ambassador(title: str, h1: str, name: str, *urls: str) -> bool:
     value = " ".join((title or "", h1 or "", name or "", *urls))
     return bool(_ADMISSION_AMBASSADOR.search(value))
@@ -449,6 +505,8 @@ def admit_candidate(
     """Pure page-level gate for turning a discovered link into a programme seed."""
     category_is_directory = category in DIRECTORY_CATEGORIES
     checked_urls = tuple(item for item in (url, effective_url) if item)
+    if any(_is_github_list_url(item) for item in checked_urls):
+        return False, "list_page", ""
     if any(_admission_blocked_form_host(item) for item in checked_urls):
         return False, "blocked_form_host", ""
     if _admission_url_pattern(url):
@@ -515,6 +573,9 @@ def admit_candidate(
                     break
     if not return_name:
         return False, "no_name", ""
+    generic_reason = _seed_filter_reason(category, return_name, url)
+    if generic_reason in {"list_page", "news_page"}:
+        return False, generic_reason, ""
     if not _admission_name_passes_for_category(return_name, category):
         return False, "no_tech_signal", ""
 
@@ -677,6 +738,8 @@ _FILTER_COUNTERS = {
     "rate_limited": "rejected_rate_limited",
     "fetch_cap": "rejected_fetch_cap",
     "invalid_seed": "rejected_invalid_seed",
+    "list_page": "rejected_list_page",
+    "news_page": "rejected_news_page",
 }
 
 
@@ -770,6 +833,9 @@ def _clean_seed_name(value: object) -> str:
     name = re.sub(r"^\s*\d+[.)]?\s+", "", name)
     name = re.sub(r"^\s*#{1,6}\s+", "", name)
     name = re.sub(r"\s+", " ", name).strip(" -–—:;,.)|[")
+    name = re.sub(r"\s+\b(?:URL|Link|Website)\s*$", "", name, flags=re.IGNORECASE)
+    if name.count("(") > name.count(")"):
+        name = name[:name.rfind("(")].rstrip(" -–—:;,.)|[")
     return name
 
 
@@ -814,11 +880,14 @@ def candidates_to_seeds(
     LAST_ROUTED_RESEARCH_SEEDS = []
     if max_per_host <= 0 or max_total <= 0:
         return []
-    existing = {_host_path(seed.get("official_url")) for seed in existing_seeds
-                if isinstance(seed, dict)}
-    existing.discard(None)
-    chosen: Dict[str, Tuple[int, str, Dict]] = {}
-    routed: Dict[str, Tuple[int, str, Dict]] = {}
+    existing_list = [seed for seed in existing_seeds if isinstance(seed, dict)]
+    existing_urls = {_seed_url_key(seed.get("official_url")) for seed in existing_list}
+    existing_urls.discard(None)
+    existing_names = {_seed_name_key(_clean_seed_name(seed.get("programme_name")))
+                      for seed in existing_list}
+    existing_names.discard("")
+    chosen: Dict[str, Tuple[int, Tuple[str, str], str, Dict]] = {}
+    routed: Dict[str, Tuple[int, Tuple[str, str], str, Dict]] = {}
     for candidate in candidates:
         if not isinstance(candidate, dict):
             continue
@@ -828,6 +897,14 @@ def candidates_to_seeds(
         normalized = _normalise_url(candidate.get("official_url"))
         if normalized is None:
             continue
+        filter_reason = _seed_filter_reason(category, name, normalized)
+        if filter_reason in {"list_page", "news_page"}:
+            LAST_SEED_GATE_REJECTIONS[filter_reason] = LAST_SEED_GATE_REJECTIONS.get(filter_reason, 0) + 1
+            continue
+        name_key = _seed_name_key(name)
+        url_key = _seed_url_key(normalized)
+        if not url_key or url_key in existing_urls or name_key in existing_names:
+            continue
         if category in DIRECTORY_CATEGORIES:
             title_ok, title_reason = programme_title_ok(name, normalized, category)
             if not title_ok:
@@ -835,9 +912,9 @@ def candidates_to_seeds(
                 if should_route_research_seed(route_seed, category, title_reason):
                     count = _source_count(candidate)
                     tie_key = (name.casefold(), normalized)
-                    previous = routed.get(normalized)
-                    if previous is None or (count, "", tie_key) > (previous[0], "", previous[1]):
-                        routed[normalized] = (count, tie_key, candidate)
+                    previous = routed.get(url_key)
+                    if previous is None or (count, tie_key) > (previous[0], previous[1]):
+                        routed[url_key] = (count, tie_key, normalized, candidate)
                     continue
                 if (title_reason == "missing_programme_noun"
                         and category in {"fellowships", "fellowship"}):
@@ -848,24 +925,29 @@ def candidates_to_seeds(
                     continue
         parsed = urlparse.urlsplit(normalized)
         host = (parsed.hostname or "").lower()
-        if not host or _excluded_host(host) or (host, parsed.path or "/") in existing:
+        if not host or _excluded_host(host):
             continue
         count = _source_count(candidate)
         tie_key = (name.casefold(), normalized)
-        previous = chosen.get(normalized)
-        if previous is None or (count, "", tie_key) > (previous[0], "", previous[1]):
-            chosen[normalized] = (count, tie_key, candidate)
+        previous = chosen.get(url_key)
+        if previous is None or (count, tie_key) > (previous[0], previous[1]):
+            chosen[url_key] = (count, tie_key, normalized, candidate)
 
-    def build_seed_list(entries: Dict[str, Tuple[int, str, Dict]], category_name: str) -> List[Dict]:
-        ordered = sorted(entries.items(), key=lambda item: (-item[1][0], item[0]))
+    def build_seed_list(entries: Dict[str, Tuple[int, Tuple[str, str], str, Dict]], category_name: str) -> List[Dict]:
+        ordered = sorted(entries.items(), key=lambda item: (-item[1][0], item[1][1]))
         result: List[Dict] = []
         host_counts: Dict[str, int] = {}
-        for normalized, (_, _, candidate) in ordered:
+        seen_names: Set[str] = set(existing_names if category_name == category else ())
+        for _, (_, _, normalized, candidate) in ordered:
             parsed = urlparse.urlsplit(normalized)
             host = (parsed.hostname or "").lower()
+            name_key = _seed_name_key(_candidate_name(candidate))
+            if not name_key or name_key in seen_names:
+                continue
             if host_counts.get(host, 0) >= max_per_host:
                 continue
             result.append(_seed_record(category_name, normalized, candidate))
+            seen_names.add(name_key)
             host_counts[host] = host_counts.get(host, 0) + 1
             if len(result) >= max_total:
                 break
@@ -983,12 +1065,6 @@ def _run_timestamp(value: Optional[object] = None) -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
-def _seed_key(seed: Dict) -> Optional[str]:
-    value = seed.get("official_url") or seed.get("url")
-    normalized = _normalise_url(value)
-    return normalized or (_collapsed(value) or None)
-
-
 def _parse_timestamp(value: object) -> Optional[datetime]:
     if not isinstance(value, str) or not value.strip():
         return None
@@ -999,6 +1075,55 @@ def _parse_timestamp(value: object) -> Optional[datetime]:
     if parsed.tzinfo is None:
         parsed = parsed.replace(tzinfo=timezone.utc)
     return parsed.astimezone(timezone.utc)
+
+
+def _seed_first_seen(entry: Dict) -> Optional[datetime]:
+    for field in ("first_seen", "added_at", "generated_at"):
+        parsed = _parse_timestamp(entry.get(field))
+        if parsed is not None:
+            return parsed
+    return None
+
+
+def _dedupe_seed_entries(category: str, entries: Iterable[Dict]) -> List[Dict]:
+    """Clean, filter, and collapse entries sharing a name or URL identity."""
+    winners: List[Dict] = []
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        url_key = _seed_key(entry)
+        if url_key is None:
+            continue
+        current = dict(entry)
+        current["programme_name"] = _clean_seed_name(current.get("programme_name"))
+        if _seed_filter_reason(category, current["programme_name"], current.get("official_url")):
+            continue
+        name_key = _seed_name_key(current["programme_name"])
+        if not name_key:
+            continue
+        conflicts = [index for index, previous in enumerate(winners)
+                     if _seed_key(previous) == url_key
+                     or (_seed_name_key(previous.get("programme_name")) == name_key
+                         and (_seed_first_seen(previous) is not None
+                              or _seed_first_seen(current) is not None))]
+        if not conflicts:
+            winners.append(current)
+            continue
+        winner_index = conflicts[0]
+        previous = winners[winner_index]
+        previous_seen = _seed_first_seen(previous) or datetime.max.replace(tzinfo=timezone.utc)
+        current_seen = _seed_first_seen(current) or datetime.max.replace(tzinfo=timezone.utc)
+        if current_seen < previous_seen:
+            winners[winner_index] = current
+        # Collapse transitive name/URL collisions as well.
+        for index in reversed(conflicts[1:]):
+            winners.pop(index)
+    return winners
+
+
+def _seed_key(seed: Dict) -> Optional[str]:
+    value = seed.get("official_url") or seed.get("url")
+    return _seed_url_key(value) or (_collapsed(value) or None)
 
 
 def merge_generated_seeds(
@@ -1027,61 +1152,57 @@ def merge_generated_seeds(
             shutil.copyfile(destination, backup)
             existing = []
 
-    existing_by_url: Dict[str, Dict] = {}
-    for entry in existing:
-        key = _seed_key(entry)
-        if key is not None:
-            current = dict(entry)
-            current["programme_name"] = _clean_seed_name(current.get("programme_name"))
-            if not _admission_name_passes_for_category(current["programme_name"], category):
-                continue
-            existing_by_url[key] = current
-    produced_by_url: Dict[str, Dict] = {}
-    for entry in produced:
-        if not isinstance(entry, dict):
-            continue
-        key = _seed_key(entry)
-        if key is not None:
-            current = dict(entry)
-            current["programme_name"] = _clean_seed_name(current.get("programme_name"))
-            if not _admission_name_passes_for_category(current["programme_name"], category):
-                continue
-            produced_by_url[key] = current
-
+    existing_entries = _dedupe_seed_entries(category, existing)
+    produced_entries = _dedupe_seed_entries(category, produced)
+    existing_by_url = {_seed_key(entry): entry for entry in existing_entries}
     merged: Dict[str, Dict] = {}
+    matched_existing: Set[str] = set()
     suppressed: Set[str] = set()
     new_count = 0
     refreshed_count = 0
-    for key, entry in produced_by_url.items():
-        old = existing_by_url.get(key)
-        if old is not None and int(old.get("dead_strikes") or 0) >= 2:
-            suppressed.add(key)
-            continue
-        if old is None:
+
+    for entry in produced_entries:
+        url_key = _seed_key(entry)
+        name_key = _seed_name_key(entry.get("programme_name"))
+        old_key = next((key for key, old in existing_by_url.items()
+                        if key == url_key
+                        or (_seed_name_key(old.get("programme_name")) == name_key
+                            and (_seed_first_seen(old) is not None
+                                 or _seed_first_seen(entry) is not None))), None)
+        old = existing_by_url.get(old_key) if old_key is not None else None
+        if old is not None:
+            matched_existing.add(old_key)
+            if int(old.get("dead_strikes") or 0) >= 2:
+                suppressed.add(old_key)
+                continue
+            if old_key == url_key:
+                current = dict(entry)
+                current["first_seen"] = old.get("first_seen") or old.get("added_at") or run_at
+                current["last_seen"] = run_at
+                if old.get("dead_strikes"):
+                    current["dead_strikes"] = int(old["dead_strikes"])
+                for field in ("added_at", "generated_at"):
+                    if field in old:
+                        current[field] = old[field]
+            else:
+                current = dict(old)
+                current["last_seen"] = run_at
+            refreshed_count += 1
+        else:
             current = dict(entry)
             current["first_seen"] = run_at
             current["last_seen"] = run_at
             new_count += 1
-        else:
-            current = dict(entry)
-            current["first_seen"] = old.get("first_seen") or old.get("added_at") or run_at
-            current["last_seen"] = run_at
-            if old.get("dead_strikes"):
-                current["dead_strikes"] = int(old["dead_strikes"])
-            for field in ("added_at", "generated_at"):
-                if field in old:
-                    current[field] = old[field]
-            refreshed_count += 1
-        merged[key] = current
+        merged[_seed_key(current)] = current
 
     cutoff = datetime.fromisoformat(run_at.replace("Z", "+00:00")) - timedelta(days=56)
     kept_count = 0
     expired_count = 0
     for key, old in existing_by_url.items():
+        if key in matched_existing:
+            continue
         if int(old.get("dead_strikes") or 0) >= 2:
             suppressed.add(key)
-            continue
-        if key in produced_by_url:
             continue
         current = dict(old)
         if not current.get("last_seen"):
@@ -1100,7 +1221,7 @@ def merge_generated_seeds(
         handle.write("\n")
     counters = {
         "raw_links": int(raw_links),
-        "admitted": int(admitted if admitted is not None else len(produced_by_url)),
+        "admitted": int(admitted if admitted is not None else len(produced_entries)),
         "new": new_count,
         "refreshed": refreshed_count,
         "kept": kept_count,
