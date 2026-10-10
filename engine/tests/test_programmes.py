@@ -498,6 +498,38 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         summary = next(line for line in captured.getvalue().splitlines() if "programme_fetch_summary" in line)
         self.assertIn("capped=1", summary)
         self.assertNotIn("exception[RuntimeError]", summary)
+    def test_collect_buckets_http_308_without_closing_prior_record(self):
+        seed = SEEDS[0]
+        config = ProgrammeConfig(
+            category="programme", opportunity_type="programme", source_registry=(seed,),
+            observations_path="", verifications_path="",
+        )
+        old = {
+            "record_type": "programme", "programme_id": seed["programme_id"],
+            "official_url": seed["official_url"], "is_live": True,
+        }
+
+        def redirect_fetch(_url):
+            raise RuntimeError("http_308")
+
+        with tempfile.TemporaryDirectory() as td:
+            lake, obs = os.path.join(td, "lake.json"), os.path.join(td, "obs.json")
+            with open(lake, "w") as handle:
+                json.dump([old], handle)
+            captured = io.StringIO()
+            with redirect_stdout(captured):
+                result = core_collect(
+                    config, fetch=redirect_fetch,
+                    checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc),
+                    lake_path=lake, observations_path=obs,
+                )
+            summary = next(line for line in captured.getvalue().splitlines() if "programme_fetch_summary" in line)
+            self.assertIn("http_3xx=1", summary)
+            self.assertNotIn("exception[RuntimeError]", summary)
+            self.assertEqual(result["observations"][0]["reason"], "http_3xx")
+            with open(lake) as handle:
+                self.assertTrue(json.load(handle)[0]["is_live"])
+
 
     def test_evidence_prefers_application_sentence_over_earlier_generic_prose(self):
         seed = SEEDS[2]

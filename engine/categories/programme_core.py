@@ -1166,6 +1166,8 @@ def _fetch_failure_bucket(reason: str) -> str:
             return "http_403"
         if code == 429:
             return "http_429"
+        if 300 <= code < 400:
+            return "http_3xx"
         if 400 <= code < 500:
             return "http_4xx"
         if 500 <= code < 600:
@@ -1447,7 +1449,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             dead_link = bucket in {"http_404", "dns"}
             observation = _observation(
                 seed, checked, "dead" if dead_link else "failed",
-                bucket if dead_link else "{}: {}".format(exception_name, str(exc)[:160]),
+                bucket if bucket != "exception" else "{}: {}".format(exception_name, str(exc)[:160]),
             )
             record = None
             if bucket == "capped":
@@ -1459,7 +1461,8 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             else:
                 outcome = bucket
                 stats["fetch_errors"] += 1
-                exception_counts[exception_name] += 1
+                if bucket == "exception":
+                    exception_counts[exception_name] += 1
         if record:
             records.append(record)
         observations.append(observation)

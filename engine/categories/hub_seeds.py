@@ -717,10 +717,36 @@ def _source_count(candidate: Dict) -> int:
         return len(corroborating) if isinstance(corroborating, list) else 0
 
 
+def _clean_seed_name(value: object) -> str:
+    """Turn a discovered markdown label into an official programme name."""
+    name = _collapsed(value)
+    if "|" in name:
+        cells = [cell.strip() for cell in name.split("|") if cell.strip()]
+        linked = [
+            cell for cell in cells
+            if re.search(r"(?:\[[^\]]*\]\([^)]*\)|https?://)", cell, re.IGNORECASE)
+        ]
+        if linked:
+            name = linked[0]
+    name = re.sub(r"!\[[^\]]*\]\([^)]*(?:\)|$)", "", name)
+    name = re.sub(r"\[([^\]]+)\]\([^)]*(?:\)|$)", r"\1", name)
+    name = re.sub(r"\]\([^)]*(?:\)|$)", "", name)
+    name = re.sub(r"https?://\S+", "", name, flags=re.IGNORECASE)
+    name = re.sub(r"`", "", name)
+    emphasis = re.search(r"(?<!\w)([_*])([^_*]+)\1", name)
+    if emphasis:
+        name = name[:emphasis.start()]
+    name = name.replace("**", "").replace("__", "")
+    name = re.sub(r"[*_]", "", name)
+    name = re.sub(r"^\s*\d+[.)]?\s+", "", name)
+    name = re.sub(r"\s+", " ", name).strip(" -–—:;,.)|")
+    return name
+
+
 def _candidate_name(candidate: Dict) -> str:
     evidence = candidate.get("official_evidence")
     anchor = evidence.get("anchor_text") if isinstance(evidence, dict) else None
-    return _collapsed(anchor or candidate.get("programme_name"))
+    return _clean_seed_name(anchor or candidate.get("programme_name"))
 
 
 def _seed_record(category: str, normalized: str, candidate: Dict) -> Dict:

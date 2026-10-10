@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 try:
     from engine.categories.hub_seeds import (
-        _capped_candidates, _default_hubs_path, _policy, _static_seeds,
+        _capped_candidates, _clean_seed_name, _default_hubs_path, _policy, _static_seeds,
         admit_candidate, candidates_to_seeds, generate, merge_generated_seeds,
     )
     from engine.categories.research import harvest as research_harvest
@@ -17,7 +17,7 @@ try:
     )
 except ImportError:
     from categories.hub_seeds import (
-        _capped_candidates, _default_hubs_path, _policy, _static_seeds,
+        _capped_candidates, _clean_seed_name, _default_hubs_path, _policy, _static_seeds,
         admit_candidate, candidates_to_seeds, generate, merge_generated_seeds,
     )
     from categories.research import harvest as research_harvest
@@ -185,6 +185,28 @@ class HubSeedsTests(unittest.TestCase):
         self.assertIn(
             ("https://example.org/bare-fellowship", "Bare Fellowship"),
             parse_markdown_links("- Bare Fellowship https://example.org/bare-fellowship"),
+        )
+
+    def test_clean_seed_name_removes_markdown_junk_from_exact_examples(self):
+        self.assertEqual(
+            _clean_seed_name(
+                "1 Swedish Institute Scholarships for Global Professionals ![#adff6e]( `Masters` Jan Swedish Institute Sweden"
+            ),
+            "Swedish Institute Scholarships for Global Professionals",
+        )
+        self.assertEqual(
+            _clean_seed_name(
+                "Sequoia Open Source Fellowship _agnostic_, global active Sequoia Capital (USA)"
+            ),
+            "Sequoia Open Source Fellowship",
+        )
+
+    def test_clean_seed_name_uses_link_cell_from_markdown_table_row(self):
+        self.assertEqual(
+            _clean_seed_name(
+                "| status | [Sequoia Open Source Fellowship](https://sequoiacap.com/oss) | global |"
+            ),
+            "Sequoia Open Source Fellowship",
         )
 
     def test_html_anchor_in_markdown_table_extraction(self):
