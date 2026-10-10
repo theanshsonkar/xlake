@@ -1530,5 +1530,1588 @@
     "url": "https://zcashcommunitygrants.org/"
    }
   }
+ },
+ {
+  "source_id": "grant-otf-internet-freedom-fund",
+  "programme_id": "grant-otf-internet-freedom-fund",
+  "official_url": "https://www.opentech.fund/funds/internet-freedom-fund/",
+  "checked_at": "2026-10-10T13:36:52+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {},
+   "application": {
+    "quote": "Apply for ICRP",
+    "url": "https://www.opentech.fund/research-2/icrp/"
+   },
+   "application_url": {
+    "quote": "Apply for ICRP",
+    "url": "https://www.opentech.fund/research-2/icrp/"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {
+    "quote": "OTF prioritizes projects coming from individuals or organizations who are applying for the first time, identify as under-represented within the field, and address areas that are underfunded.",
+    "url": "https://www.opentech.fund/funds/internet-freedom-fund/"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "Individuals ages 18+ or organizations (for-profit or nonprofit) irrespective of nationality, creed, or sex are eligible to apply.",
+    "url": "https://www.opentech.fund/funds/internet-freedom-fund/"
+   }
+  }
+ },
+ {
+  "source_id": "grant-ethereum-ecosystem-support-program",
+  "programme_id": "grant-ethereum-ecosystem-support-program",
+  "official_url": "https://esp.ethereum.foundation/",
+  "checked_at": "2026-10-10T13:36:54+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Ecosystem Support Program focuses on strengthening Ethereum's foundations, supporting teams across the ecosystem, and enabling future builders.",
+    "url": "https://esp.ethereum.foundation/"
+   },
+   "programme_name": {
+    "quote": "Ethereum Foundation \u2014 Ecosystem Support Program",
+    "url": "https://esp.ethereum.foundation/"
+   },
+   "organizer": {
+    "quote": "Ethereum Foundation",
+    "url": "https://esp.ethereum.foundation/"
+   },
+   "official_url": {
+    "quote": "https://esp.ethereum.foundation/",
+    "url": "https://esp.ethereum.foundation/"
+   }
+  }
+ },
+ {
+  "source_id": "grant-awesome-foundation-grant-application",
+  "programme_id": "grant-awesome-foundation-grant-application",
+  "official_url": "https://www.awesomefoundation.org/en/submissions/new",
+  "checked_at": "2026-10-10T13:36:56+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "grant-pollination-daily-grants",
+  "programme_id": "grant-pollination-daily-grants",
+  "official_url": "https://thepollinationproject.org/apply/",
+  "checked_at": "2026-10-10T13:36:58+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "grant-national-geographic-okavango-ecosystem-dynamics",
+  "programme_id": "grant-national-geographic-okavango-ecosystem-dynamics",
+  "official_url": "https://funding.nationalgeographic.org/s/fundingopportunity/119Hr000000byRrIAI/understanding-ecosystem-dynamics-ecology-of-the-okavango-river-basin",
+  "checked_at": "2026-10-10T13:36:59+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-grants-www-hope-funds-org-grants-eligibility-and-application-4c9141",
+  "programme_id": "grants-hub-www-hope-funds-org-grants-eligibility-and-application-4c9141",
+  "official_url": "http://www.hope-funds.org/grants/eligibility-and-application",
+  "checked_at": "2026-10-10T13:37:00+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "on or before the application deadline of January 25, 2027.",
+    "url": "http://www.hope-funds.org/grants/eligibility-and-application"
+   },
+   "application": {
+    "quote": "Eligibility & Application",
+    "url": "https://www.hope-funds.org/grants/eligibility-and-application"
+   },
+   "application_url": {
+    "quote": "Eligibility & Application",
+    "url": "https://www.hope-funds.org/grants/eligibility-and-application"
+   },
+   "opening_date": {
+    "quote": "on or before the application deadline of January 25, 2027.",
+    "url": "http://www.hope-funds.org/grants/eligibility-and-application"
+   },
+   "deadline": {
+    "quote": "on or before the application deadline of January 25, 2027.",
+    "url": "http://www.hope-funds.org/grants/eligibility-and-application"
+   },
+   "funding": {
+    "quote": "The Hope Funds for Cancer Research is awarding three-year fellowships with a stipend of $56,000 for the first year, $59,000 for the second year, and $62,000 for the third year.",
+    "url": "http://www.hope-funds.org/grants/eligibility-and-application"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "Fellowship Award Eligibility & Application Instructions.",
+    "url": "http://www.hope-funds.org/grants/eligibility-and-application"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-sfari-org-0356fe",
+  "programme_id": "grants-hub-www-sfari-org-0356fe",
+  "official_url": "http://www.sfari.org/",
+  "checked_at": "2026-10-10T13:37:02+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Simons Searchlight is an international research program that collects genetic, medical, and behavioral data from individuals who have a genetic variant linked to autism.",
+    "url": "http://www.sfari.org/"
+   },
+   "programme_name": {
+    "quote": "Autism Research Initiative",
+    "url": "http://www.sfari.org/"
+   },
+   "organizer": {
+    "quote": "sfari.org",
+    "url": "http://www.sfari.org/"
+   },
+   "official_url": {
+    "quote": "http://www.sfari.org/",
+    "url": "http://www.sfari.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-a16z-com-supporting-the-open-source-ai-community-c5ee66",
+  "programme_id": "grants-hub-a16z-com-supporting-the-open-source-ai-community-c5ee66",
+  "official_url": "https://a16z.com/supporting-the-open-source-ai-community",
+  "checked_at": "2026-10-10T13:37:05+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "a16z Open Source AI Grant program.",
+    "url": "https://a16z.com/supporting-the-open-source-ai-community"
+   },
+   "programme_name": {
+    "quote": "a16z - 16z Open Source AI Grant program",
+    "url": "https://a16z.com/supporting-the-open-source-ai-community"
+   },
+   "organizer": {
+    "quote": "a16z.com",
+    "url": "https://a16z.com/supporting-the-open-source-ai-community"
+   },
+   "official_url": {
+    "quote": "https://a16z.com/supporting-the-open-source-ai-community",
+    "url": "https://a16z.com/supporting-the-open-source-ai-community"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-aigrant-org-70110f",
+  "programme_id": "grants-hub-aigrant-org-70110f",
+  "official_url": "https://aigrant.org/",
+  "checked_at": "2026-10-10T13:37:05+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Looking for our accelerator program?",
+    "url": "https://aigrant.org/"
+   },
+   "programme_name": {
+    "quote": "AI Grant",
+    "url": "https://aigrant.org/"
+   },
+   "organizer": {
+    "quote": "aigrant.org",
+    "url": "https://aigrant.org/"
+   },
+   "official_url": {
+    "quote": "https://aigrant.org/",
+    "url": "https://aigrant.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-asntech-github-io-postdoc-funding-schemes-b27a74",
+  "programme_id": "grants-hub-asntech-github-io-postdoc-funding-schemes-b27a74",
+  "official_url": "https://asntech.github.io/postdoc-funding-schemes",
+  "checked_at": "2026-10-10T13:37:06+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Funding schemes for postdoctoral fellowships.",
+    "url": "https://asntech.github.io/postdoc-funding-schemes"
+   },
+   "programme_name": {
+    "quote": "**Funding schemes and travel grant opportunities for postdocs**",
+    "url": "https://asntech.github.io/postdoc-funding-schemes"
+   },
+   "organizer": {
+    "quote": "asntech.github.io",
+    "url": "https://asntech.github.io/postdoc-funding-schemes"
+   },
+   "official_url": {
+    "quote": "https://asntech.github.io/postdoc-funding-schemes",
+    "url": "https://asntech.github.io/postdoc-funding-schemes"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-awesome-re-badge-svg-https-awesome-re-a70360",
+  "programme_id": "grants-hub-awesome-re-badge-svg-https-awesome-re-a70360",
+  "official_url": "https://awesome.re/badge.svg)](https://awesome.re",
+  "checked_at": "2026-10-10T13:37:06+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-grants-blog-sentry-io-2019-01-1abbd0",
+  "programme_id": "grants-hub-blog-sentry-io-2019-01-1abbd0",
+  "official_url": "https://blog.sentry.io/2019/01/29/apply-sentry-open-source-grant",
+  "checked_at": "2026-10-10T13:37:07+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-grants-bssw-io-pages-bssw-fellowship-program-037614",
+  "programme_id": "grants-hub-bssw-io-pages-bssw-fellowship-program-037614",
+  "official_url": "https://bssw.io/pages/bssw-fellowship-program",
+  "checked_at": "2026-10-10T13:37:08+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Funding Sources and Programs.",
+    "url": "https://bssw.io/pages/bssw-fellowship-program"
+   },
+   "programme_name": {
+    "quote": "BBSw Fellowship Program",
+    "url": "https://bssw.io/pages/bssw-fellowship-program"
+   },
+   "organizer": {
+    "quote": "bssw.io",
+    "url": "https://bssw.io/pages/bssw-fellowship-program"
+   },
+   "official_url": {
+    "quote": "https://bssw.io/pages/bssw-fellowship-program",
+    "url": "https://bssw.io/pages/bssw-fellowship-program"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-chanzuckerberg-com-rfa-essential-open-source-software-for-sc-20a56f",
+  "programme_id": "grants-hub-chanzuckerberg-com-rfa-essential-open-source-software-for-sc-20a56f",
+  "official_url": "https://chanzuckerberg.com/rfa/essential-open-source-software-for-science",
+  "checked_at": "2026-10-10T13:37:12+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The goal of the program is to support software maintenance, growth, development, and community engagement for these critical tools.",
+    "url": "https://chanzuckerberg.com/rfa/essential-open-source-software-for-science"
+   },
+   "programme_name": {
+    "quote": "Chan-Zuckerberg Initiative grant program for open source software in science",
+    "url": "https://chanzuckerberg.com/rfa/essential-open-source-software-for-science"
+   },
+   "organizer": {
+    "quote": "chanzuckerberg.com",
+    "url": "https://chanzuckerberg.com/rfa/essential-open-source-software-for-science"
+   },
+   "official_url": {
+    "quote": "https://chanzuckerberg.com/rfa/essential-open-source-software-for-science",
+    "url": "https://chanzuckerberg.com/rfa/essential-open-source-software-for-science"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-datascience-nih-gov-data-scholars-2021-3a9770",
+  "programme_id": "grants-hub-datascience-nih-gov-data-scholars-2021-3a9770",
+  "official_url": "https://datascience.nih.gov/data-scholars-2021",
+  "checked_at": "2026-10-10T13:37:16+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Division of Program Coordination, Planning, and Strategic Initiatives (DPCPSI).",
+    "url": "https://datascience.nih.gov/data-scholars-2021"
+   },
+   "programme_name": {
+    "quote": "Data and Technology Advancement (DATA) National Service Scholar Program: Data Scientists Advancing Biomedical Research",
+    "url": "https://datascience.nih.gov/data-scholars-2021"
+   },
+   "organizer": {
+    "quote": "datascience.nih.gov",
+    "url": "https://datascience.nih.gov/data-scholars-2021"
+   },
+   "official_url": {
+    "quote": "https://datascience.nih.gov/data-scholars-2021",
+    "url": "https://datascience.nih.gov/data-scholars-2021"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-ebpf-foundation-ebpf-foundation-announces-inaugural-communit-6b02eb",
+  "programme_id": "grants-hub-ebpf-foundation-ebpf-foundation-announces-inaugural-communit-6b02eb",
+  "official_url": "https://ebpf.foundation/ebpf-foundation-announces-inaugural-community-advocacy-fellowship-recipients",
+  "checked_at": "2026-10-10T13:37:20+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Apply for our next cohort of.",
+    "url": "https://ebpf.foundation/ebpf-foundation-announces-inaugural-community-advocacy-fellowship-recipients"
+   },
+   "programme_name": {
+    "quote": "eBPF Fellowship",
+    "url": "https://ebpf.foundation/ebpf-foundation-announces-inaugural-community-advocacy-fellowship-recipients"
+   },
+   "organizer": {
+    "quote": "ebpf.foundation",
+    "url": "https://ebpf.foundation/ebpf-foundation-announces-inaugural-community-advocacy-fellowship-recipients"
+   },
+   "official_url": {
+    "quote": "https://ebpf.foundation/ebpf-foundation-announces-inaugural-community-advocacy-fellowship-recipients",
+    "url": "https://ebpf.foundation/ebpf-foundation-announces-inaugural-community-advocacy-fellowship-recipients"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-ecrcentral-org-fundings-bffd7b",
+  "programme_id": "grants-hub-ecrcentral-org-fundings-bffd7b",
+  "official_url": "https://ecrcentral.org/fundings",
+  "checked_at": "2026-10-10T13:37:20+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Applications are accepted on a rolling basis.",
+    "url": "https://ecrcentral.org/fundings"
+   },
+   "application": {
+    "quote": "EUTOPIA-SIF Post-Doctoral Fellowship \u2013 Call for applications 2023/2023",
+    "url": "https://ecrcentral.org/fundings/eutopia-sif-post-doctoral-fellowship-call-for-applications-20232023/"
+   },
+   "application_url": {
+    "quote": "EUTOPIA-SIF Post-Doctoral Fellowship \u2013 Call for applications 2023/2023",
+    "url": "https://ecrcentral.org/fundings/eutopia-sif-post-doctoral-fellowship-call-for-applications-20232023/"
+   },
+   "opening_date": {
+    "quote": "Applications will be accepted on a continual basis, with submission deadlines for subsequent review occurring annually on October 15 and April 15.",
+    "url": "https://ecrcentral.org/fundings"
+   },
+   "deadline": {
+    "quote": "Applications will be accepted on a continual basis, with submission deadlines for subsequent review occurring annually on October 15 and April 15.",
+    "url": "https://ecrcentral.org/fundings"
+   },
+   "funding": {
+    "quote": "Country specific stipend.",
+    "url": "https://ecrcentral.org/fundings"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {
+    "quote": "Fellowships, grants, and awards for early career researchers worldwide.",
+    "url": "https://ecrcentral.org/fundings"
+   },
+   "eligibility": {
+    "quote": "Institutions eligible include universities, medical schools, hospitals, research institutes, and non-profit laboratories, both domestic and international.",
+    "url": "https://ecrcentral.org/fundings"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-fal-ai-grants-4f4304",
+  "programme_id": "grants-hub-fal-ai-grants-4f4304",
+  "official_url": "https://fal.ai/grants",
+  "checked_at": "2026-10-10T13:37:21+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "program, which provides free compute resources to researchers and developers working on cutting-edge open source initiatives.",
+    "url": "https://fal.ai/grants"
+   },
+   "programme_name": {
+    "quote": "Fal ai - fal Research Grants",
+    "url": "https://fal.ai/grants"
+   },
+   "organizer": {
+    "quote": "fal.ai",
+    "url": "https://fal.ai/grants"
+   },
+   "official_url": {
+    "quote": "https://fal.ai/grants",
+    "url": "https://fal.ai/grants"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-fellowship-mlh-com-f5df6d",
+  "programme_id": "grants-hub-fellowship-mlh-com-f5df6d",
+  "official_url": "https://fellowship.mlh.com/",
+  "checked_at": "2026-10-10T13:37:22+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "We offer fellows an educational stipend to help offset expenses while they participate in the program.",
+    "url": "https://fellowship.mlh.com/"
+   },
+   "programme_name": {
+    "quote": "MLH Fellowship",
+    "url": "https://fellowship.mlh.com/"
+   },
+   "organizer": {
+    "quote": "fellowship.mlh.com",
+    "url": "https://fellowship.mlh.com/"
+   },
+   "official_url": {
+    "quote": "https://fellowship.mlh.com/",
+    "url": "https://fellowship.mlh.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-fossunited-org-grants-fellowships-889299",
+  "programme_id": "grants-hub-fossunited-org-grants-fellowships-889299",
+  "official_url": "https://fossunited.org/grants/fellowships",
+  "checked_at": "2026-10-10T13:37:27+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Fellowship to support Aayush's work on improving public transit and urban mobility.",
+    "url": "https://fossunited.org/grants/fellowships"
+   },
+   "programme_name": {
+    "quote": "FOSS United Fellowships",
+    "url": "https://fossunited.org/grants/fellowships"
+   },
+   "organizer": {
+    "quote": "fossunited.org",
+    "url": "https://fossunited.org/grants/fellowships"
+   },
+   "official_url": {
+    "quote": "https://fossunited.org/grants/fellowships",
+    "url": "https://fossunited.org/grants/fellowships"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-foundation-mozilla-org-en-what-we-fund-0f89fa",
+  "programme_id": "grants-hub-foundation-mozilla-org-en-what-we-fund-0f89fa",
+  "official_url": "https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund-mtf",
+  "checked_at": "2026-10-10T13:37:32+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Mozilla Technology Fund (MTF",
+    "url": "https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund-mtf"
+   },
+   "organizer": {
+    "quote": "foundation.mozilla.org",
+    "url": "https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund-mtf"
+   },
+   "official_url": {
+    "quote": "https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund-mtf",
+    "url": "https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund-mtf"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-futo-org-grants-d574a8",
+  "programme_id": "grants-hub-futo-org-grants-d574a8",
+  "official_url": "https://futo.org/grants",
+  "checked_at": "2026-10-10T13:37:33+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "FUTO sponsors multiple grant programs to fund great projects and people working to challenge the tech oligopoly.",
+    "url": "https://futo.org/grants"
+   },
+   "programme_name": {
+    "quote": "FUTO Grants",
+    "url": "https://futo.org/grants"
+   },
+   "organizer": {
+    "quote": "futo.org",
+    "url": "https://futo.org/grants"
+   },
+   "official_url": {
+    "quote": "https://futo.org/grants",
+    "url": "https://futo.org/grants"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-futo-tech-grants-f1fa7b",
+  "programme_id": "grants-hub-futo-tech-grants-f1fa7b",
+  "official_url": "https://futo.tech/grants",
+  "checked_at": "2026-10-10T13:37:33+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "FUTO sponsors multiple grant programs to fund great projects and people working to challenge the tech oligopoly.",
+    "url": "https://futo.tech/grants"
+   },
+   "programme_name": {
+    "quote": "FUTO Grants",
+    "url": "https://futo.tech/grants"
+   },
+   "organizer": {
+    "quote": "futo.tech",
+    "url": "https://futo.tech/grants"
+   },
+   "official_url": {
+    "quote": "https://futo.tech/grants",
+    "url": "https://futo.tech/grants"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-gem-coop-fellowship-008a42",
+  "programme_id": "grants-hub-gem-coop-fellowship-008a42",
+  "official_url": "https://gem.coop/fellowship",
+  "checked_at": "2026-10-10T13:37:34+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Applications for Fellowships will open on.",
+    "url": "https://gem.coop/fellowship"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {},
+   "deadline": {},
+   "funding": {
+    "quote": "members select proposals to fund with $2,500 to $25,000 USD.",
+    "url": "https://gem.coop/fellowship"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-grants-github-blog-2021-09-12-recipients-open-source-grants-github-e1188f",
+  "programme_id": "grants-hub-github-blog-2021-09-12-recipients-open-source-grants-github-e1188f",
+  "official_url": "https://github.blog/2021-09-12-recipients-open-source-grants-github-sponsors-india",
+  "checked_at": "2026-10-10T13:37:35+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "from across the country, and we\u2019re working hard to continue to expand these programs that support and fund developers in India.",
+    "url": "https://github.blog/2021-09-12-recipients-open-source-grants-github-sponsors-india"
+   },
+   "programme_name": {
+    "quote": "First recipients of GitHub Grants for Open Source have been announced!",
+    "url": "https://github.blog/2021-09-12-recipients-open-source-grants-github-sponsors-india"
+   },
+   "organizer": {
+    "quote": "github.blog",
+    "url": "https://github.blog/2021-09-12-recipients-open-source-grants-github-sponsors-india"
+   },
+   "official_url": {
+    "quote": "https://github.blog/2021-09-12-recipients-open-source-grants-github-sponsors-india",
+    "url": "https://github.blog/2021-09-12-recipients-open-source-grants-github-sponsors-india"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-gradient-ai-research-grant-10397f",
+  "programme_id": "grants-hub-gradient-ai-research-grant-10397f",
+  "official_url": "https://gradient.ai/research-grant",
+  "checked_at": "2026-10-10T13:37:37+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "tls"
+ },
+ {
+  "source_id": "hub-grants-grants-nih-gov-news-virtual-learning-5651df",
+  "programme_id": "grants-hub-grants-nih-gov-news-virtual-learning-5651df",
+  "official_url": "https://grants.nih.gov/news/virtual-learning/podcasts.htm",
+  "checked_at": "2026-10-10T13:37:38+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "As the largest public funder of biomedical research in the world, NIH supports a variety of programs from grants and contracts to loan repayment.",
+    "url": "https://grants.nih.gov/news/virtual-learning/podcasts.htm"
+   },
+   "programme_name": {
+    "quote": "All About Grants Podcasts",
+    "url": "https://grants.nih.gov/news/virtual-learning/podcasts.htm"
+   },
+   "organizer": {
+    "quote": "grants.nih.gov",
+    "url": "https://grants.nih.gov/news/virtual-learning/podcasts.htm"
+   },
+   "official_url": {
+    "quote": "https://grants.nih.gov/news/virtual-learning/podcasts.htm",
+    "url": "https://grants.nih.gov/news/virtual-learning/podcasts.htm"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-handshake-org-9006fd",
+  "programme_id": "grants-hub-handshake-org-9006fd",
+  "official_url": "https://handshake.org/",
+  "checked_at": "2026-10-10T13:37:41+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-grants-huggingface-co-docs-hub-89740a",
+  "programme_id": "grants-hub-huggingface-co-docs-hub-89740a",
+  "official_url": "https://huggingface.co/docs/hub/spaces-gpus",
+  "checked_at": "2026-10-10T13:37:42+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "You can programmatically configure your Space hardware using.",
+    "url": "https://huggingface.co/docs/hub/spaces-gpus"
+   },
+   "programme_name": {
+    "quote": "Hugging Face Community GPU Grants",
+    "url": "https://huggingface.co/docs/hub/spaces-gpus"
+   },
+   "organizer": {
+    "quote": "huggingface.co",
+    "url": "https://huggingface.co/docs/hub/spaces-gpus"
+   },
+   "official_url": {
+    "quote": "https://huggingface.co/docs/hub/spaces-gpus",
+    "url": "https://huggingface.co/docs/hub/spaces-gpus"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-interledger-org-ambassadors-4734ae",
+  "programme_id": "grants-hub-interledger-org-ambassadors-4734ae",
+  "official_url": "https://interledger.org/ambassadors",
+  "checked_at": "2026-10-10T13:37:46+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "The application period for 2026 has now closed.",
+    "url": "https://interledger.org/ambassadors"
+   },
+   "deadline": {
+    "quote": "The application period for 2026 has now closed.",
+    "url": "https://interledger.org/ambassadors"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-lambda-ai-research-666b3c",
+  "programme_id": "grants-hub-lambda-ai-research-666b3c",
+  "official_url": "https://lambda.ai/research",
+  "checked_at": "2026-10-10T13:37:46+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Building the future of AI through research and mentorship.",
+    "url": "https://lambda.ai/research"
+   },
+   "programme_name": {
+    "quote": "Lambda Research Grants",
+    "url": "https://lambda.ai/research"
+   },
+   "organizer": {
+    "quote": "lambda.ai",
+    "url": "https://lambda.ai/research"
+   },
+   "official_url": {
+    "quote": "https://lambda.ai/research",
+    "url": "https://lambda.ai/research"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-landing-hostkey-com-grant-for-scientific-projects-formhtml-574f04",
+  "programme_id": "grants-hub-landing-hostkey-com-grant-for-scientific-projects-formhtml-574f04",
+  "official_url": "https://landing.hostkey.com/grant_for_scientific_projects_formhtml",
+  "checked_at": "2026-10-10T13:37:48+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The free compute program is temporarily suspended due to a shortage of hardware on the market.",
+    "url": "https://landing.hostkey.com/grant_for_scientific_projects_formhtml"
+   },
+   "programme_name": {
+    "quote": "[HOSTKEY GPU Grant Program for Research Projects and Startups] (",
+    "url": "https://landing.hostkey.com/grant_for_scientific_projects_formhtml"
+   },
+   "organizer": {
+    "quote": "landing.hostkey.com",
+    "url": "https://landing.hostkey.com/grant_for_scientific_projects_formhtml"
+   },
+   "official_url": {
+    "quote": "https://landing.hostkey.com/grant_for_scientific_projects_formhtml",
+    "url": "https://landing.hostkey.com/grant_for_scientific_projects_formhtml"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-programs-c369c9",
+  "programme_id": "grants-hub-meta-wikimedia-org-wiki-grants-programs-c369c9",
+  "official_url": "https://meta.wikimedia.org/wiki/Grants:Programs/Wikimedia_Research_%26_Technology_Fund",
+  "checked_at": "2026-10-10T13:37:49+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Programs/Wikimedia Research & Technology Fund.",
+    "url": "https://meta.wikimedia.org/wiki/Grants:Programs/Wikimedia_Research_%26_Technology_Fund"
+   },
+   "programme_name": {
+    "quote": "Research fund",
+    "url": "https://meta.wikimedia.org/wiki/Grants:Programs/Wikimedia_Research_%26_Technology_Fund"
+   },
+   "organizer": {
+    "quote": "meta.wikimedia.org",
+    "url": "https://meta.wikimedia.org/wiki/Grants:Programs/Wikimedia_Research_%26_Technology_Fund"
+   },
+   "official_url": {
+    "quote": "https://meta.wikimedia.org/wiki/Grants:Programs/Wikimedia_Research_%26_Technology_Fund",
+    "url": "https://meta.wikimedia.org/wiki/Grants:Programs/Wikimedia_Research_%26_Technology_Fund"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-meta-wikimedia-org-wiki-grants-start-a3a9f2",
+  "programme_id": "grants-hub-meta-wikimedia-org-wiki-grants-start-a3a9f2",
+  "official_url": "https://meta.wikimedia.org/wiki/Grants:Start",
+  "checked_at": "2026-10-10T13:37:50+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Other funding programs.",
+    "url": "https://meta.wikimedia.org/wiki/Grants:Start"
+   },
+   "programme_name": {
+    "quote": "Wikimedia Grants",
+    "url": "https://meta.wikimedia.org/wiki/Grants:Start"
+   },
+   "organizer": {
+    "quote": "meta.wikimedia.org",
+    "url": "https://meta.wikimedia.org/wiki/Grants:Start"
+   },
+   "official_url": {
+    "quote": "https://meta.wikimedia.org/wiki/Grants:Start",
+    "url": "https://meta.wikimedia.org/wiki/Grants:Start"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-metamaskgrants-org-c19df3",
+  "programme_id": "grants-hub-metamaskgrants-org-c19df3",
+  "official_url": "https://metamaskgrants.org/",
+  "checked_at": "2026-10-10T13:37:50+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "is an employee-led DAO with the mission of funding the development of high-value projects in the MetaMask ecosystem through a grants program.",
+    "url": "https://metamaskgrants.org/"
+   },
+   "programme_name": {
+    "quote": "Metamask Grants",
+    "url": "https://metamaskgrants.org/"
+   },
+   "organizer": {
+    "quote": "metamaskgrants.org",
+    "url": "https://metamaskgrants.org/"
+   },
+   "official_url": {
+    "quote": "https://metamaskgrants.org/",
+    "url": "https://metamaskgrants.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-nebius-com-nebius-research-credits-program-0e0c65",
+  "programme_id": "grants-hub-nebius-com-nebius-research-credits-program-0e0c65",
+  "official_url": "https://nebius.com/nebius-research-credits-program",
+  "checked_at": "2026-10-10T13:37:54+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Nebius research grants program provides researchers with free access to GPU cloud, AI models, and Tavily\u2019s agentic search engine, along with our expertise to accelerate discovery and deployment.",
+    "url": "https://nebius.com/nebius-research-credits-program"
+   },
+   "programme_name": {
+    "quote": "Nebius research credits program",
+    "url": "https://nebius.com/nebius-research-credits-program"
+   },
+   "organizer": {
+    "quote": "nebius.com",
+    "url": "https://nebius.com/nebius-research-credits-program"
+   },
+   "official_url": {
+    "quote": "https://nebius.com/nebius-research-credits-program",
+    "url": "https://nebius.com/nebius-research-credits-program"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-nsfpolicyoutreach-com-resource-center-eeef20",
+  "programme_id": "grants-hub-nsfpolicyoutreach-com-resource-center-eeef20",
+  "official_url": "https://nsfpolicyoutreach.com/resource-center",
+  "checked_at": "2026-10-10T13:37:57+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-grants-numfocus-org-programs-small-development-grants-edce9e",
+  "programme_id": "grants-hub-numfocus-org-programs-small-development-grants-edce9e",
+  "official_url": "https://numfocus.org/programs/small-development-grants",
+  "checked_at": "2026-10-10T13:37:58+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Proposal Submission Deadline: June 6.",
+    "url": "https://numfocus.org/programs/small-development-grants"
+   },
+   "deadline": {
+    "quote": "Proposal Submission Deadline: June 6.",
+    "url": "https://numfocus.org/programs/small-development-grants"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-ocean-sagepub-com-concept-grants-7556d8",
+  "programme_id": "grants-hub-ocean-sagepub-com-concept-grants-7556d8",
+  "official_url": "https://ocean.sagepub.com/concept-grants",
+  "checked_at": "2026-10-10T13:37:59+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-grants-research-cisco-com-open-rfps-af03de",
+  "programme_id": "grants-hub-research-cisco-com-open-rfps-af03de",
+  "official_url": "https://research.cisco.com/open-rfps",
+  "checked_at": "2026-10-10T13:37:59+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-grants-research-google-outreach-4be4f7",
+  "programme_id": "grants-hub-research-google-outreach-4be4f7",
+  "official_url": "https://research.google/outreach",
+  "checked_at": "2026-10-10T13:38:01+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Supporting the next generation of researchers through a wide range of programming.",
+    "url": "https://research.google/outreach"
+   },
+   "programme_name": {
+    "quote": "Google Research Outreach Program",
+    "url": "https://research.google/outreach"
+   },
+   "organizer": {
+    "quote": "research.google",
+    "url": "https://research.google/outreach"
+   },
+   "official_url": {
+    "quote": "https://research.google/outreach",
+    "url": "https://research.google/outreach"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-research-google-programs-and-events-d69832",
+  "programme_id": "grants-hub-research-google-programs-and-events-d69832",
+  "official_url": "https://research.google/programs-and-events",
+  "checked_at": "2026-10-10T13:38:02+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Supporting the next generation of researchers through a wide range of programming.",
+    "url": "https://research.google/programs-and-events"
+   },
+   "programme_name": {
+    "quote": "Google Research Programs",
+    "url": "https://research.google/programs-and-events"
+   },
+   "organizer": {
+    "quote": "research.google",
+    "url": "https://research.google/programs-and-events"
+   },
+   "official_url": {
+    "quote": "https://research.google/programs-and-events",
+    "url": "https://research.google/programs-and-events"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-research-google-programs-and-events-phd-fellowship-62693b",
+  "programme_id": "grants-hub-research-google-programs-and-events-phd-fellowship-62693b",
+  "official_url": "https://research.google/programs-and-events/phd-fellowship",
+  "checked_at": "2026-10-10T13:38:04+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {},
+   "deadline": {}
+  }
+ },
+ {
+  "source_id": "hub-grants-researchtraining-nih-gov-a2586a",
+  "programme_id": "grants-hub-researchtraining-nih-gov-a2586a",
+  "official_url": "https://researchtraining.nih.gov/",
+  "checked_at": "2026-10-10T13:38:05+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "As the largest public funder of biomedical research in the world, NIH supports a variety of programs from grants and contracts to loan repayment.",
+    "url": "https://researchtraining.nih.gov/"
+   },
+   "programme_name": {
+    "quote": "**NIH Research Training and Career Development Programs**",
+    "url": "https://researchtraining.nih.gov/"
+   },
+   "organizer": {
+    "quote": "researchtraining.nih.gov",
+    "url": "https://researchtraining.nih.gov/"
+   },
+   "official_url": {
+    "quote": "https://researchtraining.nih.gov/",
+    "url": "https://researchtraining.nih.gov/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-sequoiacap-com-1b378a",
+  "programme_id": "grants-hub-sequoiacap-com-1b378a",
+  "official_url": "https://sequoiacap.com/)|",
+  "checked_at": "2026-10-10T13:38:07+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-grants-sloan-org-grants-apply-005a70",
+  "programme_id": "grants-hub-sloan-org-grants-apply-005a70",
+  "official_url": "https://sloan.org/grants/apply",
+  "checked_at": "2026-10-10T13:38:07+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-grants-solana-org-grants-9b8f39",
+  "programme_id": "grants-hub-solana-org-grants-9b8f39",
+  "official_url": "https://solana.org/grants",
+  "checked_at": "2026-10-10T13:38:08+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "All applications are reviewed on a rolling basis.",
+    "url": "https://solana.org/grants"
+   },
+   "application": {
+    "quote": "How to apply",
+    "url": "https://solana.org/grants-funding#how_to_apply"
+   },
+   "application_url": {
+    "quote": "How to apply",
+    "url": "https://solana.org/grants-funding#how_to_apply"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {
+    "quote": "$10k) to early-stage Solana builders in emerging markets like India, Southeast Asia, Eastern Europe, and Africa.",
+    "url": "https://solana.org/grants"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-grants-sovereigntechfund-de-programs-fellowship-88c835",
+  "programme_id": "grants-hub-sovereigntechfund-de-programs-fellowship-88c835",
+  "official_url": "https://sovereigntechfund.de/programs/fellowship",
+  "checked_at": "2026-10-10T13:38:11+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "The application period ended on April 6, 2026.",
+    "url": "https://sovereigntechfund.de/programs/fellowship"
+   },
+   "deadline": {
+    "quote": "The application period ended on April 6, 2026.",
+    "url": "https://sovereigntechfund.de/programs/fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-thielfellowship-org-ff5410",
+  "programme_id": "grants-hub-thielfellowship-org-ff5410",
+  "official_url": "https://thielfellowship.org/",
+  "checked_at": "2026-10-10T13:38:12+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Thiel Fellowship gives $250,000 to young people who want to build new things instead of sitting in a classroom.",
+    "url": "https://thielfellowship.org/"
+   },
+   "programme_name": {
+    "quote": "Thiel Fellowship",
+    "url": "https://thielfellowship.org/"
+   },
+   "organizer": {
+    "quote": "thielfellowship.org",
+    "url": "https://thielfellowship.org/"
+   },
+   "official_url": {
+    "quote": "https://thielfellowship.org/",
+    "url": "https://thielfellowship.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-trelis-com-trelis-ai-grants-f363b0",
+  "programme_id": "grants-hub-trelis-com-trelis-ai-grants-f363b0",
+  "official_url": "https://trelis.com/trelis-ai-grants",
+  "checked_at": "2026-10-10T13:38:15+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "This program offers $500 grants per quarter to individuals pursuing advances in the field of AI models.",
+    "url": "https://trelis.com/trelis-ai-grants"
+   },
+   "programme_name": {
+    "quote": "Trelis Research - Trelis AI Grants",
+    "url": "https://trelis.com/trelis-ai-grants"
+   },
+   "organizer": {
+    "quote": "trelis.com",
+    "url": "https://trelis.com/trelis-ai-grants"
+   },
+   "official_url": {
+    "quote": "https://trelis.com/trelis-ai-grants",
+    "url": "https://trelis.com/trelis-ai-grants"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-web3-foundation-4fccff",
+  "programme_id": "grants-hub-web3-foundation-4fccff",
+  "official_url": "https://web3.foundation/",
+  "checked_at": "2026-10-10T13:38:16+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-grants-www-amazon-science-research-awards-32ca5b",
+  "programme_id": "grants-hub-www-amazon-science-research-awards-32ca5b",
+  "official_url": "https://www.amazon.science/research-awards",
+  "checked_at": "2026-10-10T13:38:17+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The awards program offers unrestricted funds and AWS Promotional Credits to support research at academic institutions and non-profit organizations in areas that align with our mission to advance customer-obsessed science.",
+    "url": "https://www.amazon.science/research-awards"
+   },
+   "programme_name": {
+    "quote": "Amazon Research Awards",
+    "url": "https://www.amazon.science/research-awards"
+   },
+   "organizer": {
+    "quote": "amazon.science",
+    "url": "https://www.amazon.science/research-awards"
+   },
+   "official_url": {
+    "quote": "https://www.amazon.science/research-awards",
+    "url": "https://www.amazon.science/research-awards"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-cisco-com-c-en-9d3093",
+  "programme_id": "grants-hub-www-cisco-com-c-en-9d3093",
+  "official_url": "https://www.cisco.com/c/en/us/about/csr/community/nonprofits/product-grant-program.html",
+  "checked_at": "2026-10-10T13:38:38+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Cisco\u2019s Technology Grant Program (TGP) awards our best-in-class technology to qualifying nonprofits.",
+    "url": "https://www.cisco.com/c/en/us/about/csr/community/nonprofits/product-grant-program.html"
+   },
+   "programme_name": {
+    "quote": "CISCO Grant Program",
+    "url": "https://www.cisco.com/c/en/us/about/csr/community/nonprofits/product-grant-program.html"
+   },
+   "organizer": {
+    "quote": "cisco.com",
+    "url": "https://www.cisco.com/c/en/us/about/csr/community/nonprofits/product-grant-program.html"
+   },
+   "official_url": {
+    "quote": "https://www.cisco.com/c/en/us/about/csr/community/nonprofits/product-grant-program.html",
+    "url": "https://www.cisco.com/c/en/us/about/csr/community/nonprofits/product-grant-program.html"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-djangoproject-com-fundraising-a31e85",
+  "programme_id": "grants-hub-www-djangoproject-com-fundraising-a31e85",
+  "official_url": "https://www.djangoproject.com/fundraising",
+  "checked_at": "2026-10-10T13:38:39+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "is the Django Fellowship program.",
+    "url": "https://www.djangoproject.com/fundraising"
+   },
+   "programme_name": {
+    "quote": "Django Fellowship Program",
+    "url": "https://www.djangoproject.com/fundraising"
+   },
+   "organizer": {
+    "quote": "djangoproject.com",
+    "url": "https://www.djangoproject.com/fundraising"
+   },
+   "official_url": {
+    "quote": "https://www.djangoproject.com/fundraising",
+    "url": "https://www.djangoproject.com/fundraising"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-isocfoundation-org-grant-programme-research-grant-progra-9dc2f6",
+  "programme_id": "grants-hub-www-isocfoundation-org-grant-programme-research-grant-progra-9dc2f6",
+  "official_url": "https://www.isocfoundation.org/grant-programme/research-grant-programme",
+  "checked_at": "2026-10-10T13:38:42+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Internet Society Foundation\u2019s Research Program supports global research collaborations that advance understanding of the Internet and its value for all.",
+    "url": "https://www.isocfoundation.org/grant-programme/research-grant-programme"
+   },
+   "programme_name": {
+    "quote": "Internet Society Foundation Research Grants",
+    "url": "https://www.isocfoundation.org/grant-programme/research-grant-programme"
+   },
+   "organizer": {
+    "quote": "isocfoundation.org",
+    "url": "https://www.isocfoundation.org/grant-programme/research-grant-programme"
+   },
+   "official_url": {
+    "quote": "https://www.isocfoundation.org/grant-programme/research-grant-programme",
+    "url": "https://www.isocfoundation.org/grant-programme/research-grant-programme"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-mozilla-org-en-us-moss-351f7e",
+  "programme_id": "grants-hub-www-mozilla-org-en-us-moss-351f7e",
+  "official_url": "https://www.mozilla.org/en-US/moss",
+  "checked_at": "2026-10-10T13:38:46+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Update: MOSS Applications Are Closed.",
+    "url": "https://www.mozilla.org/en-US/moss"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-nsf-gov-publications-pub-summ-jsp-cb70d4",
+  "programme_id": "grants-hub-www-nsf-gov-publications-pub-summ-jsp-cb70d4",
+  "official_url": "https://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf17537",
+  "checked_at": "2026-10-10T13:38:47+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Faculty Early Career Development Program (CAREER).",
+    "url": "https://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf17537"
+   },
+   "programme_name": {
+    "quote": "**Faculty Early Career Development Program (CAREER)**",
+    "url": "https://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf17537"
+   },
+   "organizer": {
+    "quote": "nsf.gov",
+    "url": "https://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf17537"
+   },
+   "official_url": {
+    "quote": "https://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf17537",
+    "url": "https://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf17537"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-nsf-gov-pubs-2018-86e04c",
+  "programme_id": "grants-hub-www-nsf-gov-pubs-2018-86e04c",
+  "official_url": "https://www.nsf.gov/pubs/2018/nsf18566/nsf18566.htm",
+  "checked_at": "2026-10-10T13:38:50+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-grants-www-nsf-gov-pubs-2019-4eb61e",
+  "programme_id": "grants-hub-www-nsf-gov-pubs-2019-4eb61e",
+  "official_url": "https://www.nsf.gov/pubs/2019/nsf19500/nsf19500.htm",
+  "checked_at": "2026-10-10T13:38:52+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-grants-www-scaleway-com-en-startup-program-1d7dd5",
+  "programme_id": "grants-hub-www-scaleway-com-en-startup-program-1d7dd5",
+  "official_url": "https://www.scaleway.com/en/startup-program",
+  "checked_at": "2026-10-10T13:38:54+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Access and program Quantum Processing Units without friction.",
+    "url": "https://www.scaleway.com/en/startup-program"
+   },
+   "programme_name": {
+    "quote": "Scaleway Startup Program",
+    "url": "https://www.scaleway.com/en/startup-program"
+   },
+   "organizer": {
+    "quote": "scaleway.com",
+    "url": "https://www.scaleway.com/en/startup-program"
+   },
+   "official_url": {
+    "quote": "https://www.scaleway.com/en/startup-program",
+    "url": "https://www.scaleway.com/en/startup-program"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-sequoiacap-com-oss-ba455f",
+  "programme_id": "grants-hub-www-sequoiacap-com-oss-ba455f",
+  "official_url": "https://www.sequoiacap.com/oss",
+  "checked_at": "2026-10-10T13:39:00+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "We will take applications and accept fellows on a rolling basis.",
+    "url": "https://www.sequoiacap.com/oss"
+   },
+   "application": {
+    "quote": "Apply to be a Fellow",
+    "url": "https://sequoiacap.com/oss#apply"
+   },
+   "application_url": {
+    "quote": "Apply to be a Fellow",
+    "url": "https://sequoiacap.com/oss#apply"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-grants-www-sequoiacap-com-oss-9a2815",
+  "programme_id": "grants-hub-www-sequoiacap-com-oss-9a2815",
+  "official_url": "https://www.sequoiacap.com/oss/)|",
+  "checked_at": "2026-10-10T13:39:01+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-grants-www-sfari-org-grant-pilot-awards-request-for-applications-7195fa",
+  "programme_id": "grants-hub-www-sfari-org-grant-pilot-awards-request-for-applications-7195fa",
+  "official_url": "https://www.sfari.org/grant/pilot-awards-request-for-applications",
+  "checked_at": "2026-10-10T13:39:04+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed; second-hop evidence from https://www.sfari.org/grant/sfari-pilot-progression-award-request-for-applications/",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications open on April 11, 2024.",
+    "url": "https://www.sfari.org/grant/sfari-pilot-progression-award-request-for-applications/"
+   },
+   "deadline": {
+    "quote": "Applications open on April 11, 2024.",
+    "url": "https://www.sfari.org/grant/sfari-pilot-progression-award-request-for-applications/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-sfari-org-grant-research-awards-request-for-applications-3fddc3",
+  "programme_id": "grants-hub-www-sfari-org-grant-research-awards-request-for-applications-3fddc3",
+  "official_url": "https://www.sfari.org/grant/research-awards-request-for-applications",
+  "checked_at": "2026-10-10T13:39:11+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {},
+   "deadline": {}
+  }
+ },
+ {
+  "source_id": "hub-grants-www-sfari-org-grant-sfari-pilot-progression-award-request-fo-83092b",
+  "programme_id": "grants-hub-www-sfari-org-grant-sfari-pilot-progression-award-request-fo-83092b",
+  "official_url": "https://www.sfari.org/grant/sfari-pilot-progression-award-request-for-applications",
+  "checked_at": "2026-10-10T13:39:13+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications open on April 11, 2024.",
+    "url": "https://www.sfari.org/grant/sfari-pilot-progression-award-request-for-applications"
+   },
+   "deadline": {
+    "quote": "Applications open on April 11, 2024.",
+    "url": "https://www.sfari.org/grant/sfari-pilot-progression-award-request-for-applications"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-software-ac-uk-programmes-research-software-maintenance-b30ef4",
+  "programme_id": "grants-hub-www-software-ac-uk-programmes-research-software-maintenance-b30ef4",
+  "official_url": "https://www.software.ac.uk/programmes/research-software-maintenance-fund",
+  "checked_at": "2026-10-10T13:39:15+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications to the RSMF are now closed.",
+    "url": "https://www.software.ac.uk/programmes/research-software-maintenance-fund"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-sovereign-tech-programs-fellowship-abcb25",
+  "programme_id": "grants-hub-www-sovereign-tech-programs-fellowship-abcb25",
+  "official_url": "https://www.sovereign.tech/programs/fellowship",
+  "checked_at": "2026-10-10T13:39:17+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "The application period ended on April 6, 2026.",
+    "url": "https://www.sovereign.tech/programs/fellowship"
+   },
+   "deadline": {
+    "quote": "The application period ended on April 6, 2026.",
+    "url": "https://www.sovereign.tech/programs/fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-sovereign-tech-programs-fund-f6867d",
+  "programme_id": "grants-hub-www-sovereign-tech-programs-fund-f6867d",
+  "official_url": "https://www.sovereign.tech/programs/fund",
+  "checked_at": "2026-10-10T13:39:18+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Examples include libraries for programming languages, package managers, open implementations of communication protocols, administration tools for developers, digital encryption technologies, and more.",
+    "url": "https://www.sovereign.tech/programs/fund"
+   },
+   "programme_name": {
+    "quote": "Sovereign Tech Fund",
+    "url": "https://www.sovereign.tech/programs/fund"
+   },
+   "organizer": {
+    "quote": "sovereign.tech",
+    "url": "https://www.sovereign.tech/programs/fund"
+   },
+   "official_url": {
+    "quote": "https://www.sovereign.tech/programs/fund",
+    "url": "https://www.sovereign.tech/programs/fund"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-together-ai-forms-research-credits-program-request-26ae19",
+  "programme_id": "grants-hub-www-together-ai-forms-research-credits-program-request-26ae19",
+  "official_url": "https://www.together.ai/forms/research-credits-program-request",
+  "checked_at": "2026-10-10T13:39:20+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "This invite-only research credits program offers small grants to students conducting research projects outside of formal classes.",
+    "url": "https://www.together.ai/forms/research-credits-program-request"
+   },
+   "programme_name": {
+    "quote": "together.ai Research Credits Program Request",
+    "url": "https://www.together.ai/forms/research-credits-program-request"
+   },
+   "organizer": {
+    "quote": "together.ai",
+    "url": "https://www.together.ai/forms/research-credits-program-request"
+   },
+   "official_url": {
+    "quote": "https://www.together.ai/forms/research-credits-program-request",
+    "url": "https://www.together.ai/forms/research-credits-program-request"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-www-top10vpn-com-research-grant-d51033",
+  "programme_id": "grants-hub-www-top10vpn-com-research-grant-d51033",
+  "official_url": "https://www.top10vpn.com/research-grant",
+  "checked_at": "2026-10-10T13:39:22+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-grants-youtu-be-iuiayvggfza-e22e6e",
+  "programme_id": "grants-hub-youtu-be-iuiayvggfza-e22e6e",
+  "official_url": "https://youtu.be/IUIAYVgGfZA",
+  "checked_at": "2026-10-10T13:39:23+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-grants-zcashcommunitygrants-org-e2d75a",
+  "programme_id": "grants-hub-zcashcommunitygrants-org-e2d75a",
+  "official_url": "https://zcashcommunitygrants.org/",
+  "checked_at": "2026-10-10T13:39:24+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Zcash Community Grants program (formerly known as ZOMG) funds independent teams entering the Zcash ecosystem, to perform major ongoing development (or other work) for the public good of the Zcash ecosystem.",
+    "url": "https://zcashcommunitygrants.org/"
+   },
+   "programme_name": {
+    "quote": "Zcash Community Grants",
+    "url": "https://zcashcommunitygrants.org/"
+   },
+   "organizer": {
+    "quote": "zcashcommunitygrants.org",
+    "url": "https://zcashcommunitygrants.org/"
+   },
+   "official_url": {
+    "quote": "https://zcashcommunitygrants.org/",
+    "url": "https://zcashcommunitygrants.org/"
+   }
+  }
  }
 ]
