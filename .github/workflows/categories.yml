@@ -176,39 +176,55 @@ jobs:
       # gitignored, so only the small operational files are committed here.
       - name: Commit operational files
         run: |
+          set -euo pipefail
           git config user.name  "opportunity-lake-bot"
           git config user.email "bot@users.noreply.github.com"
-          files=()
-          for f in \
-            data/operations/registry.json \
-            data/operations/runs.jsonl \
-            data/operations/tier_state.json \
-            data/operations/programmes_observations.json \
-            data/operations/programme_verifications.json \
-            data/operations/research_programme_verifications.json \
-            data/operations/research_programmes_observations.json \
-            data/operations/discovery_*.json \
-            data/operations/grant_programmes_observations.json \
-            data/operations/startup_founder_programmes_observations.json \
-            data/operations/community_programmes_observations.json \
+          shopt -s nullglob
+          FILES=(
+            data/operations/registry.json
+            data/operations/runs.jsonl
+            data/operations/tier_state.json
+            data/operations/programmes_observations.json
+            data/operations/programme_verifications.json
+            data/operations/research_programme_verifications.json
+            data/operations/research_programmes_observations.json
+            data/operations/discovery_*.json
+            data/operations/grant_programmes_observations.json
+            data/operations/startup_founder_programmes_observations.json
+            data/operations/community_programmes_observations.json
             data/operations/generated_seeds/*.json
-          do
-            [ -e "$f" ] && files+=("$f")
+          )
+          TMP=$(mktemp -d)
+          paths=()
+          for f in "${FILES[@]}"; do
+            for p in $f; do
+              if [ -e "$p" ]; then
+                mkdir -p "$TMP/$(dirname "$p")"
+                cp -a "$p" "$TMP/$p"
+                paths+=("$p")
+              fi
+            done
           done
-          if [ "${#files[@]}" -gt 0 ]; then
-            git add -- "${files[@]}"
-          fi
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-          git commit -m "daily: sweep + programmes + contributions $(date -u +%Y-%m-%dT%H:%MZ)"
-          for attempt in 1 2 3; do
-            if git pull --rebase origin main && git push origin HEAD:main; then
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -B ci-save origin/main
+            while IFS= read -r p; do
+              p=${p#./}
+              mkdir -p "$(dirname "$p")"
+              cp -a "$TMP/$p" "$p"
+            done < <(cd "$TMP" && find . -type f)
+            if [ "${#paths[@]}" -gt 0 ]; then
+              git add -A -- "${paths[@]}"
+            fi
+            if git diff --cached --quiet; then
+              echo 'nothing to commit'
               exit 0
             fi
-            if [ "$attempt" -lt 3 ]; then
-              sleep 10
+            git commit -m "daily: sweep + programmes + contributions $(date -u +%Y-%m-%dT%H:%MZ)"
+            if git push origin HEAD:main; then
+              exit 0
             fi
+            sleep $((attempt*5))
           done
           exit 1
 
