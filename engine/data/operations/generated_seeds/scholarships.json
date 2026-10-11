@@ -37,7 +37,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-thielfellowship-org-41d873",
@@ -90,7 +90,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-www-gemfellowship-org-6de8bd",
@@ -442,7 +442,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-research-adobe-com-fellowship-68d538",
@@ -456,7 +456,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-research-adobe-com-scholarship-7503c7",
@@ -470,7 +470,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-research-fb-com-programs-fellowship-c0478b",
@@ -497,7 +497,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-scholarships-uncf-org-program-details-149886",
@@ -511,7 +511,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-season-kde-org-419388",
@@ -551,7 +551,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-snapresearchfs-splashthat-com-df0b94",
@@ -604,7 +604,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-wiki-linuxfoundation-org-lkmp-8b5a2f",
@@ -878,7 +878,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-www-nsfgrfp-org-9f1ebb",
@@ -1048,7 +1048,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-www-sandia-gov-careers-career-possibilities-c42ea6",
@@ -1075,7 +1075,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-www-sigplan-org-awards-dissertation-837fde",
@@ -1102,7 +1102,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-www-symantec-com-about-careers-298f65",
@@ -1116,7 +1116,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-www-techatbloomberg-com-bloomberg-data-science-ph-d-fellowsh-56f42a",
@@ -1143,7 +1143,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T14:58:54Z",
   "last_seen": "2026-10-10T14:58:54Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-scholarships-www-udacity-com-scholarships-474763",
