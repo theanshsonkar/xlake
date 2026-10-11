@@ -1,21 +1,8 @@
 [
   {
-    "source_id": "hub-open_source-sigmm-org-resources-software-bdaa1a",
-    "programme_id": "open_source-hub-sigmm-org-resources-software-bdaa1a",
-    "programme_name": "ACM MM Open Source Software Competition",
-    "organizer": "sigmm.org",
-    "official_url": "http://sigmm.org/Resources/software/ossc",
-    "allowed_path_hints": [
-      "Resources/software/ossc"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
     "source_id": "hub-open_source-app-codeforgovtech-in-46f8bd",
     "programme_id": "open_source-hub-app-codeforgovtech-in-46f8bd",
-    "programme_name": "Code for GovTech (C4GT) – Dedicated Mentoring Program (DMP",
+    "programme_name": "Code for GovTech (C4GT) – Dedicated Mentoring Program",
     "organizer": "app.codeforgovtech.in",
     "official_url": "https://app.codeforgovtech.in/",
     "allowed_path_hints": [
@@ -23,7 +10,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-app-lfx-dev-15ec40",
@@ -36,7 +23,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-badges-frapsoft-com-os-v2-5d4714",
@@ -49,20 +36,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T14:04:48Z"
-  },
-  {
-    "source_id": "hub-open_source-badges-frapsoft-com-os-v2-8c3f04",
-    "programme_id": "open_source-hub-badges-frapsoft-com-os-v2-8c3f04",
-    "programme_name": "",
-    "organizer": "badges.frapsoft.com",
-    "official_url": "https://badges.frapsoft.com/os/v2/open-source.svg?v=103%29%5D%28https%3A%2F%2Fgithub.com%2Fellerbrock%2Fopen-source-badges%2F",
-    "allowed_path_hints": [
-      "os/v2/open-source.svg"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T11:56:39Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-blog-ethereum-org-2026-04-05accc",
@@ -75,58 +49,6 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-blogger-googleusercontent-com-img-b-8ef58a",
-    "programme_id": "open_source-hub-blogger-googleusercontent-com-img-b-8ef58a",
-    "programme_name": "",
-    "organizer": "blogger.googleusercontent.com",
-    "official_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjElEttasnAcLCu_M46a2XSKi9jSq5d-mJaNNsBifzUyrATXgOn6KeFfzWPFK8RfuUXpj6OpRR7okkaV8U9uS4-Xf_9SuMzPMCedGrdJREzYVmk94vq1GBWDfPel-w9iZzNszvlZU_gOnlV0bNjdLRrf0y6U_9qQqLrrGjKjlaZEVjSkcrchiFP1PbsBp0/s1600/GSoC%20Banner.png",
-    "allowed_path_hints": [
-      "img/b/R29vZ2xl/AVvXsEjElEttasnAcLCu_M46a2XSKi9jSq5d-mJaNNsBifzUyrATXgOn6KeFfzWPFK8RfuUXpj6OpRR7okkaV8U9uS4-Xf_9SuMzPMCedGrdJREzYVmk94vq1GBWDfPel-w9iZzNszvlZU_gOnlV0bNjdLRrf0y6U_9qQqLrrGjKjlaZEVjSkcrchiFP1PbsBp0/s1600/GSoC%20Banner.png"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T11:56:39Z"
-  },
-  {
-    "source_id": "hub-open_source-camo-githubusercontent-com-0241095b70eefe6d4e277aeabc3b27a8a-03c956",
-    "programme_id": "open_source-hub-camo-githubusercontent-com-0241095b70eefe6d4e277aeabc3b27a8a-03c956",
-    "programme_name": "Starting from September 2023 To participate in the GitHub Campus Experts program, you must",
-    "organizer": "camo.githubusercontent.com",
-    "official_url": "https://camo.githubusercontent.com/0241095b70eefe6d4e277aeabc3b27a8a452c954782707b711f86408bc47be9a/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a3830322f312a4f2d33435f585959686b3661577033453438757654672e706e67",
-    "allowed_path_hints": [
-      "0241095b70eefe6d4e277aeabc3b27a8a452c954782707b711f86408bc47be9a/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a3830322f312a4f2d33435f585959686b3661577033453438757654672e706e67"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-09T20:38:18Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-camo-githubusercontent-com-1f2b3fccc7db17491d30d68657c97da6e-78b470",
-    "programme_id": "open_source-hub-camo-githubusercontent-com-1f2b3fccc7db17491d30d68657c97da6e-78b470",
-    "programme_name": "Last to apply: 1 September, 2023 To participate in the GitHub Campus Experts program, you must",
-    "organizer": "camo.githubusercontent.com",
-    "official_url": "https://camo.githubusercontent.com/1f2b3fccc7db17491d30d68657c97da6e686e89f66f7f8b01a0a77a7aed0b6dd/68747470733a2f2f6d656469612e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f63646e2d75706c6f6164732f32303230303930383134343635372f486f772d746f2d4265636f6d652d4769744875622d43616d7075732d4578706572742e6a7067",
-    "allowed_path_hints": [
-      "1f2b3fccc7db17491d30d68657c97da6e686e89f66f7f8b01a0a77a7aed0b6dd/68747470733a2f2f6d656469612e6765656b73666f726765656b732e6f72672f77702d636f6e74656e742f63646e2d75706c6f6164732f32303230303930383134343635372f486f772d746f2d4265636f6d652d4769744875622d43616d7075732d4578706572742e6a7067"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-09T20:38:18Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-camo-githubusercontent-com-4123c7e3f5b58794be3942bc6679e1355-b8a051",
-    "programme_id": "open_source-hub-camo-githubusercontent-com-4123c7e3f5b58794be3942bc6679e1355-b8a051",
-    "programme_name": "Outreachy is seeking interns for the December 2023 to May 2024 internship cohort! 📅 Important dates: Aug. 8, 2023 at 4pm",
-    "organizer": "camo.githubusercontent.com",
-    "official_url": "https://camo.githubusercontent.com/4123c7e3f5b58794be3942bc6679e13559f61ee1641913a2e153b681737cb3ce/68747470733a2f2f63646e2d6d656469612d312e66726565636f646563616d702e6f72672f696d616765732f312a4a61415230585a30703634326b526a44442d70436b672e706e67",
-    "allowed_path_hints": [
-      "4123c7e3f5b58794be3942bc6679e13559f61ee1641913a2e153b681737cb3ce/68747470733a2f2f63646e2d6d656469612d312e66726565636f646563616d702e6f72672f696d616765732f312a4a61415230585a30703634326b526a44442d70436b672e706e67"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-09T20:38:18Z",
     "last_seen": "2026-10-10T15:00:57Z"
   },
   {
@@ -166,7 +88,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-dev-to-a015b1",
@@ -179,7 +101,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T14:04:48Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-docs-linuxfoundation-org-lfx-mentorship-fd94c6",
@@ -192,7 +114,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-egghead-io-courses-how-to-contribute-to-an-open-source-proje-fb82cf",
@@ -205,20 +127,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-egghead-io-courses-how-to-contribute-to-an-open-source-proje-61580a",
-    "programme_id": "open_source-hub-egghead-io-courses-how-to-contribute-to-an-open-source-proje-61580a",
-    "programme_name": "Egghead.io Open Source Course",
-    "organizer": "egghead.io",
-    "official_url": "https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)**",
-    "allowed_path_hints": [
-      "courses/how-to-contribute-to-an-open-source-project-on-github)**"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T14:04:48Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-ethereum-org-contributing-translation-program-8fb22d",
@@ -231,7 +140,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-fellowship-mlh-io-3522d4",
@@ -244,12 +153,38 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
+  },
+  {
+    "source_id": "hub-open_source-www-freecodecamp-org-news-the-definitive-guide-to-contributi-dd8981",
+    "programme_id": "open_source-hub-www-freecodecamp-org-news-the-definitive-guide-to-contributi-dd8981",
+    "programme_name": "The Definitive Guide to Contributing to Open Source",
+    "organizer": "freecodecamp.org",
+    "official_url": "https://www.freecodecamp.org/news/the-definitive-guide-to-contributing-to-open-source-900d5f9f2282",
+    "allowed_path_hints": [
+      "news/the-definitive-guide-to-contributing-to-open-source-900d5f9f2282"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:17Z",
+    "last_seen": "2026-10-11T13:02:32Z"
+  },
+  {
+    "source_id": "hub-open_source-www-gsocorganizations-dev-7a7fe2",
+    "programme_id": "open_source-hub-www-gsocorganizations-dev-7a7fe2",
+    "programme_name": "gsocorganizations.dev",
+    "organizer": "gsocorganizations.dev",
+    "official_url": "https://www.gsocorganizations.dev/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:17Z",
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-gssoc-girlscript-tech-cc02db",
     "programme_id": "open_source-hub-gssoc-girlscript-tech-cc02db",
-    "programme_name": "GirlScript Summer of Code (GSSoC",
+    "programme_name": "GirlScript Summer of Code",
     "organizer": "gssoc.girlscript.tech",
     "official_url": "https://gssoc.girlscript.tech/",
     "allowed_path_hints": [
@@ -270,20 +205,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-hashnode-com-n-opensource-a8abab",
-    "programme_id": "open_source-hub-hashnode-com-n-opensource-a8abab",
-    "programme_name": "Hashnode",
-    "organizer": "hashnode.com",
-    "official_url": "https://hashnode.com/n/opensource)**",
-    "allowed_path_hints": [
-      "n/opensource)**"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T14:04:48Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-huggingface-co-blog-ambassadors-eaace7",
@@ -296,12 +218,12 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-huggingface-co-blog-omlx-fb8ad8",
     "programme_id": "open_source-hub-huggingface-co-blog-omlx-fb8ad8",
-    "programme_name": "mlx open-source community Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community +1 88 Se",
+    "programme_name": "mlx open-source community Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community +1 90 Se",
     "organizer": "huggingface.co",
     "official_url": "https://huggingface.co/blog/omlx",
     "allowed_path_hints": [
@@ -309,7 +231,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-huggingface-co-login-6b8c4e",
@@ -322,7 +244,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-img-shields-io-badge-contributions-welcome-brightgreen-svg-2d0cd4",
@@ -335,38 +257,12 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T14:04:48Z"
-  },
-  {
-    "source_id": "hub-open_source-img-shields-io-badge-contributions-welcome-brightgreen-svg-2a1d37",
-    "programme_id": "open_source-hub-img-shields-io-badge-contributions-welcome-brightgreen-svg-2a1d37",
-    "programme_name": "",
-    "organizer": "img.shields.io",
-    "official_url": "https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat%29%5D%28https%3A%2F%2Fgithub.com%2F",
-    "allowed_path_hints": [
-      "badge/contributions-welcome-brightgreen.svg"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T11:56:39Z"
-  },
-  {
-    "source_id": "hub-open_source-img-shields-io-github-last-commit-b3e13a",
-    "programme_id": "open_source-hub-img-shields-io-github-last-commit-b3e13a",
-    "programme_name": "",
-    "organizer": "img.shields.io",
-    "official_url": "https://img.shields.io/github/last-commit/yashisrani/List-of-OpenSource-Programs?color=0969DA&label=Last+Updated&style=flat",
-    "allowed_path_hints": [
-      "github/last-commit/yashisrani/List-of-OpenSource-Programs"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T11:56:39Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-kubestellar-io-en-programs-fc713b",
     "programme_id": "open_source-hub-kubestellar-io-en-programs-fc713b",
-    "programme_name": "⁠ KubeStellar IFoS (Interns for Open Source",
+    "programme_name": "⁠KubeStellar IFoS",
     "organizer": "kubestellar.io",
     "official_url": "https://kubestellar.io/en/programs/ifos",
     "allowed_path_hints": [
@@ -374,12 +270,12 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-lab-codingblocks-com-boss-cd97d1",
     "programme_id": "open_source-hub-lab-codingblocks-com-boss-cd97d1",
-    "programme_name": "BOSS (Bountiful Open Source Summer",
+    "programme_name": "BOSS",
     "organizer": "lab.codingblocks.com",
     "official_url": "https://lab.codingblocks.com/boss",
     "allowed_path_hints": [
@@ -387,7 +283,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-lf-decentralized-trust-mentorships-github-io-mentorship-prog-ccaa43",
@@ -400,7 +296,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-mentorship-lfx-linuxfoundation-org-a9c83e",
@@ -416,17 +312,30 @@
     "last_seen": "2026-10-10T15:00:57Z"
   },
   {
-    "source_id": "hub-open_source-news-mlh-io-wp-content-uploads-03572f",
-    "programme_id": "open_source-hub-news-mlh-io-wp-content-uploads-03572f",
-    "programme_name": "",
-    "organizer": "news.mlh.io",
-    "official_url": "https://news.mlh.io/wp-content/uploads/2020/08/fellowship.jpg",
+    "source_id": "hub-open_source-www-microsoft-com-en-us-research-1513c4",
+    "programme_id": "open_source-hub-www-microsoft-com-en-us-research-1513c4",
+    "programme_name": "Microsoft Reinforcement Learning Open Source Fest",
+    "organizer": "microsoft.com",
+    "official_url": "https://www.microsoft.com/en-us/research/academic-program/rl-open-source-fest",
     "allowed_path_hints": [
-      "wp-content/uploads/2020/08/fellowship.jpg"
+      "en-us/research/academic-program/rl-open-source-fest"
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T11:56:39Z"
+    "last_seen": "2026-10-11T13:02:32Z"
+  },
+  {
+    "source_id": "hub-open_source-www-millenniumfellows-org-702885",
+    "programme_id": "open_source-hub-www-millenniumfellows-org-702885",
+    "programme_name": "Millennium Fellowship",
+    "organizer": "millenniumfellows.org",
+    "official_url": "https://www.millenniumfellows.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:17Z",
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-numfocus-org-programs-john-hunter-technology-fellowship-565dfe",
@@ -439,7 +348,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
+  },
+  {
+    "source_id": "hub-open_source-www-openmainframeproject-org-all-projects-mentorship-program-0d9497",
+    "programme_id": "open_source-hub-www-openmainframeproject-org-all-projects-mentorship-program-0d9497",
+    "programme_name": "Open Mainframe Project Mentorship Program",
+    "organizer": "openmainframeproject.org",
+    "official_url": "https://www.openmainframeproject.org/all-projects/mentorship-program",
+    "allowed_path_hints": [
+      "all-projects/mentorship-program"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:08Z",
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-openmainframeproject-org-community-mentorship-program-1bb5bd",
@@ -465,20 +387,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-opensource-guide-c4a554",
-    "programme_id": "open_source-hub-opensource-guide-c4a554",
-    "programme_name": "opensource.guide",
-    "organizer": "opensource.guide",
-    "official_url": "https://opensource.guide/)**",
-    "allowed_path_hints": [
-      ")**"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T14:04:48Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-opensource-guide-how-to-contribute-f4b61b",
@@ -491,202 +400,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-opensource-guide-how-to-contribute-477f4f",
-    "programme_id": "open_source-hub-opensource-guide-how-to-contribute-477f4f",
-    "programme_name": "How to Contribute to Open Source",
-    "organizer": "opensource.guide",
-    "official_url": "https://opensource.guide/how-to-contribute/)**",
-    "allowed_path_hints": [
-      "how-to-contribute/)**"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T14:04:48Z"
-  },
-  {
-    "source_id": "hub-open_source-private-user-images-githubusercontent-com-114390890-59235492-6cd2f9",
-    "programme_id": "open_source-hub-private-user-images-githubusercontent-com-114390890-59235492-6cd2f9",
-    "programme_name": "Spring Term (March - May) Applications Open: Jan 26 – Feb 10, 2026 Application Review/Decision: Feb 11 – Feb 24, 2026 Te",
-    "organizer": "private-user-images.githubusercontent.com",
-    "official_url": "https://private-user-images.githubusercontent.com/114390890/592354926-4b8f926c-342e-4d1f-9b89-68ec30ef75f3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTE1Nzg1OTQsIm5iZiI6MTc5MTU3ODI5NCwicGF0aCI6Ii8xMTQzOTA4OTAvNTkyMzU0OTI2LTRiOGY5MjZjLTM0MmUtNGQxZi05Yjg5LTY4ZWMzMGVmNzVmMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYxMDA5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MTAwOVQyMDM4MTRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hZmMxZjJjMjM1ZDU1NmNjNTk5MjYyMWM4NjkxOTEwOTI3N2QwMjEzYjA2MWMxN2VkMGM3MzBlZDU2MGE5OGE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.pYT7xYhPzDeBmlXTX8HOeWKIIsiaAuhwuwcDBJnS4Q0",
-    "allowed_path_hints": [
-      "114390890/592354926-4b8f926c-342e-4d1f-9b89-68ec30ef75f3.png"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-09T20:38:18Z",
-    "last_seen": "2026-10-09T20:38:18Z"
-  },
-  {
-    "source_id": "hub-open_source-private-user-images-githubusercontent-com-114390890-59235492-4e4d4d",
-    "programme_id": "open_source-hub-private-user-images-githubusercontent-com-114390890-59235492-4e4d4d",
-    "programme_name": "Spring Term (March - May) Applications Open: Jan 26 – Feb 10, 2026 Application Review/Decision: Feb 11 – Feb 24, 2026 Te",
-    "organizer": "private-user-images.githubusercontent.com",
-    "official_url": "https://private-user-images.githubusercontent.com/114390890/592354926-4b8f926c-342e-4d1f-9b89-68ec30ef75f3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTE2NDQ3NTIsIm5iZiI6MTc5MTY0NDQ1MiwicGF0aCI6Ii8xMTQzOTA4OTAvNTkyMzU0OTI2LTRiOGY5MjZjLTM0MmUtNGQxZi05Yjg5LTY4ZWMzMGVmNzVmMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYxMDEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MTAxMFQxNTAwNTJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05NmEzZjFkMzk5ZjdmMWYxNWNmOTJiZTIxNTJjMTQ2MjAxODg4ZGQ2ZDRhNTg4YjljYWEwNGI3NTIzOTNkY2E0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.hoRYgkHG8kUQ8J2RUv4_WfFi3us8DHmsoJxM8iDazBM",
-    "allowed_path_hints": [
-      "114390890/592354926-4b8f926c-342e-4d1f-9b89-68ec30ef75f3.png"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T15:00:57Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-stackoverflow-com-questions-tagged-12e2fa",
-    "programme_id": "open_source-hub-stackoverflow-com-questions-tagged-12e2fa",
-    "programme_name": "Stack Overflow",
-    "organizer": "stackoverflow.com",
-    "official_url": "https://stackoverflow.com/questions/tagged/open-source",
-    "allowed_path_hints": [
-      "questions/tagged/open-source"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-stackoverflow-com-questions-tagged-b40ab1",
-    "programme_id": "open_source-hub-stackoverflow-com-questions-tagged-b40ab1",
-    "programme_name": "Stack Overflow",
-    "organizer": "stackoverflow.com",
-    "official_url": "https://stackoverflow.com/questions/tagged/open-source)**",
-    "allowed_path_hints": [
-      "questions/tagged/open-source)**"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T14:04:48Z"
-  },
-  {
-    "source_id": "hub-open_source-summerofcode-withgoogle-com-how-it-works-a6dffc",
-    "programme_id": "open_source-hub-summerofcode-withgoogle-com-how-it-works-a6dffc",
-    "programme_name": "GSoC Application Process",
-    "organizer": "summerofcode.withgoogle.com",
-    "official_url": "https://summerofcode.withgoogle.com/how-it-works",
-    "allowed_path_hints": [
-      "how-it-works"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-taione-org-fellowship-about-e2c2d9",
-    "programme_id": "open_source-hub-taione-org-fellowship-about-e2c2d9",
-    "programme_name": "Taiwan Fellowship Program",
-    "organizer": "taione.org",
-    "official_url": "https://taione.org/fellowship/about",
-    "allowed_path_hints": [
-      "fellowship/about"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-wiki-hyperledger-org-display-intern-062377",
-    "programme_id": "open_source-hub-wiki-hyperledger-org-display-intern-062377",
-    "programme_name": "Hyperledger Mentorship Apply",
-    "organizer": "wiki.hyperledger.org",
-    "official_url": "https://wiki.hyperledger.org/display/INTERN/How+to+Apply",
-    "allowed_path_hints": [
-      "display/INTERN/How+to+Apply"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-wiki-hyperledger-org-display-intern-7fe0f6",
-    "programme_id": "open_source-hub-wiki-hyperledger-org-display-intern-7fe0f6",
-    "programme_name": "Hyperledger Mentorship Program",
-    "organizer": "wiki.hyperledger.org",
-    "official_url": "https://wiki.hyperledger.org/display/INTERN/Hyperledger+Mentorship+Program",
-    "allowed_path_hints": [
-      "display/INTERN/Hyperledger+Mentorship+Program"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-www-freecodecamp-org-news-the-definitive-guide-to-contributi-dd8981",
-    "programme_id": "open_source-hub-www-freecodecamp-org-news-the-definitive-guide-to-contributi-dd8981",
-    "programme_name": "The Definitive Guide to Contributing to Open Source",
-    "organizer": "freecodecamp.org",
-    "official_url": "https://www.freecodecamp.org/news/the-definitive-guide-to-contributing-to-open-source-900d5f9f2282",
-    "allowed_path_hints": [
-      "news/the-definitive-guide-to-contributing-to-open-source-900d5f9f2282"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-www-freecodecamp-org-news-the-definitive-guide-to-contributi-8de10f",
-    "programme_id": "open_source-hub-www-freecodecamp-org-news-the-definitive-guide-to-contributi-8de10f",
-    "programme_name": "The Definitive Guide to Contributing to Open Source",
-    "organizer": "freecodecamp.org",
-    "official_url": "https://www.freecodecamp.org/news/the-definitive-guide-to-contributing-to-open-source-900d5f9f2282/)**",
-    "allowed_path_hints": [
-      "news/the-definitive-guide-to-contributing-to-open-source-900d5f9f2282/)**"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T14:04:48Z"
-  },
-  {
-    "source_id": "hub-open_source-www-gsocorganizations-dev-7a7fe2",
-    "programme_id": "open_source-hub-www-gsocorganizations-dev-7a7fe2",
-    "programme_name": "gsocorganizations.dev",
-    "organizer": "gsocorganizations.dev",
-    "official_url": "https://www.gsocorganizations.dev/",
-    "allowed_path_hints": [
-      ""
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-www-microsoft-com-en-us-research-1513c4",
-    "programme_id": "open_source-hub-www-microsoft-com-en-us-research-1513c4",
-    "programme_name": "Microsoft Reinforcement Learning Open Source Fest",
-    "organizer": "microsoft.com",
-    "official_url": "https://www.microsoft.com/en-us/research/academic-program/rl-open-source-fest",
-    "allowed_path_hints": [
-      "en-us/research/academic-program/rl-open-source-fest"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-www-millenniumfellows-org-702885",
-    "programme_id": "open_source-hub-www-millenniumfellows-org-702885",
-    "programme_name": "Millennium Fellowship",
-    "organizer": "millenniumfellows.org",
-    "official_url": "https://www.millenniumfellows.org/",
-    "allowed_path_hints": [
-      ""
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-www-openmainframeproject-org-all-projects-mentorship-program-0d9497",
-    "programme_id": "open_source-hub-www-openmainframeproject-org-all-projects-mentorship-program-0d9497",
-    "programme_name": "Open Mainframe Project Mentorship Program",
-    "organizer": "openmainframeproject.org",
-    "official_url": "https://www.openmainframeproject.org/all-projects/mentorship-program",
-    "allowed_path_hints": [
-      "all-projects/mentorship-program"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-www-outreachy-org-alums-159506",
@@ -712,7 +426,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-www-outreachy-org-apply-project-selection-7f614e",
@@ -725,7 +439,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-www-outreachy-org-blog-f1f3ba",
@@ -738,20 +452,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
-  },
-  {
-    "source_id": "hub-open_source-www-outreachy-org-blog-2023-08-08-822cb6",
-    "programme_id": "open_source-hub-www-outreachy-org-blog-2023-08-08-822cb6",
-    "programme_name": "Details and link to apply",
-    "organizer": "outreachy.org",
-    "official_url": "https://www.outreachy.org/blog/2023-08-08/december-2023-initial-applications-open",
-    "allowed_path_hints": [
-      "blog/2023-08-08/december-2023-initial-applications-open"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-www-outreachy-org-communities-cfp-5297a8",
@@ -764,7 +465,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:38:18Z",
-    "last_seen": "2026-10-09T20:38:18Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-www-outreachy-org-contact-contact-us-c0e14f",
@@ -777,20 +478,7 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-09T20:38:18Z",
-    "last_seen": "2026-10-09T20:38:18Z"
-  },
-  {
-    "source_id": "hub-open_source-www-outreachy-org-contact-organizers-988376",
-    "programme_id": "open_source-hub-www-outreachy-org-contact-organizers-988376",
-    "programme_name": "contact us",
-    "organizer": "outreachy.org",
-    "official_url": "https://www.outreachy.org/contact/organizers",
-    "allowed_path_hints": [
-      "contact/organizers"
-    ],
-    "check_cadence": "monthly",
-    "first_seen": "2026-10-09T20:38:18Z",
-    "last_seen": "2026-10-09T20:38:18Z"
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-www-outreachy-org-dashboard-406ea8",
@@ -829,7 +517,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
+  },
+  {
+    "source_id": "hub-open_source-private-user-images-githubusercontent-com-114390890-59235492-6cd2f9",
+    "programme_id": "open_source-hub-private-user-images-githubusercontent-com-114390890-59235492-6cd2f9",
+    "programme_name": "Spring Term (March - May) Applications Open: Jan 26 – Feb 10, 2026 Application Review/Decision: Feb 11 – Feb 24, 2026 Te",
+    "organizer": "private-user-images.githubusercontent.com",
+    "official_url": "https://private-user-images.githubusercontent.com/114390890/592354926-4b8f926c-342e-4d1f-9b89-68ec30ef75f3.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTE1Nzg1OTQsIm5iZiI6MTc5MTU3ODI5NCwicGF0aCI6Ii8xMTQzOTA4OTAvNTkyMzU0OTI2LTRiOGY5MjZjLTM0MmUtNGQxZi05Yjg5LTY4ZWMzMGVmNzVmMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYxMDA5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MTAwOVQyMDM4MTRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hZmMxZjJjMjM1ZDU1NmNjNTk5MjYyMWM4NjkxOTEwOTI3N2QwMjEzYjA2MWMxN2VkMGM3MzBlZDU2MGE5OGE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.pYT7xYhPzDeBmlXTX8HOeWKIIsiaAuhwuwcDBJnS4Q0",
+    "allowed_path_hints": [
+      "114390890/592354926-4b8f926c-342e-4d1f-9b89-68ec30ef75f3.png"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-09T20:38:18Z",
+    "last_seen": "2026-10-09T20:38:18Z"
   },
   {
     "source_id": "hub-open_source-www-python-org-psf-grants-c7a04a",
@@ -842,7 +543,20 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T09:05:08Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
+  },
+  {
+    "source_id": "hub-open_source-sigmm-org-resources-software-bdaa1a",
+    "programme_id": "open_source-hub-sigmm-org-resources-software-bdaa1a",
+    "programme_name": "ACM MM Open Source Software Competition",
+    "organizer": "sigmm.org",
+    "official_url": "http://sigmm.org/Resources/software/ossc",
+    "allowed_path_hints": [
+      "Resources/software/ossc"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:17Z",
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-www-sktime-net-en-latest-522dc3",
@@ -855,7 +569,72 @@
     ],
     "check_cadence": "monthly",
     "first_seen": "2026-10-10T08:38:17Z",
-    "last_seen": "2026-10-10T15:00:57Z"
+    "last_seen": "2026-10-11T13:02:32Z"
+  },
+  {
+    "source_id": "hub-open_source-stackoverflow-com-questions-tagged-12e2fa",
+    "programme_id": "open_source-hub-stackoverflow-com-questions-tagged-12e2fa",
+    "programme_name": "Stack Overflow",
+    "organizer": "stackoverflow.com",
+    "official_url": "https://stackoverflow.com/questions/tagged/open-source",
+    "allowed_path_hints": [
+      "questions/tagged/open-source"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:17Z",
+    "last_seen": "2026-10-11T13:02:32Z"
+  },
+  {
+    "source_id": "hub-open_source-summerofcode-withgoogle-com-how-it-works-a6dffc",
+    "programme_id": "open_source-hub-summerofcode-withgoogle-com-how-it-works-a6dffc",
+    "programme_name": "GSoC Application Process",
+    "organizer": "summerofcode.withgoogle.com",
+    "official_url": "https://summerofcode.withgoogle.com/how-it-works",
+    "allowed_path_hints": [
+      "how-it-works"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:08Z",
+    "last_seen": "2026-10-11T13:02:32Z"
+  },
+  {
+    "source_id": "hub-open_source-taione-org-fellowship-about-e2c2d9",
+    "programme_id": "open_source-hub-taione-org-fellowship-about-e2c2d9",
+    "programme_name": "Taiwan Fellowship Program",
+    "organizer": "taione.org",
+    "official_url": "https://taione.org/fellowship/about",
+    "allowed_path_hints": [
+      "fellowship/about"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T08:38:17Z",
+    "last_seen": "2026-10-11T13:02:32Z"
+  },
+  {
+    "source_id": "hub-open_source-wiki-hyperledger-org-display-intern-062377",
+    "programme_id": "open_source-hub-wiki-hyperledger-org-display-intern-062377",
+    "programme_name": "Hyperledger Mentorship Apply",
+    "organizer": "wiki.hyperledger.org",
+    "official_url": "https://wiki.hyperledger.org/display/INTERN/How+to+Apply",
+    "allowed_path_hints": [
+      "display/INTERN/How+to+Apply"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:08Z",
+    "last_seen": "2026-10-11T13:02:32Z"
+  },
+  {
+    "source_id": "hub-open_source-wiki-hyperledger-org-display-intern-7fe0f6",
+    "programme_id": "open_source-hub-wiki-hyperledger-org-display-intern-7fe0f6",
+    "programme_name": "Hyperledger Mentorship Program",
+    "organizer": "wiki.hyperledger.org",
+    "official_url": "https://wiki.hyperledger.org/display/INTERN/Hyperledger+Mentorship+Program",
+    "allowed_path_hints": [
+      "display/INTERN/Hyperledger+Mentorship+Program"
+    ],
+    "check_cadence": "monthly",
+    "first_seen": "2026-10-10T09:05:08Z",
+    "last_seen": "2026-10-11T13:02:32Z"
   },
   {
     "source_id": "hub-open_source-yashisrani-github-io-list-of-opensource-programs-6ca97d",
