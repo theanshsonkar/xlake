@@ -312,20 +312,6 @@
   "last_seen": "2026-10-11T13:02:22Z"
  },
  {
-  "source_id": "hub-research-dst-gov-in-scientific-programmes-scientific-engineering-rese-ef3a17",
-  "programme_id": "research-hub-dst-gov-in-scientific-programmes-scientific-engineering-rese-ef3a17",
-  "programme_name": "Swarnajayanti fellowships scheme",
-  "organizer": "dst.gov.in",
-  "official_url": "https://dst.gov.in/scientific-programmes/scientific-engineering-research/human-resource-development-and-nurturing-young-talent-swarnajayanti-fellowships-scheme",
-  "allowed_path_hints": [
-   "scientific-programmes/scientific-engineering-research/human-resource-development-and-nurturing-young-talent-swarnajayanti-fellowships-scheme"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:02:22Z",
-  "last_seen": "2026-10-11T13:02:22Z",
-  "dead_strikes": 2
- },
- {
   "source_id": "hub-research-ece-duke-edu-undergrad-reu-6b7e1e",
   "programme_id": "research-hub-ece-duke-edu-undergrad-reu-6b7e1e",
   "programme_name": "Duke ECE SURP",
@@ -519,20 +505,6 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:45:01Z",
   "last_seen": "2026-10-11T13:02:22Z"
- },
- {
-  "source_id": "hub-research-www-iitb-ac-in-en-education-b84b9d",
-  "programme_id": "research-hub-www-iitb-ac-in-en-education-b84b9d",
-  "programme_name": "IITB Research Internship Award",
-  "organizer": "iitb.ac.in",
-  "official_url": "http://www.iitb.ac.in/en/education/research-internship",
-  "allowed_path_hints": [
-   "en/education/research-internship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:02:22Z",
-  "last_seen": "2026-10-11T13:02:22Z",
-  "dead_strikes": 2
  },
  {
   "source_id": "hub-research-www-iitrpr-ac-in-sites-default-51c0e8",
@@ -1066,7 +1038,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:43:18Z",
-  "last_seen": "2026-10-13T12:36:02Z"
+  "last_seen": "2026-10-14T10:08:57Z"
  },
  {
   "source_id": "hub-research-tech-cornell-edu-impact-break-through-tech-ed7e9b",
