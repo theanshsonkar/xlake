@@ -322,7 +322,8 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-10-11T13:02:22Z"
+  "last_seen": "2026-10-11T13:02:22Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-research-www-emmabowenfoundation-org-apply-460ba2",
@@ -1038,7 +1039,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:43:18Z",
-  "last_seen": "2026-10-14T10:08:57Z"
+  "last_seen": "2026-10-15T09:47:05Z"
  },
  {
   "source_id": "hub-research-tech-cornell-edu-impact-break-through-tech-ed7e9b",
