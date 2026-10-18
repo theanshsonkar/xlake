@@ -313,7 +313,7 @@ class Supabase:
             try:
                 self._request(
                     "PATCH", "/%s?id=in.(%s)" % (TABLE, in_list),
-                    body={"is_live": False},
+                    body={"is_live": False, "needs_confirmation": False},
                     headers={"Prefer": "return=minimal"})
                 return 0
             except urllib.error.HTTPError as e:
