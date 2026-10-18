@@ -101,3 +101,45 @@ class JobShardPublishTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LiveOnlyAndRotationTest(unittest.TestCase):
+    def test_fetchers_only_request_live_rows(self):
+        seen = []
+
+        class Fake(pub.Supabase):
+            def __init__(self):
+                pass
+
+            def _request(self, method, path, body=None, headers=None):
+                seen.append(path)
+                return 200, {}, "[]"
+        Fake().fetch_job_ids("jobs-lever")
+        Fake().fetch_all_ids([("hackathon", None)])
+        Fake().fetch_all_ids()
+        self.assertEqual(len(seen), 3)
+        self.assertTrue(all("is_live=eq.true" in p for p in seen))
+
+    def test_scoped_retire_only_own_shard_prefix(self):
+        retire, _ = pub.plan_retire({"job:1", "hackathon:x"}, set(), "jobs-lever", True)
+        self.assertEqual(retire, ["job:1"])
+
+    def test_rotation_covers_all_and_unswept_rows_never_retire(self):
+        from pipeline import sweep
+        from core import retire
+        entries = [{"platform": "workable", "token": "t%03d" % i} for i in range(10)]
+        seen = set()
+        for day in range(4):
+            part = sweep.rotate_boards(entries, 4, day)
+            self.assertEqual(len(part), 4)
+            seen |= {e["token"] for e in part}
+        self.assertEqual(len(seen), 10)
+        self.assertEqual(sweep.rotate_boards(entries, 0, 5), entries)
+        # rows of a board left out of this run (in registry, not attempted, not read)
+        row = {"platform": "workable", "token": "t009", "is_live": True,
+               "last_seen": "2020-01-01T00:00:00+00:00"}
+        reg = {(e["platform"], e["token"]) for e in entries}
+        stats = retire.apply([row], set(), {("workable", "t000")}, {("workable", "t000")},
+                             reg, "2026-10-19T00:00:00+00:00")
+        self.assertTrue(row["is_live"])
+        self.assertEqual(sum(stats.values()), 0)

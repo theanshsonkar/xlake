@@ -69,6 +69,17 @@ THIN_POSTING_PLATFORMS = {"workable"}
 WD_DETAIL_PER_BOARD = int(os.environ.get("LAKE_WD_DETAIL_PER_BOARD", "40"))
 
 
+def rotate_boards(entries: List[Dict], cap: int, day: int) -> List[Dict]:
+    """Take at most ``cap`` boards, rotating deterministically by ``day`` so
+    every board is swept within ceil(n/cap) runs. Boards left out are neither
+    read nor attempted, so retire.apply can never touch their rows."""
+    if cap <= 0 or len(entries) <= cap:
+        return entries
+    ordered = sorted(entries, key=lambda e: (e.get("platform") or "", e.get("token") or ""))
+    start = (day * cap) % len(ordered)
+    return (ordered + ordered)[start:start + cap]
+
+
 def load_registry(segment: str = None) -> List[Dict]:
     if not os.path.exists(REGISTRY):
         return []
@@ -605,6 +616,13 @@ def main() -> None:
                    if _shards.job_shard_of_platform(r.get("platform")) == shard]
     if LIMIT:
         entries = entries[:LIMIT]
+    max_boards = int(os.environ.get("LAKE_MAX_BOARDS", "0"))
+    if max_boards:
+        n = len(entries)
+        entries = rotate_boards(entries, max_boards,
+                                datetime.now(timezone.utc).toordinal())
+        if len(entries) < n:
+            print("rotation: sweeping {} of {} boards this run".format(len(entries), n))
 
     if not entries and shard:
         # Maintenance run: no boards for this shard, but the guard still

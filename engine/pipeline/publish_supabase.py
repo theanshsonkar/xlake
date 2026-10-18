@@ -348,13 +348,15 @@ class Supabase:
         return ids
 
     def fetch_job_ids(self, shard: str):
-        """Ids of job/internship rows whose extra.platform belongs to ``shard``
+        """LIVE ids (already-retired rows are excluded so they are neither
+        counted nor re-patched) of job/internship rows whose extra.platform
+        belongs to ``shard``
         (filtered client-side so the catch-all shard needs no platform list)."""
         ids, offset, page = set(), 0, 1000
         while True:
             status, hdrs, raw = self._request(
                 "GET", "/%s?select=id,platform:extra->>platform&type=in.(job,internship)"
-                       "&limit=%d&offset=%d" % (TABLE, page, offset),
+                       "&is_live=eq.true&limit=%d&offset=%d" % (TABLE, page, offset),
                 headers={"Range-Unit": "items"})
             rows = json.loads(raw) if raw else []
             for row in rows:
@@ -369,7 +371,7 @@ class Supabase:
         ids, offset, page = set(), 0, 1000
         while True:
             status, hdrs, raw = self._request(
-                "GET", "/%s?select=id%s&limit=%d&offset=%d" % (TABLE, flt, page, offset),
+                "GET", "/%s?select=id%s&is_live=eq.true&limit=%d&offset=%d" % (TABLE, flt, page, offset),
                 headers={"Range-Unit": "items"})
             rows = json.loads(raw) if raw else []
             ids.update(row["id"] for row in rows)
