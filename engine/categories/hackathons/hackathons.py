@@ -21,6 +21,14 @@ from core.paths import OPPORTUNITIES_PATH
 
 USER_AGENT = "Mozilla/5.0 (compatible; OpportunityRadarBot/1.0; +https://opportunity-radar.example)"
 RECONFIRM_WINDOW_DAYS = 7
+
+
+def _stale_days():
+    try:
+        return int(os.environ.get("XLAKE_HACKATHON_STALE_DAYS", "14"))
+    except ValueError:
+        return 14
+
 DEVPOST_MAX_PAGES = 30
 UNSTOP_MAX_PAGES = 30
 HOST_DELAY = 1.5
@@ -1162,6 +1170,10 @@ def merge_hackathons(rows_by_id, successful_sources, lake_path=OPPORTUNITIES_PAT
             hackathon_rows[hackathon_id] = row
 
     successful_sources = set(successful_sources)
+    legacy_ids = {
+        hid for hid, row in hackathon_rows.items()
+        if hid not in current_ids and not row.get("is_live", True) and not row.get("status")
+    }
     for row in hackathon_rows.values():
         if row.get("hackathon_id") in current_ids:
             continue
@@ -1178,6 +1190,22 @@ def merge_hackathons(rows_by_id, successful_sources, lake_path=OPPORTUNITIES_PAT
             row["liveness_reason"] = "not_reconfirmed"
 
     merged = sorted(unkeyed + list(hackathon_rows.values()), key=_hackathon_sort_key)
+    stale_days = _stale_days()
+    for row in merged:
+        if row.get("record_type", "hackathon") != "hackathon":
+            continue
+        if row.get("hackathon_id") in current_ids or row.get("liveness_reason") == "ended_or_removed":
+            continue
+        # Rows no source returned this run: legacy rows (not live, never given a status) and rows
+        # whose last check is older than the stale window are retired so they stop being served.
+        # Age-out applies even when the row's source failed this run.
+        age = _last_seen_age_days(row.get("last_checked_at") or row.get("last_checked") or row.get("last_seen"), now)
+        legacy = row.get("hackathon_id") in legacy_ids
+        if legacy or (age is not None and age > stale_days):
+            row["is_live"] = False
+            row["needs_confirmation"] = False
+            row.setdefault("went_dead_at", now)
+            row["liveness_reason"] = "stale_legacy" if legacy else "stale_age"
     for row in merged:
         if row.get("record_type", "hackathon") != "hackathon":
             continue
