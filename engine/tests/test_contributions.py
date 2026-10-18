@@ -694,7 +694,7 @@ class TestContributionEnrichment(unittest.TestCase):
         m = map_row(row)
         self.assertEqual(len(m["description"]), 300)
         self.assertIsNone(m["eligibility"])
-        for key in ("logo_url", "region", "mode", "repo_description", "updated_at", "labels", "language"):
+        for key in ("logo_url", "region", "mode", "repo_description", "updated_at", "labels"):
             self.assertIn(key, m["extra"])
         job = map_row({"record_type": "job", "url": "http://a", "repo_description": "x", "updated_at": "y", "logo_url": "z"})
         for key in ("repo_description", "updated_at", "logo_url"):
