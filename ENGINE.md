@@ -274,6 +274,9 @@ falsely live. Contribution rows set `record_type='contribution'`.
 
 `parse_programme` now includes an additive, evidence-gated normalization: when a single application date's official evidence quote contains `deadline`, it is recorded as the deadline and is not surfaced as an opening date. Research is collected via `python3 -m categories.research.research` and is not yet wired into the daily sweep.
 
+#### Programme enrichment (deterministic)
+`engine/categories/programme_enrich.py` is applied by `parse_programme` to every programme page: JSON-LD/microdata/OpenGraph first (applicationDeadline/validThrough, offers/amount, logo, description), then regex for deadlines (month names, abbreviations, ordinals, `1/15/2027`, year inferred as the next occurrence), status cues (open / opening_soon / rolling / closed), funding (`$8,110 stipend`, `Fully funded`, `funding_amount_usd` for USD), eligibility sentence plus `intl_eligible` / `levels`, `region` (cues, then TLD), `logo_url`, `organizer_domain`, `application_url`, `description` (<=300) and `deadline_basis`. Junk locations (prose fragments, >40 chars) are dropped. Publish maps placeholders to NULL for programmes (as for hackathons), always sets `extra.programme_status` (default `unknown`) and `extra.deadline_basis`, and stops serving programmes that are `closed` with a past deadline. Directory harvesting for more rows already exists (`categories/hub_seeds.py`, `*/harvest.py`, `generate_seeds` workflow input).
+
 ## Internships and jobs
 
 Internships are collected via the Unstop public feed adapter in

@@ -17,6 +17,7 @@ from typing import Callable, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urljoin, urlparse
 
 from core import pagetext, robots
+from categories import programme_enrich as enrich
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
 
 @dataclass(frozen=True)
@@ -200,6 +201,9 @@ def programme_title_ok(title: str, url: str, category: str = "") -> Tuple[bool, 
     """Apply one data-driven quality gate to a generated programme title."""
     title_text = str(title or "").strip()
     lowered = title_text.casefold()
+    if "|" in title_text or any(mark in title_text for mark in "\u2705\u274c\U0001f7e2\U0001f534"):
+        # Markdown-table rows scraped as one cell ("Jan 5, 2026 | | OPEN | Org | Name").
+        return False, "malformed_title"
     if (_PROGRAMME_ADVICE_TITLE.search(title_text)
             or "how to" in lowered
             or "tips for" in lowered
@@ -234,7 +238,7 @@ MONTHS = (
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December",
 )
-MONTH_PATTERN = "|".join(MONTHS)
+MONTH_PATTERN = "|".join(MONTHS) + "|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sept|Sep|Oct|Nov|Dec"
 APPLICANT_ACTION_TOKENS = (
     "applications open", "apply now", "apply by", "application deadline",
     "applications close", "applications are accepted", "applications accepted",
@@ -253,10 +257,18 @@ APPLICANT_DEADLINE_TOKENS = (
     "application close at", "applications close at", "application closes at",
     "applications closes at", "application closed at", "applications closed at",
     "submission deadline", "deadline to apply", "apply by",
+    "applications close", "application close", "applications closed", "application closed",
+    "closes on", "close on", "closing date", "last date", "last day to apply",
+    "last day for applications", "due date", "due by", "due on", "submit by",
+    "submitted by", "received by", "apply until", "applications until",
+    "open until", "accepted until", "accepting applications until", "available until",
+    "is due", "are due", "deadline",
 )
 _DEADLINE_EXCLUSION_TOKENS = (
     "recommend", "reference", "referee", "letter", "mentor", "mentoring",
     "sign-up", "sign up", "host organi", "organisation sign", "organization sign",
+    "notif", "announce", "decision", "interview", "webinar", "info session",
+    "information session", "orientation", "refund", "payment", "tuition due",
 )
 ORGANIZER_WINDOW_TOKENS = (
     "mentor sign up", "mentors sign up", "mentoring organization",
@@ -268,7 +280,11 @@ FORMAL_PROGRAMME_TOKENS = (
     "mentorship", "mentoring", "fellowship", "internship", "cohort",
     "stipend", "program", "programme",
 )
-ROLLING_TOKENS = ("rolling basis", "applications are rolling", "rolling application", "processed on a rolling basis")
+ROLLING_TOKENS = (
+    "rolling basis", "applications are rolling", "rolling application", "processed on a rolling basis",
+    "rolling admission", "accepted year-round", "accepted year round", "apply year-round",
+    "accepting applications year", "applications year-round", "no deadline", "apply anytime", "apply any time",
+)
 APPLY_LINK_TOKENS = ("apply", "application", "applications", "contributor application")
 _LEXICAL_RELEVANCE_TOKENS = ("application", "apply", "admission", "enrollment", "enrolment", "registration", "deadline", "eligibility", "cohort", "fellowship", "fellows", "programme", "program")
 _CLOSED_PATTERNS = (
@@ -287,7 +303,11 @@ _OPENING_PATTERNS = (
 )
 
 def _month_number(name: str) -> int:
-    return MONTHS.index(name.capitalize()) + 1
+    prefix = name.capitalize()[:3]
+    for index, month in enumerate(MONTHS):
+        if month.startswith(prefix):
+            return index + 1
+    raise ValueError(name)
 
 
 HOP_LINK_TOKENS = (
@@ -401,62 +421,110 @@ def _hop_links(html: str, base_url: str, limit: int = HOP_LINK_LIMIT) -> List[st
     return [url for _, _, url in candidates[:max(0, limit)]]
 
 
-def parse_dates(text: str, nearby_year: Optional[int] = None) -> List[Dict]:
-    """Parse supported dates/ranges into ``start``, ``end`` and exactness."""
+_ORD = r"(?:st|nd|rd|th)?"
+_PAST_HINT = re.compile(r"\b(?:closed|ended|passed|expired|concluded|was|were)\b", re.I)
+
+
+def _infer_date(month: str, day: str, year: Optional[str], nearby_year: Optional[int],
+                today: Optional[date], past_hint: bool) -> Tuple[Optional[date], bool]:
+    """Build a date; infer a missing year (nearby year, else next/last occurrence)."""
+    month_no = _month_number(month) if not str(month).isdigit() else int(month)
+    try:
+        if year:
+            return date(int(year), month_no, int(day)), False
+        if nearby_year is not None:
+            return date(nearby_year, month_no, int(day)), False
+        if today is None:
+            return None, False
+        candidate = date(today.year, month_no, int(day))
+        if past_hint:
+            if candidate > today:
+                candidate = date(today.year - 1, month_no, int(day))
+        elif candidate < today:
+            candidate = date(today.year + 1, month_no, int(day))
+        return candidate, True
+    except ValueError:
+        return None, False
+
+
+def parse_dates(text: str, nearby_year: Optional[int] = None, today: Optional[date] = None,
+                past_hint: Optional[bool] = None) -> List[Dict]:
+    """Parse supported dates/ranges into ``start``, ``end`` and exactness.
+
+    Handles ``Jan 15, 2027``, ``15 January 2027``, ``January 15th``, ISO and
+    numeric dates (``1/15/2027`` US month-first, ``15.01.2027`` day-first).
+    A missing year is taken from ``nearby_year``, else (when ``today`` is given)
+    inferred as the next occurrence, or the last one for past-tense text.
+    """
     results: List[Dict] = []
+    if past_hint is None:
+        past_hint = bool(_PAST_HINT.search(text or ""))
     range_re = re.compile(
-        rf"\b(?P<sm>{MONTH_PATTERN})\s+(?P<sd>\d{{1,2}})\s*(?:[–—-]|\bto\b)\s*"
-        rf"(?P<em>{MONTH_PATTERN})?\s*(?P<ed>\d{{1,2}})(?:,?\s*(?P<year>20\d{{2}}))?\b", re.I)
+        rf"\b(?P<sm>{MONTH_PATTERN})\s+(?P<sd>\d{{1,2}}){_ORD}\s*(?:[–—-]|\bto\b)\s*"
+        rf"(?P<em>{MONTH_PATTERN})?\s*(?P<ed>\d{{1,2}}){_ORD}(?:,?\s*(?P<year>20\d{{2}}))?\b", re.I)
     consumed: List[Tuple[int, int]] = []
 
-    def make(month: str, day: str, year: Optional[str]) -> Optional[date]:
-        actual_year = int(year) if year else nearby_year
-        if actual_year is None:
-            return None
-        try:
-            return date(actual_year, _month_number(month), int(day))
-        except ValueError:
-            return None
+    def add(match, value, exact, inferred=False):
+        item = {"start": value[0], "end": value[1], "quote": match.group(0), "exact": exact, "span": match.span()}
+        if inferred:
+            item["inferred"] = True
+        results.append(item)
+        consumed.append(match.span())
+
+    def free(match) -> bool:
+        return not any(a <= match.start() < b for a, b in consumed)
 
     for match in range_re.finditer(text):
-        start = make(match.group("sm"), match.group("sd"), match.group("year"))
-        end = make(match.group("em") or match.group("sm"), match.group("ed"), match.group("year"))
+        start, inf1 = _infer_date(match.group("sm"), match.group("sd"), match.group("year"), nearby_year, today, past_hint)
+        end, inf2 = _infer_date(match.group("em") or match.group("sm"), match.group("ed"), match.group("year"), nearby_year, today, past_hint)
         if start and end:
-            results.append({"start": start, "end": end, "quote": match.group(0), "exact": True, "span": match.span()})
-            consumed.append(match.span())
+            if end < start and inf1 and inf2:
+                end = date(end.year + 1, end.month, end.day)
+            add(match, (start, end), True, inf1 or inf2)
     iso_re = re.compile(r"\b(?P<year>20\d{2})-(?P<month>\d{2})-(?P<day>\d{2})\b")
     for match in iso_re.finditer(text):
         try:
             value = date(int(match.group("year")), int(match.group("month")), int(match.group("day")))
         except ValueError:
             continue
-        results.append({"start": value, "end": value, "quote": match.group(0), "exact": True, "span": match.span()})
-        consumed.append(match.span())
+        add(match, (value, value), True)
+    numeric_re = re.compile(r"(?<![\d/.])(?P<a>\d{1,2})(?P<sep>[/.])(?P<b>\d{1,2})(?P=sep)(?P<y>20\d{2}|\d{2})(?![\d/])")
+    for match in numeric_re.finditer(text):
+        if not free(match):
+            continue
+        a, b = int(match.group("a")), int(match.group("b"))
+        year = int(match.group("y"))
+        year += 2000 if year < 100 else 0
+        month, day = (b, a) if (match.group("sep") == "." or a > 12) else (a, b)
+        try:
+            value = date(year, month, day)
+        except ValueError:
+            continue
+        add(match, (value, value), True)
     day_first_re = re.compile(
         rf"\b(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)?\s*"
-        rf"(?P<day>\d{{1,2}})\s+(?P<month>{MONTH_PATTERN})\s+(?P<year>20\d{{2}})\b", re.I)
+        rf"(?P<day>\d{{1,2}}){_ORD}\s+(?:of\s+)?(?P<month>{MONTH_PATTERN})(?:,?\s+(?P<year>20\d{{2}}))?\b", re.I)
     for match in day_first_re.finditer(text):
-        if any(a <= match.start() < b for a, b in consumed):
+        if not free(match):
             continue
-        value = make(match.group("month"), match.group("day"), match.group("year"))
+        value, inferred = _infer_date(match.group("month"), match.group("day"), match.group("year"), nearby_year, today, past_hint)
         if value:
-            results.append({"start": value, "end": value, "quote": match.group(0), "exact": True, "span": match.span()})
-            consumed.append(match.span())
-    full_re = re.compile(rf"\b(?P<month>{MONTH_PATTERN})\s+(?P<day>\d{{1,2}}),?\s+(?P<year>20\d{{2}})\b", re.I)
+            add(match, (value, value), bool(match.group("year")), inferred)
+    full_re = re.compile(rf"\b(?P<month>{MONTH_PATTERN})\s+(?P<day>\d{{1,2}}){_ORD},?\s+(?P<year>20\d{{2}})\b", re.I)
     for match in full_re.finditer(text):
-        if any(a <= match.start() < b for a, b in consumed):
+        if not free(match):
             continue
-        value = make(match.group("month"), match.group("day"), match.group("year"))
+        value, _ = _infer_date(match.group("month"), match.group("day"), match.group("year"), None, None, False)
         if value:
-            results.append({"start": value, "end": value, "quote": match.group(0), "exact": True, "span": match.span()})
-            consumed.append(match.span())
-    short_re = re.compile(rf"\b(?P<month>{MONTH_PATTERN})\s+(?P<day>\d{{1,2}})\b", re.I)
+            add(match, (value, value), True)
+    short_re = re.compile(rf"\b(?P<month>{MONTH_PATTERN})\s+(?P<day>\d{{1,2}}){_ORD}\b", re.I)
     for match in short_re.finditer(text):
-        if any(a <= match.start() < b for a, b in consumed):
+        if not free(match):
             continue
-        value = make(match.group("month"), match.group("day"), None)
+        value, inferred = _infer_date(match.group("month"), match.group("day"), None, nearby_year, today, past_hint)
         if value:
-            results.append({"start": value, "end": value, "quote": match.group(0), "exact": False, "span": match.span()})
+            results.append({"start": value, "end": value, "quote": match.group(0), "exact": False, "span": match.span(),
+                            **({"inferred": True} if inferred else {})})
     return sorted(results, key=lambda item: item["span"][0])
 
 
@@ -472,11 +540,12 @@ def _deadline_cue_matches(sentence: str) -> List[Tuple[int, int, str]]:
     return sorted(set(matches), key=lambda item: (item[0], -(item[1] - item[0])))
 
 
-def _deadline_candidate(sentence: str, nearby_year: Optional[int] = None) -> Optional[Dict]:
+def _deadline_candidate(sentence: str, nearby_year: Optional[int] = None, today: Optional[date] = None) -> Optional[Dict]:
     """Return the first non-excluded deadline cue with a nearby date."""
     for cue_start, cue_end, token in _deadline_cue_matches(sentence):
         tail = sentence[cue_end:min(len(sentence), cue_end + 100)]
-        for parsed in parse_dates(tail, nearby_year):
+        past = bool(_PAST_HINT.search(sentence[max(0, cue_start - 30):cue_end] + " " + tail))
+        for parsed in parse_dates(tail, nearby_year, today, past):
             date_start = cue_end + parsed["span"][0]
             before_date = sentence[max(0, date_start - 60):date_start].casefold()
             if any(exclusion in before_date for exclusion in _DEADLINE_EXCLUSION_TOKENS):
@@ -501,15 +570,19 @@ def _year_near(text: str, position: int) -> Optional[int]:
 
 
 def _sentences(text: str) -> Iterable[Tuple[int, int, str]]:
-    for match in re.finditer(r"[^.!?\n]+(?:[.!?]|$)", text):
+    for match in re.finditer(r"(?:[^.!?\n]|(?<=\d)\.(?=\d))+(?:[.!?]|$)", text):
         yield match.start(), match.end(), match.group(0).strip()
 
 
-def detect_applicant_windows(text: str) -> List[Dict]:
+_ABBREV_DOT = re.compile(r"\b(Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sept|Sep|Oct|Nov|Dec)\.(?=\s*\d)")
+
+
+def detect_applicant_windows(text: str, today: Optional[date] = None) -> List[Dict]:
     """Find dated applicant windows while rejecting organizer/mentor dates."""
     candidates: List[Dict] = []
-    normalized = text.replace("\xa0", " ")
-    for start, end, sentence in _sentences(normalized):
+    normalized = _ABBREV_DOT.sub(r"\1", text.replace("\xa0", " "))
+    sentence_list = list(_sentences(normalized))
+    for index, (start, end, sentence) in enumerate(sentence_list):
         lowered = sentence.lower()
         # Deadline cues are stricter than the older action vocabulary: a date
         # must follow the cue in this sentence, and organizer language near it
@@ -519,15 +592,25 @@ def detect_applicant_windows(text: str) -> List[Dict]:
         deadline_cues = _deadline_cue_matches(candidate_sentence)
         if deadline_cues:
             nearby_year = _year_near(normalized, start)
-            candidate = _deadline_candidate(candidate_sentence, nearby_year)
+            candidate = _deadline_candidate(candidate_sentence, nearby_year, today)
+            if not candidate and not organizer_positions and index + 1 < len(sentence_list):
+                # "Application deadline" / "January 15, 2027" rendered as two table cells.
+                following = sentence_list[index + 1][2]
+                if len(following) <= 90 and len(candidate_sentence) <= 60:
+                    combined = candidate_sentence.rstrip(".") + ": " + following
+                    candidate = _deadline_candidate(combined, nearby_year, today)
+                    if candidate:
+                        candidate_sentence = combined
             if not candidate:
                 continue
             parsed = candidate["parsed"]
             candidates.append({
                 "start": parsed["start"], "end": parsed["end"],
                 "quote": candidate_sentence.strip() if candidate_sentence else parsed["quote"],
-                "date_quote": parsed["quote"], "exact": parsed["exact"] or nearby_year is not None,
+                "date_quote": parsed["quote"],
+                "exact": parsed["exact"] or nearby_year is not None or bool(parsed.get("inferred")),
                 "token": candidate["token"], "deadline_cue": True,
+                "basis": "applicant_deadline_inferred_year" if parsed.get("inferred") else "applicant_deadline",
             })
             continue
         positive = [token for token in APPLICANT_ACTION_TOKENS if token in lowered]
@@ -536,22 +619,39 @@ def detect_applicant_windows(text: str) -> List[Dict]:
         # A page may put an applicant event and an organizer event in one
         # rendered block. Only the text attached to the applicant token is a
         # candidate; an organizer-only block never reaches this point.
-        dates = parse_dates(candidate_sentence, _year_near(normalized, start))
+        dates = parse_dates(candidate_sentence, _year_near(normalized, start), today)
         if not dates:
             # Dates can sit on an adjacent line or heading, but remain close.
             left, right = max(0, start - 120), min(len(normalized), end + 120)
             context = normalized[left:right]
             if any(token in context.lower() for token in ORGANIZER_WINDOW_TOKENS):
                 continue
-            dates = parse_dates(context, _year_near(normalized, start))
+            dates = parse_dates(context, _year_near(normalized, start), today)
         for parsed in dates:
             quote = candidate_sentence.strip() if candidate_sentence else parsed["quote"]
-            candidates.append({"start": parsed["start"], "end": parsed["end"], "quote": quote, "date_quote": parsed["quote"], "exact": parsed["exact"], "token": positive[0]})
+            candidates.append({"start": parsed["start"], "end": parsed["end"], "quote": quote, "date_quote": parsed["quote"], "exact": parsed["exact"], "token": positive[0], "basis": "application_window"})
     # Preserve order and avoid a duplicated date discovered through adjacent context.
     unique = {}
     for candidate in candidates:
         unique[(candidate["start"], candidate["end"], candidate["quote"])] = candidate
     return list(unique.values())
+
+
+_OPEN_NOW_PATTERNS = (
+    re.compile(r"\bapplications?\s+(?:are\s+|is\s+)?(?:now\s+|currently\s+)?open\b(?!\s+(?:on|in|from|soon|for\s+(?:the\s+)?(?:next|upcoming)))", re.I),
+    re.compile(r"\b(?:now|currently)\s+(?:accepting|taking)\s+applications?\b", re.I),
+    re.compile(r"\bcall\s+for\s+applications?\s+(?:is\s+)?(?:now\s+)?open\b", re.I),
+    re.compile(r"\bapply\s+now\s+for\b", re.I),
+)
+_OPEN_NEGATION = re.compile(r"\b(?:not|no\s+longer|never|until|once|when|will|soon|closed|were|was)\b", re.I)
+
+
+def _open_now_sentence(sentence: str) -> bool:
+    return any(p.search(sentence) for p in _OPEN_NOW_PATTERNS) and not _OPEN_NEGATION.search(sentence)
+
+
+def _open_now(text: str) -> bool:
+    return any(_open_now_sentence(sentence) for _, _, sentence in _sentences(text))
 
 
 def classify_status(text: str, windows: List[Dict], today: date, formal_programme: bool, application_url: Optional[str]) -> str:
@@ -566,6 +666,8 @@ def classify_status(text: str, windows: List[Dict], today: date, formal_programm
         if opening <= today <= closing:
             return "open"
         if opening > today and window.get("exact"):
+            if window.get("deadline_cue") and _open_now(text):
+                return "open"
             return "opening_soon"
     return "non_actionable"
 
@@ -757,6 +859,8 @@ def _lexical_status(text: str, today: date) -> Tuple[Optional[str], Optional[str
                 closed = bool(_CLOSED_CONTEXT_PATTERN.search(nearby))
         if closed:
             return "closed", _clean_quote(sentence)
+        if _open_now_sentence(sentence):
+            return "open", _clean_quote(sentence)
         if not any(pattern.search(sentence) for pattern in _OPENING_PATTERNS):
             continue
         # Explicit month/year signals are only opening-soon evidence when they
@@ -827,6 +931,44 @@ def _base(seed: Dict, checked: str, evidence: Dict, config: ProgrammeConfig) -> 
     return {"record_type": "programme", "category": config.category, "opportunity_type": config.opportunity_type, "programme_id": seed["programme_id"], "programme_name": seed["programme_name"], "organizer": seed["organizer"], "official_url": seed["official_url"], "application_url": None, "programme_status": "non_actionable", "opening_date": None, "deadline": None, "location": "not_stated", "remote": None, "international_eligibility": "needs_confirmation", "funding": "not_stated", "eligibility": "needs_confirmation", "official_evidence": evidence, "last_checked_at": checked, "source_confirmation": "official_source", "source_mechanism": "official_html"}
 
 
+def _apply_enrichment(record: Dict, evidence: Dict, enriched: Dict, seed: Dict,
+                      resolved_apply: Optional[str], apply_link, window: Optional[Dict]) -> None:
+    """Copy extracted facts into a record, with quotes as evidence where we have them."""
+    url = seed["official_url"]
+    for key in ("description", "region", "logo_url", "organizer_domain", "levels",
+                "funding_amount_usd", "start_date", "end_date"):
+        if enriched.get(key):
+            record[key] = enriched[key]
+    if "intl_eligible" in enriched:
+        record["intl_eligible"] = enriched["intl_eligible"]
+        if enriched["intl_eligible"] is True and record.get("international_eligibility") != "confirmed":
+            record["international_eligibility"] = "confirmed"
+    if enriched.get("funding"):
+        record["funding"] = enriched["funding"]
+        quote = enriched.get("_funding_quote")
+        if quote and _evidence(quote, url):
+            evidence["funding"] = _evidence(quote, url)
+    if enriched.get("eligibility"):
+        record["eligibility"] = enriched["eligibility"]
+        quote = enriched.get("_eligibility_quote") or enriched["eligibility"]
+        if _evidence(quote, url):
+            evidence["eligibility"] = _evidence(quote, url)
+    if enriched.get("location"):
+        record["location"] = enriched["location"]
+        if enriched.get("remote"):
+            record["remote"] = True
+    if not record.get("application_url"):
+        record["application_url"] = resolved_apply or enriched.get("application_url")
+    if record.get("application_url") and "application_url" not in evidence:
+        label = apply_link[0] if apply_link else enriched.get("_application_label")
+        if label and _evidence(label, record["application_url"]):
+            evidence["application_url"] = _evidence(label, record["application_url"])
+    if window:
+        record["deadline_basis"] = window.get("basis") or ("applicant_deadline" if window.get("deadline_cue") else "application_window")
+    else:
+        record.setdefault("deadline_basis", "unknown")
+
+
 def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None, final_url: Optional[str] = None, *, config: ProgrammeConfig) -> Tuple[Optional[Dict], Dict]:
     """Run the same extraction and actionability pipeline for every seed."""
     checked_at = checked_at or datetime.now(timezone.utc)
@@ -834,12 +976,24 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
     text, links = _text(html)
     if not text.strip():
         return None, _observation(seed, checked, "failed", "empty or unparsable official response")
-    apply_link = next(((label, href) for label, href in links if any(token in (label or "").lower() for token in APPLY_LINK_TOKENS)), None)
-    resolved_apply = _application_url(seed["official_url"], apply_link[1], final_url) if apply_link else None
+    today = checked_at.date()
+    structured = enrich.parse_structured(html, final_url or seed["official_url"])
+    best_apply = enrich.find_application_link(links, seed["official_url"], final_url)
+    apply_link = best_apply or next(((label, href) for label, href in links if any(token in (label or "").lower() for token in APPLY_LINK_TOKENS)), None)
+    resolved_apply = best_apply[1] if best_apply else (_application_url(seed["official_url"], apply_link[1], final_url) if apply_link else None)
     formal = any(token in text.lower() for token in FORMAL_PROGRAMME_TOKENS)
-    windows = detect_applicant_windows(text)
-    status = classify_status(text, windows, checked_at.date(), formal, resolved_apply)
-    lexical_status, lexical_quote = _lexical_status(text, checked_at.date()) if status == "non_actionable" else (None, None)
+    windows = detect_applicant_windows(text, today)
+    structured_deadline = structured.get("deadline")
+    if structured_deadline:
+        sd = date.fromisoformat(structured_deadline)
+        windows.insert(0, {
+            "start": sd, "end": sd, "exact": True, "token": "structured_data", "deadline_cue": True,
+            "basis": "structured_data", "date_quote": structured_deadline,
+            "quote": "Application deadline {} {}, {} (page structured data: {})".format(
+                MONTHS[sd.month - 1], sd.day, sd.year, structured.get("deadline_field", "deadline")),
+        })
+    status = classify_status(text, windows, today, formal, resolved_apply)
+    lexical_status, lexical_quote = _lexical_status(text, today) if status == "non_actionable" else (None, None)
     if lexical_status:
         status = lexical_status
     # Explicit dated deadlines are still useful closed observations even where
@@ -848,9 +1002,10 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
         deadline_quote = _quote_with(text, APPLICANT_DEADLINE_TOKENS, deadline_cues=True)
         if deadline_quote:
             quote_position = text.casefold().find(deadline_quote.casefold())
-            deadline = parse_dates(deadline_quote, _year_near(text, quote_position))
-            if deadline and deadline[0]["end"] < checked_at.date():
-                status, windows = "closed", [{"start": deadline[0]["start"], "end": deadline[0]["end"], "quote": deadline_quote, "date_quote": deadline[0]["quote"], "exact": True, "token": APPLICANT_DEADLINE_TOKENS[0]}]
+            deadline = parse_dates(deadline_quote, _year_near(text, quote_position), today)
+            if deadline and deadline[0]["end"] < today:
+                status, windows = "closed", [{"start": deadline[0]["start"], "end": deadline[0]["end"], "quote": deadline_quote, "date_quote": deadline[0]["quote"], "exact": True, "token": APPLICANT_DEADLINE_TOKENS[0], "basis": "applicant_deadline"}]
+    enriched = enrich.enrich_fields(html, text, seed["official_url"], final_url, links, structured)
     if status not in ("open", "rolling", "opening_soon"):
         evidence = {}
         if windows and status == "closed":
@@ -881,6 +1036,7 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
             record["deadline"] = None
             record["needs_confirmation"] = True
             record["is_live"] = False
+            _apply_enrichment(record, evidence, enriched, seed, resolved_apply, apply_link, None)
             return record, _observation(seed, checked, "needs_confirmation", "official formal programme page; current status or deadline is not stated", evidence)
         return None, _observation(seed, checked, status, "no actionable applicant window" if status == "non_actionable" else "official applicant deadline passed", evidence)
     # Every surfaced state must retain the registry's official URL. Rolling
@@ -915,18 +1071,18 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
                 record["deadline"] = parsed_date
                 if not opening_signal:
                     record["opening_date"] = None
-    funding = _quote_with(text, ("stipend", "paid", "unpaid", "funded", "$"))
-    remote = _quote_with(text, ("remote",), 3)
     international = _quote_with(text, ("worldwide", "international"), 3)
-    eligibility = _quote_with(text, ("eligibility", "eligible", "who can apply"), 4)
-    if funding:
-        record["funding"], evidence["funding"] = funding, _evidence(funding, seed["official_url"])
-    if remote:
-        record["location"], record["remote"], evidence["location"], evidence["remote"] = remote, True, _evidence(remote, seed["official_url"]), _evidence(remote, seed["official_url"])
     if international:
         record["international_eligibility"], evidence["international_eligibility"] = "confirmed", _evidence(international, seed["official_url"])
-    if eligibility:
-        record["eligibility"], evidence["eligibility"] = eligibility, _evidence(eligibility, seed["official_url"])
+    legacy_eligibility = _quote_with(text, ("eligibility", "eligible", "who can apply"), 4)
+    if legacy_eligibility and not enriched.get("eligibility"):
+        enriched["eligibility"], enriched["_eligibility_quote"] = enrich.truncate(legacy_eligibility, 200), legacy_eligibility
+    _apply_enrichment(record, evidence, enriched, seed, resolved_apply, apply_link, window)
+    if status == "rolling":
+        record["deadline_basis"] = "rolling"
+    if status == "open" and window is None:
+        # A bare "applications are open" sentence has no date to confirm.
+        record["needs_confirmation"] = True
     return record, _observation(seed, checked, "actionable", "generic evidence-based applicant window", evidence)
 
 
@@ -1208,6 +1364,26 @@ def retire_orphans(category: str, current_seed_urls: Iterable[str], lake_rows: L
     return lake_rows
 
 
+def retire_closed(category: str, lake_rows: List[Dict], today: date, now: str) -> int:
+    """Stop serving programmes that are closed with a deadline already past."""
+    retired = 0
+    for row in lake_rows:
+        if (row.get("record_type") != "programme" or row.get("category") != category
+                or row.get("programme_status") != "closed"):
+            continue
+        try:
+            deadline = date.fromisoformat(str(row.get("deadline") or ""))
+        except ValueError:
+            continue
+        if deadline < today and (row.get("is_live") or row.get("needs_confirmation")):
+            row["is_live"], row["needs_confirmation"] = False, False
+            row.setdefault("went_dead_at", now)
+            row["hidden_reason"] = row.get("hidden_reason") or "closed_deadline_passed"
+            retired += 1
+    print("retire_closed {}: retired={}".format(category, retired), flush=True)
+    return retired
+
+
 def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake_path: str = OPPORTUNITIES_PATH, observations_path: str = None, now: Optional[str] = None) -> List[Dict]:
     now = now or datetime.now(timezone.utc).isoformat(timespec="seconds")
     lake = _load_json(lake_path, [])
@@ -1221,6 +1397,16 @@ def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake
         # explicitly non-live until a status is confirmed.
         if record.get("needs_confirmation"):
             if old:
+                if old.get("is_live") is not True and old.get("programme_status") != "closed":
+                    # Still uncertain: refresh facts without changing liveness.
+                    first_seen = old.get("first_seen", now)
+                    old.update(record)
+                    old.update({"first_seen": first_seen, "last_seen": now, "is_live": False})
+                else:
+                    # Never overturn a confirmed state; only fill facts we lacked.
+                    for key in enrich.ENRICH_KEYS:
+                        if record.get(key) not in (None, "", []) and old.get(key) in (None, "", [], "not_stated", "needs_confirmation"):
+                            old[key] = record[key]
                 continue
             record = dict(record)
             record.update({"first_seen": now, "last_seen": now, "is_live": False})
@@ -1254,6 +1440,19 @@ def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake
     for row in programme_rows.values():
         if row.get("official_url") in successful_sources and row.get("programme_id") not in current_ids and row.get("is_live", True):
             row["is_live"], row["went_dead_at"] = False, now
+    closed_by_url = {o["official_url"]: o for o in observed if o.get("state") == "closed" and o.get("official_url")}
+    for row in programme_rows.values():
+        observation = closed_by_url.get(row.get("official_url"))
+        if observation is None or row.get("programme_id") in current_ids:
+            continue
+        # The official page now says applications are closed: stop serving it.
+        row["programme_status"] = "closed"
+        row["is_live"], row["needs_confirmation"] = False, False
+        row.setdefault("went_dead_at", now)
+        quote = ((observation.get("official_evidence") or {}).get("deadline") or {}).get("quote")
+        parsed = parse_dates(quote or "", None)
+        if parsed and not row.get("deadline"):
+            row["deadline"] = parsed[-1]["end"].isoformat()
     merged = jobs + list(programme_rows.values())
     _atomic_json(lake_path, merged)
     prior = _load_json(observations_path, [])
@@ -1544,9 +1743,14 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
                     stats["page_noun_accepted"] += 1
                 record, observation = parse_programme(seed, html, checked_at, final_url, config=config)
                 if fetch_succeeded:
+                    first_record = record
                     record, observation = _follow_hops(
                         seed, html, final_url, record, observation, fetch, checked_at, config, hop_budget,
                     )
+                    if record is not None and first_record is not None and record is not first_record:
+                        for key in enrich.ENRICH_KEYS:
+                            if first_record.get(key) not in (None, "", []) and record.get(key) in (None, "", [], "not_stated", "needs_confirmation"):
+                                record[key] = first_record[key]
                 if observation.get("state") == "failed":
                     outcome = "empty"
                 else:
@@ -1612,6 +1816,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     for current_item in records + observations:
         current_seed_urls.extend(_programme_row_urls(current_item))
     merged = retire_orphans(config.category, current_seed_urls, merged, now)
+    retire_closed(config.category, merged, (checked_at or datetime.now(timezone.utc)).date(), now)
     _atomic_json(lake_path, merged)
     verification_now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     merged = apply_verifications(merged, load_verifications(config.verifications_path), verification_now, config=config)
@@ -1691,7 +1896,7 @@ def _follow_hops(seed: Dict, html: str, final_url: Optional[str], record: Option
             record is not None
             and record.get("needs_confirmation")
             and record.get("deadline") is None
-            and record.get("programme_status") is None
+            and record.get("programme_status") in (None, "open")
         )
     )
     if not html or observation.get("state") == "failed" or not first_page_needs_hop:

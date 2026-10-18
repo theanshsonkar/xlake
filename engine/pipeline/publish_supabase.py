@@ -41,6 +41,7 @@ Environment: ``SUPABASE_URL``, ``SUPABASE_SERVICE_KEY``.
 from __future__ import annotations
 
 import argparse
+import datetime
 import hashlib
 import json
 import os
@@ -52,6 +53,7 @@ import urllib.request
 from pathlib import Path
 
 from core import shards
+from categories.programme_enrich import clean_location
 
 LAKE_PATH = Path("data/lake/opportunities.json")
 TABLE = "opportunities"
@@ -70,6 +72,13 @@ HACKATHON_ONLY_KEYS = {
 # Placeholders that must publish as NULL for hackathons.
 HACKATHON_PLACEHOLDERS = {"not_stated", "needs_confirmation", "unknown", "n/a", "none"}
 HACKATHON_DESCRIPTION_MAX = 300
+# Hackathon-only keys that programmes also publish.
+PROGRAMME_SHARED_KEYS = {"logo_url", "region", "organizer_domain", "deadline_basis"}
+# Programme-only keys (never published for jobs/internships/hackathons).
+PROGRAMME_ONLY_KEYS = {"funding_amount_usd", "intl_eligible", "levels"}
+# Programmes and hackathons share the placeholder->NULL rules.
+PLACEHOLDER_NULL_TYPES = {"hackathon", "programme"}
+DESCRIPTION_MAX_TYPES = {"hackathon", "programme"}
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -87,7 +96,7 @@ EXTRA_KEYS = [
     "participants", "mode", "region", "organizer_domain", "deadline_basis",
     # programmes
     "organizer", "programme_status", "opening_date", "opportunity_type",
-    "international_eligibility",
+    "international_eligibility", "funding_amount_usd", "intl_eligible", "levels",
     # provenance (all types)
     "source_mechanism", "source_confirmation", "official_url",
     "application_url",
@@ -105,7 +114,18 @@ def record_type(r: dict) -> str:
     return "job"
 
 
+def _closed_and_past(r: dict) -> bool:
+    """Programme whose status is closed and whose deadline is already past."""
+    if r.get("record_type") != "programme" or r.get("programme_status") != "closed":
+        return False
+    deadline = r.get("deadline")
+    return bool(isinstance(deadline, str) and DATE_RE.match(deadline)
+                and deadline < datetime.date.today().isoformat())
+
+
 def is_serving(r: dict) -> bool:
+    if _closed_and_past(r):
+        return False
     return r.get("is_live") is True or r.get("needs_confirmation") is True
 
 
@@ -158,15 +178,29 @@ def map_row(r: dict) -> dict:
 
     extra = {}
     for k in EXTRA_KEYS:
-        if k in HACKATHON_ONLY_KEYS and t != "hackathon":
+        if k in HACKATHON_ONLY_KEYS and t != "hackathon" and not (
+                t == "programme" and k in PROGRAMME_SHARED_KEYS):
+            continue
+        if k in PROGRAMME_ONLY_KEYS and t != "programme":
             continue
         v = r.get(k)
         if v not in (None, "", []):
+            if t == "programme" and isinstance(v, str) and v.strip().casefold() in HACKATHON_PLACEHOLDERS:
+                continue
             extra[k] = v
+    if t == "programme":
+        extra["programme_status"] = r.get("programme_status") or "unknown"
+        extra.setdefault("deadline_basis", "unknown")
 
     eligibility = _first(r.get("eligibility"), r.get("international_eligibility"))
     funding = r.get("funding")
-    if t == "hackathon":
+    location = r.get("location")
+    if t == "programme":
+        # Real eligibility text only: placeholders and the bare "confirmed"
+        # international flag are not eligibility.
+        eligibility = _first(r.get("eligibility"))
+        location = clean_location(location)
+    if t in PLACEHOLDER_NULL_TYPES:
         if str(eligibility or "").strip().casefold() in HACKATHON_PLACEHOLDERS:
             eligibility = None
         if str(funding or "").strip().casefold() in HACKATHON_PLACEHOLDERS:
@@ -180,7 +214,7 @@ def map_row(r: dict) -> dict:
                         r.get("organizer"), r.get("repo")),
         "company": _first(r.get("company_name"), r.get("company"),
                           r.get("organizer")),
-        "location": r.get("location"),
+        "location": location,
         "location_bucket": r.get("location_bucket"),
         "url": _first(r.get("url"), r.get("official_url"),
                       r.get("application_url")),
@@ -193,7 +227,7 @@ def map_row(r: dict) -> dict:
         "verified": verified,
         "description": _truncate(
             r.get("description"),
-            HACKATHON_DESCRIPTION_MAX if t == "hackathon" else 200),
+            HACKATHON_DESCRIPTION_MAX if t in DESCRIPTION_MAX_TYPES else 200),
         "deadline": deadline,
         "eligibility": eligibility,
         "funding": funding,

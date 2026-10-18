@@ -335,8 +335,10 @@ class TestGenericProgrammePipeline(unittest.TestCase):
                 self.assertIsNotNone(record)
                 self.assertEqual(record["programme_status"], "rolling")
                 self.assertEqual(record["application_url"], "https://fellowship.mlh.io/apply")
-                for field in ("programme_status", "application", "funding", "location", "eligibility"):
+                for field in ("programme_status", "application", "funding", "eligibility"):
                     self.assertTrue(record["official_evidence"][field])
+                # Prose fragments ("Our program was designed to be remote...") are never a location.
+                self.assertNotIn("designed", record["location"])
             elif fixture in ("gsoc.html", "outreachy.html", "lfx.html"):
                 self.assertIsNotNone(record)
                 self.assertTrue(record["needs_confirmation"])
@@ -402,7 +404,6 @@ class TestGenericProgrammePipeline(unittest.TestCase):
             "mentoring organization sign-up opens February 26, 2026 at 4 pm UTC",
             "Recommendation letter deadline is Thursday, December 3, 2026 at noon ET",
             "We welcome applications on a rolling basis.",
-            "deadline (September 19)",
         )
         for phrase in negative_cases:
             with self.subTest(phrase=phrase):

@@ -28,7 +28,7 @@ class TestResearchProgrammeCategory(unittest.TestCase):
         self.assertEqual(record["record_type"], "programme")
         self.assertEqual(record["category"], "research")
         self.assertEqual(record["opportunity_type"], "research_programme")
-        self.assertEqual(record["programme_status"], "opening_soon")
+        self.assertEqual(record["programme_status"], "open")
         self.assertEqual(record["deadline"], "2026-09-16")
         self.assertIn("deadline", record["official_evidence"])
         self.assertIn("application", record["official_evidence"])
