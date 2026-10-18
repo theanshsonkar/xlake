@@ -51,6 +51,8 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+from core import shards
+
 LAKE_PATH = Path("data/lake/opportunities.json")
 TABLE = "opportunities"
 UPSERT_BATCH = 500
@@ -199,8 +201,33 @@ def map_row(r: dict) -> dict:
     }
 
 
-def build_serving(lake: list) -> list:
-    return [map_row(r) for r in lake if is_serving(r)]
+def build_serving(lake: list, category: str = None) -> list:
+    return [map_row(r) for r in lake if is_serving(r)
+            and (category is None or shards.shard_of(r) == category)]
+
+
+RETIRE_GUARD_RATIO = 0.5
+RETIRE_GUARD_MIN = 20
+_SCOPE_ID_PREFIX = {"hackathon": "hackathon:", "contribution": "contribution:",
+                    "programme": "programme:"}
+
+
+def plan_retire(existing, serving_ids, category: str = None,
+                force: bool = False):
+    """Return (ids_to_retire, error). With ``category`` only ids that belong
+    to that category's record types (by id prefix) can ever be retired, so a
+    scoped run cannot touch another category even if ``existing`` leaked."""
+    to_retire = set(existing) - set(serving_ids)
+    if category is not None:
+        prefixes = tuple(_SCOPE_ID_PREFIX[t] for t, _ in shards.SHARD_SCOPES[category])
+        to_retire = {i for i in to_retire if i.startswith(prefixes)}
+    err = None
+    if (not force and len(existing) >= RETIRE_GUARD_MIN
+            and len(to_retire) > len(existing) * RETIRE_GUARD_RATIO):
+        err = ("would soft-retire %d of %d existing rows (>%d%%); pass "
+               "--force-retire if intended"
+               % (len(to_retire), len(existing), int(RETIRE_GUARD_RATIO * 100)))
+    return sorted(to_retire), err
 
 
 # --------------------------------------------------------------------------- #
@@ -236,12 +263,27 @@ class Supabase:
             e.body_text = e.read().decode(errors="replace")[:300]
             raise
 
-    def fetch_all_ids(self):
-        """Return the set of all ids currently in the table (paginated)."""
+    def fetch_all_ids(self, scopes=None):
+        """Return the set of ids currently in the table (paginated).
+
+        ``scopes`` = [(type, category|None)] restricts the query server-side
+        (used by --category so other categories' ids are never even listed).
+        """
+        if scopes is None:
+            return self._fetch_ids("")
+        ids = set()
+        for t, c in scopes:
+            f = "&type=eq.%s" % urllib.parse.quote(t, safe="")
+            if c:
+                f += "&category=eq.%s" % urllib.parse.quote(c, safe="")
+            ids |= self._fetch_ids(f)
+        return ids
+
+    def _fetch_ids(self, flt):
         ids, offset, page = set(), 0, 1000
         while True:
             status, hdrs, raw = self._request(
-                "GET", "/%s?select=id&limit=%d&offset=%d" % (TABLE, page, offset),
+                "GET", "/%s?select=id%s&limit=%d&offset=%d" % (TABLE, flt, page, offset),
                 headers={"Range-Unit": "items"})
             rows = json.loads(raw) if raw else []
             ids.update(row["id"] for row in rows)
@@ -313,8 +355,14 @@ def main():
     ap.add_argument("--execute", action="store_true",
                     help="perform writes (default: dry-run, writes nothing)")
     ap.add_argument("--samples", type=int, default=3)
+    ap.add_argument("--category", choices=list(shards.SHARD_SCOPES),
+                    help="publish and soft-retire ONLY this category's rows")
+    ap.add_argument("--force-retire", action="store_true",
+                    help="bypass the >50%% soft-retire guard")
     args = ap.parse_args()
     dry = not args.execute
+    cat = args.category
+    scopes = shards.SHARD_SCOPES[cat] if cat else None
 
     if not LAKE_PATH.exists():
         print("ERROR: lake not found at %s — restore it from S3 first "
@@ -322,12 +370,17 @@ def main():
               % (LAKE_PATH, LAKE_PATH), file=sys.stderr)
         return 2
 
-    lake = json.load(open(LAKE_PATH))
-    mapped = build_serving(lake)
+    if cat:
+        lake = json.load(open(LAKE_PATH))
+    else:
+        # whole lake = main + any local shards (shards override main copies)
+        lake = shards.load_whole_lake(str(LAKE_PATH))
+    mapped = build_serving(lake, cat)
     by_type, nc, uniq, dups = summarize(mapped)
 
     print("=" * 64)
-    print("MODE: %s" % ("DRY-RUN (nothing written)" if dry else "EXECUTE"))
+    print("MODE: %s%s" % ("DRY-RUN (nothing written)" if dry else "EXECUTE",
+                         " [category=%s]" % cat if cat else ""))
     print("lake rows total        : %d" % len(lake))
     print("serving rows to publish: %d" % len(mapped))
     print("-" * 64)
@@ -364,9 +417,9 @@ def main():
         print("-" * 64)
         if url and key:
             try:
-                existing = Supabase(url, key).fetch_all_ids()
+                existing = Supabase(url, key).fetch_all_ids(scopes)
                 serving_ids = {m["id"] for m in mapped}
-                to_retire = existing - serving_ids
+                to_retire, _ = plan_retire(existing, serving_ids, cat, True)
                 print("Supabase reachable (read-only). existing rows: %d"
                       % len(existing))
                 print("would upsert: %d ; would soft-retire (is_live=false): %d"
@@ -389,12 +442,15 @@ def main():
               file=sys.stderr)
         return 2
     client = Supabase(url, key)
-    existing = client.fetch_all_ids()
+    existing = client.fetch_all_ids(scopes)
     serving_ids = {m["id"] for m in mapped}
+    to_retire, guard_err = plan_retire(existing, serving_ids, cat, args.force_retire)
+    if guard_err:
+        print("ERROR: " + guard_err, file=sys.stderr)
+        return 3
     for i in range(0, len(mapped), UPSERT_BATCH):
         client.upsert(mapped[i:i + UPSERT_BATCH])
         print("upserted %d/%d" % (min(i + UPSERT_BATCH, len(mapped)), len(mapped)))
-    to_retire = sorted(existing - serving_ids)
     skipped = client.retire(to_retire) if to_retire else 0
     print("retire skipped: %d" % skipped)
     print("done. upserted=%d soft_retired=%d" % (len(mapped), len(to_retire)))

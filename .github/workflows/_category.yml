@@ -1,0 +1,213 @@
+name: _category
+
+# Reusable single-category pipeline. Restores ONLY this category's lake shard
+# from S3, runs the collector, writes the shard back, publishes only this
+# category to Supabase and commits only this category's operational files.
+# Independent per category: concurrency group xlake-cat-<category>; it does NOT
+# share xlake-lake-writer with the jobs sweep (jobs/internships live in the
+# main lake, categories live in shards).
+on:
+  workflow_call:
+    inputs:
+      category:
+        description: "hackathons|fellowships|scholarships|grants|research|open_source|startup|community"
+        required: true
+        type: string
+      timeout:
+        description: "Job timeout in minutes"
+        required: false
+        type: number
+        default: 25
+      dry_run:
+        description: "Run the collector only: no S3 write, no publish, no commit"
+        required: false
+        type: boolean
+        default: false
+      retire_force:
+        description: "Comma-separated categories allowed to bypass retirement + drop guards (or 'all')"
+        required: false
+        type: string
+        default: ''
+      generate_seeds:
+        description: "Regenerate this category's hub seeds before collecting"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: ${{ inputs.timeout }}
+    concurrency:
+      group: xlake-cat-${{ inputs.category }}
+      cancel-in-progress: false
+    env:
+      CAT: ${{ inputs.category }}
+      DRY_RUN: ${{ inputs.dry_run }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+      AWS_DEFAULT_REGION: ap-south-1
+      XLAKE_GENERATED_SEEDS_DIR: ${{ github.workspace }}/engine/data/operations/generated_seeds
+      XLAKE_RETIRE_FORCE: ${{ inputs.retire_force }}
+      GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+    defaults:
+      run:
+        working-directory: engine
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # The engine is stdlib-only (no requirements file), so there is no pip
+      # cache to restore. The engine's raw HTTP cache is a recording, not a
+      # read-through cache (core/cache.py), so caching it would not save fetches.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore shard from S3
+        run: |
+          mkdir -p data/lake/shards
+          KEY="lake/shards/$CAT.json"
+          if aws s3api head-object --bucket "$AWS_S3_BUCKET" --key "$KEY" >/dev/null 2>head.err; then
+            aws s3 cp "s3://$AWS_S3_BUCKET/$KEY" "data/lake/shards/$CAT.json"
+            python3 -m pipeline.shard_run stage --category "$CAT"
+          elif grep -qE "404|Not Found" head.err; then
+            echo "::warning::shard $CAT missing in S3 - deriving once from the full lake (run migrate-shards to create all shards)"
+            aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities.json" data/lake/opportunities.json
+            python3 -m pipeline.shard_run stage --category "$CAT" --from-full
+          else
+            cat head.err; exit 1
+          fi
+
+      - name: Generate hub seeds
+        if: ${{ inputs.generate_seeds }}
+        env:
+          XLAKE_HUB_MAX_PAGES: "400"
+          XLAKE_HUB_MAX_PAGES_PER_HOST: "40"
+        run: |
+          mkdir -p data/operations/generated_seeds
+          HUB="$CAT"; [ "$CAT" = startup ] && HUB=startup_founder
+          if [ "$CAT" != hackathons ]; then
+            python3 -u -m categories.hub_seeds --category "$HUB" --out "data/operations/generated_seeds/$HUB.json"
+          fi
+
+      - name: Run collector
+        run: |
+          case "$CAT" in
+            hackathons)
+              python3 -u -m categories.hackathons.hackathons ;;
+            open_source)
+              python3 -u -m categories.open_source.programmes
+              python3 -u -m categories.open_source.contributions ;;
+            fellowships)
+              python3 -u -m categories.fellowships.fellowships
+              python3 -u -m categories.fellowships.fellowships --apply-verifications ;;
+            scholarships)
+              python3 -u -m categories.scholarships.scholarships
+              python3 -u -m categories.scholarships.scholarships --apply-verifications ;;
+            grants)
+              python3 -u -m categories.grants.grants
+              python3 -u -m categories.grants.grants --apply-verifications ;;
+            startup)
+              python3 -u -m categories.startup_founder.programmes
+              python3 -u -m categories.startup_founder.programmes --apply-verifications ;;
+            community)
+              python3 -u -m categories.community.programmes
+              python3 -u -m categories.community.programmes --apply-verifications ;;
+            research)
+              python3 -u -m categories.research.research ;;
+            *) echo "unknown category $CAT"; exit 1 ;;
+          esac
+
+      # Applies the >50% row-drop guard, keeps only this category's rows and
+      # writes the step summary (rows/live/ended/% deadline, logo, description, funding).
+      - name: Finalize shard + summary
+        run: |
+          FORCE=""
+          case ",$(echo "$XLAKE_RETIRE_FORCE" | tr -d ' ')," in
+            *",$CAT,"*|*",all,"*) FORCE="--force" ;;
+          esac
+          python3 -m pipeline.shard_run finalize --category "$CAT" $FORCE
+
+      - name: Write shard to S3
+        if: ${{ !inputs.dry_run }}
+        run: |
+          aws s3 cp "data/lake/shards/$CAT.json" "s3://$AWS_S3_BUCKET/lake/shards/$CAT.json"
+          aws s3 cp "data/lake/shards/$CAT.json" "s3://$AWS_S3_BUCKET/archive/shards/$CAT-$(date -u +%Y%m%dT%H%M%SZ).json"
+
+      - name: Publish to Supabase (scoped)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          EXTRA=""
+          case ",$(echo "$XLAKE_RETIRE_FORCE" | tr -d ' ')," in
+            *",$CAT,"*|*",all,"*) EXTRA="--force-retire" ;;
+          esac
+          if [ "$DRY_RUN" = "true" ]; then
+            python3 -u -m pipeline.publish_supabase --category "$CAT" | tail -25
+          else
+            python3 -u -m pipeline.publish_supabase --category "$CAT" --execute $EXTRA
+          fi
+
+      - name: Commit operational files
+        if: ${{ !inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          git config user.name  "opportunity-lake-bot"
+          git config user.email "bot@users.noreply.github.com"
+          shopt -s nullglob
+          case "$CAT" in
+            hackathons)  FILES=() ;;
+            open_source) FILES=(data/operations/programmes_observations.json data/operations/programme_verifications.json data/operations/generated_seeds/open_source.json) ;;
+            fellowships) FILES=(data/operations/fellowship_programmes_observations.json data/operations/fellowship_programme_verifications.json data/operations/generated_seeds/fellowships.json) ;;
+            scholarships) FILES=(data/operations/scholarship_programmes_observations.json data/operations/scholarship_programme_verifications.json data/operations/generated_seeds/scholarships.json) ;;
+            grants)      FILES=(data/operations/grant_programmes_observations.json data/operations/grant_programme_verifications.json data/operations/generated_seeds/grants.json) ;;
+            research)    FILES=(data/operations/research_programmes_observations.json data/operations/research_programme_verifications.json data/operations/generated_seeds/research.json) ;;
+            startup)     FILES=(data/operations/startup_founder_programmes_observations.json data/operations/startup_founder_programme_verifications.json data/operations/generated_seeds/startup_founder.json) ;;
+            community)   FILES=(data/operations/community_programmes_observations.json data/operations/community_programme_verifications.json data/operations/generated_seeds/community.json) ;;
+          esac
+          TMP=$(mktemp -d)
+          paths=()
+          for p in "${FILES[@]}"; do
+            if [ -e "$p" ]; then
+              mkdir -p "$TMP/$(dirname "$p")"
+              cp -a "$p" "$TMP/$p"
+              paths+=("$p")
+            fi
+          done
+          if [ "${#paths[@]}" -eq 0 ]; then echo 'no operational files for this category'; exit 0; fi
+          # Skip entirely when nothing differs from the checked-out tree.
+          if git diff --quiet -- "${paths[@]}" && [ -z "$(git ls-files --others --exclude-standard -- "${paths[@]}")" ]; then
+            echo 'nothing to commit'; exit 0
+          fi
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard HEAD
+            git clean -fd -- "${paths[@]}"
+            git checkout -B ci-save origin/main
+            while IFS= read -r p; do
+              p=${p#./}
+              mkdir -p "$(dirname "$p")"
+              cp -a "$TMP/$p" "$p"
+            done < <(cd "$TMP" && find . -type f)
+            git add -A -- "${paths[@]}"
+            if git diff --cached --quiet; then echo 'nothing to commit'; exit 0; fi
+            git commit -m "$CAT: refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt*5 + RANDOM % 10))
+          done
+          exit 1
+
+      - name: Upload artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: shard-${{ inputs.category }}
+          path: engine/data/lake/shards/${{ inputs.category }}.json
+          retention-days: 7
+          if-no-files-found: ignore
