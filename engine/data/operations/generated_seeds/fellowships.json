@@ -10,7 +10,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-a-star-edu-sg-scholarships-for-undergraduate-studies-e13626",
@@ -37,7 +37,22 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-a16z-com-the-american-dynamism-engineering-fellows-program-e71f0e",
+  "programme_id": "fellowships-hub-a16z-com-the-american-dynamism-engineering-fellows-program-e71f0e",
+  "programme_name": "\"Highly selective,\" targeting the \"world's best engineers.\" Apply / details \u2192",
+  "organizer": "a16z.com",
+  "official_url": "https://a16z.com/the-american-dynamism-engineering-fellows-program/)**",
+  "allowed_path_hints": [
+   "the-american-dynamism-engineering-fellows-program/)**"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-www-a16z-news-p-introducing-the-a16z-fde-fellowship-576b22",
@@ -51,7 +66,21 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-aaai-org-awards-dissertation-award-php-d5373a",
+  "programme_id": "fellowships-hub-aaai-org-awards-dissertation-award-php-d5373a",
+  "programme_name": "AAAI/ACM SIGAI DOCTORAL DISSERTATION AWARD Just a title",
+  "organizer": "aaai.org",
+  "official_url": "https://aaai.org/Awards/dissertation-award.php)|",
+  "allowed_path_hints": [
+   "Awards/dissertation-award.php)|"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-www-aaas-org-ai-stpf-cohort-d03fd2",
@@ -78,7 +107,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-aauw-org-resources-member-0eff8b",
@@ -104,7 +133,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-abidlabs-github-io-fellowship-1c2af9",
@@ -117,7 +146,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-academy-oracle-com-en-about-scholarships-html-969657",
@@ -157,7 +186,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-admissions-oist-jp-oist-research-internship-program-descript-0aa0b8",
@@ -197,7 +226,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-ai-google-research-outreach-3dd877",
@@ -227,6 +256,34 @@
   "last_seen": "2026-10-10T14:58:45Z"
  },
  {
+  "source_id": "hub-fellowships-aim-applyists-net-spencer-6be23f",
+  "programme_id": "fellowships-hub-aim-applyists-net-spencer-6be23f",
+  "programme_name": "January 15, 2027 (time zone not stated on official page) | | \u2705 [OPEN] | Durango Boots / Dude Ranch Foundation | National",
+  "organizer": "aim.applyists.net",
+  "official_url": "https://aim.applyists.net/spencer",
+  "allowed_path_hints": [
+   "spencer"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-ainowinstitute-org-290295",
+  "programme_id": "fellowships-hub-ainowinstitute-org-290295",
+  "programme_name": "A leading public-interest AI policy research org, known for its \"Artificial Power\" annual report; alumni staff AI policy",
+  "organizer": "ainowinstitute.org",
+  "official_url": "https://ainowinstitute.org/)**",
+  "allowed_path_hints": [
+   ")**"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
   "source_id": "hub-fellowships-airtable-com-appvj8qb2h0qzikjx-pagrbphegd31cypm2-0beae8",
   "programme_id": "fellowships-hub-airtable-com-appvj8qb2h0qzikjx-pagrbphegd31cypm2-0beae8",
   "programme_name": "Jul 5, 2026 | | \u2705 [OPEN] | ServiceNow | Campus Leaders \u2014 Deadline: Rolling | Ambassador Program",
@@ -251,7 +308,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-amazon-science-news-amazon-launches-68-million-ai-phd-fe-7974aa",
@@ -264,7 +321,21 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-amazon-science-research-awards-call-for-proposals-the-885fbc",
+  "programme_id": "fellowships-hub-www-amazon-science-research-awards-call-for-proposals-the-885fbc",
+  "programme_name": "Amazon Research Award",
+  "organizer": "amazon.science",
+  "official_url": "https://www.amazon.science/research-awards/call-for-proposals)|The",
+  "allowed_path_hints": [
+   "research-awards/call-for-proposals)|The"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-amgenscholars-berkeley-edu-195d4d",
@@ -277,7 +348,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-amgenscholars-ca-421ae3",
@@ -290,7 +361,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-amgenscholars-com-46ac14",
@@ -303,7 +374,22 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-amgenscholars-com-japan-program-0bc303",
+  "programme_id": "fellowships-hub-www-amgenscholars-com-japan-program-0bc303",
+  "programme_name": "University of Tokyo",
+  "organizer": "amgenscholars.com",
+  "official_url": "http://www.amgenscholars.com/japan-program",
+  "allowed_path_hints": [
+   "japan-program"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-www-amgenscholars-medschl-cam-ac-uk-0db604",
@@ -316,7 +402,21 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-anthropic-com-claude-corps-3e7fde",
+  "programme_id": "fellowships-hub-anthropic-com-claude-corps-3e7fde",
+  "programme_name": "Anchored by a $150M Anthropic commitment and launched June 11, 2026 \u2014 100 fellows in the first cohort with a goal of 1,0",
+  "organizer": "anthropic.com",
+  "official_url": "https://anthropic.com/claude-corps)**",
+  "allowed_path_hints": [
+   "claude-corps)**"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-www-apolloresearch-ai-057bf1",
@@ -330,12 +430,103 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-app-ui3-smarterselect-com-programs-111888-aisc-d42ad4",
+  "programme_id": "fellowships-hub-app-ui3-smarterselect-com-programs-111888-aisc-d42ad4",
+  "programme_name": "December 1, 2026 at 11:59 PM CST (as stated in the application) | | \u2705 [OPEN] | Spencer Educational Foundation | Freshman",
+  "organizer": "app.ui3.smarterselect.com",
+  "official_url": "https://app.ui3.smarterselect.com/programs/111888-Aisc?from=v1",
+  "allowed_path_hints": [
+   "programs/111888-Aisc"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-apply-ametsoc-org-prog-ams-first-year-undergraduate-scholars-e48138",
+  "programme_id": "fellowships-hub-apply-ametsoc-org-prog-ams-first-year-undergraduate-scholars-e48138",
+  "programme_name": "January 31, 2027 at 11:59 PM EST | | \u2705 [OPEN] | University of North Texas / Terry Foundation | Terry Freshman Scholarshi",
+  "organizer": "apply.ametsoc.org",
+  "official_url": "https://apply.ametsoc.org/prog/ams_first-year_undergraduate_scholarship",
+  "allowed_path_hints": [
+   "prog/ams_first-year_undergraduate_scholarship"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-apply-candidats-io-d09cd3be-c32e-44d3-b1f1-3ac33bc7f45a-1436ce",
+  "programme_id": "fellowships-hub-apply-candidats-io-d09cd3be-c32e-44d3-b1f1-3ac33bc7f45a-1436ce",
+  "programme_name": "February 1, 2027 at 23:59 GMT | | \u2705 [OPEN] | University of Mississippi \u2014 Mississippi Excellence in Teaching Program | ME",
+  "organizer": "apply.candidats.io",
+  "official_url": "https://apply.candidats.io/d09cd3be-c32e-44d3-b1f1-3ac33bc7f45a",
+  "allowed_path_hints": [
+   "d09cd3be-c32e-44d3-b1f1-3ac33bc7f45a"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-apply-carrollu-edu-register-art-photography-27-b2b2ce",
+  "programme_id": "fellowships-hub-apply-carrollu-edu-register-art-photography-27-b2b2ce",
+  "programme_name": "January 4, 2027 (time zone not stated) | | \u2705 [OPEN] | The College of Wooster | Music Scholarships \u2014 Incoming First-Year",
+  "organizer": "apply.carrollu.edu",
+  "official_url": "https://apply.carrollu.edu/register/art-photography-27",
+  "allowed_path_hints": [
+   "register/art-photography-27"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-apply-carrollu-edu-register-fy-music-27-73fa7d",
+  "programme_id": "fellowships-hub-apply-carrollu-edu-register-fy-music-27-73fa7d",
+  "programme_name": "January 11, 2027 (time zone not stated) | | \u2705 [OPEN] | Carroll University | Anne Hardy Art Scholarship \u2014 Incoming First",
+  "organizer": "apply.carrollu.edu",
+  "official_url": "https://apply.carrollu.edu/register/fy-music-27",
+  "allowed_path_hints": [
+   "register/fy-music-27"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-apply-che-sc-gov-5a04c6",
+  "programme_id": "fellowships-hub-apply-che-sc-gov-5a04c6",
+  "programme_name": "April 30, 2027 (safe submission date under weekend rule); published deadline May 1, 2027, before 11:59 PM | | \u2705 [OPEN]",
+  "organizer": "apply.che.sc.gov",
+  "official_url": "https://apply.che.sc.gov/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-apply-commonapp-org-login-a733d6",
+  "programme_id": "fellowships-hub-apply-commonapp-org-login-a733d6",
+  "programme_name": "November 11, 2026 | | \u2705 [OPEN] | Hagan Scholarship Foundation | Hagan Scholarship \u2014 Incoming College Freshmen, 2027\u20132028",
+  "organizer": "apply.commonapp.org",
+  "official_url": "https://apply.commonapp.org/login",
+  "allowed_path_hints": [
+   "login"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-apply-girlswhoinvest-org-register-559833",
   "programme_id": "fellowships-hub-apply-girlswhoinvest-org-register-559833",
-  "programme_name": "Aug 14, 2026 | | \ud83d\udd25 [CLOSING SOON] | Pave HER Way | Women's Grant Programs \u2014 Deadline: Oct 16, 2026 | Grants",
+  "programme_name": "Aug 14, 2026 | | \ud83d\udd25 [CLOSING SOON] | Bain Capital | Investors of Tomorrow \u2014 Boston (November 2026) \u2014 Deadline: October 25",
   "organizer": "apply.girlswhoinvest.org",
   "official_url": "https://apply.girlswhoinvest.org/register?id=c237d6ee-c63f-42e8-bdc0-96191a986b11",
   "allowed_path_hints": [
@@ -343,7 +534,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-apply-mpi-sws-org-register-internship-c0ea39",
@@ -357,7 +548,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-apps-grad-illinois-edu-fellowship-finder-7a2737",
@@ -370,7 +561,21 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-atlasfellows-org-application-information-8e8a28",
+  "programme_id": "fellowships-hub-atlasfellows-org-application-information-8e8a28",
+  "programme_name": "Finds talent before college with a ~5-hour total application; past cohorts have landed at top AI labs and graduate progr",
+  "organizer": "atlasfellows.org",
+  "official_url": "https://atlasfellows.org/application-information/)**",
+  "allowed_path_hints": [
+   "application-information/)**"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-awards-acm-org-doctoral-dissertation-nominations-2df153",
@@ -383,7 +588,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-awards-acm-org-hpc-fellows-0b0cd9",
@@ -396,7 +601,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-azregents-edu-programs-arizona-promise-program-5980ef",
@@ -423,7 +628,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-bdi-ox-ac-uk-study-bdi-summer-studentship-programme-33c8e1",
@@ -439,6 +644,19 @@
   "last_seen": "2026-10-10T14:58:45Z"
  },
  {
+  "source_id": "hub-fellowships-bgsu-academicworks-com-users-sign-in-b2347a",
+  "programme_id": "fellowships-hub-bgsu-academicworks-com-users-sign-in-b2347a",
+  "programme_name": "February 26, 2027 named award deadlines; February 18, 2027 general-application priority for incoming/new applicants",
+  "organizer": "bgsu.academicworks.com",
+  "official_url": "https://bgsu.academicworks.com/users/sign_in",
+  "allowed_path_hints": [
+   "users/sign_in"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-www-bits-pilani-ac-in-goa-bgsrp-c368b7",
   "programme_id": "fellowships-hub-www-bits-pilani-ac-in-goa-bgsrp-c368b7",
   "programme_name": "BITS Goa Summer Research Programme",
@@ -449,7 +667,21 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-bits-pilani-ac-in-pilani-summerresearchfellowship-7774ab",
+  "programme_id": "fellowships-hub-www-bits-pilani-ac-in-pilani-summerresearchfellowship-7774ab",
+  "programme_name": "BITS Pilani, Summer Undergraduate Research Fellowship",
+  "organizer": "bits-pilani.ac.in",
+  "official_url": "https://www.bits-pilani.ac.in/pilani/summerresearchfellowship",
+  "allowed_path_hints": [
+   "pilani/summerresearchfellowship"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-bold-org-scholarships-by-demographics-4fc128",
@@ -502,7 +734,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-buildyourfuture-withgoogle-com-scholarships-google-lime-scho-c81d21",
@@ -516,7 +748,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-bvp-com-bessemer-fellows-ee2f77",
@@ -529,7 +761,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-careersatdoordash-com-jobs-ai-research-fellowship-summer-and-523b45",
@@ -661,7 +893,59 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-citadel-com-careers-programs-and-events-d4522f",
+  "programme_id": "fellowships-hub-www-citadel-com-careers-programs-and-events-d4522f",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Citadel Securities | Discover \u2014 Hong Kong (2027) \u2014 Deadline: February 14, 2027 | Two-day dis",
+  "organizer": "citadel.com",
+  "official_url": "https://www.citadel.com/careers/programs-and-events/discover-citadel/emea-apply",
+  "allowed_path_hints": [
+   "careers/programs-and-events/discover-citadel/emea-apply"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-citadelsecurities-com-careers-programs-and-events-5b4672",
+  "programme_id": "fellowships-hub-www-citadelsecurities-com-careers-programs-and-events-5b4672",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Citadel / Citadel Securities | Discover \u2014 EMEA (2027) \u2014 Deadline: January 29, 2027 | Two-day",
+  "organizer": "citadelsecurities.com",
+  "official_url": "https://www.citadelsecurities.com/careers/programs-and-events/discover-citadel-securities/apply",
+  "allowed_path_hints": [
+   "careers/programs-and-events/discover-citadel-securities/apply"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-citadelsecurities-com-careers-programs-and-events-ff01d7",
+  "programme_id": "fellowships-hub-www-citadelsecurities-com-careers-programs-and-events-ff01d7",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Susquehanna | Discovery \u2014 Trading System Engineer (2027) \u2014 Deadline: November 16, 2026 | Car",
+  "organizer": "citadelsecurities.com",
+  "official_url": "https://www.citadelsecurities.com/careers/programs-and-events/discover-citadel-securities/hong-kong",
+  "allowed_path_hints": [
+   "careers/programs-and-events/discover-citadel-securities/hong-kong"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-citadelsecurities-com-careers-programs-and-events-d2b556",
+  "programme_id": "fellowships-hub-www-citadelsecurities-com-careers-programs-and-events-d2b556",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | University of Maryland, Baltimore County \u2014 Center for Women in Technology | CWIT and Cyber S",
+  "organizer": "citadelsecurities.com",
+  "official_url": "https://www.citadelsecurities.com/careers/programs-and-events/ignite-womens-trading-program/apply-ignite",
+  "allowed_path_hints": [
+   "careers/programs-and-events/ignite-womens-trading-program/apply-ignite"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-cmu-edu-graduate-rales-fellows-711f41",
@@ -674,7 +958,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-cnio-es-en-education-and-career-development-10ffb3",
@@ -687,7 +971,22 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-code2040-org-fellows-program-703329",
+  "programme_id": "fellowships-hub-www-code2040-org-fellows-program-703329",
+  "programme_name": "Code2040 Fellows",
+  "organizer": "code2040.org",
+  "official_url": "https://www.code2040.org/fellows-program",
+  "allowed_path_hints": [
+   "fellows-program"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-www-codingitforward-com-fellowship-1a937f",
@@ -700,7 +999,22 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-cohere-com-research-ef132c",
+  "programme_id": "fellowships-hub-cohere-com-research-ef132c",
+  "programme_name": "Backed by Cohere Labs' Open Science Community of 4,500+ members across 150 countries. Apply / details \u2192",
+  "organizer": "cohere.com",
+  "official_url": "https://cohere.com/research)**",
+  "allowed_path_hints": [
+   "research)**"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-cohere-com-research-scholars-program-586f4f",
@@ -714,7 +1028,20 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-colostate-academicworks-com-users-sign-in-9f3a45",
+  "programme_id": "fellowships-hub-colostate-academicworks-com-users-sign-in-9f3a45",
+  "programme_name": "February 1, 2027 at 11:00 PM MST (named awards list February 1; CSUSA publishes the first-year closing time) | | \u2705 [OPEN",
+  "organizer": "colostate.academicworks.com",
+  "official_url": "https://colostate.academicworks.com/users/sign_in",
+  "allowed_path_hints": [
+   "users/sign_in"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-comptroller-texas-gov-programs-education-270ab9",
@@ -743,6 +1070,86 @@
   "last_seen": "2026-10-10T09:43:18Z"
  },
  {
+  "source_id": "hub-fellowships-connect-nsbe-org-scholarships-scholarshiplist-aspx-c9189c",
+  "programme_id": "fellowships-hub-connect-nsbe-org-scholarships-scholarshiplist-aspx-c9189c",
+  "programme_name": "National Society of Black Engineers",
+  "organizer": "connect.nsbe.org",
+  "official_url": "https://connect.nsbe.org/Scholarships/ScholarshipList.aspx",
+  "allowed_path_hints": [
+   "Scholarships/ScholarshipList.aspx"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
+  "source_id": "hub-fellowships-connect-wooster-edu-register-0563e8",
+  "programme_id": "fellowships-hub-connect-wooster-edu-register-0563e8",
+  "programme_name": "December 1, 2026 at midnight EST; Early Decision applicants November 1, 2026 earlier deadline | --- ## State-Based Schol",
+  "organizer": "connect.wooster.edu",
+  "official_url": "https://connect.wooster.edu/register?id=4371ab01-f453-45c9-931b-45ba6acd16e7",
+  "allowed_path_hints": [
+   "register"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-cornell1-my-site-com-stud-createapp-fb1be2",
+  "programme_id": "fellowships-hub-cornell1-my-site-com-stud-createapp-fb1be2",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | University of Hong Kong | Laidlaw Undergraduate Research and Leadership Programme, 2026\u20132027",
+  "organizer": "cornell1.my.site.com",
+  "official_url": "https://cornell1.my.site.com/stud/createApp?id=a0VUS00000AY9OO",
+  "allowed_path_hints": [
+   "stud/createApp"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-courseworkscholarshipsoffice-formstack-com-forms-2027-gaf-c570aa",
+  "programme_id": "fellowships-hub-courseworkscholarshipsoffice-formstack-com-forms-2027-gaf-c570aa",
+  "programme_name": "January 31, 2027 at 11:59 PM (provider timezone not stated) | | \u2705 [OPEN] | Architecture and Design Foundation / Dallas A",
+  "organizer": "courseworkscholarshipsoffice.formstack.com",
+  "official_url": "https://courseworkscholarshipsoffice.formstack.com/forms/2027_gaf",
+  "allowed_path_hints": [
+   "forms/2027_gaf"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-courseworkscholarshipsoffice-formstack-com-forms-2027-idea-e-3b18d1",
+  "programme_id": "fellowships-hub-courseworkscholarshipsoffice-formstack-com-forms-2027-idea-e-3b18d1",
+  "programme_name": "January 17, 2027 at 11:59 PM (provider timezone not stated) | | \u2705 [OPEN] | RMIT University / George Alexander Foundation",
+  "organizer": "courseworkscholarshipsoffice.formstack.com",
+  "official_url": "https://courseworkscholarshipsoffice.formstack.com/forms/2027_idea_excellence",
+  "allowed_path_hints": [
+   "forms/2027_idea_excellence"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-cpp-scholarships-ngwebsolutions-com-c9fe6a",
+  "programme_id": "fellowships-hub-cpp-scholarships-ngwebsolutions-com-c9fe6a",
+  "programme_name": "March 2, 2027 \u2014 published general scholarship-cycle deadline",
+  "organizer": "cpp.scholarships.ngwebsolutions.com",
+  "official_url": "https://cpp.scholarships.ngwebsolutions.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-cra-jotform-com-242948236029866-59ca1e",
   "programme_id": "fellowships-hub-cra-jotform-com-242948236029866-59ca1e",
   "programme_name": "NSF Dristtributed Research Experiences for Undergraduates",
@@ -753,7 +1160,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-cra-org-ccc-leadership-development-72f579",
@@ -766,7 +1173,21 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-croucher-org-hk-en-scholarships-scholarships-7e6b69",
+  "programme_id": "fellowships-hub-croucher-org-hk-en-scholarships-scholarships-7e6b69",
+  "programme_name": "Croucher Scholarships for Doctoral Study",
+  "organizer": "croucher.org.hk",
+  "official_url": "https://croucher.org.hk/en/scholarships-scholarships",
+  "allowed_path_hints": [
+   "en/scholarships-scholarships"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-www-cs-cmu-edu-cmlh-fellowships-digital-health-310afa",
@@ -779,7 +1200,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-cs-cmu-edu-rs-datasources-data-source-d9cadc",
@@ -792,7 +1213,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-cs-cmu-edu-gradfellowships-7ede77",
@@ -806,7 +1227,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-cs-cornell-edu-phd-current-students-660a26",
@@ -820,7 +1241,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-csac-ca-gov-middle-class-scholarship-0e9420",
@@ -846,7 +1267,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-csiro-au-en-careers-834bfb",
@@ -859,21 +1280,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
- },
- {
-  "source_id": "hub-fellowships-www-daad-de-go-en-1f41a3",
-  "programme_id": "fellowships-hub-www-daad-de-go-en-1f41a3",
-  "programme_name": "DAAD Wise Scholarship",
-  "organizer": "daad.de",
-  "official_url": "https://www.daad.de/go/en/stipa50015295",
-  "allowed_path_hints": [
-   "go/en/stipa50015295"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-10T14:58:45Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 5
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-daad-de-rise-en-1f12f2",
@@ -890,6 +1297,32 @@
   "last_seen": "2026-10-10T09:43:18Z"
  },
  {
+  "source_id": "hub-fellowships-www-dallasadex-org-education-scholarships-fellowships-c30e18",
+  "programme_id": "fellowships-hub-www-dallasadex-org-education-scholarships-fellowships-c30e18",
+  "programme_name": "February 12, 2027 (time/timezone not published) | | \u2705 [OPEN] | FMG Insurance | FMG Agriculture Scholarship \u2014 Incoming Fi",
+  "organizer": "dallasadex.org",
+  "official_url": "https://www.dallasadex.org/education/scholarships-fellowships/applications/academic-scholarships",
+  "allowed_path_hints": [
+   "education/scholarships-fellowships/applications/academic-scholarships"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-dartmouth-co1-qualtrics-com-jfe-form-ef0484",
+  "programme_id": "fellowships-hub-dartmouth-co1-qualtrics-com-jfe-form-ef0484",
+  "programme_name": "Oct 13, 2026 | | \ud83d\udd25 [CLOSING SOON] | University of North Carolina Wilmington | First-Year Research Experience (FYRE), Spr",
+  "organizer": "dartmouth.co1.qualtrics.com",
+  "official_url": "https://dartmouth.co1.qualtrics.com/jfe/form/SV_7ady3pMc5zVZk2O",
+  "allowed_path_hints": [
+   "jfe/form/SV_7ady3pMc5zVZk2O"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-dellfuturist-com-the-dell-campassadors-program-4780e0",
   "programme_id": "fellowships-hub-dellfuturist-com-the-dell-campassadors-program-4780e0",
   "programme_name": "Dell Campus Ambassador",
@@ -901,7 +1334,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-dhewd-mo-gov-ppc-grants-scholarships-cf367e",
@@ -940,7 +1373,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-eacsl-org-ackermann-award-5b1ffd",
@@ -953,7 +1386,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-eatcs-org-index-php-dissertation-award-d69554",
@@ -966,7 +1399,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-editing-press-bassi-820d48",
@@ -979,7 +1412,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-education-ky-gov-districts-fin-c483c4",
@@ -1005,7 +1438,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-elevenlabs-io-ambassador-cba223",
@@ -1021,6 +1454,19 @@
   "last_seen": "2026-10-11T13:00:26Z"
  },
  {
+  "source_id": "hub-fellowships-elks-applyists-net-elksmvs-dd024a",
+  "programme_id": "fellowships-hub-elks-applyists-net-elksmvs-dd024a",
+  "programme_name": "November 12, 2026, 11:59 PM Pacific Time | | \u2705 [OPEN] | Montana State University Honors College | Presidential Scholarsh",
+  "organizer": "elks.applyists.net",
+  "official_url": "https://elks.applyists.net/ElksMVS",
+  "allowed_path_hints": [
+   "ElksMVS"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-www-emmabowenfoundation-org-apply-460ba2",
   "programme_id": "fellowships-hub-www-emmabowenfoundation-org-apply-460ba2",
   "programme_name": "Emma Bowen Foundation Fellowship",
@@ -1031,7 +1477,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-eng-en-web-nthu-edu-tw-files-14-1130-129169-r1447-1-php-28d01d",
@@ -1044,7 +1490,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-engineering-stanford-edu-students-academics-equity-and-inclu-633128",
@@ -1071,7 +1517,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-famemaine-com-affording-education-pay-for-school-2f2881",
@@ -1097,7 +1543,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-fellowship-perplexity-ai-a54bb7",
@@ -1110,7 +1556,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-fellowships-deshaw-com-4da8f0",
@@ -1123,7 +1569,85 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-flows-beamery-com-httpwwwrwbairdcom-baird-women-in-equity-re-b08bec",
+  "programme_id": "fellowships-hub-flows-beamery-com-httpwwwrwbairdcom-baird-women-in-equity-re-b08bec",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | MLT (Management Leadership for Tomorrow) | Career Prep (Class of 2029) \u2014 Deadline: January 1",
+  "organizer": "flows.beamery.com",
+  "official_url": "https://flows.beamery.com/httpwwwrwbairdcom/baird-women-in-equity-research-event-(virtual)",
+  "allowed_path_hints": [
+   "httpwwwrwbairdcom/baird-women-in-equity-research-event-(virtual)"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-fmg-co-nz-about-fmg-supporting-rural-nz-21ab0e",
+  "programme_id": "fellowships-hub-www-fmg-co-nz-about-fmg-supporting-rural-nz-21ab0e",
+  "programme_name": "November 20, 2026 at 5:00 PM (provider timezone not stated) | | \u2705 [OPEN] | San Francisco State University / Genentech Fo",
+  "organizer": "fmg.co.nz",
+  "official_url": "https://www.fmg.co.nz/about-fmg/supporting-rural-nz/fmg-agriculture-scholarships/scholarship-form",
+  "allowed_path_hints": [
+   "about-fmg/supporting-rural-nz/fmg-agriculture-scholarships/scholarship-form"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-forms-cloud-microsoft-pages-responsepage-aspx-081607",
+  "programme_id": "fellowships-hub-forms-cloud-microsoft-pages-responsepage-aspx-081607",
+  "programme_name": "Oct 13, 2026 | | \ud83d\udd25 [CLOSING SOON] | Johns Hopkins University \u2014 Life Design Lab | BioTech Engineering Internship Academy",
+  "organizer": "forms.cloud.microsoft",
+  "official_url": "https://forms.cloud.microsoft/pages/responsepage.aspx?id=5a2KjEEc3kGOoxie4rSBs4AXk6c5n19OhIGoCOjEsZ9URTI1QUw2SjNZWElBVEhXUDFBSTUxTUJOWiQlQCN0PWcu&route=shorturl",
+  "allowed_path_hints": [
+   "pages/responsepage.aspx"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-forms-fillout-com-t-xcmk6hchttus-93d3bf",
+  "programme_id": "fellowships-hub-forms-fillout-com-t-xcmk6hchttus-93d3bf",
+  "programme_name": "Oct 13, 2026 | | \ud83d\udd25 [CLOSING SOON] | Swinburne University of Technology | Claire Sorati & Pridmore Scholarships for First",
+  "organizer": "forms.fillout.com",
+  "official_url": "https://forms.fillout.com/t/xcmk6hCHttus",
+  "allowed_path_hints": [
+   "t/xcmk6hCHttus"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-forms-gle-uidggkbkf6drd5hu5-d1427e",
+  "programme_id": "fellowships-hub-forms-gle-uidggkbkf6drd5hu5-d1427e",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Dartmouth College \u2014 Leslie Center for the Humanities | Student Research Fellows in Nineteent",
+  "organizer": "forms.gle",
+  "official_url": "https://forms.gle/uiDgGkbKf6DRD5Hu5",
+  "allowed_path_hints": [
+   "uiDgGkbKf6DRD5Hu5"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-forms-nfmc-music-org-forms-new-005f79",
+  "programme_id": "fellowships-hub-forms-nfmc-music-org-forms-new-005f79",
+  "programme_name": "March 1 annually; next deadline March 1, 2027 inferred from current annual schedule",
+  "organizer": "forms.nfmc-music.org",
+  "official_url": "https://forms.nfmc-music.org/forms/new/VXhUcEh3d1p0TXJmYWRYSzhsZVV0QT09/Y2tzS09JbThQd1hWb0FNait1M3Q4Zz09",
+  "allowed_path_hints": [
+   "forms/new/VXhUcEh3d1p0TXJmYWRYSzhsZVV0QT09/Y2tzS09JbThQd1hWb0FNait1M3Q4Zz09"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-frontera-portal-tacc-utexas-edu-fellowship-d3eb7a",
@@ -1136,7 +1660,20 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-fs28-formsite-com-danhagan-zamqld4dle-7795f8",
+  "programme_id": "fellowships-hub-fs28-formsite-com-danhagan-zamqld4dle-7795f8",
+  "programme_name": "December 1, 2026 | | \u2705 [OPEN] | Elks National Foundation | Most Valuable Student Scholarship \u2014 2027 Incoming College Coh",
+  "organizer": "fs28.formsite.com",
+  "official_url": "https://fs28.formsite.com/DanHagan/zamqld4dle/signup",
+  "allowed_path_hints": [
+   "DanHagan/zamqld4dle/signup"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-fsf-org-volunteer-internships-713bf8",
@@ -1149,7 +1686,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-geeksforgeeks-org-campus-ambassador-program-by-geeksforg-facbb2",
@@ -1162,7 +1699,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-gemfellowship-org-6de8bd",
@@ -1175,7 +1712,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-gfsd-onlineapplications-net-applications-96407f",
@@ -1188,7 +1725,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-ggvc-com-ggv-nextgen-fellow-fd1f5f",
@@ -1201,7 +1738,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-gist-ac-kr-en-html-d00cb5",
@@ -1214,35 +1751,33 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
-  "source_id": "hub-fellowships-www-governance-ai-post-winter-fellowship-2027-research-track-cd3155",
-  "programme_id": "fellowships-hub-www-governance-ai-post-winter-fellowship-2027-research-track-cd3155",
-  "programme_name": "GovAI's flagship three-month seasonal fellowship with an expert Q&A/seminar series; many current GovAI staff are alumni",
-  "organizer": "governance.ai",
-  "official_url": "https://www.governance.ai/post/winter-fellowship-2027-research-track)**",
+  "source_id": "hub-fellowships-www-goldwaterinternship-gov-intern-application-282bbf",
+  "programme_id": "fellowships-hub-www-goldwaterinternship-gov-intern-application-282bbf",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Stanford University \u2014 Public Humanities | Humanities Research Intensive",
+  "organizer": "goldwaterinternship.gov",
+  "official_url": "https://www.goldwaterinternship.gov/intern-application",
   "allowed_path_hints": [
-   "post/winter-fellowship-2027-research-track)**"
+   "intern-application"
   ],
   "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
-  "source_id": "hub-fellowships-www-gracehopper-gitusc-com-772b37",
-  "programme_id": "fellowships-hub-www-gracehopper-gitusc-com-772b37",
-  "programme_name": "Grace Hopper Scholarship",
-  "organizer": "gracehopper-gitusc.com",
-  "official_url": "https://www.gracehopper-gitusc.com/",
+  "source_id": "hub-fellowships-goodrich-smapply-org-ff8aae",
+  "programme_id": "fellowships-hub-goodrich-smapply-org-ff8aae",
+  "programme_name": "February 26, 2027, 5:00 PM CST | | \u2705 [OPEN] | Virginia | James Madison University \u2014 Centennial Scholars Program \u2014 Incomi",
+  "organizer": "goodrich.smapply.org",
+  "official_url": "https://goodrich.smapply.org/",
   "allowed_path_hints": [
    ""
   ],
   "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-great-ucdavis-edu-b11220",
@@ -1255,7 +1790,36 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-greylock-com-university-programs-675f2d",
+  "programme_id": "fellowships-hub-greylock-com-university-programs-675f2d",
+  "programme_name": "Greylock Tech Fair",
+  "organizer": "greylock.com",
+  "official_url": "https://greylock.com/university-programs",
+  "allowed_path_hints": [
+   "university-programs"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
+  "source_id": "hub-fellowships-groups-oist-jp-grad-research-interns-638379",
+  "programme_id": "fellowships-hub-groups-oist-jp-grad-research-interns-638379",
+  "programme_name": "OIST Research Internship Program",
+  "organizer": "groups.oist.jp",
+  "official_url": "https://groups.oist.jp/grad/research-interns",
+  "allowed_path_hints": [
+   "grad/research-interns"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-gsfc-georgia-gov-cb7144",
@@ -1281,7 +1845,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-hackerrank-com-campus-ambassador-program-c72310",
@@ -1294,7 +1858,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-hackny-org-fellows-program-366a74",
@@ -1307,7 +1871,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-haganscholarships-org-65ccf2",
@@ -1348,7 +1912,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-hathawayscholarship-org-4c1037",
@@ -1390,20 +1954,6 @@
   "last_seen": "2026-10-10T14:58:45Z"
  },
  {
-  "source_id": "hub-fellowships-www-helmholtz-hzi-de-en-research-97e81a",
-  "programme_id": "fellowships-hub-www-helmholtz-hzi-de-en-research-97e81a",
-  "programme_name": "Helmholtz Centre for Infection Research (HZI) Summer Student Program",
-  "organizer": "helmholtz-hzi.de",
-  "official_url": "https://www.helmholtz-hzi.de/en/research/research_schools/school_of_infection_research/internships/summer_student_program",
-  "allowed_path_hints": [
-   "en/research/research_schools/school_of_infection_research/internships/summer_student_program"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
- },
- {
   "source_id": "hub-fellowships-hertzfoundation-org-dx-fellowships-e3e4f9",
   "programme_id": "fellowships-hub-hertzfoundation-org-dx-fellowships-e3e4f9",
   "programme_name": "Hertz Graduate Fellowship",
@@ -1414,7 +1964,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-hertzfoundation-org-fellowships-application-680e58",
@@ -1454,7 +2004,20 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-hku-au1-qualtrics-com-jfe-form-fac748",
+  "programme_id": "fellowships-hub-hku-au1-qualtrics-com-jfe-form-fac748",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | University of Florida \u2014 Center for Undergraduate Research | Emerging Scholars Program",
+  "organizer": "hku.au1.qualtrics.com",
+  "official_url": "https://hku.au1.qualtrics.com/jfe/form/SV_8llsP6pChCy6XhI",
+  "allowed_path_hints": [
+   "jfe/form/SV_8llsP6pChCy6XhI"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-hudson-trading-com-fellowship-229bab",
@@ -1467,22 +2030,20 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
-  "source_id": "hub-fellowships-www-humanetech-com-fellowship-4573f0",
-  "programme_id": "fellowships-hub-www-humanetech-com-fellowship-4573f0",
-  "programme_name": "CHT's first dedicated AI-and-society cohort \u2014 a pilot of just 3 fellows, built on the org's \"AI Dilemma\" framing. Apply",
-  "organizer": "humanetech.com",
-  "official_url": "https://www.humanetech.com/fellowship)**",
+  "source_id": "hub-fellowships-hunterresearchscholars-rockefeller-edu-294e2b",
+  "programme_id": "fellowships-hub-hunterresearchscholars-rockefeller-edu-294e2b",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Penn State / NASA Pennsylvania Space Grant Consortium | Undergraduate Research Internship Pr",
+  "organizer": "hunterresearchscholars.rockefeller.edu",
+  "official_url": "https://hunterresearchscholars.rockefeller.edu/",
   "allowed_path_hints": [
-   "fellowship)**"
+   ""
   ],
   "check_cadence": "monthly",
-  "needs_page_noun": true,
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-hzdr-de-db-cms-013d3e",
@@ -1495,22 +2056,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
- },
- {
-  "source_id": "hub-fellowships-www-iaps-ai-fellowship-7053a2",
-  "programme_id": "fellowships-hub-www-iaps-ai-fellowship-7053a2",
-  "programme_name": "A three-month intensive from the Institute for AI Policy and Strategy, unusually remote-friendly for the policy world. A",
-  "organizer": "iaps.ai",
-  "official_url": "https://www.iaps.ai/fellowship)**",
-  "allowed_path_hints": [
-   "fellowship)**"
-  ],
-  "check_cadence": "monthly",
-  "needs_page_noun": true,
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-ict-usc-edu-academics-internships-5d700e",
@@ -1523,7 +2069,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-icts-res-in-academic-summer-research-program-aa878a",
@@ -1536,7 +2082,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-ieee-itss-org-awards-best-dissertation-201bb9",
@@ -1549,7 +2095,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-ihub-data-iiit-ac-in-programs-events-97ee84",
@@ -1563,7 +2109,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-iiitd-ac-in-590988",
@@ -1576,7 +2122,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-iiitd-ac-in-placement-summer-internships-8daa4e",
@@ -1590,7 +2136,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-iisc-ac-in-d37441",
@@ -1603,7 +2149,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-iiserb-ac-in-fb7b98",
@@ -1616,7 +2162,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-iiserkol-ac-in-07e7f1",
@@ -1629,7 +2175,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-iisermohali-ac-in-02878b",
@@ -1642,7 +2188,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-iiserpune-ac-in-540607",
@@ -1655,7 +2201,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-iisertirupati-ac-in-5dc321",
@@ -1668,7 +2214,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-iisertvm-ac-in-8517ab",
@@ -1681,35 +2227,21 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
-  "source_id": "hub-fellowships-www-iitism-ac-in-deans-research-497b74",
-  "programme_id": "fellowships-hub-www-iitism-ac-in-deans-research-497b74",
-  "programme_name": "IIT (ISM) Dhanbad SRIP Programme",
-  "organizer": "iitism.ac.in",
-  "official_url": "https://www.iitism.ac.in/deans/research/SRIP.php",
+  "source_id": "hub-fellowships-www-iitb-ac-in-en-education-b84b9d",
+  "programme_id": "fellowships-hub-www-iitb-ac-in-en-education-b84b9d",
+  "programme_name": "IITB Research Internship Award",
+  "organizer": "iitb.ac.in",
+  "official_url": "http://www.iitb.ac.in/en/education/research-internship",
   "allowed_path_hints": [
-   "deans/research/SRIP.php"
+   "en/education/research-internship"
   ],
   "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
- },
- {
-  "source_id": "hub-fellowships-www-iitr-ac-in-academics-internship-b0b0f6",
-  "programme_id": "fellowships-hub-www-iitr-ac-in-academics-internship-b0b0f6",
-  "programme_name": "IIT Roorkee, Summer Internship Program",
-  "organizer": "iitr.ac.in",
-  "official_url": "https://www.iitr.ac.in/academics/internship/pages/index.html",
-  "allowed_path_hints": [
-   "academics/internship/pages/index.html"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-img-shields-io-badge-75-20programs-ff5b29-1e084b",
@@ -1722,7 +2254,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-img-shields-io-badge-editorial-review-2026-07-24-00a86b-a934bc",
@@ -1735,7 +2267,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-impactlabs-io-fellowship-7f1e15",
@@ -1748,7 +2280,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-imperial-ac-uk-urop-what-is-urop-7cf1b5",
@@ -1761,21 +2293,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
- },
- {
-  "source_id": "hub-fellowships-www-imprs-cs-de-summer-internships-57a9a7",
-  "programme_id": "fellowships-hub-www-imprs-cs-de-summer-internships-57a9a7",
-  "programme_name": "International Max Planck Research School (IMPRS) Summer Internship Program",
-  "organizer": "imprs-cs.de",
-  "official_url": "https://www.imprs-cs.de/summer-internships",
-  "allowed_path_hints": [
-   "summer-internships"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-imprs-ls-opencampus-net-en-maxsip-application-info-e15b41",
@@ -1789,7 +2307,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-in-udacity-com-google-india-scholarships-5722b1",
@@ -1815,7 +2333,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-inf-ethz-ch-studies-summer-research-fellowship-html-08c827",
@@ -1828,7 +2346,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-insidesherpa-com-virtual-internships-prototype-17ed83",
@@ -1856,7 +2374,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-internships-yesatyale-org-students-beccb8",
@@ -1896,21 +2414,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
- },
- {
-  "source_id": "hub-fellowships-www-ircc-iitb-ac-in-ircc-webpage-rnd-f4359e",
-  "programme_id": "fellowships-hub-www-ircc-iitb-ac-in-ircc-webpage-rnd-f4359e",
-  "programme_name": "IIT Bombay, Summer Research Program",
-  "organizer": "ircc.iitb.ac.in",
-  "official_url": "https://www.ircc.iitb.ac.in/IRCC-Webpage/rnd/SummerResearchInternship",
-  "allowed_path_hints": [
-   "IRCC-Webpage/rnd/SummerResearchInternship"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-isac-org-students-during-college-dcab4e",
@@ -1936,7 +2440,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-iusstf-org-iusstf-viterbi-program-9fc87c",
@@ -1949,7 +2453,35 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-iusstf-org-program-khorana-program-for-scholars-b72a7a",
+  "programme_id": "fellowships-hub-www-iusstf-org-program-khorana-program-for-scholars-b72a7a",
+  "programme_name": "Khorana Program for Scholars",
+  "organizer": "iusstf.org",
+  "official_url": "https://www.iusstf.org/program/khorana-program-for-scholars",
+  "allowed_path_hints": [
+   "program/khorana-program-for-scholars"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
+  "source_id": "hub-fellowships-www-iusstf-org-program-sn-bose-scholars-program-76a0b7",
+  "programme_id": "fellowships-hub-www-iusstf-org-program-sn-bose-scholars-program-76a0b7",
+  "programme_name": "S.N. Bose Scholarship",
+  "organizer": "iusstf.org",
+  "official_url": "https://www.iusstf.org/program/sn-bose-scholars-program",
+  "allowed_path_hints": [
+   "program/sn-bose-scholars-program"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-www-janestreet-com-join-jane-street-programs-and-events-c8f635",
@@ -1967,15 +2499,16 @@
  {
   "source_id": "hub-fellowships-www-janestreet-com-join-jane-street-programs-and-events-a05e41",
   "programme_id": "fellowships-hub-www-janestreet-com-join-jane-street-programs-and-events-a05e41",
-  "programme_name": "Sep 10, 2026 | --- ## Ambassador Programs Paid and perks-based campus ambassador, brand-representative, and student-mark",
+  "programme_name": "Jane Street FOCUS",
   "organizer": "janestreet.com",
   "official_url": "https://www.janestreet.com/join-jane-street/programs-and-events/focus",
   "allowed_path_hints": [
    "join-jane-street/programs-and-events/focus"
   ],
   "check_cadence": "monthly",
+  "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-janestreet-com-join-jane-street-programs-and-events-2ceb76",
@@ -2002,20 +2535,21 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-janestreet-com-join-jane-street-programs-and-events-a580c7",
   "programme_id": "fellowships-hub-www-janestreet-com-join-jane-street-programs-and-events-a580c7",
-  "programme_name": "Apr 19, 2026 | | \u2705 [OPEN] | Jane Street | WiSE - Women in Science & Engineering \u2014 Deadline: Rolling",
+  "programme_name": "Jane Street INSIGHT",
   "organizer": "janestreet.com",
   "official_url": "https://www.janestreet.com/join-jane-street/programs-and-events/insight",
   "allowed_path_hints": [
    "join-jane-street/programs-and-events/insight"
   ],
   "check_cadence": "monthly",
+  "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-janestreet-com-join-jane-street-programs-and-events-db38ab",
@@ -2031,6 +2565,46 @@
   "last_seen": "2026-10-11T13:00:26Z"
  },
  {
+  "source_id": "hub-fellowships-jh-qualtrics-com-jfe-form-a3a087",
+  "programme_id": "fellowships-hub-jh-qualtrics-com-jfe-form-a3a087",
+  "programme_name": "Oct 13, 2026 | | \ud83d\udd25 [CLOSING SOON] | Lincoln International | Sophomore Job Shadow Program (2026) \u2014 Deadline: Oct 30, 2026",
+  "organizer": "jh.qualtrics.com",
+  "official_url": "https://jh.qualtrics.com/jfe/form/SV_ey6RVne03xbh3Zc",
+  "allowed_path_hints": [
+   "jfe/form/SV_ey6RVne03xbh3Zc"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-jmu-academicworks-com-opportunities-18086-14a602",
+  "programme_id": "fellowships-hub-jmu-academicworks-com-opportunities-18086-14a602",
+  "programme_name": "Resources for Underclassmen These resources support career preparation; they are not application listings. Your colle",
+  "organizer": "jmu.academicworks.com",
+  "official_url": "https://jmu.academicworks.com/opportunities/18086",
+  "allowed_path_hints": [
+   "opportunities/18086"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-jmu-academicworks-com-opportunities-18388-9f82fc",
+  "programme_id": "fellowships-hub-jmu-academicworks-com-opportunities-18388-9f82fc",
+  "programme_name": "February 1, 2027 | | \u2705 [OPEN] | RMIT University / IDEA | IDEA Photography Scholarship for Excellence \u2014 Incoming First-Ye",
+  "organizer": "jmu.academicworks.com",
+  "official_url": "https://jmu.academicworks.com/opportunities/18388",
+  "allowed_path_hints": [
+   "opportunities/18388"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-joinapple-avature-net-aiml2025-729737",
   "programme_id": "fellowships-hub-joinapple-avature-net-aiml2025-729737",
   "programme_name": "Apple Scholars in AI/ML PhD Fellowship",
@@ -2041,7 +2615,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-jpl-nasa-gov-edu-intern-af57b7",
@@ -2054,21 +2628,21 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
-  "source_id": "hub-fellowships-www-jpmorgan-com-technology-artificial-intelligence-dbdbad",
-  "programme_id": "fellowships-hub-www-jpmorgan-com-technology-artificial-intelligence-dbdbad",
-  "programme_name": "J.P. Morgan PhD Fellowship",
-  "organizer": "jpmorgan.com",
-  "official_url": "https://www.jpmorgan.com/technology/artificial-intelligence/research-awards",
+  "source_id": "hub-fellowships-jpmc-recsolu-com-app-collect-258776",
+  "programme_id": "fellowships-hub-jpmc-recsolu-com-app-collect-258776",
+  "programme_name": "Oct 13, 2026 | | \ud83d\udd25 [CLOSING SOON] | Stifel | Emerging Leaders Webinar (October 2026) \u2014 Deadline: October 14, 2026",
+  "organizer": "jpmc.recsolu.com",
+  "official_url": "https://jpmc.recsolu.com/app/collect/event/PmuqzKf0GsBN1KG_vpKrBA",
   "allowed_path_hints": [
-   "technology/artificial-intelligence/research-awards"
+   "app/collect/event/PmuqzKf0GsBN1KG_vpKrBA"
   ],
   "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-k12northstar-org-departments-teaching-learning-ca65ba",
@@ -2094,7 +2668,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-kdd-org-awards-sigkdd-dissertation-award-ab7cf6",
@@ -2107,21 +2681,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
- },
- {
-  "source_id": "hub-fellowships-www-kleinerperkins-com-fellows-cb7e82",
-  "programme_id": "fellowships-hub-www-kleinerperkins-com-fellows-cb7e82",
-  "programme_name": "One of Silicon Valley's most prestigious student fellowships, with alumni among AI founders and operators. Apply / detai",
-  "organizer": "kleinerperkins.com",
-  "official_url": "https://www.kleinerperkins.com/fellows/)**",
-  "allowed_path_hints": [
-   "fellows/)**"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-krellinst-org-csgf-300943",
@@ -2134,7 +2694,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-labs-oracle-com-pls-apex-1ca0e5",
@@ -2149,6 +2709,19 @@
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
   "last_seen": "2026-10-11T13:00:26Z"
+ },
+ {
+  "source_id": "hub-fellowships-lander-academicworks-com-opportunities-9920-e11deb",
+  "programme_id": "fellowships-hub-lander-academicworks-com-opportunities-9920-e11deb",
+  "programme_name": "January 31, 2027 priority; named award final deadline August 20, 2027 (times and time zones not published) | | \u2705 [OPEN]",
+  "organizer": "lander.academicworks.com",
+  "official_url": "https://lander.academicworks.com/opportunities/9920",
+  "allowed_path_hints": [
+   "opportunities/9920"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-lastmile-ed-org-apply-d6d262",
@@ -2177,6 +2750,19 @@
   "last_seen": "2026-10-10T09:43:18Z"
  },
  {
+  "source_id": "hub-fellowships-leslie-dartmouth-edu-students-student-research-fellows-ninet-c28b8c",
+  "programme_id": "fellowships-hub-leslie-dartmouth-edu-students-student-research-fellows-ninet-c28b8c",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Durham University | Laidlaw Leadership and Research Programme \u2014 2027 Cohort \u2014 Deadline: Janu",
+  "organizer": "leslie.dartmouth.edu",
+  "official_url": "https://leslie.dartmouth.edu/students/student-research-fellows-nineteenth-century-studies-2027-28",
+  "allowed_path_hints": [
+   "students/student-research-fellows-nineteenth-century-studies-2027-28"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-limeconnect-com-join-us-d23b03",
   "programme_id": "fellowships-hub-limeconnect-com-join-us-d23b03",
   "programme_name": "Aug 9, 2026 | | \u2705 [OPEN] | Jane Street | FOCUS \u2014 Deadline: Rolling (Sign Up to Be Notified) | Multi-Day Program",
@@ -2190,6 +2776,19 @@
   "last_seen": "2026-10-11T13:00:26Z"
  },
  {
+  "source_id": "hub-fellowships-www-lincolninternational-com-greenhouse-f5b0ed",
+  "programme_id": "fellowships-hub-www-lincolninternational-com-greenhouse-f5b0ed",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Weiss Asset Management | Underclassmen Fellowship \u2014 January 2027 \u2014 Deadline: October 16, 202",
+  "organizer": "lincolninternational.com",
+  "official_url": "https://www.lincolninternational.com/greenhouse?gh_jid=8169633",
+  "allowed_path_hints": [
+   "greenhouse"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-linksim-org-7e8914",
   "programme_id": "fellowships-hub-linksim-org-7e8914",
   "programme_name": "Link Foundation Modeling, Simulation, and Training Fellowship",
@@ -2200,7 +2799,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-lloyds-scholars-com-94bcb2",
@@ -2213,7 +2812,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-lpi-usra-edu-lpiintern-application-5784b0",
@@ -2226,7 +2825,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-luddy-indiana-edu-research-student-research-565ba1",
@@ -2239,7 +2838,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-lwtsquad-com-lwt-summit-2026-start-scholarship-application-376c97",
@@ -2253,6 +2852,35 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
   "last_seen": "2026-10-11T13:00:26Z"
+ },
+ {
+  "source_id": "hub-fellowships-machinelearning-apple-com-updates-aiml-residency-program-app-742c6a",
+  "programme_id": "fellowships-hub-machinelearning-apple-com-updates-aiml-residency-program-app-742c6a",
+  "programme_name": "Combines Apple product impact with publication opportunities and a sabbatical-friendly structure. Apply / details \u2192",
+  "organizer": "machinelearning.apple.com",
+  "official_url": "https://machinelearning.apple.com/updates/aiml-residency-program-application-2026)**",
+  "allowed_path_hints": [
+   "updates/aiml-residency-program-application-2026)**"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
+  "source_id": "hub-fellowships-machinelearning-apple-com-updates-introducing-apple-scholars-1a2ad3",
+  "programme_id": "fellowships-hub-machinelearning-apple-com-updates-introducing-apple-scholars-1a2ad3",
+  "programme_name": "Apple PhD Fellowship",
+  "organizer": "machinelearning.apple.com",
+  "official_url": "https://machinelearning.apple.com/updates/introducing-apple-scholars-aiml)|",
+  "allowed_path_hints": [
+   "updates/introducing-apple-scholars-aiml)|"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-www-madisontrust-com-client-resources-articles-87cf2b",
@@ -2279,7 +2907,22 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-matsprogram-org-program-summer-2026-2754e3",
+  "programme_id": "fellowships-hub-matsprogram-org-program-summer-2026-2754e3",
+  "programme_name": "Largest MATS cohort ever \u2014 120 fellows and 100 mentors \u2014 connecting fellows directly to mentors at Anthropic's Alignment",
+  "organizer": "matsprogram.org",
+  "official_url": "https://matsprogram.org/program/summer-2026)**",
+  "allowed_path_hints": [
+   "program/summer-2026)**"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-media-fellowship-hackclub-com-7f9ad0",
@@ -2292,7 +2935,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-metacareers-com-v2-jobs-17671c",
@@ -2305,7 +2948,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-michigan-gov-mistudentaid-programs-43a98c",
@@ -2331,7 +2974,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-microsoft-com-en-us-research-db263e",
@@ -2344,7 +2987,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-microsoft-com-en-us-research-7d4d7a",
@@ -2357,7 +3000,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-microsoft-com-en-us-research-bd9c53",
@@ -2370,7 +3013,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-microsoft-com-en-us-research-2838fe",
@@ -2409,7 +3052,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-midas-umich-edu-training-postdoctoral-programs-c4f12f",
@@ -2423,7 +3066,21 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-mlcollective-org-755703",
+  "programme_id": "fellowships-hub-mlcollective-org-755703",
+  "programme_name": "Grass-roots, low-barrier research mentorship for talent outside traditional pipelines. Apply / details \u2192",
+  "organizer": "mlcollective.org",
+  "official_url": "https://mlcollective.org/)**",
+  "allowed_path_hints": [
+   ")**"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-mlcollective-org-wiki-mlc-africa-d6d99e",
@@ -2436,7 +3093,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-mlt-smapply-org-prog-careerprep2029-application-6d62dd",
@@ -2462,7 +3119,33 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-montana-academicworks-com-opportunities-30740-4d1ff0",
+  "programme_id": "fellowships-hub-montana-academicworks-com-opportunities-30740-4d1ff0",
+  "programme_name": "January 7, 2027, 11:59 PM MST | | \u2705 [OPEN] | Florida | Florida Department of Education / OSFA \u2014 Bright Futures FAS/FMS",
+  "organizer": "montana.academicworks.com",
+  "official_url": "https://montana.academicworks.com/opportunities/30740",
+  "allowed_path_hints": [
+   "opportunities/30740"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-montana-academicworks-com-opportunities-30968-4b3362",
+  "programme_id": "fellowships-hub-montana-academicworks-com-opportunities-30968-4b3362",
+  "programme_name": "December 1, 2026 (midnight MST, as published; submit before midnight, including recommendations) | | \u2705 [OPEN] | Lander U",
+  "organizer": "montana.academicworks.com",
+  "official_url": "https://montana.academicworks.com/opportunities/30968",
+  "allowed_path_hints": [
+   "opportunities/30968"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-ms-unimelb-edu-au-engage-vacation-scholarships-6064e0",
@@ -2488,7 +3171,20 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-mtsu-scholarships-ngwebsolutions-com-scholarships-search-9d9540",
+  "programme_id": "fellowships-hub-mtsu-scholarships-ngwebsolutions-com-scholarships-search-9d9540",
+  "programme_name": "March 1, 2027 (time and time zone not published) | | \u2705 [OPEN] | University of Southern Mississippi | New Century / T.H.I",
+  "organizer": "mtsu.scholarships.ngwebsolutions.com",
+  "official_url": "https://mtsu.scholarships.ngwebsolutions.com/Scholarships/Search",
+  "allowed_path_hints": [
+   "Scholarships/Search"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-mvp-microsoft-com-studentambassadors-06563d",
@@ -2527,7 +3223,20 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-nationaldayofthecowgirl-com-scholarship-application-7e001e",
+  "programme_id": "fellowships-hub-nationaldayofthecowgirl-com-scholarship-application-7e001e",
+  "programme_name": "December 31, 2026 (time zone not published) | | \u2705 [OPEN] | Herbert Smith Freehills Kramer / Rare Recruitment | Roger Ley",
+  "organizer": "nationaldayofthecowgirl.com",
+  "official_url": "https://nationaldayofthecowgirl.com/scholarship-application",
+  "allowed_path_hints": [
+   "scholarship-application"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-nationalmerit-org-a53785",
@@ -2553,7 +3262,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-nature-com-immersive-inspiringwomeninscience-771114",
@@ -2566,7 +3275,20 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-nccu-edu-usp-cheatham-white-scholarship-program-30227d",
+  "programme_id": "fellowships-hub-www-nccu-edu-usp-cheatham-white-scholarship-program-30227d",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | North Carolina A&T State University | Honors Distinguished Scholars Program",
+  "organizer": "nccu.edu",
+  "official_url": "https://www.nccu.edu/usp/cheatham-white-scholarship-program/apply",
+  "allowed_path_hints": [
+   "usp/cheatham-white-scholarship-program/apply"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-ndseg-asee-org-53af43",
@@ -2579,7 +3301,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-ndseg-sysplus-com-ndseg-applicants-2b110b",
@@ -2592,7 +3314,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-ndsegfellowships-org-application-362be4",
@@ -2605,7 +3327,20 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-ndsu-academicworks-com-opportunities-40252-0f7b17",
+  "programme_id": "fellowships-hub-ndsu-academicworks-com-opportunities-40252-0f7b17",
+  "programme_name": "March 1, 2027 (time and time zone not published) | | \u2705 [OPEN] | Wayne State College | Patrick Reichenbach Memorial Endow",
+  "organizer": "ndsu.academicworks.com",
+  "official_url": "https://ndsu.academicworks.com/opportunities/40252",
+  "allowed_path_hints": [
+   "opportunities/40252"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-ndus-edu-paying-for-college-state-grant-dcbffa",
@@ -2632,7 +3367,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-nevadatreasurer-gov-ggms-ggms-home-e6c5fd",
@@ -2658,7 +3393,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-new-nsf-gov-funding-opportunities-87dd96",
@@ -2671,7 +3406,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-nextgen-team-aws-global-university-program-f90223",
@@ -2712,7 +3447,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-nj-gov-njyrs-education-005ef7",
@@ -2738,7 +3473,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-novartis-com-careers-career-search-a0ee54",
@@ -2751,7 +3486,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-npsc-org-index-html-f4dfeb",
@@ -2764,7 +3499,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-nrl-asee-org-6b37ab",
@@ -2777,7 +3512,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-nserc-crsng-gc-ca-students-etudiants-pg-cs-3c5a1e",
@@ -2790,7 +3525,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-nserc-crsng-gc-ca-students-etudiants-ug-pc-d62251",
@@ -2803,21 +3538,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
- },
- {
-  "source_id": "hub-fellowships-www-nsf-gov-cise-csgrad4us-0dbf82",
-  "programme_id": "fellowships-hub-www-nsf-gov-cise-csgrad4us-0dbf82",
-  "programme_name": "Computer and Information Science and Engineering (CISE) Graduate Fellowships",
-  "organizer": "nsf.gov",
-  "official_url": "https://www.nsf.gov/cise/CSGrad4US",
-  "allowed_path_hints": [
-   "cise/CSGrad4US"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-ntu-edu-sg-about-us-global-3828fd",
@@ -2831,7 +3552,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-nuffieldfoundation-org-students-teachers-research-placem-b35935",
@@ -2845,7 +3566,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-nvidia-com-en-us-research-bd2095",
@@ -2858,7 +3579,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-oecd-org-careers-internship-programme-7b1d78",
@@ -2871,7 +3592,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-oga-nthu-edu-tw-news-php-7dbca8",
@@ -2884,7 +3605,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-ohe-mn-gov-grant-scholarship-minnesota-state-grant-6804f7",
@@ -2937,7 +3658,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-openai-com-residency-2acf67",
@@ -2951,7 +3672,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-openlab-cern-education-ac57c6",
@@ -2964,7 +3685,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-openmainframeproject-org-projects-internship-program-aff82f",
@@ -3019,6 +3740,19 @@
   "last_seen": "2026-10-11T13:00:26Z"
  },
  {
+  "source_id": "hub-fellowships-opportunities-uncf-org-s-program-landing-page-64820f",
+  "programme_id": "fellowships-hub-opportunities-uncf-org-s-program-landing-page-64820f",
+  "programme_name": "January 28, 2027 at 11:59 PM EST | | \u2705 [OPEN] | American Meteorological Society | AMS First-Year Undergraduate Scholarsh",
+  "organizer": "opportunities.uncf.org",
+  "official_url": "https://opportunities.uncf.org/s/program-landing-page?id=a2iiM000000DsyfQAC",
+  "allowed_path_hints": [
+   "s/program-landing-page"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-opportunitiesforyouth-org-2026-06-1386d1",
   "programme_id": "fellowships-hub-opportunitiesforyouth-org-2026-06-1386d1",
   "programme_name": "The first in-region AI safety fellowship in Singapore, advised by MATS Co-Executive Director Ryan Kidd \u2014 bridging MATS-s",
@@ -3071,6 +3805,19 @@
   "last_seen": "2026-10-10T09:43:18Z"
  },
  {
+  "source_id": "hub-fellowships-www-optiver-com-join-us-jobs-132dc8",
+  "programme_id": "fellowships-hub-www-optiver-com-join-us-jobs-132dc8",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Five Rings | LINK 2027: Software Development Intensive Program \u2014 Deadline: No deadline publi",
+  "organizer": "optiver.com",
+  "official_url": "https://www.optiver.com/join-us/jobs/trading/amsterdam/futurefocus-quants-2027",
+  "allowed_path_hints": [
+   "join-us/jobs/trading/amsterdam/futurefocus-quants-2027"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-www-optiver-com-join-us-jobs-f78087",
   "programme_id": "fellowships-hub-www-optiver-com-join-us-jobs-f78087",
   "programme_name": "Jul 5, 2026 | --- ## Underclassmen Programs (Fellowships, Externships, etc.) | Status | Company | Program | Type | Locat",
@@ -3111,20 +3858,6 @@
   "last_seen": "2026-10-10T14:58:45Z"
  },
  {
-  "source_id": "hub-fellowships-www-pasteur-fr-en-education-df5403",
-  "programme_id": "fellowships-hub-www-pasteur-fr-en-education-df5403",
-  "programme_name": "Pasteur Institute, Pasteur-Roux-Cantarini Internship Program",
-  "organizer": "pasteur.fr",
-  "official_url": "https://www.pasteur.fr/en/education/robert-cantarini-internship-program",
-  "allowed_path_hints": [
-   "en/education/robert-cantarini-internship-program"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
- },
- {
   "source_id": "hub-fellowships-pathwaystoscience-org-pdf-enhancingyourfellowshipapplication-e8c2a9",
   "programme_id": "fellowships-hub-pathwaystoscience-org-pdf-enhancingyourfellowshipapplication-e8c2a9",
   "programme_name": "Enhancing Your Fellowship Application",
@@ -3135,7 +3868,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-paveherway-org-apply-ea4dd6",
@@ -3202,7 +3935,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-phdfellowship-splashthat-com-5cda95",
@@ -3216,20 +3949,6 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T11:54:35Z",
   "last_seen": "2026-10-10T14:58:45Z"
- },
- {
-  "source_id": "hub-fellowships-www-pivotal-research-org-fellowship-e07b5c",
-  "programme_id": "fellowships-hub-www-pivotal-research-org-fellowship-e07b5c",
-  "programme_name": "Hosted at the London Initiative for Safe AI; the extension track lets fellows ship full research papers. Apply / details",
-  "organizer": "pivotal-research.org",
-  "official_url": "https://www.pivotal-research.org/fellowship)**",
-  "allowed_path_hints": [
-   "fellowship)**"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
  },
  {
   "source_id": "hub-fellowships-pointfoundation-org-scholarships-flagship-34eb33",
@@ -3256,7 +3975,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-profellow-com-96b879",
@@ -3269,7 +3988,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-programmes-polytechnique-edu-en-exchange-programs-a72684",
@@ -3322,7 +4041,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-quadfellowship-org-aa9d11",
@@ -3335,7 +4054,35 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
+  "programme_id": "fellowships-hub-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
+  "programme_name": "Adobe India Women-in-Technology Scholarship",
+  "organizer": "research.adobe.com",
+  "official_url": "https://research.adobe.com/adobe-india-women-in-technology-scholarship",
+  "allowed_path_hints": [
+   "adobe-india-women-in-technology-scholarship"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
+  "source_id": "hub-fellowships-research-adobe-com-fellowship-68d538",
+  "programme_id": "fellowships-hub-research-adobe-com-fellowship-68d538",
+  "programme_name": "Adobe Fellowship",
+  "organizer": "research.adobe.com",
+  "official_url": "https://research.adobe.com/fellowship",
+  "allowed_path_hints": [
+   "fellowship"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-research-fb-com-fellows-14817a",
@@ -3362,7 +4109,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-research-ibm-com-university-awards-9332fe",
@@ -3376,20 +4123,6 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
   "last_seen": "2026-10-10T14:58:45Z"
- },
- {
-  "source_id": "hub-fellowships-www-research-ibm-com-university-awards-775314",
-  "programme_id": "fellowships-hub-www-research-ibm-com-university-awards-775314",
-  "programme_name": "IBM Masters Fellowship",
-  "organizer": "research.ibm.com",
-  "official_url": "https://www.research.ibm.com/university/awards/masters_fellowship.html",
-  "allowed_path_hints": [
-   "university/awards/masters_fellowship.html"
-  ],
-  "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
  },
  {
   "source_id": "hub-fellowships-research-snap-com-fellowships-html-dde663",
@@ -3416,7 +4149,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-rig-internships-de-b856a1",
@@ -3443,7 +4176,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-sandia-gov-careers-career-possibilities-c42ea6",
@@ -3456,7 +4189,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-santafe-edu-engage-learn-e272ae",
@@ -3469,7 +4202,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-schev-edu-financial-aid-financial-aid-04b31d",
@@ -3508,7 +4241,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-science-anu-edu-au-summer-research-scholars-program-applicat-346da7",
@@ -3521,7 +4254,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-science-energy-gov-wdts-scgsr-811b1d",
@@ -3573,7 +4306,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-sfp-iitm-ac-in-540af5",
@@ -3586,7 +4319,20 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-sfsu-co1-qualtrics-com-jfe-form-301a71",
+  "programme_id": "fellowships-hub-sfsu-co1-qualtrics-com-jfe-form-301a71",
+  "programme_name": "March 31, 2027 (time and time zone not published) | | \u2705 [OPEN] | Carroll University | Music Scholarships and Awards \u2014 In",
+  "organizer": "sfsu.co1.qualtrics.com",
+  "official_url": "https://sfsu.co1.qualtrics.com/jfe/form/SV_bwHK09YqxI1qkOG",
+  "allowed_path_hints": [
+   "jfe/form/SV_bwHK09YqxI1qkOG"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-shastriinstitute-org-shastri-student-internship-project-6141dc",
@@ -3600,7 +4346,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-shastriinstitute-org-shastri-research-student-fellowship-4e27a9",
@@ -3613,7 +4359,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-shpe-org-2026-3a88e6",
@@ -3652,7 +4398,21 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-sighpc-org-fellowships-b91f11",
+  "programme_id": "fellowships-hub-www-sighpc-org-fellowships-b91f11",
+  "programme_name": "ACM SIGHPC Computational & Data Science Graduate Fellowship",
+  "organizer": "sighpc.org",
+  "official_url": "http://www.sighpc.org/fellowships",
+  "allowed_path_hints": [
+   "fellowships"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-www-sigplan-org-awards-dissertation-837fde",
@@ -3665,7 +4425,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-sites-nationalacademies-org-pga-fellowships-83341e",
@@ -3678,7 +4438,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-sites-nationalacademies-org-pga-fordfellowships-0f7325",
@@ -3694,6 +4454,33 @@
   "last_seen": "2026-10-10T14:58:45Z"
  },
  {
+  "source_id": "hub-fellowships-sites-research-google-residency-7c3074",
+  "programme_id": "fellowships-hub-sites-research-google-residency-7c3074",
+  "programme_name": "Google AI Residency Program - Canada",
+  "organizer": "sites.research.google",
+  "official_url": "https://sites.research.google/residency",
+  "allowed_path_hints": [
+   "residency"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
+  "source_id": "hub-fellowships-siu-academicworks-com-opportunities-39276-fcefc8",
+  "programme_id": "fellowships-hub-siu-academicworks-com-opportunities-39276-fcefc8",
+  "programme_name": "February 1, 2027 (time and time zone not published) | | \u2705 [OPEN] | Cal Poly Pomona | Restricted Freshman/Sophomore Award",
+  "organizer": "siu.academicworks.com",
+  "official_url": "https://siu.academicworks.com/opportunities/39276",
+  "allowed_path_hints": [
+   "opportunities/39276"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-www-smartscholarship-org-smart-523440",
   "programme_id": "fellowships-hub-www-smartscholarship-org-smart-523440",
   "programme_name": "DoD SMART Scholarship-for-Service",
@@ -3704,7 +4491,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-smartscholarshipprod-service-now-com-smart-472d06",
@@ -3730,7 +4517,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-snapresearchfs-splashthat-com-df0b94",
@@ -3787,18 +4574,17 @@
   "last_seen": "2026-10-11T13:00:26Z"
  },
  {
-  "source_id": "hub-fellowships-www-southparkcommons-com-founder-fellowship-541cb1",
-  "programme_id": "fellowships-hub-www-southparkcommons-com-founder-fellowship-541cb1",
-  "programme_name": "Pre-idea-stage support with guaranteed follow-on capital \u2014 rare in the fellowship landscape. Apply / details \u2192",
-  "organizer": "southparkcommons.com",
-  "official_url": "https://www.southparkcommons.com/founder-fellowship/)**",
+  "source_id": "hub-fellowships-spacegrant-net-apps-pas2-35fcd0",
+  "programme_id": "fellowships-hub-spacegrant-net-apps-pas2-35fcd0",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Cornell University / Einaudi Center | Laidlaw Leadership and Research Program, 2027\u20132029 \u2014 D",
+  "organizer": "spacegrant.net",
+  "official_url": "https://spacegrant.net/apps/pas2",
   "allowed_path_hints": [
-   "founder-fellowship/)**"
+   "apps/pas2"
   ],
   "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-sserd-org-internship-e05f59",
@@ -3812,21 +4598,34 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
-  "source_id": "hub-fellowships-www-ssrc-org-programs-data-fluencies-5dba1c",
-  "programme_id": "fellowships-hub-www-ssrc-org-programs-data-fluencies-5dba1c",
-  "programme_name": "Data Fluencies Dissertation Grants",
-  "organizer": "ssrc.org",
-  "official_url": "https://www.ssrc.org/programs/data-fluencies/data-fluencies-dissertation-grants",
+  "source_id": "hub-fellowships-stanforduniversity-qualtrics-com-jfe-form-cc1ac3",
+  "programme_id": "fellowships-hub-stanforduniversity-qualtrics-com-jfe-form-cc1ac3",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | The Rockefeller University / CUNY Hunter College | Hunter \u00d7 RockEDU Scholars (2027) \u2014 Deadli",
+  "organizer": "stanforduniversity.qualtrics.com",
+  "official_url": "https://stanforduniversity.qualtrics.com/jfe/form/SV_8dMX0nvf5yBVy8C",
   "allowed_path_hints": [
-   "programs/data-fluencies/data-fluencies-dissertation-grants"
+   "jfe/form/SV_8dMX0nvf5yBVy8C"
   ],
   "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-stifel-zoom-us-webinar-register-297447",
+  "programme_id": "fellowships-hub-stifel-zoom-us-webinar-register-297447",
+  "programme_name": "Oct 13, 2026 | | \ud83d\udd25 [CLOSING SOON] | Houlihan Lokey | Investment Banking Insight Day \u2014 Corporate Finance (2026) \u2014 Deadlin",
+  "organizer": "stifel.zoom.us",
+  "official_url": "https://stifel.zoom.us/webinar/register/WN_oQfCtXbuRFyk6q6OMmBCEQ",
+  "allowed_path_hints": [
+   "webinar/register/WN_oQfCtXbuRFyk6q6OMmBCEQ"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-stripe-events-fellowship-b58dd2",
@@ -3852,7 +4651,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-studentpartners-microsoft-com-en-us-6e515e",
@@ -3865,7 +4664,34 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-surge-iitk-ac-in-about-html-2cad99",
+  "programme_id": "fellowships-hub-surge-iitk-ac-in-about-html-2cad99",
+  "programme_name": "IITK SURGE Program",
+  "organizer": "surge.iitk.ac.in",
+  "official_url": "http://surge.iitk.ac.in/about.html",
+  "allowed_path_hints": [
+   "about.html"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
+  "source_id": "hub-fellowships-www-swinburne-edu-au-form-web-scholarships-202846",
+  "programme_id": "fellowships-hub-www-swinburne-edu-au-form-web-scholarships-202846",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Citadel Securities | Ignite Women\u2019s Trading Program (Winter 2027) \u2014 Deadline: October 16, 20",
+  "organizer": "swinburne.edu.au",
+  "official_url": "https://www.swinburne.edu.au/form/web-scholarships",
+  "allowed_path_hints": [
+   "form/web-scholarships"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-swiss-sspp-program-phys-ethz-ch-374d1c",
@@ -3895,6 +4721,20 @@
   "last_seen": "2026-10-10T14:58:45Z"
  },
  {
+  "source_id": "hub-fellowships-www-symantec-com-about-careers-298f65",
+  "programme_id": "fellowships-hub-www-symantec-com-about-careers-298f65",
+  "programme_name": "Symantec Research Labs Graduate Fellowship",
+  "organizer": "symantec.com",
+  "official_url": "https://www.symantec.com/about/careers/graduate-fellowship",
+  "allowed_path_hints": [
+   "about/careers/graduate-fellowship"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
   "source_id": "hub-fellowships-tally-so-r-rj1rl5-5d2532",
   "programme_id": "fellowships-hub-tally-so-r-rj1rl5-5d2532",
   "programme_name": "Jul 31, 2026 | | \u2705 [OPEN] | Lime Connect | Lime Connect Network Membership \u2014 Deadline: Rolling | Network / Community",
@@ -3918,7 +4758,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-tech-fb-com-inside-facebook-reality-labs-research-the-future-85afa4",
@@ -3932,7 +4772,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T11:54:35Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-techatbloomberg-com-bloomberg-data-science-ph-d-fellowsh-56f42a",
@@ -3945,7 +4785,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-teep-studyintaiwan-org-programs-engineering-53fbc1",
@@ -3959,7 +4799,48 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-thielfellowship-org-apply-ab1860",
+  "programme_id": "fellowships-hub-thielfellowship-org-apply-ab1860",
+  "programme_name": "Highly competitive (rate not published). Apply / details \u2192",
+  "organizer": "thielfellowship.org",
+  "official_url": "https://thielfellowship.org/apply)**",
+  "allowed_path_hints": [
+   "apply)**"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
+  "source_id": "hub-fellowships-tjc-academicworks-com-opportunities-143859-c085f5",
+  "programme_id": "fellowships-hub-tjc-academicworks-com-opportunities-143859-c085f5",
+  "programme_name": "April 1, 2027 priority; June 1, 2027 at 11:59pm final (timezone not stated) | | \u2705 [OPEN] | Western Kentucky University",
+  "organizer": "tjc.academicworks.com",
+  "official_url": "https://tjc.academicworks.com/opportunities/143859",
+  "allowed_path_hints": [
+   "opportunities/143859"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-tn-gov-thecstudentportal-3f5fd4",
+  "programme_id": "fellowships-hub-www-tn-gov-thecstudentportal-3f5fd4",
+  "programme_name": "November 2, 2026 (scholarship application); April 1, 2027 (FAFSA) | | \u2705 [OPEN] | Tennessee | University of Tennessee Sys",
+  "organizer": "tn.gov",
+  "official_url": "https://www.tn.gov/thecstudentportal",
+  "allowed_path_hints": [
+   "thecstudentportal"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-training-curie-fr-article502-html-b74203",
@@ -3972,7 +4853,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-treasury-nh-gov-residents-scholarship-programs-79473f",
@@ -4001,6 +4882,19 @@
   "last_seen": "2026-10-10T08:36:32Z"
  },
  {
+  "source_id": "hub-fellowships-ucmo-academicworks-com-users-sign-in-d08014",
+  "programme_id": "fellowships-hub-ucmo-academicworks-com-users-sign-in-d08014",
+  "programme_name": "February 1, 2027 named scholarship deadline (time and time zone not published) | | \u2705 [OPEN] | Middle Tennessee State Uni",
+  "organizer": "ucmo.academicworks.com",
+  "official_url": "https://ucmo.academicworks.com/users/sign_in",
+  "allowed_path_hints": [
+   "users/sign_in"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-www-ugc-ac-in-ef-434256",
   "programme_id": "fellowships-hub-www-ugc-ac-in-ef-434256",
   "programme_name": "Emeritus fellowship",
@@ -4011,7 +4905,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-ugc-ac-in-oldpdf-xiplanpdf-674fcb",
@@ -4024,7 +4918,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-ugc-ac-in-oldpdf-xplanpdf-fc020c",
@@ -4037,7 +4931,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-uhcc-hawaii-edu-admissions-hawaii-promise-php-4416b9",
@@ -4053,6 +4947,32 @@
   "last_seen": "2026-10-11T13:00:26Z"
  },
  {
+  "source_id": "hub-fellowships-umbc-academicworks-com-opportunities-9054-16cf02",
+  "programme_id": "fellowships-hub-umbc-academicworks-com-opportunities-9054-16cf02",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | PwC UK | Women in Business \u2014 Workforce Consulting, Spring 2027 \u2014 Deadline: No deadline publi",
+  "organizer": "umbc.academicworks.com",
+  "official_url": "https://umbc.academicworks.com/opportunities/9054",
+  "allowed_path_hints": [
+   "opportunities/9054"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-uncw-infoready4-com-7beb0d",
+  "programme_id": "fellowships-hub-uncw-infoready4-com-7beb0d",
+  "programme_name": "Oct 13, 2026 | | \u2705 [OPEN] | Barry Goldwater Scholarship & Excellence in Education Foundation | Goldwater Summer Research",
+  "organizer": "uncw.infoready4.com",
+  "official_url": "https://uncw.infoready4.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
   "source_id": "hub-fellowships-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
   "programme_id": "fellowships-hub-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
   "programme_name": "Summer Research Program, Princeton University",
@@ -4063,7 +4983,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-www-unigo-com-scholarships-our-scholarships-09588a",
@@ -4092,18 +5012,17 @@
   "last_seen": "2026-10-11T13:00:26Z"
  },
  {
-  "source_id": "hub-fellowships-www-universite-paris-saclay-fr-en-education-cbf27c",
-  "programme_id": "fellowships-hub-www-universite-paris-saclay-fr-en-education-cbf27c",
-  "programme_name": "Paris-Saclay University, Internship Program",
-  "organizer": "universite-paris-saclay.fr",
-  "official_url": "https://www.universite-paris-saclay.fr/en/education/doctoral-studies/internship-bourses",
+  "source_id": "hub-fellowships-unt-jotformgov-com-262565700036857-fbf8e0",
+  "programme_id": "fellowships-hub-unt-jotformgov-com-262565700036857-fbf8e0",
+  "programme_name": "December 31, 2026, 11:59 PM CST (student application/transcripts); January 4, 2027, 11:59 PM CST (recommendation) | | \u2705",
+  "organizer": "unt.jotformgov.com",
+  "official_url": "https://unt.jotformgov.com/262565700036857",
   "allowed_path_hints": [
-   "en/education/doctoral-studies/internship-bourses"
+   "262565700036857"
   ],
   "check_cadence": "monthly",
-  "first_seen": "2026-10-11T13:00:26Z",
-  "last_seen": "2026-10-11T13:00:26Z",
-  "dead_strikes": 8
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-uramscholarship-in-2e0bdc",
@@ -4117,6 +5036,60 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
   "last_seen": "2026-10-10T14:58:45Z"
+ },
+ {
+  "source_id": "hub-fellowships-us-boell-org-en-2026-cf0b9a",
+  "programme_id": "fellowships-hub-us-boell-org-en-2026-cf0b9a",
+  "programme_name": "Centers the Global Majority in AI governance discussions \u2014 a first-of-its-kind fellowship theme. Apply / details \u2192",
+  "organizer": "us.boell.org",
+  "official_url": "https://us.boell.org/en/2026/05/12/global-majority-ai-fellowship)**",
+  "allowed_path_hints": [
+   "en/2026/05/12/global-majority-ai-fellowship)**"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
+  "source_id": "hub-fellowships-us-fulbrightonline-org-984fde",
+  "programme_id": "fellowships-hub-us-fulbrightonline-org-984fde",
+  "programme_name": "International AI policy and research placements under the flagship US exchange program. Apply / details \u2192",
+  "organizer": "us.fulbrightonline.org",
+  "official_url": "https://us.fulbrightonline.org/)**",
+  "allowed_path_hints": [
+   ")**"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
+ },
+ {
+  "source_id": "hub-fellowships-usm-academicworks-com-users-sign-in-76cfc3",
+  "programme_id": "fellowships-hub-usm-academicworks-com-users-sign-in-76cfc3",
+  "programme_name": "March 1, 2027 current named award deadlines and General Application priority (time and time zone not published) | | \u2705 [O",
+  "organizer": "usm.academicworks.com",
+  "official_url": "https://usm.academicworks.com/users/sign_in",
+  "allowed_path_hints": [
+   "users/sign_in"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-vpuesubmit-stanford-edu-app-grants-0655dd",
+  "programme_id": "fellowships-hub-vpuesubmit-stanford-edu-app-grants-0655dd",
+  "programme_name": "December 1, 2026 at 11:59 PM PST; faculty mentor letter December 8, 2026 at 11:59 PM PST | | \u2705 [OPEN] | American Institu",
+  "organizer": "vpuesubmit.stanford.edu",
+  "official_url": "https://vpuesubmit.stanford.edu/app/Grants/login.asp",
+  "allowed_path_hints": [
+   "app/Grants/login.asp"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-wagsonline-org-technology-award-announcement-4ced00",
@@ -4157,7 +5130,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-websim-worldquantchallenge-com-en-cms-a7c16f",
@@ -4171,7 +5144,7 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T08:36:32Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-wiki-gnome-org-internships-c4bfa2",
@@ -4185,7 +5158,22 @@
   "check_cadence": "monthly",
   "needs_page_noun": true,
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-wiki-lfnetworking-org-display-ln-3f0a86",
+  "programme_id": "fellowships-hub-wiki-lfnetworking-org-display-ln-3f0a86",
+  "programme_name": "Linux Foundation Networking Internships",
+  "organizer": "wiki.lfnetworking.org",
+  "official_url": "https://wiki.lfnetworking.org/display/LN/LF+Networking+Internships",
+  "allowed_path_hints": [
+   "display/LN/LF+Networking+Internships"
+  ],
+  "check_cadence": "monthly",
+  "needs_page_noun": true,
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-wiki-linuxfoundation-org-lkmp-8b5a2f",
@@ -4198,7 +5186,33 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-wku-co1-qualtrics-com-jfe-form-ced6ad",
+  "programme_id": "fellowships-hub-wku-co1-qualtrics-com-jfe-form-ced6ad",
+  "programme_name": "January 1, 2027 at midnight (timezone not stated); both English and TopDollar applications required | | \u2705 [OPEN] | Unive",
+  "organizer": "wku.co1.qualtrics.com",
+  "official_url": "https://wku.co1.qualtrics.com/jfe/form/SV_23QxJyYExHzlfZY",
+  "allowed_path_hints": [
+   "jfe/form/SV_23QxJyYExHzlfZY"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-www-wku-edu-english-pccas-cw-php-218fcf",
+  "programme_id": "fellowships-hub-www-wku-edu-english-pccas-cw-php-218fcf",
+  "programme_name": "January 1, 2027 published award/TopDollar deadline (use this earlier date); department lists February 1 admission/TopDol",
+  "organizer": "wku.edu",
+  "official_url": "https://www.wku.edu/english/pccas-cw.php",
+  "allowed_path_hints": [
+   "english/pccas-cw.php"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-womenhack-com-events-ea593f",
@@ -4224,7 +5238,20 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
-  "last_seen": "2026-10-11T13:00:26Z"
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-wordoflife-formstack-com-forms-student-ambassador-applicatio-7d9651",
+  "programme_id": "fellowships-hub-wordoflife-formstack-com-forms-student-ambassador-applicatio-7d9651",
+  "programme_name": "Oct 13, 2026 | --- ## Underclassmen Research Programs | Status | University/Organization | Program | Field | Location",
+  "organizer": "wordoflife.formstack.com",
+  "official_url": "https://wordoflife.formstack.com/forms/student_ambassador_application",
+  "allowed_path_hints": [
+   "forms/student_ambassador_application"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-wsac-wa-gov-wcg-f96ce6",
@@ -4238,6 +5265,32 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
   "last_seen": "2026-10-10T14:58:45Z"
+ },
+ {
+  "source_id": "hub-fellowships-wsc-academicworks-com-opportunities-7820-33dac0",
+  "programme_id": "fellowships-hub-wsc-academicworks-com-opportunities-7820-33dac0",
+  "programme_name": "May 1, 2027 final; December 1, 2026 general freshmen scholarship priority | | \u2705 [OPEN] | Western Kentucky University | P",
+  "organizer": "wsc.academicworks.com",
+  "official_url": "https://wsc.academicworks.com/opportunities/7820",
+  "allowed_path_hints": [
+   "opportunities/7820"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
+ },
+ {
+  "source_id": "hub-fellowships-wsc-academicworks-com-opportunities-8239-eed9ec",
+  "programme_id": "fellowships-hub-wsc-academicworks-com-opportunities-8239-eed9ec",
+  "programme_name": "January 4, 2027 | | \u2705 [OPEN] | Bowling Green State University | Simmons / Eva Marie Saint Arts, Schedel Biology & Hott S",
+  "organizer": "wsc.academicworks.com",
+  "official_url": "https://wsc.academicworks.com/opportunities/8239",
+  "allowed_path_hints": [
+   "opportunities/8239"
+  ],
+  "check_cadence": "monthly",
+  "first_seen": "2026-10-18T11:17:33Z",
+  "last_seen": "2026-10-18T11:17:33Z"
  },
  {
   "source_id": "hub-fellowships-youthmarketing-typeform-com-googlecreator-cbb61a",
