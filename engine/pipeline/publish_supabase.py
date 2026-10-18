@@ -77,8 +77,12 @@ PROGRAMME_SHARED_KEYS = {"logo_url", "region", "organizer_domain", "deadline_bas
 # Programme-only keys (never published for jobs/internships/hackathons).
 PROGRAMME_ONLY_KEYS = {"funding_amount_usd", "intl_eligible", "levels"}
 # Programmes and hackathons share the placeholder->NULL rules.
-PLACEHOLDER_NULL_TYPES = {"hackathon", "programme"}
-DESCRIPTION_MAX_TYPES = {"hackathon", "programme"}
+PLACEHOLDER_NULL_TYPES = {"hackathon", "programme", "contribution"}
+DESCRIPTION_MAX_TYPES = {"hackathon", "programme", "contribution"}
+# Hackathon keys that contributions also publish.
+CONTRIBUTION_SHARED_KEYS = {"logo_url", "region", "mode"}
+# Contribution-only keys (never published for other types).
+CONTRIBUTION_ONLY_KEYS = {"repo_description", "updated_at"}
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -89,7 +93,7 @@ EXTRA_KEYS = [
     "season", "sponsorship", "program", "segment", "posting_age_days",
     # contributions
     "repo", "labels", "language", "difficulty", "difficulty_signal",
-    "issue_number", "repo_stars", "discovery_source",
+    "issue_number", "repo_stars", "discovery_source", "repo_description", "updated_at",
     # hackathons
     "prize", "tags", "start_date", "end_date", "is_online",
     "registration_deadline", "source", "logo_url", "status", "themes",
@@ -179,13 +183,16 @@ def map_row(r: dict) -> dict:
     extra = {}
     for k in EXTRA_KEYS:
         if k in HACKATHON_ONLY_KEYS and t != "hackathon" and not (
-                t == "programme" and k in PROGRAMME_SHARED_KEYS):
+                t == "programme" and k in PROGRAMME_SHARED_KEYS) and not (
+                t == "contribution" and k in CONTRIBUTION_SHARED_KEYS):
+            continue
+        if k in CONTRIBUTION_ONLY_KEYS and t != "contribution":
             continue
         if k in PROGRAMME_ONLY_KEYS and t != "programme":
             continue
         v = r.get(k)
         if v not in (None, "", []):
-            if t == "programme" and isinstance(v, str) and v.strip().casefold() in HACKATHON_PLACEHOLDERS:
+            if t in ("programme", "contribution") and isinstance(v, str) and v.strip().casefold() in HACKATHON_PLACEHOLDERS:
                 continue
             extra[k] = v
     if t == "programme":

@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -21,7 +22,9 @@ from urllib.parse import urlencode, urlsplit
 from core.paths import OPPORTUNITIES_PATH
 
 
-STALE_DAYS = 120
+STALE_DAYS = 60
+DESCRIPTION_CHARS = 250
+DISCOVERY_UPDATED_WITHIN_DAYS = 120
 MAX_COMMENTS = 15
 RECENT_ACTIVITY_DAYS = 3
 NEW_WINDOW_DAYS = 30
@@ -193,7 +196,7 @@ def _issue_admission_reason(issue, checked_at):
     if activity_age_days is None:
         return "needs-confirmation"
     if activity_age_days > STALE_DAYS:
-        return "stale-120d"
+        return "stale"
     return None
 
 
@@ -316,7 +319,7 @@ def discover_repos(token, now, search_fetch=_default_search_fetch):
     if now is None:
         return []
     pushed_since = (now - timedelta(days=DISCOVERY_PUSHED_WITHIN_DAYS)).date().isoformat()
-    updated_since = (now - timedelta(days=STALE_DAYS)).date().isoformat()
+    updated_since = (now - timedelta(days=DISCOVERY_UPDATED_WITHIN_DAYS)).date().isoformat()
     curated = {repo.casefold() for repo, _language in CURATED_REPOS}
     discovered = []
     seen = set(curated)
@@ -403,6 +406,94 @@ def _last_seen_age_days(value, checked_at):
     return (checked.date() - last_seen_date).days
 
 
+_FENCE_RE = re.compile(r"(```|~~~).*?(\1|\Z)", re.S)
+_COMMENT_RE = re.compile(r"<!--.*?(-->|\Z)", re.S)
+_TAG_RE = re.compile(r"<[^>]+>")
+_CHECKLIST_RE = re.compile(r"^\s*[-*+]\s*\[[ xX]\].*$", re.M)
+_HEADING_RE = re.compile(r"^\s{0,3}#{1,6}\s*(.*)$", re.M)
+_TEMPLATE_HEAD_RE = re.compile(
+    r"^\s*(?:#{1,6}\s*)?\**(?:describe the bug|steps to reproduce|expected behou?r|"
+    r"actual behou?r|environment|additional context|checklist|is your feature request.*|"
+    r"prerequisites|versions?)\**:?\s*$", re.I | re.M)
+
+
+def clean_issue_body(body, limit=DESCRIPTION_CHARS):
+    """First ~limit chars of an issue body without markdown/HTML/template noise."""
+    if not isinstance(body, str) or not body.strip():
+        return None
+    text = _COMMENT_RE.sub(" ", body.replace("\r", ""))
+    text = _FENCE_RE.sub(" ", text)
+    text = _CHECKLIST_RE.sub(" ", text)
+    text = _TEMPLATE_HEAD_RE.sub(" ", text)
+    text = _HEADING_RE.sub(r"\1", text)
+    text = _TAG_RE.sub(" ", text)
+    text = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", text)
+    text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    text = re.sub(r"https?://\S+", " ", text)
+    text = re.sub(r"`+|\*\*|__|^\s*>\s?|^\s*[-*+]\s+", " ", text, flags=re.M)
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) < 20:
+        return None
+    if len(text) <= limit:
+        return text
+    cut = text[:limit]
+    space = cut.rfind(" ")
+    if space > limit * 0.6:
+        cut = cut[:space]
+    return cut.rstrip(" ,;:-") + "\u2026"
+
+
+def _owner(repo):
+    return repo.split("/", 1)[0] if isinstance(repo, str) and "/" in repo else None
+
+
+def owner_logo_url(repo, avatar_url=None):
+    if isinstance(avatar_url, str) and avatar_url.startswith("https://"):
+        return avatar_url
+    owner = _owner(repo)
+    return "https://github.com/{}.png?size=96".format(owner) if owner else None
+
+
+def _issue_description(issue, repo_info):
+    description = clean_issue_body(issue.get("body"))
+    if description:
+        return description
+    repo_description = (repo_info or {}).get("description")
+    if isinstance(repo_description, str) and repo_description.strip():
+        return clean_issue_body(repo_description, DESCRIPTION_CHARS) or repo_description.strip()[:DESCRIPTION_CHARS]
+    return None
+
+
+def _default_repo_fetch(repo):
+    req = request.Request("https://api.github.com/repos/{}".format(repo), headers=_github_headers())
+    with request.urlopen(req) as response:
+        info = json.load(response)
+    if not isinstance(info, dict):
+        raise ValueError("repo response was not an object")
+    return {
+        "description": info.get("description"),
+        "stars": info.get("stargazers_count"),
+        "language": info.get("language"),
+        "avatar_url": (info.get("owner") or {}).get("avatar_url"),
+    }
+
+
+def _default_pr_check(repo, number):
+    """True when the issue has an open linked/cross-referenced pull request."""
+    url = "https://api.github.com/repos/{}/issues/{}/timeline?per_page=100".format(repo, number)
+    req = request.Request(url, headers=_github_headers())
+    with request.urlopen(req) as response:
+        events = json.load(response)
+    for event in events if isinstance(events, list) else []:
+        if event.get("event") == "connected":
+            return True
+        if event.get("event") == "cross-referenced":
+            source = (event.get("source") or {}).get("issue") or {}
+            if "pull_request" in source and source.get("state") == "open":
+                return True
+    return False
+
+
 def _derive_difficulty(labels):
     normalized = [(label, DIFFICULTY_BY_LABEL.get(label.strip().lower())) for label in labels]
     for label, difficulty in normalized:
@@ -414,7 +505,8 @@ def _derive_difficulty(labels):
     return "beginner", "default"
 
 
-def build_row(repo, issue, checked_at, language=None, discovery_source="curated", repo_stars=None):
+def build_row(repo, issue, checked_at, language=None, discovery_source="curated", repo_stars=None, repo_info=None):
+    repo_info = repo_info or {}
     issue_url = issue["html_url"]
     created_at = issue.get("created_at")
     updated_at = issue.get("updated_at")
@@ -437,11 +529,16 @@ def build_row(repo, issue, checked_at, language=None, discovery_source="curated"
         "official_url": issue_url,
         "application_url": issue_url,
         "labels": labels,
-        "language": language if language is not None else REPO_LANGUAGES.get(repo),
+        "language": language if language is not None else (REPO_LANGUAGES.get(repo) or repo_info.get("language")),
+        "description": _issue_description(issue, repo_info),
+        "repo_description": repo_info.get("description") or None,
+        "logo_url": owner_logo_url(repo, repo_info.get("avatar_url")),
+        "region": "Global/Remote",
+        "mode": "online",
         "difficulty": difficulty,
         "difficulty_signal": difficulty_signal,
         "discovery_source": discovery_source,
-        "repo_stars": repo_stars,
+        "repo_stars": repo_stars if repo_stars is not None else repo_info.get("stars"),
         "issue_number": issue["number"],
         "created_at": created_at,
         "posted_on": created_at,
@@ -469,7 +566,7 @@ def build_row(repo, issue, checked_at, language=None, discovery_source="curated"
     }
 
 
-def parse_repo(repo, issues, checked_at, language=None, discovery_source="curated", repo_stars=None):
+def parse_repo(repo, issues, checked_at, language=None, discovery_source="curated", repo_stars=None, repo_info=None, pr_check=None):
     rows = []
     if not isinstance(issues, list):
         return rows
@@ -484,9 +581,16 @@ def parse_repo(repo, issues, checked_at, language=None, discovery_source="curate
                 language=language,
                 discovery_source=discovery_source,
                 repo_stars=repo_stars,
+                repo_info=repo_info,
             ))
         except (KeyError, TypeError, ValueError):
             continue
+        if pr_check is not None:
+            try:
+                if pr_check(repo, issue.get("number")):
+                    rows.pop()  # linked PR: someone is already on it
+            except Exception:
+                pass
     return sorted(rows, key=_updated_sort_key, reverse=True)
 
 
@@ -604,13 +708,15 @@ def _issue_refresh_fields(issue, checked_at):
     updated_at = issue.get("updated_at")
     if _parse_timestamp(updated_at) is None:
         return None
-    return {
+    refresh = {
         "title": title,
         "official_evidence": {
             "title": {"quote": title, "url": issue_url},
         },
         "updated_at": updated_at,
         "labels": [label["name"] for label in labels],
+        "difficulty": _derive_difficulty([label["name"] for label in labels])[0],
+        "difficulty_signal": _derive_difficulty([label["name"] for label in labels])[1],
         "comments_count": comments_count,
         "assignee": issue.get("assignee"),
         "activity_age_days": _age_days(updated_at, checked_at),
@@ -619,7 +725,22 @@ def _issue_refresh_fields(issue, checked_at):
             and 0 <= _age_days(updated_at, checked_at) <= RECENT_ACTIVITY_DAYS
         ),
         "last_checked_at": checked_at,
+        "region": "Global/Remote",
+        "mode": "online",
     }
+    description = clean_issue_body(issue.get("body"))
+    if description:
+        refresh["description"] = description
+    repo = _owner_repo_from_url(issue_url)
+    logo = owner_logo_url(repo)
+    if logo:
+        refresh["logo_url"] = logo
+    return refresh
+
+
+def _owner_repo_from_url(url):
+    parts = urlsplit(url).path.split("/")
+    return "{}/{}".format(parts[1], parts[2]) if len(parts) > 2 and parts[1] and parts[2] else None
 
 
 def _reverify_rows(existing_rows, checked_at):
@@ -855,6 +976,8 @@ def collect(
     checked_at=None,
     lake_path=OPPORTUNITIES_PATH,
     search_fetch=_default_search_fetch,
+    repo_fetch=_default_repo_fetch,
+    pr_check=None,
 ):
     checked_datetime = checked_at or datetime.now(timezone.utc)
     if isinstance(checked_datetime, str):
@@ -894,6 +1017,8 @@ def collect(
             "repo_stars": item.get("stars"),
         })
 
+    if pr_check is None and token:
+        pr_check = _default_pr_check
     existing_rows = _load_json(lake_path, [])
     existing_rows, reverification = _reverify_rows(existing_rows, checked_at)
     rows_by_repo = {}
@@ -903,13 +1028,22 @@ def collect(
         for spec in repo_specs:
             repo = spec["repo"]
             try:
+                issues = fetch(repo)
+                try:
+                    repo_info = repo_fetch(repo) if repo_fetch else {}
+                except Exception:
+                    repo_info = {}
+                if not isinstance(repo_info, dict):
+                    repo_info = {}
                 rows_by_repo[repo] = parse_repo(
                     repo,
-                    fetch(repo),
+                    issues,
                     checked_at,
                     language=spec["language"],
                     discovery_source=spec["discovery_source"],
                     repo_stars=spec["repo_stars"],
+                    repo_info=repo_info,
+                    pr_check=pr_check,
                 )
                 successful_repos.add(repo)
             except Exception:

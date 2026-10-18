@@ -641,3 +641,61 @@ if __name__ == "__main__":
         self.assertEqual(row["language"], "Rust")
         self.assertEqual(row["discovery_source"], "search")
         self.assertEqual(row["repo_stars"], 501)
+
+
+class TestContributionEnrichment(unittest.TestCase):
+    NOW = "2026-08-20T00:00:00Z"
+
+    def issue(self, **kw):
+        base = {
+            "html_url": "https://github.com/acme/widget/issues/7", "title": "Fix typo", "number": 7,
+            "labels": [{"name": "good first issue"}, {"name": "help wanted"}], "state": "open",
+            "created_at": "2026-08-01T00:00:00Z", "updated_at": "2026-08-15T00:00:00Z",
+            "body": "<!-- template -->\n## Description\nThe **README** has a [typo](http://x.y) in the intro section.\n"
+                    "```\ncode block\n```\n- [ ] I read the guide\n- [x] tests added\n",
+        }
+        base.update(kw)
+        return base
+
+    def test_clean_issue_body(self):
+        from categories.open_source.contributions import clean_issue_body
+        out = clean_issue_body(self.issue()["body"])
+        self.assertEqual(out, "Description The README has a typo in the intro section.")
+        self.assertIsNone(clean_issue_body("<!-- only comment -->"))
+        self.assertLessEqual(len(clean_issue_body("word " * 200)), 251)
+
+    def test_row_fields_and_repo_description_fallback(self):
+        info = {"description": "A widget library for everything", "stars": 1234, "language": "Go",
+                "avatar_url": None}
+        row = build_row("acme/widget", self.issue(), self.NOW, repo_info=info)
+        self.assertEqual(row["logo_url"], "https://github.com/acme.png?size=96")
+        self.assertEqual(row["repo_stars"], 1234)
+        self.assertEqual(row["language"], "Go")
+        self.assertEqual((row["region"], row["mode"]), ("Global/Remote", "online"))
+        self.assertTrue(row["description"].startswith("Description The README"))
+        self.assertEqual(row["difficulty"], "beginner")
+        row = build_row("acme/widget", self.issue(body=None), self.NOW, repo_info=info)
+        self.assertEqual(row["description"], "A widget library for everything")
+        row = build_row("acme/widget", self.issue(labels=[{"name": "medium"}, {"name": "x"}]), self.NOW)
+        self.assertEqual(row["difficulty"], "intermediate")
+
+    def test_stale_60_days_and_linked_pr_dropped(self):
+        stale = self.issue(updated_at="2026-06-01T00:00:00Z")
+        self.assertEqual(parse_repo("acme/widget", [stale], self.NOW), [])
+        fresh = self.issue()
+        self.assertEqual(len(parse_repo("acme/widget", [fresh], self.NOW)), 1)
+        self.assertEqual(parse_repo("acme/widget", [fresh], self.NOW, pr_check=lambda r, n: True), [])
+        self.assertEqual(len(parse_repo("acme/widget", [fresh], self.NOW, pr_check=lambda r, n: False)), 1)
+
+    def test_publish_mapping_for_contribution(self):
+        from pipeline.publish_supabase import map_row
+        row = build_row("acme/widget", self.issue(), self.NOW, repo_info={"description": "d"})
+        row.update({"is_live": True, "description": "x" * 400, "eligibility": "not_stated"})
+        m = map_row(row)
+        self.assertEqual(len(m["description"]), 300)
+        self.assertIsNone(m["eligibility"])
+        for key in ("logo_url", "region", "mode", "repo_description", "updated_at", "labels", "language"):
+            self.assertIn(key, m["extra"])
+        job = map_row({"record_type": "job", "url": "http://a", "repo_description": "x", "updated_at": "y", "logo_url": "z"})
+        for key in ("repo_description", "updated_at", "logo_url"):
+            self.assertNotIn(key, job["extra"])
