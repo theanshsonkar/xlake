@@ -134,6 +134,46 @@ page-reader or bespoke-source work. Workday is implemented, but pagination and
 read completeness need monitoring. AI is optional page enrichment and the quote
 gate prevents it from inventing source facts.
 
+## Per-category shards and pipelines
+
+Jobs and internships stay in the main lake (`lake/opportunities.json`,
+`hidden.json`, history). Every other category lives in its own shard,
+`s3://$AWS_S3_BUCKET/lake/shards/<name>.json`, with `<name>` one of `hackathons`,
+`fellowships`, `scholarships`, `grants`, `research`, `open_source` (programmes +
+contributions), `startup`, `community`. A row belongs to a shard by
+`(record_type, category)`; rows matching no shard stay in main
+(`engine/core/shards.py`).
+
+- Collectors are unchanged: `pipeline.shard_run stage` puts the shard at
+  `data/lake/opportunities.json`; `finalize` keeps only that shard's rows, applies
+  the drop guard (refuse if rows fall >50% vs the restored shard, unless
+  `retire_force` names the category or `all`) and writes the step summary.
+- `python3 -m pipeline.publish_supabase --category <shard> [--execute]` publishes
+  and soft-retires only that category: existing ids are fetched with a server-side
+  `type`/`category` filter and retire is further limited to that category's id
+  prefixes. Without `--category` it publishes main + any local shards (shards
+  override stale main copies) and refuses to soft-retire >50% of existing rows
+  unless `--force-retire`.
+- `python3 -m pipeline.split_lake` (dry-run) / `--execute [--strip-main]` splits
+  a main lake; `--combine --out whole.json` rebuilds the whole lake for history,
+  sitemap or frontend export.
+- Workflows: `_category.yml` (reusable), one caller per category
+  (`hackathons.yml` every 6h; `fellowships`, `scholarships`, `grants`, `research`,
+  `open-source`, `startup`, `community` daily, staggered 03:11-04:41 UTC),
+  `categories.yml` (manual run-all matrix, max-parallel 4, no schedule),
+  `hub-seeds.yml` (weekly), `migrate-shards.yml` (one-time). Concurrency group is
+  `xlake-cat-<category>`; only `sweep.yml` and `migrate-shards.yml` use
+  `xlake-lake-writer`. Timeouts: hackathons 20m, others 25m. The engine is
+  stdlib-only and its raw cache is a recording, so no pip/HTTP cache is used.
+- Run one category: `gh workflow run hackathons -R theanshsonkar/xlake`
+  (inputs `retire_force`, `dry_run`, `generate_seeds`). `sweep.yml` restores the
+  shards before its full publish so it never retires category rows.
+
+One-time migration: (1) run `migrate-shards` with `dry_run=true` and check the
+counts; (2) run it with `dry_run=false` (existing shards are never overwritten
+unless `overwrite=true`); (3) run each category workflow with `dry_run=true`,
+then normally. `strip_main` is an optional later cleanup.
+
 ## CI
 
 The root workflow is `.github/workflows/sweep.yml`. It supports the daily sweep

@@ -1,0 +1,36 @@
+name: hackathons
+
+on:
+  schedule:
+    - cron: "7 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      retire_force:
+        description: "Comma-separated categories allowed to bypass the retirement/drop guards"
+        required: false
+        type: string
+        default: ''
+      dry_run:
+        description: "Collect only: no S3 write, publish or commit"
+        required: false
+        type: boolean
+        default: false
+      generate_seeds:
+        description: "Regenerate hub seeds first"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    uses: ./.github/workflows/_category.yml
+    with:
+      category: hackathons
+      timeout: 20
+      retire_force: ${{ inputs.retire_force || '' }}
+      dry_run: ${{ inputs.dry_run || false }}
+      generate_seeds: ${{ inputs.generate_seeds || false }}
+    secrets: inherit

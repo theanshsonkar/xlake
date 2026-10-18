@@ -1,0 +1,58 @@
+name: hub-seeds
+
+# Weekly generation of hub-derived programme seeds. Needs no lake. Commits only
+# data/operations/generated_seeds/*.json, which the per-category workflows read.
+on:
+  schedule:
+    - cron: "17 6 * * 0"     # Sunday 11:47 IST
+  workflow_dispatch:
+
+concurrency:
+  group: xlake-hub-seeds
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  seeds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      XLAKE_GENERATED_SEEDS_DIR: ${{ github.workspace }}/engine/data/operations/generated_seeds
+      XLAKE_HUB_MAX_PAGES: "400"
+      XLAKE_HUB_MAX_PAGES_PER_HOST: "40"
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate hub seeds
+        run: |
+          mkdir -p data/operations/generated_seeds
+          for c in fellowships scholarships grants startup_founder community research open_source; do
+            python3 -u -m categories.hub_seeds --category "$c" --out "data/operations/generated_seeds/$c.json"
+          done
+      - name: Commit generated seeds
+        run: |
+          set -euo pipefail
+          git config user.name  "opportunity-lake-bot"
+          git config user.email "bot@users.noreply.github.com"
+          TMP=$(mktemp -d)
+          cp -a data/operations/generated_seeds "$TMP/seeds"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard HEAD
+            git checkout -B ci-save origin/main
+            mkdir -p data/operations/generated_seeds
+            cp -a "$TMP/seeds/." data/operations/generated_seeds/
+            git add -A -- data/operations/generated_seeds
+            if git diff --cached --quiet; then echo 'nothing to commit'; exit 0; fi
+            git commit -m "hub-seeds: weekly $(date -u +%Y-%m-%dT%H:%MZ)"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt*5 + RANDOM % 10))
+          done
+          exit 1

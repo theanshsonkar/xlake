@@ -95,6 +95,13 @@ jobs:
       # Supabase serving table. Read-only against the lake; upserts on id and
       # soft-retires ids no longer serving. Uses the Python stdlib only
       # (urllib/json/hashlib) — no extra pip deps required.
+      # Category rows now live in per-category shards. The full publish
+      # combines main + shards so it never soft-retires category rows.
+      - name: Restore category shards for combined publish
+        run: |
+          mkdir -p data/lake/shards
+          aws s3 sync "s3://$AWS_S3_BUCKET/lake/shards" data/lake/shards --exclude "*" --include "*.json" || echo "no shards yet"
+
       - name: Publish to Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

@@ -1,0 +1,73 @@
+name: migrate-shards
+
+# ONE-TIME migration: split s3://$BUCKET/lake/opportunities.json into
+# lake/shards/<category>.json. Dry-run by default (prints counts, writes nothing).
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only print the split counts; write nothing"
+        required: false
+        type: boolean
+        default: true
+      overwrite:
+        description: "Overwrite shards that already exist in S3 (they may be fresher than the main lake)"
+        required: false
+        type: boolean
+        default: false
+      strip_main:
+        description: "Also rewrite the main lake without sharded rows (optional cleanup, later)"
+        required: false
+        type: boolean
+        default: false
+
+# Reads/optionally rewrites the main lake, so queue behind the jobs sweep.
+concurrency:
+  group: xlake-lake-writer
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+      AWS_DEFAULT_REGION: ap-south-1
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore main lake
+        run: |
+          mkdir -p data/lake
+          aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities.json" data/lake/opportunities.json
+      - name: Dry-run split (counts)
+        run: python3 -m pipeline.split_lake
+      - name: Split into shards
+        if: ${{ !inputs.dry_run }}
+        run: |
+          STRIP=""; [ "${{ inputs.strip_main }}" = "true" ] && STRIP="--strip-main"
+          aws s3 cp data/lake/opportunities.json "s3://$AWS_S3_BUCKET/archive/pre-shard-opportunities-$(date -u +%Y%m%dT%H%M%SZ).json"
+          python3 -m pipeline.split_lake --execute $STRIP
+      - name: Upload shards
+        if: ${{ !inputs.dry_run }}
+        run: |
+          for f in data/lake/shards/*.json; do
+            n=$(basename "$f")
+            if [ "${{ inputs.overwrite }}" != "true" ] && aws s3api head-object --bucket "$AWS_S3_BUCKET" --key "lake/shards/$n" >/dev/null 2>&1; then
+              echo "skip $n (exists; pass overwrite to replace)"; continue
+            fi
+            aws s3 cp "$f" "s3://$AWS_S3_BUCKET/lake/shards/$n"
+          done
+          if [ "${{ inputs.strip_main }}" = "true" ]; then
+            aws s3 cp data/lake/opportunities.json "s3://$AWS_S3_BUCKET/lake/opportunities.json"
+          fi

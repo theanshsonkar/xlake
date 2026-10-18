@@ -336,6 +336,10 @@ Discovery sources are leads only. A directory, public company list, search
 result, or portfolio page never becomes the user-facing application link unless
 Xlake resolves it to the relevant official source.
 
+Storage layout: jobs and internships live in the main lake; each other category
+is stored as its own shard (`lake/shards/<category>.json`) so categories refresh
+and publish independently. See ENGINE.md, "Per-category shards and pipelines".
+
 ## 14. Collection principles
 
 Xlake collects responsibly.
