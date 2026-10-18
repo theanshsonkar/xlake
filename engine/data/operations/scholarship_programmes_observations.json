@@ -1,0 +1,1906 @@
+[
+ {
+  "source_id": "scholarship-fulbright",
+  "programme_id": "scholarship-fulbright-foreign-student-program",
+  "official_url": "https://foreign.fulbrightonline.org/about/foreign-student-program",
+  "checked_at": "2026-10-18T16:14:53+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "citizen currently enrolled in an undergraduate or graduate degree program, please visit our.",
+    "url": "https://foreign.fulbrightonline.org/about/foreign-student-program"
+   },
+   "programme_name": {
+    "quote": "Fulbright Foreign Student Program",
+    "url": "https://foreign.fulbrightonline.org/about/foreign-student-program"
+   },
+   "organizer": {
+    "quote": "U.S. Department of State / Institute of International Education",
+    "url": "https://foreign.fulbrightonline.org/about/foreign-student-program"
+   },
+   "official_url": {
+    "quote": "https://foreign.fulbrightonline.org/about/foreign-student-program",
+    "url": "https://foreign.fulbrightonline.org/about/foreign-student-program"
+   }
+  }
+ },
+ {
+  "source_id": "scholarship-rhodes",
+  "programme_id": "scholarship-rhodes",
+  "official_url": "https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/",
+  "checked_at": "2026-10-18T16:14:56+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications for the Rhodes Scholarship are now closed.",
+    "url": "https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/"
+   }
+  }
+ },
+ {
+  "source_id": "scholarship-gates-cambridge",
+  "programme_id": "scholarship-gates-cambridge",
+  "official_url": "https://www.gatescambridge.org/apply/eligibility/",
+  "checked_at": "2026-10-18T16:14:57+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "I was subsequently awarded a Future Leaders Fellowship by UK Research and Innovation in 2020, enabling me to establish a research group at the University of Bristol that uses inherited genetic variation to investigate the causes and correlates of tumour genomic features with the aim of informing the prevention, diagnosis, and treatment of common cancers.",
+    "url": "https://www.gatescambridge.org/apply/eligibility/"
+   },
+   "programme_name": {
+    "quote": "Gates Cambridge Scholarships",
+    "url": "https://www.gatescambridge.org/apply/eligibility/"
+   },
+   "organizer": {
+    "quote": "Gates Cambridge Trust",
+    "url": "https://www.gatescambridge.org/apply/eligibility/"
+   },
+   "official_url": {
+    "quote": "https://www.gatescambridge.org/apply/eligibility/",
+    "url": "https://www.gatescambridge.org/apply/eligibility/"
+   },
+   "eligibility": {
+    "quote": "a citizen of any country outside the United Kingdom.",
+    "url": "https://www.gatescambridge.org/apply/eligibility/"
+   }
+  }
+ },
+ {
+  "source_id": "scholarship-knight-hennessy",
+  "programme_id": "scholarship-knight-hennessy",
+  "official_url": "https://knight-hennessy.stanford.edu/admission",
+  "checked_at": "2026-10-18T16:15:06+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "The KHS application to join the 2027 cohort is now closed.",
+    "url": "https://knight-hennessy.stanford.edu/admission"
+   }
+  }
+ },
+ {
+  "source_id": "scholarship-daad",
+  "programme_id": "scholarship-daad",
+  "official_url": "https://www.daad.de/en/studying-in-germany/scholarships/",
+  "checked_at": "2026-10-18T16:15:12+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Funding Programmes for Musicians & Artists.",
+    "url": "https://www.daad.de/en/studying-in-germany/scholarships/"
+   },
+   "programme_name": {
+    "quote": "DAAD Scholarships & Funding",
+    "url": "https://www.daad.de/en/studying-in-germany/scholarships/"
+   },
+   "organizer": {
+    "quote": "DAAD",
+    "url": "https://www.daad.de/en/studying-in-germany/scholarships/"
+   },
+   "official_url": {
+    "quote": "https://www.daad.de/en/studying-in-germany/scholarships/",
+    "url": "https://www.daad.de/en/studying-in-germany/scholarships/"
+   }
+  }
+ },
+ {
+  "source_id": "scholarship-schwarzman",
+  "programme_id": "scholarship-schwarzman",
+  "official_url": "https://www.schwarzmanscholars.org/admissions/",
+  "checked_at": "2026-10-18T16:15:13+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "The application window for the class of 2027-2028 is now closed.",
+    "url": "https://www.schwarzmanscholars.org/admissions/"
+   }
+  }
+ },
+ {
+  "source_id": "scholarship-commonwealth-masters",
+  "programme_id": "scholarship-commonwealth-masters",
+  "official_url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+  "checked_at": "2026-10-18T16:15:14+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "The closing date for applications is: 16:00 BST on Tuesday 20 October.",
+    "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
+   },
+   "application": {
+    "quote": "template application form",
+    "url": "https://cscuk.fcdo.gov.uk/wp-content/uploads/2020/09/Masters-template-form-2027-updated.pdf"
+   },
+   "application_url": {
+    "quote": "template application form",
+    "url": "https://cscuk.fcdo.gov.uk/wp-content/uploads/2020/09/Masters-template-form-2027-updated.pdf"
+   },
+   "opening_date": {
+    "quote": "The closing date for applications is: 16:00 BST on Tuesday 20 October.",
+    "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
+   },
+   "deadline": {
+    "quote": "The closing date for applications is: 16:00 BST on Tuesday 20 October.",
+    "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
+   },
+   "funding": {
+    "quote": "Stipend (living allowance) at the rate of \u00a31,712 per month, or \u00a32,000 per month for those at universities in the London metropolitan area (rates quoted at current levels).",
+    "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {
+    "quote": "The Commonwealth Scholarship Commission in the UK (CSC) provides the UK government scholarship scheme led by international development objectives.",
+    "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
+   },
+   "eligibility": {
+    "quote": "Proof that they are a citizen or have refugee status in an eligible Commonwealth country: a copy of a valid passport (or national ID card) showing a photograph, date of birth, and country of...",
+    "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/"
+   }
+  }
+ },
+ {
+  "source_id": "scholarship-erasmus-mundus",
+  "programme_id": "scholarship-erasmus-mundus-joint-masters",
+  "official_url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters",
+  "checked_at": "2026-10-18T16:15:16+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "EU programme for education, training, youth and sport.",
+    "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters"
+   },
+   "programme_name": {
+    "quote": "Erasmus Mundus Joint Masters",
+    "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters"
+   },
+   "organizer": {
+    "quote": "European Commission",
+    "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters"
+   },
+   "official_url": {
+    "quote": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters",
+    "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters"
+   },
+   "eligibility": {
+    "quote": "Each master's website has all the details about the course of study, the list of the participating universities, the entry requirements and all the steps of the application process (with and without...",
+    "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters"
+   },
+   "application_url": {
+    "quote": "Top reasons to apply for Erasmus Mundus",
+    "url": "https://education.ec.europa.eu/news/why-choose-erasmus-mundus-as-an-international-student"
+   }
+  }
+ },
+ {
+  "source_id": "scholarship-stipendium-hungaricum",
+  "programme_id": "scholarship-stipendium-hungaricum",
+  "official_url": "https://stipendiumhungaricum.hu/",
+  "checked_at": "2026-10-18T16:15:20+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Apply for Stipendium Hungaricum.",
+    "url": "https://stipendiumhungaricum.hu/"
+   },
+   "programme_name": {
+    "quote": "Stipendium Hungaricum",
+    "url": "https://stipendiumhungaricum.hu/"
+   },
+   "organizer": {
+    "quote": "Tempus Public Foundation",
+    "url": "https://stipendiumhungaricum.hu/"
+   },
+   "official_url": {
+    "quote": "https://stipendiumhungaricum.hu/",
+    "url": "https://stipendiumhungaricum.hu/"
+   }
+  }
+ },
+ {
+  "source_id": "scholarship-turkiye",
+  "programme_id": "scholarship-turkiye",
+  "official_url": "https://www.turkiyeburslari.gov.tr/",
+  "checked_at": "2026-10-18T16:15:27+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://www.turkiyeburslari.gov.tr/calendar",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "General Application Period.",
+    "url": "https://www.turkiyeburslari.gov.tr/calendar"
+   },
+   "application": {
+    "quote": "Application Calendar",
+    "url": "https://www.turkiyeburslari.gov.tr/calendar"
+   },
+   "application_url": {
+    "quote": "Application Calendar",
+    "url": "https://www.turkiyeburslari.gov.tr/calendar"
+   },
+   "opening_date": {
+    "quote": "General Application Period.",
+    "url": "https://www.turkiyeburslari.gov.tr/calendar"
+   },
+   "deadline": {
+    "quote": "General Application Period.",
+    "url": "https://www.turkiyeburslari.gov.tr/calendar"
+   },
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-aauw-org-what-we-do-educational-funding-and-awards-c11ce1",
+  "programme_id": "scholarships-hub-www-aauw-org-what-we-do-educational-funding-and-awards-c11ce1",
+  "official_url": "https://www.aauw.org/what-we-do/educational-funding-and-awards/american-fellowships",
+  "checked_at": "2026-10-18T16:15:32+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-abidlabs-github-io-fellowship-1c2af9",
+  "programme_id": "scholarships-hub-abidlabs-github-io-fellowship-1c2af9",
+  "official_url": "https://abidlabs.github.io/fellowship",
+  "checked_at": "2026-10-18T16:15:34+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-scholarships-academy-oracle-com-en-about-scholarships-html-969657",
+  "programme_id": "scholarships-hub-academy-oracle-com-en-about-scholarships-html-969657",
+  "official_url": "https://academy.oracle.com/en/about-scholarships.html",
+  "checked_at": "2026-10-18T16:15:38+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-www-adobe-com-careers-university-052127",
+  "programme_id": "scholarships-hub-www-adobe-com-careers-university-052127",
+  "official_url": "http://www.adobe.com/careers/university/india-women-tech.html",
+  "checked_at": "2026-10-18T16:15:41+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-scholarships-ai-google-research-outreach-3dd877",
+  "programme_id": "scholarships-hub-ai-google-research-outreach-3dd877",
+  "official_url": "https://ai.google/research/outreach/phd-fellowship",
+  "checked_at": "2026-10-18T16:15:43+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {},
+   "deadline": {}
+  }
+ },
+ {
+  "source_id": "hub-scholarships-apps-grad-illinois-edu-fellowship-finder-7a2737",
+  "programme_id": "scholarships-hub-apps-grad-illinois-edu-fellowship-finder-7a2737",
+  "official_url": "https://apps.grad.illinois.edu/fellowship-finder",
+  "checked_at": "2026-10-18T16:15:44+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Illinois Database of Grants and Fellowships for Graduate Students.",
+    "url": "https://apps.grad.illinois.edu/fellowship-finder"
+   },
+   "programme_name": {
+    "quote": "University of Illinois Fellowship Finder",
+    "url": "https://apps.grad.illinois.edu/fellowship-finder"
+   },
+   "organizer": {
+    "quote": "apps.grad.illinois.edu",
+    "url": "https://apps.grad.illinois.edu/fellowship-finder"
+   },
+   "official_url": {
+    "quote": "https://apps.grad.illinois.edu/fellowship-finder",
+    "url": "https://apps.grad.illinois.edu/fellowship-finder"
+   },
+   "funding": {
+    "quote": "Annual stipend of at least $10,000.",
+    "url": "https://apps.grad.illinois.edu/fellowship-finder"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-awards-acm-org-doctoral-dissertation-nominations-2df153",
+  "programme_id": "scholarships-hub-awards-acm-org-doctoral-dissertation-nominations-2df153",
+  "official_url": "https://awards.acm.org/doctoral-dissertation/nominations",
+  "checked_at": "2026-10-18T16:15:46+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-awards-acm-org-hpc-fellows-0b0cd9",
+  "programme_id": "scholarships-hub-awards-acm-org-hpc-fellows-0b0cd9",
+  "official_url": "https://awards.acm.org/hpc-fellows",
+  "checked_at": "2026-10-18T16:15:50+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-buildyourfuture-withgoogle-com-scholarships-a610b3",
+  "programme_id": "scholarships-hub-buildyourfuture-withgoogle-com-scholarships-a610b3",
+  "official_url": "https://buildyourfuture.withgoogle.com/scholarships",
+  "checked_at": "2026-10-18T16:15:50+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-scholarships-buildyourfuture-withgoogle-com-scholarships-generation-googl-7c127a",
+  "programme_id": "scholarships-hub-buildyourfuture-withgoogle-com-scholarships-generation-googl-7c127a",
+  "official_url": "https://buildyourfuture.withgoogle.com/scholarships/generation-google-scholarship",
+  "checked_at": "2026-10-18T16:15:51+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-scholarships-buildyourfuture-withgoogle-com-scholarships-google-travel-sc-df9eb8",
+  "programme_id": "scholarships-hub-buildyourfuture-withgoogle-com-scholarships-google-travel-sc-df9eb8",
+  "official_url": "https://buildyourfuture.withgoogle.com/scholarships/google-travel-scholarships",
+  "checked_at": "2026-10-18T16:15:52+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-scholarships-buildyourfuture-withgoogle-com-scholarships-venkat-panchapak-93db8d",
+  "programme_id": "scholarships-hub-buildyourfuture-withgoogle-com-scholarships-venkat-panchapak-93db8d",
+  "official_url": "https://buildyourfuture.withgoogle.com/scholarships/venkat-panchapakesan-memorial-scholarship",
+  "checked_at": "2026-10-18T16:15:53+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-scholarships-www-code2040-org-fellows-program-5fa481",
+  "programme_id": "scholarships-hub-www-code2040-org-fellows-program-5fa481",
+  "official_url": "http://www.code2040.org/fellows-program",
+  "checked_at": "2026-10-18T16:15:56+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-scholarships-www-computer-org-volunteering-awards-aee6f7",
+  "programme_id": "scholarships-hub-www-computer-org-volunteering-awards-aee6f7",
+  "official_url": "https://www.computer.org/volunteering/awards/scholarships/merwin",
+  "checked_at": "2026-10-18T16:15:56+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-scholarships-cra-org-ccc-leadership-development-72f579",
+  "programme_id": "scholarships-hub-cra-org-ccc-leadership-development-72f579",
+  "official_url": "https://cra.org/ccc/leadership-development/cifellows",
+  "checked_at": "2026-10-18T16:16:00+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "By the application deadline of June 9, over 1,200 mentors had signed up and 522 applications completed, comprising 945 separate applicant-mentor pairings.",
+    "url": "https://cra.org/ccc/leadership-development/cifellows"
+   },
+   "deadline": {
+    "quote": "By the application deadline of June 9, over 1,200 mentors had signed up and 522 applications completed, comprising 945 separate applicant-mentor pairings.",
+    "url": "https://cra.org/ccc/leadership-development/cifellows"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-csail-mit-edu-meteor-967665",
+  "programme_id": "scholarships-hub-www-csail-mit-edu-meteor-967665",
+  "official_url": "https://www.csail.mit.edu/meteor",
+  "checked_at": "2026-10-18T16:16:00+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "CSAIL's UROP Program: Hackers\u2019 Heaven.",
+    "url": "https://www.csail.mit.edu/meteor"
+   },
+   "programme_name": {
+    "quote": "MIT METEOR Postdoctoral Fellowship Program",
+    "url": "https://www.csail.mit.edu/meteor"
+   },
+   "organizer": {
+    "quote": "csail.mit.edu",
+    "url": "https://www.csail.mit.edu/meteor"
+   },
+   "official_url": {
+    "quote": "https://www.csail.mit.edu/meteor",
+    "url": "https://www.csail.mit.edu/meteor"
+   },
+   "eligibility": {
+    "quote": "citizens or permanent residents (green card holders) or DACA recipients and meet one or more of the following criteria:.",
+    "url": "https://www.csail.mit.edu/meteor"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-eacsl-org-ackermann-award-5b1ffd",
+  "programme_id": "scholarships-hub-www-eacsl-org-ackermann-award-5b1ffd",
+  "official_url": "https://www.eacsl.org/ackermann-award",
+  "checked_at": "2026-10-18T16:16:03+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Ackermann Award",
+    "url": "https://www.eacsl.org/ackermann-award"
+   },
+   "organizer": {
+    "quote": "eacsl.org",
+    "url": "https://www.eacsl.org/ackermann-award"
+   },
+   "official_url": {
+    "quote": "https://www.eacsl.org/ackermann-award",
+    "url": "https://www.eacsl.org/ackermann-award"
+   },
+   "funding": {
+    "quote": "For the three years 2007-2009, the Award was sponsored by.",
+    "url": "https://www.eacsl.org/ackermann-award"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-eatcs-org-index-php-dissertation-award-d69554",
+  "programme_id": "scholarships-hub-eatcs-org-index-php-dissertation-award-d69554",
+  "official_url": "https://eatcs.org/index.php/dissertation-award",
+  "checked_at": "2026-10-18T16:16:05+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "EATCS Distinguished Dissertation Award",
+    "url": "https://eatcs.org/index.php/dissertation-award"
+   },
+   "organizer": {
+    "quote": "eatcs.org",
+    "url": "https://eatcs.org/index.php/dissertation-award"
+   },
+   "official_url": {
+    "quote": "https://eatcs.org/index.php/dissertation-award",
+    "url": "https://eatcs.org/index.php/dissertation-award"
+   },
+   "funding": {
+    "quote": "Each of the selected dissertations will receive a prize of 1000 Euro.",
+    "url": "https://eatcs.org/index.php/dissertation-award"
+   },
+   "eligibility": {
+    "quote": "Any PhD dissertation in the field of Theoretical Computer Science that has been successfully defended in 2025 is eligible.",
+    "url": "https://eatcs.org/index.php/dissertation-award"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-fftf-slb-com-8b30e9",
+  "programme_id": "scholarships-hub-www-fftf-slb-com-8b30e9",
+  "official_url": "https://www.fftf.slb.com/",
+  "checked_at": "2026-10-18T16:16:06+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "CLOSING DATE IS November 7th 2026 at 12:00 (noon) Central Standard Time (UTC-6).",
+    "url": "https://www.fftf.slb.com/"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {
+    "quote": "CLOSING DATE IS November 7th 2026 at 12:00 (noon) Central Standard Time (UTC-6).",
+    "url": "https://www.fftf.slb.com/"
+   },
+   "deadline": {
+    "quote": "CLOSING DATE IS November 7th 2026 at 12:00 (noon) Central Standard Time (UTC-6).",
+    "url": "https://www.fftf.slb.com/"
+   },
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-scholarships-frontera-portal-tacc-utexas-edu-fellowship-d3eb7a",
+  "programme_id": "scholarships-hub-frontera-portal-tacc-utexas-edu-fellowship-d3eb7a",
+  "official_url": "https://frontera-portal.tacc.utexas.edu/fellowship",
+  "checked_at": "2026-10-18T16:16:08+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Thank you for your interesest in the Frontera Computational Science Fellowship.",
+    "url": "https://frontera-portal.tacc.utexas.edu/fellowship"
+   },
+   "programme_name": {
+    "quote": "Frontera Computational Science Fellowship",
+    "url": "https://frontera-portal.tacc.utexas.edu/fellowship"
+   },
+   "organizer": {
+    "quote": "frontera-portal.tacc.utexas.edu",
+    "url": "https://frontera-portal.tacc.utexas.edu/fellowship"
+   },
+   "official_url": {
+    "quote": "https://frontera-portal.tacc.utexas.edu/fellowship",
+    "url": "https://frontera-portal.tacc.utexas.edu/fellowship"
+   },
+   "funding": {
+    "quote": "$34,000 stipend in two installments of $17,000.",
+    "url": "https://frontera-portal.tacc.utexas.edu/fellowship"
+   },
+   "eligibility": {
+    "quote": "Applications will only be accepted from students who are studying in the United States or its territories at a US institution.",
+    "url": "https://frontera-portal.tacc.utexas.edu/fellowship"
+   },
+   "application_url": {
+    "quote": "Application Instructions",
+    "url": "https://frontera-portal.tacc.utexas.edu/fellowship/application"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-fsf-org-volunteer-internships-713bf8",
+  "programme_id": "scholarships-hub-www-fsf-org-volunteer-internships-713bf8",
+  "official_url": "https://www.fsf.org/volunteer/internships",
+  "checked_at": "2026-10-18T16:16:14+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The application period for summer internships has closed.",
+    "url": "https://www.fsf.org/volunteer/internships"
+   },
+   "programme_name": {
+    "quote": "Free Software Foundation Summer Internship Program",
+    "url": "https://www.fsf.org/volunteer/internships"
+   },
+   "organizer": {
+    "quote": "fsf.org",
+    "url": "https://www.fsf.org/volunteer/internships"
+   },
+   "official_url": {
+    "quote": "https://www.fsf.org/volunteer/internships",
+    "url": "https://www.fsf.org/volunteer/internships"
+   },
+   "eligibility": {
+    "quote": "Unfortunately, due to the complexities of US immigration law, applicants who are not US citizens or permanent residents, or do not have a visa allowing them to work in the US, must work remotely...",
+    "url": "https://www.fsf.org/volunteer/internships"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-geeksforgeeks-org-campus-ambassador-program-by-geeksforg-facbb2",
+  "programme_id": "scholarships-hub-www-geeksforgeeks-org-campus-ambassador-program-by-geeksforg-facbb2",
+  "official_url": "https://www.geeksforgeeks.org/campus-ambassador-program-by-geeksforgeeks",
+  "checked_at": "2026-10-18T16:16:17+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Have You Ever Been Selected for Campus Mantri Program Before?",
+    "url": "https://www.geeksforgeeks.org/campus-ambassador-program-by-geeksforgeeks"
+   },
+   "programme_name": {
+    "quote": "GeeksforGeeks Campus Ambassador Program",
+    "url": "https://www.geeksforgeeks.org/campus-ambassador-program-by-geeksforgeeks"
+   },
+   "organizer": {
+    "quote": "geeksforgeeks.org",
+    "url": "https://www.geeksforgeeks.org/campus-ambassador-program-by-geeksforgeeks"
+   },
+   "official_url": {
+    "quote": "https://www.geeksforgeeks.org/campus-ambassador-program-by-geeksforgeeks",
+    "url": "https://www.geeksforgeeks.org/campus-ambassador-program-by-geeksforgeeks"
+   },
+   "funding": {
+    "quote": "with a stipend upto.",
+    "url": "https://www.geeksforgeeks.org/campus-ambassador-program-by-geeksforgeeks"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-gemfellowship-org-6de8bd",
+  "programme_id": "scholarships-hub-www-gemfellowship-org-6de8bd",
+  "official_url": "http://www.gemfellowship.org/",
+  "checked_at": "2026-10-18T16:16:28+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "GEM application is now open.",
+    "url": "http://www.gemfellowship.org/"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-scholarships-gfsd-onlineapplications-net-applications-96407f",
+  "programme_id": "scholarships-hub-gfsd-onlineapplications-net-applications-96407f",
+  "official_url": "https://gfsd.onlineapplications.net/applications",
+  "checked_at": "2026-10-18T16:16:30+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Welcome to the Graduate Fellowships for STEM Development!",
+    "url": "https://gfsd.onlineapplications.net/applications"
+   },
+   "programme_name": {
+    "quote": "Graduate Fellowships for STEM Diversity",
+    "url": "https://gfsd.onlineapplications.net/applications"
+   },
+   "organizer": {
+    "quote": "gfsd.onlineapplications.net",
+    "url": "https://gfsd.onlineapplications.net/applications"
+   },
+   "official_url": {
+    "quote": "https://gfsd.onlineapplications.net/applications",
+    "url": "https://gfsd.onlineapplications.net/applications"
+   },
+   "eligibility": {
+    "quote": "GFSD's goal is to increase the number of American citizens with graduate degrees in the physical sciences and related engineering fields, emphasizing recruitment of a diverse applicant pool.",
+    "url": "https://gfsd.onlineapplications.net/applications"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-ghc-anitab-org-scholarships-2-923666",
+  "programme_id": "scholarships-hub-ghc-anitab-org-scholarships-2-923666",
+  "official_url": "https://ghc.anitab.org/scholarships-2",
+  "checked_at": "2026-10-18T16:16:43+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: too_many_redirects"
+ },
+ {
+  "source_id": "hub-scholarships-www-hackerearth-com-docs-wiki-573541",
+  "programme_id": "scholarships-hub-www-hackerearth-com-docs-wiki-573541",
+  "official_url": "https://www.hackerearth.com/docs/wiki/campus/introduction",
+  "checked_at": "2026-10-18T16:16:48+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-www-hackerrank-com-campus-ambassador-program-c72310",
+  "programme_id": "scholarships-hub-www-hackerrank-com-campus-ambassador-program-c72310",
+  "official_url": "https://www.hackerrank.com/campus-ambassador-program",
+  "checked_at": "2026-10-18T16:16:48+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-scholarships-hertzfoundation-org-fellowships-application-680e58",
+  "programme_id": "scholarships-hub-hertzfoundation-org-fellowships-application-680e58",
+  "official_url": "https://hertzfoundation.org/fellowships/application",
+  "checked_at": "2026-10-18T16:16:51+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://www.hertzfoundation.org/hertz-fellowship/apply/",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Application Deadline: October 30, 2026.",
+    "url": "https://www.hertzfoundation.org/hertz-fellowship/apply/"
+   },
+   "application": {
+    "quote": "Application portal",
+    "url": "https://www.hertzfoundation.org/hertz-fellowship/apply/"
+   },
+   "application_url": {
+    "quote": "Application portal",
+    "url": "https://www.hertzfoundation.org/hertz-fellowship/apply/"
+   },
+   "opening_date": {
+    "quote": "Application Deadline: October 30, 2026.",
+    "url": "https://www.hertzfoundation.org/hertz-fellowship/apply/"
+   },
+   "deadline": {
+    "quote": "Application Deadline: October 30, 2026.",
+    "url": "https://www.hertzfoundation.org/hertz-fellowship/apply/"
+   },
+   "funding": {
+    "quote": "The Hertz Fellowship awards up to five years of funding, valued at up to $250,000\u2014and so much more.",
+    "url": "https://www.hertzfoundation.org/hertz-fellowship/apply/"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "The nation\u2019s most promising talent comes from different disciplines, backgrounds, and points of view.",
+    "url": "https://www.hertzfoundation.org/hertz-fellowship/apply/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-hudson-trading-com-fellowship-229bab",
+  "programme_id": "scholarships-hub-www-hudson-trading-com-fellowship-229bab",
+  "official_url": "http://www.hudson-trading.com/fellowship",
+  "checked_at": "2026-10-18T16:16:56+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-ieee-itss-org-awards-best-dissertation-201bb9",
+  "programme_id": "scholarships-hub-ieee-itss-org-awards-best-dissertation-201bb9",
+  "official_url": "https://ieee-itss.org/awards/best-dissertation",
+  "checked_at": "2026-10-18T16:17:04+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Educational Activities Committee fosters programs for the growth of ITS education-related activities, approving plans for educational support activities, and more.",
+    "url": "https://ieee-itss.org/awards/best-dissertation"
+   },
+   "programme_name": {
+    "quote": "IEEE ITS Best Dissertation Award",
+    "url": "https://ieee-itss.org/awards/best-dissertation"
+   },
+   "organizer": {
+    "quote": "ieee-itss.org",
+    "url": "https://ieee-itss.org/awards/best-dissertation"
+   },
+   "official_url": {
+    "quote": "https://ieee-itss.org/awards/best-dissertation",
+    "url": "https://ieee-itss.org/awards/best-dissertation"
+   },
+   "eligibility": {
+    "quote": "Eligible applicants must have written a doctoral dissertation and received a Ph.",
+    "url": "https://ieee-itss.org/awards/best-dissertation"
+   },
+   "application_url": {
+    "quote": "Outstanding Application Award",
+    "url": "https://ieee-itss.org/awards/outstanding-application/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-janestreet-com-apply-graduate-research-fellowship-6aa579",
+  "programme_id": "scholarships-hub-www-janestreet-com-apply-graduate-research-fellowship-6aa579",
+  "official_url": "https://www.janestreet.com/apply-graduate-research-fellowship",
+  "checked_at": "2026-10-18T16:17:11+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Jane Street Graduate Research Fellowship.",
+    "url": "https://www.janestreet.com/apply-graduate-research-fellowship"
+   },
+   "programme_name": {
+    "quote": "Jane Street Graduate Research Fellowship",
+    "url": "https://www.janestreet.com/apply-graduate-research-fellowship"
+   },
+   "organizer": {
+    "quote": "janestreet.com",
+    "url": "https://www.janestreet.com/apply-graduate-research-fellowship"
+   },
+   "official_url": {
+    "quote": "https://www.janestreet.com/apply-graduate-research-fellowship",
+    "url": "https://www.janestreet.com/apply-graduate-research-fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-krellinst-org-csgf-300943",
+  "programme_id": "scholarships-hub-www-krellinst-org-csgf-300943",
+  "official_url": "https://www.krellinst.org/csgf",
+  "checked_at": "2026-10-18T16:17:13+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://www.krellinst.org/csgf/how-apply",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Applications for the fellowship's 37th cohort \u2014 the 2027-2028 incoming class \u2014 are due Thursday, January 7, 2027.",
+    "url": "https://www.krellinst.org/csgf/how-apply"
+   },
+   "application": {
+    "quote": "apply to one of the DOE CSGF tracks",
+    "url": "https://www.krellinst.org/csgf/how-apply"
+   },
+   "application_url": {
+    "quote": "apply to one of the DOE CSGF tracks",
+    "url": "https://www.krellinst.org/csgf/how-apply"
+   },
+   "opening_date": {
+    "quote": "Applications for the fellowship's 37th cohort \u2014 the 2027-2028 incoming class \u2014 are due Thursday, January 7, 2027.",
+    "url": "https://www.krellinst.org/csgf/how-apply"
+   },
+   "deadline": {
+    "quote": "Applications for the fellowship's 37th cohort \u2014 the 2027-2028 incoming class \u2014 are due Thursday, January 7, 2027.",
+    "url": "https://www.krellinst.org/csgf/how-apply"
+   },
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "Candidates who meet the fellowships's eligibility requirements.",
+    "url": "https://www.krellinst.org/csgf/how-apply"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-linksim-org-8f5145",
+  "programme_id": "scholarships-hub-www-linksim-org-8f5145",
+  "official_url": "http://www.linksim.org/",
+  "checked_at": "2026-10-18T16:17:17+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Deadline to apply: March 1, 2026 (11:59 pm EST).",
+    "url": "http://www.linksim.org/"
+   },
+   "deadline": {
+    "quote": "Deadline to apply: March 1, 2026 (11:59 pm EST).",
+    "url": "http://www.linksim.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-madisontrust-com-client-resources-articles-87cf2b",
+  "programme_id": "scholarships-hub-www-madisontrust-com-client-resources-articles-87cf2b",
+  "official_url": "https://www.madisontrust.com/client-resources/articles/scholarships-for-women-in-stem",
+  "checked_at": "2026-10-18T16:17:19+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": ": Online tutoring platform Learner offers this program to help math majors with their studies.",
+    "url": "https://www.madisontrust.com/client-resources/articles/scholarships-for-women-in-stem"
+   },
+   "programme_name": {
+    "quote": "Scholarships for Women in STEM",
+    "url": "https://www.madisontrust.com/client-resources/articles/scholarships-for-women-in-stem"
+   },
+   "organizer": {
+    "quote": "madisontrust.com",
+    "url": "https://www.madisontrust.com/client-resources/articles/scholarships-for-women-in-stem"
+   },
+   "official_url": {
+    "quote": "https://www.madisontrust.com/client-resources/articles/scholarships-for-women-in-stem",
+    "url": "https://www.madisontrust.com/client-resources/articles/scholarships-for-women-in-stem"
+   },
+   "funding": {
+    "quote": ": Zonta International is focused on issues of women's empowerment, and one way they work toward that goal is by offering $5,000 scholarships to women pursuing a degree in STEM.",
+    "url": "https://www.madisontrust.com/client-resources/articles/scholarships-for-women-in-stem"
+   },
+   "eligibility": {
+    "quote": "This opportunity is open to college sophomores and beyond, including graduate students.",
+    "url": "https://www.madisontrust.com/client-resources/articles/scholarships-for-women-in-stem"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-microsoft-com-en-us-research-52d1df",
+  "programme_id": "scholarships-hub-www-microsoft-com-en-us-research-52d1df",
+  "official_url": "https://www.microsoft.com/en-us/research/academic-program/ada-lovelace-fellowship",
+  "checked_at": "2026-10-18T16:17:26+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Microsoft Research AI & Society Fellows program.",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/ada-lovelace-fellowship"
+   },
+   "programme_name": {
+    "quote": "Microsoft Ada Lovelace Fellowship",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/ada-lovelace-fellowship"
+   },
+   "organizer": {
+    "quote": "microsoft.com",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/ada-lovelace-fellowship"
+   },
+   "official_url": {
+    "quote": "https://www.microsoft.com/en-us/research/academic-program/ada-lovelace-fellowship",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/ada-lovelace-fellowship"
+   },
+   "eligibility": {
+    "quote": "For eligible students at universities globally pursuing research aligned to Microsoft Research areas of focus.",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/ada-lovelace-fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-microsoft-com-en-us-research-8ecc68",
+  "programme_id": "scholarships-hub-www-microsoft-com-en-us-research-8ecc68",
+  "official_url": "https://www.microsoft.com/en-us/research/academic-program/faculty-fellowship?ocid=msr_program_2021_faculty_tw",
+  "checked_at": "2026-10-18T16:17:28+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Two-year fellowship that recognizes innovative, promising early-career professors in the Americas who are exploring breakthrough, high-impact research in computer science or a related field.",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/faculty-fellowship?ocid=msr_program_2021_faculty_tw"
+   },
+   "programme_name": {
+    "quote": "Microsoft Research Faculty Fellowship Program",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/faculty-fellowship?ocid=msr_program_2021_faculty_tw"
+   },
+   "organizer": {
+    "quote": "microsoft.com",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/faculty-fellowship?ocid=msr_program_2021_faculty_tw"
+   },
+   "official_url": {
+    "quote": "https://www.microsoft.com/en-us/research/academic-program/faculty-fellowship?ocid=msr_program_2021_faculty_tw",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/faculty-fellowship?ocid=msr_program_2021_faculty_tw"
+   },
+   "funding": {
+    "quote": "Provisions of the 2021 award include $100,000 USD awarded annually for two years starting in the fall of 2021.",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/faculty-fellowship?ocid=msr_program_2021_faculty_tw"
+   },
+   "eligibility": {
+    "quote": "Candidates must be nominated by their university or a Microsoft nominator before receiving an invitation to submit a proposal.",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/faculty-fellowship?ocid=msr_program_2021_faculty_tw"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-microsoft-com-en-us-research-7d4d7a",
+  "programme_id": "scholarships-hub-www-microsoft-com-en-us-research-7d4d7a",
+  "official_url": "https://www.microsoft.com/en-us/research/academic-program/phd-fellowship",
+  "checked_at": "2026-10-18T16:17:34+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Microsoft Research AI & Society Fellows program.",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/phd-fellowship"
+   },
+   "programme_name": {
+    "quote": "Microsoft Research PhD Fellowship Program",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/phd-fellowship"
+   },
+   "organizer": {
+    "quote": "microsoft.com",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/phd-fellowship"
+   },
+   "official_url": {
+    "quote": "https://www.microsoft.com/en-us/research/academic-program/phd-fellowship",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/phd-fellowship"
+   },
+   "eligibility": {
+    "quote": "For eligible students at universities globally pursuing research aligned to Microsoft Research areas of focus.",
+    "url": "https://www.microsoft.com/en-us/research/academic-program/phd-fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-nanog-org-outreach-scholarship-program-95fb43",
+  "programme_id": "scholarships-hub-www-nanog-org-outreach-scholarship-program-95fb43",
+  "official_url": "https://www.nanog.org/outreach/scholarship-program",
+  "checked_at": "2026-10-18T16:17:36+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-www-nature-com-collections-jcpghfmqlz-85cc35",
+  "programme_id": "scholarships-hub-www-nature-com-collections-jcpghfmqlz-85cc35",
+  "official_url": "https://www.nature.com/collections/jcpghfmqlz/applynow",
+  "checked_at": "2026-10-18T16:17:37+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-scholarships-www-ndsegfellowships-org-application-362be4",
+  "programme_id": "scholarships-hub-www-ndsegfellowships-org-application-362be4",
+  "official_url": "https://www.ndsegfellowships.org/application",
+  "checked_at": "2026-10-18T16:17:38+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-scholarships-www-npsc-org-index-html-f4dfeb",
+  "programme_id": "scholarships-hub-www-npsc-org-index-html-f4dfeb",
+  "official_url": "http://www.npsc.org/index.html",
+  "checked_at": "2026-10-18T16:17:46+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "tls"
+ },
+ {
+  "source_id": "hub-scholarships-www-nsf-gov-cise-csgrad4us-0dbf82",
+  "programme_id": "scholarships-hub-www-nsf-gov-cise-csgrad4us-0dbf82",
+  "official_url": "https://www.nsf.gov/cise/CSGrad4US",
+  "checked_at": "2026-10-18T16:17:46+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-scholarships-www-nsfgrfp-org-9f1ebb",
+  "programme_id": "scholarships-hub-www-nsfgrfp-org-9f1ebb",
+  "official_url": "https://www.nsfgrfp.org/",
+  "checked_at": "2026-10-18T16:17:47+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-scholarships-www-nutanix-com-scholarships-f2a77e",
+  "programme_id": "scholarships-hub-www-nutanix-com-scholarships-f2a77e",
+  "official_url": "https://www.nutanix.com/scholarships",
+  "checked_at": "2026-10-18T16:17:47+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Scholarship programs powered by Nutanix.",
+    "url": "https://www.nutanix.com/scholarships"
+   },
+   "programme_name": {
+    "quote": "Nutanix .heart Women in Technology Scholarship",
+    "url": "https://www.nutanix.com/scholarships"
+   },
+   "organizer": {
+    "quote": "nutanix.com",
+    "url": "https://www.nutanix.com/scholarships"
+   },
+   "official_url": {
+    "quote": "https://www.nutanix.com/scholarships",
+    "url": "https://www.nutanix.com/scholarships"
+   },
+   "application_url": {
+    "quote": "Migrate Applications to Cloud",
+    "url": "https://www.nutanix.com/solutions/application-mobility"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-nvidia-com-en-us-research-bd2095",
+  "programme_id": "scholarships-hub-www-nvidia-com-en-us-research-bd2095",
+  "official_url": "https://www.nvidia.com/en-us/research/graduate-fellowships",
+  "checked_at": "2026-10-18T16:17:53+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "2027\u20132028 applications open September 30, 2026.",
+    "url": "https://www.nvidia.com/en-us/research/graduate-fellowships"
+   },
+   "deadline": {
+    "quote": "2027\u20132028 applications open September 30, 2026.",
+    "url": "https://www.nvidia.com/en-us/research/graduate-fellowships"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-openmainframeproject-org-projects-internship-program-aff82f",
+  "programme_id": "scholarships-hub-www-openmainframeproject-org-projects-internship-program-aff82f",
+  "official_url": "https://www.openmainframeproject.org/projects/internship-program",
+  "checked_at": "2026-10-18T16:17:57+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Any products, apps, or solution running Zowe in this program will have a high level of functionality, interoperability and user experience.",
+    "url": "https://www.openmainframeproject.org/projects/internship-program"
+   },
+   "programme_name": {
+    "quote": "Open Mainframe Project, Linux Foundation - Summer Internship Program",
+    "url": "https://www.openmainframeproject.org/projects/internship-program"
+   },
+   "organizer": {
+    "quote": "openmainframeproject.org",
+    "url": "https://www.openmainframeproject.org/projects/internship-program"
+   },
+   "official_url": {
+    "quote": "https://www.openmainframeproject.org/projects/internship-program",
+    "url": "https://www.openmainframeproject.org/projects/internship-program"
+   },
+   "funding": {
+    "quote": "The Open Mainframe Project provides a stipend for selected mentees.",
+    "url": "https://www.openmainframeproject.org/projects/internship-program"
+   },
+   "eligibility": {
+    "quote": "Mentees should have their academic institution advisor or instructor contact the Open Mainframe Project Mentorship Program Administrator to coordinate on requirements needed to complete this.",
+    "url": "https://www.openmainframeproject.org/projects/internship-program"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-openphilanthropy-org-focus-global-catastrophic-risks-e1ecd6",
+  "programme_id": "scholarships-hub-www-openphilanthropy-org-focus-global-catastrophic-risks-e1ecd6",
+  "official_url": "https://www.openphilanthropy.org/focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence/the-open-phil-ai-fellowship",
+  "checked_at": "2026-10-18T16:18:00+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Open Phil AI Fellowship",
+    "url": "https://www.openphilanthropy.org/focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence/the-open-phil-ai-fellowship"
+   },
+   "organizer": {
+    "quote": "openphilanthropy.org",
+    "url": "https://www.openphilanthropy.org/focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence/the-open-phil-ai-fellowship"
+   },
+   "official_url": {
+    "quote": "https://www.openphilanthropy.org/focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence/the-open-phil-ai-fellowship",
+    "url": "https://www.openphilanthropy.org/focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence/the-open-phil-ai-fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-palantir-com-students-scholarship-ad11c0",
+  "programme_id": "scholarships-hub-www-palantir-com-students-scholarship-ad11c0",
+  "official_url": "https://www.palantir.com/students/scholarship/global-impact",
+  "checked_at": "2026-10-18T16:18:04+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-scholarships-www-palantir-com-students-scholarship-857aff",
+  "programme_id": "scholarships-hub-www-palantir-com-students-scholarship-857aff",
+  "official_url": "https://www.palantir.com/students/scholarship/wit-north-america",
+  "checked_at": "2026-10-18T16:18:08+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-scholarships-pathwaystoscience-org-pdf-enhancingyourfellowshipapplication-e8c2a9",
+  "programme_id": "scholarships-hub-pathwaystoscience-org-pdf-enhancingyourfellowshipapplication-e8c2a9",
+  "official_url": "https://pathwaystoscience.org/pdf/EnhancingYourFellowshipApplication.pdf",
+  "checked_at": "2026-10-18T16:18:08+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-scholarships-www-pdsoros-org-070a3e",
+  "programme_id": "scholarships-hub-www-pdsoros-org-070a3e",
+  "official_url": "https://www.pdsoros.org/",
+  "checked_at": "2026-10-18T16:18:33+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://pdsoros.org/apply",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "The application for the 2027 fellowship is open and due on October 29, 2026 at 2 pm ET.",
+    "url": "https://pdsoros.org/apply"
+   },
+   "application": {
+    "quote": "Apply Now",
+    "url": "https://pdsoros.org/apply"
+   },
+   "application_url": {
+    "quote": "Apply Now",
+    "url": "https://pdsoros.org/apply"
+   },
+   "opening_date": {
+    "quote": "The application for the 2027 fellowship is open and due on October 29, 2026 at 2 pm ET.",
+    "url": "https://pdsoros.org/apply"
+   },
+   "deadline": {
+    "quote": "The application for the 2027 fellowship is open and due on October 29, 2026 at 2 pm ET.",
+    "url": "https://pdsoros.org/apply"
+   },
+   "funding": {
+    "quote": "27 and they will begin to receive stipend and tuition support from the program in the fall of 2027, and they will also attend the Fellowship\u2019s Fall Conference, all expenses paid, that October.",
+    "url": "https://pdsoros.org/apply"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "All applicants must have their applications in by 2 pm Eastern Time on October 29th, 2026 to be considered.",
+    "url": "https://pdsoros.org/apply"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-peointernational-org-psa-eligibility-requirements-b8942e",
+  "programme_id": "scholarships-hub-www-peointernational-org-psa-eligibility-requirements-b8942e",
+  "official_url": "https://www.peointernational.org/psa-eligibility-requirements",
+  "checked_at": "2026-10-18T16:19:06+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Scholar Award is a one-time, competitive, merit-based award is intended to recognize and encourage academic excellence and achievement by women in doctoral-level programs.",
+    "url": "https://www.peointernational.org/psa-eligibility-requirements"
+   },
+   "programme_name": {
+    "quote": "PEO Scholar Award",
+    "url": "https://www.peointernational.org/psa-eligibility-requirements"
+   },
+   "organizer": {
+    "quote": "peointernational.org",
+    "url": "https://www.peointernational.org/psa-eligibility-requirements"
+   },
+   "official_url": {
+    "quote": "https://www.peointernational.org/psa-eligibility-requirements",
+    "url": "https://www.peointernational.org/psa-eligibility-requirements"
+   },
+   "eligibility": {
+    "quote": "A woman is eligible for consideration for a P.",
+    "url": "https://www.peointernational.org/psa-eligibility-requirements"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-phdfellowship-splashthat-com-5cda95",
+  "programme_id": "scholarships-hub-phdfellowship-splashthat-com-5cda95",
+  "official_url": "https://phdfellowship.splashthat.com/",
+  "checked_at": "2026-10-18T16:19:09+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-placehold-it-15-adff6e-cdda54",
+  "programme_id": "scholarships-hub-placehold-it-15-adff6e-cdda54",
+  "official_url": "https://placehold.it/15/adff6e/000000?text=+",
+  "checked_at": "2026-10-18T16:19:11+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-www-profellow-com-96b879",
+  "programme_id": "scholarships-hub-www-profellow-com-96b879",
+  "official_url": "https://www.profellow.com/",
+  "checked_at": "2026-10-18T16:19:12+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Create a free ProFellow account to access our curated database of 2,800+ fellowships, top graduate schools, and awards for U.",
+    "url": "https://www.profellow.com/"
+   },
+   "programme_name": {
+    "quote": "ProFellow Fellowship Portal",
+    "url": "https://www.profellow.com/"
+   },
+   "organizer": {
+    "quote": "profellow.com",
+    "url": "https://www.profellow.com/"
+   },
+   "official_url": {
+    "quote": "https://www.profellow.com/",
+    "url": "https://www.profellow.com/"
+   },
+   "funding": {
+    "quote": "The fellowship was like a bootcamp, after which I worked with two of the ranchers to write a $2M USDA grant proposal.",
+    "url": "https://www.profellow.com/"
+   },
+   "eligibility": {
+    "quote": "Department of State, and one Non-Resident Fellowship with the Turkish Heritage Organization.",
+    "url": "https://www.profellow.com/"
+   },
+   "application_url": {
+    "quote": "Application Tips",
+    "url": "https://www.profellow.com/tips/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-qualcomm-com-invention-research-d17790",
+  "programme_id": "scholarships-hub-www-qualcomm-com-invention-research-d17790",
+  "official_url": "https://www.qualcomm.com/invention/research/university-relations/innovation-fellowship",
+  "checked_at": "2026-10-18T16:19:17+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-scholarships-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
+  "programme_id": "scholarships-hub-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
+  "official_url": "https://research.adobe.com/adobe-india-women-in-technology-scholarship",
+  "checked_at": "2026-10-18T16:19:19+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-scholarships-research-adobe-com-fellowship-68d538",
+  "programme_id": "scholarships-hub-research-adobe-com-fellowship-68d538",
+  "official_url": "https://research.adobe.com/fellowship",
+  "checked_at": "2026-10-18T16:19:20+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-scholarships-research-adobe-com-scholarship-7503c7",
+  "programme_id": "scholarships-hub-research-adobe-com-scholarship-7503c7",
+  "official_url": "https://research.adobe.com/scholarship",
+  "checked_at": "2026-10-18T16:19:22+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-scholarships-research-fb-com-programs-fellowship-c0478b",
+  "programme_id": "scholarships-hub-research-fb-com-programs-fellowship-c0478b",
+  "official_url": "https://research.fb.com/programs/fellowship",
+  "checked_at": "2026-10-18T16:19:23+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_4xx"
+ },
+ {
+  "source_id": "hub-scholarships-www-research-ibm-com-university-awards-9332fe",
+  "programme_id": "scholarships-hub-www-research-ibm-com-university-awards-9332fe",
+  "official_url": "https://www.research.ibm.com/university/awards/fellowships.html",
+  "checked_at": "2026-10-18T16:19:26+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "IBM PhD Fellowship Award promote research, innovation, and the building of social, scientific, and technology-based collaboration with universities.",
+    "url": "https://www.research.ibm.com/university/awards/fellowships.html"
+   },
+   "programme_name": {
+    "quote": "IBM Ph.D. Fellowship",
+    "url": "https://www.research.ibm.com/university/awards/fellowships.html"
+   },
+   "organizer": {
+    "quote": "research.ibm.com",
+    "url": "https://www.research.ibm.com/university/awards/fellowships.html"
+   },
+   "official_url": {
+    "quote": "https://www.research.ibm.com/university/awards/fellowships.html",
+    "url": "https://www.research.ibm.com/university/awards/fellowships.html"
+   },
+   "funding": {
+    "quote": "Awards for other countries vary between $6,000 and $25,000.",
+    "url": "https://www.research.ibm.com/university/awards/fellowships.html"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-research-ibm-com-university-awards-775314",
+  "programme_id": "scholarships-hub-www-research-ibm-com-university-awards-775314",
+  "official_url": "https://www.research.ibm.com/university/awards/masters_fellowship.html",
+  "checked_at": "2026-10-18T16:19:27+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-scholarships-www-sandia-gov-careers-career-possibilities-c42ea6",
+  "programme_id": "scholarships-hub-www-sandia-gov-careers-career-possibilities-c42ea6",
+  "official_url": "https://www.sandia.gov/careers/career-possibilities/students-and-postdocs/fellowships/john-von-neumann-fellowship",
+  "checked_at": "2026-10-18T16:19:31+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "We are now accepting applications for the 2027 John von Neumann Fellowship in Computational Science.",
+    "url": "https://www.sandia.gov/careers/career-possibilities/students-and-postdocs/fellowships/john-von-neumann-fellowship"
+   },
+   "application": {
+    "quote": "Research and Applications of Mechanics of Structures",
+    "url": "https://www.sandia.gov/careers/careers/students-and-postdocs/internships-co-ops/institute-programs/research-and-applications-of-mechanics-of-structures/"
+   },
+   "application_url": {
+    "quote": "Research and Applications of Mechanics of Structures",
+    "url": "https://www.sandia.gov/careers/careers/students-and-postdocs/internships-co-ops/institute-programs/research-and-applications-of-mechanics-of-structures/"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {
+    "quote": ", a wholly owned subsidiary of Honeywell International, Inc.",
+    "url": "https://www.sandia.gov/careers/career-possibilities/students-and-postdocs/fellowships/john-von-neumann-fellowship"
+   },
+   "eligibility": {
+    "quote": "citizens, legal permanent residents, asylees or refugees in the U.",
+    "url": "https://www.sandia.gov/careers/career-possibilities/students-and-postdocs/fellowships/john-von-neumann-fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-scholarships-swe-org-applications-login-asp-880aca",
+  "programme_id": "scholarships-hub-scholarships-swe-org-applications-login-asp-880aca",
+  "official_url": "https://scholarships.swe.org/applications/login.asp",
+  "checked_at": "2026-10-18T16:19:34+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-scholarships-scholarships-uncf-org-program-details-149886",
+  "programme_id": "scholarships-hub-scholarships-uncf-org-program-details-149886",
+  "official_url": "https://scholarships.uncf.org/Program/Details/9eb15008-3567-45ed-b62f-aa14c784b09a",
+  "checked_at": "2026-10-18T16:19:36+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-scholarships-science-energy-gov-wdts-scgsr-811b1d",
+  "programme_id": "scholarships-hub-science-energy-gov-wdts-scgsr-811b1d",
+  "official_url": "http://science.energy.gov/wdts/scgsr",
+  "checked_at": "2026-10-18T16:19:38+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Today, that role also includes supporting educational and training programs to promote science and energy literacy.",
+    "url": "http://science.energy.gov/wdts/scgsr"
+   },
+   "programme_name": {
+    "quote": "SCGSR Program",
+    "url": "http://science.energy.gov/wdts/scgsr"
+   },
+   "organizer": {
+    "quote": "science.energy.gov",
+    "url": "http://science.energy.gov/wdts/scgsr"
+   },
+   "official_url": {
+    "quote": "http://science.energy.gov/wdts/scgsr",
+    "url": "http://science.energy.gov/wdts/scgsr"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-season-kde-org-419388",
+  "programme_id": "scholarships-hub-season-kde-org-419388",
+  "official_url": "https://season.kde.org/?prg=46&q=program_home",
+  "checked_at": "2026-10-18T16:19:41+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Deadline for the contributors applications: 2026-01-14.",
+    "url": "https://season.kde.org/?prg=46&q=program_home"
+   },
+   "deadline": {
+    "quote": "Deadline for the contributors applications: 2026-01-14.",
+    "url": "https://season.kde.org/?prg=46&q=program_home"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-sighpc-org-fellowships-05c526",
+  "programme_id": "scholarships-hub-www-sighpc-org-fellowships-05c526",
+  "official_url": "https://www.sighpc.org/fellowships",
+  "checked_at": "2026-10-18T16:19:41+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-scholarships-www-sigplan-org-awards-dissertation-837fde",
+  "programme_id": "scholarships-hub-www-sigplan-org-awards-dissertation-837fde",
+  "official_url": "https://www.sigplan.org/Awards/Dissertation",
+  "checked_at": "2026-10-18T16:19:52+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "dissertation in the area of Programming Languages.",
+    "url": "https://www.sigplan.org/Awards/Dissertation"
+   },
+   "programme_name": {
+    "quote": "John C. Reynolds Doctoral Dissertation Award",
+    "url": "https://www.sigplan.org/Awards/Dissertation"
+   },
+   "organizer": {
+    "quote": "sigplan.org",
+    "url": "https://www.sigplan.org/Awards/Dissertation"
+   },
+   "official_url": {
+    "quote": "https://www.sigplan.org/Awards/Dissertation",
+    "url": "https://www.sigplan.org/Awards/Dissertation"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-sites-nationalacademies-org-pga-fellowships-83341e",
+  "programme_id": "scholarships-hub-sites-nationalacademies-org-pga-fellowships-83341e",
+  "official_url": "https://sites.nationalacademies.org/PGA/Fellowships/AFRL/index.htm",
+  "checked_at": "2026-10-18T16:20:24+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {},
+   "application": {},
+   "application_url": {},
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "Eligibility and Benefits: Fellowship and Application Process for NRC RAP and AF STFP.",
+    "url": "https://sites.nationalacademies.org/PGA/Fellowships/AFRL/index.htm"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-sites-nationalacademies-org-pga-fordfellowships-0f7325",
+  "programme_id": "scholarships-hub-sites-nationalacademies-org-pga-fordfellowships-0f7325",
+  "official_url": "http://sites.nationalacademies.org/pga/fordfellowships/index.htm",
+  "checked_at": "2026-10-18T16:20:25+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: ConnectionResetError: [Errno 104] Connection reset by peer"
+ },
+ {
+  "source_id": "hub-scholarships-smartscholarshipprod-service-now-com-smart-472d06",
+  "programme_id": "scholarships-hub-smartscholarshipprod-service-now-com-smart-472d06",
+  "official_url": "https://smartscholarshipprod.service-now.com/smart",
+  "checked_at": "2026-10-18T16:20:25+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-scholarships-snapresearchfs-splashthat-com-df0b94",
+  "programme_id": "scholarships-hub-snapresearchfs-splashthat-com-df0b94",
+  "official_url": "https://snapresearchfs.splashthat.com/",
+  "checked_at": "2026-10-18T16:20:27+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-societyofwomenengineers-swe-org-swe-scholarships-e1060a",
+  "programme_id": "scholarships-hub-societyofwomenengineers-swe-org-swe-scholarships-e1060a",
+  "official_url": "http://societyofwomenengineers.swe.org/swe-scholarships",
+  "checked_at": "2026-10-18T16:20:27+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-scholarships-www-ssrc-org-programs-data-fluencies-5dba1c",
+  "programme_id": "scholarships-hub-www-ssrc-org-programs-data-fluencies-5dba1c",
+  "official_url": "https://www.ssrc.org/programs/data-fluencies/data-fluencies-dissertation-grants",
+  "checked_at": "2026-10-18T16:20:30+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-scholarships-studentpartners-microsoft-com-en-us-6e515e",
+  "programme_id": "scholarships-hub-studentpartners-microsoft-com-en-us-6e515e",
+  "official_url": "https://studentpartners.microsoft.com/en-us",
+  "checked_at": "2026-10-18T16:20:34+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-scholarships-www-symantec-com-about-careers-298f65",
+  "programme_id": "scholarships-hub-www-symantec-com-about-careers-298f65",
+  "official_url": "https://www.symantec.com/about/careers/graduate-fellowship",
+  "checked_at": "2026-10-18T16:20:36+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-scholarships-www-techatbloomberg-com-bloomberg-data-science-ph-d-fellowsh-56f42a",
+  "programme_id": "scholarships-hub-www-techatbloomberg-com-bloomberg-data-science-ph-d-fellowsh-56f42a",
+  "official_url": "https://www.techatbloomberg.com/bloomberg-data-science-ph-d-fellowship",
+  "checked_at": "2026-10-18T16:20:39+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-thielfellowship-org-41d873",
+  "programme_id": "scholarships-hub-thielfellowship-org-41d873",
+  "official_url": "http://thielfellowship.org/",
+  "checked_at": "2026-10-18T16:20:41+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The Thiel Fellowship gives $250,000 to young people who want to build new things instead of sitting in a classroom.",
+    "url": "http://thielfellowship.org/"
+   },
+   "programme_name": {
+    "quote": "Peter Thiel Scholarship",
+    "url": "http://thielfellowship.org/"
+   },
+   "organizer": {
+    "quote": "thielfellowship.org",
+    "url": "http://thielfellowship.org/"
+   },
+   "official_url": {
+    "quote": "http://thielfellowship.org/",
+    "url": "http://thielfellowship.org/"
+   },
+   "funding": {
+    "quote": "The Thiel Fellowship gives $250,000 to young people who want to build new things instead of sitting in a classroom.",
+    "url": "http://thielfellowship.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-twosigma-com-community-academic-partnerships-e53a2c",
+  "programme_id": "scholarships-hub-www-twosigma-com-community-academic-partnerships-e53a2c",
+  "official_url": "https://www.twosigma.com/community/academic-partnerships/graduate-students/phd-fellowships",
+  "checked_at": "2026-10-18T16:20:43+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-scholarships-www-udacity-com-scholarships-474763",
+  "programme_id": "scholarships-hub-www-udacity-com-scholarships-474763",
+  "official_url": "https://www.udacity.com/scholarships",
+  "checked_at": "2026-10-18T16:20:43+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Partner with Udacity to sponsor a scholarship program for underrepresented groups and have an outsized impact on your organization and broader community.",
+    "url": "https://www.udacity.com/scholarships"
+   },
+   "programme_name": {
+    "quote": "Udacity Scholarships",
+    "url": "https://www.udacity.com/scholarships"
+   },
+   "organizer": {
+    "quote": "udacity.com",
+    "url": "https://www.udacity.com/scholarships"
+   },
+   "official_url": {
+    "quote": "https://www.udacity.com/scholarships",
+    "url": "https://www.udacity.com/scholarships"
+   },
+   "eligibility": {
+    "quote": "Learners who are 18 years of age or older.",
+    "url": "https://www.udacity.com/scholarships"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-wagsonline-org-technology-award-announcement-4ced00",
+  "programme_id": "scholarships-hub-wagsonline-org-technology-award-announcement-4ced00",
+  "official_url": "https://wagsonline.org/technology-award-announcement",
+  "checked_at": "2026-10-18T16:20:46+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "All nominations must be submitted by October 11, 2026 by 11:59 p.",
+    "url": "https://wagsonline.org/technology-award-announcement"
+   },
+   "deadline": {
+    "quote": "All nominations must be submitted by October 11, 2026 by 11:59 p.",
+    "url": "https://wagsonline.org/technology-award-announcement"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-wiki-lfnetworking-org-display-ln-3f0a86",
+  "programme_id": "scholarships-hub-wiki-lfnetworking-org-display-ln-3f0a86",
+  "official_url": "https://wiki.lfnetworking.org/display/LN/LF+Networking+Internships",
+  "checked_at": "2026-10-18T16:20:49+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-scholarships-wiki-linuxfoundation-org-lkmp-8b5a2f",
+  "programme_id": "scholarships-hub-wiki-linuxfoundation-org-lkmp-8b5a2f",
+  "official_url": "https://wiki.linuxfoundation.org/lkmp",
+  "checked_at": "2026-10-18T16:20:51+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-scholarships-www-wit-university-b19ba7",
+  "programme_id": "scholarships-hub-www-wit-university-b19ba7",
+  "official_url": "https://www.wit.university/",
+  "checked_at": "2026-10-18T16:20:53+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://wit.university/admission",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Applications are reviewed on a rolling basis.",
+    "url": "https://wit.university/admission"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "Admission to the Master's in Engineering Management program is open to applicants who hold a bachelor's degree in any discipline.",
+    "url": "https://wit.university/admission"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-www-womentechmakers-com-scholars-bf7337",
+  "programme_id": "scholarships-hub-www-womentechmakers-com-scholars-bf7337",
+  "official_url": "https://www.womentechmakers.com/scholars",
+  "checked_at": "2026-10-18T16:20:59+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications are closed and expected to open in May.",
+    "url": "https://www.womentechmakers.com/scholars"
+   }
+  }
+ },
+ {
+  "source_id": "hub-scholarships-wtp-mit-edu-b0615e",
+  "programme_id": "scholarships-hub-wtp-mit-edu-b0615e",
+  "official_url": "http://wtp.mit.edu/",
+  "checked_at": "2026-10-18T16:21:09+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://wtp.mit.edu/application/",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Application deadline is December 21, 2026.",
+    "url": "https://wtp.mit.edu/application/"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {
+    "quote": "Application deadline is December 21, 2026.",
+    "url": "https://wtp.mit.edu/application/"
+   },
+   "deadline": {
+    "quote": "Application deadline is December 21, 2026.",
+    "url": "https://wtp.mit.edu/application/"
+   },
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "Applicants should be taking the most advanced classes in science and math appropriate for their grade level at their schools.",
+    "url": "https://wtp.mit.edu/application/"
+   }
+  }
+ }
+]
