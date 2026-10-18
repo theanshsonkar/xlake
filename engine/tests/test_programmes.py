@@ -894,7 +894,7 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertIsNone(record["deadline"])
         self.assertNotIn("second-hop", result["observations"][0]["reason"])
 
-    def test_second_hop_fetches_at_most_two_links_per_seed(self):
+    def test_second_hop_fetches_at_most_three_links_per_seed(self):
         seed = dict(SEEDS[0], official_url="https://example.test/programme")
         calls = []
 
@@ -903,14 +903,82 @@ class TestGenericProgrammePipeline(unittest.TestCase):
             if url == seed["official_url"]:
                 return ("<h1>Fellowship programme</h1><p>Official programme information.</p>"
                         "<a href='/how-to-apply'>Apply</a><a href='/faq'>FAQ</a>"
-                        "<a href='/admission'>Admission</a>"), url
+                        "<a href='/admission'>Admission</a><a href='/funding'>Funding</a>"), url
             return "<h1>Fellowship programme</h1><p>Vague programme information.</p>", url
 
         with patch("categories.programme_core.robots.allowed", return_value=(True, "ok")):
             self._run_hop_collect((seed,), fake_fetch)
-        self.assertEqual(len(calls), 3)
-        self.assertEqual(calls[1:], ["https://example.test/faq", "https://example.test/admission"])
-        self.assertNotIn("https://example.test/how-to-apply", calls)
+        self.assertEqual(len(calls), 4)
+        self.assertEqual(calls[1:], [
+            "https://example.test/how-to-apply", "https://example.test/faq", "https://example.test/funding"])
+
+    def test_hop_limit_env_and_cache(self):
+        seeds = tuple(dict(SEEDS[index], official_url="https://example.test/programme{}".format(index)) for index in range(2))
+        calls = []
+
+        def fake_fetch(url):
+            calls.append(url)
+            if url in {seed["official_url"] for seed in seeds}:
+                return "<h1>Fellowship programme</h1><p>Official programme information.</p><a href='/deadlines'>Deadlines</a>", url
+            return "<h1>Fellowship programme</h1><p>Vague programme information.</p>", url
+
+        with patch("categories.programme_core.robots.allowed", return_value=(True, "ok")), \
+             patch.dict(os.environ, {"XLAKE_PROGRAMME_HOP_LIMIT": "1"}):
+            self._run_hop_collect(seeds, fake_fetch)
+        self.assertEqual(calls.count("https://example.test/deadlines"), 1)
+        calls.clear()
+        with patch("categories.programme_core.robots.allowed", return_value=(True, "ok")), \
+             patch.dict(os.environ, {"XLAKE_PROGRAMME_HOP_LIMIT": "0"}):
+            self._run_hop_collect(seeds, fake_fetch)
+        self.assertNotIn("https://example.test/deadlines", calls)
+
+    def test_hop_merges_eligibility_funding_and_application_url(self):
+        seed = dict(SEEDS[0], official_url="https://example.test/programme")
+        hop_html = (
+            "<h1>MLH Fellowship Open Source Track</h1>"
+            "<p>Eligibility: open to undergraduate students enrolled at an accredited university.</p>"
+            "<p>Fellows receive a stipend of $5,000 for the programme.</p>"
+            "<a href='/apply-now'>Apply now</a>"
+        )
+
+        def fake_fetch(url):
+            if url == seed["official_url"]:
+                return "<h1>Fellowship programme</h1><p>This official programme page provides information.</p><a href='/program-details'>Program details</a>", url
+            if url == "https://example.test/program-details":
+                return hop_html, url
+            raise AssertionError(url)
+
+        with patch("categories.programme_core.robots.allowed", return_value=(True, "ok")):
+            result = self._run_hop_collect((seed,), fake_fetch)
+        record = result["records"][0]
+        self.assertEqual(record["official_url"], seed["official_url"])
+        self.assertNotIn(record["eligibility"], (None, "needs_confirmation"))
+        self.assertEqual(record["official_evidence"]["eligibility"]["url"], "https://example.test/program-details")
+        self.assertNotEqual(record["funding"], "not_stated")
+        self.assertEqual(record["application_url"], "https://example.test/apply-now")
+
+    def test_rejected_generated_seed_rows_are_retired(self):
+        good = dict(SEEDS[0], official_url="https://example.test/good", source_id="g", programme_id="g")
+        bad = dict(SEEDS[1], official_url="https://example.test/bad", source_id="b", programme_id="b",
+                   programme_name="Home", generated=True)
+        config = self._hop_config((good, bad))
+        lake_row = {"record_type": "programme", "category": "test", "programme_id": "b",
+                    "official_url": "https://example.test/bad", "is_live": True}
+        keep_row = {"record_type": "programme", "category": "test", "programme_id": "g",
+                    "official_url": "https://example.test/good", "is_live": True}
+        with tempfile.TemporaryDirectory() as td, patch("categories.programme_core.robots.allowed", return_value=(True, "ok")), \
+             patch("categories.programme_core._is_generated_seed", side_effect=lambda seed: seed["source_id"] == "b"), \
+             patch("categories.programme_core.programme_title_ok", return_value=(False, "generic_title")), \
+             patch.dict(os.environ, {"XLAKE_RETIRE_FORCE": "test"}):
+            lake = os.path.join(td, "lake.json")
+            with open(lake, "w") as handle:
+                json.dump([lake_row, keep_row], handle)
+            core_collect(config, fetch=lambda url: ("<h1>x</h1>", url),
+                         checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc), lake_path=lake,
+                         observations_path=os.path.join(td, "o.json"))
+            rows = {row["programme_id"]: row for row in json.load(open(lake))}
+        self.assertEqual(rows["b"].get("hidden_reason"), "source_removed")
+        self.assertNotEqual(rows["g"].get("hidden_reason"), "source_removed")
 
     def test_second_hop_fetch_cap_is_enforced(self):
         seeds = tuple(dict(SEEDS[index], official_url="https://example.test/programme{}".format(index)) for index in range(2))

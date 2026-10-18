@@ -313,10 +313,27 @@ def _month_number(name: str) -> int:
 HOP_LINK_TOKENS = (
     "apply", "application", "deadline", "dates", "timeline", "eligib",
     "faq", "admission", "schedule", "calendar", "cycle", "next-round",
+    "funding", "stipend", "program details", "programme details",
+    "program detail", "programme detail",
 )
+# Cues that usually lead to the page that actually carries dates; ranked first.
+_HOP_STRONG_TOKENS = ("deadline", "dates", "timeline", "apply", "application", "next-round", "cycle")
 HOP_LINK_EXTENSIONS = (".pdf", ".doc", ".docx", ".zip", ".png", ".jpg")
-HOP_LINK_LIMIT = 2
+HOP_LINK_LIMIT = 3
 MAX_HOP_FETCHES = 150
+HOP_LIMIT_ENV = "XLAKE_PROGRAMME_HOP_LIMIT"
+
+
+def _hop_fetch_limit() -> int:
+    """Per-run cap on extra sub-page fetches (env XLAKE_PROGRAMME_HOP_LIMIT)."""
+    try:
+        return max(0, int(os.environ.get(HOP_LIMIT_ENV, MAX_HOP_FETCHES)))
+    except ValueError:
+        return MAX_HOP_FETCHES
+
+
+def _hop_haystack(href: str, anchor: str) -> str:
+    return re.sub(r"[-_/+]+", " ", "{} {}".format(href, anchor)).casefold()
 
 
 class _HopLinkParser(HTMLParser):
@@ -413,12 +430,14 @@ def _hop_links(html: str, base_url: str, limit: int = HOP_LINK_LIMIT) -> List[st
         if target.path.casefold().endswith(HOP_LINK_EXTENSIONS):
             continue
         haystack = "{} {}".format(href, anchor).casefold()
-        if not any(token in haystack for token in HOP_LINK_TOKENS):
+        spaced = _hop_haystack(href, anchor)
+        if not any(token in haystack or token in spaced for token in HOP_LINK_TOKENS):
             continue
         seen.add(target_url)
-        candidates.append((len(target.path or "/"), index, target_url))
-    candidates.sort(key=lambda item: (item[0], item[1]))
-    return [url for _, _, url in candidates[:max(0, limit)]]
+        strong = 0 if any(token in haystack or token in spaced for token in _HOP_STRONG_TOKENS) else 1
+        candidates.append((strong, len(target.path or "/"), index, target_url))
+    candidates.sort(key=lambda item: item[:3])
+    return [item[3] for item in candidates[:max(0, limit)]]
 
 
 _ORD = r"(?:st|nd|rd|th)?"
@@ -1694,6 +1713,8 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
         "cap_skips": 0,
     }
     hop_budget = [0]
+    hop_cache: Dict = {}
+    rejected_seed_urls = set()
     for seed in config.source_registry:
         final_url = None
         outcome = "exception"
@@ -1716,6 +1737,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
                         seed, checked, "failed", "generated seed rejected: {}".format(title_reason),
                     )
                     observations.append(observation)
+                    rejected_seed_urls.add(seed.get("official_url"))
                     if should_route_research_seed(seed, config.category, title_reason):
                         routed_research.append(_routed_research_seed(seed))
                         outcome = "routed_research"
@@ -1737,6 +1759,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
                 record = None
                 outcome = "rejected_missing_programme_noun_page"
                 stats["page_noun_dropped"] += 1
+                rejected_seed_urls.add(seed.get("official_url"))
             else:
                 if seed.get("needs_page_noun"):
                     stats["page_noun_accepted"] += 1
@@ -1744,7 +1767,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
                 if fetch_succeeded:
                     first_record = record
                     record, observation = _follow_hops(
-                        seed, html, final_url, record, observation, fetch, checked_at, config, hop_budget,
+                        seed, html, final_url, record, observation, fetch, checked_at, config, hop_budget, hop_cache,
                     )
                     if record is not None and first_record is not None and record is not first_record:
                         for key in enrich.ENRICH_KEYS:
@@ -1811,8 +1834,14 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     )
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     merged = merge_programmes(records, observations, lake_path, observations_path or config.observations_path, now)
-    current_seed_urls = [seed.get("official_url") for seed in config.source_registry]
+    # Seeds that failed the title gate are not current: their rows must retire.
+    current_seed_urls = [
+        seed.get("official_url") for seed in config.source_registry
+        if seed.get("official_url") not in rejected_seed_urls
+    ]
     for current_item in records + observations:
+        if current_item.get("official_url") in rejected_seed_urls:
+            continue
         current_seed_urls.extend(_programme_row_urls(current_item))
     merged = retire_orphans(config.category, current_seed_urls, merged, now)
     retire_closed(config.category, merged, (checked_at or datetime.now(timezone.utc)).date(), now)
@@ -1885,10 +1914,53 @@ def _closed_hop_record(seed: Dict, observation: Dict, checked_at: datetime, hop_
     return record
 
 
+_MISSING_FACT = (None, "", [], "not_stated", "needs_confirmation")
+
+
+def _record_needs_facts(record: Optional[Dict]) -> bool:
+    if record is None:
+        return False
+    return bool(
+        record.get("deadline") is None
+        or record.get("eligibility") in _MISSING_FACT
+        or record.get("funding") in _MISSING_FACT
+        or not record.get("application_url")
+    )
+
+
+def _merge_hop_facts(record: Dict, facts: Dict, hop_url: str) -> Dict:
+    """Fill still-missing eligibility/funding/application_url from a sub-page."""
+    evidence = record.setdefault("official_evidence", {})
+    if record.get("eligibility") in _MISSING_FACT and facts.get("eligibility"):
+        record["eligibility"] = facts["eligibility"]
+        quote = _evidence(facts.get("_eligibility_quote") or facts["eligibility"], hop_url)
+        if quote:
+            evidence["eligibility"] = quote
+    if record.get("funding") in _MISSING_FACT and facts.get("funding"):
+        record["funding"] = facts["funding"]
+        if facts.get("funding_amount_usd") and not record.get("funding_amount_usd"):
+            record["funding_amount_usd"] = facts["funding_amount_usd"]
+        quote = _evidence(facts.get("_funding_quote"), hop_url) if facts.get("_funding_quote") else {}
+        if quote:
+            evidence["funding"] = quote
+    if not record.get("application_url") and facts.get("application_url"):
+        record["application_url"] = facts["application_url"]
+        label = _evidence(facts.get("_application_label"), facts["application_url"]) if facts.get("_application_label") else {}
+        if label:
+            evidence["application_url"] = label
+    return record
+
+
 def _follow_hops(seed: Dict, html: str, final_url: Optional[str], record: Optional[Dict], observation: Dict,
                  fetch: Callable[[str], str], checked_at: Optional[datetime], config: ProgrammeConfig,
-                 hop_budget: List[int]) -> Tuple[Optional[Dict], Dict]:
-    """Try bounded information-page hops without changing failed first-page results."""
+                 hop_budget: List[int], hop_cache: Optional[Dict] = None) -> Tuple[Optional[Dict], Dict]:
+    """Follow up to HOP_LINK_LIMIT same-origin info sub-pages and merge their facts.
+
+    Dates/status come from the first sub-page that yields dated evidence (structured
+    data is preferred by parse_programme); eligibility/funding/application_url are
+    filled in from any matching sub-page. official_url always stays the seed page.
+    ``hop_cache`` memoises fetched sub-pages for the run; cached pages are free.
+    """
     first_page_needs_hop = (
         observation.get("state") == "non_actionable"
         or (
@@ -1898,22 +1970,31 @@ def _follow_hops(seed: Dict, html: str, final_url: Optional[str], record: Option
             and record.get("programme_status") in (None, "open")
         )
     )
-    if not html or observation.get("state") == "failed" or not first_page_needs_hop:
+    facts_wanted = _record_needs_facts(record)
+    if not html or observation.get("state") == "failed" or not (first_page_needs_hop or facts_wanted):
         return record, observation
     base_url = final_url or seed["official_url"]
     checked_value = checked_at or datetime.now(timezone.utc)
+    cache = hop_cache if hop_cache is not None else {}
+    result_record, result_observation = record, observation
+    dates_resolved = not first_page_needs_hop
+    pending_facts: List[Tuple[str, Dict]] = []
     for hop_url in _hop_links(html, base_url, HOP_LINK_LIMIT):
-        if hop_budget[0] >= MAX_HOP_FETCHES:
-            break
         try:
             allowed, _why = robots.allowed(hop_url)
         except Exception:
             continue
         if not allowed:
             continue
-        hop_budget[0] += 1
         try:
-            fetched = fetch(hop_url)
+            if hop_url in cache:
+                fetched = cache[hop_url]
+            else:
+                if hop_budget[0] >= _hop_fetch_limit():
+                    break
+                hop_budget[0] += 1
+                fetched = fetch(hop_url)
+                cache[hop_url] = fetched
             hop_html, hop_final_url = fetched if isinstance(fetched, tuple) else (fetched, None)
             if not hop_html:
                 continue
@@ -1925,6 +2006,14 @@ def _follow_hops(seed: Dict, html: str, final_url: Optional[str], record: Option
         except Exception:
             continue
         if not _hop_page_matches_seed(seed, hop_url, hop_html):
+            continue
+        try:
+            hop_text, hop_links = _text(hop_html)
+            facts = enrich.enrich_fields(hop_html, hop_text, hop_url, hop_final_url, hop_links)
+            pending_facts.append((hop_url, facts))
+        except Exception:
+            pass
+        if dates_resolved:
             continue
         status = hop_record.get("programme_status") if hop_record else None
         dated = _has_dated_evidence(hop_record, hop_observation)
@@ -1939,10 +2028,19 @@ def _follow_hops(seed: Dict, html: str, final_url: Optional[str], record: Option
                 "needs_confirmation": not dated,
             })
             reason = "{}; second-hop evidence from {}".format(hop_observation.get("reason", "actionable"), hop_url)
-            return promoted, _observation(seed, hop_observation["checked_at"], hop_observation["state"], reason, promoted["official_evidence"])
+            result_record = promoted
+            result_observation = _observation(seed, hop_observation["checked_at"], hop_observation["state"], reason, promoted["official_evidence"])
+            if dated:
+                dates_resolved = True
+            continue
         if hop_observation.get("state") == "closed" and dated:
             promoted = _closed_hop_record(seed, hop_observation, checked_value, hop_url, config)
             if promoted:
                 reason = "{}; second-hop evidence from {}".format(hop_observation.get("reason", "closed"), hop_url)
-                return promoted, _observation(seed, hop_observation["checked_at"], "closed", reason, promoted["official_evidence"])
-    return record, observation
+                result_record = promoted
+                result_observation = _observation(seed, hop_observation["checked_at"], "closed", reason, promoted["official_evidence"])
+                dates_resolved = True
+    if result_record is not None:
+        for hop_url, facts in pending_facts:
+            _merge_hop_facts(result_record, facts, hop_url)
+    return result_record, result_observation

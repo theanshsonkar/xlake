@@ -886,3 +886,17 @@ class HubSeedsTests(unittest.TestCase):
             )
         self.assertEqual(merged, [])
         self.assertEqual(stats["dead_skipped"], 1)
+
+
+class MarkdownTableRowTests(unittest.TestCase):
+    def test_table_rows_split_into_cells_and_name_is_first_descriptive_cell(self):
+        text = (
+            "| Name | Link | Deadline |\n|---|---|---|\n"
+            "| **Google PhD Fellowship** | https://research.google/programs-and-events/phd-fellowship/ | Oct 2026 |\n"
+            "| NSF GRFP | [Apply](https://www.nsfgrfp.org/) | Oct 21 |\n"
+            "| [Hertz Fellowship](https://www.hertzfoundation.org/the-fellowship/) | Dec 2026 |\n"
+        )
+        links = dict(research_harvest.parse_markdown_links(text))
+        self.assertEqual(links["https://research.google/programs-and-events/phd-fellowship/"], "Google PhD Fellowship")
+        self.assertEqual(links["https://www.nsfgrfp.org/"], "NSF GRFP")
+        self.assertEqual(links["https://www.hertzfoundation.org/the-fellowship/"], "Hertz Fellowship")

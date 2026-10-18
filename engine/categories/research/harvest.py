@@ -503,12 +503,48 @@ def parse_html_links(text: str) -> List[Tuple[str, str]]:
     return parser.links
 
 
+_GENERIC_LINK_ANCHOR = re.compile(
+    r"^(?:apply(?: now| here)?|link|website|site|url|here|visit|more(?: info)?|details|info|click here|learn more|page|official(?: site| website| page)?)$",
+    re.IGNORECASE,
+)
+
+
+def _table_cells(line: str) -> Optional[List[str]]:
+    """Split a markdown table row into cells, or None when it is not one."""
+    stripped = line.strip()
+    if stripped.count("|") < 2 or not stripped.startswith("|"):
+        return None
+    cells = [cell.strip() for cell in re.split(r"(?<!\\)\|", stripped.strip("|"))]
+    if all(re.fullmatch(r":?-{2,}:?", cell) or not cell for cell in cells):
+        return []  # header separator row
+    return cells
+
+
+def _table_row_name(cells: Sequence[str], skip: str = "") -> str:
+    """First cell that reads like a programme name (not a URL, date or label)."""
+    for cell in cells:
+        text = re.sub(r"<[^>]*>", " ", cell)
+        text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+        text = clean_text(text.replace("**", "").replace("__", ""))
+        if not text or (skip and skip in cell) or _BARE_HTTP_URL.search(text):
+            continue
+        if _GENERIC_LINK_ANCHOR.match(text) or not re.search(r"[A-Za-z]{3,}", text):
+            continue
+        return text
+    return ""
+
+
 def _bare_url_title(text: str, start: int, end: int) -> str:
     line_start = text.rfind("\n", 0, start) + 1
     line_end = text.find("\n", end)
     if line_end < 0:
         line_end = len(text)
     line = text[line_start:line_end]
+    cells = _table_cells(line)
+    if cells:
+        # One table row is several cells; the name is the first descriptive one.
+        url_text = text[start:end]
+        return _table_row_name(cells, url_text)
     relative_start = start - line_start
     relative_end = end - line_start
     title = line[:relative_start] + " " + line[relative_end:]
@@ -536,7 +572,14 @@ def parse_markdown_links(text: str) -> List[Tuple[str, str]]:
         re.MULTILINE,
     )
     for match in pattern.finditer(text or ""):
-        add(match.group(2) or match.group(3) or "", match.group(1) or "")
+        title = match.group(1) or ""
+        if _GENERIC_LINK_ANCHOR.match(clean_text(title)):
+            row_start = (text or "").rfind("\n", 0, match.start()) + 1
+            row_end = (text or "").find("\n", match.end())
+            cells = _table_cells((text or "")[row_start:row_end if row_end >= 0 else len(text)])
+            if cells:
+                title = _table_row_name(cells, match.group(0)) or title
+        add(match.group(2) or match.group(3) or "", title)
     for target, title in parse_html_links(text or ""):
         add(target, title)
     for match in _BARE_HTTP_URL.finditer(text or ""):
