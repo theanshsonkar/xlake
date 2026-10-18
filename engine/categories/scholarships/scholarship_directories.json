@@ -54,5 +54,13 @@
     "type": "hub",
     "authoritative": false,
     "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "ua-external-scholarships-and-fellowships",
+    "url": "https://honors.ua.edu/experience/office-of-external-scholarships-and-fellowships/",
+    "category": "scholarships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-18T00:00:00Z"
   }
 ]

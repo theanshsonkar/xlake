@@ -900,3 +900,35 @@ class MarkdownTableRowTests(unittest.TestCase):
         self.assertEqual(links["https://research.google/programs-and-events/phd-fellowship/"], "Google PhD Fellowship")
         self.assertEqual(links["https://www.nsfgrfp.org/"], "NSF GRFP")
         self.assertEqual(links["https://www.hertzfoundation.org/the-fellowship/"], "Hertz Fellowship")
+
+
+try:
+    from categories.hub_seeds import DIRECTORY_TERMS
+except ImportError:
+    from engine.categories.hub_seeds import DIRECTORY_TERMS
+
+
+class UniversityAwardsHubTests(unittest.TestCase):
+    FIXTURE = (
+        "<ul><li><a href='https://www.marshallscholarship.org/'>Marshall Scholarship</a></li>"
+        "<li><a href='https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/'>Rhodes Scholarship</a></li>"
+        "<li><a href='/about/staff'>Our staff</a></li>"
+        "<li><a href='https://outlook.office365.com/book/x'>Schedule a meeting</a></li></ul>"
+    )
+
+    def test_university_listing_yields_external_official_candidates_only(self):
+        hub = "https://honors.example.edu/awards/"
+        found = [
+            research_harvest.candidate_from_link(hub, href, anchor, candidate_terms=DIRECTORY_TERMS)
+            for href, anchor in research_harvest.parse_html_links(self.FIXTURE)
+        ]
+        self.assertEqual([url for url in found if url], [
+            "https://www.marshallscholarship.org/",
+            "https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/",
+        ])
+
+    def test_shipped_directory_files_load(self):
+        root = Path(__file__).resolve().parents[1] / "categories"
+        for category, name in (("fellowships", "fellowship_directories.json"), ("scholarships", "scholarship_directories.json")):
+            hubs = research_harvest.load_hubs(root / category / name, category=category, max_hubs=200)
+            self.assertTrue(hubs)

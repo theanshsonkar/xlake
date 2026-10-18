@@ -805,7 +805,7 @@
     {
         "source_id": "fellowship-msca-postdoctoral",
         "programme_id": "fellowship-msca-postdoctoral",
-        "programme_name": "Marie Sk\u0142odowska-Curie Postdoctoral Fellowships",
+        "programme_name": "Marie Skłodowska-Curie Postdoctoral Fellowships",
         "organizer": "European Commission",
         "official_url": "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships",
         "allowed_path_hints": [
@@ -865,6 +865,50 @@
         "official_url": "https://www.wadhwaniaifoundation.org/",
         "allowed_path_hints": [
             ""
+        ],
+        "check_cadence": "monthly"
+    },
+    {
+        "source_id": "fellowship-rhodes",
+        "programme_id": "fellowship-rhodes",
+        "programme_name": "Rhodes Scholarship",
+        "organizer": "Rhodes Trust",
+        "official_url": "https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/",
+        "allowed_path_hints": [
+            "scholarship"
+        ],
+        "check_cadence": "monthly"
+    },
+    {
+        "source_id": "fellowship-marshall",
+        "programme_id": "fellowship-marshall",
+        "programme_name": "Marshall Scholarship",
+        "organizer": "Marshall Aid Commemoration Commission",
+        "official_url": "https://www.marshallscholarship.org/",
+        "allowed_path_hints": [
+            "scholarship"
+        ],
+        "check_cadence": "monthly"
+    },
+    {
+        "source_id": "fellowship-schwarzman",
+        "programme_id": "fellowship-schwarzman",
+        "programme_name": "Schwarzman Scholars",
+        "organizer": "Schwarzman Scholars",
+        "official_url": "https://www.schwarzmanscholars.org/",
+        "allowed_path_hints": [
+            "scholar"
+        ],
+        "check_cadence": "monthly"
+    },
+    {
+        "source_id": "fellowship-fulbright-us-student",
+        "programme_id": "fellowship-fulbright-us-student",
+        "programme_name": "Fulbright U.S. Student Program",
+        "organizer": "Fulbright Program",
+        "official_url": "https://fulbrightprogram.org/",
+        "allowed_path_hints": [
+            "fulbright"
         ],
         "check_cadence": "monthly"
     }

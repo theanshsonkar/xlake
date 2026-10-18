@@ -110,5 +110,13 @@
     "type": "hub",
     "authoritative": false,
     "added_at": "2026-10-10T00:00:00Z"
+  },
+  {
+    "hub_id": "unt-national-scholarships-office",
+    "url": "https://honors.unt.edu/scholarships/national-scholarships/index.html",
+    "category": "fellowships",
+    "type": "hub",
+    "authoritative": false,
+    "added_at": "2026-10-18T00:00:00Z"
   }
 ]
