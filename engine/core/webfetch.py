@@ -227,6 +227,12 @@ def fetch_page(url: str, opener: Optional[Callable] = None,
         s2, f2, h2, e2, _ = _one(final, BROWSER_UA, opener, sleep, polite)
         if s2 is not None and s2 < 400:
             return s2, f2, h2, e2
+        if s2 == 403:
+            # Some WAFs flag a Chrome UA without a Chrome TLS fingerprint but
+            # accept the plain, honest bot UA. Last try, same robots gate.
+            s3, f3, h3, e3, _ = _one(final, robots.UA, opener, sleep, polite)
+            if s3 is not None and s3 < 400:
+                return s3, f3, h3, e3
     return status, final, html, err
 
 

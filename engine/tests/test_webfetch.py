@@ -93,6 +93,11 @@ class T(unittest.TestCase):
         self.assertIn("XlakeBot", f.calls[0][1])
         self.assertNotIn("XlakeBot", f.calls[1][1])
 
+    def test_403_falls_back_to_plain_ua(self):
+        (st, *_), f, _ = run([err(403), err(403), Resp()])
+        self.assertEqual((st, len(f.calls)), (200, 3))
+        self.assertTrue(f.calls[2][1].startswith("xlake/"))
+
     def test_403_no_retry_when_robots_disallows(self):
         f = Fake([err(403)])
         with mock.patch.object(webfetch, "_robots_ok", return_value=False), \
