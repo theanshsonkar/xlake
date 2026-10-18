@@ -473,5 +473,63 @@ class TestHackathonQuality(unittest.TestCase):
         self.assertEqual(mapped["eligibility"], "needs_confirmation")
 
 
+
+class RetireStaleTests(unittest.TestCase):
+    NOW = "2026-10-18T00:00:00+00:00"
+
+    def _run(self, rows, ok=()):
+        with tempfile.TemporaryDirectory() as td:
+            path = os.path.join(td, "lake.json")
+            with open(path, "w") as handle:
+                json.dump(rows, handle)
+            merged = merge_hackathons({}, set(ok), path, now=self.NOW, today=date(2026, 10, 18))
+        return {row["hackathon_id"]: row for row in merged}
+
+    def _row(self, hid, **kw):
+        row = {
+            "record_type": "hackathon", "hackathon_id": hid, "official_url": "https://x.test/" + hid,
+            "source": "devpost", "is_live": True, "needs_confirmation": False, "status": "open",
+            "last_seen": "2026-10-17T00:00:00+00:00", "last_checked_at": "2026-10-17T00:00:00+00:00",
+        }
+        row.update(kw)
+        return row
+
+    def _retired(self, row):
+        self.assertFalse(row["is_live"])
+        self.assertFalse(row["needs_confirmation"])
+        self.assertFalse(is_serving(row))
+
+    def test_past_deadline_and_end_retired(self):
+        out = self._run([self._row("a", deadline="2026-09-01", end_date="2026-09-05")])
+        self._retired(out["a"])
+
+    def test_absent_from_healthy_source_retired(self):
+        out = self._run([self._row("b", needs_confirmation=True)], ok={"devpost"})
+        self._retired(out["b"])
+
+    def test_failed_source_keeps_recent_row(self):
+        out = self._run([self._row("c")], ok={"mlh"})
+        self.assertTrue(out["c"]["is_live"])
+
+    def test_old_row_aged_out_even_if_source_failed(self):
+        old = "2026-09-01T00:00:00+00:00"
+        out = self._run([self._row("d", last_seen=old, last_checked_at=old, needs_confirmation=True)])
+        self._retired(out["d"])
+
+    def test_stale_days_env(self):
+        row = self._row("e", last_seen="2026-10-13T00:00:00+00:00", last_checked_at="2026-10-13T00:00:00+00:00")
+        self.assertTrue(self._run([row])["e"]["is_live"])
+        os.environ["XLAKE_HACKATHON_STALE_DAYS"] = "2"
+        try:
+            self._retired(self._run([row])["e"])
+        finally:
+            del os.environ["XLAKE_HACKATHON_STALE_DAYS"]
+
+    def test_legacy_no_status_not_live_retired(self):
+        row = self._row("f", is_live=False, needs_confirmation=True)
+        del row["status"]
+        self._retired(self._run([row])["f"])
+
+
 if __name__ == "__main__":
     unittest.main()
