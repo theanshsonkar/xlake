@@ -60,6 +60,15 @@ RETIRE_BATCH = 200
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
+# Hackathon-only extra keys: never published for jobs/internships/other types.
+HACKATHON_ONLY_KEYS = {
+    "logo_url", "status", "themes", "participants", "mode", "region",
+    "organizer_domain", "deadline_basis",
+}
+# Placeholders that must publish as NULL for hackathons.
+HACKATHON_PLACEHOLDERS = {"not_stated", "needs_confirmation", "unknown", "n/a", "none"}
+HACKATHON_DESCRIPTION_MAX = 300
+
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 # Fields surfaced into the `extra` jsonb, by relevance. Null/empty are dropped.
@@ -72,7 +81,8 @@ EXTRA_KEYS = [
     "issue_number", "repo_stars", "discovery_source",
     # hackathons
     "prize", "tags", "start_date", "end_date", "is_online",
-    "registration_deadline", "source",
+    "registration_deadline", "source", "logo_url", "status", "themes",
+    "participants", "mode", "region", "organizer_domain", "deadline_basis",
     # programmes
     "organizer", "programme_status", "opening_date", "opportunity_type",
     "international_eligibility",
@@ -146,9 +156,19 @@ def map_row(r: dict) -> dict:
 
     extra = {}
     for k in EXTRA_KEYS:
+        if k in HACKATHON_ONLY_KEYS and t != "hackathon":
+            continue
         v = r.get(k)
         if v not in (None, "", []):
             extra[k] = v
+
+    eligibility = _first(r.get("eligibility"), r.get("international_eligibility"))
+    funding = r.get("funding")
+    if t == "hackathon":
+        if str(eligibility or "").strip().casefold() in HACKATHON_PLACEHOLDERS:
+            eligibility = None
+        if str(funding or "").strip().casefold() in HACKATHON_PLACEHOLDERS:
+            funding = None
 
     return {
         "id": stable_id(r),
@@ -169,11 +189,12 @@ def map_row(r: dict) -> dict:
         "needs_confirmation": bool(r.get("needs_confirmation", False)),
         "last_checked": _first(r.get("last_checked_at"), r.get("last_seen")),
         "verified": verified,
-        "description": _truncate(r.get("description"), 200),
+        "description": _truncate(
+            r.get("description"),
+            HACKATHON_DESCRIPTION_MAX if t == "hackathon" else 200),
         "deadline": deadline,
-        "eligibility": _first(r.get("eligibility"),
-                              r.get("international_eligibility")),
-        "funding": r.get("funding"),
+        "eligibility": eligibility,
+        "funding": funding,
         "extra": extra,
     }
 

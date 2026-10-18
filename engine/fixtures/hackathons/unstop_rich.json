@@ -1,0 +1,22 @@
+[
+ {"title": "Smart India Build", "seo_url": "https://unstop.com/hackathons/smart-india-build-1",
+  "status": "LIVE", "regn_open": 1, "region": "offline", "registerCount": 321,
+  "logoUrl2": "http://d8it4huxumps7.cloudfront.net/uploads/images/150x150/logo.png",
+  "details": "<div><p>IoT Hackathon:</p> <p>A dynamic event for makers.</p> <p>Bring a laptop.</p> <p>Third.</p></div>",
+  "organisation": {"name": "Bannari Amman Institute", "official_email_domains": "@bitsathy.ac.in, @x.in"},
+  "address_with_country_logo": {"city": "Erode", "state": "Tamil Nadu", "country": {"name": "India", "iso": "IN"}},
+  "prizes": [{"rank": "Winner", "cash": 1500, "currencyCode": "INR"}, {"rank": "Runner Up", "cash": 1000, "currencyCode": "INR"}],
+  "tags": [{"name": "IoT"}],
+  "filters": [{"type": "eligible", "name": "Engineering Students"}],
+  "end_date": "2026-09-30T00:00:00+05:30",
+  "regnRequirements": {"start_regn_dt": "2026-08-01T00:00:00+05:30", "end_regn_dt": "2026-09-10T00:00:00+05:30",
+   "eligibility": "{\"sector\":[\"students\",\"professionals\"],\"engineering\":[{\"course\":\"btech\",\"passoutYear\":[\"all\"]},{\"course\":\"mtech\",\"passoutYear\":[\"all\"]}],\"bSchools\":[],\"arts\":[]}"}},
+ {"title": "Closed Reg Running Event", "seo_url": "https://unstop.com/hackathons/running-2",
+  "status": "LIVE", "regn_open": 0, "region": "online", "tags": [], "prizes": [],
+  "filters": [{"type": "eligible", "name": "All"}], "end_date": "2026-09-30T00:00:00+05:30",
+  "regnRequirements": {"start_regn_dt": "2026-07-01T00:00:00+05:30", "end_regn_dt": "2026-08-10T00:00:00+05:30", "eligibility": null}},
+ {"title": "Fully Ended", "seo_url": "https://unstop.com/hackathons/ended-3",
+  "status": "LIVE", "regn_open": 1, "region": "online", "tags": [], "prizes": [],
+  "end_date": "2026-08-15T00:00:00+05:30",
+  "regnRequirements": {"end_regn_dt": "2026-08-10T00:00:00+05:30"}}
+]
