@@ -1,49 +1,93 @@
 name: sweep
 
-# The collector runs on GitHub's hardware, not on a laptop. Free tier is 2,000
-# minutes/month for private repos; one daily sweep plus one daily
-# page-reader pass must stay comfortably inside that.
+# Jobs + internships are swept as a MATRIX BY ATS PLATFORM. Each leg restores
+# only its own shard (lake/shards/jobs-<platform>.json + .hidden.json), sweeps
+# only that platform's registry boards, writes the shard back and publishes
+# only that shard to Supabase (scoped soft-retire). Legs run in parallel with a
+# 30 minute cap each (the old single job took ~60 min of a 90 min cap).
+#
+# Manual "run all" = workflow_dispatch with platform=all (the default).
+# Schedule: the daily 06:47 IST run sweeps every leg; the page-reader pass is
+# the separate second schedule.
 #
 # GitHub only reads workflows from the repo ROOT (.github/workflows/). The
-# archived legacy workflow, if needed for historical comparison, is preserved
-# under archive/opportunity-lake-oldengine-2026-08-16/ and is not active.
+# archived legacy workflow lives under archive/opportunity-lake-oldengine-2026-08-16/.
 on:
   schedule:
-    - cron: "17 1 * * *"     # 06:47 IST — the board sweep, once daily
-    - cron: "37 2 * * *"    # 08:07 IST — the page-reader pass, once daily
+    - cron: "17 1 * * *"     # 06:47 IST - the board sweep, once daily
+    - cron: "37 2 * * *"    # 08:07 IST - the page-reader pass, once daily
   workflow_dispatch:
     inputs:
       job:
         description: "Which job to run manually (sweep | read_pages | both)"
         required: false
         default: "both"
+      platform:
+        description: "Sweep leg: all | greenhouse | lever | ashby | workable | workday | keka | other | internships"
+        required: false
+        default: "all"
       limit:
         description: "LAKE_LIMIT for a manual run (0 = all)"
         required: false
         default: "0"
+      dry_run:
+        description: "Sweep only: no S3 write, no publish, no operational commit"
+        required: false
+        type: boolean
+        default: false
+      retire_force:
+        description: "Comma-separated legs (e.g. workable,other) or 'all' allowed to bypass the drop + retire guards"
+        required: false
+        default: ""
 
 concurrency:
   group: xlake-lake-writer
   cancel-in-progress: false
 
-# Both jobs commit data/*.json back to the repo, so they need write access.
+# Operational files are committed back to the repo, so write access is needed.
 permissions:
   contents: write
 
 jobs:
-  sweep:
+  plan:
     if: >
       (github.event_name == 'schedule' && github.event.schedule == '17 1 * * *') ||
       (github.event_name == 'workflow_dispatch' &&
        (github.event.inputs.job == 'sweep' || github.event.inputs.job == 'both'))
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    outputs:
+      matrix: ${{ steps.m.outputs.matrix }}
+    steps:
+      - id: m
+        run: |
+          ALL='["greenhouse","lever","ashby","workable","workday","keka","other","internships"]'
+          P="${{ github.event.inputs.platform }}"
+          if [ -z "$P" ] || [ "$P" = "all" ]; then
+            echo "matrix={\"platform\":$ALL}" >> "$GITHUB_OUTPUT"
+          else
+            echo "matrix={\"platform\":[\"$P\"]}" >> "$GITHUB_OUTPUT"
+          fi
+
+  sweep:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    concurrency:
+      group: xlake-jobs-${{ matrix.platform }}
+      cancel-in-progress: false
     env:
+      P: ${{ matrix.platform }}
+      SHARD: jobs-${{ matrix.platform }}
+      DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+      XLAKE_RETIRE_FORCE: ${{ github.event.inputs.retire_force }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
       AWS_DEFAULT_REGION: ap-south-1
-      XLAKE_GENERATED_SEEDS_DIR: ${{ github.workspace }}/engine/data/operations/generated_seeds
     defaults:
       run:
         working-directory: engine
@@ -55,127 +99,159 @@ jobs:
         with:
           python-version: "3.12"
 
-      # The registry is small and company-scoped (data/operations/registry.json,
-      # built by resolve_companies.py), not the raw Common Crawl universe, so
-      # there is no enumeration-cache step here.
+      # Restore ONLY this leg's shard. If it does not exist yet (first run
+      # after the rollout) it is derived once from the full lake; run the
+      # migrate-shards workflow first to create every shard at once.
+      - name: Restore shard from S3
+        run: |
+          mkdir -p data/lake/shards
+          KEY="lake/shards/$SHARD.json"
+          if aws s3api head-object --bucket "$AWS_S3_BUCKET" --key "$KEY" >/dev/null 2>head.err; then
+            aws s3 cp "s3://$AWS_S3_BUCKET/$KEY" "data/lake/shards/$SHARD.json"
+            aws s3 cp "s3://$AWS_S3_BUCKET/lake/shards/$SHARD.hidden.json" "data/lake/shards/$SHARD.hidden.json" || echo "no hidden companion yet"
+            python3 -m pipeline.shard_run stage --category "$SHARD"
+          elif grep -qE "404|Not Found" head.err; then
+            echo "::warning::shard $SHARD missing in S3 - deriving once from the full lake"
+            aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities.json" data/lake/opportunities.json
+            aws s3 cp "s3://$AWS_S3_BUCKET/lake/hidden.json" data/lake/hidden.json || echo "[]" > data/lake/hidden.json
+            python3 -m pipeline.shard_run stage --category "$SHARD" --from-full
+          else
+            cat head.err; exit 1
+          fi
+
       - name: Refresh community internship lists (zshah101)
+        if: ${{ matrix.platform == 'internships' }}
         run: python3 -u -m categories.internships.lists
 
-      # The canonical lake lives in S3, not git. Pull the current lake down so
-      # the collectors read/write the same local files exactly as before.
-      - name: Restore lake from S3
-        run: |
-          mkdir -p data/lake
-          aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities.json" data/lake/opportunities.json
-          aws s3 cp "s3://$AWS_S3_BUCKET/lake/hidden.json" data/lake/hidden.json
-          aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities_history.json" data/lake/opportunities_history.json
-
-      - name: Sweep the resolved registry
+      - name: Sweep this platform's registry boards
         env:
           LAKE_WORKERS: "8"
           LAKE_HOST_DELAY: "0.3"
           LAKE_LIMIT: ${{ github.event.inputs.limit || '0' }}
-        run: python3 -u -m pipeline.sweep
+        run: python3 -u -m pipeline.sweep --shard "$SHARD"
 
       - name: Show report
         run: tail -1 data/operations/runs.jsonl | python3 -m json.tool
 
-      # Persist the lake back to S3 after ALL collectors have written it, so no
-      # record type is lost, plus a timestamped snapshot for point-in-time
-      # recovery. Placed after the last collector (not right after the sweep)
-      # because programmes/contributions/hackathons also write the lake.
-      - name: Sync lake to S3
+      # Row-drop guard (>50%), keep only this shard's rows, step summary with
+      # description / employment_type / workplace / salary / posted_at /
+      # company_domain / level coverage and duplicate counts.
+      - name: Finalize shard + summary
         run: |
-          aws s3 cp data/lake/opportunities.json "s3://$AWS_S3_BUCKET/lake/opportunities.json"
-          aws s3 cp data/lake/hidden.json "s3://$AWS_S3_BUCKET/lake/hidden.json"
-          aws s3 cp data/lake/opportunities_history.json "s3://$AWS_S3_BUCKET/lake/opportunities_history.json"
-          aws s3 cp data/lake/opportunities.json "s3://$AWS_S3_BUCKET/archive/opportunities-$(date -u +%Y%m%dT%H%M%SZ).json"
+          FORCE=""
+          case ",$(echo "$XLAKE_RETIRE_FORCE" | tr -d ' ')," in
+            *",$P,"*|*",$SHARD,"*|*",all,"*) FORCE="--force" ;;
+          esac
+          python3 -m pipeline.shard_run finalize --category "$SHARD" $FORCE
 
-      # Publish the serving rows (is_live OR needs_confirmation) into the
-      # Supabase serving table. Read-only against the lake; upserts on id and
-      # soft-retires ids no longer serving. Uses the Python stdlib only
-      # (urllib/json/hashlib) — no extra pip deps required.
-      # Category rows now live in per-category shards. The full publish
-      # combines main + shards so it never soft-retires category rows.
-      - name: Restore category shards for combined publish
+      - name: Write shard to S3
+        if: ${{ env.DRY_RUN != 'true' }}
         run: |
-          mkdir -p data/lake/shards
-          aws s3 sync "s3://$AWS_S3_BUCKET/lake/shards" data/lake/shards --exclude "*" --include "*.json" || echo "no shards yet"
+          aws s3 cp "data/lake/shards/$SHARD.json" "s3://$AWS_S3_BUCKET/lake/shards/$SHARD.json"
+          [ -f "data/lake/shards/$SHARD.hidden.json" ] && aws s3 cp "data/lake/shards/$SHARD.hidden.json" "s3://$AWS_S3_BUCKET/lake/shards/$SHARD.hidden.json"
+          aws s3 cp "data/lake/shards/$SHARD.json" "s3://$AWS_S3_BUCKET/archive/shards/$SHARD-$(date -u +%Y%m%dT%H%M%SZ).json"
 
-      - name: Publish to Supabase
+      - name: Publish to Supabase (scoped to this shard)
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 -u -m pipeline.publish_supabase --execute
+        run: |
+          EXTRA=""
+          case ",$(echo "$XLAKE_RETIRE_FORCE" | tr -d ' ')," in
+            *",$P,"*|*",$SHARD,"*|*",all,"*) EXTRA="--force-retire" ;;
+          esac
+          if [ "$DRY_RUN" = "true" ]; then
+            python3 -u -m pipeline.publish_supabase --category "$SHARD" | tail -25
+          else
+            python3 -u -m pipeline.publish_supabase --category "$SHARD" --execute $EXTRA
+          fi
 
-      # opportunities.json is the canonical lake. hidden.json is its retained
-      # non-default companion; run and tier state are operational history.
-      # The lake files themselves now live in S3 (synced above) and are
-      # gitignored, so only the small operational files are committed here.
+      # Operational files are merged and committed once, by the commit_ops job.
+      - name: Upload operational outputs
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ops-${{ matrix.platform }}
+          path: |
+            engine/data/operations/runs.jsonl
+            engine/data/operations/tier_state.json
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Upload shard artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: shard-${{ matrix.platform }}
+          path: |
+            engine/data/lake/shards/jobs-${{ matrix.platform }}.json
+            engine/data/lake/shards/jobs-${{ matrix.platform }}.hidden.json
+          retention-days: 14
+          if-no-files-found: ignore
+
+  commit_ops:
+    needs: sweep
+    if: ${{ always() && needs.sweep.result != 'skipped' && github.event.inputs.dry_run != 'true' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: ops-*
+          path: ${{ runner.temp }}/ops
+      # Each leg started from the same committed files and appended its own run
+      # line / board history; merge: tier_state = union by board key (leg
+      # values win), runs.jsonl = committed lines + one new line per leg.
+      - name: Merge operational files
+        run: |
+          python3 - <<'PY'
+          import glob, json, os
+          ops = os.path.join(os.environ["RUNNER_TEMP"], "ops")
+          tier_p, runs_p = "data/operations/tier_state.json", "data/operations/runs.jsonl"
+          tier = json.load(open(tier_p)) if os.path.exists(tier_p) else {}
+          have = set(open(runs_p).read().splitlines()) if os.path.exists(runs_p) else set()
+          new_lines = []
+          for d in sorted(glob.glob(ops + "/*")):
+              t = os.path.join(d, "tier_state.json")
+              if os.path.exists(t):
+                  tier.update(json.load(open(t)))
+              r = os.path.join(d, "runs.jsonl")
+              if os.path.exists(r):
+                  lines = [l for l in open(r).read().splitlines() if l.strip()]
+                  if lines and lines[-1] not in have:
+                      new_lines.append(lines[-1])
+          json.dump(tier, open(tier_p, "w"), indent=1)
+          if new_lines:
+              with open(runs_p, "a") as fh:
+                  fh.write("\n".join(new_lines) + "\n")
+          print("merged tier boards=%d, new run lines=%d" % (len(tier), len(new_lines)))
+          PY
       - name: Commit operational files
         run: |
           set -euo pipefail
           git config user.name  "opportunity-lake-bot"
           git config user.email "bot@users.noreply.github.com"
-          shopt -s nullglob
-          FILES=(
-            data/operations/registry.json
-            data/operations/runs.jsonl
-            data/operations/tier_state.json
-            data/operations/programmes_observations.json
-            data/operations/programme_verifications.json
-            data/operations/research_programme_verifications.json
-            data/operations/discovery_*.json
-          )
+          FILES=(data/operations/runs.jsonl data/operations/tier_state.json)
           TMP=$(mktemp -d)
-          paths=()
-          for f in "${FILES[@]}"; do
-            for p in $f; do
-              if [ -e "$p" ]; then
-                mkdir -p "$TMP/$(dirname "$p")"
-                cp -a "$p" "$TMP/$p"
-                paths+=("$p")
-              fi
-            done
-          done
+          for p in "${FILES[@]}"; do mkdir -p "$TMP/$(dirname "$p")"; cp -a "$p" "$TMP/$p"; done
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard HEAD
-            if [ "${#paths[@]}" -gt 0 ]; then
-              git clean -fd -- "${paths[@]}"
-            fi
             git checkout -B ci-save origin/main
-            while IFS= read -r p; do
-              p=${p#./}
-              mkdir -p "$(dirname "$p")"
-              cp -a "$TMP/$p" "$p"
-            done < <(cd "$TMP" && find . -type f)
-            if [ "${#paths[@]}" -gt 0 ]; then
-              git add -A -- "${paths[@]}"
-            fi
-            if git diff --cached --quiet; then
-              echo 'nothing to commit'
-              exit 0
-            fi
-            git commit -m "daily: sweep + programmes + contributions $(date -u +%Y-%m-%dT%H:%MZ)"
-            if git push origin HEAD:main; then
-              exit 0
-            fi
+            for p in "${FILES[@]}"; do cp -a "$TMP/$p" "$p"; done
+            git add -A -- "${FILES[@]}"
+            if git diff --cached --quiet; then echo 'nothing to commit'; exit 0; fi
+            git commit -m "daily: jobs sweep (matrix) $(date -u +%Y-%m-%dT%H:%MZ)"
+            if git push origin HEAD:main; then exit 0; fi
             sleep $((attempt*5))
           done
           exit 1
-
-      - name: Upload artifacts
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: sweep-output
-          path: |
-            engine/data/lake/opportunities.json
-            engine/data/lake/hidden.json
-            engine/data/operations/runs.jsonl
-            engine/data/operations/tier_state.json
-          retention-days: 14
 
   read_pages:
     needs: sweep

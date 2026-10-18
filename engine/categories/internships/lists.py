@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from urllib import request
 from urllib.parse import urlsplit
 
-from core import filters
+from core import filters, jobmeta
 from core.paths import OPPORTUNITIES_PATH
 
 
@@ -180,6 +180,13 @@ def build_row(entry, checked_at):
         "remote": remote,
         "sponsorship": entry.get("sponsorship"),
         "last_checked_at": checked_at,
+        # US-first community list: tag it so the feed can prioritise it.
+        "employment_type": "internship",
+        "level": "intern",
+        "region": jobmeta.region_of(bucket),
+        "workplace": "remote" if remote else None,
+        "company_display_name": entry.get("company"),
+        "company_domain": jobmeta.domain_from_url(url),
     }
 
 

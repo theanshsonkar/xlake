@@ -467,10 +467,12 @@ class TestHackathonQuality(unittest.TestCase):
                "description": "d" * 400, "status": "open", "logo_url": "x", "mode": "remote",
                "region": "US", "funding": "not_stated", "eligibility": "needs_confirmation"}
         mapped = map_row(job)
-        self.assertEqual(len(mapped["description"]), 200)
-        self.assertEqual(mapped["extra"], {})
-        self.assertEqual(mapped["funding"], "not_stated")
-        self.assertEqual(mapped["eligibility"], "needs_confirmation")
+        # Jobs now publish a 300-char description, logo_url/region, and NULL
+        # instead of placeholder funding/eligibility.
+        self.assertEqual(len(mapped["description"]), 300)
+        self.assertEqual(mapped["extra"], {"logo_url": "x", "region": "US"})
+        self.assertIsNone(mapped["funding"])
+        self.assertIsNone(mapped["eligibility"])
 
 
 

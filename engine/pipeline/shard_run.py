@@ -20,7 +20,7 @@ import os
 import sys
 
 from core import shards
-from core.paths import LAKE_DIR, OPPORTUNITIES_PATH
+from core.paths import HIDDEN_PATH, LAKE_DIR, OPPORTUNITIES_PATH
 
 PREV_COUNT = os.path.join(LAKE_DIR, "shards", ".prev_count")
 
@@ -33,6 +33,22 @@ def summary(cat, rows, prev):
     live = [r for r in rows if r.get("is_live") is True]
     ended = [r for r in rows if r.get("is_live") is False]
     has = lambda *ks: (lambda r: any(r.get(k) not in (None, "", [], "not_stated", "needs_confirmation") for k in ks))
+    if shards.is_job_shard(cat):
+        jobs = [r for r in live if not r.get("is_duplicate")]
+        lines = [
+            "### %s shard" % cat,
+            "| metric | value |", "|---|---|",
+            "| rows (prev -> now) | %s -> %d |" % (prev if prev is not None else "new", len(rows)),
+            "| live | %d |" % len(live),
+            "| live duplicates (not served) | %d |" % (len(live) - len(jobs)),
+            "| ended | %d |" % len(ended),
+        ]
+        for label, keys in (("description", ("description",)), ("employment_type", ("employment_type",)),
+                            ("workplace", ("workplace",)), ("salary", ("salary_min", "salary_text")),
+                            ("posted_at", ("posted_at",)), ("deadline", ("deadline",)),
+                            ("company_domain", ("company_domain",)), ("level", ("level",))):
+            lines.append("| with %s (of live, non-dup) | %s |" % (label, _pct(jobs, has(*keys))))
+        return "\n".join(lines)
     lines = [
         "### %s shard" % cat,
         "| metric | value |", "|---|---|",
@@ -50,7 +66,7 @@ def summary(cat, rows, prev):
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("action", choices=["stage", "finalize"])
-    ap.add_argument("--category", required=True, choices=list(shards.SHARD_SCOPES))
+    ap.add_argument("--category", required=True, choices=list(shards.ALL_SHARDS))
     ap.add_argument("--from-full", action="store_true")
     ap.add_argument("--force", action="store_true", help="bypass drop guard")
     args = ap.parse_args(argv)
@@ -66,11 +82,22 @@ def main(argv=None) -> int:
             full = json.load(open(OPPORTUNITIES_PATH, encoding="utf-8"))
             rows = shards.split_rows(full)[cat]
             print("derived shard %s from full lake: %d rows" % (cat, len(rows)))
+            if shards.is_job_shard(cat) and os.path.exists(HIDDEN_PATH):
+                hid = [r for r in json.load(open(HIDDEN_PATH, encoding="utf-8"))
+                       if shards.shard_of(r) == cat]
+                shards.save_shard_hidden(cat, hid)
+                print("derived hidden companion: %d rows" % len(hid))
         os.makedirs(LAKE_DIR, exist_ok=True)
         with open(OPPORTUNITIES_PATH, "w", encoding="utf-8") as fh:
             json.dump(rows, fh, ensure_ascii=False)
         with open(PREV_COUNT, "w") as fh:
             fh.write(str(len(rows)))
+        if shards.is_job_shard(cat):
+            # The sweep keeps rejected rows in hidden.json; stage this shard's.
+            hp = shards.hidden_path(cat)
+            hid = json.load(open(hp, encoding="utf-8")) if os.path.exists(hp) else []
+            with open(HIDDEN_PATH, "w", encoding="utf-8") as fh:
+                json.dump(hid, fh, ensure_ascii=False)
         print("staged %s: %d rows" % (cat, len(rows)))
         return 0
 
@@ -90,6 +117,10 @@ def main(argv=None) -> int:
         print("ERROR: " + err, file=sys.stderr)
         return 3
     shards.save_shard(cat, mine)
+    if shards.is_job_shard(cat) and os.path.exists(HIDDEN_PATH):
+        hid = [r for r in json.load(open(HIDDEN_PATH, encoding="utf-8"))
+               if shards.shard_of(r) == cat]
+        shards.save_shard_hidden(cat, hid)
     return 0
 
 

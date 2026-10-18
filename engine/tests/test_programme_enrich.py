@@ -244,9 +244,9 @@ class TestPublishMapping(unittest.TestCase):
         job = {"url": "https://j.example/1", "title": "Eng", "company": "Co", "is_live": True,
                "region": "US", "logo_url": "https://x/l.png", "levels": ["phd"], "description": "d" * 250}
         mapped = pub.map_row(job)
-        self.assertNotIn("region", mapped["extra"])
+        self.assertEqual(mapped["extra"]["region"], "US")
         self.assertNotIn("levels", mapped["extra"])
-        self.assertEqual(len(mapped["description"]), 200)
+        self.assertEqual(len(mapped["description"]), 250)
 
     def test_closed_past_deadline_not_serving(self):
         self.assertFalse(pub.is_serving(self.programme(programme_status="closed", deadline="2020-01-01")))

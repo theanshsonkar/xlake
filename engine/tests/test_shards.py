@@ -27,7 +27,8 @@ class SplitCombineTests(unittest.TestCase):
         self.assertEqual(len(parts["hackathons"]), 1)
         self.assertEqual(len(parts["fellowships"]), 1)
         self.assertEqual(len(parts["open_source"]), 2)
-        self.assertEqual(len(parts["main"]), 3)  # 2 jobs + unknown programme
+        self.assertEqual(len(parts["main"]), 1)  # unknown programme only
+        self.assertEqual(len(parts["jobs-other"]), 2)  # job rows have no platform here
         self.assertEqual(sum(len(v) for v in parts.values()), 7)
 
     def test_roundtrip_loses_nothing(self):

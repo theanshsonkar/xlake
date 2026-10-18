@@ -1,0 +1,80 @@
+{
+ "jobPostingInfo": {
+  "id": "18eb1e6f62bb10422a57dd88cc7c0000",
+  "title": "NVIDIA 2027 Ignite Internships: Hardware Engineering",
+  "jobDescription": "<p><span style=\"color:#4a4a4a\"><span style=\"font-size:inherit\">By submitting your resume, you acknowledge that your Ignite Internships: Software Engineering application will be processed in accordance with NVIDIA’s </span></span><a target=\"_blank\" href=\"http://www.nvidia.com/en-us/about-nvidia/careers/applicant-privacy-policy/\"><span style=\"color:#0000ff\"><u><span style=\"font-size:inherit\">Applicant Privacy Policy</span></u></span></a><span style=\"font-size:inherit\"> and you agree to our </span><a target=\"_blank\" href=\"http://www.nvidia.com/en-us/about-nvidia/terms-of-service/\"><span style=\"color:#0000ff\"><u><span style=\"font-size:inherit\">Terms of Service</span></u></span></a><span style=\"font-size:inherit\">. We’ll review resumes on an ongoing basis, and a recruiter may reach out if your experience fits one of our many internship opportunities. </span></p><br /><p>The NVIDIA Ignite Application will be open from 10/5/2026 - 10/18/2026</p><br /><p>The NVIDIA Ignite program gives you everything you need to start building your career—a whole lot earlier than you might expect. This inclusive, 12-week summer pre-internship program was created to give current first and second year underg",
+  "location": "US, CA, Santa Clara",
+  "postedOn": "Posted Today",
+  "startDate": "2026-10-18",
+  "timeType": "Full time",
+  "jobReqId": "JR2027047",
+  "jobPostingId": "NVIDIA-2027-Ignite-Internships--Hardware-Engineering_JR2027047",
+  "jobPostingSiteId": "NVIDIAExternalCareerSite",
+  "country": {
+   "descriptor": "United States of America",
+   "id": "bc33aa3152ec42d4995f4791a106ed09"
+  },
+  "canApply": true,
+  "posted": true,
+  "includeResumeParsing": true,
+  "jobRequisitionLocation": {
+   "descriptor": "US, CA, Santa Clara",
+   "country": {
+    "descriptor": "United States of America",
+    "id": "bc33aa3152ec42d4995f4791a106ed09",
+    "alpha2Code": "US"
+   }
+  },
+  "externalUrl": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Ignite-Internships--Hardware-Engineering_JR2027047",
+  "questionnaireId": "2f2764b3a82910064296831695150000",
+  "secondaryQuestionnaireId": "868f7d897c0d100202d9a5726f080000",
+  "endDate": "2026-10-19"
+ },
+ "hiringOrganization": {
+  "name": "2100 NVIDIA USA",
+  "url": ""
+ },
+ "similarJobs": [
+  {
+   "title": "NVIDIA 2027 Internships: Hardware Engineering",
+   "externalPath": "/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Hardware-Engineering_JR2023508-1",
+   "timeType": "Full time",
+   "locationsText": "US, CA, Santa Clara",
+   "postedOn": "Posted 6 Days Ago",
+   "startDate": "2026-10-12"
+  },
+  {
+   "title": "NVIDIA 2027 Ignite Internships: Software Engineering",
+   "externalPath": "/job/US-CA-Santa-Clara/NVIDIA-2027-Ignite-Internships--Software-Engineering_JR2026958",
+   "timeType": "Full time",
+   "locationsText": "US, CA, Santa Clara",
+   "postedOn": "Posted Today",
+   "startDate": "2026-10-18"
+  },
+  {
+   "title": "NVIDIA 2027 Summer Internships: Ph.D. Engineering",
+   "externalPath": "/job/US-CA-Santa-Clara/NVIDIA-2027-Summer-Internships--PhD-Engineering_JR2023856",
+   "timeType": "Full time",
+   "locationsText": "US, CA, Santa Clara",
+   "postedOn": "Posted 6 Days Ago",
+   "startDate": "2026-10-12"
+  },
+  {
+   "title": "NVIDIA 2027 Internships: Hardware ASIC Design",
+   "externalPath": "/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Hardware-ASIC-Design_JR2023486",
+   "timeType": "Full time",
+   "locationsText": "US, CA, Santa Clara",
+   "postedOn": "Posted 6 Days Ago",
+   "startDate": "2026-10-12"
+  },
+  {
+   "title": "NVIDIA Spring 2027 Internships: Developer and Performance Technology",
+   "externalPath": "/job/US-CA-Santa-Clara/NVIDIA-Spring-2027-Internships--Developer-and-Performance-Technology_JR2023499",
+   "timeType": "Full time",
+   "locationsText": "US, CA, Santa Clara",
+   "postedOn": "Posted 6 Days Ago",
+   "startDate": "2026-10-12"
+  }
+ ],
+ "userAuthenticated": false
+}

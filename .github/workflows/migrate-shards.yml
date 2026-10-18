@@ -50,6 +50,7 @@ jobs:
         run: |
           mkdir -p data/lake
           aws s3 cp "s3://$AWS_S3_BUCKET/lake/opportunities.json" data/lake/opportunities.json
+          aws s3 cp "s3://$AWS_S3_BUCKET/lake/hidden.json" data/lake/hidden.json || echo "no hidden.json"
       - name: Dry-run split (counts)
         run: python3 -m pipeline.split_lake
       - name: Split into shards

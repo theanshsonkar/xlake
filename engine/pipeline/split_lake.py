@@ -16,12 +16,14 @@ import os
 import sys
 
 from core import shards
-from core.paths import OPPORTUNITIES_PATH
+from core.paths import HIDDEN_PATH, OPPORTUNITIES_PATH
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--lake", default=OPPORTUNITIES_PATH)
+    ap.add_argument("--hidden", default=HIDDEN_PATH,
+                    help="main hidden.json; its job rows are split into <shard>.hidden.json")
     ap.add_argument("--shards-dir", default=shards.SHARDS_DIR)
     ap.add_argument("--execute", action="store_true", help="write files (default dry-run)")
     ap.add_argument("--strip-main", action="store_true",
@@ -48,16 +50,21 @@ def main(argv=None) -> int:
     parts = shards.split_rows(rows)
     print("MODE: %s" % ("EXECUTE" if args.execute else "DRY-RUN (nothing written)"))
     print("total rows: %d" % len(rows))
-    for name in [shards.MAIN] + list(shards.SHARD_SCOPES):
+    for name in [shards.MAIN] + list(shards.ALL_SHARDS):
         live = sum(1 for r in parts[name] if r.get("is_live") is True)
         print("  %-12s rows=%-7d live=%d" % (name, len(parts[name]), live))
     assert sum(len(v) for v in parts.values()) == len(rows)
     if not args.execute:
         print("DRY-RUN complete.")
         return 0
-    for name in shards.SHARD_SCOPES:
+    for name in shards.ALL_SHARDS:
         path = shards.save_shard(name, parts[name], args.shards_dir)
         print("wrote %s (%d rows)" % (path, len(parts[name])))
+    if os.path.exists(args.hidden):
+        hid = shards.split_rows(json.load(open(args.hidden, encoding="utf-8")))
+        for name in shards.JOB_SHARDS:
+            path = shards.save_shard_hidden(name, hid[name], args.shards_dir)
+            print("wrote %s (%d hidden rows)" % (path, len(hid[name])))
     if args.strip_main:
         tmp = args.lake + ".tmp"
         with open(tmp, "w", encoding="utf-8") as fh:

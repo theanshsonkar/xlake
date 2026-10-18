@@ -697,5 +697,6 @@ class TestContributionEnrichment(unittest.TestCase):
         for key in ("logo_url", "region", "mode", "repo_description", "updated_at", "labels"):
             self.assertIn(key, m["extra"])
         job = map_row({"record_type": "job", "url": "http://a", "repo_description": "x", "updated_at": "y", "logo_url": "z"})
-        for key in ("repo_description", "updated_at", "logo_url"):
+        for key in ("repo_description", "updated_at"):
             self.assertNotIn(key, job["extra"])
+        self.assertEqual(job["extra"]["logo_url"], "z")  # jobs now publish logo_url

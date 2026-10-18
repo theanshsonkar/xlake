@@ -35,7 +35,7 @@ import urllib.request
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
-from core import cache, robots
+from core import cache, jobmeta, robots
 
 # One identity for the whole engine, defined in robots.py so that the name we
 # match robots.txt groups against and the name we send in the header cannot
@@ -258,6 +258,10 @@ class Posting:
     description: str | None = None
     locations: list | None = None
     company: str = ""
+    # Structured ATS fields (employment_type, workplace, salary_*, posted_at,
+    # deadline, team, company_display_name, company_domain, ...). Empty values
+    # are dropped by `_meta`; consumers read it via `.get`.
+    meta: Dict = field(default_factory=dict)
 
     def key(self) -> str:
         return "{}:{}:{}".format(self.platform, self.token, self.job_id)
@@ -297,6 +301,34 @@ class BoardResult:
 # --------------------------------------------------------------------------- #
 # Adapters
 # --------------------------------------------------------------------------- #
+DESC_LAKE_MAX = 6000  # fuller description kept in the lake; publish cuts to 300
+
+
+def _meta(**kw) -> Dict:
+    return {k: v for k, v in kw.items() if v not in (None, "", [], {})}
+
+
+def _finish_meta(m: Dict, title: str, description: Optional[str], location: str) -> Dict:
+    """Fill employment_type / workplace / salary / level from text when the
+    ATS did not give them structurally. Structured values always win."""
+    et = jobmeta.employment_from_title(title)
+    if et in ("internship", "apprenticeship"):
+        # Title evidence beats a generic ATS "Full time" on programme postings.
+        m["employment_type"] = et
+    elif et and not m.get("employment_type"):
+        m["employment_type"] = et
+    if not m.get("workplace"):
+        wp = jobmeta.workplace_from_text(title, location)
+        if wp:
+            m["workplace"] = wp
+    if "salary_min" not in m and description:
+        m.update(jobmeta.parse_salary_text(description))
+    lvl = jobmeta.detect_level(title, m.get("employment_type"))
+    if lvl:
+        m["level"] = lvl
+    return m
+
+
 def _greenhouse(token: str) -> BoardResult:
     r = BoardResult("greenhouse", token)
     url = "https://boards-api.greenhouse.io/v1/boards/{}/jobs?content=true".format(
@@ -310,16 +342,43 @@ def _greenhouse(token: str) -> BoardResult:
         r.error = "unexpected_shape"
         return r
     for j in jobs:
+        title = j.get("title") or ""
+        location = (j.get("location") or {}).get("name") or ""
+        desc = strip_html(j.get("content"), DESC_LAKE_MAX) or None
+        md = {}
+        for item in j.get("metadata") or []:
+            if not isinstance(item, dict):
+                continue
+            name = str(item.get("name") or "").lower()
+            if "employment" in name or "job type" in name or "commitment" in name:
+                v = item.get("value")
+                v = v[0] if isinstance(v, list) and v else v
+                md["employment_type"] = jobmeta.norm_employment_type(v)
+            elif "workplace" in name or "work type" in name or "remote" in name:
+                v = item.get("value")
+                v = v[0] if isinstance(v, list) and v else v
+                md["workplace"] = jobmeta.norm_workplace(v)
+        depts = [d.get("name") for d in (j.get("departments") or []) if isinstance(d, dict) and d.get("name")]
+        md = _meta(
+            employment_type=md.get("employment_type"),
+            workplace=md.get("workplace"),
+            posted_at=jobmeta.to_iso(j.get("first_published") or j.get("updated_at")),
+            deadline=(str(j["application_deadline"])[:10] if j.get("application_deadline") else None),
+            team=depts[0] if depts else None,
+            company_display_name=(j.get("company_name") or "").strip(),
+            company_domain=jobmeta.domain_from_url(j.get("absolute_url")),
+        )
         r.postings.append(
             Posting(
                 "greenhouse",
                 token,
                 str(j.get("id")),
-                j.get("title") or "",
-                (j.get("location") or {}).get("name") or "",
+                title,
+                location,
                 j.get("absolute_url") or "",
                 j.get("updated_at") or "",
-                description=strip_html(j.get("content")) or None,
+                description=desc,
+                meta=_finish_meta(md, title, desc, location),
             )
         )
     # Greenhouse returns the whole board in one response and reports meta.total.
@@ -762,16 +821,32 @@ def _lever(token: str) -> BoardResult:
         return r
     for j in data:
         cat = j.get("categories") or {}
+        title = j.get("text") or ""
+        location = cat.get("location") or ""
+        desc = jobmeta.clean_text(j.get("descriptionPlain") or j.get("description"),
+                                  DESC_LAKE_MAX) or None
+        md = _meta(
+            employment_type=jobmeta.norm_employment_type(cat.get("commitment")),
+            workplace=jobmeta.norm_workplace(j.get("workplaceType")),
+            posted_at=jobmeta.to_iso(j.get("createdAt")),
+            team=cat.get("team") or cat.get("department"),
+        )
+        sr = j.get("salaryRange")
+        if isinstance(sr, dict):
+            md.update(jobmeta.salary_fields(
+                sr.get("min"), sr.get("max"), sr.get("currency"),
+                jobmeta.norm_interval(sr.get("interval"))))
         r.postings.append(
             Posting(
                 "lever",
                 token,
                 str(j.get("id") or ""),
-                j.get("text") or "",
-                cat.get("location") or "",
+                title,
+                location,
                 j.get("hostedUrl") or j.get("applyUrl") or "",
                 str(j.get("createdAt") or ""),
-                description=j.get("descriptionPlain") or j.get("description") or None,
+                description=desc,
+                meta=_finish_meta(md, title, desc, location),
             )
         )
     return r
@@ -779,7 +854,7 @@ def _lever(token: str) -> BoardResult:
 
 def _ashby(token: str) -> BoardResult:
     r = BoardResult("ashby", token)
-    url = "https://api.ashbyhq.com/posting-api/job-board/{}".format(
+    url = "https://api.ashbyhq.com/posting-api/job-board/{}?includeCompensation=true".format(
         urllib.parse.quote(token)
     )
     r.status, data, r.error = _request(url)
@@ -790,25 +865,50 @@ def _ashby(token: str) -> BoardResult:
         r.error = "unexpected_shape"
         return r
     for j in jobs:
+        if j.get("isListed") is False:
+            continue
+        title = j.get("title") or ""
+        location = j.get("location") or ""
+        desc = jobmeta.clean_text(
+            j.get("descriptionPlain") or j.get("descriptionHtml"), DESC_LAKE_MAX) or None
+        workplace = jobmeta.norm_workplace(j.get("workplaceType"))
+        if not workplace and j.get("isRemote") is True:
+            workplace = "remote"
+        md = _meta(
+            employment_type=jobmeta.norm_employment_type(j.get("employmentType")),
+            workplace=workplace,
+            posted_at=jobmeta.to_iso(j.get("publishedAt")),
+            team=j.get("team") or j.get("department"),
+        )
+        comp = j.get("compensation")
+        if isinstance(comp, dict):
+            sal = [c for c in (comp.get("summaryComponents") or [])
+                   if isinstance(c, dict) and c.get("compensationType") == "Salary"]
+            if sal:
+                c = sal[0]
+                md.update(jobmeta.salary_fields(
+                    c.get("minValue"), c.get("maxValue"), c.get("currencyCode"),
+                    jobmeta.norm_interval(c.get("interval"))))
+            if comp.get("compensationTierSummary") and "salary_text" not in md:
+                md["salary_text"] = str(comp["compensationTierSummary"])[:160]
         r.postings.append(
             Posting(
                 "ashby",
                 token,
                 str(j.get("id") or ""),
-                j.get("title") or "",
-                j.get("location") or "",
+                title,
+                location,
                 j.get("jobUrl") or j.get("applyUrl") or "",
                 j.get("publishedAt") or "",
-                description=(
-                    j.get("descriptionPlain")
-                    or (strip_html(j.get("descriptionHtml")) or None)
-                ),
+                description=desc,
+                meta=_finish_meta(md, title, desc, location),
             )
         )
     return r
 
 
 def _smartrecruiters(token: str) -> BoardResult:
+    r = BoardResult("smartrecruiters", token)
     offset, page_size = 0, 100
     while True:
         url = (
@@ -833,18 +933,37 @@ def _smartrecruiters(token: str) -> BoardResult:
             loc = j.get("location") or {}
             city = loc.get("city") or ""
             country = loc.get("country") or ""
+            title = j.get("name") or ""
+            location = ", ".join(x for x in (city, country) if x)
+            workplace = ("remote" if loc.get("remote") is True
+                         else "hybrid" if loc.get("hybrid") is True else None)
+            lvl = (j.get("experienceLevel") or {}).get("label")
+            md = _meta(
+                employment_type=jobmeta.norm_employment_type(
+                    (j.get("typeOfEmployment") or {}).get("label")),
+                workplace=workplace,
+                posted_at=jobmeta.to_iso(j.get("releasedDate")),
+                team=(j.get("department") or {}).get("label"),
+                company_display_name=(j.get("company") or {}).get("name"),
+            )
+            m2 = _finish_meta(md, title, None, location)
+            if not m2.get("level") and lvl:
+                hint = jobmeta.detect_level(title, None, lvl)
+                if hint:
+                    m2["level"] = hint
             r.postings.append(
                 Posting(
                     "smartrecruiters",
                     token,
                     str(j.get("id") or ""),
-                    j.get("name") or "",
-                    ", ".join(x for x in (city, country) if x),
+                    title,
+                    location,
                     (j.get("ref") or "")
                     or "https://jobs.smartrecruiters.com/{}/{}".format(
                         token, j.get("id")
                     ),
                     j.get("releasedDate") or "",
+                    meta=m2,
                 )
             )
         offset += page_size
@@ -869,6 +988,25 @@ def _workable(token: str) -> BoardResult:
     if jobs is None:
         r.error = "unexpected_shape"
         return r
+    account_name = (data or {}).get("name") or ""
+    account_domain = jobmeta.domain_from_text((data or {}).get("description"),
+                                              account_name, token)
+    account_logo = None
+    # One extra request per board: the careers-page account record carries the
+    # company's own website and logo (the widget does not).
+    _s, acct, aerr = _request(
+        "https://apply.workable.com/api/v1/accounts/{}".format(urllib.parse.quote(token)))
+    if not aerr and isinstance(acct, dict):
+        account_domain = jobmeta.domain_from_url(acct.get("url")) or account_domain
+        if isinstance(acct.get("logo"), str) and acct["logo"].startswith("https://"):
+            account_logo = acct["logo"]
+        account_name = account_name or acct.get("name") or ""
+    if account_logo:
+        r.extra["logo_url"] = account_logo
+    if account_domain:
+        r.extra["company_domain"] = account_domain
+    if account_name:
+        r.extra["company_display_name"] = account_name.strip()
     for j in jobs:
         bits = [j.get("city") or "", j.get("country") or ""]
         location = ", ".join(x for x in bits if x)
@@ -881,15 +1019,35 @@ def _workable(token: str) -> BoardResult:
                         break
         if not location and j.get("telecommuting"):
             location = "Remote"
+        title = j.get("title") or ""
+        desc = jobmeta.clean_text(j.get("description"), DESC_LAKE_MAX) or None
+        workplace = None
+        if j.get("telecommuting"):
+            workplace = "remote"
+        else:
+            workplace = jobmeta.workplace_from_text(title, (desc or "")[:600])
+            if not workplace and (j.get("city") or j.get("country")):
+                workplace = "onsite"
+        md = _meta(
+            employment_type=jobmeta.norm_employment_type(j.get("employment_type")),
+            workplace=workplace,
+            posted_at=jobmeta.to_iso(j.get("published_on") or j.get("created_at")),
+            team=j.get("department"),
+            company_display_name=account_name.strip(),
+            company_domain=account_domain,
+            logo_url=account_logo,
+        )
         r.postings.append(
             Posting(
                 "workable",
                 token,
                 str(j.get("shortcode") or j.get("id") or ""),
-                j.get("title") or "",
+                title,
                 location,
                 j.get("url") or j.get("application_url") or "",
                 j.get("published_on") or "",
+                description=desc,
+                meta=_finish_meta(md, title, desc, location),
             )
         )
     return r
@@ -934,15 +1092,23 @@ def _workday(token: str) -> BoardResult:
         for j in posts:
             path = j.get("externalPath") or ""
             bullets = j.get("bulletFields") or []
+            title = j.get("title") or ""
+            location = j.get("locationsText") or ""
+            md = _meta(
+                posted_at=jobmeta.to_iso(j.get("postedOn")),
+                company_domain=jobmeta.domain_from_url(host),
+                _path=path,
+            )
             r.postings.append(
                 Posting(
                     "workday",
                     token,
                     str((bullets[0] if bullets else None) or path.rsplit("/", 1)[-1]),
-                    j.get("title") or "",
-                    j.get("locationsText") or "",
+                    title,
+                    location,
                     "https://{}/{}{}".format(host, site, path),
                     j.get("postedOn") or "",
+                    meta=_finish_meta(md, title, None, location),
                 )
             )
         offset += page_size
@@ -953,6 +1119,43 @@ def _workday(token: str) -> BoardResult:
         if offset > 20000:
             r.error = "pagination_runaway"
             return r
+
+
+def refinish_meta(p: "Posting") -> None:
+    """Re-derive text-based fields after a posting gained a description."""
+    p.meta = _finish_meta(p.meta, p.title, p.description, p.location)
+
+
+def workday_detail(token: str, external_path: str) -> Dict:
+    """One Workday CXS posting detail -> {'description', ...meta}. {} on any failure.
+
+    Called by the sweep only for postings that survived the title filter, never
+    for the whole board, so a 2,000-posting tenant costs a handful of requests.
+    """
+    parts = token.split("|")
+    host = parts[0]
+    tenant = parts[1] if len(parts) > 1 else host.split(".")[0]
+    site = parts[2] if len(parts) > 2 else tenant
+    if not external_path.startswith("/"):
+        return {}
+    url = "https://{}/wday/cxs/{}/{}{}".format(host, tenant, site, external_path)
+    status, data, err = _request(url)
+    if err or not isinstance(data, dict):
+        return {}
+    info = data.get("jobPostingInfo") or {}
+    desc = jobmeta.clean_text(info.get("jobDescription"), DESC_LAKE_MAX) or None
+    remote = info.get("remoteType")
+    out = _meta(
+        description=desc,
+        employment_type=jobmeta.norm_employment_type(info.get("timeType")),
+        workplace=jobmeta.norm_workplace(remote),
+        posted_at=jobmeta.to_iso(info.get("startDate")),
+        deadline=(str(info["endDate"])[:10] if info.get("endDate") else None),
+    )
+    if desc:
+        for k, v in jobmeta.parse_salary_text(desc).items():
+            out.setdefault(k, v)
+    return out
 
 
 def _personio(token: str) -> BoardResult:
@@ -1090,6 +1293,9 @@ def _keka(token: str) -> BoardResult:
                 description=(
                     strip_html(j.get("description") or j.get("jobDescription")) or None
                 ),
+                meta=_finish_meta(
+                    _meta(posted_at=jobmeta.to_iso(j.get("createdOn") or j.get("postedOn"))),
+                    j.get("title") or "", None, str(loc).strip()),
             )
         )
     return r
@@ -1361,15 +1567,25 @@ def _eightfold_collect(r: BoardResult, flavour: str, base: str) -> bool:
             ts = j.get("postedTs") or j.get("creationTs")
             if isinstance(ts, (int, float)) and ts > 0:
                 posted = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(ts))
+            ef_parts = r.token.split("|")
+            ef_domain = (ef_parts[1] if len(ef_parts) > 1
+                         else "{}.com".format(ef_parts[0]))
+            ef_title = j.get("name") or ""
             r.postings.append(
                 Posting(
                     "eightfold",
                     r.token,
                     jid,
-                    j.get("name") or "",
+                    ef_title,
                     loc,
                     "{}/careers/job/{}".format(base.split("/api/")[0], jid),
                     posted,
+                    meta=_finish_meta(_meta(
+                        posted_at=jobmeta.to_iso(posted),
+                        workplace=jobmeta.norm_workplace(j.get("workLocationOption")),
+                        team=j.get("department"),
+                        company_domain=jobmeta.registrable_domain(ef_domain),
+                    ), ef_title, None, loc),
                 )
             )
             # Kept for the free technical classification and the remote tier.

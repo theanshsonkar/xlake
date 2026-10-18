@@ -31,11 +31,11 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from typing import Dict, List, Set, Tuple
 
-from core import filters, quality, tiering
+from core import dedupe, filters, jobmeta, quality, retire, tiering
 from core.paths import (
     DATA_ROOT, HIDDEN_PATH, OPPORTUNITIES_PATH, REGISTRY_PATH, RUNS_PATH,
 )
-from adapters.boards import list_board
+from adapters.boards import list_board, refinish_meta, workday_detail
 
 DATA = DATA_ROOT
 REGISTRY = os.environ.get("LAKE_REGISTRY", REGISTRY_PATH)
@@ -54,6 +54,19 @@ LIMIT = int(os.environ.get("LAKE_LIMIT", "0"))  # 0 = no limit
 # a board (e.g. a big-tech Workday tenant) that posts hundreds of roles.
 COMPANY_CAP = int(os.environ.get("LAKE_COMPANY_CAP", "10"))
 INDIA_SOURCE_PLATFORMS = {"unstop", "keka"}
+
+# Structured fields copied from Posting.meta onto lake rows (published as
+# extra.* by pipeline.publish_supabase).
+META_KEYS = (
+    "employment_type", "workplace", "salary_min", "salary_max", "salary_currency",
+    "salary_text", "salary_interval", "posted_at", "deadline", "level", "team",
+    "company_display_name", "company_domain", "logo_url",
+)
+# Workable boards come from discovery (unclassified): a posting needs real
+# content to be admitted. Thin postings go to the hidden store, not the feed.
+THIN_POSTING_MIN_DESC = int(os.environ.get("LAKE_THIN_DESC_MIN", "80"))
+THIN_POSTING_PLATFORMS = {"workable"}
+WD_DETAIL_PER_BOARD = int(os.environ.get("LAKE_WD_DETAIL_PER_BOARD", "40"))
 
 
 def load_registry(segment: str = None) -> List[Dict]:
@@ -136,8 +149,44 @@ def _dedupe(rows: List[Dict]) -> List[Dict]:
     return unique
 
 
+def _row_meta(p, entry: Dict, board_extra: Dict, bucket: str,
+              is_internship) -> Dict:
+    """Lake-row fields derived from the ATS's structured data."""
+    m = {k: v for k, v in (getattr(p, "meta", None) or {}).items()
+         if k in META_KEYS and v not in (None, "", [], {})}
+    # One employer per board: the registry's domain, else the board's most
+    # common derived domain (so every posting of a board shares one identity).
+    domain = (entry.get("company_domain") or board_extra.get("company_domain")
+              or m.get("company_domain"))
+    if domain:
+        m["company_domain"] = domain
+    if not m.get("company_display_name"):
+        name = board_extra.get("company_display_name") or p.company or entry.get("company")
+        if name:
+            m["company_display_name"] = name
+    if board_extra.get("logo_url") and not m.get("logo_url"):
+        m["logo_url"] = board_extra["logo_url"]
+    m["region"] = jobmeta.region_of(bucket)
+    return m
+
+
+def _gate_reason(p, entry: Dict, m: Dict) -> str:
+    """Admission gate for discovery-sourced platforms (Workable): require a
+    company identity and a real description. Returns a hidden_reason or ''."""
+    if p.platform not in THIN_POSTING_PLATFORMS:
+        return ""
+    if not (m.get("company_display_name") or entry.get("company")):
+        return "no_company_identity"
+    if len((p.description or "").strip()) < THIN_POSTING_MIN_DESC:
+        return "thin_posting"
+    return ""
+
+
 def _merge_store(path: str, rows: List[Dict],
-                 boards_read: Set[Tuple[str, str]]) -> List[Dict]:
+                 boards_read: Set[Tuple[str, str]],
+                 attempted: Set[Tuple[str, str]] = None,
+                 registry_boards: Set[Tuple[str, str]] = None,
+                 mark_dups: bool = False) -> List[Dict]:
     """Merge one canonical store with board-scoped liveness.
 
     A row seen again updates last_seen. A row that has disappeared from a
@@ -193,8 +242,11 @@ def _merge_store(path: str, rows: List[Dict],
             })
             if "is_internship" not in existing:
                 existing["is_internship"] = r.get("is_internship")
-            if r.get("company_domain"):
-                existing["company_domain"] = r["company_domain"]
+            elif r.get("employment_type") == "internship" and not existing.get("is_internship"):
+                existing["is_internship"] = True  # ATS says internship
+            for mk in META_KEYS + ("region",):
+                if r.get(mk) not in (None, "", [], {}):
+                    existing[mk] = r[mk]
         else:
             r = dict(r)
             r["first_seen"] = now
@@ -205,15 +257,13 @@ def _merge_store(path: str, rows: List[Dict],
     # Liveness: board-scoped, per the fix above. Only a row whose OWN
     # (platform, token) pair was actually read this run is eligible to be
     # marked dead if it did not reappear.
-    disappeared = 0
-    for k, r in lake.items():
-        if k in found_now:
-            continue
-        board = (r.get("platform"), r.get("token"))
-        if board in boards_read and r.get("is_live", True):
-            r["is_live"] = False
-            r["went_dead_at"] = now
-            disappeared += 1
+    found_ids = {id(lake[k]) for k in found_now if k in lake}
+    rstats = retire.apply(lake.values(), found_ids, boards_read, attempted,
+                          registry_boards, now)
+    disappeared = rstats["absent_from_board"] + rstats["board_gone_unconfirmed"]
+    if rstats["blocked_failed_board"]:
+        print("   retire guard: {} unconfirmed rows kept (board fetch failed)".format(
+            rstats["blocked_failed_board"]))
 
     job_rows = list(lake.values())
 
@@ -222,6 +272,9 @@ def _merge_store(path: str, rows: List[Dict],
     # questions about the set. Non-job records are pass-through rows and must
     # never receive job annotations or participate in job liveness.
     quality.annotate(job_rows, cap=COMPANY_CAP)
+    if mark_dups:
+        dstats = dedupe.mark_duplicates(job_rows)
+        print("   duplicates marked: {}".format(dstats["total"]))
     out = job_rows + passthrough
 
     os.makedirs(DATA, exist_ok=True)
@@ -234,9 +287,35 @@ def _merge_store(path: str, rows: List[Dict],
     return out
 
 
-def _write_jobs(rows: List[Dict], boards_read: Set[Tuple[str, str]]) -> List[Dict]:
+def _write_jobs(rows: List[Dict], boards_read: Set[Tuple[str, str]],
+                attempted: Set[Tuple[str, str]] = None,
+                registry_boards: Set[Tuple[str, str]] = None) -> List[Dict]:
     """Merge this run's public finds into jobs.json."""
-    return _merge_store(OUT_JOBS, rows, boards_read)
+    return _merge_store(OUT_JOBS, rows, boards_read, attempted,
+                        registry_boards, mark_dups=True)
+
+
+def _described_keys() -> Set[str]:
+    """_key of lake rows that already carry a description (skip re-fetching)."""
+    if not os.path.exists(OUT_JOBS):
+        return set()
+    try:
+        return {_key(r) for r in json.load(open(OUT_JOBS))
+                if not r.get("record_type") and r.get("description")}
+    except Exception:  # noqa: BLE001
+        return set()
+
+
+def coverage(rows: List[Dict]) -> Dict:
+    """Field coverage over live job rows (used by reports and the dry run)."""
+    live = [r for r in rows if not r.get("record_type") and r.get("is_live")]
+    n = len(live) or 1
+    has = lambda k: round(100.0 * sum(1 for r in live if r.get(k) not in (None, "", [], {})) / n, 1)
+    return {"live": len(live),
+            **{k + "_pct": has(k) for k in (
+                "description", "employment_type", "workplace", "salary_min",
+                "posted_at", "deadline", "company_domain", "level", "team")},
+            "duplicates": sum(1 for r in live if r.get("is_duplicate"))}
 
 
 def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
@@ -255,6 +334,13 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
     board_qualifying: Dict[Tuple[str, str], int] = collections.defaultdict(int)
 
     print("sweeping {} registry entries...".format(len(entries)))
+    attempted = {(e["platform"], e["token"]) for e in entries}
+    registry_boards = {(e.get("platform"), e.get("token"))
+                       for e in load_registry()} or None
+    described = _described_keys() if any(
+        e["platform"] == "workday" for e in entries) else set()
+    wd_budget: Dict[Tuple[str, str], int] = collections.defaultdict(
+        lambda: WD_DETAIL_PER_BOARD)
 
     def _fetch(entry: Dict):
         return entry, list_board(entry["platform"], entry["token"])
@@ -295,9 +381,23 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
             s["postings"] += r.count
 
             kept_this_board = 0
+            doms = collections.Counter(
+                p.meta.get("company_domain") for p in r.postings
+                if p.meta.get("company_domain"))
+            board_extra = dict(r.extra)
+            if doms and not board_extra.get("company_domain"):
+                board_extra["company_domain"] = doms.most_common(1)[0][0]
             india_source = entry["platform"] in INDIA_SOURCE_PLATFORMS
             for p in r.postings:
                 v = filters.classify(p.title, p.location, india_source=india_source)
+                if (p.platform == "workday" and v.keep and not p.description
+                        and p.meta.get("_path") and wd_budget[board] > 0
+                        and _key({"url": p.url}) not in described):
+                    wd_budget[board] -= 1
+                    det = workday_detail(entry["token"], p.meta["_path"])
+                    p.description = det.pop("description", None) or p.description
+                    p.meta.update({k: x for k, x in det.items() if k in META_KEYS})
+                    refinish_meta(p)
                 resolution = filters.resolve_stage(v.stage, p.description, p.title)
                 gates_found, gates_missing = filters.gates_of(
                     resolution, v.stage, p.title)
@@ -336,6 +436,24 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                            if entry.get("company_domain") else {}),
                     })
                     continue
+                rm = _row_meta(p, entry, board_extra, v.bucket, v.is_internship)
+                gate = _gate_reason(p, entry, rm)
+                if gate:
+                    filtered_out[gate] += 1
+                    hidden_rows.append({
+                        "platform": p.platform, "token": p.token,
+                        "job_id": p.job_id, "title": p.title, "url": p.url,
+                        "location": p.location,
+                        "company_name": (p.company or entry.get("company")),
+                        "segment": entry.get("segment"), "stage": v.stage,
+                        "stage_title": v.stage, "technical": v.technical,
+                        "discipline": v.discipline,
+                        "is_internship": v.is_internship,
+                        "location_bucket": v.bucket,
+                        "eligibility_status": filters.ELIG_HIDDEN,
+                        "hidden_reason": gate, "source_mechanism": "board",
+                    })
+                    continue
                 row_hidden_reason = filters.hidden_reason(
                     resolution.stage_resolved, v.bucket, v.technical,
                     resolution.experience_min, v.discipline, v.is_internship)
@@ -371,11 +489,11 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                     "technical": v.technical,
                     "discipline": v.discipline,
                     "needs_description": v.needs_description,
-                    "is_internship": v.is_internship,
+                    "is_internship": bool(v.is_internship
+                                          or rm.get("employment_type") == "internship"),
                     "location_bucket": v.bucket,
                     "source_mechanism": "board",
-                    **({"company_domain": entry.get("company_domain")}
-                       if entry.get("company_domain") else {}),
+                    **rm,
                 })
             board_qualifying[board] += kept_this_board
             tiering.record_sweep(tier_state, entry["platform"], entry["token"],
@@ -384,8 +502,9 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                 print("   {}/{}  postings={}  kept={}".format(
                     done, len(entries), s["postings"], s["kept"]))
 
-    unique = _write_jobs(rows, boards_read)
-    unique_hidden = _merge_store(OUT_HIDDEN, hidden_rows, boards_read)
+    unique = _write_jobs(rows, boards_read, attempted, registry_boards)
+    unique_hidden = _merge_store(OUT_HIDDEN, hidden_rows, boards_read,
+                                 attempted, registry_boards)
     store_reconciled = _reconcile_jobs_with_hidden(
         hidden_rows, jobs_path=OUT_JOBS, jobs_rows=unique)
     tiering.save_tier_state(tier_state)
@@ -438,6 +557,7 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
     report["india_early_career_technical"] = sum(
         1 for r in india if r.get("technical") is True)
     report["quality"] = quality.report(unique)
+    report["coverage"] = coverage(job_rows)
 
     os.makedirs(DATA, exist_ok=True)
     with open(OUT_RUNS, "a") as fh:
@@ -450,13 +570,16 @@ def main() -> None:
     segment = None
     if "--segment" in args:
         segment = args[args.index("--segment") + 1]
+    shard = None
+    if "--shard" in args:
+        shard = args[args.index("--shard") + 1]
 
     # Bare positional arguments are platform names; the segment value is not
     # itself a positional platform argument.
     positional = [
         arg for i, arg in enumerate(args)
         if not arg.startswith("--")
-        and (i == 0 or args[i - 1] != "--segment")
+        and (i == 0 or args[i - 1] not in ("--segment", "--shard"))
     ]
     all_entries = load_registry()
     valid_platforms = sorted({r.get("platform") for r in all_entries
@@ -472,10 +595,22 @@ def main() -> None:
     entries = load_registry(segment)
     if positional:
         entries = [r for r in entries if r.get("platform") in positional]
+    if shard:
+        from core import shards as _shards
+        if not _shards.is_job_shard(shard):
+            print("unknown job shard {!r}; valid: {}".format(
+                shard, ", ".join(_shards.JOB_SHARDS)), file=sys.stderr)
+            sys.exit(2)
+        entries = [r for r in entries
+                   if _shards.job_shard_of_platform(r.get("platform")) == shard]
     if LIMIT:
         entries = entries[:LIMIT]
 
-    if not entries:
+    if not entries and shard:
+        # Maintenance run: no boards for this shard, but the guard still
+        # retires orphaned rows and re-marks duplicates.
+        print("shard {}: no registry boards; maintenance pass only".format(shard))
+    elif not entries:
         print("data/operations/registry.json has no entries{} — nothing to sweep. "
               "Run resolve_companies.py first.".format(
                   " for segment={}".format(segment) if segment else ""))

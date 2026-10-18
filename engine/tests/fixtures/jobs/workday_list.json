@@ -1,0 +1,34 @@
+{
+ "total": 2000,
+ "jobPostings": [
+  {
+   "title": "NVIDIA 2027 Ignite Internships: Hardware Engineering",
+   "externalPath": "/job/US-CA-Santa-Clara/NVIDIA-2027-Ignite-Internships--Hardware-Engineering_JR2027047",
+   "locationsText": "US, CA, Santa Clara",
+   "postedOn": "Posted Today",
+   "bulletFields": [
+    "JR2027047"
+   ]
+  },
+  {
+   "title": "NVIDIA 2027 Ignite Internships: Software Engineering",
+   "externalPath": "/job/US-CA-Santa-Clara/NVIDIA-2027-Ignite-Internships--Software-Engineering_JR2026958",
+   "locationsText": "US, CA, Santa Clara",
+   "postedOn": "Posted Today",
+   "bulletFields": [
+    "JR2026958"
+   ]
+  },
+  {
+   "title": "Software Engineer, NVLink",
+   "externalPath": "/job/Israel-Raanana/Software-Engineer--NVLink_JR2025935",
+   "locationsText": "2 Locations",
+   "postedOn": "Posted Today",
+   "bulletFields": [
+    "JR2025935"
+   ]
+  }
+ ],
+ "facets": [],
+ "userAuthenticated": false
+}

@@ -52,7 +52,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from core import shards
+from core import jobmeta, shards
 from categories.programme_enrich import clean_location
 
 LAKE_PATH = Path("data/lake/opportunities.json")
@@ -77,8 +77,18 @@ PROGRAMME_SHARED_KEYS = {"logo_url", "region", "organizer_domain", "deadline_bas
 # Programme-only keys (never published for jobs/internships/hackathons).
 PROGRAMME_ONLY_KEYS = {"funding_amount_usd", "intl_eligible", "levels"}
 # Programmes and hackathons share the placeholder->NULL rules.
-PLACEHOLDER_NULL_TYPES = {"hackathon", "programme", "contribution"}
-DESCRIPTION_MAX_TYPES = {"hackathon", "programme", "contribution"}
+PLACEHOLDER_NULL_TYPES = {"hackathon", "programme", "contribution", "job", "internship"}
+DESCRIPTION_MAX_TYPES = {"hackathon", "programme", "contribution", "job", "internship"}
+JOB_TYPES = {"job", "internship"}
+# Hackathon-style keys that job/internship rows also publish.
+JOB_SHARED_KEYS = {"logo_url", "region"}
+# Job/internship-only keys (never published for other types).
+JOB_ONLY_KEYS = {
+    "employment_type", "workplace", "salary_min", "salary_max", "salary_currency",
+    "salary_text", "salary_interval", "posted_at", "level", "team",
+    "company_display_name",
+}
+JOB_DESCRIPTION_MAX = 300
 # Hackathon keys that contributions also publish.
 CONTRIBUTION_SHARED_KEYS = {"logo_url", "region", "mode"}
 # Contribution-only keys (never published for other types).
@@ -91,6 +101,9 @@ EXTRA_KEYS = [
     # jobs / internships
     "platform", "token", "job_id", "company_domain", "discipline", "skills", "salary",
     "season", "sponsorship", "program", "segment", "posting_age_days",
+    "employment_type", "workplace", "salary_min", "salary_max", "salary_currency",
+    "salary_text", "salary_interval", "posted_at", "level", "team",
+    "company_display_name",
     # contributions
     "repo", "labels", "language", "difficulty", "difficulty_signal",
     "issue_number", "repo_stars", "discovery_source", "repo_description", "updated_at",
@@ -129,6 +142,8 @@ def _closed_and_past(r: dict) -> bool:
 
 def is_serving(r: dict) -> bool:
     if _closed_and_past(r):
+        return False
+    if r.get("is_duplicate") is True:  # a fresher twin is serving instead
         return False
     return r.get("is_live") is True or r.get("needs_confirmation") is True
 
@@ -184,7 +199,10 @@ def map_row(r: dict) -> dict:
     for k in EXTRA_KEYS:
         if k in HACKATHON_ONLY_KEYS and t != "hackathon" and not (
                 t == "programme" and k in PROGRAMME_SHARED_KEYS) and not (
-                t == "contribution" and k in CONTRIBUTION_SHARED_KEYS):
+                t == "contribution" and k in CONTRIBUTION_SHARED_KEYS) and not (
+                t in JOB_TYPES and k in JOB_SHARED_KEYS):
+            continue
+        if k in JOB_ONLY_KEYS and t not in JOB_TYPES:
             continue
         if k in CONTRIBUTION_ONLY_KEYS and t != "contribution":
             continue
@@ -192,9 +210,13 @@ def map_row(r: dict) -> dict:
             continue
         v = r.get(k)
         if v not in (None, "", []):
-            if t in ("programme", "contribution") and isinstance(v, str) and v.strip().casefold() in HACKATHON_PLACEHOLDERS:
+            if t in PLACEHOLDER_NULL_TYPES and isinstance(v, str) and v.strip().casefold() in HACKATHON_PLACEHOLDERS:
                 continue
             extra[k] = v
+    if t in JOB_TYPES and not extra.get("logo_url"):
+        logo = jobmeta.favicon_logo(extra.get("company_domain"))
+        if logo:
+            extra["logo_url"] = logo
     if t == "programme":
         extra["programme_status"] = r.get("programme_status") or "unknown"
         extra.setdefault("deadline_basis", "unknown")
@@ -232,9 +254,11 @@ def map_row(r: dict) -> dict:
         "needs_confirmation": bool(r.get("needs_confirmation", False)),
         "last_checked": _first(r.get("last_checked_at"), r.get("last_seen")),
         "verified": verified,
-        "description": _truncate(
-            r.get("description"),
-            HACKATHON_DESCRIPTION_MAX if t in DESCRIPTION_MAX_TYPES else 200),
+        "description": (
+            jobmeta.snippet(r.get("description"), JOB_DESCRIPTION_MAX)
+            if t in JOB_TYPES else
+            _truncate(r.get("description"),
+                      HACKATHON_DESCRIPTION_MAX if t in DESCRIPTION_MAX_TYPES else 200)),
         "deadline": deadline,
         "eligibility": eligibility,
         "funding": funding,
@@ -259,7 +283,10 @@ def plan_retire(existing, serving_ids, category: str = None,
     to that category's record types (by id prefix) can ever be retired, so a
     scoped run cannot touch another category even if ``existing`` leaked."""
     to_retire = set(existing) - set(serving_ids)
-    if category is not None:
+    if category is not None and shards.is_job_shard(category):
+        prefixes = ("job:",)
+        to_retire = {i for i in to_retire if i.startswith(prefixes)}
+    elif category is not None:
         prefixes = tuple(_SCOPE_ID_PREFIX[t] for t, _ in shards.SHARD_SCOPES[category])
         to_retire = {i for i in to_retire if i.startswith(prefixes)}
     err = None
@@ -318,6 +345,24 @@ class Supabase:
             if c:
                 f += "&category=eq.%s" % urllib.parse.quote(c, safe="")
             ids |= self._fetch_ids(f)
+        return ids
+
+    def fetch_job_ids(self, shard: str):
+        """Ids of job/internship rows whose extra.platform belongs to ``shard``
+        (filtered client-side so the catch-all shard needs no platform list)."""
+        ids, offset, page = set(), 0, 1000
+        while True:
+            status, hdrs, raw = self._request(
+                "GET", "/%s?select=id,platform:extra->>platform&type=in.(job,internship)"
+                       "&limit=%d&offset=%d" % (TABLE, page, offset),
+                headers={"Range-Unit": "items"})
+            rows = json.loads(raw) if raw else []
+            for row in rows:
+                if shards.job_shard_of_platform(row.get("platform")) == shard:
+                    ids.add(row["id"])
+            if len(rows) < page:
+                break
+            offset += page
         return ids
 
     def _fetch_ids(self, flt):
@@ -396,14 +441,15 @@ def main():
     ap.add_argument("--execute", action="store_true",
                     help="perform writes (default: dry-run, writes nothing)")
     ap.add_argument("--samples", type=int, default=3)
-    ap.add_argument("--category", choices=list(shards.SHARD_SCOPES),
+    ap.add_argument("--category", choices=list(shards.ALL_SHARDS),
                     help="publish and soft-retire ONLY this category's rows")
     ap.add_argument("--force-retire", action="store_true",
                     help="bypass the >50%% soft-retire guard")
     args = ap.parse_args()
     dry = not args.execute
     cat = args.category
-    scopes = shards.SHARD_SCOPES[cat] if cat else None
+    job_shard = bool(cat) and shards.is_job_shard(cat)
+    scopes = shards.SHARD_SCOPES[cat] if cat and not job_shard else None
 
     if not LAKE_PATH.exists():
         print("ERROR: lake not found at %s — restore it from S3 first "
@@ -458,7 +504,9 @@ def main():
         print("-" * 64)
         if url and key:
             try:
-                existing = Supabase(url, key).fetch_all_ids(scopes)
+                client = Supabase(url, key)
+                existing = (client.fetch_job_ids(cat) if job_shard
+                            else client.fetch_all_ids(scopes))
                 serving_ids = {m["id"] for m in mapped}
                 to_retire, _ = plan_retire(existing, serving_ids, cat, True)
                 print("Supabase reachable (read-only). existing rows: %d"
@@ -483,7 +531,8 @@ def main():
               file=sys.stderr)
         return 2
     client = Supabase(url, key)
-    existing = client.fetch_all_ids(scopes)
+    existing = (client.fetch_job_ids(cat) if job_shard
+                else client.fetch_all_ids(scopes))
     serving_ids = {m["id"] for m in mapped}
     to_retire, guard_err = plan_retire(existing, serving_ids, cat, args.force_retire)
     if guard_err:
