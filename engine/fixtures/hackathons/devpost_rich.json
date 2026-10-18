@@ -1,0 +1,17 @@
+{"hackathons": [
+ {"title": "Build, Ship, Shape", "displayed_location": {"icon": "globe", "location": "Online"},
+  "open_state": "open", "thumbnail_url": "//d112y698adiu2z.cloudfront.net/photos/thumb/medium_square.png",
+  "url": "https://amazonappdev2026.devpost.com/", "time_left_to_submission": "5 days left",
+  "submission_period_dates": "Aug 31 - Oct 23, 2026",
+  "themes": [{"id": 6, "name": "Machine Learning/AI"}, {"id": 22, "name": "Open Ended"}],
+  "prize_amount": "$<span data-currency-value>138,000</span>", "registrations_count": 56650,
+  "organization_name": "Amazon", "invite_only": false,
+  "eligibility_requirement_invite_only_description": null},
+ {"title": "Zero Prize Jam", "displayed_location": {"location": "London, United Kingdom"},
+  "open_state": "upcoming", "thumbnail_url": "http://cdn.example/jam.png",
+  "url": "https://zero.devpost.com/", "time_left_to_submission": "3 days left",
+  "submission_period_dates": "to be announced", "themes": [],
+  "prize_amount": "$<span data-currency-value>0</span>", "registrations_count": 0,
+  "organization_name": "Jam Org", "invite_only": true,
+  "eligibility_requirement_invite_only_description": null}
+]}

@@ -7,15 +7,26 @@ from datetime import date, datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from categories.hackathons.hackathons import (
+    clean_description,
     collect,
+    compute_status,
+    enrich_rows,
     merge_hackathons,
+    normalize_devpost,
     normalize_mlh,
+    normalize_unstop,
     parse_devpost_dates,
+    parse_event_page,
+    parse_time_left,
+    region_for,
+    unstop_eligibility_text,
 )
+from pipeline.publish_supabase import is_serving, map_row, stable_id
 
 
 FIXTURE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "fixtures", "hackathons")
 CHECKED_AT = datetime(2026, 8, 21, tzinfo=timezone.utc)
+NO_PAGE = lambda url: None  # noqa: E731 - never touch the network in tests
 
 
 def _fixture_json(name):
@@ -58,7 +69,7 @@ class TestHackathonsCollector(unittest.TestCase):
             lake_path = os.path.join(td, "lake.json")
             with open(lake_path, "w") as handle:
                 json.dump(seeded, handle)
-            result = collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path)
+            result = collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path, page_fetch=NO_PAGE)
             with open(lake_path) as handle:
                 lake = json.load(handle)
         self.assertEqual(result["total_surfaced"], 8)
@@ -84,7 +95,7 @@ class TestHackathonsCollector(unittest.TestCase):
         devpost, mlh, unstop = _fake_fetchers()
         with tempfile.TemporaryDirectory() as td:
             lake_path = os.path.join(td, "lake.json")
-            result = collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path)
+            result = collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path, page_fetch=NO_PAGE)
             with open(lake_path) as handle:
                 rows = json.load(handle)
         hackathons = [row for row in rows if row.get("record_type") == "hackathon"]
@@ -107,7 +118,7 @@ class TestHackathonsCollector(unittest.TestCase):
         devpost, mlh, unstop = _fake_fetchers()
         with tempfile.TemporaryDirectory() as td:
             lake_path = os.path.join(td, "lake.json")
-            collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path)
+            collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path, page_fetch=NO_PAGE)
             with open(lake_path) as handle:
                 rows = json.load(handle)
         hackathons = [row for row in rows if row.get("record_type") == "hackathon"]
@@ -165,7 +176,9 @@ class TestHackathonsCollector(unittest.TestCase):
                 now="2026-08-21T00:00:00+00:00", today=date(2026, 8, 23),
             )
         self.assertFalse(merged[0]["is_live"])
-        self.assertTrue(merged[0]["needs_confirmation"])
+        self.assertFalse(merged[0]["needs_confirmation"])
+        self.assertFalse(is_serving(merged[0]))
+        self.assertEqual(merged[0]["status"], "ended")
         self.assertEqual(merged[0]["liveness_reason"], "event_ended")
 
     def test_wall_clock_expiry_ignores_past_registration_deadline(self):
@@ -238,6 +251,226 @@ class TestHackathonsCollector(unittest.TestCase):
         self.assertFalse(decayed["is_live"])
         self.assertTrue(decayed["needs_confirmation"])
         self.assertEqual(decayed["liveness_reason"], "not_reconfirmed")
+
+
+def _read(name):
+    with open(os.path.join(FIXTURE_DIR, name)) as handle:
+        return handle.read()
+
+
+class TestHackathonQuality(unittest.TestCase):
+    def test_devpost_dates_status_prize_logo_participants(self):
+        rows = {r["title"]: r for r in normalize_devpost(_fixture_json("devpost_rich.json"), CHECKED_AT)}
+        row = rows["Build, Ship, Shape"]
+        self.assertEqual(row["start_date"], "2026-08-31")
+        self.assertEqual(row["end_date"], "2026-10-23")
+        self.assertEqual(row["deadline"], "2026-10-23")
+        self.assertEqual(row["deadline_basis"], "submission_deadline")
+        self.assertEqual(row["status"], "upcoming")
+        self.assertEqual(row["prize"], "$138,000")
+        self.assertEqual(row["funding"], "$138,000 in prizes")
+        self.assertEqual(row["logo_url"], "https://d112y698adiu2z.cloudfront.net/photos/thumb/medium_square.png")
+        self.assertEqual(row["participants"], 56650)
+        self.assertEqual(row["themes"], ["Machine Learning/AI", "Open Ended"])
+        self.assertEqual((row["mode"], row["region"]), ("online", "Global/Online"))
+        self.assertEqual(row["hackathon_id"], "https://amazonappdev2026.devpost.com/")
+
+    def test_devpost_unparseable_dates_fall_back_to_time_left_and_zero_prize_is_null(self):
+        row = {r["title"]: r for r in normalize_devpost(_fixture_json("devpost_rich.json"), CHECKED_AT)}["Zero Prize Jam"]
+        self.assertEqual(row["deadline"], "2026-08-24")
+        self.assertIsNone(row["start_date"])
+        self.assertIsNone(row["prize"])
+        self.assertIsNone(row["funding"])
+        self.assertEqual(row["logo_url"], "https://cdn.example/jam.png")
+        self.assertEqual(row["eligibility"], "Invite only")
+        self.assertEqual(row["region"], "Europe")
+        self.assertEqual(row["status"], "open")
+        self.assertIsNone(parse_time_left("about 2 months left", date(2026, 8, 21)))
+        self.assertEqual(parse_time_left("5 days left", date(2026, 8, 21)), "2026-08-26")
+
+    def test_devpost_page_description_eligibility_logo(self):
+        found = parse_event_page(_read("devpost_page.html"), "https://x.devpost.com/")
+        self.assertEqual(found["description"], "Build across Amazon Devices and shape what's next.")
+        self.assertEqual(found["logo_url"], "https://d112y698adiu2z.cloudfront.net/photos/large.png")
+        self.assertEqual(
+            found["eligibility"],
+            "Above legal age of majority in country of residence; All countries/territories, excluding standard exceptions")
+
+    def test_page_jsonld_description_is_cleaned_to_two_sentences(self):
+        found = parse_event_page(_read("event_ldjson_page.html"), "https://org.example/event/")
+        self.assertEqual(found["description"], "A weekend of hacking. Second sentence here.")
+        self.assertEqual(found["logo_url"], "https://org.example/img/logo.png")
+
+    def test_clean_description_limits(self):
+        self.assertIsNone(clean_description("  <p> </p> "))
+        long = "word " * 200
+        out = clean_description(long)
+        self.assertLessEqual(len(out), 303)
+        self.assertTrue(out.endswith("..."))
+        sentence = ("A" * 150 + ". ") + ("B" * 200 + ".")
+        self.assertEqual(clean_description(sentence), "A" * 150 + ".")
+
+    def test_mlh_logo_country_organizer_mode_status(self):
+        rows = {r["title"]: r for r in normalize_mlh(_read("mlh_rich.html"), CHECKED_AT)}
+        row = rows["HackPrix Season 3"]
+        self.assertEqual(row["official_url"], "https://s3.hackprix.tech/?utm_source=mlh".replace("?utm_source=mlh", ""))
+        self.assertEqual(row["logo_url"], "https://mlhusercontent.com/logos/events/abc/hackprix_small.png")
+        self.assertEqual(row["organizer_domain"], "s3.hackprix.tech")
+        self.assertEqual((row["region"], row["mode"]), ("India", "in-person"))
+        self.assertEqual(row["location"], "Hyderabad, Telangana")
+        self.assertEqual((row["start_date"], row["end_date"], row["deadline"]), ("2026-09-13", "2026-09-14", "2026-09-14"))
+        self.assertEqual(row["deadline_basis"], "event_end")
+        self.assertEqual(row["status"], "upcoming")
+        self.assertIsNone(row["funding"])
+        digital = rows["Digital Jam"]
+        self.assertEqual((digital["mode"], digital["region"], digital["is_online"]), ("online", "Global/Online", True))
+
+    def test_unstop_dates_funding_logo_eligibility_description(self):
+        rows = {r["title"]: r for r in normalize_unstop(_fixture_json("unstop_rich.json"), CHECKED_AT)}
+        self.assertNotIn("Fully Ended", rows)
+        row = rows["Smart India Build"]
+        self.assertEqual(row["deadline"], "2026-09-10")
+        self.assertEqual(row["registration_deadline"], "2026-09-10")
+        self.assertEqual((row["start_date"], row["end_date"]), ("2026-08-01", "2026-09-30"))
+        self.assertEqual(row["status"], "open")
+        self.assertEqual(row["prize"], "\u20b92,500")
+        self.assertEqual(row["funding"], "\u20b92,500 in prizes")
+        self.assertEqual(row["logo_url"], "https://d8it4huxumps7.cloudfront.net/uploads/images/150x150/logo.png")
+        self.assertEqual(row["organizer_domain"], "bitsathy.ac.in")
+        self.assertEqual(row["participants"], 321)
+        self.assertEqual(row["description"], "IoT Hackathon: A dynamic event for makers. Bring a laptop.")
+        self.assertEqual(
+            row["eligibility"],
+            "Open to: Engineering students (B.Tech, M.Tech, all years), Working professionals")
+        self.assertEqual((row["mode"], row["region"], row["location"]), ("in-person", "India", "Erode, Tamil Nadu, India"))
+
+    def test_unstop_registration_closed_but_event_running_is_kept_open(self):
+        row = {r["title"]: r for r in normalize_unstop(_fixture_json("unstop_rich.json"), CHECKED_AT)}["Closed Reg Running Event"]
+        self.assertEqual(row["status"], "open")
+        self.assertEqual(row["eligibility"], "Open to: Everyone")
+        self.assertIsNone(row["funding"])
+
+    def test_unstop_eligibility_variants(self):
+        self.assertEqual(unstop_eligibility_text("Open to all students"), "Open to all students")
+        self.assertIsNone(unstop_eligibility_text(None))
+        self.assertEqual(
+            unstop_eligibility_text(None, [{"type": "eligible", "name": "Postgraduate"}]),
+            "Open to: Postgraduate")
+        blob = '{"sector":["students"],"engineering":["allCourses"],"bSchools":["allCourses"],"arts":["allCourses"]}'
+        self.assertEqual(unstop_eligibility_text(blob), "Open to: Students (all courses)")
+        blob = ('{"sector":["students"],"engineering":[{"course":"btech","passoutYear":["2026","2027"]}]}')
+        self.assertEqual(unstop_eligibility_text(blob), "Open to: Engineering students (B.Tech, 2026/2027 batches)")
+
+    def test_status_and_region_helpers(self):
+        today = date(2026, 8, 21)
+        self.assertEqual(compute_status("2026-09-01", "2026-09-05", "2026-09-05", today), "upcoming")
+        self.assertEqual(compute_status("2026-08-01", "2026-09-05", "2026-08-10", today), "open")
+        self.assertEqual(compute_status("2026-08-01", "2026-08-10", "2026-08-05", today), "ended")
+        self.assertEqual(compute_status(None, None, None, today, "upcoming"), "upcoming")
+        self.assertEqual(region_for(location="San Francisco, CA"), "US")
+        self.assertEqual(region_for(location="Berlin, Germany"), "Europe")
+        self.assertEqual(region_for(location="Pune, India"), "India")
+        self.assertEqual(region_for(country="CA", location="Toronto"), "Canada")
+        self.assertEqual(region_for(location="Online", online=True), "Global/Online")
+        self.assertIsNone(region_for(location="Atlantis"))
+
+    def test_enrich_uses_cache_then_fetches_only_missing_and_records_failure(self):
+        calls = []
+
+        def fetch(url):
+            calls.append(url)
+            return None if url.endswith("/fail") else _read("devpost_page.html")
+
+        rows = [
+            {"hackathon_id": "https://a.devpost.com/", "official_url": "https://a.devpost.com/", "source": "devpost"},
+            {"hackathon_id": "https://b.devpost.com/", "official_url": "https://b.devpost.com/", "source": "devpost"},
+            {"hackathon_id": "https://c.devpost.com/fail", "official_url": "https://c.devpost.com/fail", "source": "devpost"},
+            {"hackathon_id": "https://u.com/x", "official_url": "https://u.com/x", "source": "unstop"},
+        ]
+        cache = {"https://a.devpost.com/": {"description": "cached", "eligibility": "e", "page_enriched": "2026-08-01"}}
+        enrich_rows(rows, cache, fetch=fetch, today=date(2026, 8, 21), delay=0)
+        self.assertEqual(calls, ["https://b.devpost.com/", "https://c.devpost.com/fail"])
+        self.assertEqual(rows[0]["description"], "cached")
+        self.assertEqual(rows[1]["page_enriched"], "2026-08-21")
+        self.assertIn("eligibility", rows[1])
+        self.assertNotIn("page_enriched", rows[2])
+        self.assertNotIn("description", rows[3])
+        calls.clear()
+        enrich_rows(rows[:3], {}, fetch=fetch, limit=1, today=date(2026, 8, 21), delay=0)
+        self.assertEqual(len(calls), 1)
+
+    def test_ids_are_stable_and_unchanged_by_enrichment(self):
+        rows = normalize_devpost(_fixture_json("devpost_rich.json"), CHECKED_AT)
+        before = [stable_id(r) for r in rows]
+        enrich_rows(rows, {}, fetch=lambda url: _read("devpost_page.html"), today=date(2026, 8, 21), delay=0)
+        self.assertEqual(before, [stable_id(r) for r in rows])
+        self.assertEqual(before[0], "hackathon:https://amazonappdev2026.devpost.com/")
+
+    def test_merge_retires_ended_rows_including_previously_needs_confirmation(self):
+        seeded = [
+            {"record_type": "hackathon", "hackathon_id": "https://e.test/1", "official_url": "https://e.test/1",
+             "source": "unstop", "is_live": False, "needs_confirmation": True, "liveness_reason": "event_ended",
+             "registration_deadline": "2026-08-01", "end_date": "2026-08-05", "last_seen": "2026-08-20T00:00:00+00:00"},
+            {"record_type": "hackathon", "hackathon_id": "https://e.test/2", "official_url": "https://e.test/2",
+             "source": "unstop", "is_live": True, "needs_confirmation": False, "status": "open",
+             "deadline": "2026-08-01", "end_date": "2026-12-05", "last_seen": "2026-08-20T00:00:00+00:00"},
+        ]
+        with tempfile.TemporaryDirectory() as td:
+            path = os.path.join(td, "lake.json")
+            with open(path, "w") as handle:
+                json.dump(seeded, handle)
+            merged = {r["hackathon_id"]: r for r in merge_hackathons(
+                {}, set(), path, now="2026-08-21T00:00:00+00:00", today=date(2026, 8, 21))}
+        self.assertFalse(is_serving(merged["https://e.test/1"]))
+        self.assertEqual(merged["https://e.test/1"]["status"], "ended")
+        self.assertTrue(is_serving(merged["https://e.test/2"]))
+        self.assertEqual(merged["https://e.test/2"]["status"], "open")
+
+    def test_collect_end_to_end_publishes_rich_fields(self):
+        with tempfile.TemporaryDirectory() as td:
+            path = os.path.join(td, "lake.json")
+            collect(
+                lambda: _fixture_json("devpost_rich.json"),
+                lambda _c=None: [(_read("mlh_rich.html"), "https://mlh.io/seasons/2026/events")],
+                lambda: {"data": {"current_page": 1, "last_page": 1, "data": _fixture_json("unstop_rich.json")}},
+                checked_at=CHECKED_AT, lake_path=path, page_fetch=lambda url: _read("devpost_page.html"),
+            )
+            with open(path) as handle:
+                lake = json.load(handle)
+        mapped = {m["url"]: m for m in (map_row(r) for r in lake if is_serving(r))}
+        amazon = mapped["https://amazonappdev2026.devpost.com/"]
+        self.assertEqual(amazon["type"], "hackathon")
+        self.assertEqual(amazon["deadline"], "2026-10-23")
+        self.assertEqual(amazon["funding"], "$138,000 in prizes")
+        self.assertTrue(amazon["description"].startswith("Build across Amazon Devices"))
+        self.assertTrue(amazon["eligibility"].startswith("Above legal age"))
+        for key, expected in (("logo_url", "https://d112y698adiu2z.cloudfront.net/photos/thumb/medium_square.png"),
+                              ("status", "upcoming"), ("participants", 56650), ("mode", "online"),
+                              ("region", "Global/Online"), ("start_date", "2026-08-31"),
+                              ("end_date", "2026-10-23"), ("prize", "$138,000")):
+            self.assertEqual(amazon["extra"][key], expected, key)
+        zero = mapped["https://zero.devpost.com/"]
+        self.assertIsNone(zero["funding"])
+
+    def test_map_row_hackathon_placeholders_and_description_length(self):
+        base = {"record_type": "hackathon", "hackathon_id": "https://x.test/", "official_url": "https://x.test/",
+                "title": "X", "is_live": True, "eligibility": "needs_confirmation", "funding": "not_stated",
+                "description": "d" * 400, "status": "open", "logo_url": "https://x.test/l.png"}
+        mapped = map_row(base)
+        self.assertIsNone(mapped["eligibility"])
+        self.assertIsNone(mapped["funding"])
+        self.assertEqual(len(mapped["description"]), 300)
+        self.assertEqual(mapped["extra"]["logo_url"], "https://x.test/l.png")
+
+    def test_map_row_jobs_unchanged(self):
+        job = {"url": "https://jobs.test/1", "title": "Eng", "company": "Co", "is_live": True,
+               "description": "d" * 400, "status": "open", "logo_url": "x", "mode": "remote",
+               "region": "US", "funding": "not_stated", "eligibility": "needs_confirmation"}
+        mapped = map_row(job)
+        self.assertEqual(len(mapped["description"]), 200)
+        self.assertEqual(mapped["extra"], {})
+        self.assertEqual(mapped["funding"], "not_stated")
+        self.assertEqual(mapped["eligibility"], "needs_confirmation")
 
 
 if __name__ == "__main__":
