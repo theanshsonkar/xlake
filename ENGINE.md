@@ -97,7 +97,7 @@ contract has exactly these top-level fields:
 
 `extra` contains only these source-specific keys, omitting empty values:
 
-`platform, token, job_id, discipline, skills, salary, season, sponsorship, program, segment, posting_age_days, repo, labels, language, difficulty, difficulty_signal, issue_number, repo_stars, discovery_source, prize, tags, start_date, end_date, is_online, registration_deadline, source, organizer, programme_status, opening_date, opportunity_type, international_eligibility, source_mechanism, source_confirmation, official_url, application_url`.
+`platform, token, job_id, discipline, skills, salary, season, sponsorship, program, segment, posting_age_days, repo, labels, language, difficulty, difficulty_signal, issue_number, repo_stars, discovery_source, prize, tags, start_date, end_date, is_online, registration_deadline, source, logo_url, status, themes, participants, mode, region, organizer_domain, deadline_basis, organizer, programme_status, opening_date, opportunity_type, international_eligibility, source_mechanism, source_confirmation, official_url, application_url`. The hackathon-only keys (`logo_url, status, themes, participants, mode, region, organizer_domain, deadline_basis`) are never published for other record types. For hackathons `map_row` publishes `description` up to 300 chars (200 for other types) and NULL instead of placeholder `eligibility`/`funding` values (`not_stated`, `needs_confirmation`, ...).
 
 The sweep writes the local working copies of the opportunities and hidden
 stores, while the page reader maintains its operational rows separately and
