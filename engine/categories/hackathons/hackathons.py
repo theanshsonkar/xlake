@@ -1170,6 +1170,10 @@ def merge_hackathons(rows_by_id, successful_sources, lake_path=OPPORTUNITIES_PAT
             hackathon_rows[hackathon_id] = row
 
     successful_sources = set(successful_sources)
+    legacy_ids = {
+        hid for hid, row in hackathon_rows.items()
+        if hid not in current_ids and not row.get("is_live", True) and not row.get("status")
+    }
     for row in hackathon_rows.values():
         if row.get("hackathon_id") in current_ids:
             continue
@@ -1196,7 +1200,7 @@ def merge_hackathons(rows_by_id, successful_sources, lake_path=OPPORTUNITIES_PAT
         # whose last check is older than the stale window are retired so they stop being served.
         # Age-out applies even when the row's source failed this run.
         age = _last_seen_age_days(row.get("last_checked_at") or row.get("last_checked") or row.get("last_seen"), now)
-        legacy = not row.get("is_live", True) and not row.get("status")
+        legacy = row.get("hackathon_id") in legacy_ids
         if legacy or (age is not None and age > stale_days):
             row["is_live"] = False
             row["needs_confirmation"] = False
