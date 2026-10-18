@@ -28,7 +28,8 @@ requires rather than by our own instinct:
     3xx             follow up to 5 redirects               (§2.3.1.2)
     4xx             "unavailable" -> the crawler MAY access any resource.
                     This INCLUDES 401 and 403.             (§2.3.1.3)
-    5xx / timeout   "unreachable" -> MUST assume complete disallow. (§2.3.1.4)
+    5xx / timeout   "unreachable" -> RFC says disallow; THIS PROJECT treats it as
+                    ALLOW (standard crawler practice; status is recorded).
 
 The 4xx rule is worth spelling out because the first version of this file got it
 wrong in the direction that feels safer. `api.ashbyhq.com/robots.txt` answers
@@ -236,11 +237,10 @@ def _fetch_rules(origin: str) -> Rules:
         # RFC 9309 §2.3.1.3: any 4xx means robots.txt is "unavailable" and the
         # crawler MAY access any resource. 401 and 403 are included — see the
         # module docstring for why that is not a loophole.
-        if e.code >= 500:
-            r.blanket_deny = True  # §2.3.1.4 "unreachable" -> complete disallow
+        # Unreachable (5xx incl. 525) is treated as ALLOW, matching common
+        # crawler practice; only an explicit Disallow blocks. Status is kept.
     except Exception:  # noqa: BLE001  (timeout, DNS, TLS)
-        r.status = None
-        r.blanket_deny = True  # network failure is also "unreachable"
+        r.status = None  # unreachable -> allow
     r.fetched_at = time.monotonic()
     return r
 

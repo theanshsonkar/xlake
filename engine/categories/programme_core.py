@@ -1087,11 +1087,8 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
 
 
 def _default_fetch(url: str) -> Tuple[str, str]:
-    from pipeline.resolve import _fetch_page
-    status, final_url, html, error = _fetch_page(url)
-    if error or status is None or status >= 400:
-        raise RuntimeError(error or "http_{}".format(status))
-    return html, final_url
+    from core import webfetch
+    return webfetch.fetch_html(url)
 
 
 def _atomic_json(path: str, value) -> None:
@@ -1467,6 +1464,8 @@ def _fetch_failure_bucket(reason: str) -> str:
         return "capped"
     if "robots_disallow" in lowered or "robots_block" in lowered:
         return "robots_blocked"
+    if "invalid_seed_url" in lowered:
+        return "invalid_seed"
     status = re.search(r"\b(?:http[_ -]?)?(\d{3})\b", lowered)
     if status:
         code = int(status.group(1))
