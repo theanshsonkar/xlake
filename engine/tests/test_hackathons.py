@@ -2,6 +2,7 @@ import json
 import os
 import sys
 import tempfile
+from unittest import mock
 import unittest
 from unittest.mock import patch
 from datetime import date, datetime, timezone
@@ -458,7 +459,8 @@ class TestHackathonQuality(unittest.TestCase):
                 {}, set(), path, now="2026-08-21T00:00:00+00:00", today=date(2026, 8, 21))}
         self.assertFalse(is_serving(merged["https://e.test/1"]))
         self.assertEqual(merged["https://e.test/1"]["status"], "ended")
-        self.assertTrue(is_serving(merged["https://e.test/2"]))
+        # registration closed (deadline past) even though the event is still running: not served
+        self.assertFalse(is_serving(merged["https://e.test/2"]))
         self.assertEqual(merged["https://e.test/2"]["status"], "open")
 
     def test_collect_end_to_end_publishes_rich_fields(self):
@@ -472,7 +474,8 @@ class TestHackathonQuality(unittest.TestCase):
             )
             with open(path) as handle:
                 lake = json.load(handle)
-        mapped = {m["url"]: m for m in (map_row(r) for r in lake if is_serving(r))}
+        with mock.patch("pipeline.publish_supabase._today", return_value="2026-08-21"):
+            mapped = {m["url"]: m for m in (map_row(r) for r in lake if is_serving(r))}
         amazon = mapped["https://amazonappdev2026.devpost.com/"]
         self.assertEqual(amazon["type"], "hackathon")
         self.assertEqual(amazon["deadline"], "2026-10-23")
@@ -486,6 +489,21 @@ class TestHackathonQuality(unittest.TestCase):
             self.assertEqual(amazon["extra"][key], expected, key)
         zero = mapped["https://zero.devpost.com/"]
         self.assertIsNone(zero["funding"])
+
+    def test_zero_row_source_is_failed_and_rows_kept(self):
+        with tempfile.TemporaryDirectory() as td:
+            path = os.path.join(td, "lake.json")
+            seeded = [{"record_type": "hackathon", "hackathon_id": "https://u.test/1", "official_url": "https://u.test/1",
+                       "source": "unstop", "is_live": True, "status": "open", "deadline": "2999-01-01",
+                       "last_seen": CHECKED_AT.isoformat(), "last_checked_at": CHECKED_AT.isoformat()}]
+            with open(path, "w") as handle:
+                json.dump(seeded, handle)
+            out = collect(lambda: _fixture_json("devpost_rich.json"), lambda _c=None: None, lambda: [],
+                          checked_at=CHECKED_AT, lake_path=path, page_fetch=lambda url: _read("devpost_page.html"))
+            with open(path) as handle:
+                lake = {r["hackathon_id"]: r for r in json.load(handle)}
+        self.assertNotIn("unstop", out["sources_ok"])
+        self.assertTrue(lake["https://u.test/1"]["is_live"])
 
     def test_map_row_hackathon_placeholders_and_description_length(self):
         base = {"record_type": "hackathon", "hackathon_id": "https://x.test/", "official_url": "https://x.test/",

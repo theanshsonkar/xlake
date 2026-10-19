@@ -8,6 +8,7 @@ import json
 import os
 import re
 import socket
+import sys
 import tempfile
 import time
 from datetime import date, datetime, timezone
@@ -52,7 +53,8 @@ def _http_json(url):
         req = request.Request(url, headers=_http_headers())
         with request.urlopen(req, timeout=20) as response:
             return json.loads(response.read().decode("utf-8"))
-    except Exception:
+    except Exception as exc:
+        print("warning: fetch failed {}: {}".format(url[:90], exc), file=sys.stderr)
         return None
 
 
@@ -1222,6 +1224,9 @@ def unstop_fetch():
         if page > 1:
             time.sleep(HOST_DELAY)
         payload = _http_json(UNSTOP_API_URL + "&page=" + str(page))
+        if payload is None:  # one retry for transient CI/network errors
+            time.sleep(HOST_DELAY * 2)
+            payload = _http_json(UNSTOP_API_URL + "&page=" + str(page))
         if payload is None or not isinstance(payload, dict):
             return None
         data = payload.get("data") or {}
@@ -1584,6 +1589,18 @@ def collect(
     rows_by_id = {}
     successful_sources = set()
     counts = {"devpost": 0, "mlh": 0, "unstop": 0, "devfolio": 0}
+    previous = {}
+    for old_row in _load_json(lake_path, []):
+        if old_row.get("record_type") == "hackathon" and old_row.get("is_live"):
+            previous[old_row.get("source")] = previous.get(old_row.get("source"), 0) + 1
+
+    def _healthy(source, n):
+        """0 rows, or <20% of the previous live count, is a failed source: never retire its rows."""
+        if n == 0 or n < 0.2 * previous.get(source, 0):
+            print("warning: {} returned {} rows (previous {}); treated as FAILED, rows kept".format(
+                source, n, previous.get(source, 0)), file=sys.stderr)
+            return False
+        return True
 
     try:
         raw = devpost_fetch()
@@ -1592,7 +1609,8 @@ def collect(
     if raw is not None:
         rows = normalize_devpost(raw, checked_at)
         counts["devpost"] = len(rows)
-        successful_sources.add("devpost")
+        if _healthy("devpost", len(rows)):
+            successful_sources.add("devpost")
         for row in rows:
             rows_by_id.setdefault(row["official_url"], row)
 
@@ -1616,7 +1634,8 @@ def collect(
             for row in normalize_mlh(html, checked_at, source_url=source_url):
                 mlh_rows.setdefault(row["official_url"], row)
         counts["mlh"] = len(mlh_rows)
-        successful_sources.add("mlh")
+        if _healthy("mlh", len(mlh_rows)):
+            successful_sources.add("mlh")
         for row in mlh_rows.values():
             rows_by_id.setdefault(row["official_url"], row)
 
@@ -1627,7 +1646,8 @@ def collect(
     if raw is not None:
         rows = normalize_unstop(raw, checked_at)
         counts["unstop"] = len(rows)
-        successful_sources.add("unstop")
+        if _healthy("unstop", len(rows)):
+            successful_sources.add("unstop")
         for row in rows:
             rows_by_id.setdefault(row["official_url"], row)
 
@@ -1638,7 +1658,8 @@ def collect(
     if raw is not None:
         rows = normalize_devfolio(raw, checked_at)
         counts["devfolio"] = len(rows)
-        successful_sources.add("devfolio")
+        if _healthy("devfolio", len(rows)):
+            successful_sources.add("devfolio")
         for row in rows:
             rows_by_id.setdefault(row["official_url"], row)
 

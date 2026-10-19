@@ -60,7 +60,7 @@ NOT_APPLICABLE = {
 }
 FIELDS = ("deadline", "description", "funding", "logo", "region")
 SELECT = ("id,type,category,title,url,deadline,description,funding,last_checked,"
-          "is_live,needs_confirmation,logo:extra->>logo_url,region:extra->>region")
+          "is_live,needs_confirmation,logo:extra->>logo_url,region:extra->>region,pstatus:extra->>programme_status")
 
 
 def group_of(row):
@@ -121,7 +121,8 @@ def compute_metrics(rows, today=None, now=None):
         deadline = _parse_date(row.get("deadline"))
         if deadline is not None:
             if deadline < today:
-                g["past_deadline_served"] += 1
+                if row.get("pstatus") != "upcoming":  # next-cycle programmes are not served as open
+                    g["past_deadline_served"] += 1
             elif deadline <= closing_end:
                 g["closing_7d"] += 1
         checked = _parse_ts(row.get("last_checked"))

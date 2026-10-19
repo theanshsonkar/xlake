@@ -148,8 +148,28 @@ def _closed_and_past(r: dict) -> bool:
                 and deadline < datetime.date.today().isoformat())
 
 
+def _today() -> str:
+    return datetime.date.today().isoformat()
+
+
+def _past_deadline_open(r: dict) -> bool:
+    """Non-job row whose deadline is already past and that is not an upcoming (next-cycle) programme.
+
+    Hackathons: registration is closed once the deadline passes, so they stop serving
+    (event end >= today alone is not enough). Programmes with a past deadline are closed
+    (collection turns recurring ones into upcoming with deadline=None).
+    Applies to live and needs_confirmation rows alike; verified records included.
+    """
+    if record_type(r) in JOB_TYPES:
+        return False
+    if r.get("programme_status") == "upcoming" or r.get("status") == "upcoming":
+        return False
+    deadline = _as_date(_first(r.get("deadline"), r.get("registration_deadline")))
+    return bool(deadline and deadline < _today())
+
+
 def is_serving(r: dict) -> bool:
-    if _closed_and_past(r):
+    if _closed_and_past(r) or _past_deadline_open(r):
         return False
     if r.get("is_duplicate") is True:  # a fresher twin is serving instead
         return False
