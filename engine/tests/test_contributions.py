@@ -201,7 +201,8 @@ class TestContributionsCollector(unittest.TestCase):
         self.assertEqual(default["labels"], ["documentation"])
 
     def test_language_annotation_is_present_for_every_curated_repo(self):
-        self.assertEqual(len(CURATED_REPOS), 61)
+        self.assertGreaterEqual(len(CURATED_REPOS), 61)
+        self.assertEqual(len({r.casefold() for r, _ in CURATED_REPOS}), len(CURATED_REPOS))
         for repo, language in CURATED_REPOS:
             issue = {
                 "html_url": "https://github.com/{}/issues/1".format(repo),
@@ -686,6 +687,36 @@ class TestContributionEnrichment(unittest.TestCase):
         self.assertEqual(len(parse_repo("acme/widget", [fresh], self.NOW)), 1)
         self.assertEqual(parse_repo("acme/widget", [fresh], self.NOW, pr_check=lambda r, n: True), [])
         self.assertEqual(len(parse_repo("acme/widget", [fresh], self.NOW, pr_check=lambda r, n: False)), 1)
+
+    def test_beginner_label_family_and_help_wanted_easy(self):
+        from categories.open_source.contributions import matched_beginner_label
+        for name in ("beginner", "First-Timers-Only", "good-first-issue"):
+            self.assertEqual(len(parse_repo("acme/widget", [self.issue(labels=[{"name": name}])], self.NOW)), 1, name)
+        both = self.issue(labels=[{"name": "help wanted"}, {"name": "easy"}])
+        self.assertEqual(len(parse_repo("acme/widget", [both], self.NOW)), 1)
+        self.assertEqual(matched_beginner_label(["help wanted", "easy"]), "help wanted + easy")
+        for labels in ([{"name": "help wanted"}], [{"name": "easy"}], [{"name": "bug"}]):
+            self.assertEqual(parse_repo("acme/widget", [self.issue(labels=labels)], self.NOW), [])
+
+    def test_stale_issue_kept_when_repo_recently_pushed(self):
+        idle = self.issue(updated_at="2026-06-01T00:00:00Z")
+        active = {"pushed_at": "2026-08-10T00:00:00Z"}
+        self.assertEqual(len(parse_repo("acme/widget", [idle], self.NOW, repo_info=active)), 1)
+        dormant = {"pushed_at": "2026-03-01T00:00:00Z"}
+        self.assertEqual(parse_repo("acme/widget", [idle], self.NOW, repo_info=dormant), [])
+        ancient = self.issue(updated_at="2025-05-01T00:00:00Z")
+        self.assertEqual(parse_repo("acme/widget", [ancient], self.NOW, repo_info=active), [])
+
+    def test_per_repo_cap_is_30_and_known_clean_skips_pr_check(self):
+        issues = [self.issue(number=n, html_url="https://github.com/acme/widget/issues/%d" % n) for n in range(1, 41)]
+        calls = []
+        rows = parse_repo("acme/widget", issues, self.NOW, pr_check=lambda r, n: calls.append(n) or False)
+        self.assertEqual(len(rows), 30)
+        self.assertEqual(len(calls), 30)
+        calls.clear()
+        known = {("acme/widget", n): "2026-08-15T00:00:00Z" for n in range(1, 41)}
+        parse_repo("acme/widget", issues, self.NOW, pr_check=lambda r, n: calls.append(n) or False, known_clean=known)
+        self.assertEqual(calls, [])
 
     def test_publish_mapping_for_contribution(self):
         from pipeline.publish_supabase import map_row

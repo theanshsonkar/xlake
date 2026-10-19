@@ -3,6 +3,7 @@ import os
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from datetime import date, datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -100,7 +101,8 @@ class TestHackathonsCollector(unittest.TestCase):
             lake_path = os.path.join(td, "lake.json")
             with open(lake_path, "w") as handle:
                 json.dump(seeded, handle)
-            result = collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path, page_fetch=NO_PAGE)
+            with patch("categories.hackathons.hackathons.load_verifications", return_value=[]):
+                result = collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path, page_fetch=NO_PAGE)
             with open(lake_path) as handle:
                 lake = json.load(handle)
         self.assertEqual(result["total_surfaced"], 8)
@@ -126,7 +128,8 @@ class TestHackathonsCollector(unittest.TestCase):
         devpost, mlh, unstop = _fake_fetchers()
         with tempfile.TemporaryDirectory() as td:
             lake_path = os.path.join(td, "lake.json")
-            result = collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path, page_fetch=NO_PAGE)
+            with patch("categories.hackathons.hackathons.load_verifications", return_value=[]):
+                result = collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path, page_fetch=NO_PAGE)
             with open(lake_path) as handle:
                 rows = json.load(handle)
         hackathons = [row for row in rows if row.get("record_type") == "hackathon"]
@@ -149,7 +152,8 @@ class TestHackathonsCollector(unittest.TestCase):
         devpost, mlh, unstop = _fake_fetchers()
         with tempfile.TemporaryDirectory() as td:
             lake_path = os.path.join(td, "lake.json")
-            collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path, page_fetch=NO_PAGE)
+            with patch("categories.hackathons.hackathons.load_verifications", return_value=[]):
+                collect(devpost, mlh, unstop, checked_at=CHECKED_AT, lake_path=lake_path, page_fetch=NO_PAGE)
             with open(lake_path) as handle:
                 rows = json.load(handle)
         hackathons = [row for row in rows if row.get("record_type") == "hackathon"]

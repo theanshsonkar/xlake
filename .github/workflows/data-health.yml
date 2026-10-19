@@ -1,0 +1,78 @@
+name: data-health
+
+# Read-only check of the served Supabase table. Fails (so GitHub emails the
+# owner) when a category's live count drops >30% vs the last report, any
+# past-deadline row is still served, or a category workflow has no success in
+# 48h. Runs daily after the category schedules (latest cron is 04:41 UTC).
+on:
+  schedule:
+    - cron: "37 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: xlake-data-health
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || secrets.SUPABASE_SERVICE_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPOSITORY: ${{ github.repository }}
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Health report
+        id: report
+        continue-on-error: true
+        run: python3 -u -m pipeline.health_report --json-out health_report.json
+
+      - name: Upload report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: health-report
+          path: engine/health_report.json
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Commit health history
+        run: |
+          set -euo pipefail
+          git config user.name  "opportunity-lake-bot"
+          git config user.email "bot@users.noreply.github.com"
+          P=data/operations/health_history.json
+          [ -e "$P" ] || exit 0
+          TMP=$(mktemp); cp "$P" "$TMP"
+          if git diff --quiet -- "$P" && [ -z "$(git ls-files --others --exclude-standard -- "$P")" ]; then exit 0; fi
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard HEAD
+            git checkout -B ci-save origin/main
+            cp "$TMP" "$P"
+            git add -- "$P"
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "data-health: snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt*5 + RANDOM % 10))
+          done
+          exit 1
+
+      - name: Fail on problems
+        if: ${{ steps.report.outcome == 'failure' }}
+        run: |
+          echo "::error::data health checks failed - see the job summary"
+          exit 1

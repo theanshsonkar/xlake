@@ -1234,6 +1234,9 @@ FACT_EVIDENCE_FIELDS = (
     ("levels", "eligibility"), ("citizenship", "eligibility"), ("program_start", "program_dates"),
     ("program_end", "program_dates"),
 )
+HACKATHON_OVERLAY_FIELDS = (
+    "start_date", "end_date", "location", "team_min", "team_max", "prize", "top_prize",
+)
 EXTENDED_OVERLAY_FIELDS = (
     "summary", "requirements", "region", "mode", "logo_url", "organizer", "levels",
     "intl_eligible", "citizenship", "funding_amount", "funding_currency", "funding_period",
@@ -1400,7 +1403,7 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
                 row["title"] = row["programme_name"]
                 row["source"] = "official"
             result.append(row)
-        for field in overlay_fields:
+        for field in overlay_fields + (HACKATHON_OVERLAY_FIELDS if config.record_type == "hackathon" else ()):
             if field in verification:
                 row[field] = verification[field]
         existing_evidence = row.get("official_evidence")
@@ -1428,6 +1431,7 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
         if config.record_type == "hackathon":
             row["title"] = row.get("title") or row.get("programme_name")
             row["registration_deadline"] = row.get("deadline")
+            row["application_url"] = row.get("application_url") or row.get("official_url")
             row["status"] = {"programme_status": row.get("programme_status")}["programme_status"]
         row["manually_verified"] = True
         row["verified_at"] = verified_at

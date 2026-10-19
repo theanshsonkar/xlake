@@ -81,13 +81,21 @@ class SharedUrlTests(unittest.TestCase):
 class HackathonVerificationTests(unittest.TestCase):
     def test_creates_hackathon_row_and_loader(self):
         from categories.hackathons import hackathons
-        self.assertEqual(hackathons.load_verifications(), [])
-        rec = record(programme_id="hack-sih", title="Smart India Hackathon", official_url="https://sih.gov.in/")
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            self.assertEqual(hackathons.load_verifications(os.path.join(td, "missing.json")), [])
+        rec = record(programme_id="hack-sih", title="Smart India Hackathon", official_url="https://sih.gov.in/",
+                     start_date="2026-12-10", end_date="2026-12-12", location="Pune", team_min=2, team_max=6,
+                     prize="Rs 1 lakh", top_prize="Rs 50,000")
         out = hackathons.apply_verifications([], [rec], NOW)
         row = out[0]
         self.assertEqual((row["record_type"], row["category"], row["status"]), ("hackathon", "hackathons", "open"))
         self.assertEqual(row["hackathon_id"], "https://sih.gov.in/")
         self.assertEqual(row["registration_deadline"], "2026-12-01")
+        self.assertEqual((row["start_date"], row["end_date"], row["location"], row["team_min"], row["team_max"]),
+                         ("2026-12-10", "2026-12-12", "Pune", 2, 6))
+        self.assertEqual((row["prize"], row["top_prize"]), ("Rs 1 lakh", "Rs 50,000"))
+        self.assertEqual(row["application_url"], "https://sih.gov.in/")
         again = hackathons.apply_verifications(out, [rec], NOW)
         self.assertEqual(len(again), 1)
 

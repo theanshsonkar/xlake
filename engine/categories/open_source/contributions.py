@@ -33,16 +33,63 @@ REVERIFY_BATCH_SIZE = 4
 DISCOVERY_MIN_STARS = 500
 DISCOVERY_MIN_GOOD_FIRST_ISSUES = 3
 DISCOVERY_PUSHED_WITHIN_DAYS = 60
-DISCOVERY_REPOS_PER_LANGUAGE = 10
-DISCOVERY_MAX_REPOS = 200
+DISCOVERY_REPOS_PER_LANGUAGE = 30
+DISCOVERY_MAX_REPOS = 500
+# An issue idle for >STALE_DAYS is still admitted while its repo was pushed to
+# within REPO_ACTIVE_DAYS, but never past ABSOLUTE_STALE_DAYS of silence.
+REPO_ACTIVE_DAYS = 60
+ABSOLUTE_STALE_DAYS = 365
+MAX_ISSUES_PER_REPO = 30
+# Label queries per repo (GitHub ANDs comma-separated labels). Later queries run
+# only while the repo is below MAX_ISSUES_PER_REPO.
+FETCH_LABEL_QUERIES = (
+    "good first issue", "good-first-issue", "beginner", "first-timers-only",
+    "help wanted,easy",
+)
+FETCH_WORKERS = 4
+RATE_LIMIT_FLOOR = 150  # stop optional calls (PR checks, extra labels) below this
 # Extra star bands searched after the >=500 pass; floor 100 keeps out low-quality repos.
 DISCOVERY_EXTRA_STAR_BANDS = ("100..499",)
 DISCOVERY_LANGUAGES = [
     "Python", "JavaScript", "TypeScript", "Java", "Go", "Rust",
-    "C++", "C", "Ruby", "PHP", "C#", "Kotlin",
+    "C++", "C", "Ruby", "PHP", "C#", "Kotlin", "Swift", "Dart",
 ]
 DISCOVERY_REQUEST_DELAY = 2
-GOOD_FIRST_ISSUE_LABELS = {"good first issue", "good-first-issue"}
+GOOD_FIRST_ISSUE_LABELS = {
+    "good first issue", "good-first-issue", "good first bug", "beginner",
+    "beginner friendly", "beginner-friendly", "first-timers-only",
+    "first timers only", "first-timer-only",
+}
+_HELP_WANTED_LABEL = "help wanted"
+_EASY_LABELS = {"easy", "difficulty: easy", "difficulty/easy", "level: easy"}
+
+
+def matched_beginner_label(normalized_labels):
+    """The label that qualifies an issue as beginner-friendly, else None.
+
+    Accepts the good-first-issue family, or "help wanted" combined with "easy".
+    """
+    for label in normalized_labels:
+        if label in GOOD_FIRST_ISSUE_LABELS:
+            return label
+    if _HELP_WANTED_LABEL in normalized_labels:
+        for label in normalized_labels:
+            if label in _EASY_LABELS:
+                return "{} + {}".format(_HELP_WANTED_LABEL, label)
+    return None
+
+
+def _is_stale(updated_at, checked_at, repo_pushed_at=None):
+    """Idle past STALE_DAYS, unless the repo itself is active (and issue < 1y old)."""
+    age = _age_days(updated_at, checked_at)
+    if age is None:
+        return None
+    if age <= STALE_DAYS:
+        return False
+    if age > ABSOLUTE_STALE_DAYS:
+        return True
+    repo_age = _age_days(repo_pushed_at, checked_at) if repo_pushed_at else None
+    return not (repo_age is not None and repo_age <= REPO_ACTIVE_DAYS)
 IN_PROGRESS_LABEL_MARKERS = (
     "in pr", "in-pr", "has pr", "has-pr", "in progress", "in-progress",
     "wip", "being worked", "claimed",
@@ -124,6 +171,44 @@ CURATED_REPOS = (
     ("traefik/traefik", "Go"),
     ("apache/dubbo", "Java"),
     ("apache/kafka", "Java"),
+    # More India-origin projects
+    ("SigNoz/signoz", "TypeScript"),
+    ("frappe/hrms", "Python"),
+    ("frappe/lms", "Vue"),
+    ("frappe/helpdesk", "Vue"),
+    ("AI4Bharat/IndicTrans2", "Python"),
+    ("razorpay/blade", "TypeScript"),
+    ("openMF/mifos-mobile", "Kotlin"),
+    # Beginner-friendly projects across languages
+    ("zulip/zulip", "Python"),
+    ("oppia/oppia", "Kotlin"),
+    ("processing/p5.js", "JavaScript"),
+    ("meshery/meshery", "Go"),
+    ("layer5io/layer5", "JavaScript"),
+    ("AntennaPod/AntennaPod", "Java"),
+    ("thunderbird/thunderbird-android", "Kotlin"),
+    ("wordpress-mobile/WordPress-Android", "Kotlin"),
+    ("mastodon/mastodon-ios", "Swift"),
+    ("wordpress-mobile/WordPress-iOS", "Swift"),
+    ("realm/SwiftLint", "Swift"),
+    ("Alamofire/Alamofire", "Swift"),
+    ("flutter/flutter", "Dart"),
+    ("flutter/devtools", "Dart"),
+    ("rrousselGit/riverpod", "Dart"),
+    ("flame-engine/flame", "Dart"),
+    ("AppFlowy-IO/AppFlowy", "Dart"),
+    ("ClickHouse/ClickHouse", "C++"),
+    ("oneapi-src/oneTBB", "C++"),
+    ("jenkinsci/jenkins", "Java"),
+    ("apache/airflow", "Python"),
+    ("apache/superset", "TypeScript"),
+    ("ray-project/ray", "Python"),
+    ("langchain-ai/langchain", "Python"),
+    ("nodejs/nodejs.org", "TypeScript"),
+    ("microsoft/vscode", "TypeScript"),
+    ("golang/go", "Go"),
+    ("cockroachdb/cockroach", "Go"),
+    ("rust-lang/rust-clippy", "Rust"),
 )
 REPO_LANGUAGES = dict(CURATED_REPOS)
 
@@ -177,7 +262,7 @@ def _github_headers(token=None):
     return headers
 
 
-def _issue_admission_reason(issue, checked_at):
+def _issue_admission_reason(issue, checked_at, repo_pushed_at=None):
     """Return a stable rejection reason, or None when an issue is admitted."""
     if not isinstance(issue, dict):
         return "needs-confirmation"
@@ -199,7 +284,7 @@ def _issue_admission_reason(issue, checked_at):
             return "needs-confirmation"
         label_names.append(label["name"])
     normalized_labels = [label.strip().casefold() for label in label_names]
-    if not any(label in GOOD_FIRST_ISSUE_LABELS for label in normalized_labels):
+    if matched_beginner_label(normalized_labels) is None:
         return "missing-good-first-issue-label"
 
     assignee = issue.get("assignee")
@@ -233,10 +318,10 @@ def _issue_admission_reason(issue, checked_at):
     updated_at = issue.get("updated_at")
     if _parse_timestamp(updated_at) is None or _parse_timestamp(checked_at) is None:
         return "needs-confirmation"
-    activity_age_days = _age_days(updated_at, checked_at)
-    if activity_age_days is None:
+    stale = _is_stale(updated_at, checked_at, repo_pushed_at)
+    if stale is None:
         return "needs-confirmation"
-    if activity_age_days > STALE_DAYS:
+    if stale:
         return "stale"
     return None
 
@@ -301,29 +386,62 @@ def _fetch_issue(repo, issue_number):
         return _IssueFetchResult()
 
 
-def _default_fetch(repo):
-    params = urlencode({
-        "state": "open",
-        "labels": "good first issue",
-        "per_page": 15,
-        "sort": "updated",
-        "direction": "desc",
-    })
-    url = "https://api.github.com/repos/{}/issues?{}".format(repo, params)
-    headers = {
-        "Accept": "application/vnd.github+json",
-        "User-Agent": "opportunity-radar",
-        "X-GitHub-Api-Version": "2022-11-28",
-    }
-    token = _github_token()
-    if token:
-        headers["Authorization"] = "Bearer " + token
-    req = request.Request(url, headers=headers)
+_RATE = {"remaining": None}
+
+
+def _note_rate(headers):
+    try:
+        value = headers.get("X-RateLimit-Remaining") if headers else None
+        if value is not None:
+            _RATE["remaining"] = int(value)
+    except (TypeError, ValueError, AttributeError):
+        pass
+
+
+def _rate_low():
+    remaining = _RATE["remaining"]
+    return remaining is not None and remaining < RATE_LIMIT_FLOOR
+
+
+def _get_json(url):
+    req = request.Request(url, headers=_github_headers())
     with request.urlopen(req) as response:
-        issues = json.load(response)
-    if not isinstance(issues, list):
-        raise ValueError("GitHub issues response was not a list")
-    return issues
+        _note_rate(getattr(response, "headers", None))
+        return json.load(response)
+
+
+def _default_fetch(repo):
+    """Open beginner issues for a repo, newest activity first, capped per repo.
+
+    One request per label family; later families are skipped once the cap is
+    reached or the rate-limit budget is nearly spent. The first query raises on
+    failure (repo counted failed); later ones are best-effort.
+    """
+    merged = {}
+    for index, labels in enumerate(FETCH_LABEL_QUERIES):
+        if index and (len(merged) >= MAX_ISSUES_PER_REPO or _rate_low()):
+            break
+        params = urlencode({
+            "state": "open",
+            "labels": labels,
+            "per_page": MAX_ISSUES_PER_REPO,
+            "sort": "updated",
+            "direction": "desc",
+        })
+        url = "https://api.github.com/repos/{}/issues?{}".format(repo, params)
+        try:
+            issues = _get_json(url)
+            if not isinstance(issues, list):
+                raise ValueError("GitHub issues response was not a list")
+        except Exception:
+            if index == 0:
+                raise
+            continue
+        for issue in issues:
+            if isinstance(issue, dict) and issue.get("number") is not None:
+                merged.setdefault(issue["number"], issue)
+    ordered = sorted(merged.values(), key=_updated_sort_key, reverse=True)
+    return ordered[:MAX_ISSUES_PER_REPO * 2]
 
 
 def _default_search_fetch(query, token):
@@ -508,15 +626,14 @@ def _issue_description(issue, repo_info):
 
 
 def _default_repo_fetch(repo):
-    req = request.Request("https://api.github.com/repos/{}".format(repo), headers=_github_headers())
-    with request.urlopen(req) as response:
-        info = json.load(response)
+    info = _get_json("https://api.github.com/repos/{}".format(repo))
     if not isinstance(info, dict):
         raise ValueError("repo response was not an object")
     return {
         "description": info.get("description"),
         "stars": info.get("stargazers_count"),
         "language": info.get("language"),
+        "pushed_at": info.get("pushed_at"),
         "avatar_url": (info.get("owner") or {}).get("avatar_url"),
     }
 
@@ -524,9 +641,9 @@ def _default_repo_fetch(repo):
 def _default_pr_check(repo, number):
     """True when the issue has an open linked/cross-referenced pull request."""
     url = "https://api.github.com/repos/{}/issues/{}/timeline?per_page=100".format(repo, number)
-    req = request.Request(url, headers=_github_headers())
-    with request.urlopen(req) as response:
-        events = json.load(response)
+    if _rate_low():
+        return False  # budget spent: admit rather than burn the last calls
+    events = _get_json(url)
     for event in events if isinstance(events, list) else []:
         if event.get("event") == "connected":
             return True
@@ -550,6 +667,7 @@ def _derive_difficulty(labels):
 
 def build_row(repo, issue, checked_at, language=None, discovery_source="curated", repo_stars=None, repo_info=None):
     repo_info = repo_info or {}
+    matched = matched_beginner_label([str(l.get("name", "")).strip().casefold() for l in issue.get("labels", [])])
     issue_url = issue["html_url"]
     created_at = issue.get("created_at")
     updated_at = issue.get("updated_at")
@@ -582,6 +700,7 @@ def build_row(repo, issue, checked_at, language=None, discovery_source="curated"
         "difficulty_signal": difficulty_signal,
         "discovery_source": discovery_source,
         "repo_stars": repo_stars if repo_stars is not None else repo_info.get("stars"),
+        "repo_pushed_at": repo_info.get("pushed_at"),
         "issue_number": issue["number"],
         "created_at": created_at,
         "posted_on": created_at,
@@ -601,7 +720,7 @@ def build_row(repo, issue, checked_at, language=None, discovery_source="curated"
         "status": "open",
         "official_evidence": {
             "title": {"quote": issue["title"], "url": issue_url},
-            "label": {"quote": "good first issue", "url": issue_url},
+            "label": {"quote": matched or "good first issue", "url": issue_url},
         },
         "source_confirmation": "official_source",
         "source_mechanism": "github_api",
@@ -609,12 +728,15 @@ def build_row(repo, issue, checked_at, language=None, discovery_source="curated"
     }
 
 
-def parse_repo(repo, issues, checked_at, language=None, discovery_source="curated", repo_stars=None, repo_info=None, pr_check=None):
+def parse_repo(repo, issues, checked_at, language=None, discovery_source="curated", repo_stars=None, repo_info=None, pr_check=None, known_clean=None):
     rows = []
     if not isinstance(issues, list):
         return rows
-    for issue in issues:
-        if _issue_admission_reason(issue, checked_at) is not None:
+    ordered = sorted((i for i in issues if isinstance(i, dict)), key=_updated_sort_key, reverse=True)
+    for issue in ordered:
+        if len(rows) >= MAX_ISSUES_PER_REPO:
+            break
+        if _issue_admission_reason(issue, checked_at, (repo_info or {}).get("pushed_at")) is not None:
             continue
         try:
             rows.append(build_row(
@@ -628,13 +750,14 @@ def parse_repo(repo, issues, checked_at, language=None, discovery_source="curate
             ))
         except (KeyError, TypeError, ValueError):
             continue
-        if pr_check is not None:
+        if pr_check is not None and not (
+                known_clean and known_clean.get((repo, issue.get("number"))) == issue.get("updated_at")):
             try:
                 if pr_check(repo, issue.get("number")):
                     rows.pop()  # linked PR: someone is already on it
             except Exception:
                 pass
-    return sorted(rows, key=_updated_sort_key, reverse=True)
+    return sorted(rows, key=_updated_sort_key, reverse=True)[:MAX_ISSUES_PER_REPO]
 
 
 def _load_json(path, default):
@@ -856,7 +979,7 @@ def _reverify_rows(existing_rows, checked_at):
                 stats["failed"] += 1
                 stats["untouched"] += 1
                 continue
-            reason = _issue_admission_reason(result.issue, checked_at)
+            reason = _issue_admission_reason(result.issue, checked_at, row.get("repo_pushed_at"))
             refresh_fields = _issue_refresh_fields(result.issue, checked_at)
             if reason == "needs-confirmation" or refresh_fields is None:
                 row[_INTERNAL_REVERIFY_UNTOUCHED] = True
@@ -993,8 +1116,7 @@ def merge_contributions(rows_by_repo, successful_repos, lake_path=OPPORTUNITIES_
             continue
         if row.get("record_type", "contribution") != "contribution" or not row.get("is_live"):
             continue
-        age = _age_days(row.get("updated_at"), now_dt)
-        if age is not None and age > STALE_DAYS:
+        if _is_stale(row.get("updated_at"), now_dt, row.get("repo_pushed_at")):
             row["is_live"] = False
             row["needs_confirmation"] = True
             row["liveness_reason"] = "stale_activity"
@@ -1065,34 +1187,50 @@ def collect(
     if pr_check is None and token:
         pr_check = _default_pr_check
     existing_rows = _load_json(lake_path, [])
+    known_clean = {}
+    if pr_check is not None:
+        # Issues already live with unchanged activity were PR-checked on a prior run.
+        known_clean = {
+            (row.get("repo"), row.get("issue_number")): row.get("updated_at")
+            for row in existing_rows
+            if isinstance(row, dict) and row.get("record_type") == "contribution"
+            and row.get("is_live") is True and row.get("updated_at")
+        }
     existing_rows, reverification = _reverify_rows(existing_rows, checked_at)
     rows_by_repo = {}
     successful_repos = set()
     failed_repos = set()
+    def _process(spec):
+        repo = spec["repo"]
+        issues = fetch(repo)
+        try:
+            repo_info = repo_fetch(repo) if repo_fetch else {}
+        except Exception:
+            repo_info = {}
+        if not isinstance(repo_info, dict):
+            repo_info = {}
+        return parse_repo(
+            repo,
+            issues,
+            checked_at,
+            language=spec["language"],
+            discovery_source=spec["discovery_source"],
+            repo_stars=spec["repo_stars"],
+            repo_info=repo_info,
+            pr_check=pr_check,
+            known_clean=known_clean,
+        )
+
     if not reverification["rate_limit_detected"]:
-        for spec in repo_specs:
-            repo = spec["repo"]
-            try:
-                issues = fetch(repo)
+        with ThreadPoolExecutor(max_workers=FETCH_WORKERS) as executor:
+            futures = {executor.submit(_process, spec): spec["repo"] for spec in repo_specs}
+            for future in as_completed(futures):
+                repo = futures[future]
                 try:
-                    repo_info = repo_fetch(repo) if repo_fetch else {}
+                    rows_by_repo[repo] = future.result()
+                    successful_repos.add(repo)
                 except Exception:
-                    repo_info = {}
-                if not isinstance(repo_info, dict):
-                    repo_info = {}
-                rows_by_repo[repo] = parse_repo(
-                    repo,
-                    issues,
-                    checked_at,
-                    language=spec["language"],
-                    discovery_source=spec["discovery_source"],
-                    repo_stars=spec["repo_stars"],
-                    repo_info=repo_info,
-                    pr_check=pr_check,
-                )
-                successful_repos.add(repo)
-            except Exception:
-                failed_repos.add(repo)
+                    failed_repos.add(repo)
     rows = merge_contributions(
         rows_by_repo,
         successful_repos,
