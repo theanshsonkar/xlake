@@ -31,6 +31,7 @@ class ProgrammeConfig:
     verifications_path: str
     needs_confirmation_floor: bool = False
     next_cycle: bool = False  # past-deadline recurring programmes -> upcoming + next_cycle_hint
+    record_type: str = "programme"  # "hackathon" for the hackathons verification overlay
 
 
 
@@ -1237,6 +1238,7 @@ EXTENDED_OVERLAY_FIELDS = (
     "summary", "requirements", "region", "mode", "logo_url", "organizer", "levels",
     "intl_eligible", "citizenship", "funding_amount", "funding_currency", "funding_period",
     "program_start", "program_end", "recheck_after", "title",
+    "gender", "underrepresented", "age_limit",
 )
 
 
@@ -1305,29 +1307,38 @@ def _later_timestamp(existing, candidate: str) -> str:
         return candidate
 
 
-def _find_verification_row(rows: List[Dict], verification: Dict, category: str) -> Optional[Dict]:
-    """Match a hand-verified record to an existing row: id, then official URL, then title+organiser."""
+def _row_name_key(row: Dict) -> str:
+    return _normalised_programme_name(row.get("programme_name") or row.get("title") or row.get("name"))
+
+
+def _find_verification_row(rows: List[Dict], verification: Dict, category: str, record_type: str = "programme") -> Optional[Dict]:
+    """Match a hand-verified record to an existing row: id, then official URL + title, then title + organiser.
+
+    Distinct schemes can share one official URL (e.g. a portal listing page), so a URL match
+    only counts when the normalised titles also agree (or the record carries no title).
+    """
     programme_id = verification["programme_id"]
-    programmes = [r for r in rows if r.get("record_type") == "programme"]
-    by_id = next((r for r in programmes if r.get("programme_id") == programme_id), None)
+    programmes = [r for r in rows if r.get("record_type") == record_type]
+    by_id = next((r for r in programmes if r.get("programme_id") == programme_id
+                  or (record_type != "programme" and r.get("hackathon_id") == programme_id)), None)
     if by_id is not None:
         return by_id
+    name_key = _normalised_programme_name(
+        verification.get("programme_name") or verification.get("title") or verification.get("name"))
     wanted = {u for u in (_normalise_programme_url(verification.get("official_url")),
                           _normalise_programme_url(verification.get("application_url"))) if u}
     if wanted:
         for row in programmes:
             if row.get("category") != category:
                 continue
-            if wanted & {_normalise_programme_url(row.get("official_url")), _normalise_programme_url(row.get("application_url"))}:
+            if not wanted & {_normalise_programme_url(row.get("official_url")), _normalise_programme_url(row.get("application_url"))}:
+                continue
+            if not name_key or _row_name_key(row) == name_key:
                 return row
-    name = verification.get("programme_name") or verification.get("title") or verification.get("name")
-    name_key = _normalised_programme_name(name)
     if name_key:
         org_key = _normalised_programme_name(verification.get("organizer"))
         for row in programmes:
-            if row.get("category") != category:
-                continue
-            if _normalised_programme_name(row.get("programme_name") or row.get("title")) != name_key:
+            if row.get("category") != category or _row_name_key(row) != name_key:
                 continue
             row_org = _normalised_programme_name(row.get("organizer"))
             if not org_key or not row_org or row_org == "not stated" or org_key == row_org:
@@ -1353,14 +1364,14 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
             print("Skipping invalid programme verification {}: {}".format(identifier or "<missing id>", reason), file=sys.stderr)
             continue
         programme_id = verification["programme_id"]
-        row = _find_verification_row(result, verification, config.category)
+        row = _find_verification_row(result, verification, config.category, config.record_type)
         verified_at = _timestamp(verification.get("verified_at")) or now_value
         verified_by = verification.get("verified_by") or "manual-verification"
         seed = source_by_id.get(programme_id, {})
         if row is None:
             official_url = seed.get("official_url") or verification.get("official_url")
             row = {
-                "record_type": "programme",
+                "record_type": config.record_type,
                 "category": config.category,
                 "opportunity_type": config.opportunity_type,
                 "programme_id": programme_id,
@@ -1384,6 +1395,10 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
                 "first_seen": now_value,
                 "last_seen": now_value,
             }
+            if config.record_type == "hackathon":
+                row["hackathon_id"] = official_url or programme_id
+                row["title"] = row["programme_name"]
+                row["source"] = "official"
             result.append(row)
         for field in overlay_fields:
             if field in verification:
@@ -1410,6 +1425,10 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
             # A hand-verified record is its own source; never hide it as an orphan.
             row["hidden_reason"] = None
             row.pop("went_dead_at", None)
+        if config.record_type == "hackathon":
+            row["title"] = row.get("title") or row.get("programme_name")
+            row["registration_deadline"] = row.get("deadline")
+            row["status"] = {"programme_status": row.get("programme_status")}["programme_status"]
         row["manually_verified"] = True
         row["verified_at"] = verified_at
         row["verified_by"] = verified_by
@@ -1435,6 +1454,8 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
             row["verification_flag"] = expiry_reason
         else:
             row.pop("verification_flag", None)
+        if config.record_type == "hackathon":
+            row["status"] = row.get("programme_status")
     return result
 
 
@@ -1648,8 +1669,10 @@ def dedupe_across_categories(lake_rows: List[Dict], now: str) -> int:
                 or row.get("hidden_reason")):
             continue
         key = _normalise_programme_url(row.get("official_url"))
-        if key and key.count("/") >= 1 and key.split("/", 1)[1].strip("/"):
-            groups.setdefault(key, []).append(row)
+        name = _row_name_key(row)
+        # Same URL alone is not enough: distinct schemes may share a listing page.
+        if key and name and key.split("/", 1)[1].strip("/"):
+            groups.setdefault((key, name), []).append(row)
     order = [c for c, _ in _PRIMARY_CATEGORY_KEYWORDS]
     hidden = 0
     for rows in groups.values():

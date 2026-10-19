@@ -39,7 +39,7 @@ class VerifiedCreateTests(unittest.TestCase):
 
     def test_matches_existing_by_url_no_duplicate(self):
         existing = {"record_type": "programme", "category": CFG.category, "programme_id": "seed-x",
-                    "programme_name": "Other", "official_url": "https://www.official.example/prog/"}
+                    "programme_name": "Hand Programme", "official_url": "https://www.official.example/prog/"}
         out = core.apply_verifications([existing], [record()], NOW, config=CFG)
         self.assertEqual(len(out), 1)
         self.assertEqual(out[0]["programme_id"], "seed-x")
@@ -58,6 +58,38 @@ class VerifiedCreateTests(unittest.TestCase):
         self.assertIsNone(out[0]["hidden_reason"])
         out = core.apply_verifications([existing], [record()], "2026-12-30T00:00:00Z", config=CFG)
         self.assertEqual(out[0]["programme_status"], "needs_confirmation")
+
+
+class SharedUrlTests(unittest.TestCase):
+    def test_distinct_schemes_sharing_url_not_merged(self):
+        url = "https://scholarships.gov.in/All-Scholarships"
+        recs = [record(programme_id="nsp-%d" % i, title="Scheme %d" % i, official_url=url) for i in range(3)]
+        out = core.apply_verifications([], recs, NOW, config=CFG)
+        self.assertEqual(sorted(r["programme_id"] for r in out), ["nsp-0", "nsp-1", "nsp-2"])
+
+    def test_cross_category_dedupe_needs_title_match(self):
+        a = {"record_type": "programme", "category": "fellowship", "programme_id": "a", "programme_name": "Scheme A",
+             "official_url": "https://p.gov.in/all", "is_live": True}
+        b = dict(a, category="scholarship", programme_id="b", programme_name="Scheme B")
+        self.assertEqual(core.dedupe_across_categories([a, b], NOW), 0)
+
+    def test_gender_overlay_fields(self):
+        row = core.apply_verifications([], [record(gender="female", age_limit="18-25", underrepresented=True)], NOW, config=CFG)[0]
+        self.assertEqual((row["gender"], row["age_limit"], row["underrepresented"]), ("female", "18-25", True))
+
+
+class HackathonVerificationTests(unittest.TestCase):
+    def test_creates_hackathon_row_and_loader(self):
+        from categories.hackathons import hackathons
+        self.assertEqual(hackathons.load_verifications(), [])
+        rec = record(programme_id="hack-sih", title="Smart India Hackathon", official_url="https://sih.gov.in/")
+        out = hackathons.apply_verifications([], [rec], NOW)
+        row = out[0]
+        self.assertEqual((row["record_type"], row["category"], row["status"]), ("hackathon", "hackathons", "open"))
+        self.assertEqual(row["hackathon_id"], "https://sih.gov.in/")
+        self.assertEqual(row["registration_deadline"], "2026-12-01")
+        again = hackathons.apply_verifications(out, [rec], NOW)
+        self.assertEqual(len(again), 1)
 
 
 class RegionTests(unittest.TestCase):

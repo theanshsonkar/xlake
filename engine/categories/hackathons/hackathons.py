@@ -16,7 +16,7 @@ from urllib import error, request
 from urllib.parse import urlencode, urljoin, urlsplit, urlunsplit
 
 from core import robots
-from core.paths import OPPORTUNITIES_PATH
+from core.paths import OPERATIONS_DIR, OPPORTUNITIES_PATH
 
 
 USER_AGENT = "Mozilla/5.0 (compatible; OpportunityRadarBot/1.0; +https://opportunity-radar.example)"
@@ -1421,6 +1421,29 @@ def merge_hackathons(rows_by_id, successful_sources, lake_path=OPPORTUNITIES_PAT
     return merged
 
 
+HACKATHON_VERIFICATIONS_PATH = os.path.join(OPERATIONS_DIR, "hackathon_programme_verifications.json")
+
+
+def _verification_config():
+    from categories.programme_core import ProgrammeConfig
+    return ProgrammeConfig(
+        category="hackathons", opportunity_type="hackathon", source_registry=(),
+        observations_path="", verifications_path=HACKATHON_VERIFICATIONS_PATH,
+        record_type="hackathon",
+    )
+
+
+def load_verifications(path=HACKATHON_VERIFICATIONS_PATH):
+    from categories import programme_core
+    return programme_core.load_verifications(path)
+
+
+def apply_verifications(rows, verifications, now):
+    """Overlay hand-verified hackathon records (SIH, Flipkart GRiD, ...), creating missing rows."""
+    from categories import programme_core
+    return programme_core.apply_verifications(rows, verifications, now, config=_verification_config())
+
+
 def collect(
     devpost_fetch=devpost_fetch,
     mlh_fetch=mlh_fetch,
@@ -1515,6 +1538,9 @@ def collect(
         rows_by_id, successful_sources, lake_path=lake_path, now=checked_at,
         today=_checked_date(checked_at),
     )
+    verifications = load_verifications()
+    if verifications:
+        _atomic_json(lake_path, apply_verifications(_load_json(lake_path, []), verifications, checked_at))
     return {
         "devpost": counts["devpost"],
         "mlh": counts["mlh"],

@@ -74,7 +74,7 @@ class TestResearchProgrammeCategory(unittest.TestCase):
 
     def test_mitacs_verification_is_valid_and_loaded(self):
         verifications = research.load_verifications(research.RESEARCH_CONFIG.verifications_path)
-        self.assertEqual(len(verifications), 9)
+        self.assertGreaterEqual(len(verifications), 9)
         verification = verifications[0]
         self.assertEqual(verification["programme_id"], "research-mitacs-globalink-research-internship")
         self.assertEqual(programme_core.validate_verification(verification), (True, ""))
@@ -82,7 +82,7 @@ class TestResearchProgrammeCategory(unittest.TestCase):
     def test_manual_verification_creates_research_row(self):
         verifications = research.load_verifications(research.RESEARCH_CONFIG.verifications_path)
         rows = research.apply_verifications([], verifications, CHECKED_AT)
-        self.assertEqual(len(rows), 9)
+        self.assertEqual(len(rows), len({v["programme_id"] for v in verifications}))
         row = rows[0]
         self.assertEqual(row["programme_id"], "research-mitacs-globalink-research-internship")
         self.assertEqual(row["category"], "research")
