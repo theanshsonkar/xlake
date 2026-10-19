@@ -111,6 +111,8 @@ EXTRA_KEYS = [
     "prize", "tags", "start_date", "end_date", "is_online",
     "registration_deadline", "source", "logo_url", "status", "themes",
     "participants", "mode", "region", "organizer_domain", "deadline_basis",
+    "source_kind", "listed_on", "team_min", "team_max", "tracks", "timezone",
+    "prize_pool_usd", "top_prize", "rounds", "perks", "stipend",
     # programmes
     "organizer", "programme_status", "opening_date", "opportunity_type",
     "international_eligibility", "funding_amount_usd", "intl_eligible", "levels",

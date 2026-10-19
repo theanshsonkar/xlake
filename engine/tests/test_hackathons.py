@@ -57,6 +57,37 @@ def _fake_fetchers():
 
 
 class TestHackathonsCollector(unittest.TestCase):
+    def setUp(self):
+        from unittest.mock import patch
+        from categories.hackathons import hackathons as module
+        patcher = patch.object(module, "_devfolio_fetch_default", lambda: [])
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def test_devfolio_official_site_listed_on_and_dedupe(self):
+        from categories.hackathons.hackathons import normalize_devfolio, dedupe_rows, build_row, region_for
+        hit = {"_source": {
+            "name": "BIOS V2", "slug": "biosv2", "starts_at": "2026-10-30T06:30:00+00:00",
+            "ends_at": "2026-11-01T06:30:00+00:00", "is_online": False, "city": "Patiala",
+            "state": "Punjab", "country": "India", "team_min": 2, "team_size": 4,
+            "timezone": "Asia/Calcutta", "themes": [{"theme": {"name": "AI"}}],
+            "hackathon_setting": {"reg_ends_at": "2026-11-20T18:29:00+00:00", "site": "https://bios.example.org/", "logo": "https://x/logo.png"},
+        }}
+        rows = normalize_devfolio({"hits": {"hits": [hit]}}, "2026-10-19T00:00:00+00:00")
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertEqual(row["official_url"], "https://bios.example.org/")
+        self.assertEqual(row["source_kind"], "official")
+        self.assertEqual(row["hackathon_id"], "https://biosv2.devfolio.co/")
+        self.assertEqual((row["team_min"], row["team_max"]), (2, 4))
+        self.assertEqual(row["region"], "India")
+        other = dict(row, source="devpost", official_url="https://bios.devpost.com/", hackathon_id="https://bios.devpost.com/",
+                     listed_on=[{"name": "devpost", "url": "https://bios.devpost.com/"}], source_kind="aggregator")
+        merged = dedupe_rows({"a": row, "b": other})
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(len(next(iter(merged.values()))["listed_on"]), 2)
+        self.assertEqual(region_for(location="Fort Worth"), "US")
+
     def test_merge_safety_preserves_all_non_hackathon_records(self):
         seeded = [
             {"title": "A job", "official_url": "https://jobs.example/1"},
@@ -127,7 +158,7 @@ class TestHackathonsCollector(unittest.TestCase):
             self.assertEqual(row["record_type"], "hackathon")
             self.assertEqual(row["category"], "hackathons")
             self.assertEqual(row["opportunity_type"], "hackathon")
-            self.assertEqual(row["hackathon_id"], row["official_url"])
+            self.assertEqual(row["hackathon_id"], row["application_url"])
             self.assertTrue(row["official_url"].startswith("http"))
 
     def test_mlh_strips_utm_parameters(self):

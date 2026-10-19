@@ -34,7 +34,9 @@ DISCOVERY_MIN_STARS = 500
 DISCOVERY_MIN_GOOD_FIRST_ISSUES = 3
 DISCOVERY_PUSHED_WITHIN_DAYS = 60
 DISCOVERY_REPOS_PER_LANGUAGE = 10
-DISCOVERY_MAX_REPOS = 120
+DISCOVERY_MAX_REPOS = 200
+# Extra star bands searched after the >=500 pass; floor 100 keeps out low-quality repos.
+DISCOVERY_EXTRA_STAR_BANDS = ("100..499",)
 DISCOVERY_LANGUAGES = [
     "Python", "JavaScript", "TypeScript", "Java", "Go", "Rust",
     "C++", "C", "Ruby", "PHP", "C#", "Kotlin",
@@ -104,6 +106,24 @@ CURATED_REPOS = (
     ("tauri-apps/tauri", "Rust"),
     ("supabase/supabase", "TypeScript"),
     ("pola-rs/polars", "Rust"),
+    # India-origin popular projects
+    ("frappe/erpnext", "Python"),
+    ("frappe/frappe", "Python"),
+    ("appsmithorg/appsmith", "TypeScript"),
+    ("hoppscotch/hoppscotch", "TypeScript"),
+    ("ToolJet/ToolJet", "JavaScript"),
+    ("juspay/hyperswitch", "Rust"),
+    ("keploy/keploy", "Go"),
+    ("hasura/graphql-engine", "TypeScript"),
+    ("openobserve/openobserve", "Rust"),
+    ("ohcnetwork/care_fe", "TypeScript"),
+    # Rust / Go / Java diversity
+    ("astral-sh/ruff", "Rust"),
+    ("bevyengine/bevy", "Rust"),
+    ("gin-gonic/gin", "Go"),
+    ("traefik/traefik", "Go"),
+    ("apache/dubbo", "Java"),
+    ("apache/kafka", "Java"),
 )
 REPO_LANGUAGES = dict(CURATED_REPOS)
 
@@ -323,16 +343,18 @@ def discover_repos(token, now, search_fetch=_default_search_fetch):
     curated = {repo.casefold() for repo, _language in CURATED_REPOS}
     discovered = []
     seen = set(curated)
-    for index, language in enumerate(DISCOVERY_LANGUAGES):
+    star_bands = [">={}".format(DISCOVERY_MIN_STARS)] + list(DISCOVERY_EXTRA_STAR_BANDS)
+    passes = [(language, band) for band in star_bands for language in DISCOVERY_LANGUAGES]
+    for index, (language, band) in enumerate(passes):
         if index:
             _discovery_sleep(DISCOVERY_REQUEST_DELAY)
         query = (
-            "language:{lang} good-first-issues:>{minimum} stars:>={stars} "
+            "language:{lang} good-first-issues:>{minimum} stars:{stars} "
             "pushed:>={date} updated:>={updated} archived:false is:public"
         ).format(
             lang=language,
             minimum=DISCOVERY_MIN_GOOD_FIRST_ISSUES - 1,
-            stars=DISCOVERY_MIN_STARS,
+            stars=band,
             date=pushed_since,
             updated=updated_since,
         )

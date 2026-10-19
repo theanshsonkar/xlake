@@ -201,7 +201,7 @@ class TestContributionsCollector(unittest.TestCase):
         self.assertEqual(default["labels"], ["documentation"])
 
     def test_language_annotation_is_present_for_every_curated_repo(self):
-        self.assertEqual(len(CURATED_REPOS), 45)
+        self.assertEqual(len(CURATED_REPOS), 61)
         for repo, language in CURATED_REPOS:
             issue = {
                 "html_url": "https://github.com/{}/issues/1".format(repo),
@@ -500,10 +500,11 @@ class TestContributionsCollector(unittest.TestCase):
                 search_fetch=fake_search,
             )
 
-        self.assertEqual(len(queries), 1)
+        self.assertEqual(len(queries), 2)
         self.assertIn("updated:>=2026-04-20", queries[0])
         self.assertIn("good-first-issues:>2", queries[0])
         self.assertIn("stars:>=500", queries[0])
+        self.assertIn("stars:100..499", queries[1])
 
 if __name__ == "__main__":
     unittest.main()

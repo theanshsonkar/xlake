@@ -31,9 +31,11 @@ def _stale_days():
 
 DEVPOST_MAX_PAGES = 30
 UNSTOP_MAX_PAGES = 30
+DEVFOLIO_API_URL = "https://api.devfolio.co/api/search/hackathons"
+DEVFOLIO_PAGE_SIZE = 100
 HOST_DELAY = 1.5
 DEVPOST_API_URL = "https://devpost.com/api/hackathons"
-UNSTOP_API_URL = "https://unstop.com/api/public/opportunity/search-result?opportunity=hackathons&per_page=15"
+UNSTOP_API_URL = "https://unstop.com/api/public/opportunity/search-result?opportunity=hackathons&per_page=15&oppstatus=open"
 
 _MONTHS = {
     "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
@@ -213,6 +215,23 @@ _COUNTRY_NAMES = {
 }
 
 
+_CITY_REGION = {
+    "India": "bengaluru|bangalore|mumbai|delhi|gurgaon|gurugram|noida|pune|hyderabad|chennai|kolkata|jaipur|gwalior|indore|bhopal|lucknow|ahmedabad|surat|chandigarh|patiala|kochi|trivandrum|coimbatore|nagpur|vadodara|mysuru|mysore|bhubaneswar|guwahati|dehradun|roorkee|vellore|manipal|kanpur|varanasi|patna|ranchi|raipur|visakhapatnam|vijayawada|madurai|agartala|tripura|iit|nit|iiit|bits",
+    "US": "boston|stanford|washington|seattle|san francisco|new york|chicago|austin|los angeles|atlanta|pittsburgh|philadelphia|berkeley|cambridge|princeton|denver|houston|dallas|miami|fort worth|san jose|mountain view|palo alto|ithaca|ann arbor|cornell|mit",
+    "Canada": "toronto|vancouver|montreal|waterloo|ottawa|calgary",
+    "Europe": "london|berlin|paris|amsterdam|madrid|barcelona|munich|zurich|lisbon|dublin|stockholm|warsaw|prague|vienna|copenhagen|helsinki|oslo|brussels|rome|milan",
+    "Asia": "singapore|tokyo|seoul|dubai|hong kong|shanghai|beijing|bangkok|jakarta|manila|kuala lumpur|dhaka|karachi|colombo",
+}
+
+
+def _region_from_text(location):
+    text = " " + re.sub(r"[^a-z0-9]+", " ", str(location or "").casefold()) + " "
+    for label, words in _CITY_REGION.items():
+        if any(" " + city + " " in text for city in words.split("|")):
+            return label
+    return None
+
+
 def region_for(country=None, location=None, online=False):
     """Coarse region from an ISO country code/name, else the trailing token of a location string."""
     code = None
@@ -230,7 +249,7 @@ def region_for(country=None, location=None, online=False):
     if online:
         return "Global/Online"
     if code is None:
-        return None
+        return _region_from_text(location)
     if code == "US":
         return "US"
     if code == "IN":
@@ -352,13 +371,44 @@ def build_row(
     mode=None,
     participants=None,
     deadline_basis=None,
+    official_site=None,
+    team_min=None,
+    team_max=None,
+    tracks=None,
+    timezone_name=None,
+    source_kind=None,
 ):
     is_online = _is_online(location or "")
     tag_list = list(tags or [])
     mode_text = mode if mode is not None else location
     row_mode = _mode(is_online, mode_text)
     today = _checked_date(checked_at)
-    return {
+    listing_url = official_url
+    site = _abs_https(official_site) if official_site and _usable_url(official_site) else None
+    if source_kind is None:
+        source_kind = "official" if source == "mlh" else "aggregator"
+    if site and site.rstrip("/") != listing_url.rstrip("/"):
+        primary_url, source_kind = site, "official"
+    else:
+        primary_url = listing_url
+    pool = None
+    if prize and prize.strip().startswith("$"):
+        digits = re.match(r"\$\s*([\d,]+(?:\.\d+)?)\s*([kKmM])?", prize.strip())
+        if digits:
+            pool = float(digits.group(1).replace(",", ""))
+            pool *= {"k": 1e3, "m": 1e6}.get((digits.group(2) or "").lower(), 1)
+            pool = int(pool) or None
+    extras = {
+        "source_kind": source_kind,
+        "listed_on": [{"name": source, "url": listing_url}],
+        "team_min": team_min if isinstance(team_min, int) and team_min > 0 else None,
+        "team_max": team_max if isinstance(team_max, int) and team_max > 0 else None,
+        "tracks": [t for t in (tracks or []) if t] or None,
+        "timezone": timezone_name,
+        "prize_pool_usd": pool,
+        "top_prize": prize if prize and re.search(r"[1-9]", prize) else None,
+    }
+    row = {
         "record_type": "hackathon",
         "category": "hackathons",
         "opportunity_type": "hackathon",
@@ -366,8 +416,8 @@ def build_row(
         "title": title,
         "organizer": organizer,
         "source": source,
-        "official_url": official_url,
-        "application_url": official_url,
+        "official_url": primary_url,
+        "application_url": listing_url,
         "location": location,
         "is_online": is_online,
         "start_date": start_date,
@@ -392,6 +442,8 @@ def build_row(
         "source_mechanism": source_mechanism,
         "last_checked_at": checked_at,
     }
+    row.update({k: v for k, v in extras.items() if v is not None})
+    return row
 
 
 def _usable_url(value):
@@ -836,6 +888,10 @@ def normalize_unstop(raw_list, checked_at):
             country=country,
             mode=region_value if region_value.casefold() in ("online", "offline", "hybrid", "in-person") else None,
             participants=item.get("registerCount"),
+            team_min=requirements.get("min_team_size"),
+            team_max=requirements.get("max_team_size"),
+            tracks=[w.get("name") for w in (item.get("workfunction") or []) if isinstance(w, dict)],
+            timezone_name=(re.search(r"[+-]\d\d:\d\d$", str(deadline_raw or item.get("end_date") or "")) or [None])[0],
             tags=[tag for tag in tags if tag],
             eligibility=unstop_eligibility_text(requirements.get("eligibility"), item.get("filters")),
             open_state=status,
@@ -873,6 +929,144 @@ def devpost_fetch():
             break
         rows.extend(items)
     return rows
+
+
+def _devfolio_hits(raw):
+    if isinstance(raw, dict):
+        raw = raw.get("hits", raw)
+        if isinstance(raw, dict):
+            raw = raw.get("hits", [])
+    return raw if isinstance(raw, list) else []
+
+
+def normalize_devfolio(raw_list, checked_at):
+    today = _checked_date(checked_at)
+    rows = []
+    for hit in _devfolio_hits(raw_list):
+        item = hit.get("_source", hit) if isinstance(hit, dict) else None
+        if not isinstance(item, dict) or item.get("private") or not item.get("slug"):
+            continue
+        setting = item.get("hackathon_setting") or {}
+        official_url = "https://{}.devfolio.co/".format(item["slug"])
+        start = _iso_date(item.get("starts_at"))
+        end = _iso_date(item.get("ends_at"))
+        deadline = _iso_date(setting.get("reg_ends_at"))
+        known = [d for d in (deadline, end) if d]
+        if known and date.fromisoformat(max(known)) < today:
+            continue
+        online = bool(item.get("is_online"))
+        parts = [item.get("city"), item.get("state"), item.get("country")]
+        location = "Online" if online else (", ".join(p for p in parts if p) or item.get("location"))
+        prizes = item.get("prizes") or []
+        prize = None
+        if prizes and isinstance(prizes[0], dict):
+            prize = None  # prize schema varies; never guess
+        themes = [t.get("theme", {}).get("name") if isinstance(t, dict) and isinstance(t.get("theme"), dict) else (t.get("name") if isinstance(t, dict) else str(t)) for t in item.get("themes") or []]
+        organizer = item.get("hosted_by") if isinstance(item.get("hosted_by"), str) else None
+        rows.append(build_row(
+            "devfolio",
+            title=item.get("name"),
+            official_url=official_url,
+            organizer=organizer,
+            location=location,
+            start_date=start,
+            end_date=end,
+            registration_deadline=deadline,
+            deadline_basis="registration_deadline",
+            prize=prize,
+            funding=None,
+            description=item.get("tagline") or item.get("desc"),
+            logo_url=setting.get("logo") or item.get("cover_img"),
+            country=item.get("country"),
+            mode="online" if online else "in-person",
+            participants=item.get("participants_count"),
+            tags=[t for t in themes if t],
+            eligibility="Women only" if setting.get("women_only") else None,
+            official_site=setting.get("site") or setting.get("external_apply_url"),
+            team_min=item.get("team_min"),
+            team_max=item.get("team_size"),
+            tracks=[t for t in themes if t],
+            timezone_name=item.get("timezone"),
+            open_state="upcoming" if start and start > today.isoformat() else "open",
+            source_mechanism="devfolio_public_search",
+            evidence={"source": "devfolio", "source_url": DEVFOLIO_API_URL,
+                      "reg_ends_at": setting.get("reg_ends_at"), "starts_at": item.get("starts_at")},
+            checked_at=checked_at,
+        ))
+    return rows
+
+
+def devfolio_fetch():
+    hits = []
+    for kind in ("application_open", "upcoming"):
+        offset = 0
+        while True:
+            body = json.dumps({"type": kind, "from": offset, "size": DEVFOLIO_PAGE_SIZE}).encode()
+            req = request.Request(DEVFOLIO_API_URL, data=body, headers={**_http_headers(), "Content-Type": "application/json"})
+            try:
+                with request.urlopen(req, timeout=30) as resp:
+                    payload = json.loads(resp.read().decode("utf-8"))
+            except Exception:
+                return None
+            page = _devfolio_hits(payload)
+            hits.extend(page)
+            offset += len(page)
+            if len(page) < DEVFOLIO_PAGE_SIZE:
+                break
+            time.sleep(HOST_DELAY)
+        time.sleep(HOST_DELAY)
+    return hits
+
+
+_devfolio_fetch_default = devfolio_fetch
+
+
+def _dedupe_key(row):
+    title = re.sub(r"[^a-z0-9]+", " ", str(row.get("title") or "").casefold())
+    title = re.sub(r"\b(20\d\d|hackathon|the)\b", " ", title)
+    return (" ".join(title.split()), row.get("start_date") or row.get("end_date") or "")
+
+
+_SOURCE_PRIORITY = {"devpost": 0, "mlh": 1, "devfolio": 2, "unstop": 3}
+
+
+def dedupe_rows(rows_by_id):
+    """Merge cross-source duplicates (same normalized title + start date) into one row.
+
+    The richest row wins; every source is kept in ``listed_on`` and an official
+    organiser site (when any copy has one) becomes the primary ``official_url``.
+    """
+    groups = {}
+    for url, row in rows_by_id.items():
+        key = _dedupe_key(row)
+        if not key[0] or not key[1]:
+            key = ("url", url)
+        groups.setdefault(key, []).append((url, row))
+    result = {}
+    for members in groups.values():
+        def score(member):
+            row = member[1]
+            richness = sum(1 for k in ("prize", "logo_url", "registration_deadline", "description", "location", "team_max") if row.get(k))
+            return (richness, -_SOURCE_PRIORITY.get(row.get("source"), 9))
+        members.sort(key=score, reverse=True)
+        url, winner = members[0]
+        if len(members) > 1:
+            winner = dict(winner)
+            listed = list(winner.get("listed_on") or [])
+            for _u, other in members[1:]:
+                for entry in other.get("listed_on") or []:
+                    if entry not in listed:
+                        listed.append(entry)
+                for k, v in other.items():
+                    if k in ("prize", "funding", "logo_url", "description", "team_min", "team_max", "tracks",
+                             "prize_pool_usd", "top_prize", "timezone", "eligibility") and not winner.get(k) and v:
+                        winner[k] = v
+                if other.get("source_kind") == "official" and winner.get("source_kind") != "official":
+                    winner["official_url"] = other["official_url"]
+                    winner["source_kind"] = "official"
+            winner["listed_on"] = listed
+        result[url] = winner
+    return result
 
 
 def _fetch_year(checked_at):
@@ -1231,6 +1425,7 @@ def collect(
     devpost_fetch=devpost_fetch,
     mlh_fetch=mlh_fetch,
     unstop_fetch=unstop_fetch,
+    devfolio_fetch=None,
     checked_at=None,
     lake_path=OPPORTUNITIES_PATH,
     page_fetch=None,
@@ -1242,7 +1437,7 @@ def collect(
     checked_at = checked_datetime.isoformat(timespec="seconds") if isinstance(checked_datetime, datetime) else str(checked_datetime)
     rows_by_id = {}
     successful_sources = set()
-    counts = {"devpost": 0, "mlh": 0, "unstop": 0}
+    counts = {"devpost": 0, "mlh": 0, "unstop": 0, "devfolio": 0}
 
     try:
         raw = devpost_fetch()
@@ -1290,6 +1485,21 @@ def collect(
         for row in rows:
             rows_by_id.setdefault(row["official_url"], row)
 
+    try:
+        raw = (devfolio_fetch or _devfolio_fetch_default)()
+    except Exception:
+        raw = None
+    if raw is not None:
+        rows = normalize_devfolio(raw, checked_at)
+        counts["devfolio"] = len(rows)
+        successful_sources.add("devfolio")
+        for row in rows:
+            rows_by_id.setdefault(row["official_url"], row)
+
+    before = len(rows_by_id)
+    rows_by_id = dedupe_rows(rows_by_id)
+    duplicates_removed = before - len(rows_by_id)
+
     if limit is not None:
         rows_by_id = dict(list(rows_by_id.items())[:limit])
     cache = {
@@ -1309,6 +1519,8 @@ def collect(
         "devpost": counts["devpost"],
         "mlh": counts["mlh"],
         "unstop": counts["unstop"],
+        "devfolio": counts["devfolio"],
+        "duplicates_removed": duplicates_removed,
         "total_surfaced": len(rows_by_id),
         "sources_ok": sorted(successful_sources),
     }
