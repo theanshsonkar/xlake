@@ -1857,7 +1857,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             status_counts[record.get("programme_status", "needs_confirmation")] += 1
     stats["records_by_status"] = {
         status: status_counts.get(status, 0)
-        for status in ("open", "rolling", "opening_soon", "closed", "needs_confirmation")
+        for status in ("open", "rolling", "opening_soon", "upcoming", "closed", "needs_confirmation")
     }
     stats["records_with_deadline"] = sum(1 for record in records if record.get("deadline"))
     print("hub_seeds {}: routed_research={}".format(config.category, len(routed_research)), flush=True)
