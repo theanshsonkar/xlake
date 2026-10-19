@@ -97,5 +97,70 @@
     ],
     "region": "Global",
     "mode": "online"
+  },
+  {
+    "programme_id": "community-microsoft-learn-student-ambassadors",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://learn.microsoft.com/en-us/training/student-hub/become-a-student-ambassador",
+    "official_evidence": {
+      "status": {
+        "quote": "Get started - no application required!",
+        "url": "https://learn.microsoft.com/en-us/training/student-hub/become-a-student-ambassador"
+      },
+      "funding": {
+        "quote": "Unlock program benefits, including Microsoft 365, Visual Studio Enterprise, $150 USD monthly Azure credits, badges, swag, and more.",
+        "url": "https://learn.microsoft.com/en-us/training/student-hub/become-a-student-ambassador"
+      },
+      "eligibility": {
+        "quote": "Open to students across all degree fields and levels, including those attending 2- or 4-year universities and studying part-time or full-time.",
+        "url": "https://learn.microsoft.com/en-us/training/student-hub/become-a-student-ambassador"
+      }
+    },
+    "title": "Microsoft Student Ambassadors",
+    "organizer": "Microsoft",
+    "programme_status": "rolling",
+    "summary": "Microsoft programme for students of any field to build skills and lead tech communities on campus, with benefits such as Microsoft 365, Visual Studio Enterprise and monthly Azure credits. Registration is open without an application.",
+    "funding": "Microsoft 365, Visual Studio Enterprise, $150 monthly Azure credits and swag",
+    "funding_amount": 150,
+    "funding_currency": "USD",
+    "funding_period": "monthly",
+    "eligibility": "Students across all degree fields and levels, full-time or part-time.",
+    "intl_eligible": true,
+    "region": "Global",
+    "mode": "hybrid",
+    "application_url": "https://studentambassadors.com",
+    "logo_url": "https://learn.microsoft.com/en-us/media/open-graph-image.png"
+  },
+  {
+    "programme_id": "community-gdg-on-campus",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://developers.google.com/community/gdg",
+    "official_evidence": {
+      "status": {
+        "quote": "Lead a GDG on Campus",
+        "url": "https://developers.google.com/community/gdg"
+      },
+      "eligibility": {
+        "quote": "Gain hands-on experience, develop essential skills, and build a strong foundation for a tech career.",
+        "url": "https://developers.google.com/community/gdg"
+      }
+    },
+    "title": "Google Developer Groups on Campus (GDG on Campus)",
+    "organizer": "Google Developers",
+    "programme_status": "needs_confirmation",
+    "summary": "Student-led Google developer communities at universities worldwide where students lead events and build tech skills. Organiser selection runs campus by campus, so lead applications open at different times per chapter.",
+    "eligibility": "University students; lead roles are selected per campus chapter (some chapters limit the role to third-year students).",
+    "levels": [
+      "bachelors"
+    ],
+    "intl_eligible": true,
+    "region": "Global",
+    "mode": "in-person",
+    "verification_note": "Lead selection dates are set by each chapter, e.g. one Indian chapter ran 24-30 August 2026.",
+    "logo_url": "https://www.gstatic.com/devrel-devsite/prod/v9ce9cb5b22b62a465ff52c45061a0a6a2d86a80b685e9aa8a182b203fdfbf420/developers/images/favicon-new.png"
   }
 ]

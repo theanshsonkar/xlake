@@ -504,5 +504,1553 @@
     "region": "Sweden",
     "summary": "Swedish Institute scholarship for master's studies in Sweden. Information for academic year 2027/2028 is due on the page on 19 October.",
     "verification_note": "2026 portal ran 9-25 February; 2027/2028 round not yet published as of fetch."
+  },
+  {
+    "programme_id": "scholarship-nsp-mha-pm-scholarship-police-martyred",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Prime Minister'S Scholarship Scheme For Wards Of States/UTs Police Personnel Martyred During Terror/Naxal Attacks (Merit Based Scheme) by Ministry of Home Affairs --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Prime Minister'S Scholarship Scheme For Wards Of States/UTs Police Personnel Martyred During Terror/Naxal Attacks (Merit Based Scheme) by Ministry of Home Affairs --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Prime Minister'S Scholarship Scheme For Wards Of States/UTs Police Personnel Martyred During Terror/Naxal Attacks (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Prime Minister'S Scholarship Scheme For Wards Of States/UTs Police Personnel Martyred During Terror/Naxal Attacks",
+    "organizer": "Ministry of Home Affairs",
+    "programme_status": "open",
+    "summary": "Central scholarship for wards of State/UT police personnel martyred in terror or Naxal attacks, applied for through the National Scholarship Portal.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Wards of State/UT police personnel martyred during terror or Naxal attacks."
+  },
+  {
+    "programme_id": "scholarship-nsp-mha-pm-scholarship-capf-assam-rifles",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Prime Minister'S Scholarship Scheme For Central Armed Police Forces And Assam Rifles (Merit Based Scheme) by Ministry of Home Affairs --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Prime Minister'S Scholarship Scheme For Central Armed Police Forces And Assam Rifles (Merit Based Scheme) by Ministry of Home Affairs --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Prime Minister'S Scholarship Scheme For Central Armed Police Forces And Assam Rifles (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Prime Minister'S Scholarship Scheme For Central Armed Police Forces And Assam Rifles",
+    "organizer": "Ministry of Home Affairs",
+    "programme_status": "open",
+    "summary": "Prime Minister's scholarship for wards of Central Armed Police Forces and Assam Rifles personnel, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Wards of Central Armed Police Forces and Assam Rifles personnel."
+  },
+  {
+    "programme_id": "scholarship-nsp-aicte-swanath-degree",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "AICTE - Swanath Scholarship Scheme ( Technical Degree) (Welfare Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "AICTE - Swanath Scholarship Scheme ( Technical Degree) (Welfare Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "AICTE - Swanath Scholarship Scheme ( Technical Degree) (Welfare Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "AICTE - Swanath Scholarship Scheme ( Technical Degree)",
+    "organizer": "All India Council For Technical Education",
+    "programme_status": "open",
+    "summary": "AICTE Swanath scholarship for technical degree students, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Technical degree students under the AICTE Swanath scheme."
+  },
+  {
+    "programme_id": "scholarship-nsp-pm-usp-jk-ladakh",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "PM USP Special Scholarship Scheme For Jammu Kashmir And Ladakh (Merit Based Scheme) by All India Council For Technical Education --> Scheme Open from (for Renewal): 01-06-2026 Student Application Open till (for Renewal): 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "PM USP Special Scholarship Scheme For Jammu Kashmir And Ladakh (Merit Based Scheme) by All India Council For Technical Education --> Scheme Open from (for Renewal): 01-06-2026 Student Application Open till (for Renewal): 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "PM USP Special Scholarship Scheme For Jammu Kashmir And Ladakh (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "PM USP Special Scholarship Scheme For Jammu Kashmir And Ladakh",
+    "organizer": "All India Council For Technical Education",
+    "programme_status": "open",
+    "summary": "PM-USP special scholarship scheme for students of Jammu & Kashmir and Ladakh; NSP currently lists a renewal-application window.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Students from Jammu & Kashmir and Ladakh under the PM-USP special scheme (renewal window shown on NSP)."
+  },
+  {
+    "programme_id": "scholarship-nsp-aicte-pragati-degree",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "AICTE - Pragati Scholarship Scheme For Girl Students ( Technical Degree) (Merit Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "AICTE - Pragati Scholarship Scheme For Girl Students ( Technical Degree) (Merit Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "AICTE - Pragati Scholarship Scheme For Girl Students ( Technical Degree) (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "AICTE - Pragati Scholarship Scheme For Girl Students ( Technical Degree)",
+    "organizer": "All India Council For Technical Education",
+    "programme_status": "open",
+    "summary": "AICTE Pragati scholarship for girl students in technical degree programmes, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Girl students in technical degree courses."
+  },
+  {
+    "programme_id": "scholarship-nsp-aicte-pragati-diploma",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "AICTE - Pragati Scholarship Scheme For Girl Students ( Technical Diploma) (Merit Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "AICTE - Pragati Scholarship Scheme For Girl Students ( Technical Diploma) (Merit Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "AICTE - Pragati Scholarship Scheme For Girl Students ( Technical Diploma) (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "AICTE - Pragati Scholarship Scheme For Girl Students ( Technical Diploma)",
+    "organizer": "All India Council For Technical Education",
+    "programme_status": "open",
+    "summary": "AICTE Pragati scholarship for girl students in technical diploma programmes, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Girl students in technical diploma courses."
+  },
+  {
+    "programme_id": "scholarship-nsp-aicte-saksham-diploma",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "AICTE - Saksham Scholarship Scheme For Specially Abled Student ( Technical Diploma) (Welfare Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "AICTE - Saksham Scholarship Scheme For Specially Abled Student ( Technical Diploma) (Welfare Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "AICTE - Saksham Scholarship Scheme For Specially Abled Student ( Technical Diploma) (Welfare Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "AICTE - Saksham Scholarship Scheme For Specially Abled Student ( Technical Diploma)",
+    "organizer": "All India Council For Technical Education",
+    "programme_status": "open",
+    "summary": "AICTE Saksham scholarship for specially abled students in technical diploma programmes, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Specially abled students in technical diploma courses."
+  },
+  {
+    "programme_id": "scholarship-nsp-aicte-saksham-degree",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "AICTE - Saksham Scholarship Scheme For Specially Abled Student ( Technical Degree) (Welfare Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "AICTE - Saksham Scholarship Scheme For Specially Abled Student ( Technical Degree) (Welfare Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "AICTE - Saksham Scholarship Scheme For Specially Abled Student ( Technical Degree) (Welfare Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "AICTE - Saksham Scholarship Scheme For Specially Abled Student ( Technical Degree)",
+    "organizer": "All India Council For Technical Education",
+    "programme_status": "open",
+    "summary": "AICTE Saksham scholarship for specially abled students in technical degree programmes, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Specially abled students in technical degree courses."
+  },
+  {
+    "programme_id": "scholarship-nsp-aicte-swanath-diploma",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "AICTE - Swanath Scholarship Scheme (Technical Diploma) (Welfare Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "AICTE - Swanath Scholarship Scheme (Technical Diploma) (Welfare Based Scheme) by All India Council For Technical Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "AICTE - Swanath Scholarship Scheme (Technical Diploma) (Welfare Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "AICTE - Swanath Scholarship Scheme (Technical Diploma)",
+    "organizer": "All India Council For Technical Education",
+    "programme_status": "open",
+    "summary": "AICTE Swanath scholarship for technical diploma students, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Technical diploma students under the AICTE Swanath scheme."
+  },
+  {
+    "programme_id": "scholarship-nsp-ugc-national-pg",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "UGC National Scholarship For Post Graduate Studies (Merit Based Scheme) by UGC --> Scheme Open from : 16-09-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "UGC National Scholarship For Post Graduate Studies (Merit Based Scheme) by UGC --> Scheme Open from : 16-09-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "UGC National Scholarship For Post Graduate Studies (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "UGC National Scholarship For Post Graduate Studies",
+    "organizer": "UGC",
+    "programme_status": "open",
+    "summary": "UGC national scholarship for post-graduate studies, applied for through NSP.",
+    "opening_date": "2026-09-16",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Post-graduate students."
+  },
+  {
+    "programme_id": "scholarship-nsp-ugc-ishan-uday-ner",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Ishan Uday Special Scholarship Scheme For NER (Merit Based Scheme) by UGC --> Scheme Open from : 16-09-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Ishan Uday Special Scholarship Scheme For NER (Merit Based Scheme) by UGC --> Scheme Open from : 16-09-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Ishan Uday Special Scholarship Scheme For NER (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Ishan Uday Special Scholarship Scheme For NER",
+    "organizer": "UGC",
+    "programme_status": "open",
+    "summary": "UGC Ishan Uday special scholarship for students of the North Eastern Region, applied for through NSP.",
+    "opening_date": "2026-09-16",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Students from the North Eastern Region."
+  },
+  {
+    "programme_id": "scholarship-nsp-labour-beedi-cine-post-matric",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Financial Assistance For Education To The Wards Of Beedi/Cine/Iomc/Lsdm- Post Matric (Welfare Based Scheme) by Ministry of Labour & Employment --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Financial Assistance For Education To The Wards Of Beedi/Cine/Iomc/Lsdm- Post Matric (Welfare Based Scheme) by Ministry of Labour & Employment --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Financial Assistance For Education To The Wards Of Beedi/Cine/Iomc/Lsdm- Post Matric (Welfare Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Financial Assistance For Education To The Wards Of Beedi/Cine/Iomc/Lsdm- Post Matric",
+    "organizer": "Ministry of Labour & Employment",
+    "programme_status": "open",
+    "summary": "Financial assistance for post-matric education of wards of Beedi, Cine, IOMC and LSDM workers, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Post-matric wards of Beedi/Cine/IOMC/LSDM workers."
+  },
+  {
+    "programme_id": "scholarship-nsp-labour-beedi-cine-pre-matric",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Financial Assistance For Education To The Wards Of Beedi/Cine/Iomc/Lsdm- Pre Matric (Welfare Based Scheme) by Ministry of Labour & Employment --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Financial Assistance For Education To The Wards Of Beedi/Cine/Iomc/Lsdm- Pre Matric (Welfare Based Scheme) by Ministry of Labour & Employment --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Financial Assistance For Education To The Wards Of Beedi/Cine/Iomc/Lsdm- Pre Matric (Welfare Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Financial Assistance For Education To The Wards Of Beedi/Cine/Iomc/Lsdm- Pre Matric",
+    "organizer": "Ministry of Labour & Employment",
+    "programme_status": "open",
+    "summary": "Financial assistance for pre-matric education of wards of Beedi, Cine, IOMC and LSDM workers, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Pre-matric wards of Beedi/Cine/IOMC/LSDM workers."
+  },
+  {
+    "programme_id": "scholarship-nsp-pm-yasasvi-school",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "PM YASASVI Central Sector Scheme Of Top Class Education In Schools For OBC, EBC And DNT Students (Merit Based Scheme) by Department of Social Justice & Empowerment(Backward Classes) --> Scheme Open from (for Renewal): 01-06-2026 Student Application Open till (for Renewal): 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "PM YASASVI Central Sector Scheme Of Top Class Education In Schools For OBC, EBC And DNT Students (Merit Based Scheme) by Department of Social Justice & Empowerment(Backward Classes) --> Scheme Open from (for Renewal): 01-06-2026 Student Application Open till (for Renewal): 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "PM YASASVI Central Sector Scheme Of Top Class Education In Schools For OBC, EBC And DNT Students (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "PM YASASVI Central Sector Scheme Of Top Class Education In Schools For OBC, EBC And DNT Students",
+    "organizer": "Department of Social Justice & Empowerment(Backward Classes)",
+    "programme_status": "open",
+    "summary": "PM YASASVI top-class school education scheme for OBC, EBC and DNT students; NSP currently lists a renewal-application window.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "OBC, EBC and DNT school students (renewal window shown on NSP)."
+  },
+  {
+    "programme_id": "scholarship-nsp-pm-yasasvi-college",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "PM YASASVI Central Sector Scheme Of Top Class Education In College For OBC, EBC And DNT Students (Merit Based Scheme) by Department of Social Justice & Empowerment(Backward Classes) --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "PM YASASVI Central Sector Scheme Of Top Class Education In College For OBC, EBC And DNT Students (Merit Based Scheme) by Department of Social Justice & Empowerment(Backward Classes) --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "PM YASASVI Central Sector Scheme Of Top Class Education In College For OBC, EBC And DNT Students (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "PM YASASVI Central Sector Scheme Of Top Class Education In College For OBC, EBC And DNT Students",
+    "organizer": "Department of Social Justice & Empowerment(Backward Classes)",
+    "programme_status": "open",
+    "summary": "PM YASASVI top-class college education scheme for OBC, EBC and DNT students, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "OBC, EBC and DNT college students."
+  },
+  {
+    "programme_id": "scholarship-nsp-mnre-national-renewable-energy-fellowship",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "National Renewable Energy Fellowship Scheme (Merit Based Scheme) by Ministry of New And Renewable Energy --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "National Renewable Energy Fellowship Scheme (Merit Based Scheme) by Ministry of New And Renewable Energy --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      }
+    },
+    "title": "National Renewable Energy Fellowship Scheme",
+    "organizer": "Ministry of New And Renewable Energy",
+    "programme_status": "open",
+    "summary": "MNRE national renewable energy fellowship scheme, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ]
+  },
+  {
+    "programme_id": "scholarship-nsp-mospi-isi-kolkata-stipend",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Stipend Scheme For Under Graduate And Post Graduate Studies In Indian Statistical Institute-Kolkata (Merit Based Scheme) by Ministry of Statistics and Programme Implementation --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Stipend Scheme For Under Graduate And Post Graduate Studies In Indian Statistical Institute-Kolkata (Merit Based Scheme) by Ministry of Statistics and Programme Implementation --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Stipend Scheme For Under Graduate And Post Graduate Studies In Indian Statistical Institute-Kolkata (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Stipend Scheme For Under Graduate And Post Graduate Studies In Indian Statistical Institute-Kolkata",
+    "organizer": "Ministry of Statistics and Programme Implementation",
+    "programme_status": "open",
+    "summary": "Stipend scheme for UG and PG students at the Indian Statistical Institute, Kolkata, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Under-graduate and post-graduate students at the Indian Statistical Institute, Kolkata."
+  },
+  {
+    "programme_id": "scholarship-nsp-icar-nts-ug",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Icar National Talent Scholarship(Nts-Ug) (Merit Based Scheme) by Department of Agriculture Research and Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Icar National Talent Scholarship(Nts-Ug) (Merit Based Scheme) by Department of Agriculture Research and Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Icar National Talent Scholarship(Nts-Ug) (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Icar National Talent Scholarship(Nts-Ug)",
+    "organizer": "Department of Agriculture Research and Education",
+    "programme_status": "open",
+    "summary": "ICAR National Talent Scholarship for undergraduate students, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Undergraduate agriculture students."
+  },
+  {
+    "programme_id": "scholarship-nsp-icar-pgs",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Icar Post Graduate Scholarship(Pgs) (Merit Based Scheme) by Department of Agriculture Research and Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Icar Post Graduate Scholarship(Pgs) (Merit Based Scheme) by Department of Agriculture Research and Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Icar Post Graduate Scholarship(Pgs) (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Icar Post Graduate Scholarship(Pgs)",
+    "organizer": "Department of Agriculture Research and Education",
+    "programme_status": "open",
+    "summary": "ICAR post-graduate scholarship, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Post-graduate agriculture students."
+  },
+  {
+    "programme_id": "scholarship-nsp-icar-nts-pg",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Icar National Talent Scholarship(Nts-Pg) (Merit Based Scheme) by Department of Agriculture Research and Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Icar National Talent Scholarship(Nts-Pg) (Merit Based Scheme) by Department of Agriculture Research and Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Icar National Talent Scholarship(Nts-Pg) (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Icar National Talent Scholarship(Nts-Pg)",
+    "organizer": "Department of Agriculture Research and Education",
+    "programme_status": "open",
+    "summary": "ICAR National Talent Scholarship for post-graduate students, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Post-graduate agriculture students."
+  },
+  {
+    "programme_id": "scholarship-nsp-icar-jrf-srf",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Icar Junior Research Fellowships(Jrf) And Senior Research Fellowships(Srf) (Merit Based Scheme) by Department of Agriculture Research and Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Icar Junior Research Fellowships(Jrf) And Senior Research Fellowships(Srf) (Merit Based Scheme) by Department of Agriculture Research and Education --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      }
+    },
+    "title": "Icar Junior Research Fellowships(Jrf) And Senior Research Fellowships(Srf)",
+    "organizer": "Department of Agriculture Research and Education",
+    "programme_status": "open",
+    "summary": "ICAR junior and senior research fellowships, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ]
+  },
+  {
+    "programme_id": "scholarship-nsp-sc-top-class-education",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Central Sector Scholarship Of Top Class Education For SC Students (Merit Based Scheme) by Department of Social Justice & Empowerment --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Central Sector Scholarship Of Top Class Education For SC Students (Merit Based Scheme) by Department of Social Justice & Empowerment --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Central Sector Scholarship Of Top Class Education For SC Students (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Central Sector Scholarship Of Top Class Education For SC Students",
+    "organizer": "Department of Social Justice & Empowerment",
+    "programme_status": "open",
+    "summary": "Central sector top-class education scholarship for SC students, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Scheduled Caste students."
+  },
+  {
+    "programme_id": "scholarship-nsp-free-coaching-sc-obc",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Free Coaching For Scs OBCs And Beneficiaries Of PM Cares Children Scheme (Welfare Based Scheme) by Department of Social Justice & Empowerment --> Scheme Open from : 03-08-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Free Coaching For Scs OBCs And Beneficiaries Of PM Cares Children Scheme (Welfare Based Scheme) by Department of Social Justice & Empowerment --> Scheme Open from : 03-08-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Free Coaching For Scs OBCs And Beneficiaries Of PM Cares Children Scheme (Welfare Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Free Coaching For Scs OBCs And Beneficiaries Of PM Cares Children Scheme",
+    "organizer": "Department of Social Justice & Empowerment",
+    "programme_status": "open",
+    "summary": "Free coaching scheme for SC and OBC students and PM CARES for Children beneficiaries, applied for through NSP.",
+    "opening_date": "2026-08-03",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "SC and OBC students and beneficiaries of the PM CARES for Children scheme."
+  },
+  {
+    "programme_id": "scholarship-nsp-depwd-pre-matric",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Pre Matric Scholarship For Students With Disabilities (Welfare Based Scheme) by Department of Empowerment of Persons with Disabilities --> Scheme Open from : 25-07-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Pre Matric Scholarship For Students With Disabilities (Welfare Based Scheme) by Department of Empowerment of Persons with Disabilities --> Scheme Open from : 25-07-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Pre Matric Scholarship For Students With Disabilities (Welfare Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Pre Matric Scholarship For Students With Disabilities",
+    "organizer": "Department of Empowerment of Persons with Disabilities",
+    "programme_status": "open",
+    "summary": "Pre-matric scholarship for students with disabilities, applied for through NSP.",
+    "opening_date": "2026-07-25",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Pre-matric students with disabilities."
+  },
+  {
+    "programme_id": "scholarship-nsp-depwd-post-matric",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Post Matric Scholarship For Students With Disabilities (Welfare Based Scheme) by Department of Empowerment of Persons with Disabilities --> Scheme Open from : 25-07-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Post Matric Scholarship For Students With Disabilities (Welfare Based Scheme) by Department of Empowerment of Persons with Disabilities --> Scheme Open from : 25-07-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Post Matric Scholarship For Students With Disabilities (Welfare Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Post Matric Scholarship For Students With Disabilities",
+    "organizer": "Department of Empowerment of Persons with Disabilities",
+    "programme_status": "open",
+    "summary": "Post-matric scholarship for students with disabilities, applied for through NSP.",
+    "opening_date": "2026-07-25",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Post-matric students with disabilities."
+  },
+  {
+    "programme_id": "scholarship-nsp-depwd-top-class",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Scholarship For Top Class Education For Students With Disabilities (Welfare Based Scheme) by Department of Empowerment of Persons with Disabilities --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Scholarship For Top Class Education For Students With Disabilities (Welfare Based Scheme) by Department of Empowerment of Persons with Disabilities --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Scholarship For Top Class Education For Students With Disabilities (Welfare Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Scholarship For Top Class Education For Students With Disabilities",
+    "organizer": "Department of Empowerment of Persons with Disabilities",
+    "programme_status": "open",
+    "summary": "Top-class education scholarship for students with disabilities, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Students with disabilities in top-class institutions."
+  },
+  {
+    "programme_id": "scholarship-nsp-nmms",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "National Means Cum Merit Scholarship (Merit Based Scheme) by Department of School Education & Literacy --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "National Means Cum Merit Scholarship (Merit Based Scheme) by Department of School Education & Literacy --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      }
+    },
+    "title": "National Means Cum Merit Scholarship",
+    "organizer": "Department of School Education & Literacy",
+    "programme_status": "open",
+    "summary": "National Means-cum-Merit Scholarship for school students, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ]
+  },
+  {
+    "programme_id": "scholarship-nsp-pm-usp-csss",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "PM-USP – Central Sector Scheme Of Scholarship For College And University Students (CSSS) (Merit Based Scheme) by Department of Higher Education --> Scheme Open from (for Renewal): 01-06-2026 Student Application Open till (for Renewal): 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "PM-USP – Central Sector Scheme Of Scholarship For College And University Students (CSSS) (Merit Based Scheme) by Department of Higher Education --> Scheme Open from (for Renewal): 01-06-2026 Student Application Open till (for Renewal): 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "PM-USP – Central Sector Scheme Of Scholarship For College And University Students (CSSS) (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "PM-USP – Central Sector Scheme Of Scholarship For College And University Students (CSSS)",
+    "organizer": "Department of Higher Education",
+    "programme_status": "open",
+    "summary": "PM-USP Central Sector Scheme of Scholarship for college and university students; NSP currently lists a renewal-application window.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "College and university students (renewal window shown on NSP)."
+  },
+  {
+    "programme_id": "scholarship-nsp-st-national-fellowship-scholarship",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "National Fellowship And Scholarship For Higher Education Of ST Students - Scholarship (Formally Top Class Education For Schedule Tribe Students) (Merit Based Scheme) by Ministry of Tribal Affairs --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "National Fellowship And Scholarship For Higher Education Of ST Students - Scholarship (Formally Top Class Education For Schedule Tribe Students) (Merit Based Scheme) by Ministry of Tribal Affairs --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "National Fellowship And Scholarship For Higher Education Of ST Students - Scholarship (Formally Top Class Education For Schedule Tribe Students) (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "National Fellowship And Scholarship For Higher Education Of ST Students - Scholarship (Formally Top Class Education For Schedule Tribe Students)",
+    "organizer": "Ministry of Tribal Affairs",
+    "programme_status": "open",
+    "summary": "National scholarship for higher education of Scheduled Tribe students, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Scheduled Tribe students."
+  },
+  {
+    "programme_id": "scholarship-nsp-nec-merit-scholarship-ner",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Financial Support To The Students Of NER For Higher Professional Courses(NEC Merit Scholarship) (Merit Based Scheme) by North Eastern Council(NEC),DoNER --> Scheme Open from (for Renewal): 15-07-2026 Student Application Open till (for Renewal): 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Financial Support To The Students Of NER For Higher Professional Courses(NEC Merit Scholarship) (Merit Based Scheme) by North Eastern Council(NEC),DoNER --> Scheme Open from (for Renewal): 15-07-2026 Student Application Open till (for Renewal): 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Financial Support To The Students Of NER For Higher Professional Courses(NEC Merit Scholarship) (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Financial Support To The Students Of NER For Higher Professional Courses(NEC Merit Scholarship)",
+    "organizer": "North Eastern Council(NEC),DoNER",
+    "programme_status": "open",
+    "summary": "NEC merit scholarship for North Eastern Region students in higher professional courses; NSP lists a renewal window.",
+    "opening_date": "2026-07-15",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Students of the North Eastern Region in higher professional courses (renewal window shown on NSP)."
+  },
+  {
+    "programme_id": "scholarship-nsp-railways-pm-scholarship",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/All-Scholarships",
+    "official_evidence": {
+      "status": {
+        "quote": "Prime Minister'S Scholarship Scheme For Ministry Of Railways (Merit Based Scheme) by Ministry of Railways (Railway Board) --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "deadline": {
+        "quote": "Prime Minister'S Scholarship Scheme For Ministry Of Railways (Merit Based Scheme) by Ministry of Railways (Railway Board) --> Scheme Open from : 01-06-2026 Student Application Open till : 31-10-2026",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      },
+      "requirements": {
+        "quote": "OTR is required to apply for scholarship on National Scholarship Portal.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "eligibility": {
+        "quote": "Prime Minister'S Scholarship Scheme For Ministry Of Railways (Merit Based Scheme)",
+        "url": "https://scholarships.gov.in/All-Scholarships"
+      }
+    },
+    "title": "Prime Minister'S Scholarship Scheme For Ministry Of Railways",
+    "organizer": "Ministry of Railways (Railway Board)",
+    "programme_status": "open",
+    "summary": "Prime Minister's scholarship scheme administered by the Ministry of Railways, applied for through NSP.",
+    "opening_date": "2026-06-01",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.gov.in/",
+    "requirements": [
+      "One Time Registration (OTR) on the National Scholarship Portal",
+      "Apply online on NSP before 31 Oct 2026"
+    ],
+    "eligibility": "Wards of railway personnel."
+  },
+  {
+    "programme_id": "scholarship-nl-scholarship",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.studyinnl.org/finances/holland-scholarship",
+    "official_evidence": {
+      "status": {
+        "quote": "The application for the academic year 2026-2027 opened on 1 November 2025.",
+        "url": "https://www.studyinnl.org/finances/holland-scholarship"
+      },
+      "funding": {
+        "quote": "The scholarship amounts to € 5,000.",
+        "url": "https://www.studyinnl.org/finances/holland-scholarship"
+      },
+      "eligibility": {
+        "quote": "Your nationality is non-EEA.",
+        "url": "https://www.studyinnl.org/finances/holland-scholarship"
+      }
+    },
+    "title": "NL Scholarship (formerly Holland Scholarship)",
+    "organizer": "Nuffic / Dutch Ministry of Education, Culture and Science",
+    "programme_status": "needs_confirmation",
+    "summary": "EUR 5,000 first-year scholarship for non-EEA students (including Indians) starting a bachelor or master in the Netherlands. Closing dates are set by each participating institution.",
+    "funding": "EUR 5,000, paid in the first year of study",
+    "funding_amount": 5000,
+    "funding_currency": "EUR",
+    "funding_period": "total",
+    "eligibility": "Non-EEA nationals applying for a full-time bachelor or master at a participating Dutch institution, without a prior Dutch degree.",
+    "levels": [
+      "bachelors",
+      "masters"
+    ],
+    "intl_eligible": true,
+    "region": "Netherlands",
+    "mode": "in-person",
+    "verification_note": "Deadlines vary per institution; check each participating institution.",
+    "logo_url": "https://www.studyinnl.org/themes/custom/nuffic_sih_theme/assets/image/favicons/appicon.png"
+  },
+  {
+    "programme_id": "scholarship-chevening",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.chevening.org/scholarships/india/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications for 2027-2028 Chevening Scholarships are now closed.",
+        "url": "https://www.chevening.org/scholarships/india/"
+      },
+      "funding": {
+        "quote": "Chevening Scholarships are fully-funded",
+        "url": "https://www.chevening.org/scholarships/"
+      },
+      "eligibility": {
+        "quote": "Chevening Scholarships allow exceptional individuals to study for a one-year master's degree at a UK university.",
+        "url": "https://www.chevening.org/scholarships/who-can-apply/"
+      }
+    },
+    "title": "Chevening Scholarships",
+    "organizer": "UK Foreign, Commonwealth & Development Office",
+    "programme_status": "closed",
+    "summary": "Fully funded one-year UK master's scholarships for emerging leaders. Applications for the 2027-2028 cycle are now closed.",
+    "funding": "Fully funded",
+    "eligibility": "Exceptional individuals who want to study a one-year master's degree at a UK university and meet Chevening eligibility and work experience requirements.",
+    "levels": [
+      "masters"
+    ],
+    "intl_eligible": true,
+    "region": "United Kingdom",
+    "mode": "in-person"
+  },
+  {
+    "programme_id": "scholarship-jn-tata-endowment",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.jntataendowment.org/",
+    "official_evidence": {
+      "status": {
+        "quote": "Application forms for the J N Tata Endowment Fall 2026 – Spring 2027 program will be available on our website from 5th January till 29th March, 2026.",
+        "url": "https://www.jntataendowment.org/"
+      },
+      "eligibility": {
+        "quote": "The program is open to Indians who have completed their undergraduate studies from recognized Indian universities .",
+        "url": "https://www.jntataendowment.org/"
+      },
+      "funding": {
+        "quote": "has awarded loan scholarships to more than 5700 Indian students",
+        "url": "https://www.jntataendowment.org/"
+      }
+    },
+    "title": "J N Tata Endowment Loan Scholarship",
+    "organizer": "J N Tata Endowment",
+    "programme_status": "closed",
+    "summary": "Merit-based loan scholarships for Indian graduates pursuing master's, PhD or postdoctoral study overseas. The Fall 2026 - Spring 2027 application window closed on 29 March 2026.",
+    "eligibility": "Indians who have completed their undergraduate studies at recognised Indian universities; supports overseas master's, PhD and postdoctoral study.",
+    "funding": "Loan scholarship for overseas higher study",
+    "levels": [
+      "masters",
+      "phd"
+    ],
+    "intl_eligible": false,
+    "citizenship": "Indian nationals",
+    "region": "India",
+    "mode": "in-person",
+    "logo_url": "https://jntataendowment.org/wp-content/uploads/2022/12/cropped-Photo-for-Our-Founder-32x32.jpg"
+  },
+  {
+    "programme_id": "scholarship-sitaram-jindal",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.sitaramjindalfoundation.org/scholarships.php",
+    "official_evidence": {
+      "status": {
+        "quote": "Launching Our New Scholarship Portal! Apply online easily and quickly through our brand-new platform.",
+        "url": "https://www.sitaramjindalfoundation.org/scholarships.php"
+      },
+      "funding": {
+        "quote": "Category 'A' 11th & 12th Classes Rs.500/- for Boys Rs.700/- for Girls",
+        "url": "https://www.sitaramjindalfoundation.org/scholarships.php"
+      },
+      "eligibility": {
+        "quote": "Boys@65% Girls@60%",
+        "url": "https://www.sitaramjindalfoundation.org/scholarships.php"
+      }
+    },
+    "title": "Sitaram Jindal Foundation Scholarships",
+    "organizer": "Sitaram Jindal Foundation",
+    "programme_status": "needs_confirmation",
+    "summary": "Monthly scholarships from Rs. 500 to Rs. 1,500 across school, ITI, graduate and postgraduate courses, with separate marks cut-offs for boys and girls. The page advertises a new online portal but gives no dates.",
+    "funding": "Rs. 500 to Rs. 1,500 per month depending on category",
+    "funding_currency": "INR",
+    "funding_period": "monthly",
+    "eligibility": "Students in 11th/12th, ITI, graduate and postgraduate courses meeting the category-wise minimum marks; separate cut-offs for boys and girls.",
+    "region": "India",
+    "mode": "online",
+    "intl_eligible": false
+  },
+  {
+    "programme_id": "scholarship-reliance-foundation",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.reliancefoundation.org/media/media-release/Reliance_Foundation_Scholarships_2026-27",
+    "official_evidence": {
+      "status": {
+        "quote": "Reliance Foundation announced the opening of applications for its flagship Reliance Foundation Scholarships 2026–27",
+        "url": "https://www.reliancefoundation.org/media/media-release/Reliance_Foundation_Scholarships_2026-27"
+      },
+      "funding": {
+        "quote": "Selected undergraduate students will be provided a scholarship of up to Rs. 2 lakhs, while postgraduate students will receive a scholarship of up to Rs. 6 lakhs, through the duration of their programme.",
+        "url": "https://www.reliancefoundation.org/media/media-release/Reliance_Foundation_Scholarships_2026-27"
+      },
+      "eligibility": {
+        "quote": "Applications invited from first-year undergraduate and postgraduate students enrolled in full-time degree programmes across India",
+        "url": "https://www.reliancefoundation.org/media/media-release/Reliance_Foundation_Scholarships_2026-27"
+      }
+    },
+    "title": "Reliance Foundation Scholarships 2026-27",
+    "organizer": "Reliance Foundation",
+    "programme_status": "needs_confirmation",
+    "summary": "Merit-cum-means scholarships of up to Rs 2 lakh for 5,000 first-year undergraduates and up to Rs 6 lakh for 100 postgraduates in India. Applications opened 14 August 2026; the press release gives no closing date.",
+    "opening_date": "2026-08-14",
+    "funding": "Up to Rs 2 lakh (UG) or Rs 6 lakh (PG) over the programme, no application fee",
+    "funding_currency": "INR",
+    "funding_period": "total",
+    "eligibility": "First-year undergraduate and postgraduate students enrolled in full-time degree programmes in India; UG selection includes an aptitude assessment and financial background.",
+    "levels": [
+      "bachelors",
+      "masters"
+    ],
+    "intl_eligible": false,
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://scholarships.reliancefoundation.org/",
+    "verification_note": "Closing date not stated on the official release.",
+    "logo_url": "https://www.reliancefoundation.org/sites/default/files/favicon_0.ico"
+  },
+  {
+    "programme_id": "scholarship-inlaks",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.inlaksfoundation.org/scholarships/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications closed for 2026",
+        "url": "https://www.inlaksfoundation.org/scholarships/"
+      },
+      "funding": {
+        "quote": "The value depends on the course and covers tuition fees, living expenses, one-way travel, visa costs and health allowance, up to USD 120,000.",
+        "url": "https://www.inlaksfoundation.org/scholarships/"
+      },
+      "eligibility": {
+        "quote": "The applicant must be an Indian passport holder who is resident in India at the time ofapplication.",
+        "url": "https://www.inlaksfoundation.org/scholarships/"
+      }
+    },
+    "title": "Inlaks Scholarships",
+    "organizer": "Inlaks Shivdasani Foundation",
+    "programme_status": "closed",
+    "summary": "Scholarships for Indian graduates to study at top universities in the UK, Europe or the US, valued up to USD 120,000. Applications for 2026 are closed.",
+    "funding": "Up to USD 120,000 covering tuition, living expenses, one-way travel, visa costs and health allowance",
+    "funding_amount": 120000,
+    "funding_currency": "USD",
+    "funding_period": "total",
+    "eligibility": "Indian passport holders resident in India, born on or after 1 January 1996, holding a degree from a recognised Indian university and with an admission offer for the chosen course.",
+    "levels": [
+      "masters",
+      "phd"
+    ],
+    "intl_eligible": false,
+    "citizenship": "Indian nationals",
+    "region": "India",
+    "mode": "in-person",
+    "requirements": [
+      "Prior admission offer from the chosen institution",
+      "Minimum academic grade of 65% (humanities) or 70% (sciences)"
+    ],
+    "logo_url": "https://www.inlaksfoundation.org/favicon/favicon-32x32.png"
+  },
+  {
+    "programme_id": "scholarship-kotak-kanya",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://kotakeducationfoundation.org/kotak-kanya-scholarship",
+    "official_evidence": {
+      "status": {
+        "quote": "Application Start Date: 14-07-2026 Application Deadline: 30-09-2026",
+        "url": "https://kotakeducationfoundation.org/kotak-kanya-scholarship"
+      },
+      "deadline": {
+        "quote": "Application Start Date: 14-07-2026 Application Deadline: 30-09-2026",
+        "url": "https://kotakeducationfoundation.org/kotak-kanya-scholarship"
+      },
+      "opening_date": {
+        "quote": "Application Start Date: 14-07-2026 Application Deadline: 30-09-2026",
+        "url": "https://kotakeducationfoundation.org/kotak-kanya-scholarship"
+      },
+      "funding": {
+        "quote": "will be provided scholarship of Rs. 1.5 lakh* per year to pay their academic expenses till the completion of their graduation (degree).",
+        "url": "https://kotakeducationfoundation.org/kotak-kanya-scholarship"
+      },
+      "eligibility": {
+        "quote": "Applicants must have scored at least 75% or more marks or equivalent CGPA in Class 12 board examinations. Applicant's annual family income must be less than INR 6,00,000.",
+        "url": "https://kotakeducationfoundation.org/kotak-kanya-scholarship"
+      }
+    },
+    "title": "Kotak Kanya Scholarship 2026",
+    "organizer": "Kotak Education Foundation",
+    "programme_status": "closed",
+    "summary": "Rs 1.5 lakh per year for meritorious girl students entering professional degrees after Class 12 at NIRF/NAAC accredited institutions. The 2026 cycle ran 14 July to 30 September 2026.",
+    "opening_date": "2026-07-14",
+    "deadline": "2026-09-30",
+    "funding": "Rs 1.5 lakh per year until completion of the degree",
+    "funding_amount": 150000,
+    "funding_currency": "INR",
+    "funding_period": "yearly",
+    "eligibility": "Girl students who passed Class 12 with at least 75% and family income below INR 6,00,000, admitted to the first year of a professional degree (engineering, MBBS, architecture, design, integrated LLB etc.) at an NIRF/NAAC accredited institute.",
+    "levels": [
+      "bachelors"
+    ],
+    "intl_eligible": false,
+    "citizenship": "Indian nationals",
+    "region": "India",
+    "mode": "online",
+    "application_url": "https://kotakeducationfoundation.org/kotak-kanya-scholarship",
+    "gender": "female",
+    "logo_url": "https://kotakeducationfoundation.org/_next/static/media/favicon.7815f858.png"
+  },
+  {
+    "programme_id": "scholarship-narotam-sekhsaria-pg",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://pg.nsfoundation.co.in/final-call/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are Closed",
+        "url": "https://pg.nsfoundation.co.in/final-call/"
+      },
+      "deadline": {
+        "quote": "Deadline for this year is 5pm, 23rd March 2026.",
+        "url": "https://pg.nsfoundation.co.in/final-call/"
+      },
+      "funding": {
+        "quote": "Repayment of the repayable interest free financial assistance will only commence one year after course completion in easy instalments.",
+        "url": "https://pg.nsfoundation.co.in/final-call/"
+      },
+      "eligibility": {
+        "quote": "Applicant must be an Indian national, residing in India Applicant must be below 30 years of age as of January 31, 2026",
+        "url": "https://pg.nsfoundation.co.in/final-call/"
+      }
+    },
+    "title": "Narotam Sekhsaria Foundation Postgraduate Scholarship",
+    "organizer": "Narotam Sekhsaria Foundation",
+    "programme_status": "closed",
+    "summary": "Repayable, interest-free financial assistance for Indian graduates pursuing postgraduate study at top institutions. The 2026 deadline was 23 March 2026; applications are invited each January.",
+    "deadline": "2026-03-23",
+    "funding": "Repayable interest-free financial assistance; repayment starts one year after course completion",
+    "eligibility": "Indian nationals residing in India, below 30 years of age as of 31 January 2026, who graduated (or are awaiting final results) from an accredited Indian university and plan postgraduate study from Fall 2026.",
+    "levels": [
+      "masters"
+    ],
+    "intl_eligible": false,
+    "citizenship": "Indian nationals",
+    "region": "India",
+    "mode": "online",
+    "verification_note": "Applications are invited in January each year.",
+    "logo_url": "https://pg.nsfoundation.co.in/wp-content/uploads/2022/01/cropped-NSF-Favicon-32x32.jpg"
+  },
+  {
+    "programme_id": "scholarship-swiss-excellence",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.sbfi.admin.ch/sbfi/en/home/education/scholarships-and-grants/swiss-government-excellence-scholarships.html",
+    "official_evidence": {
+      "status": {
+        "quote": "Interested? Applications are open starting August 20, 2026.",
+        "url": "https://www.sbfi.admin.ch/sbfi/en/home/education/scholarships-and-grants/swiss-government-excellence-scholarships.html"
+      },
+      "funding": {
+        "quote": "Scholarship Types Overview (max. age: 35 / funding: CHF 2450.--/month)",
+        "url": "https://www.sbfi.admin.ch/sbfi/en/home/education/scholarships-and-grants/swiss-government-excellence-scholarships.html"
+      },
+      "eligibility": {
+        "quote": "Swiss Government Excellence Scholarships are mainly intended for talented early career researchers (ECRs) from abroad who have already completed their Master's degree.",
+        "url": "https://www.sbfi.admin.ch/sbfi/en/home/education/scholarships-and-grants/swiss-government-excellence-scholarships.html"
+      }
+    },
+    "title": "Swiss Government Excellence Scholarships 2027-2028",
+    "organizer": "State Secretariat for Education, Research and Innovation (SERI)",
+    "programme_status": "open",
+    "summary": "Research and art scholarships of CHF 2,450 per month for early-career researchers from 183 countries who already hold a master's degree. Applications opened 20 August 2026 and deadlines vary by country.",
+    "opening_date": "2026-08-20",
+    "funding": "CHF 2,450 per month",
+    "funding_amount": 2450,
+    "funding_currency": "CHF",
+    "funding_period": "monthly",
+    "eligibility": "Early-career researchers from abroad (max age 35) who already hold a master's degree and have a Swiss academic supervisor; applications are submitted via Swiss diplomatic representations.",
+    "levels": [
+      "phd",
+      "masters"
+    ],
+    "intl_eligible": true,
+    "region": "Switzerland",
+    "mode": "in-person",
+    "verification_note": "Deadlines are published by country of origin.",
+    "logo_url": "https://www.sbfi.admin.ch/favicon-16x16.png"
   }
 ]

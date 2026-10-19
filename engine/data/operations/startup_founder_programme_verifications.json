@@ -190,5 +190,615 @@
     "region": "Global",
     "mode": "in_person",
     "verification_note": "Application form has no deadline; cohort dates differ by region and are not on the page."
+  },
+  {
+    "programme_id": "startup-nsrcel-circular-bharat-accelerator",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://nsrcel.org/circular-bharat-accelerator/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are now open for Impact Orbit - AgeTech Innovations Circular Bharat Accelerator Impact Orbit - Skilling and Livelihood Innovations",
+        "url": "https://www.nsrcel.org/"
+      },
+      "eligibility": {
+        "quote": "Early stage startups incorporated in India, operational for less than 10 years, with a team of 50 or fewer, technology-based, early-revenue, pilot-ready (TRL 5+) who are operating in circular economy, sustainability, or resource-efficiency domains.",
+        "url": "https://nsrcel.org/circular-bharat-accelerator/"
+      },
+      "funding": {
+        "quote": "The program is free of cost and no equity is taken from the startups",
+        "url": "https://nsrcel.org/circular-bharat-accelerator/"
+      }
+    },
+    "title": "Circular Bharat Accelerator",
+    "organizer": "NSRCEL, IIM Bangalore",
+    "programme_status": "open",
+    "summary": "Free, equity-free NSRCEL (IIM Bangalore) accelerator for early-stage Indian startups in circular economy, sustainability and resource efficiency, with milestone-based grant support for pilot-ready startups. Application deadline not stated.",
+    "region": "India",
+    "mode": "hybrid",
+    "intl_eligible": false,
+    "eligibility": "Early-stage technology startups incorporated in India, under 10 years old, team of 50 or fewer, early-revenue and pilot-ready (TRL 5+), in circular economy, sustainability or resource efficiency.",
+    "funding": "Free programme with no equity taken; milestone-based grant support for select startups",
+    "application_url": "https://nsrcel.accubate.app/ext/form/18872/1/apply",
+    "logo_url": "https://nsrcel.org/wp-content/uploads/2026/04/fevicon.webp"
+  },
+  {
+    "programme_id": "startup-nsrcel-impact-orbit-agetech",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://nsrcel.org/impact-orbit-agetech-innovations/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are now open for Impact Orbit - AgeTech Innovations Circular Bharat Accelerator Impact Orbit - Skilling and Livelihood Innovations",
+        "url": "https://www.nsrcel.org/"
+      },
+      "eligibility": {
+        "quote": "For-profit and Non-profit registered ventures that have been operational for at least 1 year and demonstrate impact intent",
+        "url": "https://nsrcel.org/impact-orbit-agetech-innovations/"
+      },
+      "funding": {
+        "quote": "The selected ventures will also get grants up to Rs 12.5 lakhs",
+        "url": "https://nsrcel.org/impact-orbit-agetech-innovations/"
+      }
+    },
+    "title": "Impact Orbit - AgeTech Innovations",
+    "organizer": "NSRCEL, IIM Bangalore",
+    "programme_status": "open",
+    "summary": "NSRCEL impact incubation programme for registered ventures building AgeTech solutions, with grants of up to Rs 12.5 lakhs for select ventures. Application deadline not stated.",
+    "region": "India",
+    "mode": "hybrid",
+    "intl_eligible": false,
+    "eligibility": "Registered for-profit or non-profit ventures operating at least one year with demonstrated impact intent, at early-revenue to growth stage.",
+    "funding": "Grants up to Rs 12.5 lakhs for select ventures; no fees or equity",
+    "funding_amount": 1250000,
+    "funding_currency": "INR",
+    "funding_period": "total",
+    "logo_url": "https://nsrcel.org/wp-content/uploads/2026/04/fevicon.webp"
+  },
+  {
+    "programme_id": "startup-nsrcel-impact-orbit-skilling-livelihood",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://nsrcel.org/impact-orbit-skilling-and-livelihood-innovations/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are now open for Impact Orbit - AgeTech Innovations Circular Bharat Accelerator Impact Orbit - Skilling and Livelihood Innovations",
+        "url": "https://www.nsrcel.org/"
+      },
+      "eligibility": {
+        "quote": "For-profit and Non-profit registered ventures that have been operational for at least 1 year and demonstrate impact intent",
+        "url": "https://nsrcel.org/impact-orbit-skilling-and-livelihood-innovations/"
+      },
+      "funding": {
+        "quote": "The selected ventures will also get grants up to Rs 12.5 lakhs",
+        "url": "https://nsrcel.org/impact-orbit-skilling-and-livelihood-innovations/"
+      }
+    },
+    "title": "Impact Orbit - Skilling and Livelihood Innovations",
+    "organizer": "NSRCEL, IIM Bangalore",
+    "programme_status": "open",
+    "summary": "NSRCEL impact incubation programme for registered ventures working on skilling and livelihoods, with grants of up to Rs 12.5 lakhs for select ventures. Application deadline not stated.",
+    "region": "India",
+    "mode": "hybrid",
+    "intl_eligible": false,
+    "eligibility": "Registered for-profit or non-profit ventures operating at least one year with demonstrated impact intent.",
+    "funding": "Grants up to Rs 12.5 lakhs for select ventures; no fees or equity",
+    "funding_amount": 1250000,
+    "funding_currency": "INR",
+    "funding_period": "total",
+    "application_url": "https://nsrcel.accubate.app/ext/form/19928/1/apply",
+    "logo_url": "https://nsrcel.org/wp-content/uploads/2026/04/fevicon.webp"
+  },
+  {
+    "programme_id": "startup-nidhi-prayas",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://nidhi-prayas.org/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are invited from Incubators only to apply as PRAYAS Centres (PC & APC) from 19 May 2026, 10:00 am to 30 Jun 2026, 6:00 pm IST",
+        "url": "https://nidhi-prayas.org/"
+      },
+      "deadline": {
+        "quote": "Applications are invited from Incubators only to apply as PRAYAS Centres (PC & APC) from 19 May 2026, 10:00 am to 30 Jun 2026, 6:00 pm IST",
+        "url": "https://nidhi-prayas.org/"
+      },
+      "funding": {
+        "quote": "by providing financial support, mentorship, and access to infrastructure, enabling innovators to design, develop, test, and validate their solutions.",
+        "url": "https://nidhi-prayas.org/"
+      }
+    },
+    "title": "NIDHI-PRAYAS 2.0",
+    "organizer": "Department of Science & Technology, Government of India",
+    "programme_status": "closed",
+    "summary": "DST programme funding innovators to turn ideas into validated prototypes through PRAYAS Centres hosted by incubators. The current call for incubators to become PRAYAS Centres ran 19 May to 30 June 2026.",
+    "deadline": "2026-06-30",
+    "opening_date": "2026-05-19",
+    "funding": "Financial support, mentorship and infrastructure access to build and validate prototypes",
+    "region": "India",
+    "mode": "hybrid",
+    "intl_eligible": false,
+    "verification_note": "Call shown is for incubators to apply as PRAYAS Centres; innovators apply through those centres.",
+    "logo_url": "https://nidhi-prayas.org/img/favicon.png"
+  },
+  {
+    "programme_id": "startup-atal-incubation-centres",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://aim.gov.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "please note that the application portal for ATL, AIC and ACIC are not currently open.",
+        "url": "https://aim.gov.in/"
+      }
+    },
+    "title": "Atal Incubation Centres (AIC)",
+    "organizer": "Atal Innovation Mission, NITI Aayog",
+    "programme_status": "closed",
+    "summary": "AIM programme to set up incubators at universities, institutions and corporates. The AIM site notes that the application portals for ATL, AIC and ACIC are not currently open.",
+    "region": "India",
+    "mode": "in-person",
+    "intl_eligible": false,
+    "logo_url": "https://aim.gov.in/images/favicon.png"
+  },
+  {
+    "programme_id": "startup-atal-tinkering-labs",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://aim.gov.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "please note that the application portal for ATL, AIC and ACIC are not currently open.",
+        "url": "https://aim.gov.in/"
+      }
+    },
+    "title": "Atal Tinkering Labs (ATL)",
+    "organizer": "Atal Innovation Mission, NITI Aayog",
+    "programme_status": "closed",
+    "summary": "AIM scheme supporting school innovation labs across India. The AIM site notes that the application portal is not currently open.",
+    "region": "India",
+    "mode": "in-person",
+    "intl_eligible": false,
+    "logo_url": "https://aim.gov.in/images/favicon.png"
+  },
+  {
+    "programme_id": "startup-india-seed-fund-scheme",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://seedfund.startupindia.gov.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "Last date for startups to apply under SISFS was 31 May 2026.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "deadline": {
+        "quote": "Last date for startups to apply under SISFS was 31 May 2026.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "Up to ₹20 lakh as grant for validation of Proof of Concept, or prototype development, or product trials.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "Incorporated not more than 2 years ago at the time of application.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "Startup India Seed Fund Scheme (SISFS)",
+    "organizer": "Department for Promotion of Industry and Internal Trade (DPIIT)",
+    "programme_status": "closed",
+    "summary": "Grants of up to Rs 20 lakh for proof of concept, prototyping or product trials, and up to Rs 50 lakh investment for scaling, delivered via incubators to DPIIT-recognised startups. The last date to apply under SISFS was 31 May 2026.",
+    "deadline": "2026-05-31",
+    "funding": "Up to Rs 20 lakh grant; up to Rs 50 lakh convertible debenture or debt-linked investment",
+    "funding_amount": 2000000,
+    "funding_currency": "INR",
+    "funding_period": "total",
+    "eligibility": "DPIIT-recognised startups incorporated not more than 2 years ago, using technology in the core product or business model, with no more than Rs 10 lakh prior central or state government support.",
+    "region": "India",
+    "mode": "online",
+    "intl_eligible": false,
+    "citizenship": "Indian-promoted startups",
+    "application_url": "https://seedfund.startupindia.gov.in/",
+    "logo_url": "https://seedfund.startupindia.gov.in/favicon.ico"
+  },
+  {
+    "programme_id": "startup-meity-tide-2",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://msh.meity.gov.in/schemes/tide",
+    "official_evidence": {
+      "status": {
+        "quote": "Startups to refer to the MeitY Startup Hub (MSH) to access the list of incubators in India benefitting from the TIDE 2.0 scheme and gauge the incubators most suitable to their needs.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "Up to ₹7 lakh grants for prototype development.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "Information Technology based, DPIIT-recognised startups.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "TIDE 2.0 (Technology Incubation and Development of Entrepreneurs)",
+    "organizer": "Ministry of Electronics and Information Technology (MeitY)",
+    "programme_status": "needs_confirmation",
+    "summary": "MeitY scheme supporting early-stage IT-based startups through incubators with grants of up to Rs 4 lakh (proof of concept), Rs 7 lakh (prototype) and investment up to Rs 40 lakh. Startups apply through participating incubators.",
+    "funding": "Up to Rs 4 lakh (idea to PoC), up to Rs 7 lakh grant (prototype), up to Rs 40 lakh investment (product development and market outreach)",
+    "funding_currency": "INR",
+    "eligibility": "Information technology based, DPIIT-recognised startups, applying via TIDE 2.0 incubators.",
+    "region": "India",
+    "mode": "hybrid",
+    "intl_eligible": false,
+    "verification_note": "Open calls are run by individual incubators; no single deadline.",
+    "logo_url": "https://msh.meity.gov.in/favicon.ico"
+  },
+  {
+    "programme_id": "startup-nidhi-eir",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://nidhi.dst.gov.in/nidhieir/",
+    "official_evidence": {
+      "status": {
+        "quote": "The program is announced by the NIDHI-TBI locally.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "Grant ranging from ₹10,000 to ₹30,000 per month for a period of 12 months, extendable up to 18 months.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "The entrepreneur should be an Indian citizen.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "NIDHI Entrepreneur in Residence (EIR)",
+    "organizer": "Department of Science and Technology (DST)",
+    "programme_status": "needs_confirmation",
+    "summary": "DST fellowship giving graduates with startup ideas Rs 10,000 to 30,000 per month for 12 months, with workspace and mentoring at a NIDHI-TBI. Calls are announced locally by each incubator.",
+    "funding": "Rs 10,000 to Rs 30,000 per month for 12 months, extendable to 18 months",
+    "funding_currency": "INR",
+    "funding_period": "monthly",
+    "eligibility": "Indian citizens who completed at least 4 years of full-time UG/PG education (or a 3-year degree/diploma plus 2 years of full-time work experience).",
+    "citizenship": "Indian citizens",
+    "intl_eligible": false,
+    "region": "India",
+    "mode": "in-person",
+    "logo_url": "https://cdnbbsr.s3waas.gov.in/s312b1e42dc0746f22cf361267de07073f/uploads/2022/09/2022092191-32x32.png"
+  },
+  {
+    "programme_id": "startup-meity-genesis",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://msh.meity.gov.in/schemes/genesis",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are accepted throughout the year.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "Investment and pilot funding support to startups ranging from ₹10 lakh (for early-stage startups), to up to ₹1 crore (deep-tech startups).",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "GENESIS (Gen-Next Support for Innovative Startups)",
+    "organizer": "Ministry of Electronics and Information Technology (MeitY)",
+    "programme_status": "rolling",
+    "summary": "MeitY scheme backing implementing agencies to give funding and pilot support to technology startups in Tier-II and Tier-III cities, from Rs 10 lakh for early-stage to Rs 1 crore for deep-tech startups. Applications are accepted throughout the year.",
+    "funding": "Investment and pilot funding from Rs 10 lakh (early-stage) to Rs 1 crore (deep-tech)",
+    "funding_currency": "INR",
+    "region": "India",
+    "mode": "hybrid",
+    "intl_eligible": false,
+    "logo_url": "https://msh.meity.gov.in/favicon.ico"
+  },
+  {
+    "programme_id": "startup-idex",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://idex.gov.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "Visit https://idex.gov.in/challenges for more information on Challenges organized under iDEX.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "Grants ranging from ₹1.5 crore to ₹10 crore awarded to startups based on the scheme/challenge applied to.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "Individual innovators can also apply.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "iDEX (Innovations for Defence Excellence)",
+    "organizer": "Defence Innovation Organisation, Ministry of Defence",
+    "programme_status": "needs_confirmation",
+    "summary": "Defence innovation framework giving grants of Rs 1.5 crore to Rs 10 crore to startups, MSMEs and individual innovators who solve defence challenges. Open challenges are listed on the iDEX site.",
+    "funding": "Grants of Rs 1.5 crore to Rs 10 crore depending on the challenge",
+    "funding_currency": "INR",
+    "eligibility": "DPIIT-recognised startups, MSMEs and individual innovators.",
+    "region": "India",
+    "mode": "online",
+    "intl_eligible": false,
+    "logo_url": "https://idex.gov.in//assets/images/favicon.png"
+  },
+  {
+    "programme_id": "startup-drdo-tdf",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://tdf.drdo.gov.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "Application process for the TDF is digitized.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "Project cost of up to ₹10 crore will be considered for funding, subject to a maximum funding of 90%.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "At least 50% of the shares of the startup must be owned and controlled by Indian citizens.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "Technology Development Fund (TDF)",
+    "organizer": "DRDO, Ministry of Defence",
+    "programme_status": "needs_confirmation",
+    "summary": "DRDO grant scheme funding up to 90 percent of defence technology projects costing up to Rs 10 crore, for Indian companies and DPIIT-recognised startups.",
+    "funding": "Grants covering up to 90 percent of project cost, projects up to Rs 10 crore",
+    "funding_currency": "INR",
+    "eligibility": "Indian companies and DPIIT-recognised startups incubated at a government-assisted incubator, with at least 50 percent Indian ownership.",
+    "region": "India",
+    "mode": "online",
+    "intl_eligible": false,
+    "logo_url": "https://tdf.drdo.gov.in/site/images/drdofavicon.png"
+  },
+  {
+    "programme_id": "startup-inspace-seed-fund",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.inspace.gov.in/inspace?id=announcement_for_opportunities",
+    "official_evidence": {
+      "status": {
+        "quote": "Announcement of opportunities made from time to time on",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "Grant of ₹1 crore provided to selected startups on milestone-basis.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "DPIIT recognised early-stage startups with innovative ideas and projects that use space technology to address challenges in space sector",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "IN-SPACe Seed Fund Scheme",
+    "organizer": "Indian National Space Promotion and Authorization Centre (IN-SPACe)",
+    "programme_status": "needs_confirmation",
+    "summary": "Milestone-based grant of up to Rs 1 crore for early-stage DPIIT-recognised space-tech startups, with mentoring and networking. Opportunities are announced from time to time.",
+    "funding": "Grant of Rs 1 crore on milestone basis",
+    "funding_amount": 10000000,
+    "funding_currency": "INR",
+    "funding_period": "total",
+    "eligibility": "DPIIT-recognised early-stage startups using space technology, with no more than Rs 50 lakh prior government support.",
+    "region": "India",
+    "mode": "online",
+    "intl_eligible": false,
+    "logo_url": "https://www.inspace.gov.in/favicon.ico"
+  },
+  {
+    "programme_id": "startup-meity-samridh",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://msh.meity.gov.in/schemes/samridh",
+    "official_evidence": {
+      "status": {
+        "quote": "Startups to refer to the MeitY Startup Hub (MSH) to access the list of incubators and accelerators in India benefitting from the SAMRIDH scheme and gauge the accelerators most suitable to their needs.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "To startups: An investment of up to ₹40 lakh to the beneficiary startup (with an average of ₹30 lakh per startup per cohort).",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "IT-based startups.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "SAMRIDH (Startup Accelerators of MeitY for Product Innovation, Development and Growth)",
+    "organizer": "Ministry of Electronics and Information Technology (MeitY)",
+    "programme_status": "needs_confirmation",
+    "summary": "MeitY programme funding accelerators to scale IT-based startups, with investment of up to Rs 40 lakh per startup plus matching private investment. Startups apply through participating accelerators.",
+    "funding": "Investment up to Rs 40 lakh per startup (average Rs 30 lakh) with matching private investment",
+    "funding_currency": "INR",
+    "eligibility": "IT-based startups applying through SAMRIDH accelerators.",
+    "region": "India",
+    "mode": "hybrid",
+    "intl_eligible": false,
+    "logo_url": "https://msh.meity.gov.in/favicon.ico"
+  },
+  {
+    "programme_id": "startup-nidhi-seed-support-program",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://nidhi.dst.gov.in/nidhissp/",
+    "official_evidence": {
+      "status": {
+        "quote": "Incubatee should be a DPIIT recognised startup with minimum of three months of residency at the STEPs/TBIs.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "Incubatee should be a DPIIT recognised startup with minimum of three months of residency at the STEPs/TBIs.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "NIDHI Seed Support Program (SSP)",
+    "organizer": "Department of Science and Technology (DST)",
+    "programme_status": "needs_confirmation",
+    "summary": "DST seed support for DPIIT-recognised incubatee startups at NIDHI STEPs and TBIs for product development, testing, trials, mentoring and IPR. Application details are published on the NIDHI SSP site.",
+    "eligibility": "DPIIT-recognised incubatee startups with at least three months of residency at a NIDHI STEP or TBI and at least 51% Indian promoter shareholding.",
+    "region": "India",
+    "mode": "in-person",
+    "intl_eligible": false,
+    "logo_url": "https://cdnbbsr.s3waas.gov.in/s312b1e42dc0746f22cf361267de07073f/uploads/2022/09/2022092191-32x32.png"
+  },
+  {
+    "programme_id": "startup-dsir-prism",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.dsir.gov.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "The PRISM scheme provides funding and support to individual innovators, startups, and small businesses so they can turn new ideas into useful products and grow their businesses.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "Phase II • Up to ₹50 lakh or 50% of the approved project cost",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "Any Indian citizen having an innovative idea and wish to translate their idea into working prototypes/models/processes.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "PRISM (Promoting Innovations in Individuals, Start-ups and MSMEs)",
+    "organizer": "DSIR",
+    "programme_status": "needs_confirmation",
+    "summary": "DSIR scheme funding individual innovators, startups and MSMEs to build prototypes, with Phase I support of up to Rs 2 lakh to Rs 20 lakh and Phase II up to Rs 50 lakh.",
+    "region": "India",
+    "mode": "online",
+    "intl_eligible": false,
+    "funding": "Phase I up to Rs 2 lakh or Rs 20 lakh (90% of project cost); Phase II up to Rs 50 lakh (50% of project cost)",
+    "eligibility": "Indian citizens with an innovative idea, and public-funded institutions engaged in promoting innovation.",
+    "citizenship": "Indian citizens",
+    "logo_url": "https://www.dsir.gov.in/favicon.svg"
+  },
+  {
+    "programme_id": "startup-birac-leap-fund",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://birac.nic.in/leapFundNew.php",
+    "official_evidence": {
+      "status": {
+        "quote": "Apply on: https://birac.nic.in/leapFundNew.php",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "Funding support of more than ₹30 lakh and up to ₹1 crore per startup.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "Startups in Biotech/med-tech/life science sectors.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "LEAP Fund (Launching Entrepreneurial Driven Affordable Products)",
+    "organizer": "BIRAC",
+    "programme_status": "needs_confirmation",
+    "summary": "BIRAC funding of more than Rs 30 lakh and up to Rs 1 crore per startup for piloting and commercialising biotech and medtech products.",
+    "region": "India",
+    "mode": "online",
+    "intl_eligible": false,
+    "funding": "More than Rs 30 lakh and up to Rs 1 crore per startup",
+    "eligibility": "Startups in biotech, med-tech and life science sectors."
+  },
+  {
+    "programme_id": "startup-birac-sparsh",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.birac.nic.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "The call for Letter of Intent (LoI) is announced twice a year on a thematic area with high societal impact",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "Grant-in-aid assistance up to ₹50 lakh for a period of up to 18 months.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "Biotechnology Indian startups (less than 3 years old)",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "SPARSH (Social Innovation Programme for Products Affordable and Relevant to Social Health)",
+    "organizer": "BIRAC",
+    "programme_status": "needs_confirmation",
+    "summary": "BIRAC grant-in-aid of up to Rs 50 lakh for up to 18 months for Indian biotech startups under 3 years old and academic scientists building affordable health products. Letters of intent are invited twice a year.",
+    "region": "India",
+    "mode": "online",
+    "intl_eligible": false,
+    "funding": "Grant-in-aid up to Rs 50 lakh for up to 18 months",
+    "eligibility": "Indian biotechnology startups and LLPs less than 3 years old and Indian academic scientists and researchers."
+  },
+  {
+    "programme_id": "startup-meity-c2s",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.c2s.gov.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applicants submit project proposals online through the C2S portal in the",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "funding": {
+        "quote": "Financial and technical support for chip-design projects under approved categories.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      },
+      "eligibility": {
+        "quote": "Academic institutions and R&D organisations across India, including IITs, NITs, IIITs, government/private colleges, and R&D bodies.",
+        "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf"
+      }
+    },
+    "title": "Chips to Startup (C2S) Programme",
+    "organizer": "MeitY",
+    "programme_status": "needs_confirmation",
+    "summary": "MeitY programme training VLSI and embedded system design talent and supporting chip-design projects and fabless startups across Indian academic institutions and R&D bodies.",
+    "region": "India",
+    "mode": "online",
+    "intl_eligible": false,
+    "funding": "Financial and technical support, EDA tools, IP repository and fabrication support",
+    "eligibility": "Academic institutions and R&D organisations across India, with startups and MSMEs participating through collaborative projects."
+  },
+  {
+    "programme_id": "startup-atal-community-innovation-centres",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://aim.gov.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "please note that the application portal for ATL, AIC and ACIC are not currently open.",
+        "url": "https://aim.gov.in/"
+      }
+    },
+    "title": "Atal Community Innovation Centres (ACIC)",
+    "organizer": "Atal Innovation Mission, NITI Aayog",
+    "programme_status": "closed",
+    "summary": "AIM programme setting up community innovation centres in underserved regions. The AIM site notes that the application portals for ATL, AIC and ACIC are not currently open.",
+    "region": "India",
+    "mode": "in-person",
+    "intl_eligible": false,
+    "logo_url": "https://aim.gov.in/images/favicon.png"
   }
 ]
