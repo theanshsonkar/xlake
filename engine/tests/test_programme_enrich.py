@@ -65,7 +65,7 @@ class TestDeadlineParsing(unittest.TestCase):
         cases = {
             "<p>Our fellowship applications are now open. Apply by January 15, 2027.</p>": "open",
             "<p>Fellowship applications are accepted on a rolling basis.</p><a href='/apply'>Apply now</a>": "rolling",
-            "<p>Fellowship applications closed on March 3, 2026.</p>": "closed",
+            "<p>Fellowship applications closed on March 3, 2024.</p>": "closed",
             "<p>Fellowship applications open in November 2026.</p>": "opening_soon",
         }
         for body, status in cases.items():

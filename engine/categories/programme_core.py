@@ -28,6 +28,7 @@ class ProgrammeConfig:
     observations_path: str
     verifications_path: str
     needs_confirmation_floor: bool = False
+    next_cycle: bool = False  # past-deadline recurring programmes -> upcoming + next_cycle_hint
 
 
 
@@ -955,7 +956,9 @@ def _apply_enrichment(record: Dict, evidence: Dict, enriched: Dict, seed: Dict,
     """Copy extracted facts into a record, with quotes as evidence where we have them."""
     url = seed["official_url"]
     for key in ("description", "region", "logo_url", "organizer_domain", "levels",
-                "funding_amount_usd", "start_date", "end_date"):
+                "funding_amount_usd", "start_date", "end_date", "requirements", "duration",
+                "covers", "gender", "age_limit", "underrepresented", "funding_currency",
+                "funding_amount", "funding_period", "source_kind"):
         if enriched.get(key):
             record[key] = enriched[key]
     if "intl_eligible" in enriched:
@@ -986,6 +989,9 @@ def _apply_enrichment(record: Dict, evidence: Dict, enriched: Dict, seed: Dict,
         record["deadline_basis"] = window.get("basis") or ("applicant_deadline" if window.get("deadline_cue") else "application_window")
     else:
         record.setdefault("deadline_basis", "unknown")
+    summary = enrich.build_summary(record)
+    if summary:
+        record["summary"] = summary
 
 
 def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None, final_url: Optional[str] = None, *, config: ProgrammeConfig) -> Tuple[Optional[Dict], Dict]:
@@ -1057,6 +1063,26 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
             record["is_live"] = False
             _apply_enrichment(record, evidence, enriched, seed, resolved_apply, apply_link, None)
             return record, _observation(seed, checked, "needs_confirmation", "official formal programme page; current status or deadline is not stated", evidence)
+        if status == "closed" and windows and config.next_cycle and formal:
+            last_deadline = windows[0]["end"]
+            if enrich.is_recurring_programme(text, last_deadline, today):
+                hint = enrich.next_cycle_hint(text, last_deadline, today)
+                evidence = {
+                    "programme_status": _evidence(windows[0]["quote"], seed["official_url"]),
+                    "last_deadline": _evidence(windows[0]["quote"], seed["official_url"]),
+                    "programme_name": {"quote": seed["programme_name"], "url": seed["official_url"]},
+                    "organizer": {"quote": seed["organizer"], "url": seed["official_url"]},
+                    "official_url": {"quote": seed["official_url"], "url": seed["official_url"]},
+                }
+                record = _base(seed, checked, evidence, config)
+                record["programme_status"] = "upcoming"
+                record["deadline"] = None
+                record["last_deadline"] = last_deadline.isoformat()
+                record["next_cycle_hint"] = hint
+                record["application_url"] = resolved_apply
+                _apply_enrichment(record, evidence, enriched, seed, resolved_apply, apply_link, None)
+                record["deadline_basis"] = "next_cycle"
+                return record, _observation(seed, checked, "actionable", "recurring programme; last deadline passed; next cycle expected", evidence)
         return None, _observation(seed, checked, status, "no actionable applicant window" if status == "non_actionable" else "official applicant deadline passed", evidence)
     # Every surfaced state must retain the registry's official URL. Rolling
     # additionally needs a resolvable same-origin application URL; for open

@@ -75,7 +75,7 @@ class TestFellowshipRegistry(unittest.TestCase):
         self.assertTrue(row["is_live"])
     def test_closed_read_retires_existing_live_row(self):
         seed = fellowships.SOURCE_BY_ID["fellowship-thiel"]
-        html = "<html><body><h1>Thiel Fellowship</h1><p>Applications are accepted from June 1 to July 1, 2026.</p></body></html>"
+        html = "<html><body><h1>Thiel Fellowship</h1><p>Applications are accepted from June 1 to July 1, 2024.</p></body></html>"
         record, observation = fellowships.parse_programme(seed, html, datetime(2026, 8, 16, tzinfo=timezone.utc))
         self.assertIsNone(record)
         self.assertEqual(observation["state"], "closed")

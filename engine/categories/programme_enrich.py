@@ -404,8 +404,13 @@ _STIPEND_PROVIDED = re.compile(
     r"(?:a |an |the )?(?:[\w-]+\s+){0,3}(?:monthly )?(?:stipend|allowance)\b", re.I)
 
 
+_ABBREV_PROTECT = re.compile(r"\b(?:[A-Z]\.){2,}|\b(?:B|M)\.(?=(?:Tech|Sc|Sc|E|S|A|Com|Phil|Ed)\b)|\b(?:Ph\.D|Dr|Mr|Ms|Mrs|Prof|St|vs|etc|Rs|e\.g|i\.e)\.", re.I)
+
+
 def _sentence_split(text: str) -> List[str]:
-    return [s.strip() for s in re.findall(r"(?:[^.!?\n]|(?<=\d)\.(?=\d))+(?:[.!?]|$)", text) if s.strip()]
+    protected = _ABBREV_PROTECT.sub(lambda m: m.group(0).replace(".", "\u2024"), text)
+    parts = re.findall(r"(?:[^.!?\n]|(?<=\d)\.(?=\d))+(?:[.!?]|$)", protected)
+    return [s.strip().replace("\u2024", ".") for s in parts if s.strip()]
 
 
 def extract_funding(text: str) -> Tuple[Optional[str], Optional[int], Optional[str]]:
@@ -792,9 +797,291 @@ def find_application_link(links: Iterable[Tuple[str, str]], seed_url: str,
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
+
+
+# --------------------------------------------------------------------------- #
+# Applicant-facing details: requirements, duration, covers, gender, age, amount
+# --------------------------------------------------------------------------- #
+_REQUIREMENT_PATTERNS = (
+    ("personal statement", re.compile(r"\b(?:personal|motivation|purpose) statement\b|\bstatement of (?:purpose|interest)\b|\bessays?\b|\bletter of (?:interest|motivation)\b|\bcover letter\b", re.I)),
+    ("recommendation letters", re.compile(r"\b(?:letters? of )?(?:recommendation|reference)s?(?: letters?)?\b|\breferees?\b", re.I)),
+    ("transcript", re.compile(r"\btranscripts?\b|\bmark ?sheets?\b|\bacademic records?\b", re.I)),
+    ("CV or resume", re.compile(r"\b(?:cv|curriculum vitae|r[eé]sum[eé])\b", re.I)),
+    ("research proposal", re.compile(r"\bresearch (?:proposal|plan|statement)\b|\bproject proposal\b|\bproposal\b", re.I)),
+    ("interview", re.compile(r"\binterviews?\b", re.I)),
+    ("test scores", re.compile(r"\bGRE\b|\bTOEFL\b|\bIELTS\b|\bGATE score\b|\btest scores?\b", re.I)),
+    ("portfolio", re.compile(r"\bportfolio\b|\bwork samples?\b|\bwriting samples?\b", re.I)),
+    ("proof of enrolment", re.compile(r"\bproof of (?:enrol?lment|registration|status)\b|\benrol?lment verification\b", re.I)),
+)
+_COVERS_PATTERNS = (
+    ("housing", re.compile(r"\b(?:housing|accommodations?|lodging|on-campus (?:housing|dorm)\w*|residence)\b", re.I)),
+    ("travel", re.compile(r"\b(?:travel (?:costs?|expenses?|support|allowance|funds?|reimbursement)|airfare|round-trip (?:airfare|travel)|flights?)\b", re.I)),
+    ("tuition", re.compile(r"\btuition\b", re.I)),
+    ("meals", re.compile(r"\b(?:meals?|food allowance|board)\b", re.I)),
+    ("health insurance", re.compile(r"\b(?:health|medical) insurance\b", re.I)),
+    ("visa support", re.compile(r"\bvisa (?:support|fees?|sponsorship|assistance)\b", re.I)),
+    ("research funds", re.compile(r"\b(?:research (?:funds?|allowance|expenses|budget)|conference travel|book allowance)\b", re.I)),
+)
+_COVERS_CONTEXT = re.compile(r"\b(?:cover(?:s|ed)?|provid(?:e|es|ed|ing)|include(?:s|d)?|funded|paid|free|receive|support(?:s|ed)?|reimburse\w*|allowance|stipend|offered|benefits?)\b", re.I)
+_DURATION = re.compile(
+    r"\b(\d{1,2}(?:\s?(?:-|–|to)\s?\d{1,2})?)[- ]?(week|month|year|day)s?\b(?:[- ]long)?\s*(?:(?:summer|research|internship|fellowship|programme|program|residency|placement|stay)\b)?", re.I)
+_DURATION_CUE = re.compile(r"\b(?:duration|lasts?|last(?:ing)?|runs?|tenure|period of|for (?:a )?(?:period|term)|-week|-month|-year|weeks|months|years)\b", re.I)
+_GENDER_WOMEN = re.compile(r"\b(?:open to|for|only|exclusively|restricted to|available to|designed for)\s+(?:the\s+)?(?:female|women|woman)\b|\bwomen[- ]only\b|\b(?:female|women) (?:students?|candidates?|applicants?|researchers?|scientists?|engineers?|undergraduates?|scholars?)\b(?!.*\bencourag)", re.I)
+_UNDERREP = re.compile(r"\bunderrepresented\b|\bunder-represented\b|\bfirst[- ]generation\b|\bhistorically (?:black|marginali[sz]ed)\b|\blow[- ]income\b|\bdisadvantaged\b", re.I)
+_AGE = re.compile(
+    r"\b(?:(?:aged?|age limit(?: is)?|age)\s*(?:between|:)?\s*(\d{2})\s*(?:-|–|to|and)\s*(\d{2})|"
+    r"(?:under|below|less than|not (?:more|older) than|up to|maximum age(?: of)?|no older than|younger than)\s+(\d{2})\s*(?:years?(?: of age| old)?|yrs)|"
+    r"(?:aged?|age)\s+(?:of\s+)?(\d{2})\s*(?:years?)?\s*(?:or (?:younger|below|under|less))|"
+    r"(\d{2})\s*(?:years?)?\s*(?:of age )?(?:or (?:younger|below|under|less)))", re.I)
+
+
+def extract_requirements(text: str) -> List[str]:
+    """Application components, only from sentences that talk about applying."""
+    found: List[str] = []
+    cue = re.compile(r"\b(?:appl\w+|submit\w*|upload\w*|require\w*|include\w*|provide\w*|must|should|attach\w*|need\w*|checklist|materials?|documents?)\b", re.I)
+    for sentence in _sentence_split((text or "").replace("\xa0", " ")):
+        if len(sentence) > 400 or not cue.search(sentence):
+            continue
+        for name, pattern in _REQUIREMENT_PATTERNS:
+            if name not in found and pattern.search(sentence):
+                found.append(name)
+    return found
+
+
+def extract_covers(text: str) -> List[str]:
+    found: List[str] = []
+    for sentence in _sentence_split((text or "").replace("\xa0", " ")):
+        if len(sentence) > 400 or not _COVERS_CONTEXT.search(sentence):
+            continue
+        if re.search(r"\b(?:not (?:cover|include|provide)|does not|do not|cannot|must (?:arrange|pay|cover)|responsible for|at your own|own expense)\b", sentence, re.I):
+            continue
+        for name, pattern in _COVERS_PATTERNS:
+            if name not in found and pattern.search(sentence):
+                found.append(name)
+    return found
+
+
+def extract_duration(text: str) -> Optional[str]:
+    for sentence in _sentence_split((text or "").replace("\xa0", " ")):
+        if len(sentence) > 300 or not _DURATION_CUE.search(sentence):
+            continue
+        if re.search(r"\b(?:deadline|notif\w+|within|before|after|prior|ago|cycle|reference|older|years? of age|years? old|experience)\b", sentence, re.I):
+            continue
+        match = _DURATION.search(sentence)
+        if match:
+            amount = re.sub(r"\s*(?:-|–|to)\s*", "-", match.group(1))
+            unit = match.group(2).lower()
+            if amount == "1":
+                return "1 " + unit
+            if "-" not in amount and unit == "day" and int(amount) > 31:
+                continue
+            return "{} {}s".format(amount, unit)
+    return None
+
+
+def extract_gender(text: str) -> Optional[str]:
+    return "women" if _GENDER_WOMEN.search(text or "") else None
+
+
+def extract_underrepresented(text: str) -> bool:
+    for sentence in _sentence_split((text or "").replace("\xa0", " ")):
+        if _UNDERREP.search(sentence) and re.search(r"\b(?:eligible|open to|priority|prefer\w*|designed|aimed|for|target\w*|encourage\w*|seek\w*)\b", sentence, re.I) and len(sentence) < 300:
+            return True
+    return False
+
+
+def extract_age_limit(text: str) -> Optional[str]:
+    match = _AGE.search(text or "")
+    if not match:
+        return None
+    lo, hi, under, over1, over2 = match.groups()
+    if lo and hi and 14 <= int(lo) < int(hi) <= 70:
+        return "{}-{} years".format(lo, hi)
+    maximum = under or over1 or over2
+    if maximum and 17 <= int(maximum) <= 70:
+        return "up to {} years".format(maximum)
+    return None
+
+
+_AMOUNT_TEXT = re.compile(r"^(?:Up to )?(?P<sym>CA\$|A\$|US\$|[$€£₹]|[A-Z]{3})\s?(?P<num>[\d,]+(?:\.\d+)?)(?P<mult>[KM])?")
+_SYMBOL_CODE = {"$": "USD", "US$": "USD", "€": "EUR", "£": "GBP", "₹": "INR", "CA$": "CAD", "A$": "AUD"}
+
+
+def normalise_funding(funding_text: Optional[str]) -> Dict:
+    """Split the short funding text into amount/currency/period (best effort)."""
+    out: Dict = {}
+    match = _AMOUNT_TEXT.match(funding_text or "")
+    if not match:
+        return out
+    sym = match.group("sym")
+    code = _SYMBOL_CODE.get(sym, sym if len(sym) == 3 else None)
+    if not code:
+        return out
+    number = float(match.group("num").replace(",", ""))
+    number *= {"K": 1e3, "M": 1e6}.get(match.group("mult") or "", 1)
+    out["funding_amount"] = int(number) if number == int(number) else number
+    out["funding_currency"] = code
+    lowered = (funding_text or "").casefold()
+    out["funding_period"] = "month" if "per month" in lowered else ("year" if "per year" in lowered else "total")
+    return out
+
+
+_AGGREGATOR_HOSTS = (
+    "pathwaystoscience.org", "buddy4study.com", "scholars4dev.com", "opportunitydesk.org", "opportunitiescorners.com",
+    "scholarshipsads.com", "fastweb.com", "scholarships.com", "studyportals.com", "internshala.com", "unstop.com",
+    "github.com", "githubusercontent.com", "reddit.com", "medium.com", "linkedin.com", "indeed.com", "glassdoor.com",
+    "youthop.com", "opportunitiesforafricans.com", "afterschoolafrica.com", "scholarshipportal.com", "findaphd.com",
+    "jobs.ac.uk", "academicpositions.com", "naukri.com", "freshersworld.com", "letsintern.com", "chegg.com",
+    "careers360.com", "shiksha.com", "collegedunia.com", "ugcnet.nta.ac.in-not",
+)
+
+
+def source_kind(url: str) -> str:
+    domain = registrable_domain(url) or ""
+    host = (urlparse(str(url)).hostname or "").casefold()
+    return "aggregator" if any(host == h or host.endswith("." + h) or domain == h for h in _AGGREGATOR_HOSTS) else "official"
+
+
+_MONTH_RX = r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
+_MONTHS_NUM = {m: i + 1 for i, m in enumerate(("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"))}
+_PROGRAM_RANGE = re.compile(
+    r"\b(?:program(?:me)?|internship|fellowship|summer|session|term|cohort|research|dates?|held|runs?|takes place|begins?|starts?)\b[^.\n]{0,60}?"
+    r"\b(" + _MONTH_RX + r")\.?\s+(\d{1,2})(?:st|nd|rd|th)?\s*(?:,?\s*(20\d{2}))?\s*(?:-|–|—|to|through|until)\s*(?:(" + _MONTH_RX + r")\.?\s+)?(\d{1,2})(?:st|nd|rd|th)?,?\s*(20\d{2})", re.I)
+
+
+def extract_program_dates(text: str, today: Optional[date] = None) -> Tuple[Optional[str], Optional[str]]:
+    """Explicit 'Month d - Month d, yyyy' program run dates (never deadlines)."""
+    for sentence in _sentence_split((text or "").replace("\xa0", " ")):
+        if re.search(r"\b(?:deadline|apply by|applications? (?:due|close))\b", sentence, re.I):
+            continue
+        match = _PROGRAM_RANGE.search(sentence)
+        if not match:
+            continue
+        m1, d1, y1, m2, d2, y2 = match.groups()
+        try:
+            n1 = _MONTHS_NUM[m1[:3].lower()]
+            n2 = _MONTHS_NUM[(m2 or m1)[:3].lower()]
+            year2 = int(y2)
+            year1 = int(y1) if y1 else year2 - (1 if n1 > n2 else 0)
+            return date(year1, n1, int(d1)).isoformat(), date(year2, n2, int(d2)).isoformat()
+        except ValueError:
+            continue
+    return None, None
+
+
+_PDF_LINK = re.compile(r"\.pdf(?:$|[?#])", re.I)
+_PDF_LABEL = re.compile(r"\b(?:deadline|brochure|call for applications?|application (?:guide|guidelines|form)|guidelines|announcement|notification|advert)", re.I)
+
+
+def find_pdf_application_doc(links: Optional[List[Tuple[str, str]]], base_url: str) -> Optional[Tuple[str, str]]:
+    """A PDF labelled deadline/brochure/call: recorded as a link only, never parsed."""
+    for label, href in links or []:
+        if href and _PDF_LINK.search(href) and _PDF_LABEL.search((label or "") + " " + href):
+            return clean_text(label), urljoin(base_url, href)
+    return None
+
+
+_RECURRING = re.compile(
+    r"\b(?:annual(?:ly)?|each year|every year|yearly|next (?:year|cycle|round|intake|cohort)|upcoming (?:cycle|round|intake|cohort)|"
+    r"applications? (?:will )?(?:re-?open|open again|open in)|check back|stay tuned|future (?:cycles?|cohorts?|rounds?)|"
+    r"(?:summer|fall|spring|winter) 20\d{2})\b", re.I)
+_NEXT_CYCLE_TEXT = re.compile(
+    r"\b(?:applications? (?:will )?(?:re-?open|open)(?: again)?(?: in| on)?|next (?:application )?(?:cycle|round|intake|cohort|call)[^.]{0,40}?(?:opens?|begins?|starts?|in))\s+([A-Z][a-z]+(?:\s+\d{1,2}(?:st|nd|rd|th)?,)?\s*(?:20\d{2})?)", re.I)
+
+
+def next_cycle_hint(text: str, last_deadline: Optional[date], today: date) -> Optional[str]:
+    """Hint for a recurring programme whose last deadline has passed."""
+    match = _NEXT_CYCLE_TEXT.search(text or "")
+    if match:
+        return clean_text("Next cycle: applications open {}".format(match.group(1))).rstrip(",")
+    if last_deadline is not None:
+        year = last_deadline.year + 1
+        while date(year, last_deadline.month, min(last_deadline.day, 28)) < today:
+            year += 1
+        return "Last deadline {}; next cycle expected around {} {}".format(
+            last_deadline.isoformat(), last_deadline.strftime("%B"), year)
+    return None
+
+
+_DISCONTINUED = re.compile(r"\b(?:discontinued|no longer (?:accept|offer|available|running)|has ended|was ended|final (?:cohort|year)|sunset|cancel+ed|suspended|will not (?:be offered|run))\b", re.I)
+
+
+def is_recurring_programme(text: str, last_deadline: Optional[date], today: date) -> bool:
+    if _DISCONTINUED.search(text or ""):
+        return False
+    if last_deadline is not None and (today - last_deadline).days <= 400:
+        return True
+    return bool(_RECURRING.search(text or ""))
+
+
+def build_summary(record: Dict) -> Optional[str]:
+    """Neutral 1-2 sentence summary composed only from extracted facts."""
+    name, org = record.get("programme_name"), record.get("organizer")
+    if not name:
+        return None
+    levels = [l for l in (record.get("levels") or []) if l]
+    audience = {"high school": "high-school students", "undergraduate": "undergraduates", "graduate": "graduate students",
+                "phd": "PhD students", "postdoc": "postdocs", "early-career": "early-career researchers"}
+    who = ", ".join(audience.get(l, l) for l in levels[:3])
+    first = "{} is offered by {}".format(name, org) if org and org.casefold() not in name.casefold() else name
+    bits = []
+    if who:
+        bits.append("for {}".format(who))
+    if record.get("region") and record["region"] != "Global":
+        bits.append("in {}".format(record["region"]))
+    elif record.get("region") == "Global":
+        bits.append("open worldwide" if record.get("intl_eligible") is not False else "")
+    sentence = (first + (" " + " ".join(b for b in bits if b) if any(bits) else "")).strip() + "."
+    facts = []
+    if record.get("funding") and not is_placeholder(record["funding"]):
+        facts.append("Funding: {}".format(record["funding"]))
+    if record.get("duration"):
+        facts.append("duration {}".format(record["duration"]))
+    if record.get("deadline"):
+        facts.append("deadline {}".format(record["deadline"]))
+    elif record.get("next_cycle_hint"):
+        facts.append(record["next_cycle_hint"][0].lower() + record["next_cycle_hint"][1:])
+    if record.get("intl_eligible") is False:
+        facts.append("open to citizens/residents only")
+    elif record.get("intl_eligible") is True:
+        facts.append("international applicants eligible")
+    if facts:
+        sentence += " " + "; ".join(facts)[0].upper() + "; ".join(facts)[1:] + "."
+    return truncate(sentence, 320)
+
+
+def extract_details(text: str, today: Optional[date] = None) -> Dict:
+    """All applicant-facing detail fields we can pull from visible text."""
+    out: Dict = {}
+    reqs = extract_requirements(text)
+    if reqs:
+        out["requirements"] = reqs
+    covers = extract_covers(text)
+    if covers:
+        out["covers"] = covers
+    duration = extract_duration(text)
+    if duration:
+        out["duration"] = duration
+    gender = extract_gender(text)
+    if gender:
+        out["gender"] = gender
+    if extract_underrepresented(text):
+        out["underrepresented"] = True
+    age = extract_age_limit(text)
+    if age:
+        out["age_limit"] = age
+    start, end = extract_program_dates(text, today)
+    if start and end:
+        out["start_date"], out["end_date"] = start, end
+    return out
+
+
 ENRICH_KEYS = ("description", "funding", "eligibility", "location", "region", "logo_url",
                "organizer_domain", "application_url", "funding_amount_usd", "intl_eligible",
-               "levels", "deadline_basis", "start_date", "end_date")
+               "levels", "deadline_basis", "start_date", "end_date") + (
+    "requirements", "duration", "covers", "gender", "age_limit", "underrepresented",
+    "funding_currency", "funding_amount", "funding_period", "source_kind", "opening_date",
+    "summary", "next_cycle_hint", "last_deadline")
 
 
 def enrich_fields(html: str, text: str, url: str, final_url: Optional[str] = None,
@@ -848,9 +1135,21 @@ def enrich_fields(html: str, text: str, url: str, final_url: Optional[str] = Non
     for key in ("start_date", "end_date"):
         if structured.get(key):
             out[key] = structured[key]
+    details = extract_details(text)
+    for key, value in details.items():
+        if key in ("start_date", "end_date") and out.get(key):
+            continue
+        out.setdefault(key, value)
+    out.update(normalise_funding(out.get("funding")))
+    out["source_kind"] = source_kind(url)
     if links:
         apply_link = find_application_link(links, url, final_url)
         if apply_link:
             out["application_url"] = apply_link[1]
             out["_application_label"] = apply_link[0]
+        else:
+            pdf = find_pdf_application_doc(links, base)
+            if pdf:
+                out["application_url"] = pdf[1]
+                out["_application_label"] = pdf[0]
     return out

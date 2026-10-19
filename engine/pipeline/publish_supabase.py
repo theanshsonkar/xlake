@@ -75,7 +75,10 @@ HACKATHON_DESCRIPTION_MAX = 300
 # Hackathon-only keys that programmes also publish.
 PROGRAMME_SHARED_KEYS = {"logo_url", "region", "organizer_domain", "deadline_basis"}
 # Programme-only keys (never published for jobs/internships/hackathons).
-PROGRAMME_ONLY_KEYS = {"funding_amount_usd", "intl_eligible", "levels"}
+PROGRAMME_ONLY_KEYS = {"funding_amount_usd", "intl_eligible", "levels", "requirements", "duration",
+                       "covers", "gender", "age_limit", "underrepresented", "funding_currency",
+                       "funding_amount", "funding_period", "summary", "next_cycle_hint",
+                       "last_deadline", "source_kind"}
 # Programmes and hackathons share the placeholder->NULL rules.
 PLACEHOLDER_NULL_TYPES = {"hackathon", "programme", "contribution", "job", "internship"}
 DESCRIPTION_MAX_TYPES = {"hackathon", "programme", "contribution", "job", "internship"}
@@ -116,6 +119,9 @@ EXTRA_KEYS = [
     # programmes
     "organizer", "programme_status", "opening_date", "opportunity_type",
     "international_eligibility", "funding_amount_usd", "intl_eligible", "levels",
+    "requirements", "duration", "covers", "gender", "age_limit", "underrepresented",
+    "funding_currency", "funding_amount", "funding_period", "summary", "next_cycle_hint",
+    "last_deadline", "source_kind",
     # provenance (all types)
     "source_mechanism", "source_confirmation", "official_url",
     "application_url",
