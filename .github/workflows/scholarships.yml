@@ -29,7 +29,7 @@ jobs:
     uses: ./.github/workflows/_category.yml
     with:
       category: scholarships
-      timeout: 25
+      timeout: 40
       retire_force: ${{ inputs.retire_force || '' }}
       dry_run: ${{ inputs.dry_run || false }}
       generate_seeds: ${{ inputs.generate_seeds || false }}

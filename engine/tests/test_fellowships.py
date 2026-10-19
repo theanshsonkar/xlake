@@ -46,7 +46,8 @@ class TestFellowshipRegistry(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             result = fellowships.collect(fetch=fake_fetch, checked_at=datetime(2026, 8, 16, tzinfo=timezone.utc), lake_path=os.path.join(directory, "lake.json"), observations_path=os.path.join(directory, "observations.json"))
         expected = [seed["official_url"] for seed in fellowships._load_seed_registry()]
-        self.assertEqual(calls, expected)
+        self.assertEqual(sorted(calls), sorted(expected))  # fetched concurrently: call order is not deterministic
+        self.assertEqual([o["official_url"] for o in result["observations"]], expected)
         self.assertEqual(len(result["observations"]), len(expected))
         self.assertEqual(len(fellowships.FELLOWSHIP_CONFIG.source_registry), len(expected))
 

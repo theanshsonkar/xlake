@@ -622,7 +622,32 @@ _REGION_TEXT = (
 _GLOBAL_TEXT = re.compile(
     r"\b(?:worldwide|global(?:ly)?\s+(?:programme|program|community|applicants?|fellows)|"
     r"open to (?:applicants|students|researchers|people) (?:from )?(?:all|any)|from (?:any|all) countr\w+|"
-    r"all nationalities|anyone,? anywhere|around the world|international applicants?)\b", re.I)
+    r"all nationalities|anyone,? anywhere|around the world|international (?:applicants?|students?|fellows|researchers)|"
+    r"open to applicants? (?:worldwide|globally|internationally)|applicants? (?:worldwide|from around the world)|"
+    r"(?:applicants?|students?|candidates?) (?:of|from) any nationality)\b", re.I)
+# Organisations whose programmes are not tied to the TLD of their site.
+_KNOWN_ORG_REGION = (
+    (("mlh.io", "ycombinator.com", "github.com", "githubstudentdeveloperpack.com", "google.com", "microsoft.com",
+      "aws.amazon.com", "antler.co", "outreachy.org", "summerofcode.withgoogle.com", "openai.com",
+      "mozilla.org", "linuxfoundation.org", "apache.org", "python.org", "rustfoundation.org"), "Global"),
+    (("fulbright.org", "fulbrightonline.org", "nsf.gov", "thielfellowship.org", "knight-hennessy.stanford.edu"), "US"),
+    (("chevening.org", "gatescambridge.org", "rhodeshouse.ox.ac.uk", "wellcome.org"), "UK"),
+    (("erasmus-plus.ec.europa.eu", "marie-sklodowska-curie-actions.ec.europa.eu"), "Europe"),
+)
+_COUNTRY_REGION = (
+    ("US", ("united states", "usa", "u.s.")),
+    ("Canada", ("canada", "canadian")),
+    ("UK", ("united kingdom", "england", "scotland", "wales", "britain", "british")),
+    ("India", ("india", "indian")),
+    ("Australia", ("australia", "australian")),
+    ("Europe", ("germany", "france", "switzerland", "netherlands", "spain", "italy", "sweden", "denmark",
+                "norway", "finland", "ireland", "austria", "belgium", "european union", "europe", "european")),
+    ("Asia", ("japan", "korea", "singapore", "china", "hong kong", "taiwan", "malaysia", "indonesia",
+              "philippines", "vietnam", "thailand", "pakistan", "bangladesh", "sri lanka")),
+    ("Africa", ("nigeria", "kenya", "ghana", "south africa", "rwanda", "uganda", "tanzania", "ethiopia", "egypt")),
+    ("Latin America", ("brazil", "mexico", "argentina", "chile", "colombia", "peru")),
+)
+_ELIGIBILITY_CUE = re.compile(r"eligib\w*|open to|must be|applicants?\s+(?:must|should|from)|residents?|citizens?", re.I)
 
 
 def region_from_host(url: str) -> Optional[str]:
@@ -630,6 +655,9 @@ def region_from_host(url: str) -> Optional[str]:
         host = (urlparse(str(url)).hostname or "").casefold().rstrip(".")
     except (TypeError, ValueError):
         return None
+    for domains, region in _KNOWN_ORG_REGION:
+        if any(host == d or host.endswith("." + d) for d in domains):
+            return region
     for suffixes, region in _TLD_REGION:
         if any(host.endswith(s) for s in suffixes):
             return region
@@ -661,7 +689,43 @@ def infer_region(url: str, text: str, structured: Optional[Dict] = None,
     counts = [item for item in counts if item[0] >= 2]
     if counts:
         return max(counts)[1]
+    country = country_near_eligibility(text)
+    if country:
+        return country
     return "Global/Remote" if remote else None
+
+
+def country_near_eligibility(text: str) -> Optional[str]:
+    """Region of the country most mentioned within ~160 chars of an eligibility cue."""
+    text = text or ""
+    scores: Dict[str, int] = {}
+    for cue in _ELIGIBILITY_CUE.finditer(text):
+        window = text[max(0, cue.start() - 160): cue.end() + 160].casefold()
+        for region, names in _COUNTRY_REGION:
+            for name in names:
+                if re.search(r"(?<![a-z])" + re.escape(name) + r"(?![a-z])", window):
+                    scores[region] = scores.get(region, 0) + 1
+    if not scores:
+        return None
+    best = max(scores.values())
+    leaders = [region for region, score in scores.items() if score == best]
+    return leaders[0] if len(leaders) == 1 else None
+
+
+def fallback_region(record: Dict) -> Optional[str]:
+    """Last-resort region for a programme row that has none."""
+    for key in ("official_url", "application_url"):
+        region = region_from_host(record.get(key) or "")
+        if region:
+            return region
+    if record.get("organizer_domain"):
+        region = region_from_host("https://{}/".format(record["organizer_domain"]))
+        if region:
+            return region
+    text = " ".join(str(record.get(k) or "") for k in ("eligibility", "description", "requirements", "summary"))
+    if record.get("intl_eligible") is True or _GLOBAL_TEXT.search(text):
+        return "Global"
+    return country_near_eligibility(text)
 
 
 _LOC_STOPWORDS = frozenset((

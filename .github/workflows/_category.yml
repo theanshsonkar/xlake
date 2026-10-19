@@ -54,6 +54,7 @@ jobs:
       XLAKE_GENERATED_SEEDS_DIR: ${{ github.workspace }}/engine/data/operations/generated_seeds
       XLAKE_RETIRE_FORCE: ${{ inputs.retire_force }}
       GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
     defaults:
       run:
         working-directory: engine

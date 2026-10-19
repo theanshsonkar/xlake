@@ -7,8 +7,10 @@ import os
 import re
 import sys
 import tempfile
+import threading
 import unicodedata
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from copy import deepcopy
 from dataclasses import dataclass
 from datetime import date, datetime, timezone
@@ -279,7 +281,8 @@ ORGANIZER_WINDOW_TOKENS = (
 )
 FORMAL_PROGRAMME_TOKENS = (
     "mentorship", "mentoring", "fellowship", "internship", "cohort",
-    "stipend", "program", "programme",
+    "stipend", "program", "programme", "scholarship", "grant", "award",
+    "prize", "competition", "accelerator", "incubator", "ambassador",
 )
 ROLLING_TOKENS = (
     "rolling basis", "applications are rolling", "rolling application", "processed on a rolling basis",
@@ -323,6 +326,17 @@ HOP_LINK_EXTENSIONS = (".pdf", ".doc", ".docx", ".zip", ".png", ".jpg")
 HOP_LINK_LIMIT = 3
 MAX_HOP_FETCHES = 150
 HOP_LIMIT_ENV = "XLAKE_PROGRAMME_HOP_LIMIT"
+WORKERS_ENV = "XLAKE_PROGRAMME_WORKERS"
+DEFAULT_WORKERS = 8
+_HOP_LOCK = threading.Lock()
+
+
+def _programme_workers() -> int:
+    """Concurrent seed workers (different hosts overlap; per-host locks/delays still serialise one host)."""
+    try:
+        return max(1, int(os.environ.get(WORKERS_ENV, DEFAULT_WORKERS)))
+    except ValueError:
+        return DEFAULT_WORKERS
 
 
 def _hop_fetch_limit() -> int:
@@ -987,6 +1001,10 @@ def _apply_enrichment(record: Dict, evidence: Dict, enriched: Dict, seed: Dict,
             evidence["application_url"] = _evidence(label, record["application_url"])
     if not record.get("region") and seed.get("region_hint"):
         record["region"] = seed["region_hint"]
+    if not record.get("region"):
+        fallback = enrich.fallback_region(record)
+        if fallback:
+            record["region"] = fallback
     if seed.get("source_kind"):
         record["source_kind"] = seed["source_kind"]
     if window:
@@ -1287,6 +1305,36 @@ def _later_timestamp(existing, candidate: str) -> str:
         return candidate
 
 
+def _find_verification_row(rows: List[Dict], verification: Dict, category: str) -> Optional[Dict]:
+    """Match a hand-verified record to an existing row: id, then official URL, then title+organiser."""
+    programme_id = verification["programme_id"]
+    programmes = [r for r in rows if r.get("record_type") == "programme"]
+    by_id = next((r for r in programmes if r.get("programme_id") == programme_id), None)
+    if by_id is not None:
+        return by_id
+    wanted = {u for u in (_normalise_programme_url(verification.get("official_url")),
+                          _normalise_programme_url(verification.get("application_url"))) if u}
+    if wanted:
+        for row in programmes:
+            if row.get("category") != category:
+                continue
+            if wanted & {_normalise_programme_url(row.get("official_url")), _normalise_programme_url(row.get("application_url"))}:
+                return row
+    name = verification.get("programme_name") or verification.get("title") or verification.get("name")
+    name_key = _normalised_programme_name(name)
+    if name_key:
+        org_key = _normalised_programme_name(verification.get("organizer"))
+        for row in programmes:
+            if row.get("category") != category:
+                continue
+            if _normalised_programme_name(row.get("programme_name") or row.get("title")) != name_key:
+                continue
+            row_org = _normalised_programme_name(row.get("organizer"))
+            if not org_key or not row_org or row_org == "not stated" or org_key == row_org:
+                return row
+    return None
+
+
 def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now, *, config: ProgrammeConfig,
                         url_flags: Optional[Dict[str, str]] = None) -> List[Dict]:
     """Overlay valid manual facts, retaining all unrelated lake rows."""
@@ -1305,19 +1353,21 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
             print("Skipping invalid programme verification {}: {}".format(identifier or "<missing id>", reason), file=sys.stderr)
             continue
         programme_id = verification["programme_id"]
-        row = next((item for item in result if item.get("record_type") == "programme" and item.get("programme_id") == programme_id), None)
+        row = _find_verification_row(result, verification, config.category)
         verified_at = _timestamp(verification.get("verified_at")) or now_value
         verified_by = verification.get("verified_by") or "manual-verification"
         seed = source_by_id.get(programme_id, {})
         if row is None:
+            official_url = seed.get("official_url") or verification.get("official_url")
             row = {
                 "record_type": "programme",
                 "category": config.category,
                 "opportunity_type": config.opportunity_type,
                 "programme_id": programme_id,
-                "programme_name": seed.get("programme_name") or verification.get("programme_name") or verification.get("name") or programme_id,
+                "programme_name": (seed.get("programme_name") or verification.get("programme_name")
+                                   or verification.get("title") or verification.get("name") or programme_id),
                 "organizer": seed.get("organizer") or verification.get("organizer") or "not_stated",
-                "official_url": seed.get("official_url") or verification.get("official_url"),
+                "official_url": official_url,
                 "application_url": None,
                 "programme_status": "non_actionable",
                 "opening_date": None,
@@ -1329,6 +1379,7 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
                 "eligibility": "needs_confirmation",
                 "official_evidence": {},
                 "source_confirmation": "official_source",
+                "source_kind": "official",
                 "source_mechanism": "manual-verification",
                 "first_seen": now_value,
                 "last_seen": now_value,
@@ -1343,6 +1394,22 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
         if isinstance(verification_evidence, dict):
             merged_evidence.update(verification_evidence)
         row["official_evidence"] = merged_evidence
+        if verification.get("title") and not row.get("programme_name"):
+            row["programme_name"] = verification["title"]
+        row.setdefault("source_kind", "official")
+        host = _registrable_host(row.get("official_url"))
+        if host and not row.get("organizer_domain"):
+            row["organizer_domain"] = host
+        if host and not row.get("logo_url"):
+            row["logo_url"] = "https://www.google.com/s2/favicons?domain={}&sz=128".format(host)
+        if not row.get("region"):
+            region = enrich.fallback_region(row)
+            if region:
+                row["region"] = region
+        if row.get("hidden_reason") == "source_removed":
+            # A hand-verified record is its own source; never hide it as an orphan.
+            row["hidden_reason"] = None
+            row.pop("went_dead_at", None)
         row["manually_verified"] = True
         row["verified_at"] = verified_at
         row["verified_by"] = verified_by
@@ -1518,6 +1585,91 @@ def retire_closed(category: str, lake_rows: List[Dict], today: date, now: str) -
             retired += 1
     print("retire_closed {}: retired={}".format(category, retired), flush=True)
     return retired
+
+
+STALE_NEEDS_CONFIRMATION_DAYS = 90
+# Primary-category keywords for a programme listed under more than one category.
+_PRIMARY_CATEGORY_KEYWORDS = (
+    ("fellowship", ("fellowship", "fellows")),
+    ("scholarship", ("scholarship", "scholar", "bursary")),
+    ("grant", ("grant", "funding program", "fund")),
+    ("startup-founder", ("accelerator", "incubator", "founder", "startup")),
+    ("research", ("research", "internship", "summer school")),
+    ("community", ("ambassador", "community", "campus", "club")),
+    ("open-source-programmes", ("open source", "summer of code", "outreachy", "mentorship")),
+)
+PROGRAMME_CATEGORIES = frozenset(c for c, _ in _PRIMARY_CATEGORY_KEYWORDS)
+
+
+def _has_quote_evidence(row: Dict) -> bool:
+    evidence = row.get("official_evidence")
+    return isinstance(evidence, dict) and any(
+        isinstance(item, dict) and str(item.get("quote", "")).strip() for item in evidence.values()
+    )
+
+
+def retire_stale_needs_confirmation(category: str, lake_rows: List[Dict], today: date, now: str,
+                                    max_age_days: int = STALE_NEEDS_CONFIRMATION_DAYS) -> int:
+    """Stop serving needs_confirmation rows older than ``max_age_days`` that never gained evidence."""
+    retired = 0
+    for row in lake_rows:
+        if (row.get("record_type") != "programme" or row.get("category") != category
+                or row.get("manually_verified") or row.get("hidden_reason")
+                or not (row.get("needs_confirmation") or row.get("programme_status") == "needs_confirmation")
+                or row.get("deadline") or _has_quote_evidence(row)):
+            continue
+        first_seen = _parse_when(row.get("first_seen"))
+        if first_seen is None or (today - first_seen.date()).days <= max_age_days:
+            continue
+        row["is_live"], row["needs_confirmation"] = False, False
+        row.setdefault("went_dead_at", now)
+        row["hidden_reason"] = "stale_needs_confirmation"
+        retired += 1
+    print("retire_stale_needs_confirmation {}: retired={}".format(category, retired), flush=True)
+    return retired
+
+
+def _primary_category(row: Dict) -> int:
+    """Index of the category whose keywords best match the row's name/summary (ties: its own category)."""
+    text = " ".join(str(row.get(k) or "") for k in ("programme_name", "title", "official_url", "summary")).casefold()
+    best, best_hits = None, 0
+    for index, (_category, words) in enumerate(_PRIMARY_CATEGORY_KEYWORDS):
+        hits = sum(1 for word in words if word in text)
+        if hits > best_hits:
+            best, best_hits = index, hits
+    return best if best is not None else -1
+
+
+def dedupe_across_categories(lake_rows: List[Dict], now: str) -> int:
+    """Keep one live row per official URL across programme categories; hide the others."""
+    groups: Dict[str, List[Dict]] = {}
+    for row in lake_rows:
+        if (row.get("record_type") != "programme" or row.get("category") not in PROGRAMME_CATEGORIES
+                or row.get("hidden_reason")):
+            continue
+        key = _normalise_programme_url(row.get("official_url"))
+        if key and key.count("/") >= 1 and key.split("/", 1)[1].strip("/"):
+            groups.setdefault(key, []).append(row)
+    order = [c for c, _ in _PRIMARY_CATEGORY_KEYWORDS]
+    hidden = 0
+    for rows in groups.values():
+        if len({r.get("category") for r in rows}) < 2:
+            continue
+        def rank(row):
+            primary = _primary_category(row)
+            wins = primary >= 0 and row.get("category") == order[primary]
+            return (int(bool(row.get("manually_verified"))), int(wins), int(bool(row.get("is_live"))))
+        winner = max(rows, key=rank)
+        for row in rows:
+            if row is winner or row.get("category") == winner.get("category"):
+                continue
+            row["is_live"] = False
+            row.setdefault("went_dead_at", now)
+            row["hidden_reason"] = "duplicate_category"
+            row["duplicate_of"] = winner.get("programme_id")
+            hidden += 1
+    print("dedupe_across_categories: hidden={}".format(hidden), flush=True)
+    return hidden
 
 
 def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake_path: str = OPPORTUNITIES_PATH, observations_path: str = None, now: Optional[str] = None) -> List[Dict]:
@@ -1835,11 +1987,15 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     hop_budget = [0]
     hop_cache: Dict = {}
     rejected_seed_urls = set()
-    for seed in config.source_registry:
+
+    def process(seed: Dict) -> Dict:
+        """Fetch/parse one seed. Pure w.r.t. shared run state except hop budget/cache (locked)."""
+        out = {"seed": seed, "record": None, "observation": None, "outcome": "exception",
+               "final_url": None, "exception_detail": None, "fetch_succeeded": False,
+               "delta": Counter(), "title_reason": None, "routed": None, "rejected": False,
+               "exception_name": None}
+        delta = out["delta"]
         final_url = None
-        outcome = "exception"
-        fetch_succeeded = False
-        exception_detail = None
         if _is_generated_seed(seed):
             title_ok, title_reason = programme_title_ok(
                 seed.get("programme_name", ""), seed.get("official_url", ""), config.category,
@@ -1850,27 +2006,27 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
                         and not should_route_research_seed(seed, config.category, title_reason)):
                     seed = dict(seed)
                     seed["needs_page_noun"] = True
+                    out["seed"] = seed
                 else:
-                    stats["title_rejected"][title_reason] += 1
+                    out["title_reason"] = title_reason
                     checked = (checked_at or datetime.now(timezone.utc)).isoformat(timespec="seconds")
-                    observation = _observation(
+                    out["observation"] = _observation(
                         seed, checked, "failed", "generated seed rejected: {}".format(title_reason),
                     )
-                    observations.append(observation)
-                    rejected_seed_urls.add(seed.get("official_url"))
+                    out["rejected"] = True
                     if should_route_research_seed(seed, config.category, title_reason):
-                        routed_research.append(_routed_research_seed(seed))
-                        outcome = "routed_research"
+                        out["routed"] = _routed_research_seed(seed)
+                        out["outcome"] = "routed_research"
                     else:
-                        outcome = "rejected_{}".format(title_reason)
-                    failure_counts[outcome] += 1
-                    _log_fetch_outcome(seed, seed.get("official_url"), outcome)
-                    continue
+                        out["outcome"] = "rejected_{}".format(title_reason)
+                    out["final_url"] = seed.get("official_url")
+                    return out
+        record = None
         try:
             fetched = _fetch_with_404_retry(fetch, seed["official_url"])
-            stats["fetched"] += 1
+            delta["fetched"] += 1
             html, final_url = fetched if isinstance(fetched, tuple) else (fetched, None)
-            fetch_succeeded = bool(html)
+            out["fetch_succeeded"] = bool(html)
             if seed.get("needs_page_noun") and not _page_has_programme_noun(html or ""):
                 checked = (checked_at or datetime.now(timezone.utc)).isoformat(timespec="seconds")
                 observation = _observation(
@@ -1878,13 +2034,13 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
                 )
                 record = None
                 outcome = "rejected_missing_programme_noun_page"
-                stats["page_noun_dropped"] += 1
-                rejected_seed_urls.add(seed.get("official_url"))
+                delta["page_noun_dropped"] += 1
+                out["rejected"] = True
             else:
                 if seed.get("needs_page_noun"):
-                    stats["page_noun_accepted"] += 1
+                    delta["page_noun_accepted"] += 1
                 record, observation = parse_programme(seed, html, checked_at, final_url, config=config)
-                if fetch_succeeded:
+                if out["fetch_succeeded"]:
                     first_record = record
                     record, observation = _follow_hops(
                         seed, html, final_url, record, observation, fetch, checked_at, config, hop_budget, hop_cache,
@@ -1901,7 +2057,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             checked = (checked_at or datetime.now(timezone.utc)).isoformat(timespec="seconds")
             exception_name = type(exc).__name__
             exception_message = str(exc)[:200].replace("\\r", " ").replace("\\n", " ")
-            exception_detail = "{}: {}".format(exception_name, exception_message)
+            out["exception_detail"] = "{}: {}".format(exception_name, exception_message)
             bucket = _fetch_failure_bucket("{}: {}".format(exception_name, str(exc)))
             dead_link = bucket in {"http_404", "dns"}
             observation = _observation(
@@ -1911,23 +2067,46 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             record = None
             if bucket == "capped":
                 outcome = "capped"
-                stats["cap_skips"] += 1
+                delta["cap_skips"] += 1
             elif bucket == "robots_blocked":
                 outcome = bucket
-                stats["robots_blocked"] += 1
+                delta["robots_blocked"] += 1
             else:
                 outcome = bucket
-                stats["fetch_errors"] += 1
+                delta["fetch_errors"] += 1
                 if bucket == "exception":
-                    exception_counts[exception_name] += 1
+                    out["exception_name"] = exception_name
+        out.update(record=record, observation=observation, outcome=outcome, final_url=final_url)
+        return out
+
+    workers = _programme_workers()
+    seeds = list(config.source_registry)
+    if workers > 1 and len(seeds) > 1:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            results = pool.map(process, seeds)  # ordered: output stays deterministic
+            results = list(results)
+    else:
+        results = [process(seed) for seed in seeds]
+    for out in results:
+        seed, outcome, record, observation = out["seed"], out["outcome"], out["record"], out["observation"]
+        for key, value in out["delta"].items():
+            stats[key] += value
+        if out["title_reason"]:
+            stats["title_rejected"][out["title_reason"]] += 1
+        if out["rejected"]:
+            rejected_seed_urls.add(seed.get("official_url"))
+        if out["routed"]:
+            routed_research.append(out["routed"])
+        if out["exception_name"]:
+            exception_counts[out["exception_name"]] += 1
         if record:
             records.append(record)
         observations.append(observation)
-        if fetch_succeeded and outcome.startswith("ok"):
+        if out["fetch_succeeded"] and outcome.startswith("ok"):
             successes += 1
         if not outcome.startswith("ok"):
             failure_counts[outcome.split()[0]] += 1
-        _log_fetch_outcome(seed, final_url, outcome, exception_detail)
+        _log_fetch_outcome(seed, out["final_url"], outcome, out["exception_detail"])
     records = _dedupe_programme_records(records)
     _update_generated_dead_strikes(config, observations)
     _merge_routed_research_seeds(routed_research)
@@ -1973,6 +2152,9 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     except Exception:
         url_flags = {}
     merged = apply_verifications(merged, verifications, verification_now, config=config, url_flags=url_flags)
+    stale_today = (checked_at or datetime.now(timezone.utc)).date()
+    retire_stale_needs_confirmation(config.category, merged, stale_today, verification_now)
+    dedupe_across_categories(merged, verification_now)
     _atomic_json(lake_path, merged)
     return {"records": records, "observations": observations, "merged_count": len(merged),
             "routed_research": len(routed_research), "stats": stats}
@@ -2115,9 +2297,12 @@ def _follow_hops(seed: Dict, html: str, final_url: Optional[str], record: Option
             if hop_url in cache:
                 fetched = cache[hop_url]
             else:
-                if hop_budget[0] >= _hop_fetch_limit():
+                with _HOP_LOCK:
+                    over_budget = hop_budget[0] >= _hop_fetch_limit()
+                    if not over_budget:
+                        hop_budget[0] += 1
+                if over_budget:
                     break
-                hop_budget[0] += 1
                 fetched = fetch(hop_url)
                 cache[hop_url] = fetched
             hop_html, hop_final_url = fetched if isinstance(fetched, tuple) else (fetched, None)

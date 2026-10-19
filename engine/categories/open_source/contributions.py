@@ -144,13 +144,34 @@ DIFFICULTY_BY_LABEL = {
 }
 
 
+def _github_token():
+    """Prefer a personal access token (GH_PAT) over the workflow's GITHUB_TOKEN."""
+    return os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN")
+
+
+def _describe_search_error(error):
+    """One-line reason for a failed GitHub search call (HTTP status, API message, rate-limit headers)."""
+    if isinstance(error, HTTPError):
+        message = ""
+        try:
+            message = json.loads(error.read().decode("utf-8", "replace")).get("message", "")
+        except Exception:
+            pass
+        headers = getattr(error, "headers", None)
+        remaining = headers.get("X-RateLimit-Remaining") if headers else None
+        resource = headers.get("X-RateLimit-Resource") if headers else None
+        return "HTTP {} {} message={!r} ratelimit_remaining={} resource={}".format(
+            error.code, getattr(error, "reason", ""), message, remaining, resource)
+    return "{}: {}".format(type(error).__name__, str(error)[:200])
+
+
 def _github_headers(token=None):
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "opportunity-radar",
         "X-GitHub-Api-Version": "2022-11-28",
     }
-    token = os.environ.get("GITHUB_TOKEN") if token is None else token
+    token = _github_token() if token is None else token
     if token:
         headers["Authorization"] = "Bearer " + token
     return headers
@@ -294,7 +315,7 @@ def _default_fetch(repo):
         "User-Agent": "opportunity-radar",
         "X-GitHub-Api-Version": "2022-11-28",
     }
-    token = os.environ.get("GITHUB_TOKEN")
+    token = _github_token()
     if token:
         headers["Authorization"] = "Bearer " + token
     req = request.Request(url, headers=headers)
@@ -363,7 +384,9 @@ def discover_repos(token, now, search_fetch=_default_search_fetch):
             items = result.get("items", [])
             if not isinstance(items, list):
                 raise ValueError("GitHub repository search items was not a list")
-        except Exception:
+        except Exception as error:
+            print("oss_discovery: search failed for language={} stars={} after {} repos: {}".format(
+                language, band, len(discovered), _describe_search_error(error)), flush=True)
             return discovered
         for item in items:
             if not isinstance(item, dict):
@@ -1024,7 +1047,9 @@ def collect(
         }
         for repo, language in CURATED_REPOS
     ]
-    token = os.environ.get("GITHUB_TOKEN")
+    token = _github_token()
+    if not token:
+        print("oss_discovery: no GH_PAT/GITHUB_TOKEN set; repository search skipped", flush=True)
     discovered = discover_repos(token, checked_datetime, search_fetch=search_fetch) if token else []
     seen_repos = {spec["repo"].casefold() for spec in repo_specs}
     for item in discovered:
