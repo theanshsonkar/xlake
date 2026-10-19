@@ -1,0 +1,1828 @@
+[
+ {
+  "source_id": "scholarship-goldwater",
+  "programme_id": "scholarship-goldwater",
+  "programme_name": "Barry Goldwater Scholarship",
+  "organizer": "Barry Goldwater Scholarship and Excellence in Education Foundation",
+  "official_url": "https://goldwaterscholarship.gov/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Typically opens in late summer; campus nominations in the fall, national deadline around late January or early February"
+ },
+ {
+  "source_id": "scholarship-truman",
+  "programme_id": "scholarship-truman",
+  "programme_name": "Harry S. Truman Scholarship",
+  "organizer": "Truman Scholarship Foundation",
+  "official_url": "https://www.truman.gov/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Typically opens in the fall; national deadline around early February"
+ },
+ {
+  "source_id": "scholarship-udall",
+  "programme_id": "scholarship-udall",
+  "programme_name": "Udall Undergraduate Scholarship",
+  "organizer": "Udall Foundation",
+  "official_url": "https://www.udall.gov/OurPrograms/Scholarship/Scholarship.aspx",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Typically opens in the fall; national deadline around early March"
+ },
+ {
+  "source_id": "scholarship-gilman",
+  "programme_id": "scholarship-gilman",
+  "programme_name": "Gilman Scholarship",
+  "organizer": "U.S. Department of State / IIE",
+  "official_url": "https://www.gilmanscholarship.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-boren",
+  "programme_id": "scholarship-boren",
+  "programme_name": "Boren Awards",
+  "organizer": "National Security Education Program (NSEP)",
+  "official_url": "https://www.borenawards.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Typically due late January (fellowships) or early February (undergraduate awards)"
+ },
+ {
+  "source_id": "scholarship-cls",
+  "programme_id": "scholarship-cls",
+  "programme_name": "Critical Language Scholarship Program",
+  "organizer": "U.S. Department of State",
+  "official_url": "https://clscholarship.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-churchill",
+  "programme_id": "scholarship-churchill",
+  "programme_name": "Churchill Scholarship",
+  "organizer": "Winston Churchill Foundation of the United States",
+  "official_url": "https://www.churchillscholarship.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-marshall",
+  "programme_id": "scholarship-marshall",
+  "programme_name": "Marshall Scholarship",
+  "organizer": "Marshall Aid Commemoration Commission",
+  "official_url": "https://www.marshallscholarship.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Typically opens in the summer; national deadline around late September or early October"
+ },
+ {
+  "source_id": "scholarship-cocacola",
+  "programme_id": "scholarship-cocacola",
+  "programme_name": "Coca-Cola Scholars Program",
+  "organizer": "Coca-Cola Scholars Foundation",
+  "official_url": "https://www.coca-colascholarsfoundation.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Typically opens in August; deadline around October 31"
+ },
+ {
+  "source_id": "scholarship-dell",
+  "programme_id": "scholarship-dell",
+  "programme_name": "Dell Scholars Program",
+  "organizer": "Michael & Susan Dell Foundation",
+  "official_url": "https://www.dellscholars.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Typically opens September 1; deadline around December 1"
+ },
+ {
+  "source_id": "scholarship-jkc-undergrad",
+  "programme_id": "scholarship-jkc-undergrad",
+  "programme_name": "Jack Kent Cooke Undergraduate Transfer Scholarship",
+  "organizer": "Jack Kent Cooke Foundation",
+  "official_url": "https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-jkc-college",
+  "programme_id": "scholarship-jkc-college",
+  "programme_name": "Jack Kent Cooke College Scholarship",
+  "organizer": "Jack Kent Cooke Foundation",
+  "official_url": "https://www.jkcf.org/our-scholarships/college-scholarship-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-questbridge",
+  "programme_id": "scholarship-questbridge",
+  "programme_name": "QuestBridge National College Match",
+  "organizer": "QuestBridge",
+  "official_url": "https://www.questbridge.org/high-school-students/national-college-match",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "National College Match typically opens in August; deadline around late September"
+ },
+ {
+  "source_id": "scholarship-gates-scholarship",
+  "programme_id": "scholarship-gates-scholarship",
+  "programme_name": "The Gates Scholarship",
+  "organizer": "Bill & Melinda Gates Foundation",
+  "official_url": "https://www.thegatesscholarship.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Typically opens in August; deadline around mid-September"
+ },
+ {
+  "source_id": "scholarship-hsf",
+  "programme_id": "scholarship-hsf",
+  "programme_name": "Hispanic Scholarship Fund Scholarship",
+  "organizer": "Hispanic Scholarship Fund",
+  "official_url": "https://www.hsf.net/scholarship",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Typically opens in the fall; deadline around the end of February"
+ },
+ {
+  "source_id": "scholarship-uncf",
+  "programme_id": "scholarship-uncf",
+  "programme_name": "UNCF Scholarships",
+  "organizer": "UNCF",
+  "official_url": "https://uncf.org/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-regeneron-sts",
+  "programme_id": "scholarship-regeneron-sts",
+  "programme_name": "Regeneron Science Talent Search",
+  "organizer": "Society for Science",
+  "official_url": "https://www.societyforscience.org/regeneron-sts/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-davidson",
+  "programme_id": "scholarship-davidson",
+  "programme_name": "Davidson Fellows Scholarship",
+  "organizer": "Davidson Institute",
+  "official_url": "https://www.davidsongifted.org/fellows-scholarship/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-smart",
+  "programme_id": "scholarship-smart",
+  "programme_name": "SMART Scholarship-for-Service",
+  "organizer": "U.S. Department of Defense",
+  "official_url": "https://www.smartscholarship.org/smart",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-ieee-pes",
+  "programme_id": "scholarship-ieee-pes",
+  "programme_name": "IEEE PES Scholarship Plus Initiative",
+  "organizer": "IEEE Power & Energy Society",
+  "official_url": "https://ieee-pes.org/pes-scholarship-plus-initiative/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-fulbright-us-student",
+  "programme_id": "scholarship-fulbright-us-student",
+  "programme_name": "Fulbright U.S. Student Program",
+  "organizer": "U.S. Department of State",
+  "official_url": "https://us.fulbrightonline.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-nsbe",
+  "programme_id": "scholarship-nsbe",
+  "programme_name": "NSBE Scholarships",
+  "organizer": "National Society of Black Engineers",
+  "official_url": "https://www.nsbe.org/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-aises",
+  "programme_id": "scholarship-aises",
+  "programme_name": "AISES Scholarships",
+  "organizer": "American Indian Science and Engineering Society",
+  "official_url": "https://www.aises.org/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-ron-brown",
+  "programme_id": "scholarship-ron-brown",
+  "programme_name": "Ron Brown Scholar Program",
+  "organizer": "Ron Brown Scholar Program",
+  "official_url": "https://www.ronbrown.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-posse",
+  "programme_id": "scholarship-posse",
+  "programme_name": "Posse Foundation Scholarship",
+  "organizer": "Posse Foundation",
+  "official_url": "https://www.possefoundation.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-horatio-alger",
+  "programme_id": "scholarship-horatio-alger",
+  "programme_name": "Horatio Alger National Scholarship",
+  "organizer": "Horatio Alger Association",
+  "official_url": "https://scholars.horatioalger.org/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-thurgood-marshall",
+  "programme_id": "scholarship-thurgood-marshall",
+  "programme_name": "Thurgood Marshall College Fund Scholarships",
+  "organizer": "Thurgood Marshall College Fund",
+  "official_url": "https://www.tmcf.org/students-alumni/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-cfl-scholarship",
+  "programme_id": "scholarship-cfl-scholarship",
+  "programme_name": "Cooke Foundation Young Scholars Program",
+  "organizer": "Jack Kent Cooke Foundation",
+  "official_url": "https://www.jkcf.org/our-scholarships/young-scholars-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-aauw-intl",
+  "programme_id": "scholarship-aauw-intl",
+  "programme_name": "AAUW International Fellowships",
+  "organizer": "AAUW",
+  "official_url": "https://www.aauw.org/resources/programs/fellowships-grants/current-opportunities/international/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-nsp-portal",
+  "programme_id": "scholarship-nsp-portal",
+  "programme_name": "National Scholarship Portal",
+  "organizer": "Government of India",
+  "official_url": "https://scholarships.gov.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-tata-trusts",
+  "programme_id": "scholarship-tata-trusts",
+  "programme_name": "Tata Trusts Education Grants",
+  "organizer": "Tata Trusts",
+  "official_url": "https://www.tatatrusts.org/our-work/individual-grants-programme/education-grants",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-sitaram-jindal",
+  "programme_id": "scholarship-sitaram-jindal",
+  "programme_name": "Sitaram Jindal Foundation Scholarship",
+  "organizer": "Sitaram Jindal Foundation",
+  "official_url": "https://www.sitaramjindalfoundation.org/scholarships.php",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-inlaks",
+  "programme_id": "scholarship-inlaks",
+  "programme_name": "Inlaks Shivdasani Scholarships",
+  "organizer": "Inlaks Shivdasani Foundation",
+  "official_url": "https://inlaksfoundation.org/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-jn-tata",
+  "programme_id": "scholarship-jn-tata",
+  "programme_name": "JN Tata Endowment Loan Scholarship",
+  "organizer": "JN Tata Endowment",
+  "official_url": "https://www.jntataendowment.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-kc-mahindra",
+  "programme_id": "scholarship-kc-mahindra",
+  "programme_name": "K.C. Mahindra Scholarships for Post-Graduate Studies Abroad",
+  "organizer": "K.C. Mahindra Education Trust",
+  "official_url": "https://www.kcmet.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-narotam",
+  "programme_id": "scholarship-narotam",
+  "programme_name": "Narotam Sekhsaria Foundation Scholarship",
+  "organizer": "Narotam Sekhsaria Foundation",
+  "official_url": "https://www.nsfoundation.co.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-vidyasaarathi",
+  "programme_id": "scholarship-vidyasaarathi",
+  "programme_name": "Vidyasaarathi Scholarship Portal",
+  "organizer": "NSDL e-Governance",
+  "official_url": "https://www.vidyasaarathi.co.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-ugc-fellowships",
+  "programme_id": "scholarship-ugc-fellowships",
+  "programme_name": "UGC Scholarships and Fellowships",
+  "organizer": "University Grants Commission",
+  "official_url": "https://www.ugc.gov.in/Pages/ScholarshipsFellowships.aspx",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-aicte-pragati",
+  "programme_id": "scholarship-aicte-pragati",
+  "programme_name": "AICTE Pragati Scholarship for Girls",
+  "organizer": "AICTE",
+  "official_url": "https://www.aicte-india.org/schemes/students-development-schemes",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-csir-net",
+  "programme_id": "scholarship-csir-net",
+  "programme_name": "CSIR UGC NET JRF",
+  "organizer": "CSIR",
+  "official_url": "https://csirhrdg.res.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-ncert-nts",
+  "programme_id": "scholarship-ncert-nts",
+  "programme_name": "NTSE National Talent Search Examination",
+  "organizer": "NCERT",
+  "official_url": "https://ncert.nic.in/national-talent-examination.php",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-aif-scholarship",
+  "programme_id": "scholarship-aif-scholarship",
+  "programme_name": "American India Foundation Scholarships",
+  "organizer": "American India Foundation",
+  "official_url": "https://aif.org/our-work/education/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-chevening",
+  "programme_id": "scholarship-chevening",
+  "programme_name": "Chevening Scholarships",
+  "organizer": "UK FCDO",
+  "official_url": "https://www.chevening.org/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global",
+  "cycle_hint": "Typically opens in early August; deadline around early October"
+ },
+ {
+  "source_id": "scholarship-commonwealth-shared",
+  "programme_id": "scholarship-commonwealth-shared",
+  "programme_name": "Commonwealth Shared Scholarships",
+  "organizer": "Commonwealth Scholarship Commission",
+  "official_url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-shared-scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "UK"
+ },
+ {
+  "source_id": "scholarship-cscuk-india",
+  "programme_id": "scholarship-cscuk-india",
+  "programme_name": "Commonwealth Scholarships for Indian candidates",
+  "organizer": "Commonwealth Scholarship Commission",
+  "official_url": "https://cscuk.fcdo.gov.uk/apply/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-erasmus-catalogue",
+  "programme_id": "scholarship-erasmus-catalogue",
+  "programme_name": "Erasmus Mundus Catalogue",
+  "organizer": "European Commission",
+  "official_url": "https://www.eacea.ec.europa.eu/scholarships/emjmd-catalogue_en",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "scholarship-daad-epos",
+  "programme_id": "scholarship-daad-epos",
+  "programme_name": "DAAD EPOS Scholarships",
+  "organizer": "DAAD",
+  "official_url": "https://www.daad.de/en/the-daad/what-we-do/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "scholarship-daad-india",
+  "programme_id": "scholarship-daad-india",
+  "programme_name": "DAAD India",
+  "organizer": "DAAD India",
+  "official_url": "https://www.daad.in/en/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-swiss-excellence",
+  "programme_id": "scholarship-swiss-excellence",
+  "programme_name": "Swiss Government Excellence Scholarships",
+  "organizer": "Swiss Confederation / SERI",
+  "official_url": "https://www.sbfi.admin.ch/sbfi/en/home/education/scholarships-and-grants/swiss-government-excellence-scholarships.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "scholarship-eiffel",
+  "programme_id": "scholarship-eiffel",
+  "programme_name": "Eiffel Excellence Scholarship Programme",
+  "organizer": "Campus France",
+  "official_url": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global",
+  "cycle_hint": "Typically submitted by host institutions; deadline around early January"
+ },
+ {
+  "source_id": "scholarship-mext",
+  "programme_id": "scholarship-mext",
+  "programme_name": "MEXT Scholarship",
+  "organizer": "Government of Japan",
+  "official_url": "https://www.studyinjapan.go.jp/en/planning/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Asia",
+  "cycle_hint": "Typically announced by embassies in spring; applicants apply through the Japanese embassy"
+ },
+ {
+  "source_id": "scholarship-jasso",
+  "programme_id": "scholarship-jasso",
+  "programme_name": "JASSO Scholarships",
+  "organizer": "JASSO",
+  "official_url": "https://www.jasso.go.jp/en/ryugaku/scholarship/index.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Asia"
+ },
+ {
+  "source_id": "scholarship-holland",
+  "programme_id": "scholarship-holland",
+  "programme_name": "Holland Scholarship",
+  "organizer": "Nuffic",
+  "official_url": "https://www.studyinholland.nl/finances/holland-scholarship",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "scholarship-cambridge-trust",
+  "programme_id": "scholarship-cambridge-trust",
+  "programme_name": "Cambridge Trust Scholarships",
+  "organizer": "University of Cambridge",
+  "official_url": "https://www.cambridgetrust.org/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-imperial-pres",
+  "programme_id": "scholarship-imperial-pres",
+  "programme_name": "Imperial College President's PhD Scholarships",
+  "organizer": "Imperial College London",
+  "official_url": "https://www.imperial.ac.uk/study/pg/fees-and-funding/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "UK"
+ },
+ {
+  "source_id": "scholarship-ucl-global",
+  "programme_id": "scholarship-ucl-global",
+  "programme_name": "UCL Global Excellence Scholarship",
+  "organizer": "UCL",
+  "official_url": "https://www.ucl.ac.uk/prospective-students/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "UK"
+ },
+ {
+  "source_id": "scholarship-ucl-scholarships",
+  "programme_id": "scholarship-ucl-scholarships",
+  "programme_name": "UCL Scholarships",
+  "organizer": "UCL",
+  "official_url": "https://www.ucl.ac.uk/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "UK"
+ },
+ {
+  "source_id": "scholarship-edinburgh-global",
+  "programme_id": "scholarship-edinburgh-global",
+  "programme_name": "Edinburgh Global Scholarships",
+  "organizer": "University of Edinburgh",
+  "official_url": "https://www.ed.ac.uk/student-funding/postgraduate/international",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "UK"
+ },
+ {
+  "source_id": "scholarship-manchester-equity",
+  "programme_id": "scholarship-manchester-equity",
+  "programme_name": "Manchester Equity and Merit Scholarship",
+  "organizer": "University of Manchester",
+  "official_url": "https://www.manchester.ac.uk/study/masters/fees-and-funding/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "UK"
+ },
+ {
+  "source_id": "scholarship-kcl-intl",
+  "programme_id": "scholarship-kcl-intl",
+  "programme_name": "King's College London International Scholarships",
+  "organizer": "King's College London",
+  "official_url": "https://www.kcl.ac.uk/study/postgraduate-taught/fees-and-funding",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "UK"
+ },
+ {
+  "source_id": "scholarship-toronto-lester",
+  "programme_id": "scholarship-toronto-lester",
+  "programme_name": "Lester B. Pearson International Scholarship",
+  "organizer": "University of Toronto",
+  "official_url": "https://future.utoronto.ca/pearson/about/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Canada"
+ },
+ {
+  "source_id": "scholarship-vanier",
+  "programme_id": "scholarship-vanier",
+  "programme_name": "Vanier Canada Graduate Scholarships",
+  "organizer": "Government of Canada",
+  "official_url": "https://vanier.gc.ca/en/home-accueil.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Canada"
+ },
+ {
+  "source_id": "scholarship-ubc-igs",
+  "programme_id": "scholarship-ubc-igs",
+  "programme_name": "UBC International Scholars",
+  "organizer": "University of British Columbia",
+  "official_url": "https://students.ubc.ca/enrolment/finances/scholarships-awards-international-students",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Canada"
+ },
+ {
+  "source_id": "scholarship-mcgill",
+  "programme_id": "scholarship-mcgill",
+  "programme_name": "McGill Entrance Scholarships",
+  "organizer": "McGill University",
+  "official_url": "https://www.mcgill.ca/studentaid/scholarships-aid",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Canada"
+ },
+ {
+  "source_id": "scholarship-waterloo",
+  "programme_id": "scholarship-waterloo",
+  "programme_name": "Waterloo President's Scholarship of Distinction",
+  "organizer": "University of Waterloo",
+  "official_url": "https://uwaterloo.ca/student-awards-financial-aid/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Canada"
+ },
+ {
+  "source_id": "scholarship-ntu-scholarships",
+  "programme_id": "scholarship-ntu-scholarships",
+  "programme_name": "NTU Scholarships",
+  "organizer": "Nanyang Technological University",
+  "official_url": "https://www.ntu.edu.sg/admissions/undergraduate/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Asia"
+ },
+ {
+  "source_id": "scholarship-astar-ngs",
+  "programme_id": "scholarship-astar-ngs",
+  "programme_name": "A*STAR Graduate Scholarships",
+  "organizer": "A*STAR",
+  "official_url": "https://www.a-star.edu.sg/Scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Asia"
+ },
+ {
+  "source_id": "scholarship-aga-khan",
+  "programme_id": "scholarship-aga-khan",
+  "programme_name": "Aga Khan Foundation International Scholarship Programme",
+  "organizer": "Aga Khan Foundation",
+  "official_url": "https://the.akdn/en/how-we-work/our-agencies/aga-khan-foundation/international-scholarship-programme",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-mastercard-scholars",
+  "programme_id": "scholarship-mastercard-scholars",
+  "programme_name": "Mastercard Foundation Scholars Program",
+  "organizer": "Mastercard Foundation",
+  "official_url": "https://mastercardfdn.org/all/scholars/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-unesco-keizo",
+  "programme_id": "scholarship-unesco-keizo",
+  "programme_name": "UNESCO/Keizo Obuchi Research Fellowships",
+  "organizer": "UNESCO",
+  "official_url": "https://www.unesco.org/en/fellowships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-vlir-uos",
+  "programme_id": "scholarship-vlir-uos",
+  "programme_name": "VLIR-UOS Scholarships",
+  "organizer": "VLIR-UOS Belgium",
+  "official_url": "https://www.vliruos.be/en/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "scholarship-sweden-si",
+  "programme_id": "scholarship-sweden-si",
+  "programme_name": "Swedish Institute Scholarships for Global Professionals",
+  "organizer": "Swedish Institute",
+  "official_url": "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe",
+  "cycle_hint": "Typically opens around October; deadline around February"
+ },
+ {
+  "source_id": "scholarship-sweden-sisgp",
+  "programme_id": "scholarship-sweden-sisgp",
+  "programme_name": "Swedish Institute Study Scholarships",
+  "organizer": "Swedish Institute",
+  "official_url": "https://si.se/en/apply/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "scholarship-denmark-dsp",
+  "programme_id": "scholarship-denmark-dsp",
+  "programme_name": "Danish Government Scholarships",
+  "organizer": "Danish Agency for Higher Education",
+  "official_url": "https://ufm.dk/en/education/studying-in-denmark/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "scholarship-finland-fgs",
+  "programme_id": "scholarship-finland-fgs",
+  "programme_name": "Finland Scholarships",
+  "organizer": "Finnish National Agency for Education",
+  "official_url": "https://www.studyinfinland.fi/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "scholarship-czech-gov",
+  "programme_id": "scholarship-czech-gov",
+  "programme_name": "Czech Government Scholarships",
+  "organizer": "Czech Ministry of Education",
+  "official_url": "https://www.studyin.cz/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "scholarship-poland-nawa",
+  "programme_id": "scholarship-poland-nawa",
+  "programme_name": "NAWA Scholarships Poland",
+  "organizer": "NAWA",
+  "official_url": "https://nawa.gov.pl/en/students/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "scholarship-nz-awards",
+  "programme_id": "scholarship-nz-awards",
+  "programme_name": "New Zealand Scholarships",
+  "organizer": "New Zealand Government",
+  "official_url": "https://www.nzscholarships.govt.nz/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "New Zealand"
+ },
+ {
+  "source_id": "scholarship-nz-commonwealth",
+  "programme_id": "scholarship-nz-commonwealth",
+  "programme_name": "New Zealand Commonwealth Scholarships",
+  "organizer": "New Zealand Government",
+  "official_url": "https://www.mfat.govt.nz/en/aid-and-development/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "New Zealand"
+ },
+ {
+  "source_id": "scholarship-brazil-capes",
+  "programme_id": "scholarship-brazil-capes",
+  "programme_name": "CAPES Scholarships",
+  "organizer": "Brazil CAPES",
+  "official_url": "https://www.gov.br/capes/en",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Latin America"
+ },
+ {
+  "source_id": "scholarship-fulbright-india",
+  "programme_id": "scholarship-fulbright-india",
+  "programme_name": "USIEF Fulbright-Nehru Fellowships",
+  "organizer": "USIEF",
+  "official_url": "https://www.usief.org.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India",
+  "cycle_hint": "Typically announced annually; check the USIEF page for the current call"
+ },
+ {
+  "source_id": "scholarship-mit-financial",
+  "programme_id": "scholarship-mit-financial",
+  "programme_name": "MIT Scholarships",
+  "organizer": "MIT",
+  "official_url": "https://sfs.mit.edu/undergraduate-students/the-cost-of-attendance/types-of-aid/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-duke-robertson",
+  "programme_id": "scholarship-duke-robertson",
+  "programme_name": "Robertson Scholars Program",
+  "organizer": "Duke University / UNC",
+  "official_url": "https://robertsonscholars.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Typically due around November"
+ },
+ {
+  "source_id": "scholarship-unc-morehead",
+  "programme_id": "scholarship-unc-morehead",
+  "programme_name": "Morehead-Cain Scholarship",
+  "organizer": "UNC Chapel Hill",
+  "official_url": "https://moreheadcain.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Typically opens in August; deadline around October"
+ },
+ {
+  "source_id": "scholarship-jefferson",
+  "programme_id": "scholarship-jefferson",
+  "programme_name": "Jefferson Scholars Foundation",
+  "organizer": "Jefferson Scholars Foundation",
+  "official_url": "https://www.jeffersonscholars.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Nominations typically take place in the fall"
+ },
+ {
+  "source_id": "scholarship-rice-scholars",
+  "programme_id": "scholarship-rice-scholars",
+  "programme_name": "Rice Scholarships",
+  "organizer": "Rice University",
+  "official_url": "https://financialaid.rice.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-noaa-hollings",
+  "programme_id": "scholarship-noaa-hollings",
+  "programme_name": "NOAA Hollings Scholarship",
+  "organizer": "NOAA",
+  "official_url": "https://www.noaa.gov/office-education/hollings-scholarship",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-doe-scgsr",
+  "programme_id": "scholarship-doe-scgsr",
+  "programme_name": "DOE Office of Science Graduate Student Research",
+  "organizer": "U.S. Department of Energy",
+  "official_url": "https://science.osti.gov/wdts/scgsr",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-doe-csgf",
+  "programme_id": "scholarship-doe-csgf",
+  "programme_name": "DOE Computational Science Graduate Fellowship",
+  "organizer": "Krell Institute",
+  "official_url": "https://www.krellinst.org/csgf/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-cyber-corps",
+  "programme_id": "scholarship-cyber-corps",
+  "programme_name": "CyberCorps Scholarship for Service",
+  "organizer": "NSF / OPM",
+  "official_url": "https://www.sfs.opm.gov/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-dod-cyber",
+  "programme_id": "scholarship-dod-cyber",
+  "programme_name": "DoD Cyber Scholarship Program",
+  "organizer": "U.S. Department of Defense",
+  "official_url": "https://public.cyber.mil/dcysp/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-nsls",
+  "programme_id": "scholarship-nsls",
+  "programme_name": "National Society of Collegiate Scholars",
+  "organizer": "NSCS",
+  "official_url": "https://www.nscs.org/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-phi-theta-kappa",
+  "programme_id": "scholarship-phi-theta-kappa",
+  "programme_name": "Phi Theta Kappa Scholarships",
+  "organizer": "Phi Theta Kappa",
+  "official_url": "https://www.ptk.org/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-golden-key",
+  "programme_id": "scholarship-golden-key",
+  "programme_name": "Golden Key Scholarships",
+  "organizer": "Golden Key",
+  "official_url": "https://www.goldenkey.org/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-afrotc",
+  "programme_id": "scholarship-afrotc",
+  "programme_name": "Air Force ROTC Scholarships",
+  "organizer": "U.S. Air Force",
+  "official_url": "https://www.afrotc.com/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-army-rotc",
+  "programme_id": "scholarship-army-rotc",
+  "programme_name": "Army ROTC Scholarships",
+  "organizer": "U.S. Army",
+  "official_url": "https://www.goarmy.com/rotc/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-bigfuture",
+  "programme_id": "scholarship-bigfuture",
+  "programme_name": "BigFuture Scholarships",
+  "organizer": "College Board",
+  "official_url": "https://bigfuture.collegeboard.org/scholarships/bigfuture-scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-afsa",
+  "programme_id": "scholarship-afsa",
+  "programme_name": "AFSA Scholarships",
+  "organizer": "American Foreign Service Association",
+  "official_url": "https://afsa.org/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-vwa",
+  "programme_id": "scholarship-vwa",
+  "programme_name": "Voice of Democracy Scholarship",
+  "organizer": "Veterans of Foreign Wars",
+  "official_url": "https://www.vfw.org/community/youth-and-education/youth-scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Entries typically due around October 31"
+ },
+ {
+  "source_id": "scholarship-vfw-patriots",
+  "programme_id": "scholarship-vfw-patriots",
+  "programme_name": "Patriot's Pen",
+  "organizer": "VFW",
+  "official_url": "https://www.vfw.org/community/youth-and-education/youth-scholarships/patriots-pen",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-legion",
+  "programme_id": "scholarship-legion",
+  "programme_name": "American Legion Scholarships",
+  "organizer": "American Legion",
+  "official_url": "https://www.legion.org/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-aias",
+  "programme_id": "scholarship-aias",
+  "programme_name": "AIAS Scholarships",
+  "organizer": "AIAS",
+  "official_url": "https://www.aias.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-aist",
+  "programme_id": "scholarship-aist",
+  "programme_name": "AIST Foundation Scholarships",
+  "organizer": "AIST",
+  "official_url": "https://www.aist.org/foundation/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-hhmi-hanna",
+  "programme_id": "scholarship-hhmi-hanna",
+  "programme_name": "HHMI Hanna Gray Fellows",
+  "organizer": "HHMI",
+  "official_url": "https://www.hhmi.org/programs/hanna-h-gray-fellows",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-nsf-sstem2",
+  "programme_id": "scholarship-nsf-sstem2",
+  "programme_name": "NSF Scholarships in Science, Technology, Engineering and Mathematics (S-STEM)",
+  "organizer": "National Science Foundation",
+  "official_url": "https://www.nsf.gov/funding/opportunities/s-stem-nsf-scholarships-science-technology-engineering-mathematics",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-nahj",
+  "programme_id": "scholarship-nahj",
+  "programme_name": "NAHJ Scholarships",
+  "organizer": "National Association of Hispanic Journalists",
+  "official_url": "https://nahj.org/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-nacme",
+  "programme_id": "scholarship-nacme",
+  "programme_name": "NACME Scholarships",
+  "organizer": "NACME",
+  "official_url": "https://www.nacme.org/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-lulac",
+  "programme_id": "scholarship-lulac",
+  "programme_name": "LULAC National Scholarship Fund",
+  "organizer": "LULAC",
+  "official_url": "https://lulac.org/programs/education/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-agbell",
+  "programme_id": "scholarship-agbell",
+  "programme_name": "AG Bell College Scholarship Programs",
+  "organizer": "Alexander Graham Bell Association",
+  "official_url": "https://www.agbell.org/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-jjwbgsp",
+  "programme_id": "scholarship-jjwbgsp",
+  "programme_name": "Joint Japan/World Bank Graduate Scholarship Program",
+  "organizer": "World Bank",
+  "official_url": "https://www.worldbank.org/en/programs/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-unu-scholarships",
+  "programme_id": "scholarship-unu-scholarships",
+  "programme_name": "United Nations University Scholarships",
+  "organizer": "United Nations University",
+  "official_url": "https://unu.edu/admissions/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-yenching",
+  "programme_id": "scholarship-yenching",
+  "programme_name": "Yenching Academy Scholarship",
+  "organizer": "Peking University",
+  "official_url": "https://yenchingacademy.pku.edu.cn/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-mandela-rhodes",
+  "programme_id": "scholarship-mandela-rhodes",
+  "programme_name": "Mandela Rhodes Scholarship",
+  "organizer": "Mandela Rhodes Foundation",
+  "official_url": "https://www.mandelarhodes.org/scholarship/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-boell",
+  "programme_id": "scholarship-boell",
+  "programme_name": "Heinrich Boell Foundation Scholarships",
+  "organizer": "Heinrich Boell Foundation",
+  "official_url": "https://www.boell.de/en/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "scholarship-trudeau",
+  "programme_id": "scholarship-trudeau",
+  "programme_name": "Trudeau Foundation Scholarships",
+  "organizer": "Trudeau Foundation",
+  "official_url": "https://www.trudeaufoundation.ca/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Canada"
+ },
+ {
+  "source_id": "scholarship-unimelb",
+  "programme_id": "scholarship-unimelb",
+  "programme_name": "University of Melbourne Scholarships",
+  "organizer": "University of Melbourne",
+  "official_url": "https://scholarships.unimelb.edu.au/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Australia"
+ },
+ {
+  "source_id": "scholarship-monash",
+  "programme_id": "scholarship-monash",
+  "programme_name": "Monash International Scholarships",
+  "organizer": "Monash University",
+  "official_url": "https://www.monash.edu/study/fees-scholarships/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-anu",
+  "programme_id": "scholarship-anu",
+  "programme_name": "ANU Scholarships",
+  "organizer": "Australian National University",
+  "official_url": "https://www.anu.edu.au/study/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Australia"
+ },
+ {
+  "source_id": "scholarship-auckland",
+  "programme_id": "scholarship-auckland",
+  "programme_name": "University of Auckland Scholarships",
+  "organizer": "University of Auckland",
+  "official_url": "https://www.auckland.ac.nz/en/study/scholarships-and-awards.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "New Zealand"
+ },
+ {
+  "source_id": "scholarship-tum-scholarships",
+  "programme_id": "scholarship-tum-scholarships",
+  "programme_name": "TUM Scholarships",
+  "organizer": "Technical University of Munich",
+  "official_url": "https://www.tum.de/en/studies/fees-and-financial-aid/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "scholarship-hkpfs",
+  "programme_id": "scholarship-hkpfs",
+  "programme_name": "Hong Kong PhD Fellowship Scheme",
+  "organizer": "Research Grants Council, Hong Kong",
+  "official_url": "https://cerg1.ugc.edu.hk/hkpfs/index.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Asia"
+ },
+ {
+  "source_id": "scholarship-hku-scholarships",
+  "programme_id": "scholarship-hku-scholarships",
+  "programme_name": "HKU Scholarships",
+  "organizer": "University of Hong Kong",
+  "official_url": "https://www.scholarships.hku.hk/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Asia"
+ },
+ {
+  "source_id": "scholarship-iisc-scholar",
+  "programme_id": "scholarship-iisc-scholar",
+  "programme_name": "IISc Scholarships",
+  "organizer": "Indian Institute of Science",
+  "official_url": "https://iisc.ac.in/admissions/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-socialjustice",
+  "programme_id": "scholarship-socialjustice",
+  "programme_name": "Post-Matric Scholarship for SC Students",
+  "organizer": "Ministry of Social Justice and Empowerment",
+  "official_url": "https://socialjustice.gov.in/schemes/fellowships-and-scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-shiv-nadar",
+  "programme_id": "scholarship-shiv-nadar",
+  "programme_name": "Shiv Nadar Foundation Scholarships",
+  "organizer": "Shiv Nadar Foundation",
+  "official_url": "https://www.shivnadarfoundation.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-vidyadhan",
+  "programme_id": "scholarship-vidyadhan",
+  "programme_name": "Vidyadhan Scholarship",
+  "organizer": "Sarojini Damodaran Foundation",
+  "official_url": "https://www.vidyadhan.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-nmmss",
+  "programme_id": "scholarship-nmmss",
+  "programme_name": "National Means-cum-Merit Scholarship",
+  "organizer": "Government of India",
+  "official_url": "https://scholarships.gov.in/All-Scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-lemelson",
+  "programme_id": "scholarship-lemelson",
+  "programme_name": "Lemelson-MIT Collegiate Student Prize",
+  "organizer": "Lemelson Foundation",
+  "official_url": "https://lemelson.mit.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-sigma-xi",
+  "programme_id": "scholarship-sigma-xi",
+  "programme_name": "Sigma Xi Grants in Aid of Research",
+  "organizer": "Sigma Xi",
+  "official_url": "https://www.sigmaxi.org/programs/grants-in-aid",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-nd-scholars",
+  "programme_id": "scholarship-nd-scholars",
+  "programme_name": "Notre Dame Scholarships",
+  "organizer": "University of Notre Dame",
+  "official_url": "https://financialaid.nd.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-bu-trustee",
+  "programme_id": "scholarship-bu-trustee",
+  "programme_name": "Boston University Trustee Scholarship",
+  "organizer": "Boston University",
+  "official_url": "https://www.bu.edu/admissions/tuition-aid/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-umich-scholar",
+  "programme_id": "scholarship-umich-scholar",
+  "programme_name": "University of Michigan Scholarships",
+  "organizer": "University of Michigan",
+  "official_url": "https://finaid.umich.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-uiuc-schol",
+  "programme_id": "scholarship-uiuc-schol",
+  "programme_name": "University of Illinois Scholarships",
+  "organizer": "University of Illinois",
+  "official_url": "https://www.osfa.illinois.edu/types-of-aid/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-purdue",
+  "programme_id": "scholarship-purdue",
+  "programme_name": "Purdue Scholarships",
+  "organizer": "Purdue University",
+  "official_url": "https://www.purdue.edu/dfa/types/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-asu",
+  "programme_id": "scholarship-asu",
+  "programme_name": "ASU New American University Scholarship",
+  "organizer": "Arizona State University",
+  "official_url": "https://scholarships.asu.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-uwash",
+  "programme_id": "scholarship-uwash",
+  "programme_name": "University of Washington Scholarships",
+  "organizer": "University of Washington",
+  "official_url": "https://www.washington.edu/financialaid/types-of-aid/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-unc-schol",
+  "programme_id": "scholarship-unc-schol",
+  "programme_name": "UNC Scholarships",
+  "organizer": "UNC Chapel Hill",
+  "official_url": "https://studentaid.unc.edu/types-of-aid/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-utaustin",
+  "programme_id": "scholarship-utaustin",
+  "programme_name": "UT Austin Scholarships",
+  "organizer": "University of Texas at Austin",
+  "official_url": "https://onestop.utexas.edu/financial-services/scholarships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-gt-schol",
+  "programme_id": "scholarship-gt-schol",
+  "programme_name": "Georgia Tech Scholarships",
+  "organizer": "Georgia Tech",
+  "official_url": "https://finaid.gatech.edu/scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ }
+]

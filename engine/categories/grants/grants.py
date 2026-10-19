@@ -26,7 +26,19 @@ SOURCE_REGISTRY = (
     {"source_id": "grant-pollination-daily-grants", "programme_id": "grant-pollination-daily-grants", "programme_name": "The Pollination Project — Daily Grants", "organizer": "The Pollination Project", "official_url": "https://thepollinationproject.org/apply/", "allowed_path_hints": ["apply"], "check_cadence": "monthly"},
     {"source_id": "grant-national-geographic-okavango-ecosystem-dynamics", "programme_id": "grant-national-geographic-okavango-ecosystem-dynamics", "programme_name": "National Geographic Society — Understanding Ecosystem Dynamics and the Ecology of the Okavango River Basin", "organizer": "National Geographic Society", "official_url": "https://funding.nationalgeographic.org/s/fundingopportunity/119Hr000000byRrIAI/understanding-ecosystem-dynamics-ecology-of-the-okavango-river-basin", "allowed_path_hints": ["s/fundingopportunity/119Hr000000byRrIAI"], "check_cadence": "monthly"},
 )
-STATIC_SOURCE_REGISTRY = SOURCE_REGISTRY
+
+
+def _load_seed_file() -> tuple:
+    path = os.path.join(os.path.dirname(__file__), "grant_seeds.json")
+    with open(path, encoding="utf-8") as handle:
+        seeds = json.load(handle)
+    if not isinstance(seeds, list):
+        raise ValueError("seed file must be a JSON array")
+    return tuple(seeds)
+
+
+# Hand-picked official programme seeds (hubs stay discovery-only).
+STATIC_SOURCE_REGISTRY = SOURCE_REGISTRY + _load_seed_file()
 
 
 def _combined_source_registry() -> tuple:
@@ -57,6 +69,7 @@ GRANT_CONFIG = ProgrammeConfig(
     observations_path=OBSERVATIONS_PATH,
     verifications_path=VERIFICATIONS_PATH,
     needs_confirmation_floor=True,
+    next_cycle=True,
 )
 
 
@@ -103,49 +116,38 @@ def _fact_is_backed(verification: Dict, field: str) -> bool:
 
 
 def _postprocess(rows: Iterable[Dict], verifications: Iterable[Dict]) -> List[Dict]:
-    """Keep only quote-backed Grant facts from manual verification."""
+    """Overlay quote-backed manual verification onto parser output.
+
+    Parser facts already carry page quotes as evidence, so they are kept;
+    a valid verification record only overrides the fields it backs.
+    """
     result = deepcopy(list(rows))
     verified_by_id = _verified_by_id(verifications)
-    fact_fields = ("programme_status", "opening_date", "deadline", "eligibility", "funding")
+    fact_fields = ("programme_status", "opening_date", "deadline", "eligibility", "funding", "international_eligibility")
 
     for row in result:
         if row.get("record_type") != "programme" or row.get("programme_id") not in SOURCE_BY_ID:
             continue
-        verification = verified_by_id.get(row["programme_id"], {})
-        evidence = row.get("official_evidence")
-        if not isinstance(evidence, dict):
-            evidence = {}
-            row["official_evidence"] = evidence
-
-        # Remove parser evidence for fact fields first, then restore only the
-        # evidence supplied by this programme's valid verification record.
-        for keys in _FACT_EVIDENCE_KEYS.values():
-            for key in keys:
-                evidence.pop(key, None)
-        for field in fact_fields + ("international_eligibility",):
-            if _fact_is_backed(verification, field):
-                row[field] = verification[field]
-                for key in _FACT_EVIDENCE_KEYS[field]:
-                    if key in verification.get("official_evidence", {}):
-                        evidence[key] = deepcopy(verification["official_evidence"][key])
-            elif field == "eligibility":
-                row[field] = "needs_confirmation"
-            elif field == "funding":
-                row[field] = "not_stated"
-            elif field == "international_eligibility":
-                row[field] = "needs_confirmation"
-            else:
-                row.pop(field, None)
-
+        verification = verified_by_id.get(row["programme_id"])
+        if verification:
+            evidence = row.get("official_evidence")
+            if not isinstance(evidence, dict):
+                evidence = {}
+                row["official_evidence"] = evidence
+            for field in fact_fields:
+                if _fact_is_backed(verification, field):
+                    row[field] = verification[field]
+                    for key in _FACT_EVIDENCE_KEYS[field]:
+                        if key in verification.get("official_evidence", {}):
+                            evidence[key] = deepcopy(verification["official_evidence"][key])
         status = row.get("programme_status")
-        if status in ("open", "opening_soon", "rolling"):
+        if status in ("open", "opening_soon", "rolling", "upcoming") and not row.get("needs_confirmation"):
             row["is_live"] = True
-            row.pop("needs_confirmation", None)
             row.pop("went_dead_at", None)
         elif status in ("closed", "ended"):
             row["is_live"] = False
             row.pop("needs_confirmation", None)
-        else:
+        elif status not in ("open", "opening_soon", "rolling", "upcoming"):
             row["needs_confirmation"] = True
             row["is_live"] = False
             row.pop("went_dead_at", None)

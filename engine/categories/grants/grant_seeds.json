@@ -1,0 +1,1188 @@
+[
+ {
+  "source_id": "grant-thiel-fellowship",
+  "programme_id": "grant-thiel-fellowship",
+  "programme_name": "Thiel Fellowship",
+  "organizer": "Thiel Foundation",
+  "official_url": "https://thielfellowship.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-mozilla-builders",
+  "programme_id": "grant-mozilla-builders",
+  "programme_name": "Mozilla Builders",
+  "organizer": "Mozilla",
+  "official_url": "https://builders.mozilla.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-mozilla-foundation-grants",
+  "programme_id": "grant-mozilla-foundation-grants",
+  "programme_name": "Mozilla Foundation Fellowships and Awards",
+  "organizer": "Mozilla Foundation",
+  "official_url": "https://foundation.mozilla.org/en/what-we-fund/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-google-research-scholar",
+  "programme_id": "grant-google-research-scholar",
+  "programme_name": "Google Research Scholar Program",
+  "organizer": "Google",
+  "official_url": "https://research.google/programs-and-events/research-scholar-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US",
+  "cycle_hint": "Calls are typically announced about once a year; check the page for the next call"
+ },
+ {
+  "source_id": "grant-google-exploreCSR",
+  "programme_id": "grant-google-exploreCSR",
+  "programme_name": "Google exploreCSR",
+  "organizer": "Google",
+  "official_url": "https://research.google/programs-and-events/explorecsr/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-google-cloud-research-credits",
+  "programme_id": "grant-google-cloud-research-credits",
+  "programme_name": "Google Cloud Research Credits",
+  "organizer": "Google Cloud",
+  "official_url": "https://cloud.google.com/edu/researchers",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-google-cloud-students",
+  "programme_id": "grant-google-cloud-students",
+  "programme_name": "Google Cloud Skills Boost for Students",
+  "organizer": "Google Cloud",
+  "official_url": "https://cloud.google.com/edu/students",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-azure-students",
+  "programme_id": "grant-azure-students",
+  "programme_name": "Azure for Students",
+  "organizer": "Microsoft",
+  "official_url": "https://azure.microsoft.com/en-us/free/students",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-azure-research",
+  "programme_id": "grant-azure-research",
+  "programme_name": "Microsoft Azure Research Credits",
+  "organizer": "Microsoft",
+  "official_url": "https://www.microsoft.com/en-us/azure-academic-research/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-aws-activate",
+  "programme_id": "grant-aws-activate",
+  "programme_name": "AWS Activate Credits",
+  "organizer": "Amazon Web Services",
+  "official_url": "https://aws.amazon.com/activate/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-aws-research-credits",
+  "programme_id": "grant-aws-research-credits",
+  "programme_name": "AWS Cloud Credits for Research",
+  "organizer": "Amazon Web Services",
+  "official_url": "https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-aws-educate",
+  "programme_id": "grant-aws-educate",
+  "programme_name": "AWS Educate",
+  "organizer": "Amazon Web Services",
+  "official_url": "https://aws.amazon.com/education/awseducate/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-github-fund",
+  "programme_id": "grant-github-fund",
+  "programme_name": "GitHub Fund",
+  "organizer": "GitHub",
+  "official_url": "https://resources.github.com/github-fund/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-github-accelerator",
+  "programme_id": "grant-github-accelerator",
+  "programme_name": "GitHub Accelerator",
+  "organizer": "GitHub",
+  "official_url": "https://accelerator.github.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-github-secure-open-source",
+  "programme_id": "grant-github-secure-open-source",
+  "programme_name": "GitHub Secure Open Source Fund",
+  "organizer": "GitHub",
+  "official_url": "https://resources.github.com/github-secure-open-source-fund/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-1517",
+  "programme_id": "grant-1517",
+  "programme_name": "1517 Fund",
+  "organizer": "1517 Fund",
+  "official_url": "https://www.1517fund.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-pioneer",
+  "programme_id": "grant-pioneer",
+  "programme_name": "Pioneer",
+  "organizer": "Pioneer",
+  "official_url": "https://pioneer.app/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-z-fellows",
+  "programme_id": "grant-z-fellows",
+  "programme_name": "Z Fellows",
+  "organizer": "Zeus",
+  "official_url": "https://zfellows.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-kauffman",
+  "programme_id": "grant-kauffman",
+  "programme_name": "Kauffman Foundation Grants",
+  "organizer": "Ewing Marion Kauffman Foundation",
+  "official_url": "https://www.kauffman.org/grants/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-soros-grants",
+  "programme_id": "grant-soros-grants",
+  "programme_name": "Open Society Foundations Grants",
+  "organizer": "Open Society Foundations",
+  "official_url": "https://www.opensocietyfoundations.org/grants",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-ford-foundation",
+  "programme_id": "grant-ford-foundation",
+  "programme_name": "Ford Foundation Grants",
+  "organizer": "Ford Foundation",
+  "official_url": "https://www.fordfoundation.org/work/our-grants/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-gates-grand-challenges",
+  "programme_id": "grant-gates-grand-challenges",
+  "programme_name": "Grand Challenges Explorations",
+  "organizer": "Gates Foundation",
+  "official_url": "https://gcgh.grandchallenges.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-gates-grant-opps",
+  "programme_id": "grant-gates-grant-opps",
+  "programme_name": "Gates Foundation Grant Opportunities",
+  "organizer": "Gates Foundation",
+  "official_url": "https://www.gatesfoundation.org/about/how-we-work/grant-opportunities",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "grant-wellcome",
+  "programme_id": "grant-wellcome",
+  "programme_name": "Wellcome Discovery Awards",
+  "organizer": "Wellcome Trust",
+  "official_url": "https://wellcome.org/grant-funding/schemes/discovery-awards",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "grant-wellcome-early",
+  "programme_id": "grant-wellcome-early",
+  "programme_name": "Wellcome Early-Career Awards",
+  "organizer": "Wellcome Trust",
+  "official_url": "https://wellcome.org/grant-funding/schemes/early-career-awards",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "grant-simons-found",
+  "programme_id": "grant-simons-found",
+  "programme_name": "Simons Foundation Grants",
+  "organizer": "Simons Foundation",
+  "official_url": "https://www.simonsfoundation.org/funding-opportunities/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-schmidt-sciences",
+  "programme_id": "grant-schmidt-sciences",
+  "programme_name": "Schmidt Sciences Programs",
+  "organizer": "Schmidt Sciences",
+  "official_url": "https://www.schmidtsciences.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-moore-foundation",
+  "programme_id": "grant-moore-foundation",
+  "programme_name": "Gordon and Betty Moore Foundation Funding",
+  "organizer": "Moore Foundation",
+  "official_url": "https://www.moore.org/grants/grant-opportunities",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-macarthur",
+  "programme_id": "grant-macarthur",
+  "programme_name": "MacArthur Foundation Grants",
+  "organizer": "MacArthur Foundation",
+  "official_url": "https://www.macfound.org/grants",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-rockefeller",
+  "programme_id": "grant-rockefeller",
+  "programme_name": "Rockefeller Foundation Grants",
+  "organizer": "Rockefeller Foundation",
+  "official_url": "https://www.rockefellerfoundation.org/grants/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-nsf-seed",
+  "programme_id": "grant-nsf-seed",
+  "programme_name": "NSF Seed Fund (SBIR/STTR)",
+  "organizer": "National Science Foundation",
+  "official_url": "https://seedfund.nsf.gov/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-nsf-icorps",
+  "programme_id": "grant-nsf-icorps",
+  "programme_name": "NSF I-Corps",
+  "organizer": "National Science Foundation",
+  "official_url": "https://new.nsf.gov/funding/initiatives/i-corps",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-nsf-career",
+  "programme_id": "grant-nsf-career",
+  "programme_name": "NSF CAREER Program",
+  "organizer": "National Science Foundation",
+  "official_url": "https://new.nsf.gov/funding/opportunities/career-faculty-early-career-development-program",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-doe-sbir",
+  "programme_id": "grant-doe-sbir",
+  "programme_name": "DOE SBIR/STTR",
+  "organizer": "U.S. Department of Energy",
+  "official_url": "https://science.osti.gov/sbir",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-nasa-sbir",
+  "programme_id": "grant-nasa-sbir",
+  "programme_name": "NASA SBIR/STTR",
+  "organizer": "NASA",
+  "official_url": "https://sbir.nasa.gov/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-darpa-opps",
+  "programme_id": "grant-darpa-opps",
+  "programme_name": "DARPA Opportunities",
+  "organizer": "DARPA",
+  "official_url": "https://www.darpa.mil/work-with-us/opportunities",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-sbir-gov",
+  "programme_id": "grant-sbir-gov",
+  "programme_name": "America's Seed Fund SBIR",
+  "organizer": "SBA",
+  "official_url": "https://www.sbir.gov/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-nea-grants",
+  "programme_id": "grant-nea-grants",
+  "programme_name": "NEA Grants for Arts Projects",
+  "organizer": "National Endowment for the Arts",
+  "official_url": "https://www.arts.gov/grants/grants-for-arts-projects",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-neh-grants",
+  "programme_id": "grant-neh-grants",
+  "programme_name": "NEH Grants",
+  "organizer": "National Endowment for the Humanities",
+  "official_url": "https://www.neh.gov/grants",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-usaid-dev",
+  "programme_id": "grant-usaid-dev",
+  "programme_name": "USAID Development Innovation Ventures",
+  "organizer": "USAID",
+  "official_url": "https://www.usaid.gov/div",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-unicef-ventures",
+  "programme_id": "grant-unicef-ventures",
+  "programme_name": "UNICEF Venture Fund",
+  "organizer": "UNICEF",
+  "official_url": "https://www.unicefventurefund.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-unicef-innovation",
+  "programme_id": "grant-unicef-innovation",
+  "programme_name": "UNICEF Innovation Fund",
+  "organizer": "UNICEF",
+  "official_url": "https://www.unicef.org/innovation/venturefund",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-tef",
+  "programme_id": "grant-tef",
+  "programme_name": "TEF Entrepreneurship Programme",
+  "organizer": "Tony Elumelu Foundation",
+  "official_url": "https://tonyelumelufoundation.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-a16z-open-source",
+  "programme_id": "grant-a16z-open-source",
+  "programme_name": "a16z Open Source AI Grant",
+  "organizer": "Andreessen Horowitz",
+  "official_url": "https://a16z.com/supporting-the-open-source-ai-community/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-ai-grant",
+  "programme_id": "grant-ai-grant",
+  "programme_name": "AI Grant",
+  "organizer": "Nat Friedman and Daniel Gross",
+  "official_url": "https://aigrant.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-vitalik-ethereum",
+  "programme_id": "grant-vitalik-ethereum",
+  "programme_name": "Ethereum Foundation Academic Grants",
+  "organizer": "Ethereum Foundation",
+  "official_url": "https://esp.ethereum.foundation/academic-grants",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "grant-protocol-labs",
+  "programme_id": "grant-protocol-labs",
+  "programme_name": "Protocol Labs Grants",
+  "organizer": "Protocol Labs",
+  "official_url": "https://grants.protocol.ai/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-solana-foundation",
+  "programme_id": "grant-solana-foundation",
+  "programme_name": "Solana Foundation Grants",
+  "organizer": "Solana Foundation",
+  "official_url": "https://solana.org/grants-funding",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-arbitrum-grants",
+  "programme_id": "grant-arbitrum-grants",
+  "programme_name": "Arbitrum Grants",
+  "organizer": "Arbitrum Foundation",
+  "official_url": "https://arbitrum.foundation/grants",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-uniswap-grants",
+  "programme_id": "grant-uniswap-grants",
+  "programme_name": "Uniswap Foundation Grants",
+  "organizer": "Uniswap Foundation",
+  "official_url": "https://www.uniswapfoundation.org/grants",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-stellar-community",
+  "programme_id": "grant-stellar-community",
+  "programme_name": "Stellar Community Fund",
+  "organizer": "Stellar Development Foundation",
+  "official_url": "https://communityfund.stellar.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-aave-grants",
+  "programme_id": "grant-aave-grants",
+  "programme_name": "Aave Grants DAO",
+  "organizer": "Aave",
+  "official_url": "https://aavegrants.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-tezos-foundation",
+  "programme_id": "grant-tezos-foundation",
+  "programme_name": "Tezos Foundation Grants",
+  "organizer": "Tezos Foundation",
+  "official_url": "https://tezos.foundation/grants/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-algorand-foundation",
+  "programme_id": "grant-algorand-foundation",
+  "programme_name": "Algorand Foundation Grants",
+  "organizer": "Algorand Foundation",
+  "official_url": "https://algorand.foundation/grants-program",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-cardano-catalyst",
+  "programme_id": "grant-cardano-catalyst",
+  "programme_name": "Project Catalyst",
+  "organizer": "Cardano",
+  "official_url": "https://projectcatalyst.io/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-sovereign-tech",
+  "programme_id": "grant-sovereign-tech",
+  "programme_name": "Sovereign Tech Fund",
+  "organizer": "Sovereign Tech Agency",
+  "official_url": "https://www.sovereign.tech/programs/fund",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-nlnet",
+  "programme_id": "grant-nlnet",
+  "programme_name": "NLnet NGI Zero Grants",
+  "organizer": "NLnet Foundation",
+  "official_url": "https://nlnet.nl/propose/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-ngi-zero",
+  "programme_id": "grant-ngi-zero",
+  "programme_name": "NGI Zero Commons Fund",
+  "organizer": "NLnet",
+  "official_url": "https://nlnet.nl/commonsfund/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-prototype-fund",
+  "programme_id": "grant-prototype-fund",
+  "programme_name": "Prototype Fund",
+  "organizer": "Open Knowledge Foundation Germany",
+  "official_url": "https://prototypefund.de/en/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-mellon",
+  "programme_id": "grant-mellon",
+  "programme_name": "Mellon Foundation Grants",
+  "organizer": "Mellon Foundation",
+  "official_url": "https://www.mellon.org/grants",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-shuttleworth",
+  "programme_id": "grant-shuttleworth",
+  "programme_name": "Shuttleworth Foundation Fellowship",
+  "organizer": "Shuttleworth Foundation",
+  "official_url": "https://www.shuttleworthfoundation.org/apply/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-wikimedia-grants",
+  "programme_id": "grant-wikimedia-grants",
+  "programme_name": "Wikimedia Grants",
+  "organizer": "Wikimedia Foundation",
+  "official_url": "https://meta.wikimedia.org/wiki/Grants:Start",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-wikimedia-rapid",
+  "programme_id": "grant-wikimedia-rapid",
+  "programme_name": "Wikimedia Rapid Fund",
+  "organizer": "Wikimedia Foundation",
+  "official_url": "https://meta.wikimedia.org/wiki/Grants:Programs/Wikimedia_Community_Fund/Rapid_Fund",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-psf-grants",
+  "programme_id": "grant-psf-grants",
+  "programme_name": "PSF Grants",
+  "organizer": "Python Software Foundation",
+  "official_url": "https://www.python.org/psf/grants/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-rust-foundation",
+  "programme_id": "grant-rust-foundation",
+  "programme_name": "Rust Foundation Grants",
+  "organizer": "Rust Foundation",
+  "official_url": "https://foundation.rust-lang.org/grants/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-openssf",
+  "programme_id": "grant-openssf",
+  "programme_name": "OpenSSF Alpha-Omega",
+  "organizer": "OpenSSF",
+  "official_url": "https://alpha-omega.dev/grants/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-mitacs",
+  "programme_id": "grant-mitacs",
+  "programme_name": "Mitacs Globalink Research Award",
+  "organizer": "Mitacs",
+  "official_url": "https://www.mitacs.ca/our-programs/globalink-research-award/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Canada"
+ },
+ {
+  "source_id": "grant-nserc",
+  "programme_id": "grant-nserc",
+  "programme_name": "NSERC Discovery Grants",
+  "organizer": "NSERC",
+  "official_url": "https://www.nserc-crsng.gc.ca/Professors-Professeurs/Grants-Subs/DGIGP-PSIGP_eng.asp",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Canada"
+ },
+ {
+  "source_id": "grant-erc",
+  "programme_id": "grant-erc",
+  "programme_name": "ERC Starting Grants",
+  "organizer": "European Research Council",
+  "official_url": "https://erc.europa.eu/apply-grant/starting-grant",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe",
+  "cycle_hint": "ERC Starting Grant calls typically open in the summer; deadline around October"
+ },
+ {
+  "source_id": "grant-erc-adv",
+  "programme_id": "grant-erc-adv",
+  "programme_name": "ERC Advanced Grants",
+  "organizer": "European Research Council",
+  "official_url": "https://erc.europa.eu/apply-grant/advanced-grant",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "grant-eic",
+  "programme_id": "grant-eic",
+  "programme_name": "EIC Accelerator",
+  "organizer": "European Innovation Council",
+  "official_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "grant-eic-pathfinder",
+  "programme_id": "grant-eic-pathfinder",
+  "programme_name": "EIC Pathfinder",
+  "organizer": "European Innovation Council",
+  "official_url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-pathfinder_en",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "grant-eit",
+  "programme_id": "grant-eit",
+  "programme_name": "EIT Funding",
+  "organizer": "European Institute of Innovation and Technology",
+  "official_url": "https://eit.europa.eu/our-activities/opportunities",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Europe"
+ },
+ {
+  "source_id": "grant-innovate-uk",
+  "programme_id": "grant-innovate-uk",
+  "programme_name": "Innovate UK Smart Grants",
+  "organizer": "Innovate UK",
+  "official_url": "https://www.ukri.org/councils/innovate-uk/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "grant-ukri",
+  "programme_id": "grant-ukri",
+  "programme_name": "UKRI Funding Opportunities",
+  "organizer": "UKRI",
+  "official_url": "https://www.ukri.org/opportunity/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "grant-csiro-kick",
+  "programme_id": "grant-csiro-kick",
+  "programme_name": "CSIRO Kick-Start",
+  "organizer": "CSIRO",
+  "official_url": "https://www.csiro.au/en/work-with-us/funding-programs",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Australia"
+ },
+ {
+  "source_id": "grant-nrf-singapore",
+  "programme_id": "grant-nrf-singapore",
+  "programme_name": "NRF Singapore Fellowships",
+  "organizer": "National Research Foundation Singapore",
+  "official_url": "https://www.nrf.gov.sg/grants",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Asia"
+ },
+ {
+  "source_id": "grant-dst-nidhi-prayas",
+  "programme_id": "grant-dst-nidhi-prayas",
+  "programme_name": "NIDHI-PRAYAS",
+  "organizer": "DST India",
+  "official_url": "https://nidhi.dst.gov.in/nidhi-prayas",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "grant-nidhi",
+  "programme_id": "grant-nidhi",
+  "programme_name": "DST NIDHI Programmes",
+  "organizer": "DST India",
+  "official_url": "https://nidhi.dst.gov.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "grant-birac-big",
+  "programme_id": "grant-birac-big",
+  "programme_name": "BIRAC BIG Scheme",
+  "organizer": "BIRAC",
+  "official_url": "https://birac.nic.in/big.php",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India",
+  "cycle_hint": "BIRAC BIG calls are typically announced a few times per year; check the page for the next call"
+ },
+ {
+  "source_id": "grant-birac",
+  "programme_id": "grant-birac",
+  "programme_name": "BIRAC Calls",
+  "organizer": "BIRAC",
+  "official_url": "https://birac.nic.in/cfp.php",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "grant-aim-niti",
+  "programme_id": "grant-aim-niti",
+  "programme_name": "Atal Innovation Mission",
+  "organizer": "NITI Aayog",
+  "official_url": "https://aim.gov.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "grant-serb-grants",
+  "programme_id": "grant-serb-grants",
+  "programme_name": "SERB Core Research Grant",
+  "organizer": "Science and Engineering Research Board",
+  "official_url": "https://serb.gov.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "grant-anrf",
+  "programme_id": "grant-anrf",
+  "programme_name": "ANRF Research Funding",
+  "organizer": "Anusandhan National Research Foundation",
+  "official_url": "https://anrfonline.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "grant-icmr",
+  "programme_id": "grant-icmr",
+  "programme_name": "ICMR Extramural Funding",
+  "organizer": "ICMR",
+  "official_url": "https://www.icmr.gov.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "grant-open-phil",
+  "programme_id": "grant-open-phil",
+  "programme_name": "Open Philanthropy Career Development and Transition Funding",
+  "organizer": "Open Philanthropy",
+  "official_url": "https://www.openphilanthropy.org/career-development-and-transition-funding/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-ea-funds",
+  "programme_id": "grant-ea-funds",
+  "programme_name": "EA Funds",
+  "organizer": "Effective Altruism",
+  "official_url": "https://funds.effectivealtruism.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-survival-flourishing",
+  "programme_id": "grant-survival-flourishing",
+  "programme_name": "Survival and Flourishing Fund",
+  "organizer": "SFF",
+  "official_url": "https://survivalandflourishing.fund/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-future-life",
+  "programme_id": "grant-future-life",
+  "programme_name": "Future of Life Institute Fellowships",
+  "organizer": "Future of Life Institute",
+  "official_url": "https://futureoflife.org/grant-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ },
+ {
+  "source_id": "grant-ai-safety-fund",
+  "programme_id": "grant-ai-safety-fund",
+  "programme_name": "Frontier Model Forum AI Safety Fund",
+  "organizer": "Frontier Model Forum",
+  "official_url": "https://www.frontiermodelforum.org/ai-safety-fund/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "Global"
+ },
+ {
+  "source_id": "grant-nvidia-academic",
+  "programme_id": "grant-nvidia-academic",
+  "programme_name": "NVIDIA Academic Grant Program",
+  "organizer": "NVIDIA",
+  "official_url": "https://www.nvidia.com/en-us/industries/higher-education-research/academic-grant-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "region_hint": "US"
+ }
+]

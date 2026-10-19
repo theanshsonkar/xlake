@@ -985,6 +985,10 @@ def _apply_enrichment(record: Dict, evidence: Dict, enriched: Dict, seed: Dict,
         label = apply_link[0] if apply_link else enriched.get("_application_label")
         if label and _evidence(label, record["application_url"]):
             evidence["application_url"] = _evidence(label, record["application_url"])
+    if not record.get("region") and seed.get("region_hint"):
+        record["region"] = seed["region_hint"]
+    if seed.get("source_kind"):
+        record["source_kind"] = seed["source_kind"]
     if window:
         record["deadline_basis"] = window.get("basis") or ("applicant_deadline" if window.get("deadline_cue") else "application_window")
     else:
@@ -1062,6 +1066,14 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
             record["needs_confirmation"] = True
             record["is_live"] = False
             _apply_enrichment(record, evidence, enriched, seed, resolved_apply, apply_link, None)
+            if config.next_cycle and seed.get("cycle_hint"):
+                # Curated recurring-cycle note: saveable as upcoming, never open.
+                record["programme_status"] = "upcoming"
+                record["next_cycle_hint"] = str(seed["cycle_hint"])[:200]
+                record["deadline_basis"] = "next_cycle"
+                record.pop("needs_confirmation")
+                record["is_live"] = True
+                return record, _observation(seed, checked, "actionable", "recurring programme; curated cycle note", evidence)
             return record, _observation(seed, checked, "needs_confirmation", "official formal programme page; current status or deadline is not stated", evidence)
         if status == "closed" and windows and config.next_cycle and formal:
             last_deadline = windows[0]["end"]

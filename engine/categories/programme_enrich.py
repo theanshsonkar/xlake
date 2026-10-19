@@ -543,7 +543,8 @@ _INTL_FALSE = re.compile(
     r"must\s+be\s+(?:a\s+)?(?:u\.?s\.?|american|canadian|british|indian|australian)\s+(?:citizen|national|permanent resident)|"
     r"(?:u\.?s\.?\s+)?citizens?\s+(?:or|and)\s+(?:lawful\s+)?permanent\s+residents?\b|"
     r"international\s+(?:students?|applicants?)\s+(?:are\s+)?(?:not\s+eligible|ineligible)|"
-    r"not\s+open\s+to\s+international)", re.I)
+    r"not\s+open\s+to\s+international|"
+    r"(?:indian|u\.?s\.?|american|canadian|british|australian)\s+(?:nationals?|citizens?)\b[^.]{0,60}?\b(?:are\s+)?eligible\s+to\s+apply)", re.I)
 _INTL_TRUE = re.compile(
     r"\b(?:international\s+(?:students?|applicants?|candidates?|scholars?)\s+(?:are\s+)?(?:welcome|eligible|encouraged|can apply|may apply)|"
     r"open\s+to\s+(?:all\s+)?international|applicants?\s+from\s+(?:any|all)\s+countr|from\s+any\s+country|"
