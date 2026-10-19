@@ -58,6 +58,8 @@ SOURCE_REGISTRY = (
     {"source_id": "open-source-research-experience", "programme_id": "open-source-research-experience", "programme_name": "Open Source Research Experience", "organizer": "UC Santa Cruz Open Source Program Office", "official_url": "https://ucsc-ospo.github.io/osre/", "allowed_path_hints": ["osre"], "check_cadence": "daily"},
     {"source_id": "sktime-mentorship", "programme_id": "sktime-mentorship", "programme_name": "sktime Mentorship Program", "organizer": "sktime", "official_url": "https://www.sktime.net/docs/get-involved/mentoring/", "allowed_path_hints": ["get-involved/mentoring"], "check_cadence": "daily"},
     {"source_id": "european-summer-of-code", "programme_id": "european-summer-of-code", "programme_name": "European Summer of Code", "organizer": "European Summer of Code", "official_url": "https://www.esoc.dev/", "allowed_path_hints": [], "check_cadence": "daily"},
+    {"source_id": "kwoc", "programme_id": "kwoc", "programme_name": "Kharagpur Winter of Code (KWoC)", "organizer": "KOSS, IIT Kharagpur", "official_url": "https://kwoc.kossiitkgp.org/", "allowed_path_hints": [], "check_cadence": "daily", "render": True},
+    {"source_id": "c4gt", "programme_id": "c4gt", "programme_name": "Code for GovTech (C4GT)", "organizer": "Code for GovTech", "official_url": "https://codeforgovtech.in/", "allowed_path_hints": [], "check_cadence": "daily", "render": True},
 )
 STATIC_SOURCE_REGISTRY = SOURCE_REGISTRY
 

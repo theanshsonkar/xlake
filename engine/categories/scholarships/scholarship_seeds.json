@@ -1866,5 +1866,75 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "US"
+ },
+ {
+  "source_id": "scholarship-gks-studyinkorea",
+  "programme_id": "scholarship-gks-studyinkorea",
+  "programme_name": "Global Korea Scholarship (GKS)",
+  "organizer": "Government of the Republic of Korea / NIIED",
+  "official_url": "https://www.studyinkorea.go.kr/en/plan/scholarship.do?tab=gks-tab4",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly",
+  "render": true,
+  "source_kind": "official",
+  "region_hint": "Asia"
+ },
+ {
+  "source_id": "scholarship-australia-awards",
+  "programme_id": "scholarship-australia-awards",
+  "programme_name": "Australia Awards Scholarships (India)",
+  "organizer": "Australian Government (DFAT)",
+  "official_url": "https://australiaawardsindia.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly",
+  "render": true,
+  "source_kind": "official",
+  "region_hint": "Australia"
+ },
+ {
+  "source_id": "scholarship-fulbright-nehru",
+  "programme_id": "scholarship-fulbright-nehru",
+  "programme_name": "Fulbright-Nehru Fellowships for Indian Citizens",
+  "organizer": "United States-India Educational Foundation (USIEF)",
+  "official_url": "https://www.usief.org.in/fulbright-fellowships/fellowships-for-indian-citizen/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly",
+  "render": true,
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-hdfc-badhte-kadam",
+  "programme_id": "scholarship-hdfc-badhte-kadam",
+  "programme_name": "HDFC Bank Parivartan's ECSS Badhte Kadam",
+  "organizer": "HDFC Bank",
+  "official_url": "https://www.buddy4study.com/page/hdfc-bank-parivartans-ecss-programme",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly",
+  "render": true,
+  "source_kind": "official",
+  "region_hint": "India"
+ },
+ {
+  "source_id": "scholarship-lic-golden-jubilee",
+  "programme_id": "scholarship-lic-golden-jubilee",
+  "programme_name": "LIC Golden Jubilee Foundation Scholarship",
+  "organizer": "Life Insurance Corporation of India",
+  "official_url": "https://licindia.in/web/guest/golden-jubilee-foundation",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly",
+  "render": true,
+  "source_kind": "official",
+  "region_hint": "India"
  }
 ]

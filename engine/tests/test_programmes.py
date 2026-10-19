@@ -207,7 +207,7 @@ class TestGenericProgrammePipeline(unittest.TestCase):
             "https://season.kde.org/",
         }
         self.assertTrue(seed_urls <= {s["official_url"] for s in SOURCE_REGISTRY})
-        allowed = {"source_id", "programme_id", "programme_name", "organizer", "official_url", "allowed_path_hints", "check_cadence"}
+        allowed = {"source_id", "programme_id", "programme_name", "organizer", "official_url", "allowed_path_hints", "check_cadence", "render"}
         for source in SOURCE_REGISTRY:
             self.assertTrue(set(source) <= allowed)
             self.assertFalse(any(callable(value) for value in source.values()))

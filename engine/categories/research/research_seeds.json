@@ -1703,5 +1703,65 @@
    ""
   ],
   "check_cadence": "monthly"
+ },
+ {
+  "source_id": "research-iitb-summer",
+  "programme_id": "research-iitb-summer",
+  "programme_name": "IIT Bombay Research Internship",
+  "organizer": "IIT Bombay (IRCC)",
+  "official_url": "https://www.ircc.iitb.ac.in/IRCC-Webpage/IITBInternship/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly",
+  "render": true
+ },
+ {
+  "source_id": "research-iitm-summer",
+  "programme_id": "research-iitm-summer",
+  "programme_name": "IIT Madras Summer Fellowship",
+  "organizer": "IIT Madras",
+  "official_url": "https://www.iitm.ac.in/announcements/summer-fellowship-2026",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly",
+  "render": true
+ },
+ {
+  "source_id": "research-iitd-summer",
+  "programme_id": "research-iitd-summer",
+  "programme_name": "IIT Delhi Summer Research Programme",
+  "organizer": "IIT Delhi",
+  "official_url": "https://international.iitd.ac.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly",
+  "render": true
+ },
+ {
+  "source_id": "research-iitgn-srip",
+  "programme_id": "research-iitgn-srip",
+  "programme_name": "IIT Gandhinagar Summer Research Internship Programme (SRIP)",
+  "organizer": "IIT Gandhinagar",
+  "official_url": "https://srip.iitgn.ac.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly",
+  "render": true
+ },
+ {
+  "source_id": "research-iitr-spark",
+  "programme_id": "research-iitr-spark",
+  "programme_name": "IIT Roorkee SPARK Summer Programme",
+  "organizer": "IIT Roorkee",
+  "official_url": "https://spark.iitr.ac.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly",
+  "render": true
  }
 ]
