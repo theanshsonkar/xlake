@@ -1,0 +1,1707 @@
+[
+ {
+  "source_id": "mit-urop",
+  "programme_id": "research-mit-urop",
+  "programme_name": "MIT Undergraduate Research Opportunities Program (UROP)",
+  "organizer": "MIT",
+  "official_url": "https://urop.mit.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "stanford-ssrp",
+  "programme_id": "research-stanford-ssrp",
+  "programme_name": "Stanford Summer Research Program (SSRP)",
+  "organizer": "Stanford University",
+  "official_url": "https://ssrp.stanford.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "stanford-surf",
+  "programme_id": "research-stanford-surf",
+  "programme_name": "Stanford Summer Undergraduate Research Fellowship",
+  "organizer": "Stanford University",
+  "official_url": "https://undergradresearch.stanford.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "btaa-srop",
+  "programme_id": "research-btaa-srop",
+  "programme_name": "Big Ten Academic Alliance Summer Research Opportunities Program",
+  "organizer": "Big Ten Academic Alliance",
+  "official_url": "https://www.btaa.org/students/srop",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "leadership-alliance-srtp",
+  "programme_id": "research-leadership-alliance-srtp",
+  "programme_name": "Leadership Alliance Summer Research Early Identification Program",
+  "organizer": "Leadership Alliance",
+  "official_url": "https://www.theleadershipalliance.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "caltech-surf-sfp",
+  "programme_id": "research-caltech-surf-sfp",
+  "programme_name": "Caltech SURF Overview",
+  "organizer": "Caltech Student-Faculty Programs",
+  "official_url": "https://sfp.caltech.edu/undergraduate-research/programs",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "berkeley-urap",
+  "programme_id": "research-berkeley-urap",
+  "programme_name": "Berkeley Undergraduate Research Apprentice Program",
+  "organizer": "UC Berkeley",
+  "official_url": "https://urap.berkeley.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "cmu-riss",
+  "programme_id": "research-cmu-riss",
+  "programme_name": "CMU Robotics Institute Summer Scholars (RISS)",
+  "organizer": "Carnegie Mellon University",
+  "official_url": "https://riss.ri.cmu.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "utaustin-fri",
+  "programme_id": "research-utaustin-fri",
+  "programme_name": "UT Austin Freshman Research Initiative",
+  "organizer": "UT Austin",
+  "official_url": "https://cns.utexas.edu/fri",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "rutgers-dimacs-reu",
+  "programme_id": "research-rutgers-dimacs-reu",
+  "programme_name": "DIMACS REU",
+  "organizer": "Rutgers DIMACS",
+  "official_url": "http://reu.dimacs.rutgers.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "nso-reu",
+  "programme_id": "research-nso-reu",
+  "programme_name": "NSO Research Experiences for Undergraduates",
+  "organizer": "National Solar Observatory",
+  "official_url": "https://nso.edu/education/reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "mbl-reu",
+  "programme_id": "research-mbl-reu",
+  "programme_name": "MBL Research Experiences for Undergraduates",
+  "organizer": "Marine Biological Laboratory",
+  "official_url": "https://www.mbl.edu/education/advanced-research-training-courses/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "nih-cc-sip",
+  "programme_id": "research-nih-cc-sip",
+  "programme_name": "NIH Clinical Center Summer Internship",
+  "organizer": "NIH Clinical Center",
+  "official_url": "https://www.cc.nih.gov/training",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "doe-suli",
+  "programme_id": "research-doe-suli",
+  "programme_name": "DOE Science Undergraduate Laboratory Internships (SULI)",
+  "organizer": "DOE Office of Science",
+  "official_url": "https://science.osti.gov/wdts/suli",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "doe-cci",
+  "programme_id": "research-doe-cci",
+  "programme_name": "DOE Community College Internships",
+  "organizer": "DOE Office of Science",
+  "official_url": "https://science.osti.gov/wdts/cci",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "doe-scgsr",
+  "programme_id": "research-doe-scgsr",
+  "programme_name": "DOE Office of Science Graduate Student Research (SCGSR)",
+  "organizer": "DOE Office of Science",
+  "official_url": "https://science.osti.gov/wdts/scgsr",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "doe-vfp",
+  "programme_id": "research-doe-vfp",
+  "programme_name": "DOE Visiting Faculty Program",
+  "organizer": "DOE Office of Science",
+  "official_url": "https://science.osti.gov/wdts/vfp",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "doe-nnsa-sscgf",
+  "programme_id": "research-doe-nnsa-sscgf",
+  "programme_name": "NNSA Stewardship Science Graduate Fellowship",
+  "organizer": "Krell Institute",
+  "official_url": "https://www.krellinst.org/ssgf/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "nasa-internships",
+  "programme_id": "research-nasa-internships",
+  "programme_name": "NASA Internships (Pathways, OSTEM)",
+  "organizer": "NASA",
+  "official_url": "https://intern.nasa.gov/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "nasa-nspires",
+  "programme_id": "research-nasa-nspires",
+  "programme_name": "NASA Space Grant",
+  "organizer": "NASA",
+  "official_url": "https://www.nasa.gov/stem/spacegrant/home/index.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "nasa-jpl-internships",
+  "programme_id": "research-nasa-jpl-internships",
+  "programme_name": "NASA JPL Internships",
+  "organizer": "NASA JPL",
+  "official_url": "https://www.jpl.nasa.gov/edu/intern/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "nist-surf",
+  "programme_id": "research-nist-surf",
+  "programme_name": "NIST Summer Undergraduate Research Fellowship (SURF)",
+  "organizer": "NIST",
+  "official_url": "https://www.nist.gov/surf",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "noaa-hollings",
+  "programme_id": "research-noaa-hollings",
+  "programme_name": "NOAA Hollings Scholarship",
+  "organizer": "NOAA",
+  "official_url": "https://www.noaa.gov/office-education/hollings-scholarship",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "noaa-epp-msi",
+  "programme_id": "research-noaa-epp-msi",
+  "programme_name": "NOAA EPP/MSI Undergraduate Scholarship",
+  "organizer": "NOAA",
+  "official_url": "https://www.noaa.gov/office-education/epp-msi/undergraduate-scholarship",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "epa-orise",
+  "programme_id": "research-epa-orise",
+  "programme_name": "EPA ORISE Research Participation",
+  "organizer": "EPA / ORISE",
+  "official_url": "https://orise.orau.gov/epa/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "orise-programs",
+  "programme_id": "research-orise-programs",
+  "programme_name": "ORISE Research Participation Programs",
+  "organizer": "Oak Ridge Institute for Science and Education",
+  "official_url": "https://orise.orau.gov/internships-fellowships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "cshl-urp",
+  "programme_id": "research-cshl-urp",
+  "programme_name": "Cold Spring Harbor Laboratory Undergraduate Research Program",
+  "organizer": "Cold Spring Harbor Laboratory",
+  "official_url": "https://www.cshl.edu/education/undergraduate-research-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "allen-institute-internships",
+  "programme_id": "research-allen-institute-internships",
+  "programme_name": "Allen Institute Internships",
+  "organizer": "Allen Institute",
+  "official_url": "https://alleninstitute.org/careers/internships/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "ornl-internships",
+  "programme_id": "research-ornl-internships",
+  "programme_name": "Oak Ridge National Laboratory Internships",
+  "organizer": "Oak Ridge National Laboratory",
+  "official_url": "https://www.ornl.gov/internships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "pnnl-internships",
+  "programme_id": "research-pnnl-internships",
+  "programme_name": "PNNL Internships",
+  "organizer": "Pacific Northwest National Laboratory",
+  "official_url": "https://www.pnnl.gov/internships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "bnl-suli",
+  "programme_id": "research-bnl-suli",
+  "programme_name": "Brookhaven National Laboratory Student Programs",
+  "organizer": "Brookhaven National Laboratory",
+  "official_url": "https://www.bnl.gov/education/programs/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "lincoln-lab-internships",
+  "programme_id": "research-lincoln-lab-internships",
+  "programme_name": "MIT Lincoln Laboratory Internships",
+  "organizer": "MIT Lincoln Laboratory",
+  "official_url": "https://www.ll.mit.edu/careers/student-opportunities",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "nsf-reu-main",
+  "programme_id": "research-nsf-reu-main",
+  "programme_name": "NSF REU Overview",
+  "organizer": "NSF",
+  "official_url": "https://new.nsf.gov/funding/initiatives/reu",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "nsf-ire",
+  "programme_id": "research-nsf-ire",
+  "programme_name": "NSF IRES International Research Experiences",
+  "organizer": "NSF",
+  "official_url": "https://new.nsf.gov/funding/opportunities/international-research-experiences-students-ires",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "amgen-scholars-asia",
+  "programme_id": "research-amgen-scholars-asia",
+  "programme_name": "Amgen Scholars Asia",
+  "organizer": "Amgen Foundation",
+  "official_url": "https://amgenscholars.com/programs/asia/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "bu-urop",
+  "programme_id": "research-bu-urop",
+  "programme_name": "Boston University Summer Research",
+  "organizer": "Boston University",
+  "official_url": "https://www.bu.edu/urop/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "ucar-sparc",
+  "programme_id": "research-ucar-sparc",
+  "programme_name": "UCAR SOARS",
+  "organizer": "UCAR",
+  "official_url": "https://soars.ucar.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "ncar-siparcs",
+  "programme_id": "research-ncar-siparcs",
+  "programme_name": "NCAR SIParCS",
+  "organizer": "NCAR",
+  "official_url": "https://www.cisl.ucar.edu/siparcs",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "uiuc-srop",
+  "programme_id": "research-uiuc-srop",
+  "programme_name": "University of Illinois Summer Research Opportunities Program",
+  "organizer": "University of Illinois Urbana-Champaign",
+  "official_url": "https://grad.illinois.edu/srop",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "mitacs-globalink-research-award",
+  "programme_id": "research-mitacs-globalink-research-award",
+  "programme_name": "Mitacs Globalink Research Award",
+  "organizer": "Mitacs",
+  "official_url": "https://www.mitacs.ca/our-programs/globalink-research-award/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "nserc-usra",
+  "programme_id": "research-nserc-usra",
+  "programme_name": "NSERC Undergraduate Student Research Awards",
+  "organizer": "NSERC",
+  "official_url": "https://www.nserc-crsng.gc.ca/students-etudiants/ug-pc/usra-brpc_eng.asp",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "daad-rise-worldwide",
+  "programme_id": "research-daad-rise-worldwide",
+  "programme_name": "DAAD RISE Worldwide",
+  "organizer": "DAAD",
+  "official_url": "https://www.daad.de/rise/en/rise-worldwide/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "daad-rise-professional",
+  "programme_id": "research-daad-rise-professional",
+  "programme_name": "DAAD RISE Professional",
+  "organizer": "DAAD",
+  "official_url": "https://www.daad.de/rise/en/rise-professional/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "mitacs-accelerate",
+  "programme_id": "research-mitacs-accelerate",
+  "programme_name": "Mitacs Accelerate",
+  "organizer": "Mitacs",
+  "official_url": "https://www.mitacs.ca/our-programs/accelerate/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "kaust-vsrp",
+  "programme_id": "research-kaust-vsrp",
+  "programme_name": "KAUST Visiting Student Research Program",
+  "organizer": "KAUST",
+  "official_url": "https://vsrp.kaust.edu.sa/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "jsps-summer",
+  "programme_id": "research-jsps-summer",
+  "programme_name": "JSPS Summer Program",
+  "organizer": "JSPS",
+  "official_url": "https://www.jsps.go.jp/english/e-summer/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "riken-junior",
+  "programme_id": "research-riken-junior",
+  "programme_name": "RIKEN Junior Research Associate",
+  "organizer": "RIKEN",
+  "official_url": "https://www.riken.jp/en/careers/programs/jra/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "cern-doctoral",
+  "programme_id": "research-cern-doctoral",
+  "programme_name": "CERN Doctoral Student Programme",
+  "organizer": "CERN",
+  "official_url": "https://careers.cern/doctoral",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "embl-ebi-internships",
+  "programme_id": "research-embl-ebi-internships",
+  "programme_name": "EMBL-EBI Internships",
+  "organizer": "EMBL-EBI",
+  "official_url": "https://www.ebi.ac.uk/about/jobs/internships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "embl-epfl-phd",
+  "programme_id": "research-embl-epfl-phd",
+  "programme_name": "EMBL PhD Programme",
+  "organizer": "EMBL",
+  "official_url": "https://www.embl.org/about/info/embl-international-phd-programme/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "imperial-urop",
+  "programme_id": "research-imperial-urop",
+  "programme_name": "Imperial College UROP",
+  "organizer": "Imperial College London",
+  "official_url": "https://www.imperial.ac.uk/urop/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "wellcome-vacation",
+  "programme_id": "research-wellcome-vacation",
+  "programme_name": "Wellcome Trust Biomedical Vacation Scholarships",
+  "organizer": "Wellcome Trust",
+  "official_url": "https://wellcome.org/grant-funding/schemes/biomedical-vacation-scholarships",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "iitk-surge",
+  "programme_id": "research-iitk-surge",
+  "programme_name": "IIT Kanpur SURGE",
+  "organizer": "IIT Kanpur",
+  "official_url": "https://surge.iitk.ac.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "hbcse-nius",
+  "programme_id": "research-hbcse-nius",
+  "programme_name": "HBCSE NIUS",
+  "organizer": "HBCSE-TIFR",
+  "official_url": "https://nius.hbcse.tifr.res.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "utokyo-utrip",
+  "programme_id": "research-utokyo-utrip",
+  "programme_name": "UTokyo UTRIP",
+  "organizer": "University of Tokyo",
+  "official_url": "https://www.s.u-tokyo.ac.jp/en/utrip/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "iitb-ircc",
+  "programme_id": "research-iitb-ircc",
+  "programme_name": "IIT Bombay IRCC Fellowships",
+  "organizer": "IIT Bombay",
+  "official_url": "https://www.ircc.iitb.ac.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "ai-safety-camp",
+  "programme_id": "research-ai-safety-camp",
+  "programme_name": "AI Safety Camp",
+  "organizer": "AI Safety Camp",
+  "official_url": "https://aisafety.camp/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "spar-research",
+  "programme_id": "research-spar-research",
+  "programme_name": "SPAR Research Program",
+  "organizer": "SPAR",
+  "official_url": "https://sparai.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "era-cambridge",
+  "programme_id": "research-era-cambridge",
+  "programme_name": "ERA Cambridge Fellowship",
+  "organizer": "ERA",
+  "official_url": "https://erafellowship.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "doe-csgf",
+  "programme_id": "research-doe-csgf",
+  "programme_name": "DOE Computational Science Graduate Fellowship",
+  "organizer": "Krell Institute",
+  "official_url": "https://www.krellinst.org/csgf/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "snbncbs-srp",
+  "programme_id": "research-snbncbs-srp",
+  "programme_name": "S. N. Bose Centre Summer Research Programme",
+  "organizer": "S. N. Bose National Centre for Basic Sciences",
+  "official_url": "https://www.bose.res.in/LinkageProgrammes/VASP/SRP2024.jsp",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "snbncbs-vasp",
+  "programme_id": "research-snbncbs-vasp",
+  "programme_name": "S. N. Bose Centre Visiting Students Programmes",
+  "organizer": "S. N. Bose National Centre for Basic Sciences",
+  "official_url": "https://www.bose.res.in/LinkageProgrammes/VASP/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "jncasr-srfp-node",
+  "programme_id": "research-jncasr-srfp-node",
+  "programme_name": "JNCASR Summer Research Fellowship Programme",
+  "organizer": "JNCASR",
+  "official_url": "https://www.jncasr.ac.in/node/1259",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "ncra-vsrp-site",
+  "programme_id": "research-ncra-vsrp-site",
+  "programme_name": "NCRA VSRP Application",
+  "organizer": "NCRA-TIFR",
+  "official_url": "https://vsrp.ncra.tifr.res.in/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "ias-srfp-main",
+  "programme_id": "research-ias-srfp-main",
+  "programme_name": "Science Academies Summer Research Fellowship",
+  "organizer": "Indian Academy of Sciences",
+  "official_url": "https://www.ias.ac.in/Initiatives/Science_Education_Programme/Summer_Research_Fellowship",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "srfp-indian-academies",
+  "programme_id": "research-srfp-indian-academies",
+  "programme_name": "Science Academies' Summer Research Fellowship Programme",
+  "organizer": "Indian Academy of Sciences",
+  "official_url": "https://www.ias.ac.in/Initiatives/Science_Education_Programme/Summer_Research_Fellowship/Apply_Online",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "icts-summer-programs",
+  "programme_id": "research-icts-summer-programs",
+  "programme_name": "ICTS Summer Programs",
+  "organizer": "ICTS-TIFR",
+  "official_url": "https://www.icts.res.in/programs",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "iiitb-summer",
+  "programme_id": "research-iiitb-summer",
+  "programme_name": "IIIT Bangalore Summer Internship",
+  "organizer": "IIIT Bangalore",
+  "official_url": "https://www.iiitb.ac.in/summer-internship",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "bits-sip",
+  "programme_id": "research-bits-sip",
+  "programme_name": "BITS Pilani Summer Research Programme",
+  "organizer": "BITS Pilani",
+  "official_url": "https://www.bits-pilani.ac.in/research/summer-research",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "msr-india-academic",
+  "programme_id": "research-msr-india-academic",
+  "programme_name": "Microsoft Research India Academic Programs",
+  "organizer": "Microsoft Research",
+  "official_url": "https://www.microsoft.com/en-us/research/lab/microsoft-research-india/academic-programs/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "microsoft-research-india-internship",
+  "programme_id": "research-microsoft-research-india-internship",
+  "programme_name": "Microsoft Research India Research Internship",
+  "organizer": "Microsoft Research",
+  "official_url": "https://www.microsoft.com/en-us/research/lab/microsoft-research-india/opportunities/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "cern-openlab-prog",
+  "programme_id": "research-cern-openlab-prog",
+  "programme_name": "CERN openlab",
+  "organizer": "CERN",
+  "official_url": "https://openlab.cern/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "cern-technical-student",
+  "programme_id": "research-cern-technical-student",
+  "programme_name": "CERN Technical Student Programme",
+  "organizer": "CERN",
+  "official_url": "https://careers.cern/students/technical",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-uwec-hpc",
+  "programme_id": "research-reu-uwec-hpc",
+  "programme_name": "NSF REU Computational Research (UW-Eau Claire)",
+  "organizer": "University of Wisconsin-Eau Claire",
+  "official_url": "https://hpc.uwec.edu/explore-opportunities/nsf-reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-brown-ai-creativity",
+  "programme_id": "research-reu-brown-ai-creativity",
+  "programme_name": "REU AI for Computational Creativity",
+  "organizer": "Brown University",
+  "official_url": "https://aireu.cs.brown.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-uhd-cs",
+  "programme_id": "research-reu-uhd-cs",
+  "programme_name": "REU Computational Sciences and Engineering",
+  "organizer": "University of Houston-Downtown",
+  "official_url": "https://www.uhd.edu/academics/sciences/computer-science-engineering-technology/reu.aspx",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-umn-cs",
+  "programme_id": "research-reu-umn-cs",
+  "programme_name": "REU Computer Science",
+  "organizer": "University of Minnesota",
+  "official_url": "https://reu.cs.umn.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-usc-ict",
+  "programme_id": "research-reu-usc-ict",
+  "programme_name": "REU Institute for Creative Technologies",
+  "organizer": "USC Institute for Creative Technologies",
+  "official_url": "https://ict.usc.edu/reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-utah-ece",
+  "programme_id": "research-reu-utah-ece",
+  "programme_name": "REU Site Program ECE",
+  "organizer": "University of Utah",
+  "official_url": "https://www.ece.utah.edu/reu-site-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-csi-cuny",
+  "programme_id": "research-reu-csi-cuny",
+  "programme_name": "REU Computer Science",
+  "organizer": "CUNY College of Staten Island",
+  "official_url": "https://www.csi.cuny.edu/academics-and-research/departments-programs/computer-science/research-experiences-undergraduates-reu",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-syracuse-chem",
+  "programme_id": "research-reu-syracuse-chem",
+  "programme_name": "REU Chemistry",
+  "organizer": "Syracuse University",
+  "official_url": "https://artsandsciences.syracuse.edu/chemistry/research/reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-stlawu-chem",
+  "programme_id": "research-reu-stlawu-chem",
+  "programme_name": "Summer Research Opportunities Chemistry",
+  "organizer": "St. Lawrence University",
+  "official_url": "https://www.stlawu.edu/offices/chemistry/summer-research-opportunities",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-ucsc-materials",
+  "programme_id": "research-reu-ucsc-materials",
+  "programme_name": "REU Materials",
+  "organizer": "UC Santa Cruz",
+  "official_url": "https://materials.ucsc.edu/research-experiences-for-undergraduates-reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-columbia-mrsec",
+  "programme_id": "research-reu-columbia-mrsec",
+  "programme_name": "MRSEC REU",
+  "organizer": "Columbia University",
+  "official_url": "https://mrsec.columbia.edu/content/research-experiences-undergraduates-reu",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-utah-chem",
+  "programme_id": "research-reu-utah-chem",
+  "programme_name": "REU Chemistry",
+  "organizer": "University of Utah",
+  "official_url": "https://www.chemistry.utah.edu/research/reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-montana-chem",
+  "programme_id": "research-reu-montana-chem",
+  "programme_name": "REU Chemistry",
+  "organizer": "Montana State University",
+  "official_url": "https://chemistry.montana.edu/reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-uab-cnmb",
+  "programme_id": "research-reu-uab-cnmb",
+  "programme_name": "REU Nanoscience and Biology",
+  "organizer": "University of Alabama at Birmingham",
+  "official_url": "https://sites.uab.edu/cnmb/research-experiences-for-undergraduates/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-uark-chem",
+  "programme_id": "research-reu-uark-chem",
+  "programme_name": "NSF-REU Chemistry",
+  "organizer": "University of Arkansas",
+  "official_url": "https://chemistry.uark.edu/academics/undergraduate/nsf-reu/index.php",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-asu-onsa",
+  "programme_id": "research-reu-asu-onsa",
+  "programme_name": "Research Experiences for Undergraduates",
+  "organizer": "Arizona State University",
+  "official_url": "https://onsa.asu.edu/scholarship/research-experiences-undergraduates-reu",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-stanford-med",
+  "programme_id": "research-reu-stanford-med",
+  "programme_name": "REU Research Experience for Undergraduates",
+  "organizer": "Stanford Medicine",
+  "official_url": "https://med.stanford.edu/rsl/education/2025-research-experience-for-undergraduates--reu-1.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-uw-iscrm",
+  "programme_id": "research-reu-uw-iscrm",
+  "programme_name": "REU Stem Cell and Regenerative Medicine",
+  "organizer": "University of Washington",
+  "official_url": "https://iscrm.uw.edu/trainees/reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-ku-mb",
+  "programme_id": "research-reu-ku-mb",
+  "programme_name": "REU Molecular Biosciences",
+  "organizer": "University of Kansas",
+  "official_url": "https://mb-reu.ku.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-cuanschutz-rgb",
+  "programme_id": "research-reu-cuanschutz-rgb",
+  "programme_name": "REU RNA and Genome Biology",
+  "organizer": "CU Anschutz",
+  "official_url": "https://medschool.cuanschutz.edu/biochemistry/reu-rgb",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-tufts-bio",
+  "programme_id": "research-reu-tufts-bio",
+  "programme_name": "NSF REU Biology",
+  "organizer": "Tufts University",
+  "official_url": "https://as.tufts.edu/biology/research/undergraduate-research-opportunities/nsf-research-experience-undergraduates-reu-program",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-purdue-biochem",
+  "programme_id": "research-reu-purdue-biochem",
+  "programme_name": "REU Biochemistry",
+  "organizer": "Purdue University",
+  "official_url": "https://ag.purdue.edu/department/biochem/research/reu-program-information.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-haystack",
+  "programme_id": "research-reu-haystack",
+  "programme_name": "REU Haystack Observatory",
+  "organizer": "MIT Haystack Observatory",
+  "official_url": "https://www.haystack.mit.edu/haystack-public-outreach/research-experiences-for-undergraduates-reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-nd-physics",
+  "programme_id": "research-reu-nd-physics",
+  "programme_name": "REU Physics",
+  "organizer": "University of Notre Dame",
+  "official_url": "https://physics.nd.edu/research/reu-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-ut-astronomy",
+  "programme_id": "research-reu-ut-astronomy",
+  "programme_name": "UT Austin Astronomy NSF REU",
+  "organizer": "UT Austin",
+  "official_url": "https://astronomy.utexas.edu/research/student-research-opportunities/ut-austin-astronomy-nsf-reu-program",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-illinois-physics",
+  "programme_id": "research-reu-illinois-physics",
+  "programme_name": "REU Physics",
+  "organizer": "University of Illinois Urbana-Champaign",
+  "official_url": "https://physics.illinois.edu/research/reu",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-isnap-nd",
+  "programme_id": "research-reu-isnap-nd",
+  "programme_name": "REU ISNAP",
+  "organizer": "University of Notre Dame",
+  "official_url": "https://isnap.nd.edu/outreach/reu-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-psu-physics",
+  "programme_id": "research-reu-psu-physics",
+  "programme_name": "REU Sustainable Physics",
+  "organizer": "Penn State",
+  "official_url": "https://sites.psu.edu/physicsreu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-cornell-astro",
+  "programme_id": "research-reu-cornell-astro",
+  "programme_name": "Undergraduate Astronomy Research",
+  "organizer": "Cornell University",
+  "official_url": "https://astro.cornell.edu/undergraduate-research",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-iu-math",
+  "programme_id": "research-reu-iu-math",
+  "programme_name": "REU Mathematics",
+  "organizer": "Indiana University Bloomington",
+  "official_url": "https://math.indiana.edu/undergraduate/reu-summer-research-program/index.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-uconn-math",
+  "programme_id": "research-reu-uconn-math",
+  "programme_name": "REU Mathematics",
+  "organizer": "University of Connecticut",
+  "official_url": "https://mathreu.uconn.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-umich-math",
+  "programme_id": "research-reu-umich-math",
+  "programme_name": "REU Mathematics",
+  "organizer": "University of Michigan",
+  "official_url": "https://lsa.umich.edu/math/undergraduates/research-and-career-opportunities/research/research-experience-for-undergraduates--reu-.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-uah-math",
+  "programme_id": "research-reu-uah-math",
+  "programme_name": "Summer REU Mathematics",
+  "organizer": "University of Alabama in Huntsville",
+  "official_url": "https://www.uah.edu/science/departments/math/ma-undergraduate-programs/summer-reu",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-iupui-math",
+  "programme_id": "research-reu-iupui-math",
+  "programme_name": "REU Mathematics",
+  "organizer": "Indiana University Indianapolis",
+  "official_url": "https://science.indianapolis.iu.edu/math/research/student-opportunities/reu-program.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-cu-math",
+  "programme_id": "research-reu-cu-math",
+  "programme_name": "Summer Research for Undergraduates",
+  "organizer": "CU Boulder Mathematics",
+  "official_url": "https://www.colorado.edu/math/undergraduate-program/summer-research-undergraduate",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-umd-math",
+  "programme_id": "research-reu-umd-math",
+  "programme_name": "Summer REU Mathematics",
+  "organizer": "University of Maryland",
+  "official_url": "https://www-math.umd.edu/outreach/summer-reu.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-msu-suriem",
+  "programme_id": "research-reu-msu-suriem",
+  "programme_name": "SURIEM Mathematics REU",
+  "organizer": "Michigan State University",
+  "official_url": "https://lbc.msu.edu/research/suriem",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-uwb-math",
+  "programme_id": "research-reu-uwb-math",
+  "programme_name": "REU Mathematics",
+  "organizer": "University of Washington Bothell",
+  "official_url": "https://www.uwb.edu/stem/research/reu/mathematics",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-stanford-mse",
+  "programme_id": "research-reu-stanford-mse",
+  "programme_name": "REU Materials Science",
+  "organizer": "Stanford University",
+  "official_url": "https://mse.stanford.edu/REU",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-umn-mrsec",
+  "programme_id": "research-reu-umn-mrsec",
+  "programme_name": "REU MRSEC",
+  "organizer": "University of Minnesota",
+  "official_url": "https://mrsec.umn.edu/ehr/REU/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-northwestern-mrsec",
+  "programme_id": "research-reu-northwestern-mrsec",
+  "programme_name": "MRSEC Undergraduate Opportunities",
+  "organizer": "Northwestern University",
+  "official_url": "https://mrsec.northwestern.edu/education/undergraduate-opportunities.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-utd-mse",
+  "programme_id": "research-reu-utd-mse",
+  "programme_name": "REU Materials Science",
+  "organizer": "University of Texas at Dallas",
+  "official_url": "https://mse.utdallas.edu/connect/recruitment-and-outreach/reu-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-brandeis-mrsec",
+  "programme_id": "research-reu-brandeis-mrsec",
+  "programme_name": "MRSEC REU",
+  "organizer": "Brandeis University",
+  "official_url": "https://www.brandeis.edu/mrsec/education/undergraduates/reu.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-uchicago-pme",
+  "programme_id": "research-reu-uchicago-pme",
+  "programme_name": "REU Molecular Engineering",
+  "organizer": "University of Chicago",
+  "official_url": "https://pme.uchicago.edu/educational-outreach/research-experiences-undergraduates",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-uci-materials",
+  "programme_id": "research-reu-uci-materials",
+  "programme_name": "Materials REU",
+  "organizer": "UC Irvine",
+  "official_url": "https://ccam.uci.edu/education-and-outreach/materials-reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-cu-mse",
+  "programme_id": "research-reu-cu-mse",
+  "programme_name": "REU Materials Engineering",
+  "organizer": "CU Boulder",
+  "official_url": "https://www.colorado.edu/mse/academics/research-experience-undergraduates",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-gatech-neuro",
+  "programme_id": "research-reu-gatech-neuro",
+  "programme_name": "REU Human Neuroscience",
+  "organizer": "Georgia Tech",
+  "official_url": "https://reu.neuroscience.gatech.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-iu-animalbehavior",
+  "programme_id": "research-reu-iu-animalbehavior",
+  "programme_name": "REU Animal Behavior",
+  "organizer": "Indiana University Bloomington",
+  "official_url": "https://animalbehavior.indiana.edu/research/reu/index.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-brooklyn-psych",
+  "programme_id": "research-reu-brooklyn-psych",
+  "programme_name": "REU Psychology and Neuroscience",
+  "organizer": "Brooklyn College",
+  "official_url": "https://www.brooklyn.edu/psychology/undergraduate/reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-umces",
+  "programme_id": "research-reu-umces",
+  "programme_name": "UMCES Undergraduate Research",
+  "organizer": "University of Maryland Center for Environmental Science",
+  "official_url": "https://www.umces.edu/undergraduate",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-utexas-esi",
+  "programme_id": "research-reu-utexas-esi",
+  "programme_name": "REU Environmental Science",
+  "organizer": "UT Austin",
+  "official_url": "https://www.esi.utexas.edu/education/undergraduate-students/current-summer-reu-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-psu-geopeers",
+  "programme_id": "research-reu-psu-geopeers",
+  "programme_name": "GeoPEERS REU",
+  "organizer": "Penn State",
+  "official_url": "https://www.geosc.psu.edu/beyond-classroom/geopeers-reu",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-lter",
+  "programme_id": "research-reu-lter",
+  "programme_name": "LTER Undergraduate Research Opportunities",
+  "organizer": "LTER Network",
+  "official_url": "https://lternet.edu/education-and-training/undergraduate/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-gatech-eas",
+  "programme_id": "research-reu-gatech-eas",
+  "programme_name": "Georgia Tech EAS REU",
+  "organizer": "Georgia Tech",
+  "official_url": "https://easreu.eas.gatech.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-psu-met",
+  "programme_id": "research-reu-psu-met",
+  "programme_name": "REU Meteorology",
+  "organizer": "Penn State",
+  "official_url": "https://www.met.psu.edu/undergraduate/current-undergraduate-students/engagement-opportunities/undergraduate-research/reu",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-usm-ecology",
+  "programme_id": "research-reu-usm-ecology",
+  "programme_name": "REU Gulf Coastal Plain Ecology",
+  "organizer": "University of Southern Mississippi",
+  "official_url": "https://www.usm.edu/biological-environmental-earth-sciences/reu-gulf-coastal-plain/index.php",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-lumcon",
+  "programme_id": "research-reu-lumcon",
+  "programme_name": "REU LUMCON",
+  "organizer": "Louisiana Universities Marine Consortium",
+  "official_url": "https://lumcon.edu/reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-berkeley-superb-eecs",
+  "programme_id": "research-reu-berkeley-superb-eecs",
+  "programme_name": "SUPERB",
+  "organizer": "UC Berkeley EECS",
+  "official_url": "https://eecs.berkeley.edu/resources/undergrads/undergraduate-research/superb/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-usc-robotics",
+  "programme_id": "research-reu-usc-robotics",
+  "programme_name": "Robotics and Autonomous Systems REU",
+  "organizer": "USC Viterbi",
+  "official_url": "https://www.cs.usc.edu/reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-uiuc-digitalag",
+  "programme_id": "research-reu-uiuc-digitalag",
+  "programme_name": "REU Center for Digital Agriculture",
+  "organizer": "University of Illinois",
+  "official_url": "https://digitalag.illinois.edu/education/reu-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-ncsa",
+  "programme_id": "research-reu-ncsa",
+  "programme_name": "NCSA REU",
+  "organizer": "University of Illinois NCSA",
+  "official_url": "https://reu.ncsa.illinois.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-charlotte",
+  "programme_id": "research-reu-charlotte",
+  "programme_name": "Smart and Secure Future Computing REU",
+  "organizer": "UNC Charlotte",
+  "official_url": "https://reu.charlotte.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-osu-robots",
+  "programme_id": "research-reu-osu-robots",
+  "programme_name": "REU Robots in the Real World",
+  "organizer": "Oregon State University",
+  "official_url": "https://engineering.oregonstate.edu/CoRIS/reu-robots-real-world",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-tacc",
+  "programme_id": "research-reu-tacc",
+  "programme_name": "REU Cyberinfrastructure Research",
+  "organizer": "TACC UT Austin",
+  "official_url": "https://tacc.utexas.edu/education/undergraduates-graduates/reu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-purdue-anvil",
+  "programme_id": "research-reu-purdue-anvil",
+  "programme_name": "Anvil REU",
+  "organizer": "Purdue RCAC",
+  "official_url": "https://www.rcac.purdue.edu/anvil/reu",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-clarkson-hpc",
+  "programme_id": "research-reu-clarkson-hpc",
+  "programme_name": "REU HPC",
+  "organizer": "Clarkson University",
+  "official_url": "http://reu-hpc.clarkson.edu/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-cpp-bigdata",
+  "programme_id": "research-reu-cpp-bigdata",
+  "programme_name": "REU Big Data Security and Privacy",
+  "organizer": "Cal Poly Pomona",
+  "official_url": "https://www.cpp.edu/bigdatasec-reu/overview.shtml",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "reu-bowie-cyber",
+  "programme_id": "research-reu-bowie-cyber",
+  "programme_name": "Cybersecurity Initiative SURI",
+  "organizer": "Bowie State University",
+  "official_url": "https://www.bowiestate.edu/academics/special-programs/education-innovation-initiative/summer-undergraduate-research-institute/cybersecurity-initiative/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-berkeley-ls",
+  "programme_id": "research-surf-berkeley-ls",
+  "programme_name": "L&S SURF",
+  "organizer": "UC Berkeley",
+  "official_url": "https://research.berkeley.edu/surf/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-rockefeller",
+  "programme_id": "research-surf-rockefeller",
+  "programme_name": "Chemers Neustein SURF",
+  "organizer": "The Rockefeller University",
+  "official_url": "https://www.rockefeller.edu/education-and-training/surf/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-yale-gsas",
+  "programme_id": "research-surf-yale-gsas",
+  "programme_name": "Yale Summer Undergraduate Research Fellowship",
+  "organizer": "Yale GSAS",
+  "official_url": "https://gsas.yale.edu/programs-of-study/summer-undergraduate-research-fellowship-program",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-uci",
+  "programme_id": "research-surf-uci",
+  "programme_name": "UC Irvine SURF",
+  "organizer": "UC Irvine",
+  "official_url": "https://grad.uci.edu/prospective-students/graduate-preparation-programs/summer-undergraduate-research-fellowship/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-scripps",
+  "programme_id": "research-surf-scripps",
+  "programme_name": "Scripps Research SURF",
+  "organizer": "Scripps Research",
+  "official_url": "https://education.scripps.edu/undergraduate/summer-research/surf-program/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-uiuc",
+  "programme_id": "research-surf-uiuc",
+  "programme_name": "SURF Illinois",
+  "organizer": "University of Illinois",
+  "official_url": "https://researchops.web.illinois.edu/opportunity/summer-undergraduate-research-fellowship-surf",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-wakehealth-biomed",
+  "programme_id": "research-surf-wakehealth-biomed",
+  "programme_name": "Biomedical Engineering Summer Research Internship",
+  "organizer": "Wake Forest University School of Medicine",
+  "official_url": "https://school.wakehealth.edu/departments/biomedical-engineering/center-for-injury-biomechanics/summer-research-opportunities",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-wakehealth-calibir",
+  "programme_id": "research-surf-wakehealth-calibir",
+  "programme_name": "CALIBIR Summer Research Internship",
+  "organizer": "Wake Forest University School of Medicine",
+  "official_url": "https://school.wakehealth.edu/research/institutes-and-centers/center-for-artificial-intelligence-research/calibir-summer-research-internship",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-colorado-sleep",
+  "programme_id": "research-surf-colorado-sleep",
+  "programme_name": "Sleep and Circadian R25 Summer Program",
+  "organizer": "University of Colorado Boulder",
+  "official_url": "https://www.colorado.edu/iphy/research/sleep-and-chronobiology/nih-r25-sleep-and-circadian-training-grant",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-umich-nuro",
+  "programme_id": "research-surf-umich-nuro",
+  "programme_name": "Neuroscience Undergraduate Research Opportunity",
+  "organizer": "University of Michigan Medical School",
+  "official_url": "https://medschool.umich.edu/interdisciplinary-programs/neuroscience-graduate-program/summer-research-opportunities/nuro-program",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-rochester-scholars",
+  "programme_id": "research-surf-rochester-scholars",
+  "programme_name": "Summer Scholars Program",
+  "organizer": "University of Rochester Medical Center",
+  "official_url": "https://www.urmc.rochester.edu/education/graduate/summer-scholars",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-emory-inspire",
+  "programme_id": "research-surf-emory-inspire",
+  "programme_name": "INSPIRE Summer Program",
+  "organizer": "Emory University",
+  "official_url": "https://tree4health.emory.edu/programs/inspire.html",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-bu-spin",
+  "programme_id": "research-surf-bu-spin",
+  "programme_name": "Summer Program in Neuroscience",
+  "organizer": "Boston University",
+  "official_url": "https://sites.bu.edu/spin/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ },
+ {
+  "source_id": "surf-uab-medicine",
+  "programme_id": "research-surf-uab-medicine",
+  "programme_name": "UAB Summer Programs",
+  "organizer": "University of Alabama at Birmingham",
+  "official_url": "https://www.uab.edu/medicine/home/education/undergraduate-programs/summer-programs",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "monthly"
+ }
+]

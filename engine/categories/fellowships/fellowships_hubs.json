@@ -1,915 +1,1751 @@
 [
-    {
-        "source_id": "fellowship-thiel",
-        "programme_id": "fellowship-thiel",
-        "programme_name": "Thiel Fellowship",
-        "organizer": "Thiel Foundation",
-        "official_url": "https://thielfellowship.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-mozilla",
-        "programme_id": "fellowship-mozilla",
-        "programme_name": "Mozilla Fellowship",
-        "organizer": "Mozilla Foundation",
-        "official_url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-echoing-green",
-        "programme_id": "fellowship-echoing-green",
-        "programme_name": "Echoing Green Fellowship",
-        "organizer": "Echoing Green",
-        "official_url": "https://echoinggreen.org/fellowship/apply/",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-acumen",
-        "programme_id": "fellowship-acumen",
-        "programme_name": "Acumen Fellowship",
-        "organizer": "Acumen Academy",
-        "official_url": "https://acumenacademy.org/fellowship/",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-ashoka",
-        "programme_id": "fellowship-ashoka",
-        "programme_name": "Ashoka Fellowship",
-        "organizer": "Ashoka",
-        "official_url": "https://www.ashoka.org/en-us/program/ashoka-fellowship",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-aaas-st-policy",
-        "programme_id": "fellowship-aaas-st-policy",
-        "programme_name": "AAAS Science & Technology Policy Fellowships",
-        "organizer": "American Association for the Advancement of Science",
-        "official_url": "https://www.aaas.org/programs/science-technology-policy-fellowships",
-        "allowed_path_hints": [
-            "science-technology-policy-fellowships"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-schmidt-science",
-        "programme_id": "fellowship-schmidt-science",
-        "programme_name": "Schmidt Science Fellows",
-        "organizer": "Schmidt Sciences",
-        "official_url": "https://schmidtsciencefellows.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-ted",
-        "programme_id": "fellowship-ted",
-        "programme_name": "TED Fellows",
-        "organizer": "TED",
-        "official_url": "https://www.ted.com/about/programs-initiatives/ted-fellows",
-        "allowed_path_hints": [
-            "ted-fellows"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-kleiner-perkins",
-        "programme_id": "fellowship-kleiner-perkins-fellows",
-        "programme_name": "Kleiner Perkins Fellows Program",
-        "organizer": "Kleiner Perkins",
-        "official_url": "https://www.kleinerperkins.com/fellows/",
-        "allowed_path_hints": [
-            "fellows"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-hertz",
-        "programme_id": "fellowship-hertz",
-        "programme_name": "Hertz Fellowship",
-        "organizer": "Fannie and John Hertz Foundation",
-        "official_url": "https://www.hertzfoundation.org/the-fellowship/",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-soros",
-        "programme_id": "fellowship-soros",
-        "programme_name": "Paul & Daisy Soros Fellowships for New Americans",
-        "organizer": "Paul & Daisy Soros Fellowships for New Americans",
-        "official_url": "https://www.pdsoros.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-google-phd",
-        "programme_id": "fellowship-google-phd",
-        "programme_name": "Google PhD Fellowship",
-        "organizer": "Google",
-        "official_url": "https://research.google/outreach/phd-fellowship/",
-        "allowed_path_hints": [
-            "phd-fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-microsoft-phd",
-        "programme_id": "fellowship-microsoft-phd",
-        "programme_name": "Microsoft Research PhD Fellowship",
-        "organizer": "Microsoft Research",
-        "official_url": "https://www.microsoft.com/en-us/research/academic-program/fellowships/",
-        "allowed_path_hints": [
-            "fellowships"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-nvidia-graduate",
-        "programme_id": "fellowship-nvidia-graduate",
-        "programme_name": "NVIDIA Graduate Fellowship",
-        "organizer": "NVIDIA Research",
-        "official_url": "https://research.nvidia.com/graduate-fellowships",
-        "allowed_path_hints": [
-            "graduate-fellowships"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-roddenberry",
-        "programme_id": "fellowship-roddenberry",
-        "programme_name": "Roddenberry Fellowship",
-        "organizer": "Roddenberry Foundation",
-        "official_url": "https://roddenberryfoundation.org/our-work/roddenberry-fellowship/",
-        "allowed_path_hints": [
-            "roddenberry-fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-drk",
-        "programme_id": "fellowship-drk",
-        "programme_name": "DRK Foundation Fellowship",
-        "organizer": "Draper Richards Kaplan Foundation",
-        "official_url": "https://www.drkfoundation.org/apply/",
-        "allowed_path_hints": [
-            "apply"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-nsf-grfp",
-        "programme_id": "fellowship-nsf-grfp",
-        "programme_name": "NSF Graduate Research Fellowship Program",
-        "organizer": "National Science Foundation",
-        "official_url": "https://www.nsfgrfp.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-gandhi",
-        "programme_id": "fellowship-gandhi",
-        "programme_name": "Gandhi Fellowship",
-        "organizer": "Piramal Foundation",
-        "official_url": "https://www.gandhifellowship.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-youth-for-india",
-        "programme_id": "fellowship-youth-for-india",
-        "programme_name": "SBI Youth for India Fellowship",
-        "organizer": "State Bank of India Foundation",
-        "official_url": "https://www.youthforindia.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-prs-lamp",
-        "programme_id": "fellowship-prs-lamp",
-        "programme_name": "PRS Legislative Research LAMP Fellowship",
-        "organizer": "PRS Legislative Research",
-        "official_url": "https://prsindia.org/lamp",
-        "allowed_path_hints": [
-            "lamp"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-aif-clinton",
-        "programme_id": "fellowship-aif-clinton",
-        "programme_name": "AIF Clinton Fellowship",
-        "organizer": "American India Foundation",
-        "official_url": "https://aif.org/fellowship/",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-teach-for-india",
-        "programme_id": "fellowship-teach-for-india",
-        "programme_name": "Teach For India Fellowship",
-        "organizer": "Teach For India",
-        "official_url": "https://www.teachforindia.org/fellowship",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-emerson-collective",
-        "programme_id": "fellowship-emerson-collective",
-        "programme_name": "Emerson Collective Fellowship",
-        "organizer": "Emerson Collective",
-        "official_url": "https://www.emersoncollective.com/our-work/fellowships",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-macarthur",
-        "programme_id": "fellowship-macarthur",
-        "programme_name": "MacArthur Fellows Program",
-        "organizer": "John D. and Catherine T. MacArthur Foundation",
-        "official_url": "https://www.macfound.org/programs/fellows/",
-        "allowed_path_hints": [
-            "programs/fellows"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-ford",
-        "programme_id": "fellowship-ford",
-        "programme_name": "Ford Foundation Fellowship Program",
-        "organizer": "National Academies of Sciences, Engineering, and Medicine",
-        "official_url": "https://www.nationalacademies.org/our-work/ford-foundation-fellowships",
-        "allowed_path_hints": [
-            "ford-foundation-fellowships"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-fulbright",
-        "programme_id": "fellowship-fulbright",
-        "programme_name": "Fulbright Foreign Student Program",
-        "organizer": "U.S. Department of State",
-        "official_url": "https://foreign.fulbrightonline.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-nih-oxcam",
-        "programme_id": "fellowship-nih-oxcam",
-        "programme_name": "NIH Oxford-Cambridge Scholars Program",
-        "organizer": "National Institutes of Health",
-        "official_url": "https://oxcam.gpp.nih.gov/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-emergent-ventures",
-        "programme_id": "fellowship-emergent-ventures",
-        "programme_name": "Emergent Ventures Fellowship",
-        "organizer": "Mercatus Center",
-        "official_url": "https://www.mercatus.org/emergent-ventures",
-        "allowed_path_hints": [
-            "emergent-ventures"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-eisenhower",
-        "programme_id": "fellowship-eisenhower",
-        "programme_name": "Eisenhower Fellowships Global Program",
-        "organizer": "Eisenhower Fellowships",
-        "official_url": "https://www.efworld.org/apply-now/",
-        "allowed_path_hints": [
-            "apply-now"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-obama-leaders",
-        "programme_id": "fellowship-obama-leaders",
-        "programme_name": "Obama Foundation Leaders",
-        "organizer": "Obama Foundation",
-        "official_url": "https://www.obama.org/programs/leaders/",
-        "allowed_path_hints": [
-            "leaders"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-atlantic",
-        "programme_id": "fellowship-atlantic",
-        "programme_name": "Atlantic Fellows",
-        "organizer": "Atlantic Institute",
-        "official_url": "https://www.atlanticfellows.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-humanity-in-action",
-        "programme_id": "fellowship-humanity-in-action",
-        "programme_name": "Humanity in Action Fellowship",
-        "organizer": "Humanity in Action",
-        "official_url": "https://humanityinaction.org/programs/fellowship/",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-dalai-lama",
-        "programme_id": "fellowship-dalai-lama",
-        "programme_name": "Dalai Lama Fellows",
-        "organizer": "Dalai Lama Fellows",
-        "official_url": "https://www.dalailamafellows.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-yseali",
-        "programme_id": "fellowship-yseali",
-        "programme_name": "YSEALI Professional Fellows Program",
-        "organizer": "U.S. Department of State",
-        "official_url": "https://asean.usmission.gov/yseali/",
-        "allowed_path_hints": [
-            "yseali"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-open-society",
-        "programme_id": "fellowship-open-society",
-        "programme_name": "Open Society Fellowship",
-        "organizer": "Open Society Foundations",
-        "official_url": "https://www.opensocietyfoundations.org/grants/open-society-fellowship",
-        "allowed_path_hints": [
-            "open-society-fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-new-america",
-        "programme_id": "fellowship-new-america",
-        "programme_name": "New America Fellows Program",
-        "organizer": "New America",
-        "official_url": "https://www.newamerica.org/fellows/",
-        "allowed_path_hints": [
-            "fellows"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-radcliffe",
-        "programme_id": "fellowship-radcliffe",
-        "programme_name": "Radcliffe Fellowship",
-        "organizer": "Harvard Radcliffe Institute",
-        "official_url": "https://www.radcliffe.harvard.edu/fellowship",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-cullman",
-        "programme_id": "fellowship-cullman",
-        "programme_name": "Cullman Center Fellowship",
-        "organizer": "New York Public Library",
-        "official_url": "https://www.nypl.org/help/about/center-for-scholars-and-writers/fellowships",
-        "allowed_path_hints": [
-            "fellowships"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-pew-biomedical",
-        "programme_id": "fellowship-pew-biomedical",
-        "programme_name": "Pew Biomedical Scholars",
-        "organizer": "Pew Charitable Trusts",
-        "official_url": "https://www.pewtrusts.org/en/projects/pew-biomedical-scholars",
-        "allowed_path_hints": [
-            "pew-biomedical-scholars"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-embo",
-        "programme_id": "fellowship-embo",
-        "programme_name": "EMBO Postdoctoral Fellowships",
-        "organizer": "EMBO",
-        "official_url": "https://www.embo.org/the-embo-communities/postdoctoral-fellowships/",
-        "allowed_path_hints": [
-            "postdoctoral-fellowships"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-miller",
-        "programme_id": "fellowship-miller",
-        "programme_name": "Miller Research Fellowship",
-        "organizer": "University of California Berkeley",
-        "official_url": "https://miller.berkeley.edu/fellowship",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-qualcomm",
-        "programme_id": "fellowship-qualcomm",
-        "programme_name": "Qualcomm Innovation Fellowship",
-        "organizer": "Qualcomm",
-        "official_url": "https://www.qualcomm.com/research/university-relations/innovation-fellowship",
-        "allowed_path_hints": [
-            "innovation-fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-adobe-india",
-        "programme_id": "fellowship-adobe-india",
-        "programme_name": "Adobe India AI Research Fellowship",
-        "organizer": "Adobe",
-        "official_url": "https://research.adobe.com/india-ai-research-fellowship/",
-        "allowed_path_hints": [
-            "india-ai-research-fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-twosigma",
-        "programme_id": "fellowship-twosigma",
-        "programme_name": "Two Sigma PhD Fellowship",
-        "organizer": "Two Sigma",
-        "official_url": "https://www.twosigma.com/graduate-students/phd-fellowships/",
-        "allowed_path_hints": [
-            "phd-fellowships"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-pmf",
-        "programme_id": "fellowship-pmf",
-        "programme_name": "Presidential Management Fellows Program",
-        "organizer": "U.S. Office of Personnel Management",
-        "official_url": "https://www.pmf.gov/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-knight-hennessy",
-        "programme_id": "fellowship-knight-hennessy",
-        "programme_name": "Knight-Hennessy Scholars",
-        "organizer": "Stanford University",
-        "official_url": "https://knight-hennessy.stanford.edu/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-rotary-peace",
-        "programme_id": "fellowship-rotary-peace",
-        "programme_name": "Rotary Peace Fellowship",
-        "organizer": "Rotary International",
-        "official_url": "https://www.rotary.org/en/our-programs/peace-fellowships",
-        "allowed_path_hints": [
-            "peace-fellowships"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-princeton-asia",
-        "programme_id": "fellowship-princeton-asia",
-        "programme_name": "Princeton in Asia Fellowship",
-        "organizer": "Princeton University",
-        "official_url": "https://piaweb.princeton.edu/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-rangel",
-        "programme_id": "fellowship-rangel",
-        "programme_name": "Charles B. Rangel Graduate Fellowship",
-        "organizer": "U.S. Department of State",
-        "official_url": "https://rangelprogram.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-pickering",
-        "programme_id": "fellowship-pickering",
-        "programme_name": "Thomas R. Pickering Foreign Affairs Fellowship",
-        "organizer": "U.S. Department of State",
-        "official_url": "https://pickeringfellowship.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-payne",
-        "programme_id": "fellowship-payne",
-        "programme_name": "Donald M. Payne International Development Fellowship",
-        "organizer": "Howard University",
-        "official_url": "https://paynefellows.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-google-deepmind",
-        "programme_id": "fellowship-google-deepmind",
-        "programme_name": "Google DeepMind Fellowship",
-        "organizer": "Google DeepMind",
-        "official_url": "https://deepmind.google/education/",
-        "allowed_path_hints": [
-            "education"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-ibm-phd",
-        "programme_id": "fellowship-ibm-phd",
-        "programme_name": "IBM PhD Fellowship",
-        "organizer": "IBM Research",
-        "official_url": "https://research.ibm.com/university/awards/fellowships.html",
-        "allowed_path_hints": [
-            "fellowships"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-openai-residency",
-        "programme_id": "fellowship-openai-residency",
-        "programme_name": "OpenAI Residency",
-        "organizer": "OpenAI",
-        "official_url": "https://openai.com/careers/residency/",
-        "allowed_path_hints": [
-            "careers/residency"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-mats",
-        "programme_id": "fellowship-mats",
-        "programme_name": "MATS Fellowship",
-        "organizer": "MATS",
-        "official_url": "https://www.matsprogram.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-mlh",
-        "programme_id": "fellowship-mlh",
-        "programme_name": "MLH Fellowship",
-        "organizer": "Major League Hacking",
-        "official_url": "https://fellowship.mlh.io/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-recurse",
-        "programme_id": "fellowship-recurse",
-        "programme_name": "Recurse Center",
-        "organizer": "Recurse Center",
-        "official_url": "https://www.recurse.com/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-presidential-innovation",
-        "programme_id": "fellowship-presidential-innovation",
-        "programme_name": "US Presidential Innovation Fellows",
-        "organizer": "U.S. General Services Administration",
-        "official_url": "https://presidentialinnovationfellows.gov/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-vector",
-        "programme_id": "fellowship-vector",
-        "programme_name": "Vector Institute Fellowship",
-        "organizer": "Vector Institute",
-        "official_url": "https://vectorinstitute.ai/programs/",
-        "allowed_path_hints": [
-            "programs"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-max-planck-imprs",
-        "programme_id": "fellowship-max-planck-imprs",
-        "programme_name": "Max Planck IMPRS Fellowship",
-        "organizer": "Max Planck Society",
-        "official_url": "https://www.imprs-llc.mpg.de/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-epfl",
-        "programme_id": "fellowship-epfl",
-        "programme_name": "EPFL Fellowships",
-        "organizer": "EPFL",
-        "official_url": "https://www.epfl.ch/education/studies/en/financing-study/",
-        "allowed_path_hints": [
-            "education/studies/en/financing-study"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-z-fellows",
-        "programme_id": "fellowship-z-fellows",
-        "programme_name": "Z Fellows",
-        "organizer": "Z Fellows",
-        "official_url": "https://www.zfellows.com/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-neo-scholars",
-        "programme_id": "fellowship-neo-scholars",
-        "programme_name": "Neo Scholars",
-        "organizer": "Neo",
-        "official_url": "https://neo.com/scholars",
-        "allowed_path_hints": [
-            "scholars"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-entrepreneur-first",
-        "programme_id": "fellowship-entrepreneur-first",
-        "programme_name": "Entrepreneur First",
-        "organizer": "Entrepreneur First",
-        "official_url": "https://www.joinef.com/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-south-park-commons",
-        "programme_id": "fellowship-south-park-commons",
-        "programme_name": "South Park Commons Fellowship",
-        "organizer": "South Park Commons",
-        "official_url": "https://www.southparkcommons.com/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-microsoft-india",
-        "programme_id": "fellowship-microsoft-india",
-        "programme_name": "Microsoft Research India Fellowship",
-        "organizer": "Microsoft Research India",
-        "official_url": "https://www.microsoft.com/en-us/research/lab/microsoft-research-india/fellowship/",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-jane-street-graduate",
-        "programme_id": "fellowship-jane-street-graduate",
-        "programme_name": "Jane Street Graduate Research Fellowship",
-        "organizer": "Jane Street",
-        "official_url": "https://www.janestreet.com/join-jane-street/programs-and-events/graduate-research-fellowship/",
-        "allowed_path_hints": [
-            "graduate-research-fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-citadel-phd",
-        "programme_id": "fellowship-citadel-phd",
-        "programme_name": "Citadel PhD Fellowship",
-        "organizer": "Citadel",
-        "official_url": "https://www.citadel.com/careers/students/phd-fellowship/",
-        "allowed_path_hints": [
-            "phd-fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-eth-ai-doctoral",
-        "programme_id": "fellowship-eth-ai-doctoral",
-        "programme_name": "ETH AI Center Doctoral Fellowship",
-        "organizer": "ETH AI Center",
-        "official_url": "https://ai.ethz.ch/education.html",
-        "allowed_path_hints": [
-            "education.html"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-cern-summer",
-        "programme_id": "fellowship-cern-summer",
-        "programme_name": "CERN Summer Student Programme",
-        "organizer": "CERN",
-        "official_url": "https://careers.cern/summer/",
-        "allowed_path_hints": [
-            "summer"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-riken-ipa",
-        "programme_id": "fellowship-riken-ipa",
-        "programme_name": "RIKEN International Program Associate Fellowship",
-        "organizer": "RIKEN",
-        "official_url": "https://www.riken.jp/en/careers/programs/ipa/",
-        "allowed_path_hints": [
-            "careers/programs/ipa"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-jsps-international",
-        "programme_id": "fellowship-jsps-international",
-        "programme_name": "JSPS International Fellowships for Research in Japan",
-        "organizer": "Japan Society for the Promotion of Science",
-        "official_url": "https://www.jsps.go.jp/english/e-fellow/",
-        "allowed_path_hints": [
-            "e-fellow"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-daad-research",
-        "programme_id": "fellowship-daad-research",
-        "programme_name": "DAAD Research Grants",
-        "organizer": "German Academic Exchange Service",
-        "official_url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/",
-        "allowed_path_hints": [
-            "scholarships"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-msca-postdoctoral",
-        "programme_id": "fellowship-msca-postdoctoral",
-        "programme_name": "Marie Skłodowska-Curie Postdoctoral Fellowships",
-        "organizer": "European Commission",
-        "official_url": "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships",
-        "allowed_path_hints": [
-            "postdoctoral-fellowships"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-max-planck-cbs",
-        "programme_id": "fellowship-max-planck-cbs",
-        "programme_name": "Max Planck IMPRS for Cognitive and Systems Neurosciences",
-        "organizer": "Max Planck Society",
-        "official_url": "https://www.imprs-csn.mpg.de/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-oxford-dphil",
-        "programme_id": "fellowship-oxford-dphil",
-        "programme_name": "Oxford Clarendon Fund",
-        "organizer": "University of Oxford",
-        "official_url": "https://www.ox.ac.uk/clarendon",
-        "allowed_path_hints": [
-            "clarendon"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-cambridge-gates",
-        "programme_id": "fellowship-cambridge-gates",
-        "programme_name": "Gates Cambridge Scholarship",
-        "organizer": "University of Cambridge",
-        "official_url": "https://www.gatescambridge.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-techcongress",
-        "programme_id": "fellowship-techcongress",
-        "programme_name": "TechCongress Congressional Innovation Fellowship",
-        "organizer": "TechCongress",
-        "official_url": "https://www.techcongress.io/fellowship",
-        "allowed_path_hints": [
-            "fellowship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-wadhwani-ai",
-        "programme_id": "fellowship-wadhwani-ai",
-        "programme_name": "Wadhwani AI Fellowship",
-        "organizer": "Wadhwani AI",
-        "official_url": "https://www.wadhwaniaifoundation.org/",
-        "allowed_path_hints": [
-            ""
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-rhodes",
-        "programme_id": "fellowship-rhodes",
-        "programme_name": "Rhodes Scholarship",
-        "organizer": "Rhodes Trust",
-        "official_url": "https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/",
-        "allowed_path_hints": [
-            "scholarship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-marshall",
-        "programme_id": "fellowship-marshall",
-        "programme_name": "Marshall Scholarship",
-        "organizer": "Marshall Aid Commemoration Commission",
-        "official_url": "https://www.marshallscholarship.org/",
-        "allowed_path_hints": [
-            "scholarship"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-schwarzman",
-        "programme_id": "fellowship-schwarzman",
-        "programme_name": "Schwarzman Scholars",
-        "organizer": "Schwarzman Scholars",
-        "official_url": "https://www.schwarzmanscholars.org/",
-        "allowed_path_hints": [
-            "scholar"
-        ],
-        "check_cadence": "monthly"
-    },
-    {
-        "source_id": "fellowship-fulbright-us-student",
-        "programme_id": "fellowship-fulbright-us-student",
-        "programme_name": "Fulbright U.S. Student Program",
-        "organizer": "Fulbright Program",
-        "official_url": "https://fulbrightprogram.org/",
-        "allowed_path_hints": [
-            "fulbright"
-        ],
-        "check_cadence": "monthly"
-    }
+  {
+    "source_id": "fellowship-thiel",
+    "programme_id": "fellowship-thiel",
+    "programme_name": "Thiel Fellowship",
+    "organizer": "Thiel Foundation",
+    "official_url": "https://thielfellowship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-mozilla",
+    "programme_id": "fellowship-mozilla",
+    "programme_name": "Mozilla Fellowship",
+    "organizer": "Mozilla Foundation",
+    "official_url": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/fellowship/",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-echoing-green",
+    "programme_id": "fellowship-echoing-green",
+    "programme_name": "Echoing Green Fellowship",
+    "organizer": "Echoing Green",
+    "official_url": "https://echoinggreen.org/fellowship/apply/",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-acumen",
+    "programme_id": "fellowship-acumen",
+    "programme_name": "Acumen Fellowship",
+    "organizer": "Acumen Academy",
+    "official_url": "https://acumenacademy.org/fellowship/",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-ashoka",
+    "programme_id": "fellowship-ashoka",
+    "programme_name": "Ashoka Fellowship",
+    "organizer": "Ashoka",
+    "official_url": "https://www.ashoka.org/en-us/program/ashoka-fellowship",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-aaas-st-policy",
+    "programme_id": "fellowship-aaas-st-policy",
+    "programme_name": "AAAS Science & Technology Policy Fellowships",
+    "organizer": "American Association for the Advancement of Science",
+    "official_url": "https://www.aaas.org/programs/science-technology-policy-fellowships",
+    "allowed_path_hints": [
+      "science-technology-policy-fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-schmidt-science",
+    "programme_id": "fellowship-schmidt-science",
+    "programme_name": "Schmidt Science Fellows",
+    "organizer": "Schmidt Sciences",
+    "official_url": "https://schmidtsciencefellows.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-ted",
+    "programme_id": "fellowship-ted",
+    "programme_name": "TED Fellows",
+    "organizer": "TED",
+    "official_url": "https://www.ted.com/about/programs-initiatives/ted-fellows",
+    "allowed_path_hints": [
+      "ted-fellows"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-kleiner-perkins",
+    "programme_id": "fellowship-kleiner-perkins-fellows",
+    "programme_name": "Kleiner Perkins Fellows Program",
+    "organizer": "Kleiner Perkins",
+    "official_url": "https://www.kleinerperkins.com/fellows/",
+    "allowed_path_hints": [
+      "fellows"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-hertz",
+    "programme_id": "fellowship-hertz",
+    "programme_name": "Hertz Fellowship",
+    "organizer": "Fannie and John Hertz Foundation",
+    "official_url": "https://www.hertzfoundation.org/the-fellowship/",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-soros",
+    "programme_id": "fellowship-soros",
+    "programme_name": "Paul & Daisy Soros Fellowships for New Americans",
+    "organizer": "Paul & Daisy Soros Fellowships for New Americans",
+    "official_url": "https://www.pdsoros.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-google-phd",
+    "programme_id": "fellowship-google-phd",
+    "programme_name": "Google PhD Fellowship",
+    "organizer": "Google",
+    "official_url": "https://research.google/outreach/phd-fellowship/",
+    "allowed_path_hints": [
+      "phd-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-microsoft-phd",
+    "programme_id": "fellowship-microsoft-phd",
+    "programme_name": "Microsoft Research PhD Fellowship",
+    "organizer": "Microsoft Research",
+    "official_url": "https://www.microsoft.com/en-us/research/academic-program/fellowships/",
+    "allowed_path_hints": [
+      "fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-nvidia-graduate",
+    "programme_id": "fellowship-nvidia-graduate",
+    "programme_name": "NVIDIA Graduate Fellowship",
+    "organizer": "NVIDIA Research",
+    "official_url": "https://research.nvidia.com/graduate-fellowships",
+    "allowed_path_hints": [
+      "graduate-fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-roddenberry",
+    "programme_id": "fellowship-roddenberry",
+    "programme_name": "Roddenberry Fellowship",
+    "organizer": "Roddenberry Foundation",
+    "official_url": "https://roddenberryfoundation.org/our-work/roddenberry-fellowship/",
+    "allowed_path_hints": [
+      "roddenberry-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-drk",
+    "programme_id": "fellowship-drk",
+    "programme_name": "DRK Foundation Fellowship",
+    "organizer": "Draper Richards Kaplan Foundation",
+    "official_url": "https://www.drkfoundation.org/apply/",
+    "allowed_path_hints": [
+      "apply"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-nsf-grfp",
+    "programme_id": "fellowship-nsf-grfp",
+    "programme_name": "NSF Graduate Research Fellowship Program",
+    "organizer": "National Science Foundation",
+    "official_url": "https://www.nsfgrfp.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-gandhi",
+    "programme_id": "fellowship-gandhi",
+    "programme_name": "Gandhi Fellowship",
+    "organizer": "Piramal Foundation",
+    "official_url": "https://www.gandhifellowship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-youth-for-india",
+    "programme_id": "fellowship-youth-for-india",
+    "programme_name": "SBI Youth for India Fellowship",
+    "organizer": "State Bank of India Foundation",
+    "official_url": "https://www.youthforindia.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-prs-lamp",
+    "programme_id": "fellowship-prs-lamp",
+    "programme_name": "PRS Legislative Research LAMP Fellowship",
+    "organizer": "PRS Legislative Research",
+    "official_url": "https://prsindia.org/lamp",
+    "allowed_path_hints": [
+      "lamp"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-aif-clinton",
+    "programme_id": "fellowship-aif-clinton",
+    "programme_name": "AIF Clinton Fellowship",
+    "organizer": "American India Foundation",
+    "official_url": "https://aif.org/fellowship/",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-teach-for-india",
+    "programme_id": "fellowship-teach-for-india",
+    "programme_name": "Teach For India Fellowship",
+    "organizer": "Teach For India",
+    "official_url": "https://www.teachforindia.org/fellowship",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-emerson-collective",
+    "programme_id": "fellowship-emerson-collective",
+    "programme_name": "Emerson Collective Fellowship",
+    "organizer": "Emerson Collective",
+    "official_url": "https://www.emersoncollective.com/our-work/fellowships",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-macarthur",
+    "programme_id": "fellowship-macarthur",
+    "programme_name": "MacArthur Fellows Program",
+    "organizer": "John D. and Catherine T. MacArthur Foundation",
+    "official_url": "https://www.macfound.org/programs/fellows/",
+    "allowed_path_hints": [
+      "programs/fellows"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-ford",
+    "programme_id": "fellowship-ford",
+    "programme_name": "Ford Foundation Fellowship Program",
+    "organizer": "National Academies of Sciences, Engineering, and Medicine",
+    "official_url": "https://www.nationalacademies.org/our-work/ford-foundation-fellowships",
+    "allowed_path_hints": [
+      "ford-foundation-fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-fulbright",
+    "programme_id": "fellowship-fulbright",
+    "programme_name": "Fulbright Foreign Student Program",
+    "organizer": "U.S. Department of State",
+    "official_url": "https://foreign.fulbrightonline.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-nih-oxcam",
+    "programme_id": "fellowship-nih-oxcam",
+    "programme_name": "NIH Oxford-Cambridge Scholars Program",
+    "organizer": "National Institutes of Health",
+    "official_url": "https://oxcam.gpp.nih.gov/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-emergent-ventures",
+    "programme_id": "fellowship-emergent-ventures",
+    "programme_name": "Emergent Ventures Fellowship",
+    "organizer": "Mercatus Center",
+    "official_url": "https://www.mercatus.org/emergent-ventures",
+    "allowed_path_hints": [
+      "emergent-ventures"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-eisenhower",
+    "programme_id": "fellowship-eisenhower",
+    "programme_name": "Eisenhower Fellowships Global Program",
+    "organizer": "Eisenhower Fellowships",
+    "official_url": "https://www.efworld.org/apply-now/",
+    "allowed_path_hints": [
+      "apply-now"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-obama-leaders",
+    "programme_id": "fellowship-obama-leaders",
+    "programme_name": "Obama Foundation Leaders",
+    "organizer": "Obama Foundation",
+    "official_url": "https://www.obama.org/programs/leaders/",
+    "allowed_path_hints": [
+      "leaders"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-atlantic",
+    "programme_id": "fellowship-atlantic",
+    "programme_name": "Atlantic Fellows",
+    "organizer": "Atlantic Institute",
+    "official_url": "https://www.atlanticfellows.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-humanity-in-action",
+    "programme_id": "fellowship-humanity-in-action",
+    "programme_name": "Humanity in Action Fellowship",
+    "organizer": "Humanity in Action",
+    "official_url": "https://humanityinaction.org/programs/fellowship/",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-dalai-lama",
+    "programme_id": "fellowship-dalai-lama",
+    "programme_name": "Dalai Lama Fellows",
+    "organizer": "Dalai Lama Fellows",
+    "official_url": "https://www.dalailamafellows.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-yseali",
+    "programme_id": "fellowship-yseali",
+    "programme_name": "YSEALI Professional Fellows Program",
+    "organizer": "U.S. Department of State",
+    "official_url": "https://asean.usmission.gov/yseali/",
+    "allowed_path_hints": [
+      "yseali"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-open-society",
+    "programme_id": "fellowship-open-society",
+    "programme_name": "Open Society Fellowship",
+    "organizer": "Open Society Foundations",
+    "official_url": "https://www.opensocietyfoundations.org/grants/open-society-fellowship",
+    "allowed_path_hints": [
+      "open-society-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-new-america",
+    "programme_id": "fellowship-new-america",
+    "programme_name": "New America Fellows Program",
+    "organizer": "New America",
+    "official_url": "https://www.newamerica.org/fellows/",
+    "allowed_path_hints": [
+      "fellows"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-radcliffe",
+    "programme_id": "fellowship-radcliffe",
+    "programme_name": "Radcliffe Fellowship",
+    "organizer": "Harvard Radcliffe Institute",
+    "official_url": "https://www.radcliffe.harvard.edu/fellowship",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-cullman",
+    "programme_id": "fellowship-cullman",
+    "programme_name": "Cullman Center Fellowship",
+    "organizer": "New York Public Library",
+    "official_url": "https://www.nypl.org/help/about/center-for-scholars-and-writers/fellowships",
+    "allowed_path_hints": [
+      "fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-pew-biomedical",
+    "programme_id": "fellowship-pew-biomedical",
+    "programme_name": "Pew Biomedical Scholars",
+    "organizer": "Pew Charitable Trusts",
+    "official_url": "https://www.pewtrusts.org/en/projects/pew-biomedical-scholars",
+    "allowed_path_hints": [
+      "pew-biomedical-scholars"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-embo",
+    "programme_id": "fellowship-embo",
+    "programme_name": "EMBO Postdoctoral Fellowships",
+    "organizer": "EMBO",
+    "official_url": "https://www.embo.org/the-embo-communities/postdoctoral-fellowships/",
+    "allowed_path_hints": [
+      "postdoctoral-fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-miller",
+    "programme_id": "fellowship-miller",
+    "programme_name": "Miller Research Fellowship",
+    "organizer": "University of California Berkeley",
+    "official_url": "https://miller.berkeley.edu/fellowship",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-qualcomm",
+    "programme_id": "fellowship-qualcomm",
+    "programme_name": "Qualcomm Innovation Fellowship",
+    "organizer": "Qualcomm",
+    "official_url": "https://www.qualcomm.com/research/university-relations/innovation-fellowship",
+    "allowed_path_hints": [
+      "innovation-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-adobe-india",
+    "programme_id": "fellowship-adobe-india",
+    "programme_name": "Adobe India AI Research Fellowship",
+    "organizer": "Adobe",
+    "official_url": "https://research.adobe.com/india-ai-research-fellowship/",
+    "allowed_path_hints": [
+      "india-ai-research-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-twosigma",
+    "programme_id": "fellowship-twosigma",
+    "programme_name": "Two Sigma PhD Fellowship",
+    "organizer": "Two Sigma",
+    "official_url": "https://www.twosigma.com/graduate-students/phd-fellowships/",
+    "allowed_path_hints": [
+      "phd-fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-pmf",
+    "programme_id": "fellowship-pmf",
+    "programme_name": "Presidential Management Fellows Program",
+    "organizer": "U.S. Office of Personnel Management",
+    "official_url": "https://www.pmf.gov/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-knight-hennessy",
+    "programme_id": "fellowship-knight-hennessy",
+    "programme_name": "Knight-Hennessy Scholars",
+    "organizer": "Stanford University",
+    "official_url": "https://knight-hennessy.stanford.edu/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-rotary-peace",
+    "programme_id": "fellowship-rotary-peace",
+    "programme_name": "Rotary Peace Fellowship",
+    "organizer": "Rotary International",
+    "official_url": "https://www.rotary.org/en/our-programs/peace-fellowships",
+    "allowed_path_hints": [
+      "peace-fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-princeton-asia",
+    "programme_id": "fellowship-princeton-asia",
+    "programme_name": "Princeton in Asia Fellowship",
+    "organizer": "Princeton University",
+    "official_url": "https://piaweb.princeton.edu/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-rangel",
+    "programme_id": "fellowship-rangel",
+    "programme_name": "Charles B. Rangel Graduate Fellowship",
+    "organizer": "U.S. Department of State",
+    "official_url": "https://rangelprogram.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-pickering",
+    "programme_id": "fellowship-pickering",
+    "programme_name": "Thomas R. Pickering Foreign Affairs Fellowship",
+    "organizer": "U.S. Department of State",
+    "official_url": "https://pickeringfellowship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-payne",
+    "programme_id": "fellowship-payne",
+    "programme_name": "Donald M. Payne International Development Fellowship",
+    "organizer": "Howard University",
+    "official_url": "https://paynefellows.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-google-deepmind",
+    "programme_id": "fellowship-google-deepmind",
+    "programme_name": "Google DeepMind Fellowship",
+    "organizer": "Google DeepMind",
+    "official_url": "https://deepmind.google/education/",
+    "allowed_path_hints": [
+      "education"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-ibm-phd",
+    "programme_id": "fellowship-ibm-phd",
+    "programme_name": "IBM PhD Fellowship",
+    "organizer": "IBM Research",
+    "official_url": "https://research.ibm.com/university/awards/fellowships.html",
+    "allowed_path_hints": [
+      "fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-openai-residency",
+    "programme_id": "fellowship-openai-residency",
+    "programme_name": "OpenAI Residency",
+    "organizer": "OpenAI",
+    "official_url": "https://openai.com/careers/residency/",
+    "allowed_path_hints": [
+      "careers/residency"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-mats",
+    "programme_id": "fellowship-mats",
+    "programme_name": "MATS Fellowship",
+    "organizer": "MATS",
+    "official_url": "https://www.matsprogram.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-mlh",
+    "programme_id": "fellowship-mlh",
+    "programme_name": "MLH Fellowship",
+    "organizer": "Major League Hacking",
+    "official_url": "https://fellowship.mlh.io/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-recurse",
+    "programme_id": "fellowship-recurse",
+    "programme_name": "Recurse Center",
+    "organizer": "Recurse Center",
+    "official_url": "https://www.recurse.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-presidential-innovation",
+    "programme_id": "fellowship-presidential-innovation",
+    "programme_name": "US Presidential Innovation Fellows",
+    "organizer": "U.S. General Services Administration",
+    "official_url": "https://presidentialinnovationfellows.gov/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-vector",
+    "programme_id": "fellowship-vector",
+    "programme_name": "Vector Institute Fellowship",
+    "organizer": "Vector Institute",
+    "official_url": "https://vectorinstitute.ai/programs/",
+    "allowed_path_hints": [
+      "programs"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-epfl",
+    "programme_id": "fellowship-epfl",
+    "programme_name": "EPFL Fellowships",
+    "organizer": "EPFL",
+    "official_url": "https://www.epfl.ch/education/studies/en/financing-study/",
+    "allowed_path_hints": [
+      "education/studies/en/financing-study"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-z-fellows",
+    "programme_id": "fellowship-z-fellows",
+    "programme_name": "Z Fellows",
+    "organizer": "Z Fellows",
+    "official_url": "https://www.zfellows.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-neo-scholars",
+    "programme_id": "fellowship-neo-scholars",
+    "programme_name": "Neo Scholars",
+    "organizer": "Neo",
+    "official_url": "https://neo.com/scholars",
+    "allowed_path_hints": [
+      "scholars"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-entrepreneur-first",
+    "programme_id": "fellowship-entrepreneur-first",
+    "programme_name": "Entrepreneur First",
+    "organizer": "Entrepreneur First",
+    "official_url": "https://www.joinef.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-south-park-commons",
+    "programme_id": "fellowship-south-park-commons",
+    "programme_name": "South Park Commons Fellowship",
+    "organizer": "South Park Commons",
+    "official_url": "https://www.southparkcommons.com/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-microsoft-india",
+    "programme_id": "fellowship-microsoft-india",
+    "programme_name": "Microsoft Research India Fellowship",
+    "organizer": "Microsoft Research India",
+    "official_url": "https://www.microsoft.com/en-us/research/lab/microsoft-research-india/fellowship/",
+    "allowed_path_hints": [
+      "fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-jane-street-graduate",
+    "programme_id": "fellowship-jane-street-graduate",
+    "programme_name": "Jane Street Graduate Research Fellowship",
+    "organizer": "Jane Street",
+    "official_url": "https://www.janestreet.com/join-jane-street/programs-and-events/graduate-research-fellowship/",
+    "allowed_path_hints": [
+      "graduate-research-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-citadel-phd",
+    "programme_id": "fellowship-citadel-phd",
+    "programme_name": "Citadel PhD Fellowship",
+    "organizer": "Citadel",
+    "official_url": "https://www.citadel.com/careers/students/phd-fellowship/",
+    "allowed_path_hints": [
+      "phd-fellowship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-eth-ai-doctoral",
+    "programme_id": "fellowship-eth-ai-doctoral",
+    "programme_name": "ETH AI Center Doctoral Fellowship",
+    "organizer": "ETH AI Center",
+    "official_url": "https://ai.ethz.ch/education.html",
+    "allowed_path_hints": [
+      "education.html"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-cern-summer",
+    "programme_id": "fellowship-cern-summer",
+    "programme_name": "CERN Summer Student Programme",
+    "organizer": "CERN",
+    "official_url": "https://careers.cern/summer/",
+    "allowed_path_hints": [
+      "summer"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-riken-ipa",
+    "programme_id": "fellowship-riken-ipa",
+    "programme_name": "RIKEN International Program Associate Fellowship",
+    "organizer": "RIKEN",
+    "official_url": "https://www.riken.jp/en/careers/programs/ipa/",
+    "allowed_path_hints": [
+      "careers/programs/ipa"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-jsps-international",
+    "programme_id": "fellowship-jsps-international",
+    "programme_name": "JSPS International Fellowships for Research in Japan",
+    "organizer": "Japan Society for the Promotion of Science",
+    "official_url": "https://www.jsps.go.jp/english/e-fellow/",
+    "allowed_path_hints": [
+      "e-fellow"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-daad-research",
+    "programme_id": "fellowship-daad-research",
+    "programme_name": "DAAD Research Grants",
+    "organizer": "German Academic Exchange Service",
+    "official_url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/",
+    "allowed_path_hints": [
+      "scholarships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-msca-postdoctoral",
+    "programme_id": "fellowship-msca-postdoctoral",
+    "programme_name": "Marie Skłodowska-Curie Postdoctoral Fellowships",
+    "organizer": "European Commission",
+    "official_url": "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships",
+    "allowed_path_hints": [
+      "postdoctoral-fellowships"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-oxford-dphil",
+    "programme_id": "fellowship-oxford-dphil",
+    "programme_name": "Oxford Clarendon Fund",
+    "organizer": "University of Oxford",
+    "official_url": "https://www.ox.ac.uk/clarendon",
+    "allowed_path_hints": [
+      "clarendon"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-cambridge-gates",
+    "programme_id": "fellowship-cambridge-gates",
+    "programme_name": "Gates Cambridge Scholarship",
+    "organizer": "University of Cambridge",
+    "official_url": "https://www.gatescambridge.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-rhodes",
+    "programme_id": "fellowship-rhodes",
+    "programme_name": "Rhodes Scholarship",
+    "organizer": "Rhodes Trust",
+    "official_url": "https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/",
+    "allowed_path_hints": [
+      "scholarship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-marshall",
+    "programme_id": "fellowship-marshall",
+    "programme_name": "Marshall Scholarship",
+    "organizer": "Marshall Aid Commemoration Commission",
+    "official_url": "https://www.marshallscholarship.org/",
+    "allowed_path_hints": [
+      "scholarship"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-schwarzman",
+    "programme_id": "fellowship-schwarzman",
+    "programme_name": "Schwarzman Scholars",
+    "organizer": "Schwarzman Scholars",
+    "official_url": "https://www.schwarzmanscholars.org/",
+    "allowed_path_hints": [
+      "scholar"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-fulbright-us-student",
+    "programme_id": "fellowship-fulbright-us-student",
+    "programme_name": "Fulbright U.S. Student Program",
+    "organizer": "Fulbright Program",
+    "official_url": "https://fulbrightprogram.org/",
+    "allowed_path_hints": [
+      "fulbright"
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "ndseg",
+    "programme_id": "fellowship-ndseg",
+    "programme_name": "NDSEG Fellowship",
+    "organizer": "US Department of Defense",
+    "official_url": "https://ndseg.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "churchill-scholarship",
+    "programme_id": "fellowship-churchill-scholarship",
+    "programme_name": "Churchill Scholarship",
+    "organizer": "Winston Churchill Foundation",
+    "official_url": "https://www.churchillscholarship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "luce-scholars",
+    "programme_id": "fellowship-luce-scholars",
+    "programme_name": "Luce Scholars Program",
+    "organizer": "Henry Luce Foundation",
+    "official_url": "https://www.hluce.org/programs/luce-scholars/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "truman-scholarship",
+    "programme_id": "fellowship-truman-scholarship",
+    "programme_name": "Truman Scholarship",
+    "organizer": "Truman Foundation",
+    "official_url": "https://www.truman.gov/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "udall-scholarship",
+    "programme_id": "fellowship-udall-scholarship",
+    "programme_name": "Udall Undergraduate Scholarship",
+    "organizer": "Udall Foundation",
+    "official_url": "https://www.udall.gov/OurPrograms/Scholarship/Scholarship.aspx",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "boren-awards",
+    "programme_id": "fellowship-boren-awards",
+    "programme_name": "Boren Awards",
+    "organizer": "NSEP / IIE",
+    "official_url": "https://www.borenawards.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "gilman-scholarship",
+    "programme_id": "fellowship-gilman-scholarship",
+    "programme_name": "Gilman Scholarship",
+    "organizer": "U.S. Department of State",
+    "official_url": "https://www.gilmanscholarship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "clscholarship",
+    "programme_id": "fellowship-clscholarship",
+    "programme_name": "Critical Language Scholarship",
+    "organizer": "U.S. Department of State",
+    "official_url": "https://clscholarship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "nasa-hubble",
+    "programme_id": "fellowship-nasa-hubble",
+    "programme_name": "NASA Hubble Fellowship Program",
+    "organizer": "NASA / STScI",
+    "official_url": "https://www.stsci.edu/hst/nasa-hubble-fellowship-program",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hhmi-hanna-gray",
+    "programme_id": "fellowship-hhmi-hanna-gray",
+    "programme_name": "HHMI Hanna H. Gray Fellows Program",
+    "organizer": "HHMI",
+    "official_url": "https://www.hhmi.org/programs/hanna-h-gray-fellows-program",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hhmi-freeman-hrabowski",
+    "programme_id": "fellowship-hhmi-freeman-hrabowski",
+    "programme_name": "HHMI Freeman Hrabowski Scholars",
+    "organizer": "HHMI",
+    "official_url": "https://www.hhmi.org/programs/freeman-hrabowski-scholars",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "burroughs-wellcome",
+    "programme_id": "fellowship-burroughs-wellcome",
+    "programme_name": "Burroughs Wellcome Fund Career Awards",
+    "organizer": "Burroughs Wellcome Fund",
+    "official_url": "https://www.bwfund.org/funding-opportunities/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "lsrf",
+    "programme_id": "fellowship-lsrf",
+    "programme_name": "Life Sciences Research Foundation Fellowships",
+    "organizer": "LSRF",
+    "official_url": "https://lsrf.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "helen-hay-whitney",
+    "programme_id": "fellowship-helen-hay-whitney",
+    "programme_name": "Helen Hay Whitney Foundation Postdoctoral Fellowship",
+    "organizer": "Helen Hay Whitney Foundation",
+    "official_url": "https://hhwf.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "packard",
+    "programme_id": "fellowship-packard",
+    "programme_name": "Packard Fellowships for Science and Engineering",
+    "organizer": "David and Lucile Packard Foundation",
+    "official_url": "https://www.packard.org/what-we-fund/science/packard-fellowships-for-science-and-engineering/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "simons-society-fellows",
+    "programme_id": "fellowship-simons-society-fellows",
+    "programme_name": "Simons Society of Fellows",
+    "organizer": "Simons Foundation",
+    "official_url": "https://www.simonsfoundation.org/grant/simons-society-of-fellows/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "schmidt-ai2050",
+    "programme_id": "fellowship-schmidt-ai2050",
+    "programme_name": "Schmidt Sciences AI2050 Fellows",
+    "organizer": "Schmidt Sciences",
+    "official_url": "https://www.schmidtsciences.org/ai2050/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "open-phil-career",
+    "programme_id": "fellowship-open-phil-career",
+    "programme_name": "Open Philanthropy Career Development and Transition Funding",
+    "organizer": "Open Philanthropy",
+    "official_url": "https://www.openphilanthropy.org/career-development-and-transition-funding/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "anthropic-fellows",
+    "programme_id": "fellowship-anthropic-fellows",
+    "programme_name": "Anthropic Fellows Program",
+    "organizer": "Anthropic",
+    "official_url": "https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "apple-scholars",
+    "programme_id": "fellowship-apple-scholars",
+    "programme_name": "Apple Scholars in AI/ML PhD Fellowship",
+    "organizer": "Apple",
+    "official_url": "https://machinelearning.apple.com/updates/apple-scholars-aiml-2025",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "amazon-fellowship",
+    "programme_id": "fellowship-amazon-fellowship",
+    "programme_name": "Amazon Science Fellowships",
+    "organizer": "Amazon",
+    "official_url": "https://www.amazon.science/academic-engagements",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "knight-science-journalism",
+    "programme_id": "fellowship-knight-science-journalism",
+    "programme_name": "Knight Science Journalism Fellowship",
+    "organizer": "MIT KSJ",
+    "official_url": "https://ksj.mit.edu/fellowships/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "nieman-fellowship",
+    "programme_id": "fellowship-nieman-fellowship",
+    "programme_name": "Nieman Fellowship",
+    "organizer": "Harvard Nieman Foundation",
+    "official_url": "https://nieman.harvard.edu/fellowships/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "pulitzer-center-fellowship",
+    "programme_id": "fellowship-pulitzer-center-fellowship",
+    "programme_name": "Pulitzer Center Fellowship",
+    "organizer": "Pulitzer Center",
+    "official_url": "https://pulitzercenter.org/grants-fellowships",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "kauffman-fellows",
+    "programme_id": "fellowship-kauffman-fellows",
+    "programme_name": "Kauffman Fellows Program",
+    "organizer": "Kauffman Fellows",
+    "official_url": "https://www.kauffmanfellows.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "aaas-mass-media",
+    "programme_id": "fellowship-aaas-mass-media",
+    "programme_name": "AAAS Mass Media Science and Engineering Fellows",
+    "organizer": "AAAS",
+    "official_url": "https://www.aaas.org/programs/mass-media-fellowship",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "carnegie-corporation-fellows",
+    "programme_id": "fellowship-carnegie-corporation-fellows",
+    "programme_name": "Andrew Carnegie Fellows Program",
+    "organizer": "Carnegie Corporation of New York",
+    "official_url": "https://www.carnegie.org/programs/andrew-carnegie-fellows-program/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "guggenheim-fellowship",
+    "programme_id": "fellowship-guggenheim-fellowship",
+    "programme_name": "Guggenheim Fellowships",
+    "organizer": "John Simon Guggenheim Memorial Foundation",
+    "official_url": "https://www.gf.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "berkman-klein-fellowship",
+    "programme_id": "fellowship-berkman-klein-fellowship",
+    "programme_name": "Berkman Klein Fellowship",
+    "organizer": "Berkman Klein Center",
+    "official_url": "https://cyber.harvard.edu/fellowships",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "stanford-graduate-fellowship",
+    "programme_id": "fellowship-stanford-graduate-fellowship",
+    "programme_name": "Stanford Graduate Fellowship",
+    "organizer": "Stanford University",
+    "official_url": "https://vpge.stanford.edu/fellowships-funding",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "princeton-fellowships",
+    "programme_id": "fellowship-princeton-fellowships",
+    "programme_name": "Princeton Graduate Fellowships",
+    "organizer": "Princeton University",
+    "official_url": "https://gradschool.princeton.edu/financial-support/fellowships",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "mit-fellowships",
+    "programme_id": "fellowship-mit-fellowships",
+    "programme_name": "MIT Graduate Fellowships",
+    "organizer": "MIT",
+    "official_url": "https://oge.mit.edu/finances/fellowships/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "berkeley-fellowships",
+    "programme_id": "fellowship-berkeley-fellowships",
+    "programme_name": "UC Berkeley Graduate Fellowships",
+    "organizer": "UC Berkeley",
+    "official_url": "https://grad.berkeley.edu/financial/fellowships/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "yenching-academy",
+    "programme_id": "fellowship-yenching-academy",
+    "programme_name": "Yenching Academy Scholarship",
+    "organizer": "Peking University",
+    "official_url": "https://yenchingacademy.pku.edu.cn/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "chevening",
+    "programme_id": "fellowship-chevening",
+    "programme_name": "Chevening Scholarships",
+    "organizer": "UK FCDO",
+    "official_url": "https://www.chevening.org/scholarships/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "commonwealth-scholarship",
+    "programme_id": "fellowship-commonwealth-scholarship",
+    "programme_name": "Commonwealth Scholarships",
+    "organizer": "Commonwealth Scholarship Commission",
+    "official_url": "https://cscuk.fcdo.gov.uk/scholarships/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "inlaks",
+    "programme_id": "fellowship-inlaks",
+    "programme_name": "Inlaks Scholarships",
+    "organizer": "Inlaks Shivdasani Foundation",
+    "official_url": "https://www.inlaksfoundation.org/scholarships/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "jn-tata",
+    "programme_id": "fellowship-jn-tata",
+    "programme_name": "JN Tata Endowment Loan Scholarship",
+    "organizer": "JN Tata Endowment",
+    "official_url": "https://www.jntataendowment.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "aga-khan-scholarship",
+    "programme_id": "fellowship-aga-khan-scholarship",
+    "programme_name": "Aga Khan Foundation International Scholarship",
+    "organizer": "Aga Khan Foundation",
+    "official_url": "https://the.akdn/en/how-we-work/our-agencies/aga-khan-foundation/international-scholarship-programme",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "mastercard-foundation-scholars",
+    "programme_id": "fellowship-mastercard-foundation-scholars",
+    "programme_name": "Mastercard Foundation Scholars Program",
+    "organizer": "Mastercard Foundation",
+    "official_url": "https://mastercardfdn.org/all/scholars/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "obama-foundation-scholars",
+    "programme_id": "fellowship-obama-foundation-scholars",
+    "programme_name": "Obama Foundation Scholars",
+    "organizer": "Obama Foundation",
+    "official_url": "https://www.obama.org/programs/scholars/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "humphrey-fellowship",
+    "programme_id": "fellowship-humphrey-fellowship",
+    "programme_name": "Hubert H. Humphrey Fellowship",
+    "organizer": "U.S. Department of State",
+    "official_url": "https://www.humphreyfellowship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "humboldt-research-fellowship",
+    "programme_id": "fellowship-humboldt-research-fellowship",
+    "programme_name": "Humboldt Research Fellowship",
+    "organizer": "Alexander von Humboldt Foundation",
+    "official_url": "https://www.humboldt-foundation.de/en/apply/sponsorship-programmes/humboldt-research-fellowship",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "erasmus-mundus",
+    "programme_id": "fellowship-erasmus-mundus",
+    "programme_name": "Erasmus Mundus Joint Masters",
+    "organizer": "European Commission",
+    "official_url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "msca-doctoral",
+    "programme_id": "fellowship-msca-doctoral",
+    "programme_name": "Marie Sklodowska-Curie Doctoral Networks",
+    "organizer": "European Commission",
+    "official_url": "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/doctoral-networks",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "erc-starting",
+    "programme_id": "fellowship-erc-starting",
+    "programme_name": "ERC Starting Grants",
+    "organizer": "European Research Council",
+    "official_url": "https://erc.europa.eu/apply-grant/starting-grant",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hfsp-postdoc",
+    "programme_id": "fellowship-hfsp-postdoc",
+    "programme_name": "HFSP Postdoctoral Fellowships",
+    "organizer": "Human Frontier Science Program",
+    "official_url": "https://www.hfsp.org/funding/hfsp-funding/postdoctoral-fellowships",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "wellcome-early-career",
+    "programme_id": "fellowship-wellcome-early-career",
+    "programme_name": "Wellcome Early-Career Awards",
+    "organizer": "Wellcome Trust",
+    "official_url": "https://wellcome.org/grant-funding/schemes/early-career-awards",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "royal-society-newton",
+    "programme_id": "fellowship-royal-society-newton",
+    "programme_name": "Royal Society Newton International Fellowships",
+    "organizer": "Royal Society",
+    "official_url": "https://royalsociety.org/grants-schemes-awards/grants/newton-international/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "royal-society-dorothy-hodgkin",
+    "programme_id": "fellowship-royal-society-dorothy-hodgkin",
+    "programme_name": "Royal Society Dorothy Hodgkin Fellowship",
+    "organizer": "Royal Society",
+    "official_url": "https://royalsociety.org/grants-schemes-awards/grants/dorothy-hodgkin/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "jsps-postdoc",
+    "programme_id": "fellowship-jsps-postdoc",
+    "programme_name": "JSPS Postdoctoral Fellowships for Research in Japan",
+    "organizer": "JSPS",
+    "official_url": "https://www.jsps.go.jp/english/e-pd/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "astar-scholarships",
+    "programme_id": "fellowship-astar-scholarships",
+    "programme_name": "A*STAR Scholarships",
+    "organizer": "A*STAR",
+    "official_url": "https://www.a-star.edu.sg/Scholarships",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "cifar-global-scholars",
+    "programme_id": "fellowship-cifar-global-scholars",
+    "programme_name": "CIFAR Global Scholars",
+    "organizer": "CIFAR",
+    "official_url": "https://cifar.ca/research-programs/global-scholars/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "vanier-cgs",
+    "programme_id": "fellowship-vanier-cgs",
+    "programme_name": "Vanier Canada Graduate Scholarships",
+    "organizer": "Government of Canada",
+    "official_url": "https://vanier.gc.ca/en/home-accueil.html",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "trudeau-scholarships",
+    "programme_id": "fellowship-trudeau-scholarships",
+    "programme_name": "Trudeau Foundation Scholarships",
+    "organizer": "Trudeau Foundation",
+    "official_url": "https://www.trudeaufoundation.ca/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "pmrf",
+    "programme_id": "fellowship-pmrf",
+    "programme_name": "Prime Minister's Research Fellowship",
+    "organizer": "Ministry of Education India",
+    "official_url": "https://pmrf.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "india-fellow",
+    "programme_id": "fellowship-india-fellow",
+    "programme_name": "India Fellow Social Leadership Program",
+    "organizer": "India Fellow",
+    "official_url": "https://www.indiafellow.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "code-for-india",
+    "programme_id": "fellowship-code-for-india",
+    "programme_name": "Code for India Fellowship",
+    "organizer": "Code for India",
+    "official_url": "https://codeforindia.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "outreachy",
+    "programme_id": "fellowship-outreachy",
+    "programme_name": "Outreachy Internships",
+    "organizer": "Software Freedom Conservancy",
+    "official_url": "https://www.outreachy.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "mandela-washington",
+    "programme_id": "fellowship-mandela-washington",
+    "programme_name": "Mandela Washington Fellowship",
+    "organizer": "U.S. Department of State",
+    "official_url": "https://yali.state.gov/mwf/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "horizon-fellowship",
+    "programme_id": "fellowship-horizon-fellowship",
+    "programme_name": "Horizon Fellowship",
+    "organizer": "Horizon Institute for Public Service",
+    "official_url": "https://horizonpublicservice.org/programs/become-a-fellow/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "chci-public-policy",
+    "programme_id": "fellowship-chci-public-policy",
+    "programme_name": "CHCI Public Policy Fellowship",
+    "organizer": "Congressional Hispanic Caucus Institute",
+    "official_url": "https://chci.org/programs/public-policy-fellowship-program/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "rwjf-health-policy-fellows",
+    "programme_id": "fellowship-rwjf-health-policy-fellows",
+    "programme_name": "RWJF Health Policy Fellows",
+    "organizer": "Robert Wood Johnson Foundation",
+    "official_url": "https://healthpolicyfellows.org/become-a-fellow/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "lee-fellowship",
+    "programme_id": "fellowship-lee-fellowship",
+    "programme_name": "LEE Public Policy Fellowship",
+    "organizer": "Leadership Enterprise for a Diverse America",
+    "official_url": "https://wearelee.org/fellowships-at-lee/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "talos-fellowship",
+    "programme_id": "fellowship-talos-fellowship",
+    "programme_name": "Talos Fellowship",
+    "organizer": "Talos Network",
+    "official_url": "https://www.talosnetwork.org/talos-fellowship",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "build-for-bharat",
+    "programme_id": "fellowship-build-for-bharat",
+    "programme_name": "Build for Bharat Fellowship",
+    "organizer": "Bharat Digital",
+    "official_url": "https://bharatdigital.org/fellowship",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "inlaks-shivdasani-social",
+    "programme_id": "fellowship-inlaks-shivdasani-social",
+    "programme_name": "Inlaks Shivdasani Fellowship for Social Engagement",
+    "organizer": "Inlaks Foundation",
+    "official_url": "https://inlaksfoundation.org/opportunities/fellowships/inlaks-shivdasani-fellowship-for-social-engagement/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "openai-safety-fellowship",
+    "programme_id": "fellowship-openai-safety-fellowship",
+    "programme_name": "OpenAI Safety Fellowship",
+    "organizer": "OpenAI",
+    "official_url": "https://openai.com/index/introducing-openai-safety-fellowship/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "sea-grant-state-fellowship",
+    "programme_id": "fellowship-sea-grant-state-fellowship",
+    "programme_name": "California Sea Grant State Fellowship",
+    "organizer": "California Sea Grant",
+    "official_url": "https://caseagrant.ucsd.edu/funding/2027-california-sea-grant-state-fellowship",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "hdf-postdoc",
+    "programme_id": "fellowship-hdf-postdoc",
+    "programme_name": "Huntington's Disease Foundation Postdoctoral Fellowship",
+    "organizer": "Hereditary Disease Foundation",
+    "official_url": "https://hdfoundation.org/grant-and-postdoctoral-fellowship-application/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "branco-weiss",
+    "programme_id": "fellowship-branco-weiss",
+    "programme_name": "Branco Weiss Fellowship Society in Science",
+    "organizer": "ETH Zurich",
+    "official_url": "https://brancoweissfellowship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "foresight-fellowship",
+    "programme_id": "fellowship-foresight-fellowship",
+    "programme_name": "Foresight Institute Fellowship",
+    "organizer": "Foresight Institute",
+    "official_url": "https://foresight.org/fellowship/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "pivotal-fellowship",
+    "programme_id": "fellowship-pivotal-fellowship",
+    "programme_name": "Pivotal Research Fellowship",
+    "organizer": "Pivotal",
+    "official_url": "https://www.pivotal-research.org/fellowship",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "astra-fellowship",
+    "programme_id": "fellowship-astra-fellowship",
+    "programme_name": "Astra Fellowship",
+    "organizer": "Constellation",
+    "official_url": "https://www.constellation.org/programs/astra-fellowship",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "erafellowship",
+    "programme_id": "fellowship-erafellowship",
+    "programme_name": "ERA Fellowship",
+    "organizer": "ERA",
+    "official_url": "https://erafellowship.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "cybercorps",
+    "programme_id": "fellowship-cybercorps",
+    "programme_name": "CyberCorps Scholarship for Service",
+    "organizer": "NSF / OPM",
+    "official_url": "https://www.sfs.opm.gov/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "edf-climate-corps",
+    "programme_id": "fellowship-edf-climate-corps",
+    "programme_name": "EDF Climate Corps",
+    "organizer": "Environmental Defense Fund",
+    "official_url": "https://www.edfclimatecorps.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "indicorps",
+    "programme_id": "fellowship-indicorps",
+    "programme_name": "Indicorps Fellowship",
+    "organizer": "Indicorps",
+    "official_url": "https://indicorps.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "chevening-india",
+    "programme_id": "fellowship-chevening-india",
+    "programme_name": "Chevening India",
+    "organizer": "UK FCDO",
+    "official_url": "https://www.chevening.org/scholarship/india/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  },
+  {
+    "source_id": "daad-india-scholarship",
+    "programme_id": "fellowship-daad-india-scholarship",
+    "programme_name": "DAAD India",
+    "organizer": "DAAD",
+    "official_url": "https://www.daad.in/en/find-funding/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
+  }
 ]

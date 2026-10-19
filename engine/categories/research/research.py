@@ -30,6 +30,10 @@ SOURCE_REGISTRY = (
     {"source_id": "riken-ipa", "programme_id": "research-riken-ipa", "programme_name": "RIKEN International Program Associate (IPA)", "organizer": "RIKEN", "official_url": "https://www.riken.jp/en/careers/programs/ipa/index.html", "allowed_path_hints": ["careers/programs/ipa", "ipa"], "check_cadence": "monthly"},
     {"source_id": "nsf-reu", "programme_id": "research-nsf-reu", "programme_name": "NSF Research Experiences for Undergraduates (REU)", "organizer": "U.S. National Science Foundation (NSF)", "official_url": "https://www.nsf.gov/funding/initiatives/reu", "allowed_path_hints": ["funding/initiatives/reu", "reu"], "check_cadence": "monthly"},
 )
+_SEED_FILE = os.path.join(os.path.dirname(__file__), "research_seeds.json")
+if os.path.isfile(_SEED_FILE):
+    with open(_SEED_FILE, encoding="utf-8") as _handle:
+        SOURCE_REGISTRY = SOURCE_REGISTRY + tuple(json.load(_handle))
 STATIC_SOURCE_REGISTRY = SOURCE_REGISTRY
 
 

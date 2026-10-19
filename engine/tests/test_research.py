@@ -34,7 +34,8 @@ class TestResearchProgrammeCategory(unittest.TestCase):
         self.assertIn("application", record["official_evidence"])
 
     def test_registry_has_ten_worldwide_separate_seeds(self):
-        self.assertEqual(len(research.SOURCE_REGISTRY), 10)
+        self.assertGreaterEqual(len(research.SOURCE_REGISTRY), 165)
+        self.assertEqual(len({seed["programme_id"] for seed in research.SOURCE_REGISTRY}), len(research.SOURCE_REGISTRY))
         self.assertTrue(all(seed["programme_id"].startswith("research-") for seed in research.SOURCE_REGISTRY))
         self.assertTrue(
             {seed["programme_id"] for seed in research.SOURCE_REGISTRY}.isdisjoint(
