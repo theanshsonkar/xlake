@@ -1163,7 +1163,10 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
 
 
 def _default_fetch(url: str) -> Tuple[str, str]:
-    from core import webfetch
+    from core import rendered, webfetch
+    cached = rendered.lookup(url)
+    if cached:
+        return cached
     return webfetch.fetch_html(url)
 
 

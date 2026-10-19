@@ -1394,6 +1394,10 @@ def parse_event_page(html, page_url):
 
 
 def _polite_page_fetch(url):
+    from core import rendered
+    cached = rendered.lookup(url)
+    if cached:
+        return cached[0]
     allowed, _reason = robots.allowed(url)
     return _http_text(url) if allowed else None
 

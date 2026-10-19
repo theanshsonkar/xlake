@@ -1,0 +1,70 @@
+name: rendered-pages
+
+# Weekly headless render of JS-heavy official pages (engine/render/render_pages.mjs).
+# Honest: robots.txt obeyed, bot challenges treated as blocked (never bypassed),
+# one page at a time, >=3s between pages. Cache is read by core/rendered.py.
+on:
+  schedule:
+    - cron: "23 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Render only: do not commit the cache"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: xlake-rendered-pages
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: engine/render
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Playwright + Chromium
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Render pages
+        run: node render_pages.mjs --max 60
+      - name: Summary
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import collections, glob, json
+          c = collections.Counter(json.load(open(f))["status"] for f in glob.glob("../data/operations/rendered_cache/*.json"))
+          print("### rendered pages\n" + "\n".join(f"- {k}: {v}" for k, v in sorted(c.items())))
+          PY
+      - name: Commit cache
+        if: ${{ !inputs.dry_run }}
+        working-directory: engine
+        run: |
+          set -euo pipefail
+          git config user.name  "opportunity-lake-bot"
+          git config user.email "bot@users.noreply.github.com"
+          TMP=$(mktemp -d)
+          cp -a data/operations/rendered_cache "$TMP/"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard HEAD
+            git checkout -B ci-save origin/main
+            rm -rf data/operations/rendered_cache
+            cp -a "$TMP/rendered_cache" data/operations/rendered_cache
+            git add -A data/operations/rendered_cache
+            if git diff --cached --quiet; then echo 'nothing to commit'; exit 0; fi
+            git commit -m "rendered-pages: refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt*5 + RANDOM % 10))
+          done
+          exit 1

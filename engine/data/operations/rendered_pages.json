@@ -1,0 +1,302 @@
+[
+ {
+  "id": "flipkart-grid",
+  "category": "hackathons",
+  "url": "https://unstop.com/competitions/flipkart-grid-70-software-development-track-flipkart-1083633",
+  "notes": "Flipkart GRiD"
+ },
+ {
+  "id": "amazon-ml-challenge",
+  "category": "hackathons",
+  "url": "https://www.amazon.science/academic-engagements/amazon-ml-challenge",
+  "notes": "Amazon ML Challenge"
+ },
+ {
+  "id": "myntra-hackerramp",
+  "category": "hackathons",
+  "url": "https://unstop.com/hackathons/myntra-hackerramp-myntra-1075440",
+  "notes": "Myntra HackerRamp"
+ },
+ {
+  "id": "walmart-sparkathon",
+  "category": "hackathons",
+  "url": "https://careers.walmart.com/sparkathon",
+  "notes": "Walmart Sparkathon"
+ },
+ {
+  "id": "infosys-hackwithinfy",
+  "category": "hackathons",
+  "url": "https://www.infosys.com/careers/hackwithinfy.html",
+  "notes": "HackWithInfy"
+ },
+ {
+  "id": "google-solution-challenge",
+  "category": "hackathons",
+  "url": "https://developers.google.com/community/gdsc-solution-challenge",
+  "notes": "Google Solution Challenge"
+ },
+ {
+  "id": "meta-hacker-cup",
+  "category": "hackathons",
+  "url": "https://www.facebook.com/codingcompetitions/hacker-cup",
+  "notes": "Meta Hacker Cup"
+ },
+ {
+  "id": "icpc-global",
+  "category": "hackathons",
+  "url": "https://icpc.global/",
+  "notes": "ICPC"
+ },
+ {
+  "id": "codechef-contests",
+  "category": "hackathons",
+  "url": "https://www.codechef.com/contests",
+  "notes": "CodeChef contests"
+ },
+ {
+  "id": "hackmit",
+  "category": "hackathons",
+  "url": "https://hackmit.org/",
+  "notes": "HackMIT"
+ },
+ {
+  "id": "hack-the-north",
+  "category": "hackathons",
+  "url": "https://hackthenorth.com/",
+  "notes": "Hack the North"
+ },
+ {
+  "id": "cal-hacks",
+  "category": "hackathons",
+  "url": "https://calhacks.io/",
+  "notes": "Cal Hacks"
+ },
+ {
+  "id": "hackgt",
+  "category": "hackathons",
+  "url": "https://hack.gt/",
+  "notes": "HackGT"
+ },
+ {
+  "id": "techfest-iitb",
+  "category": "hackathons",
+  "url": "https://techfest.org/",
+  "notes": "Techfest IITB"
+ },
+ {
+  "id": "shaastra-iitm",
+  "category": "hackathons",
+  "url": "https://shaastra.org/",
+  "notes": "Shaastra IITM"
+ },
+ {
+  "id": "kshitij-iitkgp",
+  "category": "hackathons",
+  "url": "https://kshitij.org/",
+  "notes": "Kshitij IIT KGP"
+ },
+ {
+  "id": "ethglobal",
+  "category": "hackathons",
+  "url": "https://ethglobal.com/events",
+  "notes": "ETHGlobal"
+ },
+ {
+  "id": "mext-india",
+  "category": "scholarships",
+  "url": "https://www.in.emb-japan.go.jp/itpr_en/00_000411.html",
+  "notes": "MEXT embassy page"
+ },
+ {
+  "id": "gks-studyinkorea",
+  "category": "scholarships",
+  "url": "https://www.studyinkorea.go.kr/en/sub/gks/allnew_invite.do",
+  "notes": "GKS"
+ },
+ {
+  "id": "truman",
+  "category": "scholarships",
+  "url": "https://www.truman.gov/apply-for-the-truman-scholarship",
+  "notes": "Truman"
+ },
+ {
+  "id": "marshall",
+  "category": "scholarships",
+  "url": "https://www.marshallscholarship.org/apply/",
+  "notes": "Marshall"
+ },
+ {
+  "id": "australia-awards",
+  "category": "scholarships",
+  "url": "https://www.dfat.gov.au/people-to-people/australia-awards/australia-awards-scholarships",
+  "notes": "Australia Awards"
+ },
+ {
+  "id": "fulbright-nehru",
+  "category": "scholarships",
+  "url": "https://www.usief.org.in/Fellowships/Fulbright-Nehru-Fellowships.aspx",
+  "notes": "Fulbright-Nehru"
+ },
+ {
+  "id": "erasmus-mundus-catalogue",
+  "category": "scholarships",
+  "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters",
+  "notes": "Erasmus Mundus"
+ },
+ {
+  "id": "mastercard-foundation-scholars",
+  "category": "scholarships",
+  "url": "https://mastercardfdn.org/all/scholars/",
+  "notes": "Mastercard Foundation Scholars"
+ },
+ {
+  "id": "stipendium-hungaricum",
+  "category": "scholarships",
+  "url": "https://stipendiumhungaricum.hu/apply/",
+  "notes": "Stipendium Hungaricum"
+ },
+ {
+  "id": "turkiye-burslari",
+  "category": "scholarships",
+  "url": "https://turkiyeburslari.gov.tr/",
+  "notes": "Turkiye Burslari"
+ },
+ {
+  "id": "iitb-summer",
+  "category": "research",
+  "url": "https://www.iitb.ac.in/en/education/summer-internship",
+  "notes": "IITB summer"
+ },
+ {
+  "id": "iitm-summer",
+  "category": "research",
+  "url": "https://ge.iitm.ac.in/summer-fellowship",
+  "notes": "IITM summer fellowship"
+ },
+ {
+  "id": "iitd-summer",
+  "category": "research",
+  "url": "https://home.iitd.ac.in/summer-internship.php",
+  "notes": "IITD summer"
+ },
+ {
+  "id": "iitgn-srip",
+  "category": "research",
+  "url": "https://iitgn.ac.in/admissions/srip",
+  "notes": "IITGN SRIP"
+ },
+ {
+  "id": "iith-summer",
+  "category": "research",
+  "url": "https://iith.ac.in/academics/summer-internship/",
+  "notes": "IITH summer"
+ },
+ {
+  "id": "iitr-spark",
+  "category": "research",
+  "url": "https://iitr.ac.in/Academics/Summer%20Programs.html",
+  "notes": "IITR SPARK"
+ },
+ {
+  "id": "iisc-summer",
+  "category": "research",
+  "url": "https://iisc.ac.in/students/summer-research-fellowship/",
+  "notes": "IISc summer fellowship"
+ },
+ {
+  "id": "hdfc-badhte-kadam",
+  "category": "scholarships",
+  "url": "https://www.buddy4study.com/page/hdfc-bank-parivartans-ecss-programme",
+  "notes": "HDFC Badhte Kadam"
+ },
+ {
+  "id": "tata-capital-pankh",
+  "category": "scholarships",
+  "url": "https://www.tatacapital.com/pankh-scholarship.html",
+  "notes": "Tata Capital Pankh"
+ },
+ {
+  "id": "infosys-stem-stars",
+  "category": "scholarships",
+  "url": "https://infosys.org/infosys-foundation/stem-stars.html",
+  "notes": "Infosys STEM Stars"
+ },
+ {
+  "id": "aditya-birla-capital-scholarship",
+  "category": "scholarships",
+  "url": "https://www.adityabirlacapital.com/healthinsurance/scholarship",
+  "notes": "Aditya Birla Capital"
+ },
+ {
+  "id": "loreal-fywsi",
+  "category": "scholarships",
+  "url": "https://www.foryoungwomeninscience.in/",
+  "notes": "L'Oreal FYWSI"
+ },
+ {
+  "id": "lic-golden-jubilee",
+  "category": "scholarships",
+  "url": "https://licindia.in/Bottom-Links/Golden-Jubilee-Foundation",
+  "notes": "LIC Golden Jubilee"
+ },
+ {
+  "id": "colgate-keep-india-smiling",
+  "category": "scholarships",
+  "url": "https://www.colgatepalmolive.co.in/keep-india-smiling-foundational-scholarship",
+  "notes": "Colgate KIS"
+ },
+ {
+  "id": "gsoc",
+  "category": "open_source",
+  "url": "https://summerofcode.withgoogle.com/",
+  "notes": "GSoC"
+ },
+ {
+  "id": "lfx-mentorship",
+  "category": "open_source",
+  "url": "https://lfx.linuxfoundation.org/tools/mentorship/",
+  "notes": "LFX Mentorship"
+ },
+ {
+  "id": "summer-of-bitcoin",
+  "category": "open_source",
+  "url": "https://www.summerofbitcoin.org/",
+  "notes": "Summer of Bitcoin"
+ },
+ {
+  "id": "kwoc",
+  "category": "open_source",
+  "url": "https://kwoc.kossiitkgp.org/",
+  "notes": "KWoC"
+ },
+ {
+  "id": "c4gt",
+  "category": "open_source",
+  "url": "https://codeforgovtech.in/",
+  "notes": "C4GT"
+ },
+ {
+  "id": "t-hub",
+  "category": "startup",
+  "url": "https://t-hub.co/programs/",
+  "notes": "T-Hub"
+ },
+ {
+  "id": "startup-india-seed-fund",
+  "category": "startup",
+  "url": "https://seedfund.startupindia.gov.in/",
+  "notes": "Startup India Seed Fund"
+ },
+ {
+  "id": "mlsa",
+  "category": "community",
+  "url": "https://studentambassadors.microsoft.com/",
+  "notes": "Microsoft Learn Student Ambassadors"
+ },
+ {
+  "id": "gdg-on-campus",
+  "category": "community",
+  "url": "https://gdg.community.dev/gdg-on-campus/",
+  "notes": "GDG on Campus"
+ }
+]

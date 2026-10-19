@@ -55,4 +55,4 @@ engine/data/measure/keka_raw.json
 # locally and in CI, but never committed. See AGENTS.md / README.md.
 engine/data/lake/opportunities.json
 engine/data/lake/hidden.json
-engine/data/lake/opportunities_history.json
+engine/data/lake/opportunities_history.jsonengine/render/node_modules/
