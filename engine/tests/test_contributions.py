@@ -501,7 +501,6 @@ class TestContributionsCollector(unittest.TestCase):
             )
 
         self.assertEqual(len(queries), 2)
-        self.assertIn("updated:>=2026-04-20", queries[0])
         self.assertIn("good-first-issues:>2", queries[0])
         self.assertIn("stars:>=500", queries[0])
         self.assertIn("stars:100..499", queries[1])

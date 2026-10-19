@@ -360,7 +360,6 @@ def discover_repos(token, now, search_fetch=_default_search_fetch):
     if now is None:
         return []
     pushed_since = (now - timedelta(days=DISCOVERY_PUSHED_WITHIN_DAYS)).date().isoformat()
-    updated_since = (now - timedelta(days=DISCOVERY_UPDATED_WITHIN_DAYS)).date().isoformat()
     curated = {repo.casefold() for repo, _language in CURATED_REPOS}
     discovered = []
     seen = set(curated)
@@ -371,13 +370,12 @@ def discover_repos(token, now, search_fetch=_default_search_fetch):
             _discovery_sleep(DISCOVERY_REQUEST_DELAY)
         query = (
             "language:{lang} good-first-issues:>{minimum} stars:{stars} "
-            "pushed:>={date} updated:>={updated} archived:false is:public"
+            "pushed:>={date} archived:false is:public"
         ).format(
             lang=language,
             minimum=DISCOVERY_MIN_GOOD_FIRST_ISSUES - 1,
             stars=band,
             date=pushed_since,
-            updated=updated_since,
         )
         try:
             result = search_fetch(query, token)
