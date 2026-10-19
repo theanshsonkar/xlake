@@ -74,5 +74,42 @@ class RenderedCache(unittest.TestCase):
         self.assertTrue(any(str(w.get("end")) == "2026-11-30" and w.get("basis") == "applicant_deadline" for w in windows), windows)
 
 
+class RenderedPatterns(unittest.TestCase):
+    today = datetime(2026, 10, 20).date()
+
+    def end(self, text):
+        return [(str(w["start"]), str(w["end"])) for w in programme_core.detect_applicant_windows(text, today=self.today)]
+
+    def test_real_snippets(self):
+        # Snippets copied from rendered official pages (Oct 2026).
+        self.assertEqual(self.end("Final Notice (Extended): Last date for startups to apply under SISFS \u2013 31 May 2026"),
+                         [("2026-05-31", "2026-05-31")])
+        self.assertEqual(self.end("Applications for the Summer Fellowship close on September 29th, 2026."),
+                         [("2026-09-29", "2026-09-29")])
+
+    def test_new_date_shapes(self):
+        self.assertEqual(self.end("Last date to apply: 30-11-2026"), [("2026-11-30", "2026-11-30")])
+        self.assertEqual(self.end("Registration ends on 15 November 2026 11:59 PM IST"), [("2026-11-15", "2026-11-15")])
+        self.assertEqual(self.end("Registration deadline: 5 Dec 2026"), [("2026-12-05", "2026-12-05")])
+        self.assertEqual(self.end("Round 1 registration closes 5 Dec 2026"), [("2026-12-05", "2026-12-05")])
+        self.assertEqual(self.end("Applications open Nov 15 \u2013 Dec 20, 2026"), [("2026-11-15", "2026-12-20")])
+        self.assertEqual(self.end("Page generated 2026-11-30 and build 26-11-30"), [])
+
+    def test_next_cycle_for_past_deadline(self):
+        cfg = programme_core.ProgrammeConfig(category="open-source-programmes", opportunity_type="open_source_programme",
+                                             source_registry=(), observations_path="", verifications_path="",
+                                             next_cycle=True)
+        seed = {"source_id": "x", "programme_id": "x", "programme_name": "Example Summer Programme",
+                "organizer": "Example Org", "official_url": "https://example.org/p",
+                "allowed_path_hints": [], "check_cadence": "weekly"}
+        html = ("<html><body><main><h1>Example Summer Programme</h1><p>The application deadline was 17 March 2026."
+                " Apply to this summer programme for students and fellows.</p></main></body></html>")
+        rec, obs = programme_core.parse_programme(seed, html, datetime(2026, 10, 20, tzinfo=timezone.utc),
+                                                  None, config=cfg)
+        self.assertIsNotNone(rec, obs)
+        self.assertEqual(rec["programme_status"], "upcoming")
+        self.assertEqual(rec["last_deadline"], "2026-03-17")
+
+
 if __name__ == "__main__":
     unittest.main()

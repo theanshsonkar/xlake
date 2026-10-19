@@ -119,6 +119,15 @@ async function renderOne(browser, t) {
       await page.waitForLoadState("networkidle", { timeout: 10000 }).catch(() => {});
     }
     await page.waitForTimeout(1500);
+    // Expand collapsed FAQ/accordion blocks (buttons only, never links) so their text is visible.
+    await page.evaluate(() => {
+      document.querySelectorAll("details").forEach((d) => { d.open = true; });
+      let n = 0;
+      document.querySelectorAll('button[aria-expanded="false"], [role="button"][aria-expanded="false"]').forEach((b) => {
+        if (n++ < 25) { try { b.click(); } catch (e) { /* ignore */ } }
+      });
+    }).catch(() => {});
+    await page.waitForTimeout(800);
     rec.final_url = page.url();
     // Redirect off-host to a place robots has not been checked for: re-check.
     const fu = new URL(rec.final_url);

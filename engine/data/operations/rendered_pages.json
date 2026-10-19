@@ -6,12 +6,6 @@
   "notes": "Flipkart GRiD"
  },
  {
-  "id": "amazon-ml-challenge",
-  "category": "hackathons",
-  "url": "https://www.amazon.science/academic-engagements/amazon-ml-challenge",
-  "notes": "Amazon ML Challenge"
- },
- {
   "id": "myntra-hackerramp",
   "category": "hackathons",
   "url": "https://unstop.com/hackathons/myntra-hackerramp-myntra-1075440",
@@ -110,13 +104,13 @@
  {
   "id": "gks-studyinkorea",
   "category": "scholarships",
-  "url": "https://www.studyinkorea.go.kr/en/sub/gks/allnew_invite.do",
+  "url": "https://www.studyinkorea.go.kr/en/plan/scholarship.do?tab=gks-tab4",
   "notes": "GKS"
  },
  {
   "id": "truman",
   "category": "scholarships",
-  "url": "https://www.truman.gov/apply-for-the-truman-scholarship",
+  "url": "https://www.truman.gov/apply/applying/important-dates",
   "notes": "Truman"
  },
  {
@@ -128,13 +122,13 @@
  {
   "id": "australia-awards",
   "category": "scholarships",
-  "url": "https://www.dfat.gov.au/people-to-people/australia-awards/australia-awards-scholarships",
+  "url": "https://australiaawardsindia.org/",
   "notes": "Australia Awards"
  },
  {
   "id": "fulbright-nehru",
   "category": "scholarships",
-  "url": "https://www.usief.org.in/Fellowships/Fulbright-Nehru-Fellowships.aspx",
+  "url": "https://www.usief.org.in/fulbright-fellowships/fellowships-for-indian-citizen/",
   "notes": "Fulbright-Nehru"
  },
  {
@@ -164,44 +158,32 @@
  {
   "id": "iitb-summer",
   "category": "research",
-  "url": "https://www.iitb.ac.in/en/education/summer-internship",
+  "url": "https://www.ircc.iitb.ac.in/IRCC-Webpage/IITBInternship/",
   "notes": "IITB summer"
  },
  {
   "id": "iitm-summer",
   "category": "research",
-  "url": "https://ge.iitm.ac.in/summer-fellowship",
+  "url": "https://www.iitm.ac.in/announcements/summer-fellowship-2026",
   "notes": "IITM summer fellowship"
  },
  {
   "id": "iitd-summer",
   "category": "research",
-  "url": "https://home.iitd.ac.in/summer-internship.php",
+  "url": "https://international.iitd.ac.in/",
   "notes": "IITD summer"
  },
  {
   "id": "iitgn-srip",
   "category": "research",
-  "url": "https://iitgn.ac.in/admissions/srip",
+  "url": "https://srip.iitgn.ac.in/",
   "notes": "IITGN SRIP"
- },
- {
-  "id": "iith-summer",
-  "category": "research",
-  "url": "https://iith.ac.in/academics/summer-internship/",
-  "notes": "IITH summer"
  },
  {
   "id": "iitr-spark",
   "category": "research",
-  "url": "https://iitr.ac.in/Academics/Summer%20Programs.html",
+  "url": "https://spark.iitr.ac.in/",
   "notes": "IITR SPARK"
- },
- {
-  "id": "iisc-summer",
-  "category": "research",
-  "url": "https://iisc.ac.in/students/summer-research-fellowship/",
-  "notes": "IISc summer fellowship"
  },
  {
   "id": "hdfc-badhte-kadam",
@@ -210,40 +192,10 @@
   "notes": "HDFC Badhte Kadam"
  },
  {
-  "id": "tata-capital-pankh",
-  "category": "scholarships",
-  "url": "https://www.tatacapital.com/pankh-scholarship.html",
-  "notes": "Tata Capital Pankh"
- },
- {
-  "id": "infosys-stem-stars",
-  "category": "scholarships",
-  "url": "https://infosys.org/infosys-foundation/stem-stars.html",
-  "notes": "Infosys STEM Stars"
- },
- {
-  "id": "aditya-birla-capital-scholarship",
-  "category": "scholarships",
-  "url": "https://www.adityabirlacapital.com/healthinsurance/scholarship",
-  "notes": "Aditya Birla Capital"
- },
- {
-  "id": "loreal-fywsi",
-  "category": "scholarships",
-  "url": "https://www.foryoungwomeninscience.in/",
-  "notes": "L'Oreal FYWSI"
- },
- {
   "id": "lic-golden-jubilee",
   "category": "scholarships",
-  "url": "https://licindia.in/Bottom-Links/Golden-Jubilee-Foundation",
+  "url": "https://licindia.in/web/guest/golden-jubilee-foundation",
   "notes": "LIC Golden Jubilee"
- },
- {
-  "id": "colgate-keep-india-smiling",
-  "category": "scholarships",
-  "url": "https://www.colgatepalmolive.co.in/keep-india-smiling-foundational-scholarship",
-  "notes": "Colgate KIS"
  },
  {
   "id": "gsoc",
@@ -292,11 +244,5 @@
   "category": "community",
   "url": "https://studentambassadors.microsoft.com/",
   "notes": "Microsoft Learn Student Ambassadors"
- },
- {
-  "id": "gdg-on-campus",
-  "category": "community",
-  "url": "https://gdg.community.dev/gdg-on-campus/",
-  "notes": "GDG on Campus"
  }
 ]

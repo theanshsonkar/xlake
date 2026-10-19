@@ -267,6 +267,10 @@ APPLICANT_DEADLINE_TOKENS = (
     "submitted by", "received by", "apply until", "applications until",
     "open until", "accepted until", "accepting applications until", "available until",
     "is due", "are due", "deadline",
+    "registration deadline", "registrations close", "registration closes", "registrations closes",
+    "registration ends", "registrations end", "registration close", "last date to register",
+    "register by", "registrations until", "registration until", "apply before", "applications end",
+    "applications will close", "applications will be accepted until",
 )
 _DEADLINE_EXCLUSION_TOKENS = (
     "recommend", "reference", "referee", "letter", "mentor", "mentoring",
@@ -523,14 +527,16 @@ def parse_dates(text: str, nearby_year: Optional[int] = None, today: Optional[da
         except ValueError:
             continue
         add(match, (value, value), True)
-    numeric_re = re.compile(r"(?<![\d/.])(?P<a>\d{1,2})(?P<sep>[/.])(?P<b>\d{1,2})(?P=sep)(?P<y>20\d{2}|\d{2})(?![\d/])")
+    numeric_re = re.compile(r"(?<![\d/.-])(?P<a>\d{1,2})(?P<sep>[/.-])(?P<b>\d{1,2})(?P=sep)(?P<y>20\d{2}|\d{2})(?![\d/-])")
     for match in numeric_re.finditer(text):
         if not free(match):
             continue
+        if match.group("sep") == "-" and len(match.group("y")) != 4:
+            continue  # "30-11-26" is too ambiguous; only dash dates with a 4-digit year
         a, b = int(match.group("a")), int(match.group("b"))
         year = int(match.group("y"))
         year += 2000 if year < 100 else 0
-        month, day = (b, a) if (match.group("sep") == "." or a > 12) else (a, b)
+        month, day = (b, a) if (match.group("sep") in ".-" or a > 12) else (a, b)
         try:
             value = date(year, month, day)
         except ValueError:
