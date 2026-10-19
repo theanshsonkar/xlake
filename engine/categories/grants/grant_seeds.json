@@ -49,8 +49,7 @@
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
-  "region_hint": "US",
-  "cycle_hint": "Calls are typically announced about once a year; check the page for the next call"
+  "region_hint": "US"
  },
  {
   "source_id": "grant-google-exploreCSR",
@@ -896,7 +895,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "Europe",
-  "cycle_hint": "ERC Starting Grant calls typically open in the summer; deadline around October"
+  "cycle_hint": "ERC Starting Grant calls typically open in July; deadline around mid-October",
+  "cycle_hint_evidence": {
+   "quote": "Starting Grant 2027 (ERC-2027-STG) Open: 22 July 2026 Deadline:14 October 2026",
+   "url": "https://erc.europa.eu/apply-grant/starting-grant"
+  }
  },
  {
   "source_id": "grant-erc-adv",
@@ -1040,7 +1043,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "India",
-  "cycle_hint": "BIRAC BIG calls are typically announced a few times per year; check the page for the next call"
+  "cycle_hint": "BIRAC BIG calls are announced twice a year, on January 1 and July 1, and stay open about 45 days",
+  "cycle_hint_evidence": {
+   "quote": "The call for proposal is announced twice a year, i.e. on 1st January and 1st July.",
+   "url": "https://birac.nic.in/big.php"
+  }
  },
  {
   "source_id": "grant-birac",

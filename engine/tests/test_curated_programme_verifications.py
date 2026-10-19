@@ -18,7 +18,8 @@ class CuratedVerificationTests(unittest.TestCase):
             records = json.load(handle)
         self.assertTrue(records)
         for rec in records:
-            self.assertIn(rec["programme_id"], module.SOURCE_BY_ID)
+            if not rec.get("recheck_after"):  # hand-verified expiring records may be standalone
+                self.assertIn(rec["programme_id"], module.SOURCE_BY_ID)
             self.assertTrue(programme_core.validate_verification(rec)[0], rec["programme_id"])
 
     def test_startup_verifications_match_seeds(self):

@@ -112,5 +112,83 @@
       }
     },
     "verification_note": "IIM Bangalore (NSRCEL) women founders programme, India."
+  },
+  {
+    "programme_id": "startup-google-for-startups-accelerator-india",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://startup.google.com/programs/accelerator/india/",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are now closed Register your interest for future programs",
+        "url": "https://startup.google.com/programs/accelerator/india/"
+      },
+      "funding": {
+        "quote": "A three-month equity-free Accelerator program for AI-first startups between Seed to Series A based in India",
+        "url": "https://startup.google.com/programs/accelerator/india/"
+      },
+      "eligibility": {
+        "quote": "AI-first startups between Seed to Series A based in India, that are building core AI applications or agentic AI solutions.",
+        "url": "https://startup.google.com/programs/accelerator/india/"
+      }
+    },
+    "title": "Google for Startups Accelerator: India",
+    "organizer": "Google",
+    "programme_status": "closed",
+    "summary": "Three-month equity-free accelerator for AI-first, Seed to Series A startups based in India. Applications are currently closed.",
+    "funding": "Equity-free programme with mentorship and support around AI, Cloud, Android, Web, Product, Design Leadership and Growth.",
+    "eligibility": "AI-first startups between Seed and Series A based in India building core AI applications or agentic AI solutions.",
+    "region": "India",
+    "mode": "hybrid",
+    "verification_note": "Page offers registration of interest for future programmes; no next dates."
+  },
+  {
+    "programme_id": "startup-microsoft-founders-hub",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.microsoft.com/en-us/startups",
+    "official_evidence": {
+      "status": {
+        "quote": "Ready to start building? Join thousands of startups innovating on Azure.",
+        "url": "https://www.microsoft.com/en-us/startups"
+      },
+      "funding": {
+        "quote": "Access cutting-edge AI models, developer tools, and up to $150,000 in credits",
+        "url": "https://www.microsoft.com/en-us/startups"
+      }
+    },
+    "title": "Microsoft for Startups",
+    "organizer": "Microsoft",
+    "programme_status": "rolling",
+    "summary": "Microsoft's startup programme offering AI models, developer tools and Azure credits.",
+    "funding": "Up to $150,000 in credits",
+    "funding_amount": 150000,
+    "funding_currency": "USD",
+    "funding_period": "total",
+    "region": "Global",
+    "mode": "online"
+  },
+  {
+    "programme_id": "startup-antler",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.antler.co/apply",
+    "official_evidence": {
+      "status": {
+        "quote": "GET INVESTMENT FROM ANTLER Tell us who you are and what you're building.",
+        "url": "https://www.antler.co/apply"
+      }
+    },
+    "title": "Antler",
+    "organizer": "Antler",
+    "programme_status": "rolling",
+    "application_url": "https://www.antler.co/apply",
+    "summary": "Global early-stage investor that takes applications for founders from idea to pre-seed, with regional programmes including India.",
+    "region": "Global",
+    "mode": "in_person",
+    "verification_note": "Application form has no deadline; cohort dates differ by region and are not on the page."
   }
 ]

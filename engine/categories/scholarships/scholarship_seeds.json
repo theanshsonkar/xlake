@@ -11,7 +11,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "US",
-  "cycle_hint": "Typically opens in late summer; campus nominations in the fall, national deadline around late January or early February"
+  "cycle_hint": "Typically opens in early September; campus nominations come first, national nomination deadline in late January",
+  "cycle_hint_evidence": {
+   "quote": "Application opens First Tuesday in September Nomination deadline Last Friday in January",
+   "url": "https://goldwaterscholarship.gov/"
+  }
  },
  {
   "source_id": "scholarship-truman",
@@ -24,8 +28,7 @@
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
-  "region_hint": "US",
-  "cycle_hint": "Typically opens in the fall; national deadline around early February"
+  "region_hint": "US"
  },
  {
   "source_id": "scholarship-udall",
@@ -39,7 +42,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "US",
-  "cycle_hint": "Typically opens in the fall; national deadline around early March"
+  "cycle_hint": "Typically opens in early October; deadline in early March",
+  "cycle_hint_evidence": {
+   "quote": "October 9 The 2027 online application is available. March 4, 2027 Applications must be submitted",
+   "url": "https://www.udall.gov/OurPrograms/Scholarship/ImportantDates.aspx"
+  }
  },
  {
   "source_id": "scholarship-gilman",
@@ -66,7 +73,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "US",
-  "cycle_hint": "Typically due late January (fellowships) or early February (undergraduate awards)"
+  "cycle_hint": "Typically due in late January (fellowship around January 20, scholarship around January 27)",
+  "cycle_hint_evidence": {
+   "quote": "The national deadlines for the 2027 Boren Awards are: Boren Fellowships: January 20, 2027 Boren Scholarships: January 27, 2027",
+   "url": "https://www.borenawards.org/"
+  }
  },
  {
   "source_id": "scholarship-cls",
@@ -105,8 +116,7 @@
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
-  "region_hint": "US",
-  "cycle_hint": "Typically opens in the summer; national deadline around late September or early October"
+  "region_hint": "US"
  },
  {
   "source_id": "scholarship-cocacola",
@@ -120,7 +130,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "US",
-  "cycle_hint": "Typically opens in August; deadline around October 31"
+  "cycle_hint": "Typically opens in early August; deadline around September 30",
+  "cycle_hint_evidence": {
+   "quote": "from Monday, August 3, through 5 pm Eastern on Wednesday, September 30, 2026",
+   "url": "https://www.coca-colascholarsfoundation.org/apply/"
+  }
  },
  {
   "source_id": "scholarship-dell",
@@ -134,7 +148,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "US",
-  "cycle_hint": "Typically opens September 1; deadline around December 1"
+  "cycle_hint": "Typically opens October 1; deadline around mid-January",
+  "cycle_hint_evidence": {
+   "quote": "2026 OCT 1 Application Opens 2027 JAN 12 Application Deadline",
+   "url": "https://www.dellscholars.org/scholarship/"
+  }
  },
  {
   "source_id": "scholarship-jkc-undergrad",
@@ -174,7 +192,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "US",
-  "cycle_hint": "National College Match typically opens in August; deadline around late September"
+  "cycle_hint": "National College Match deadline was October 1 in 2026",
+  "cycle_hint_evidence": {
+   "quote": "The deadline for the 2026 QuestBridge National College Match was Thursday, October 1, at 11:59 p.m. Pacific Time.",
+   "url": "https://www.questbridge.org/high-school-students/national-college-match"
+  }
  },
  {
   "source_id": "scholarship-gates-scholarship",
@@ -188,7 +210,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "US",
-  "cycle_hint": "Typically opens in August; deadline around mid-September"
+  "cycle_hint": "Typically opens in mid-July; deadline around mid-September",
+  "cycle_hint_evidence": {
+   "quote": "Available July 15 2026 Deadline Sept 15 2026",
+   "url": "https://www.thegatesscholarship.org/scholarship"
+  }
  },
  {
   "source_id": "scholarship-hsf",
@@ -202,7 +228,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "US",
-  "cycle_hint": "Typically opens in the fall; deadline around the end of February"
+  "cycle_hint": "Typically opens in early January; deadline around mid-February",
+  "cycle_hint_evidence": {
+   "quote": "Available January 5 2026 Deadline February 15 2026",
+   "url": "https://www.hsf.net/scholarship"
+  }
  },
  {
   "source_id": "scholarship-uncf",
@@ -566,8 +596,7 @@
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
-  "region_hint": "Global",
-  "cycle_hint": "Typically opens in early August; deadline around early October"
+  "region_hint": "Global"
  },
  {
   "source_id": "scholarship-commonwealth-shared",
@@ -659,7 +688,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "Global",
-  "cycle_hint": "Typically submitted by host institutions; deadline around early January"
+  "cycle_hint": "Typically opens around October 1; deadline in early January",
+  "cycle_hint_evidence": {
+   "quote": "Opening of the call for applications: October 1, 2025 Deadline for the reception of applications by Campus France: January 8, 2026",
+   "url": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence"
+  }
  },
  {
   "source_id": "scholarship-mext",
@@ -672,8 +705,7 @@
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
-  "region_hint": "Asia",
-  "cycle_hint": "Typically announced by embassies in spring; applicants apply through the Japanese embassy"
+  "region_hint": "Asia"
  },
  {
   "source_id": "scholarship-jasso",
@@ -947,7 +979,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "Europe",
-  "cycle_hint": "Typically opens around October; deadline around February"
+  "cycle_hint": "Information typically published in autumn; scholarship portal open for two weeks in February",
+  "cycle_hint_evidence": {
+   "quote": "9-25 February 2026: Application portal for the SI Scholarships is open for two weeks.",
+   "url": "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
+  }
  },
  {
   "source_id": "scholarship-sweden-sisgp",
@@ -1092,7 +1128,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "US",
-  "cycle_hint": "Typically due around November"
+  "cycle_hint": "Opens annually on August 15; due November 15",
+  "cycle_hint_evidence": {
+   "quote": "The application opens annually on the 15th of August and is due on the 15th of November.",
+   "url": "https://robertsonscholars.org/applying/high-school-students/"
+  }
  },
  {
   "source_id": "scholarship-unc-morehead",
@@ -1105,8 +1145,7 @@
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
-  "region_hint": "US",
-  "cycle_hint": "Typically opens in August; deadline around October"
+  "region_hint": "US"
  },
  {
   "source_id": "scholarship-jefferson",
@@ -1119,8 +1158,7 @@
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
-  "region_hint": "US",
-  "cycle_hint": "Nominations typically take place in the fall"
+  "region_hint": "US"
  },
  {
   "source_id": "scholarship-rice-scholars",
@@ -1303,7 +1341,11 @@
   "check_cadence": "monthly",
   "source_kind": "official",
   "region_hint": "US",
-  "cycle_hint": "Entries typically due around October 31"
+  "cycle_hint": "Entries typically due around October 31",
+  "cycle_hint_evidence": {
+   "quote": "midnight, Oct. 31",
+   "url": "https://www.vfw.org/community/youth-and-education/youth-scholarships"
+  }
  },
  {
   "source_id": "scholarship-vfw-patriots",

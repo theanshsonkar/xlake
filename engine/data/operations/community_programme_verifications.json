@@ -29,5 +29,73 @@
     },
     "verification_note": "AWS Student Builder Groups (formerly Cloud Clubs); open to post-secondary students aged 18+.",
     "remote": false
+  },
+  {
+    "programme_id": "community-github-campus-experts",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://github.com/campus-experts",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications to the program open every July for a month.",
+        "url": "https://github.com/campus-experts"
+      },
+      "eligibility": {
+        "quote": "Be at least 18+ years of age. Validate your student status through the GitHub Student Developer Pack. Be enrolled in a post-secondary formal education institution.",
+        "url": "https://github.com/campus-experts"
+      }
+    },
+    "title": "GitHub Campus Experts",
+    "organizer": "GitHub",
+    "programme_status": "closed",
+    "summary": "GitHub's training and community programme for student leaders who build inclusive tech communities on campus. Applications open once a year in July.",
+    "eligibility": "Applicants must be 18+, validate student status through the Student Developer Pack, be enrolled in a post-secondary institution with more than a year left, and have used GitHub for at least six months.",
+    "levels": [
+      "undergraduate",
+      "graduate"
+    ],
+    "region": "Global",
+    "mode": "hybrid",
+    "requirements": [
+      "18+ years of age",
+      "Student status validated via GitHub Student Developer Pack",
+      "More than one year left as a student",
+      "GitHub user for at least six months"
+    ],
+    "verification_note": "July application window has passed; the next window is stated as July (year not published)."
+  },
+  {
+    "programme_id": "community-github-student-developer-pack",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://education.github.com/pack",
+    "official_evidence": {
+      "status": {
+        "quote": "Sign up for Student Developer Pack",
+        "url": "https://education.github.com/pack"
+      },
+      "funding": {
+        "quote": "Free GitHub Pro while you are a student.",
+        "url": "https://education.github.com/pack"
+      },
+      "eligibility": {
+        "quote": "Free access to 25+ Microsoft Azure cloud services plus $100 in Azure credit. For students aged 18+.",
+        "url": "https://education.github.com/pack"
+      }
+    },
+    "title": "GitHub Student Developer Pack",
+    "organizer": "GitHub",
+    "programme_status": "rolling",
+    "application_url": "https://education.github.com/pack",
+    "summary": "Free developer tools and cloud credits for verified students, including free GitHub Pro while enrolled.",
+    "funding": "Free GitHub Pro while you are a student; $100 in Azure credit for students aged 18+.",
+    "eligibility": "Offered to students; Azure credit is for students aged 18+.",
+    "levels": [
+      "student"
+    ],
+    "region": "Global",
+    "mode": "online"
   }
 ]

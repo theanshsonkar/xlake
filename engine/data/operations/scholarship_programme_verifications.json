@@ -173,5 +173,336 @@
         "url": "https://www.turkiyeburslari.gov.tr/"
       }
     }
+  },
+  {
+    "programme_id": "scholarship-goldwater",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://goldwaterscholarship.gov/",
+    "official_evidence": {
+      "status": {
+        "quote": "Application opens First Tuesday in September Nomination deadline Last Friday in January",
+        "url": "https://goldwaterscholarship.gov/"
+      }
+    },
+    "title": "Barry Goldwater Scholarship",
+    "organizer": "Barry Goldwater Scholarship and Excellence in Education Foundation",
+    "programme_status": "upcoming",
+    "region": "US",
+    "summary": "Federal scholarship for undergraduates in science, engineering and mathematics who intend research careers. Students apply through campus nomination.",
+    "verification_note": "Application opens the first Tuesday in September; nomination deadline last Friday in January; campus deadlines come first."
+  },
+  {
+    "programme_id": "scholarship-udall",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.udall.gov/OurPrograms/Scholarship/Scholarship.aspx",
+    "official_evidence": {
+      "status": {
+        "quote": "October 9 The 2027 online application is available.",
+        "url": "https://www.udall.gov/OurPrograms/Scholarship/ImportantDates.aspx"
+      },
+      "opening_date": {
+        "quote": "October 9 The 2027 online application is available.",
+        "url": "https://www.udall.gov/OurPrograms/Scholarship/ImportantDates.aspx"
+      },
+      "deadline": {
+        "quote": "March 4, 2027 Applications must be submitted through the online system by 11:59 p.m. MST",
+        "url": "https://www.udall.gov/OurPrograms/Scholarship/ImportantDates.aspx"
+      },
+      "funding": {
+        "quote": "In 2027, the Udall Foundation anticipates awarding up to 65 scholarships of $7,500 each.",
+        "url": "https://www.udall.gov/OurPrograms/Scholarship/Scholarship.aspx"
+      }
+    },
+    "title": "Udall Undergraduate Scholarship",
+    "organizer": "Udall Foundation",
+    "programme_status": "open",
+    "deadline": "2027-03-04",
+    "opening_date": "2026-10-09",
+    "region": "US",
+    "funding": "Up to 65 scholarships of $7,500 each",
+    "funding_amount": 7500,
+    "funding_currency": "USD",
+    "funding_period": "one-time",
+    "summary": "Scholarship for undergraduates committed to careers related to the environment, tribal policy or Native health care.",
+    "application_url": "https://www.udall.gov/OurPrograms/Scholarship/ImportantDates.aspx"
+  },
+  {
+    "programme_id": "scholarship-boren",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.borenawards.org/",
+    "official_evidence": {
+      "status": {
+        "quote": "The national deadlines for the 2027 Boren Awards are: Boren Fellowships: January 20, 2027 Boren Scholarships: January 27, 2027",
+        "url": "https://www.borenawards.org/"
+      },
+      "deadline": {
+        "quote": "Boren Fellowships: January 20, 2027 Boren Scholarships: January 27, 2027",
+        "url": "https://www.borenawards.org/"
+      }
+    },
+    "title": "Boren Awards",
+    "organizer": "NSEP / IIE",
+    "programme_status": "open",
+    "deadline": "2027-01-20",
+    "region": "US",
+    "summary": "Awards for US students to study languages and cultures critical to national security abroad. Fellowships are due January 20 and scholarships January 27, 2027.",
+    "verification_note": "Deadline shown is the Boren Fellowships date; Boren Scholarships are due 2027-01-27."
+  },
+  {
+    "programme_id": "scholarship-cocacola",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.coca-colascholarsfoundation.org/apply/",
+    "official_evidence": {
+      "status": {
+        "quote": "The 2027 Coca-Cola Scholars application is now closed.",
+        "url": "https://www.coca-colascholarsfoundation.org/apply/"
+      },
+      "deadline": {
+        "quote": "The deadline for the 2027 Coke Scholars application is 5 pm Eastern on September 30, 2026.",
+        "url": "https://www.coca-colascholarsfoundation.org/faq/"
+      },
+      "funding": {
+        "quote": "150 Coca-Cola Scholars are selected each year to receive this $20,000 scholarship.",
+        "url": "https://www.coca-colascholarsfoundation.org/apply/"
+      },
+      "eligibility": {
+        "quote": "Our application is open only to U.S. Citizens, U.S. Nationals, U.S. Permanent Residents, Refugees, Asylees",
+        "url": "https://www.coca-colascholarsfoundation.org/faq/"
+      }
+    },
+    "title": "Coca-Cola Scholars Program",
+    "organizer": "Coca-Cola Scholars Foundation",
+    "programme_status": "closed",
+    "deadline": "2026-09-30",
+    "region": "US",
+    "funding": "$20,000 scholarship for 150 Coca-Cola Scholars each year",
+    "funding_amount": 20000,
+    "funding_currency": "USD",
+    "funding_period": "one-time",
+    "eligibility": "Open to US citizens, nationals, permanent residents, refugees and asylees who are high school seniors in the 50 states, DC, Puerto Rico or select DoD schools.",
+    "citizenship": "US-only",
+    "intl_eligible": false,
+    "levels": [
+      "high_school"
+    ],
+    "summary": "Scholarship for graduating US high school seniors. The 2027 application closed on 30 September 2026."
+  },
+  {
+    "programme_id": "scholarship-dell",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.dellscholars.org/scholarship/",
+    "official_evidence": {
+      "status": {
+        "quote": "2026 OCT 1 Application Opens 2027 JAN 12 Application Deadline",
+        "url": "https://www.dellscholars.org/scholarship/"
+      },
+      "opening_date": {
+        "quote": "2026 OCT 1 Application Opens",
+        "url": "https://www.dellscholars.org/scholarship/"
+      },
+      "deadline": {
+        "quote": "2027 JAN 12 Application Deadline",
+        "url": "https://www.dellscholars.org/scholarship/"
+      },
+      "eligibility": {
+        "quote": "Be a high school senior graduating from a Texas high school Participate in an approved college readiness program in grades 11 and 12",
+        "url": "https://www.dellscholars.org/scholarship/"
+      }
+    },
+    "title": "Dell Scholars Program",
+    "organizer": "Michael & Susan Dell Foundation",
+    "programme_status": "open",
+    "deadline": "2027-01-12",
+    "opening_date": "2026-10-01",
+    "region": "US-TX",
+    "eligibility": "High school seniors graduating from a Texas high school who participate in an approved college readiness program in grades 11 and 12.",
+    "citizenship": "Texas high schools only",
+    "intl_eligible": false,
+    "levels": [
+      "high_school"
+    ],
+    "summary": "Scholarship for Texas high school seniors in approved college readiness programmes. The 2027 application opened 1 October 2026."
+  },
+  {
+    "programme_id": "scholarship-questbridge",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.questbridge.org/high-school-students/national-college-match",
+    "official_evidence": {
+      "status": {
+        "quote": "The deadline for the 2026 QuestBridge National College Match was Thursday, October 1, at 11:59 p.m. Pacific Time.",
+        "url": "https://www.questbridge.org/high-school-students/national-college-match"
+      },
+      "deadline": {
+        "quote": "The deadline for the 2026 QuestBridge National College Match was Thursday, October 1, at 11:59 p.m. Pacific Time.",
+        "url": "https://www.questbridge.org/high-school-students/national-college-match"
+      }
+    },
+    "title": "QuestBridge National College Match",
+    "organizer": "QuestBridge",
+    "programme_status": "closed",
+    "deadline": "2026-10-01",
+    "region": "US",
+    "summary": "Full four-year scholarships to 55 partner colleges for high-achieving low-income students. The 2026 Match deadline was 1 October."
+  },
+  {
+    "programme_id": "scholarship-gates-scholarship",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.thegatesscholarship.org/scholarship",
+    "official_evidence": {
+      "status": {
+        "quote": "Available July 15 2026 Deadline Sept 15 2026",
+        "url": "https://www.thegatesscholarship.org/scholarship"
+      },
+      "opening_date": {
+        "quote": "Available July 15 2026",
+        "url": "https://www.thegatesscholarship.org/scholarship"
+      },
+      "deadline": {
+        "quote": "Deadline Sept 15 2026",
+        "url": "https://www.thegatesscholarship.org/scholarship"
+      }
+    },
+    "title": "The Gates Scholarship",
+    "organizer": "Gates Foundation",
+    "programme_status": "closed",
+    "deadline": "2026-09-15",
+    "opening_date": "2026-07-15",
+    "region": "US",
+    "summary": "Scholarship for high-achieving minority high school seniors from low-income households. The 2026 cycle deadline was 15 September 2026.",
+    "verification_note": "Portal page still labelled Open when fetched, though its stated deadline has passed; status derived from the deadline."
+  },
+  {
+    "programme_id": "scholarship-hsf",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.hsf.net/scholarship",
+    "official_evidence": {
+      "status": {
+        "quote": "2026 HSF Scholar Program Application Status: Closed",
+        "url": "https://www.hsf.net/scholarship"
+      },
+      "deadline": {
+        "quote": "Deadline February 15 2026",
+        "url": "https://www.hsf.net/scholarship"
+      },
+      "opening_date": {
+        "quote": "Available January 5 2026",
+        "url": "https://www.hsf.net/scholarship"
+      }
+    },
+    "title": "HSF Scholar Program",
+    "organizer": "Hispanic Scholarship Fund",
+    "programme_status": "closed",
+    "deadline": "2026-02-15",
+    "opening_date": "2026-01-05",
+    "region": "US",
+    "summary": "Scholarships for students of Hispanic heritage. The 2026 application closed on 15 February 2026; the next cycle is not published."
+  },
+  {
+    "programme_id": "scholarship-duke-robertson",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://robertsonscholars.org/applying/high-school-students/",
+    "official_evidence": {
+      "status": {
+        "quote": "The application opens annually on the 15th of August and is due on the 15th of November.",
+        "url": "https://robertsonscholars.org/applying/high-school-students/"
+      },
+      "eligibility": {
+        "quote": "The Robertson Scholars Leadership Program welcomes applications from international students.",
+        "url": "https://robertsonscholars.org/applying/high-school-students/"
+      }
+    },
+    "title": "Robertson Scholars Leadership Program",
+    "organizer": "Robertson Scholars",
+    "programme_status": "needs_confirmation",
+    "region": "US",
+    "intl_eligible": true,
+    "eligibility": "The Robertson Scholars Leadership Program welcomes applications from international students.",
+    "summary": "Scholarship and leadership programme across Duke University and UNC-Chapel Hill. The application opens annually on 15 August and is due 15 November.",
+    "verification_note": "Annual window stated without a year; exact 2026 deadline not stated on page."
+  },
+  {
+    "programme_id": "scholarship-nsp-portal",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://scholarships.gov.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "The Portal is open for Academic year 2026-27 from 1'st June 2026 onwards.",
+        "url": "https://scholarships.gov.in/"
+      },
+      "deadline": {
+        "quote": "Closing dates for student application is 31-10-2026 and closing date for institute verification is : 15-11-2026",
+        "url": "https://scholarships.gov.in/"
+      }
+    },
+    "title": "National Scholarship Portal",
+    "organizer": "Government of India",
+    "programme_status": "open",
+    "deadline": "2026-10-31",
+    "region": "India",
+    "summary": "Government of India portal for central and state scholarships, open for academic year 2026-27 since 1 June 2026. Shown deadline is for PM-USP merit-based renewal applications.",
+    "verification_note": "Closing date applies to renewals of PM-USP CSSS and PM-USP Special Scholarship for J&K and Ladakh; other schemes have separate dates."
+  },
+  {
+    "programme_id": "scholarship-eiffel",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence",
+    "official_evidence": {
+      "status": {
+        "quote": "Opening of the call for applications: October 1, 2025 Deadline for the reception of applications by Campus France: January 8, 2026 included.",
+        "url": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence"
+      },
+      "eligibility": {
+        "quote": "applicants from foreign countries up to 29 years old at master's level, and applicants up to 35 years old at PhD level",
+        "url": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence"
+      }
+    },
+    "title": "Eiffel Excellence Scholarship",
+    "organizer": "Campus France",
+    "programme_status": "needs_confirmation",
+    "region": "France",
+    "summary": "French government excellence scholarship for international master's and PhD students, submitted only by French higher education institutions.",
+    "eligibility": "Applicants up to 29 years old at master's level and up to 35 at PhD level; only applications submitted by French institutions are accepted.",
+    "verification_note": "2026 session ran 1 Oct 2025 to 8 Jan 2026; 2027 session dates not shown on page."
+  },
+  {
+    "programme_id": "scholarship-sweden-si",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/",
+    "official_evidence": {
+      "status": {
+        "quote": "Application closed Information about the application round for academic year 2027/2028 will be published on this page on 19 October.",
+        "url": "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
+      }
+    },
+    "title": "SI Scholarship for Global Professionals",
+    "organizer": "Swedish Institute",
+    "programme_status": "needs_confirmation",
+    "region": "Sweden",
+    "summary": "Swedish Institute scholarship for master's studies in Sweden. Information for academic year 2027/2028 is due on the page on 19 October.",
+    "verification_note": "2026 portal ran 9-25 February; 2027/2028 round not yet published as of fetch."
   }
 ]

@@ -1196,7 +1196,75 @@ def validate_verification(rec: Dict) -> Tuple[bool, str]:
         entry = next((evidence.get(key) for key in keys if evidence.get(key) is not None), None)
         if not isinstance(entry, dict) or not str(entry.get("quote", "")).strip() or not str(entry.get("url", "")).strip():
             return False, "{} requires non-empty quote and url evidence ({})".format(field, ", ".join(keys))
+    if rec.get("recheck_after") not in (None, ""):
+        if _parse_when(rec.get("recheck_after")) is None:
+            return False, "recheck_after must be an ISO date"
+        # Hand-verified (expiring) records must quote evidence for every asserted fact.
+        for field, key in FACT_EVIDENCE_FIELDS:
+            if rec.get(field) in (None, "", [], {}):
+                continue
+            entry = evidence.get(key)
+            if not isinstance(entry, dict) or not str(entry.get("quote", "")).strip() or not str(entry.get("url", "")).strip():
+                return False, "{} requires non-empty quote and url evidence ({})".format(field, key)
     return True, ""
+
+
+# Extra facts of hand-verified records and the evidence key that must back each.
+FACT_EVIDENCE_FIELDS = (
+    ("funding", "funding"), ("funding_amount", "funding"), ("eligibility", "eligibility"),
+    ("levels", "eligibility"), ("citizenship", "eligibility"), ("program_start", "program_dates"),
+    ("program_end", "program_dates"),
+)
+EXTENDED_OVERLAY_FIELDS = (
+    "summary", "requirements", "region", "mode", "logo_url", "organizer", "levels",
+    "intl_eligible", "citizenship", "funding_amount", "funding_currency", "funding_period",
+    "program_start", "program_end", "recheck_after", "title",
+)
+
+
+def _parse_when(value) -> Optional[datetime]:
+    if value in (None, ""):
+        return None
+    try:
+        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+
+
+def verification_expired(rec: Dict, now) -> bool:
+    """True once a record's recheck_after has passed."""
+    due = _parse_when(rec.get("recheck_after"))
+    current = _parse_when(_timestamp(now))
+    return bool(due and current and current > due)
+
+
+def recheck_official_urls(verifications: Iterable[Dict], fetch: Optional[Callable] = None) -> Dict[str, str]:
+    """Re-fetch each official_url; return {programme_id: reason} for 404/410 or a vanished quote.
+
+    Only definitive signals flag a record: HTTP 404/410, or (when the record sets
+    recheck_quote) none of its evidence quotes found on a successfully read page.
+    Network errors and blocks are uncertain and never flag.
+    """
+    if fetch is None:
+        from core import webfetch
+        fetch = webfetch.fetch_page
+    flagged: Dict[str, str] = {}
+    for rec in verifications:
+        if not isinstance(rec, dict) or not rec.get("official_url") or rec.get("recheck_after") in (None, ""):
+            continue
+        try:
+            status, _final, html, _err = fetch(rec["official_url"])
+        except Exception:
+            continue
+        if status in (404, 410):
+            flagged[rec["programme_id"]] = "official_url_http_{}".format(status)
+        elif rec.get("recheck_quote") and status is not None and status < 400 and html:
+            body = " ".join(re.sub(r"<[^>]+>", " ", html).split()).lower()
+            quotes = [str(e.get("quote", "")) for e in (rec.get("official_evidence") or {}).values() if isinstance(e, dict)]
+            if quotes and not any(" ".join(q.split()).lower() in body for q in quotes if q.strip()):
+                flagged[rec["programme_id"]] = "official_page_changed"
+    return flagged
 
 
 def _timestamp(value) -> Optional[str]:
@@ -1219,7 +1287,8 @@ def _later_timestamp(existing, candidate: str) -> str:
         return candidate
 
 
-def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now, *, config: ProgrammeConfig) -> List[Dict]:
+def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now, *, config: ProgrammeConfig,
+                        url_flags: Optional[Dict[str, str]] = None) -> List[Dict]:
     """Overlay valid manual facts, retaining all unrelated lake rows."""
     now_value = _timestamp(now) or datetime.now(timezone.utc).isoformat(timespec="seconds")
     result = deepcopy(list(rows))
@@ -1228,7 +1297,7 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
         "programme_status", "opening_date", "deadline", "eligibility", "funding",
         "remote", "international_eligibility", "official_url", "application_url",
         "opportunity_type", "verification_note",
-    )
+    ) + EXTENDED_OVERLAY_FIELDS
     for verification in verifications:
         valid, reason = validate_verification(verification)
         if not valid:
@@ -1286,6 +1355,19 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
             row["is_live"] = False
             if not row.get("went_dead_at"):
                 row["went_dead_at"] = now_value
+        expiry_reason = None
+        if verification_expired(verification, now_value):
+            expiry_reason = "verification_expired"
+        elif url_flags and programme_id in url_flags:
+            expiry_reason = url_flags[programme_id]
+        if expiry_reason:
+            # Stale or unconfirmable hand-verified facts are never presented as open.
+            row["programme_status"] = "needs_confirmation"
+            row["needs_confirmation"] = True
+            row["is_live"] = False
+            row["verification_flag"] = expiry_reason
+        else:
+            row.pop("verification_flag", None)
     return result
 
 
@@ -1885,7 +1967,12 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     retire_closed(config.category, merged, (checked_at or datetime.now(timezone.utc)).date(), now)
     _atomic_json(lake_path, merged)
     verification_now = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    merged = apply_verifications(merged, load_verifications(config.verifications_path), verification_now, config=config)
+    verifications = load_verifications(config.verifications_path)
+    try:
+        url_flags = recheck_official_urls(verifications)
+    except Exception:
+        url_flags = {}
+    merged = apply_verifications(merged, verifications, verification_now, config=config, url_flags=url_flags)
     _atomic_json(lake_path, merged)
     return {"records": records, "observations": observations, "merged_count": len(merged),
             "routed_research": len(routed_research), "stats": stats}

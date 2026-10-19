@@ -347,7 +347,7 @@
   {
     "programme_id": "outreachy",
     "verified_at": "2026-10-19T00:00:00Z",
-    "verified_by": "manual-official-page",
+    "verified_by": "manual",
     "programme_status": "closed",
     "official_url": "https://www.outreachy.org/",
     "application_url": "https://www.outreachy.org/apply/",
@@ -355,10 +355,38 @@
       "status": {
         "quote": "Intern applications are accepted from early August to mid August",
         "url": "https://www.outreachy.org/"
+      },
+      "funding": {
+        "quote": "Paid - $7,000 USD total internship stipend",
+        "url": "https://www.outreachy.org/"
+      },
+      "eligibility": {
+        "quote": "You must be 18 years of age or older by Dec. 7, 2026 You must be available for a full-time internship.",
+        "url": "https://www.outreachy.org/apply/eligibility/"
+      },
+      "program_dates": {
+        "quote": "The internship runs from Dec. 7, 2026 to March 8, 2027.",
+        "url": "https://www.outreachy.org/apply/eligibility/"
       }
     },
-    "verification_note": "December 2026 cohort applications closed (internship Dec 7, 2026 to Mar 8, 2027, $7,000 stipend). May cohort applications historically open in February; 2027 dates not yet published.",
-    "funding": "$7,000 USD total internship stipend"
+    "verification_note": "May 2027 cohort dates not yet published; May cohorts historically take applications in February.",
+    "funding": "$7,000 USD total internship stipend",
+    "recheck_after": "2026-11-18",
+    "title": "Outreachy",
+    "organizer": "Software Freedom Conservancy",
+    "summary": "Paid, remote three-month internships in open source and open science for people who face underrepresentation or discrimination in tech. December 2026 applications have closed.",
+    "funding_amount": 7000,
+    "funding_currency": "USD",
+    "funding_period": "total",
+    "eligibility": "Applicants must be 18 or older by Dec. 7, 2026 and available for a full-time internship of 30 hours per week.",
+    "program_start": "2026-12-07",
+    "program_end": "2027-03-08",
+    "region": "Global",
+    "mode": "remote",
+    "requirements": [
+      "18 years of age or older",
+      "Available full time (30 hours per week)"
+    ]
   },
   {
     "programme_id": "kde-season-of-kde",
@@ -379,5 +407,112 @@
     },
     "verification_note": "Season of KDE 2026 applications closed; the 2026 edition opened 2025-12-15, so expect a similar December window.",
     "deadline": "2026-01-14"
+  },
+  {
+    "programme_id": "google-summer-of-code",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://summerofcode.withgoogle.com/",
+    "official_evidence": {
+      "status": {
+        "quote": "The timeline for Google Summer of Code can shift a bit each year. Below is the current program's timeline and at the bottom of the page you can find the general timing for your next GSoC adventure",
+        "url": "https://developers.google.com/open-source/gsoc/timeline"
+      },
+      "eligibility": {
+        "quote": "18+ years old at registration Eligible to work in your country of residence Student or Open source beginner Accepted into GSoC no more than once previously",
+        "url": "https://developers.google.com/open-source/gsoc/faq"
+      },
+      "funding": {
+        "quote": "Accepted contributors receive a stipend for completing a coding project over a flexible timeframe of 8-22 weeks",
+        "url": "https://developers.google.com/open-source/gsoc/faq"
+      }
+    },
+    "title": "Google Summer of Code",
+    "organizer": "Google",
+    "programme_status": "needs_confirmation",
+    "application_url": "https://summerofcode.withgoogle.com/",
+    "summary": "Google programme connecting new open source contributors with mentoring organizations for a stipended coding project. The 2027 timeline has not been published.",
+    "eligibility": "Contributors must be at least 18 years old, eligible to work in their country of residence, a student or open source beginner, and accepted into GSoC no more than once previously.",
+    "levels": [
+      "student",
+      "beginner"
+    ],
+    "intl_eligible": true,
+    "region": "Global",
+    "mode": "remote",
+    "funding": "Accepted contributors receive a stipend for completing a coding project over 8-22 weeks.",
+    "requirements": [
+      "18+ years old at registration",
+      "Eligible to work in country of residence",
+      "Student or open source beginner",
+      "Accepted into GSoC no more than once previously"
+    ],
+    "verification_note": "2026 cycle is over; the page shows general timing only (organisation applications in January-February, contributor applications in spring). No 2027 dates published."
+  },
+  {
+    "programme_id": "gssoc",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://gssoc.girlscript.tech/",
+    "official_evidence": {
+      "status": {
+        "quote": "24th March 2026 Launch Event + Applications Open",
+        "url": "https://gssoc.girlscript.tech/"
+      },
+      "opening_date": {
+        "quote": "24th March 2026 Launch Event + Applications Open",
+        "url": "https://gssoc.girlscript.tech/"
+      }
+    },
+    "title": "GirlScript Summer of Code",
+    "organizer": "GirlScript Foundation",
+    "programme_status": "needs_confirmation",
+    "application_url": "https://gssoc.girlscript.tech/",
+    "summary": "Annual open source contribution programme run by GirlScript Foundation, a non-profit. The 2026 edition applications opened on 24 March 2026; no 2027 edition is announced.",
+    "region": "Global",
+    "mode": "remote",
+    "verification_note": "2026 edition: applications opened 24 March, selections early April, contribution May to June. 2027 dates not published."
+  },
+  {
+    "programme_id": "mlh-fellowship-open-source",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://fellowship.mlh.io/",
+    "official_evidence": {
+      "status": {
+        "quote": "Apply today to be considered for our upcoming start dates.",
+        "url": "https://fellowship.mlh.io/"
+      },
+      "eligibility": {
+        "quote": "Be at least 18 years of age Reside in a country not embargoed by the United States",
+        "url": "https://fellowship.mlh.io/faq"
+      },
+      "funding": {
+        "quote": "Fellows may receive either university credits or an educational stipend as part of their participation",
+        "url": "https://fellowship.mlh.io/faq"
+      }
+    },
+    "title": "MLH Fellowship",
+    "organizer": "Major League Hacking",
+    "programme_status": "rolling",
+    "application_url": "https://fellowship.mlh.io/",
+    "summary": "Fully remote 12-week internship alternative where participants earn a stipend while working on open source projects. Batches run regularly; no fixed deadline is posted.",
+    "eligibility": "Applicants must be at least 18, reside in a country not embargoed by the United States, and commit at least 20 hours per week. The Production Engineering track requires residence in the United States, Canada or Mexico.",
+    "levels": [
+      "student"
+    ],
+    "intl_eligible": true,
+    "region": "Global",
+    "mode": "remote",
+    "requirements": [
+      "At least 18 years of age",
+      "Reside in a country not embargoed by the United States",
+      "Commit at least 20 hours per week"
+    ],
+    "funding": "Fellows may receive university credits or an educational stipend depending on the program.",
+    "verification_note": "Site says to apply for upcoming start dates; no batch deadline published on fetched pages."
   }
 ]

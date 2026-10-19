@@ -121,5 +121,60 @@
         "url": "https://www.nationalgeographic.org/society/grants-and-investments/"
       }
     }
+  },
+  {
+    "programme_id": "grant-erc",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://erc.europa.eu/apply-grant/starting-grant",
+    "official_evidence": {
+      "status": {
+        "quote": "Starting Grant 2027 (ERC-2027-STG) Open: 22 July 2026 Deadline:14 October 2026",
+        "url": "https://erc.europa.eu/apply-grant/starting-grant"
+      },
+      "deadline": {
+        "quote": "Starting Grant 2027 (ERC-2027-STG) Open: 22 July 2026 Deadline:14 October 2026",
+        "url": "https://erc.europa.eu/apply-grant/starting-grant"
+      },
+      "opening_date": {
+        "quote": "Open: 22 July 2026",
+        "url": "https://erc.europa.eu/apply-grant/starting-grant"
+      }
+    },
+    "title": "ERC Starting Grant",
+    "organizer": "European Research Council",
+    "programme_status": "closed",
+    "deadline": "2026-10-14",
+    "opening_date": "2026-07-22",
+    "region": "EU",
+    "summary": "European Research Council grant for early-career researchers. The ERC-2027-STG call closed on 14 October 2026."
+  },
+  {
+    "programme_id": "grant-birac-big",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual",
+    "recheck_after": "2026-11-18",
+    "official_url": "https://birac.nic.in/big.php",
+    "official_evidence": {
+      "status": {
+        "quote": "The call for proposal is announced twice a year, i.e. on 1st January and 1st July. Call for proposals typically remains open for about 45 days.",
+        "url": "https://birac.nic.in/big.php"
+      },
+      "funding": {
+        "quote": "successful BIG Innovators receive up to INR 50 lakh for research projects with commercialization potential with duration of up to 18 months",
+        "url": "https://birac.nic.in/big.php"
+      }
+    },
+    "title": "BIRAC Biotechnology Ignition Grant (BIG)",
+    "organizer": "BIRAC",
+    "programme_status": "needs_confirmation",
+    "region": "India",
+    "funding": "Up to INR 50 lakh for research projects of up to 18 months",
+    "funding_amount": 5000000,
+    "funding_currency": "INR",
+    "funding_period": "total",
+    "summary": "BIRAC's flagship scheme funding proof-of-concept biotechnology ideas. Calls are announced on 1 January and 1 July and stay open about 45 days.",
+    "verification_note": "Page states the call calendar; current call status not stated."
   }
 ]
