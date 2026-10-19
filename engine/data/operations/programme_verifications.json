@@ -1,42 +1,5 @@
 [
   {
-    "programme_id": "outreachy",
-    "verified_at": "2026-08-18T00:00:00Z",
-    "verified_by": "manual-ai",
-    "programme_status": "opening_soon",
-    "opening_date": "2026-08-24",
-    "deadline": "2026-08-31",
-    "eligibility": "Open worldwide to anyone who faces under-representation, systemic bias, or discrimination in the technology industry of their country. NOTE: students in India (treated as Northern Hemisphere) are only eligible for the May-August cohort, so Indian students are NOT eligible for this December 2026 cohort; non-students in India may apply.",
-    "funding": "$7,000 USD total internship stipend",
-    "remote": true,
-    "international_eligibility": true,
-    "official_url": "https://www.outreachy.org/",
-    "application_url": "https://www.outreachy.org/apply/",
-    "official_evidence": {
-      "status": {
-        "quote": "Aug. 24, 2026 at 4pm UTC | Initial applications open",
-        "url": "https://www.outreachy.org/docs/applicant/#outreachy-schedule"
-      },
-      "opening_date": {
-        "quote": "Aug. 24, 2026 at 4pm UTC | Initial applications open",
-        "url": "https://www.outreachy.org/docs/applicant/#outreachy-schedule"
-      },
-      "deadline": {
-        "quote": "Aug. 31, 2026 at 4pm UTC | Initial application deadline",
-        "url": "https://www.outreachy.org/docs/applicant/#outreachy-schedule"
-      },
-      "funding": {
-        "quote": "Interns are paid a stipend of $7,000 USD for the three month internship.",
-        "url": "https://www.outreachy.org/docs/applicant/"
-      },
-      "eligibility": {
-        "quote": "Students in India are considered to be in the northern hemisphere, regardless of where their university is located.",
-        "url": "https://www.outreachy.org/docs/applicant/#eligibility"
-      }
-    },
-    "verification_note": "December 2026 cohort. Internship runs Dec. 7, 2026 to March 8, 2027. Initial application window Aug 24-31, 2026."
-  },
-  {
     "programme_id": "igalia-coding-experience",
     "verified_at": "2026-08-18T00:00:00Z",
     "verified_by": "manual-ai",
@@ -49,29 +12,6 @@
       }
     },
     "verification_note": "2026 selection process complete; all successful candidates notified. Recheck for next-year cycle."
-  },
-  {
-    "programme_id": "hacktoberfest",
-    "verified_at": "2026-08-18T00:00:00Z",
-    "verified_by": "manual-ai",
-    "programme_status": "opening_soon",
-    "official_url": "https://hacktoberfest.com/",
-    "official_evidence": {
-      "status": {
-        "quote": "You will need to apply to host a Fest, and applications will open soon.",
-        "url": "https://hacktoberfest.com/"
-      },
-      "pivot": {
-        "quote": "Hacktoberfest is moving away from counting PRs this year.",
-        "url": "https://hacktoberfest.com/"
-      },
-      "format": {
-        "quote": "Online and local events (Fests) everywhere, all about building with open source AI.",
-        "url": "https://hacktoberfest.com/"
-      }
-    },
-    "opportunity_type": "community_event",
-    "verification_note": "RECATEGORIZED: 2026 Hacktoberfest is no longer a pull-request / good-first-issue programme. It is now local/online Fests about open-source AI (October 2026, 300+ events) under MLH and DEV. Host applications open soon."
   },
   {
     "programme_id": "sequoia-oss-fellowship",
@@ -361,12 +301,72 @@
     "verification_note": "No 2026 fellowship (strategic redesign); information on the 2027 Fellowship expected October 2026. Recorded closed 2026-08-25."
   },
   {
-    "programme_id": "kde-season-of-kde",
-    "verified_at": "2026-08-25",
-    "verified_by": "manual-verification",
+    "programme_id": "hacktoberfest",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
+    "programme_status": "open",
+    "official_url": "https://hacktoberfest.com/",
+    "application_url": "https://hacktoberfest.com/",
+    "official_evidence": {
+      "status": {
+        "quote": "Hacktoberfest is a month-long celebration of open source throughout October.",
+        "url": "https://hacktoberfest.com/"
+      }
+    },
+    "verification_note": "Hacktoberfest 2026 (October), run by MLH and DEV; swag for online and in-person participation.",
+    "remote": true,
+    "international_eligibility": true
+  },
+  {
+    "programme_id": "social-winter-of-code",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
+    "programme_status": "open",
+    "official_url": "https://swoc.in/",
+    "application_url": "https://swoc.in/",
+    "official_evidence": {
+      "status": {
+        "quote": "20 Aug 2026 Registrations open 31 Dec 2026 Registrations close",
+        "url": "https://swoc.in/"
+      },
+      "opening_date": {
+        "quote": "20 Aug 2026 Registrations open",
+        "url": "https://swoc.in/"
+      },
+      "deadline": {
+        "quote": "31 Dec 2026 Registrations close",
+        "url": "https://swoc.in/"
+      }
+    },
+    "verification_note": "Season 7, Winter 2026-27; programme runs 1 Jan to 30 Mar 2027.",
+    "opening_date": "2026-08-20",
+    "deadline": "2026-12-31",
+    "remote": true,
+    "international_eligibility": true
+  },
+  {
+    "programme_id": "outreachy",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
     "programme_status": "closed",
-    "deadline": "2026-01-14",
+    "official_url": "https://www.outreachy.org/",
+    "application_url": "https://www.outreachy.org/apply/",
+    "official_evidence": {
+      "status": {
+        "quote": "Intern applications are accepted from early August to mid August",
+        "url": "https://www.outreachy.org/"
+      }
+    },
+    "verification_note": "December 2026 cohort applications closed (internship Dec 7, 2026 to Mar 8, 2027, $7,000 stipend). May cohort applications historically open in February; 2027 dates not yet published.",
+    "funding": "$7,000 USD total internship stipend"
+  },
+  {
+    "programme_id": "kde-season-of-kde",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
+    "programme_status": "closed",
     "official_url": "https://season.kde.org/",
+    "application_url": "https://season.kde.org/",
     "official_evidence": {
       "status": {
         "quote": "Deadline for the contributors applications 2026-01-14",
@@ -377,6 +377,7 @@
         "url": "https://season.kde.org/"
       }
     },
-    "verification_note": "SoK 2026 applications closed 2026-01-14; work period ended 2026-03-20. Next season not yet dated. Recorded closed 2026-08-25."
+    "verification_note": "Season of KDE 2026 applications closed; the 2026 edition opened 2025-12-15, so expect a similar December window.",
+    "deadline": "2026-01-14"
   }
 ]

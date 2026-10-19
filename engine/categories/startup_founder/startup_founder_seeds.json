@@ -1,0 +1,56 @@
+[
+  {
+    "source_id": "startup-yc-batch",
+    "programme_id": "startup-yc-batch",
+    "programme_name": "Y Combinator Batch",
+    "organizer": "Y Combinator",
+    "official_url": "https://www.ycombinator.com/",
+    "allowed_path_hints": [],
+    "check_cadence": "daily"
+  },
+  {
+    "source_id": "startup-yc-startup-school",
+    "programme_id": "startup-yc-startup-school",
+    "programme_name": "YC Startup School",
+    "organizer": "Y Combinator",
+    "official_url": "https://www.startupschool.org/",
+    "allowed_path_hints": [],
+    "check_cadence": "daily"
+  },
+  {
+    "source_id": "startup-a16z-speedrun",
+    "programme_id": "startup-a16z-speedrun",
+    "programme_name": "a16z speedrun",
+    "organizer": "Andreessen Horowitz",
+    "official_url": "https://speedrun.a16z.com/",
+    "allowed_path_hints": [],
+    "check_cadence": "daily"
+  },
+  {
+    "source_id": "startup-entrepreneurs-first",
+    "programme_id": "startup-entrepreneurs-first",
+    "programme_name": "Entrepreneurs First",
+    "organizer": "Entrepreneurs First",
+    "official_url": "https://www.joinef.com/",
+    "allowed_path_hints": [],
+    "check_cadence": "daily"
+  },
+  {
+    "source_id": "startup-aws-activate",
+    "programme_id": "startup-aws-activate",
+    "programme_name": "AWS Activate",
+    "organizer": "Amazon Web Services",
+    "official_url": "https://aws.amazon.com/startups/credits",
+    "allowed_path_hints": [],
+    "check_cadence": "daily"
+  },
+  {
+    "source_id": "startup-nsrcel-women-startup-program",
+    "programme_id": "startup-nsrcel-women-startup-program",
+    "programme_name": "NSRCEL Women Startup Program",
+    "organizer": "NSRCEL, IIM Bangalore",
+    "official_url": "https://www.nsrcel.org/",
+    "allowed_path_hints": [],
+    "check_cadence": "daily"
+  }
+]

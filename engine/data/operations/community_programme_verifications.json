@@ -1,0 +1,33 @@
+[
+  {
+    "programme_id": "community-women-techmakers-ambassadors",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
+    "programme_status": "closed",
+    "official_url": "https://developers.google.com/womentechmakers/ambassadors",
+    "application_url": "https://developers.google.com/womentechmakers/ambassadors",
+    "official_evidence": {
+      "status": {
+        "quote": "Applications are closed and expected to open in May.",
+        "url": "https://developers.google.com/womentechmakers/ambassadors"
+      }
+    },
+    "verification_note": "Next cycle expected May per the official page."
+  },
+  {
+    "programme_id": "community-aws-cloud-clubs",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
+    "programme_status": "rolling",
+    "official_url": "https://aws.amazon.com/developer/community/students/cloudclubs/",
+    "application_url": "https://aws.amazon.com/developer/community/students/cloudclubs/",
+    "official_evidence": {
+      "status": {
+        "quote": "Apply now to launch a new group on your campus.",
+        "url": "https://aws.amazon.com/developer/community/students/cloudclubs/"
+      }
+    },
+    "verification_note": "AWS Student Builder Groups (formerly Cloud Clubs); open to post-secondary students aged 18+.",
+    "remote": false
+  }
+]

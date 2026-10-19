@@ -1,0 +1,116 @@
+[
+  {
+    "programme_id": "startup-yc-batch",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
+    "programme_status": "open",
+    "official_url": "https://www.ycombinator.com/",
+    "application_url": "https://www.ycombinator.com/apply",
+    "official_evidence": {
+      "status": {
+        "quote": "Y Combinator is accepting applications for the Winter 2027 Batch funding cycle.",
+        "url": "https://www.ycombinator.com/apply"
+      },
+      "deadline": {
+        "quote": "The deadline to apply on-time is November 2 at 8pm PT",
+        "url": "https://www.ycombinator.com/apply"
+      },
+      "funding": {
+        "quote": "We invest $500,000, and our investment gives YC 7% of your company plus an incremental equity amount that will be fixed when you raise money from other investors.",
+        "url": "https://www.ycombinator.com/deal"
+      }
+    },
+    "verification_note": "Winter 2027 batch (Jan-Mar, San Francisco). Decision by December 11 for on-time applicants.",
+    "deadline": "2026-11-02",
+    "funding": "$500,000 for 7% equity plus an incremental equity amount",
+    "remote": false
+  },
+  {
+    "programme_id": "startup-yc-startup-school",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
+    "programme_status": "rolling",
+    "official_url": "https://www.startupschool.org/",
+    "application_url": "https://www.startupschool.org/",
+    "official_evidence": {
+      "status": {
+        "quote": "Startup School is a free online course on how to start a startup.",
+        "url": "https://www.startupschool.org/"
+      }
+    },
+    "verification_note": "Free online course by Y Combinator; sign-up open.",
+    "funding": "Free (no equity)",
+    "remote": true
+  },
+  {
+    "programme_id": "startup-a16z-speedrun",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
+    "programme_status": "rolling",
+    "official_url": "https://speedrun.a16z.com/",
+    "application_url": "https://speedrun.a16z.com/",
+    "official_evidence": {
+      "status": {
+        "quote": "Apply now",
+        "url": "https://speedrun.a16z.com/"
+      },
+      "funding": {
+        "quote": "Up to $1M in funding targeting a two-week close",
+        "url": "https://speedrun.a16z.com/"
+      }
+    },
+    "verification_note": "Rolling application; cohort dates not stated on the page.",
+    "funding": "Up to $1M in funding plus $10M+ in partner credits"
+  },
+  {
+    "programme_id": "startup-entrepreneurs-first",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
+    "programme_status": "rolling",
+    "official_url": "https://www.joinef.com/",
+    "application_url": "https://www.joinef.com/",
+    "official_evidence": {
+      "status": {
+        "quote": "Apply now",
+        "url": "https://www.joinef.com/"
+      }
+    },
+    "verification_note": "Cofounder-matching programme with global offices; cohort dates not stated on the homepage."
+  },
+  {
+    "programme_id": "startup-aws-activate",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
+    "programme_status": "rolling",
+    "official_url": "https://aws.amazon.com/startups/credits",
+    "application_url": "https://aws.amazon.com/startups/credits",
+    "official_evidence": {
+      "status": {
+        "quote": "Apply for up to $200,000 in AWS Activate Credits",
+        "url": "https://aws.amazon.com/startups/credits"
+      },
+      "funding": {
+        "quote": "Apply for up to $200,000 in AWS Activate Credits",
+        "url": "https://aws.amazon.com/startups/credits"
+      }
+    },
+    "verification_note": "Credits programme, not equity.",
+    "funding": "Up to $200,000 in AWS Activate credits",
+    "remote": true
+  },
+  {
+    "programme_id": "startup-nsrcel-women-startup-program",
+    "verified_at": "2026-10-19T00:00:00Z",
+    "verified_by": "manual-official-page",
+    "programme_status": "open",
+    "official_url": "https://www.nsrcel.org/",
+    "application_url": "https://www.nsrcel.org/",
+    "official_evidence": {
+      "status": {
+        "quote": "Women Founders - Build the startup you've been dreaming of! Join the Women Startup Program. Apply Now",
+        "url": "https://www.nsrcel.org/"
+      }
+    },
+    "verification_note": "IIM Bangalore (NSRCEL) women founders programme, India."
+  }
+]
