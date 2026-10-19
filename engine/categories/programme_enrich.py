@@ -379,10 +379,34 @@ _CURRENCY = {
     "chf": ("CHF ", "CHF"), "₹": ("₹", "INR"), "inr": ("₹", "INR"), "rs": ("₹", "INR"),
     "cad": ("CA$", "CAD"), "aud": ("A$", "AUD"), "c$": ("CA$", "CAD"), "a$": ("A$", "AUD"),
 }
+_NUM = r"\d{1,3}(?:,\d{2,3})+(?:\.\d+)?|\d+(?:\.\d+)?"
+_MULT = r"million|thousand|lakhs?|lacs?|crores?|[kKmM](?![a-z])"
 _AMOUNT = re.compile(
     r"(?P<pre>US\$|USD|C\$|A\$|CAD|AUD|CHF|EUR|GBP|INR|Rs\.?|[$€£₹])\s?"
-    r"(?P<num>\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)\s?(?P<mult>million|thousand|lakhs?|[kKmM](?![a-z]))?"
-    r"|(?P<num2>\d{1,3}(?:,\d{3})+|\d{3,})\s?(?P<post>USD|EUR|GBP|CHF|INR|euros?|US dollars)\b", re.I)
+    r"(?P<num>" + _NUM + r")\s?(?P<mult>" + _MULT + r")?"
+    r"|(?P<num2>\d{1,3}(?:,\d{2,3})+|\d{3,})\s?(?P<post>USD|EUR|GBP|CHF|INR|euros?|US dollars)\b", re.I)
+# "... - Rs. 20,000" / "to 2 lakh" right after an amount: the upper end of a range.
+_RANGE_TAIL = re.compile(
+    r"\s*(?:-|\u2013|\u2014|to)\s*(?:US\$|USD|INR|Rs\.?|[$€£₹])?\s?(?P<num>" + _NUM + r")\s?(?P<mult>" + _MULT + r")?", re.I)
+_MULT_VALUE = {"k": 1e3, "thousand": 1e3, "m": 1e6, "million": 1e6, "lakh": 1e5, "lakhs": 1e5,
+               "lac": 1e5, "lacs": 1e5, "crore": 1e7, "crores": 1e7}
+
+
+def format_inr(number):
+    """Indian digit grouping: 1200000 -> '12,00,000'."""
+    n = int(round(number))
+    head, tail = str(n)[:-3], str(n)[-3:]
+    if not head:
+        return tail
+    groups = []
+    while len(head) > 2:
+        groups.insert(0, head[-2:])
+        head = head[:-2]
+    if head:
+        groups.insert(0, head)
+    return ",".join(groups) + "," + tail
+
+
 _FUND_LABELS = (
     ("monthly allowance", "monthly allowance"), ("living allowance", "living allowance"),
     ("stipend", "stipend"), ("allowance", "allowance"), ("tuition", "tuition"),
@@ -432,9 +456,19 @@ def extract_funding(text: str) -> Tuple[Optional[str], Optional[int], Optional[s
             except ValueError:
                 continue
             mult = (match.group("mult") or "").casefold()
-            number *= {"k": 1e3, "thousand": 1e3, "m": 1e6, "million": 1e6, "lakh": 1e5, "lakhs": 1e5}.get(mult, 1)
-            if number < 100 or number > 5e8:
+            number *= _MULT_VALUE.get(mult, 1)
+            if number < 100 or number > (5e8 if code != "INR" else 5e10):
                 continue
+            upper = None
+            range_match = _RANGE_TAIL.match(sentence, match.end())
+            if range_match:
+                try:
+                    upper = float(range_match.group("num").replace(",", ""))
+                    upper *= _MULT_VALUE.get((range_match.group("mult") or mult).casefold(), 1)
+                except ValueError:
+                    upper = None
+                if upper is not None and not number < upper <= number * 1000:
+                    upper = None
             window_before = sentence[max(0, match.start() - 45):match.start()]
             window_after = sentence[match.end():match.end() + 45]
             near = window_before + " " + window_after
@@ -452,15 +486,20 @@ def extract_funding(text: str) -> Tuple[Optional[str], Optional[int], Optional[s
                     best_pos, label = len(before_l) - found - 16, name
             if not label:
                 continue
-            shown = "{:,.0f}".format(number) if number == int(number) else "{:,.2f}".format(number)
-            if mult in ("m", "million") and number % 1e5 == 0:
+            if code == "INR":
+                shown = format_inr(number) if number == int(number) else "{:,.2f}".format(number)
+                if upper is not None:
+                    shown = "{}\u2013{}{}".format(shown, symbol, format_inr(upper))
+            else:
+                shown = "{:,.0f}".format(number) if number == int(number) else "{:,.2f}".format(number)
+            if code != "INR" and mult in ("m", "million") and number % 1e5 == 0:
                 shown = "{:g}M".format(number / 1e6)
-            elif mult in ("k", "thousand") and number % 100 == 0:
+            elif code != "INR" and mult in ("k", "thousand") and number % 100 == 0:
                 shown = "{:g}K".format(number / 1e3)
             period = ""
             if re.search(r"per month|monthly|a month|/\s?month|each month", near, re.I):
                 period = " per month"
-            elif re.search(r"per year|annual|a year|/\s?year|each year|per annum", near, re.I):
+            elif re.search(r"per year|annual|a year|/\s?year|each year|per annum|p\.a\.|\bp\.?a\b|yearly", near, re.I):
                 period = " per year"
             prefix = "Up to " if re.search(r"\bup to\s*$", window_before, re.I) else ""
             amount_text = "{}{}{}".format(prefix, symbol, shown)
@@ -968,7 +1007,7 @@ def extract_age_limit(text: str) -> Optional[str]:
     return None
 
 
-_AMOUNT_TEXT = re.compile(r"^(?:Up to )?(?P<sym>CA\$|A\$|US\$|[$€£₹]|[A-Z]{3})\s?(?P<num>[\d,]+(?:\.\d+)?)(?P<mult>[KM])?")
+_AMOUNT_TEXT = re.compile(r"^(?:Up to )?(?P<sym>CA\$|A\$|US\$|[$€£₹]|[A-Z]{3})\s?(?P<num>[\d,]+(?:\.\d+)?)(?P<mult>[KM])?(?:\u2013(?:CA\$|A\$|US\$|[$€£₹])?(?P<num_hi>[\d,]+(?:\.\d+)?))?")
 _SYMBOL_CODE = {"$": "USD", "US$": "USD", "€": "EUR", "£": "GBP", "₹": "INR", "CA$": "CAD", "A$": "AUD"}
 
 
@@ -985,6 +1024,9 @@ def normalise_funding(funding_text: Optional[str]) -> Dict:
     number = float(match.group("num").replace(",", ""))
     number *= {"K": 1e3, "M": 1e6}.get(match.group("mult") or "", 1)
     out["funding_amount"] = int(number) if number == int(number) else number
+    if match.group("num_hi"):
+        high = float(match.group("num_hi").replace(",", ""))
+        out["funding_amount_max"] = int(high) if high == int(high) else high
     out["funding_currency"] = code
     lowered = (funding_text or "").casefold()
     out["funding_period"] = "month" if "per month" in lowered else ("year" if "per year" in lowered else "total")

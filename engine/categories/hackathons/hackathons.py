@@ -190,7 +190,26 @@ def _mlh_is_digital(event):
 DESCRIPTION_MAX = 300
 ENRICH_LIMIT = int(os.environ.get("XLAKE_HACKATHON_ENRICH_LIMIT", "300"))
 ENRICH_DELAY = 1.0
-CACHED_KEYS = ("description", "eligibility", "logo_url", "organizer_domain", "page_enriched")
+CACHED_KEYS = ("description", "eligibility", "logo_url", "organizer_domain", "page_enriched",
+               "official_site", "site_checked")
+OFFICIAL_SITE_LIMIT = int(os.environ.get("XLAKE_HACKATHON_SITE_LIMIT", "60"))
+# Hosts that are platforms, socials or generic tools, never a hackathon organiser's own site.
+_NOT_ORGANISER_HOSTS = {
+    "devpost.com", "devpost.team", "challengepost.com", "unstop.com", "devfolio.co", "mlh.io", "github.com",
+    "githubusercontent.com", "gitlab.com", "google.com", "goo.gl", "bit.ly", "youtube.com", "youtu.be",
+    "discord.com", "discord.gg", "slack.com", "linkedin.com", "twitter.com", "x.com", "facebook.com",
+    "instagram.com", "t.me", "telegram.me", "whatsapp.com", "medium.com", "notion.so", "notion.site",
+    "typeform.com", "jotform.com", "airtable.com", "forms.gle", "luma.com", "lu.ma", "eventbrite.com",
+    "meetup.com", "zoom.us", "microsoft.com", "teams.microsoft.com", "calendly.com", "canva.com",
+    "wikipedia.org", "browsehappy.com", "cloudfront.net", "amazonaws.com", "reddit.com", "vimeo.com",
+    "twitch.tv", "docs.google.com", "drive.google.com", "linktr.ee", "forms.office.com", "hackerearth.com",
+    "dorahacks.io", "hackerrank.com", "kaggle.com", "tiktok.com", "substack.com",
+}
+_TWO_LEVEL_SUFFIXES = {"co.uk", "ac.uk", "org.uk", "com.au", "co.in", "ac.in", "gov.in", "org.in", "edu.in",
+                       "res.in", "co.jp", "com.br", "co.za", "com.sg", "edu.au", "net.in"}
+_GENERIC_ORG_WORDS = {"university", "institute", "technology", "foundation", "college", "india", "hackathon",
+                      "team", "club", "society", "school", "student", "students", "chapter", "community",
+                      "association", "official", "global", "private", "limited", "solutions", "services"}
 
 _EU = set("AL AD AT BY BE BA BG HR CY CZ DK EE FI FR DE GR HU IS IE IT XK LV LI LT LU MT MD MC ME NL MK NO PL PT RO RU SM RS SK SI ES SE CH UA GB VA".split())
 _ASIA = set("AF AM AZ BH BD BT BN KH CN GE ID IR IQ IL JP JO KZ KW KG LA LB MY MV MN MM NP KP OM PK PS PH QA SA SG KR LK SY TW TJ TH TL TR TM AE UZ VN YE HK".split())
@@ -444,6 +463,109 @@ def build_row(
     }
     row.update({k: v for k, v in extras.items() if v is not None})
     return row
+
+
+def _registrable(host):
+    host = (host or "").lower().split(":")[0].strip(".")
+    if host.startswith("www."):
+        host = host[4:]
+    parts = host.split(".")
+    if len(parts) >= 3 and ".".join(parts[-2:]) in _TWO_LEVEL_SUFFIXES:
+        return ".".join(parts[-3:])
+    return ".".join(parts[-2:]) if len(parts) >= 2 else host
+
+
+def _is_blocked_host(host):
+    reg = _registrable(host)
+    return reg in _NOT_ORGANISER_HOSTS or host.lower().lstrip("www.") in _NOT_ORGANISER_HOSTS
+
+
+def _strip_tracking(url):
+    parts = urlsplit(url)
+    query = "&".join(
+        piece for piece in parts.query.split("&")
+        if piece and not piece.lower().startswith(("utm_", "ref=", "fbclid", "gclid", "source="))
+    )
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, query, ""))
+
+
+_HREF = re.compile(r'<a\b[^>]*?\shref\s*=\s*["\']([^"\']+)["\']', re.I)
+
+
+def find_official_site(html, organizer=None, organizer_domain=None):
+    """Organiser's own site from links in an event page/description, else None.
+
+    A link qualifies only when its registrable domain is the organiser's declared
+    domain or its name contains the organiser's name (>=4 letters, e.g.
+    ``developer.paypal.com`` for organiser "PayPal"); platforms, socials and
+    form/video hosts never qualify.
+    """
+    if not isinstance(html, str):
+        return None
+    tokens = set()
+    full = re.sub(r"[^a-z0-9]+", "", str(organizer or "").casefold())
+    if len(full) >= 4:
+        tokens.add(full)
+    for word in re.findall(r"[a-z0-9]+", str(organizer or "").casefold()):
+        if len(word) >= 4 and word not in _GENERIC_ORG_WORDS:
+            tokens.add(word)
+    declared = _registrable(organizer_domain) if organizer_domain else None
+    if declared and (declared in _NOT_ORGANISER_HOSTS or declared in ("gmail.com", "yahoo.com", "outlook.com", "hotmail.com")):
+        declared = None
+    for raw in _HREF.findall(html):
+        url = html_module.unescape(raw).strip()
+        if not url.lower().startswith(("http://", "https://")):
+            continue
+        host = urlsplit(url).netloc.lower()
+        if not host or _is_blocked_host(host):
+            continue
+        reg = _registrable(host)
+        label = reg.split(".")[0]
+        if (declared and reg == declared) or any(len(t) >= 4 and (t == label or t in label) for t in tokens):
+            return _abs_https(_strip_tracking(url))
+    return None
+
+
+def _apply_official_site(row):
+    site = row.get("official_site")
+    listing = row.get("application_url") or row.get("official_url")
+    if site and _usable_url(site) and site.rstrip("/") != str(listing).rstrip("/"):
+        row["official_url"] = site
+        row["source_kind"] = "official"
+    return row
+
+
+def resolve_official_sites(rows, fetch=None, limit=OFFICIAL_SITE_LIMIT, today=None, delay=ENRICH_DELAY):
+    """Set an organiser site on Devpost rows by reading their listing page (capped, robots-checked).
+
+    Each row is checked once (``site_checked``), found or not, so pages are not refetched.
+    Rows already carrying a cached ``official_site`` are just re-applied.
+    """
+    fetch = fetch or _polite_page_fetch
+    fetched = 0
+    for row in rows:
+        if row.get("official_site"):
+            _apply_official_site(row)
+            continue
+        if row.get("source") != "devpost" or row.get("site_checked") or row.get("source_kind") == "official":
+            continue
+        if fetched >= limit:
+            continue
+        if fetched:
+            time.sleep(delay)
+        fetched += 1
+        try:
+            html = fetch(row.get("application_url") or row["official_url"])
+        except Exception:
+            html = None
+        if html is None:
+            continue
+        site = find_official_site(html, row.get("organizer"), row.get("organizer_domain"))
+        row["site_checked"] = (today or datetime.now(timezone.utc).date()).isoformat()
+        if site:
+            row["official_site"] = site
+            _apply_official_site(row)
+    return fetched
 
 
 def _usable_url(value):
@@ -883,6 +1005,7 @@ def normalize_unstop(raw_list, checked_at):
             prize=prize,
             funding=_prize_funding(prize),
             description=item.get("details"),
+            official_site=find_official_site(item.get("details"), organizer, organizer_domain),
             logo_url=logo,
             organizer_domain=organizer_domain,
             country=country,
@@ -1293,12 +1416,12 @@ def enrich_rows(rows, cache, fetch=None, limit=ENRICH_LIMIT, today=None, delay=E
             time.sleep(delay)
         fetched += 1
         try:
-            html = fetch(row["official_url"])
+            html = fetch(row.get("application_url") or row["official_url"])
         except Exception:
             html = None
         if html is None:
             continue
-        found = parse_event_page(html, row["official_url"])
+        found = parse_event_page(html, row.get("application_url") or row["official_url"])
         for key, value in found.items():
             if not row.get(key):
                 row[key] = value
@@ -1531,6 +1654,10 @@ def collect(
     }
     enrich_rows(
         list(rows_by_id.values()), cache, fetch=page_fetch,
+        today=_checked_date(checked_at), delay=ENRICH_DELAY if page_fetch is None else 0,
+    )
+    resolve_official_sites(
+        list(rows_by_id.values()), fetch=page_fetch,
         today=_checked_date(checked_at), delay=ENRICH_DELAY if page_fetch is None else 0,
     )
 

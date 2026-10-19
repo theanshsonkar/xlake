@@ -189,6 +189,11 @@ def collect(fetch: Callable[[str], str] = _core._default_fetch, checked_at: Opti
         _load_json(lake_path, []), verifications,
         datetime.now(timezone.utc).isoformat(timespec="seconds"),
     )
+    try:
+        from categories.scholarships import nsp
+        merged = nsp.enrich_rows(merged)
+    except Exception as error:  # enrichment is best-effort; never block collection
+        print("nsp enrichment skipped: {}".format(error), file=sys.stderr)
     _atomic_json(lake_path, merged)
     result["merged"] = merged
     return result

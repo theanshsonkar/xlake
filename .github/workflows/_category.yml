@@ -166,7 +166,7 @@ jobs:
             hackathons)  FILES=() ;;
             open_source) FILES=(data/operations/programmes_observations.json data/operations/programme_verifications.json data/operations/generated_seeds/open_source.json) ;;
             fellowships) FILES=(data/operations/fellowship_programmes_observations.json data/operations/fellowship_programme_verifications.json data/operations/generated_seeds/fellowships.json) ;;
-            scholarships) FILES=(data/operations/scholarship_programmes_observations.json data/operations/scholarship_programme_verifications.json data/operations/generated_seeds/scholarships.json) ;;
+            scholarships) FILES=(data/operations/scholarship_programmes_observations.json data/operations/scholarship_programme_verifications.json data/operations/nsp_schemes.json data/operations/generated_seeds/scholarships.json) ;;
             grants)      FILES=(data/operations/grant_programmes_observations.json data/operations/grant_programme_verifications.json data/operations/generated_seeds/grants.json) ;;
             research)    FILES=(data/operations/research_programmes_observations.json data/operations/research_programme_verifications.json data/operations/generated_seeds/research.json) ;;
             startup)     FILES=(data/operations/startup_founder_programmes_observations.json data/operations/startup_founder_programme_verifications.json data/operations/generated_seeds/startup_founder.json) ;;
