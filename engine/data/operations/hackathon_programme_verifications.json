@@ -1,1 +1,308 @@
-[]
+[
+ {
+  "programme_id": "hackathon-hackharvard-2026",
+  "verified_at": "2026-10-19T00:00:00Z",
+  "verified_by": "manual",
+  "recheck_after": "2026-11-18",
+  "official_url": "https://hackharvard.io/",
+  "title": "HackHarvard 2026",
+  "organizer": "Harvard University student organisers",
+  "programme_status": "closed",
+  "summary": "36-hour in-person undergraduate hackathon at Harvard University. Applications for the 2026 event are closed.",
+  "start_date": "2026-10-16",
+  "end_date": "2026-10-18",
+  "eligibility": "Open to undergraduate students; teams can include students from different schools.",
+  "levels": [
+   "undergraduate"
+  ],
+  "intl_eligible": true,
+  "region": "North America",
+  "mode": "in_person",
+  "location": "Cambridge, MA",
+  "official_evidence": {
+   "status": {
+    "quote": "Applications are closed.",
+    "url": "https://hackharvard.io/"
+   },
+   "program_dates": {
+    "quote": "October 16–18, 2026 · Cambridge, MA",
+    "url": "https://hackharvard.io/"
+   },
+   "eligibility": {
+    "quote": "HackHarvard is open to undergraduate students.",
+    "url": "https://hackharvard.io/"
+   }
+  }
+ },
+ {
+  "programme_id": "hackathon-nasa-space-apps-2026",
+  "verified_at": "2026-10-19T00:00:00Z",
+  "verified_by": "manual",
+  "recheck_after": "2026-11-18",
+  "official_url": "https://www.spaceappschallenge.org/",
+  "title": "NASA Space Apps Challenge 2026",
+  "organizer": "NASA",
+  "programme_status": "open",
+  "summary": "Annual global hackathon where participants address real-world challenges using NASA and partner space agency data. Registration for 2026 is open.",
+  "start_date": "2026-11-14",
+  "end_date": "2026-11-15",
+  "eligibility": "All ages, skill levels and professional backgrounds are welcome.",
+  "intl_eligible": true,
+  "region": "Global",
+  "mode": "hybrid",
+  "official_evidence": {
+   "status": {
+    "quote": "Registration for the 2026 NASA Space Apps Challenge is open!",
+    "url": "https://www.spaceappschallenge.org/"
+   },
+   "program_dates": {
+    "quote": "largest annual global hackathon on November 14-15, 2026",
+    "url": "https://www.spaceappschallenge.org/"
+   },
+   "eligibility": {
+    "quote": "All ages, skill levels, and professional backgrounds are welcome.",
+    "url": "https://www.spaceappschallenge.org/"
+   }
+  }
+ },
+ {
+  "programme_id": "hackathon-tcs-codevita-s14",
+  "verified_at": "2026-10-19T00:00:00Z",
+  "verified_by": "manual",
+  "recheck_after": "2026-11-18",
+  "official_url": "https://www.tcscodevita.com/",
+  "title": "TCS CodeVita Season 14",
+  "organizer": "Tata Consultancy Services",
+  "programme_status": "needs_confirmation",
+  "summary": "Global programming competition for students; the top 3 coders share a USD 20,000 prize pool. The page shows registration but no dates were stated in the page text.",
+  "prize": "USD 20,000 (top 3 coders)",
+  "funding": "Top 3 coders to win total prize money of USD 20,000",
+  "eligibility": "Students pursuing graduation or post-graduation in science or engineering, expecting to complete in 2027, 2028, 2029 or 2030, from any recognised institute globally.",
+  "levels": [
+   "undergraduate",
+   "postgraduate"
+  ],
+  "intl_eligible": true,
+  "region": "Global",
+  "mode": "online",
+  "official_evidence": {
+   "status": {
+    "quote": "TCS CodeVita Season 14 Code beyond imagination Register now",
+    "url": "https://www.tcscodevita.com/"
+   },
+   "funding": {
+    "quote": "Top 3 coders to win total prize money of USD 20,000",
+    "url": "https://www.tcscodevita.com/"
+   },
+   "eligibility": {
+    "quote": "Expecting to complete their course in the year of 2027, 2028, 2029, or 2030",
+    "url": "https://www.tcscodevita.com/"
+   }
+  }
+ },
+ {
+  "programme_id": "hackathon-treehacks-2027",
+  "verified_at": "2026-10-19T00:00:00Z",
+  "verified_by": "manual",
+  "recheck_after": "2026-11-18",
+  "official_url": "https://treehacks.com/",
+  "title": "TreeHacks 2027",
+  "organizer": "Stanford University student organisers",
+  "programme_status": "open",
+  "summary": "36-hour hackathon at Stanford for enrolled college students worldwide; free for admitted hackers. The page shows an Apply Now link but no application deadline.",
+  "start_date": "2027-02-12",
+  "end_date": "2027-02-14",
+  "eligibility": "Open to any enrolled college student (undergrad or grad) from all over the world.",
+  "levels": [
+   "undergraduate",
+   "postgraduate"
+  ],
+  "intl_eligible": true,
+  "region": "North America",
+  "mode": "in_person",
+  "location": "Stanford University, CA",
+  "official_evidence": {
+   "status": {
+    "quote": "Apply Now",
+    "url": "https://treehacks.com/"
+   },
+   "program_dates": {
+    "quote": "2026 Feb 12 - 14 · 2027",
+    "url": "https://treehacks.com/"
+   },
+   "eligibility": {
+    "quote": "TreeHacks applications are open to any enrolled college student (undergrad or grad) from all over the world.",
+    "url": "https://treehacks.com/"
+   }
+  }
+ },
+ {
+  "programme_id": "hackathon-smart-india-hackathon-2026",
+  "verified_at": "2026-10-19T00:00:00Z",
+  "verified_by": "manual",
+  "recheck_after": "2026-11-18",
+  "official_url": "https://www.sih.gov.in/",
+  "title": "Smart India Hackathon 2026",
+  "organizer": "Government of India (MoE Innovation Cell / AICTE)",
+  "programme_status": "closed",
+  "deadline": "2026-10-09",
+  "summary": "National hackathon for students of higher education institutions. Team nomination and idea submission for the 2026 edition closed on 9 October 2026; the next cycle is to be recorded when announced.",
+  "eligibility": "SIH Senior HEI's Students",
+  "levels": [
+   "undergraduate",
+   "postgraduate"
+  ],
+  "intl_eligible": false,
+  "region": "India",
+  "mode": "hybrid",
+  "official_evidence": {
+   "status": {
+    "quote": "Team Nomination & Idea Submission deadline extended to 09 Oct 2026",
+    "url": "https://www.sih.gov.in/"
+   },
+   "deadline": {
+    "quote": "Team Nomination & Idea Submission deadline extended to 09 Oct 2026",
+    "url": "https://www.sih.gov.in/"
+   },
+   "eligibility": {
+    "quote": "SIH Senior HEI's Students",
+    "url": "https://www.sih.gov.in/"
+   }
+  }
+ },
+ {
+  "programme_id": "hackathon-mlh-global-hack-week-builders",
+  "verified_at": "2026-10-19T00:00:00Z",
+  "verified_by": "manual",
+  "recheck_after": "2026-11-18",
+  "official_url": "https://ghw.mlh.io/",
+  "title": "MLH Global Hack Week: Builders Week",
+  "organizer": "Major League Hacking",
+  "programme_status": "upcoming",
+  "summary": "Free week of beginner-friendly hacking content and sessions run by Major League Hacking.",
+  "start_date": "2026-11-06",
+  "end_date": "2026-11-12",
+  "eligibility": "Free for anyone, anywhere.",
+  "intl_eligible": true,
+  "region": "Global",
+  "mode": "online",
+  "funding": "100% free",
+  "official_evidence": {
+   "status": {
+    "quote": "Builders Week November 6th - 12th, 2026",
+    "url": "https://ghw.mlh.io/"
+   },
+   "program_dates": {
+    "quote": "Builders Week November 6th - 12th, 2026",
+    "url": "https://ghw.mlh.io/"
+   },
+   "eligibility": {
+    "quote": "Global Hack Week is a 100% free event for anyone, anywhere!",
+    "url": "https://ghw.mlh.io/"
+   },
+   "funding": {
+    "quote": "Global Hack Week is a 100% free event for anyone, anywhere!",
+    "url": "https://ghw.mlh.io/"
+   }
+  }
+ },
+ {
+  "programme_id": "hackathon-mlh-global-hack-week-open-source",
+  "verified_at": "2026-10-19T00:00:00Z",
+  "verified_by": "manual",
+  "recheck_after": "2026-11-18",
+  "official_url": "https://ghw.mlh.io/",
+  "title": "MLH Global Hack Week: Open Source Week",
+  "organizer": "Major League Hacking",
+  "programme_status": "upcoming",
+  "summary": "Free week of open source themed hacking sessions run by Major League Hacking.",
+  "start_date": "2026-12-04",
+  "end_date": "2026-12-10",
+  "eligibility": "Free for anyone, anywhere.",
+  "intl_eligible": true,
+  "region": "Global",
+  "mode": "online",
+  "funding": "100% free",
+  "official_evidence": {
+   "status": {
+    "quote": "Open Source Week December 4th - 10th, 2026",
+    "url": "https://ghw.mlh.io/"
+   },
+   "program_dates": {
+    "quote": "Open Source Week December 4th - 10th, 2026",
+    "url": "https://ghw.mlh.io/"
+   },
+   "eligibility": {
+    "quote": "Global Hack Week is a 100% free event for anyone, anywhere!",
+    "url": "https://ghw.mlh.io/"
+   },
+   "funding": {
+    "quote": "Global Hack Week is a 100% free event for anyone, anywhere!",
+    "url": "https://ghw.mlh.io/"
+   }
+  }
+ },
+ {
+  "programme_id": "hackathon-pennapps-xxvii",
+  "verified_at": "2026-10-19T00:00:00Z",
+  "verified_by": "manual",
+  "recheck_after": "2026-11-18",
+  "official_url": "https://pennapps.com/",
+  "title": "PennApps XXVII",
+  "organizer": "University of Pennsylvania student organisers",
+  "programme_status": "needs_confirmation",
+  "summary": "Penn's student hackathon, planned for the spring semester. Applications are announced as opening later in October; no dates stated.",
+  "region": "North America",
+  "mode": "in_person",
+  "official_evidence": {
+   "status": {
+    "quote": "PennApps XXVII is happening in Spring Semester now. Applications open later in October .",
+    "url": "https://pennapps.com/"
+   }
+  }
+ },
+ {
+  "programme_id": "hackathon-microsoft-imagine-cup-2027",
+  "verified_at": "2026-10-19T00:00:00Z",
+  "verified_by": "manual",
+  "recheck_after": "2026-11-18",
+  "official_url": "https://imaginecup.microsoft.com/",
+  "title": "Microsoft Imagine Cup 2027",
+  "organizer": "Microsoft",
+  "programme_status": "needs_confirmation",
+  "summary": "Microsoft's global student technology competition. The official page lists the 2027 edition as coming soon, without dates.",
+  "region": "Global",
+  "mode": "online",
+  "official_evidence": {
+   "status": {
+    "quote": "Imagine Cup 2027 - Coming Soon!",
+    "url": "https://imaginecup.microsoft.com/"
+   }
+  }
+ },
+ {
+  "programme_id": "hackathon-hult-prize",
+  "verified_at": "2026-10-19T00:00:00Z",
+  "verified_by": "manual",
+  "recheck_after": "2026-11-18",
+  "official_url": "https://www.hultprize.org/",
+  "title": "EF Hult Prize",
+  "organizer": "Hult Prize Foundation",
+  "programme_status": "needs_confirmation",
+  "summary": "Student startup competition with a USD 1 million seed funding prize for the winning team. Dates and eligibility were not stated on the readable page.",
+  "prize": "USD 1 million seed funding",
+  "funding": "the winning team receiving 1 million USD in seed funding",
+  "region": "Global",
+  "mode": "hybrid",
+  "official_evidence": {
+   "status": {
+    "quote": "Register to compete",
+    "url": "https://www.hultprize.org/"
+   },
+   "funding": {
+    "quote": "1 million USD in seed funding",
+    "url": "https://www.hultprize.org/"
+   }
+  }
+ }
+]
