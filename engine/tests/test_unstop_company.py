@@ -122,3 +122,25 @@ class TestUnstopInternshipFacts(unittest.TestCase):
         from core import unstop_facts
         out = unstop_facts.prizes_breakdown([{"rank": "1st", "cash": 10000, "currency": "fa-rupee"}, {"rank": "x", "cash": 0}])
         self.assertEqual(out, [{"rank": "1st", "amount": 10000, "currency": "INR"}])
+
+
+class TestCapUsesActiveRowsOnly(unittest.TestCase):
+    def _row(self, i, live, company="Acme", platform="unstop"):
+        return {"platform": platform, "token": "unstop", "job_id": str(i),
+                "title": "Role %d" % i, "url": "https://x/%d" % i,
+                "company_name": company, "is_live": live,
+                "first_seen": "2026-01-%02d" % (i % 28 + 1),
+                "posted_on": "", "location": "Delhi"}
+
+    def test_dead_rows_do_not_consume_cap(self):
+        from core import quality
+        rows = [self._row(i, False) for i in range(30)] + \
+               [self._row(100 + i, True) for i in range(3)]
+        quality.annotate(rows, cap=10)
+        self.assertEqual(sum(1 for r in rows if r["over_cap"]), 0)
+
+    def test_unnamed_unstop_rows_do_not_share_a_bucket(self):
+        from core import quality
+        rows = [self._row(i, True, company="") for i in range(15)]
+        quality.annotate(rows, cap=10)
+        self.assertEqual(sum(1 for r in rows if r["over_cap"]), 0)

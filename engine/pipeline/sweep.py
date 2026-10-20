@@ -255,6 +255,8 @@ def _merge_store(path: str, rows: List[Dict],
                 "last_seen": now,
                 "is_live": True,
             })
+            if r.get("company_name"):
+                existing["company_name"] = r["company_name"]
             if "is_internship" not in existing:
                 existing["is_internship"] = r.get("is_internship")
             elif r.get("employment_type") == "internship" and not existing.get("is_internship"):

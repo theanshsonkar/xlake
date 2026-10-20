@@ -59,7 +59,7 @@ import re
 from datetime import datetime, timezone
 from typing import Dict, Iterable, List, Optional, Tuple
 
-from core import filters
+from core import filters, jobmeta
 
 # --------------------------------------------------------------------------- #
 # A2. Staffing agencies and recruitment firms
@@ -418,6 +418,11 @@ def _is_job_row(row: Dict) -> bool:
     return not row.get("record_type")
 
 
+def _is_active(row: Dict) -> bool:
+    """Live or awaiting confirmation; rows without liveness fields count."""
+    return bool(row.get("is_live", True) or row.get("needs_confirmation"))
+
+
 def annotate(rows: Iterable[Dict], cap: int = 10,
             stale_days: int = STALE_DAYS) -> List[Dict]:
     """Add hygiene fields to every row. Mutates and returns the same list.
@@ -446,9 +451,13 @@ def annotate(rows: Iterable[Dict], cap: int = 10,
     for r in rows:
         job_row = _is_job_row(r)
         r["company"] = company_key(r.get("platform", ""), r.get("token", ""))
-        if r.get("platform") == "unstop" and r.get("company_name"):
+        if r.get("platform") == "unstop":
             # Unstop is one aggregator token; the employer is the identity.
-            r["company"] = "unstop:" + str(r["company_name"]).strip().casefold()
+            # With no real employer there is nothing to cap on, so such a row
+            # stands alone instead of sharing one "unstop" bucket.
+            name = jobmeta.real_company(r.get("company_name"))
+            r["company"] = ("unstop:" + name.casefold() if name
+                            else "unstop:?" + str(r.get("job_id") or r.get("url") or ""))
         if job_row:
             rec, why = is_recruiter(r.get("token", ""), r.get("title", ""))
             r["is_recruiter"] = rec
@@ -485,9 +494,16 @@ def annotate(rows: Iterable[Dict], cap: int = 10,
     # an India-located job with a Bangladesh one. The India/non-India split is
     # the single most important fact about a row here, so two rows that differ
     # in bucket are never the same opportunity.
+    #
+    # Only ACTIVE rows (live, or awaiting confirmation) take part. Retired rows
+    # are history: if they counted, the oldest dead rows would use up a
+    # company's cap and mark its live twins as duplicates, hiding live jobs.
     seen: Dict[Tuple[str, str, str], str] = {}
     for r in sorted(rows, key=lambda x: (x.get("first_seen") or "", x.get("url") or "")):
         if not _is_job_row(r):
+            continue
+        if not _is_active(r):
+            r["dup_of"] = None
             continue
         k = (r["company"], r["title_norm"], r.get("location_bucket") or "")
         if k in seen:
@@ -502,7 +518,8 @@ def annotate(rows: Iterable[Dict], cap: int = 10,
     for r in sorted(rows, key=lambda x: (x.get("first_seen") or "", x.get("url") or "")):
         if not _is_job_row(r):
             continue
-        eligible = not r["is_recruiter"] and not r["dup_of"]
+        eligible = (_is_active(r) and not r["is_recruiter"]
+                    and not r["dup_of"])
         if not eligible:
             r["over_cap"] = False
             continue

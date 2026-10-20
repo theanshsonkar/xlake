@@ -812,6 +812,7 @@ def _unstop(token: str) -> BoardResult:
     page = 1
     latest_last_page = latest_total = None
     requests = 0
+    seen_ids = set()
     while True:
         # robots.py supplies the site's delay; Unstop has no measured
         # Crawl-delay, so this adapter keeps the project's stricter 2s floor.
@@ -889,6 +890,9 @@ def _unstop(token: str) -> BoardResult:
             posting.url_origin = origin
             posting.official_url = official
             posting.unstop_url = public
+            if jid in seen_ids:  # the API repeats a record across pages
+                continue
+            seen_ids.add(jid)
             r.postings.append(posting)
             r.extra.setdefault("records", {})[jid] = {
                 "kind": kind, "raw_kind": raw_kind,
@@ -906,6 +910,13 @@ def _unstop(token: str) -> BoardResult:
         if page >= latest_last_page or page >= UNSTOP_MAX_PAGES:
             if page < latest_last_page:
                 r.truncated = True
+            else:
+                # last_page reached = complete enumeration. The API's `total`
+                # counts a few hidden/removed records that pages never return
+                # (574 reported vs 548 returned), so it must not mark a clean
+                # read as truncated; keep it for the record.
+                r.extra["api_total"] = latest_total
+                r.reported_total = r.count
             r.extra.update({"requests": requests, "pages_read": page,
                             "last_page": latest_last_page,
                             "total": latest_total})
