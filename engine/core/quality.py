@@ -414,6 +414,10 @@ def normalise_title(title: str) -> str:
     return t.lower()
 
 
+# Aggregator sources whose token is the source, not an employer.
+EMPLOYER_KEYED_PLATFORMS = frozenset({"unstop", "zshah101-list"})
+
+
 def _is_job_row(row: Dict) -> bool:
     return not row.get("record_type")
 
@@ -451,13 +455,13 @@ def annotate(rows: Iterable[Dict], cap: int = 10,
     for r in rows:
         job_row = _is_job_row(r)
         r["company"] = company_key(r.get("platform", ""), r.get("token", ""))
-        if r.get("platform") == "unstop":
-            # Unstop is one aggregator token; the employer is the identity.
+        if r.get("platform") in EMPLOYER_KEYED_PLATFORMS:
+            # Unstop / the community list are one aggregator token; the employer is the identity.
             # With no real employer there is nothing to cap on, so such a row
             # stands alone instead of sharing one "unstop" bucket.
             name = jobmeta.real_company(r.get("company_name"))
-            r["company"] = ("unstop:" + name.casefold() if name
-                            else "unstop:?" + str(r.get("job_id") or r.get("url") or ""))
+            r["company"] = ("agg:" + name.casefold() if name
+                            else "agg:?" + str(r.get("job_id") or r.get("url") or ""))
         if job_row:
             rec, why = is_recruiter(r.get("token", ""), r.get("title", ""))
             r["is_recruiter"] = rec
@@ -531,7 +535,7 @@ def annotate(rows: Iterable[Dict], cap: int = 10,
             r["surfaced"] = True
             continue
         r["surfaced"] = bool(
-            not r["is_recruiter"] and not r["dup_of"] and not r["over_cap"]
+            _is_active(r) and not r["is_recruiter"] and not r["dup_of"] and not r["over_cap"]
             and not r["is_stale"] and not r["is_pay_to_intern"]
         )
         r["accessibility"] = filters.accessibility(r.get("location_bucket"))
