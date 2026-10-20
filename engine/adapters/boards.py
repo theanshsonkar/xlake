@@ -35,7 +35,7 @@ import urllib.request
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
-from core import cache, jobmeta, robots
+from core import unstop_facts, cache, jobmeta, robots
 
 # One identity for the whole engine, defined in robots.py so that the name we
 # match robots.txt groups against and the name we send in the header cannot
@@ -411,13 +411,121 @@ def _unstop_json_value(value):
 
 
 def _unstop_company(record):
-    """Real organizing company from an Unstop record (organisation.name)."""
+    """Real organizing company from an Unstop record (organisation.name);
+    never an aggregator name."""
     if not isinstance(record, dict):
         return ""
     org = record.get("organisation")
     if isinstance(org, dict):
-        return str(org.get("name") or "").strip()
+        return jobmeta.real_company(org.get("name"))
     return ""
+
+
+_UNSTOP_CURRENCY = {"fa-rupee": "INR", "fa-inr": "INR", "fa-dollar": "USD",
+                    "fa-usd": "USD", "fa-euro": "EUR", "fa-eur": "EUR",
+                    "fa-gbp": "GBP"}
+_UNSTOP_SYMBOL = {"INR": "\u20b9", "USD": "$", "EUR": "\u20ac", "GBP": "\u00a3"}
+
+
+def _unstop_logo(record: dict) -> str:
+    org = record.get("organisation") if isinstance(record.get("organisation"), dict) else {}
+    for value in (org.get("logoUrl2"), org.get("logoUrl"), record.get("logoUrl2")):
+        if isinstance(value, str) and value.strip().startswith("https://"):
+            return value.strip()
+    return ""
+
+
+def _unstop_company_domain(record: dict) -> str:
+    org = record.get("organisation") if isinstance(record.get("organisation"), dict) else {}
+    cands = [org.get("website"), org.get("url")]
+    emails = org.get("official_email_domains")
+    if isinstance(emails, str):
+        emails = [e for e in re.split(r"[,\s]+", emails) if e]
+    if isinstance(emails, list):
+        cands.extend(str(e) for e in emails)
+    free = {"gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "rediffmail.com"}
+    for c in cands:
+        d = jobmeta.domain_from_url(c) if isinstance(c, str) else None
+        if d and d not in free and d != "unstop.com":
+            return d
+    return ""
+
+
+def _unstop_funding(detail: dict) -> dict:
+    if not isinstance(detail, dict) or detail.get("paid_unpaid") == "unpaid":
+        return {}
+    lo, hi = detail.get("min_salary"), detail.get("max_salary")
+    if not isinstance(lo, (int, float)) and not isinstance(hi, (int, float)):
+        return {}
+    if detail.get("not_disclosed") or not (lo or hi):
+        return {}
+    cur = _UNSTOP_CURRENCY.get(str(detail.get("currency") or "").lower(), "INR")
+    interval = jobmeta.norm_interval(detail.get("pay_in")) or ""
+    out = jobmeta.salary_fields(lo or None, hi or None, cur, interval or None)
+    lo, hi = lo or hi, hi or lo
+    sym = _UNSTOP_SYMBOL.get(cur, cur + " ")
+    text = "{}{:,.0f}".format(sym, lo) if lo == hi else "{}{:,.0f}\u2013{:,.0f}".format(sym, lo, hi)
+    if interval:
+        text += "/" + interval
+    out["funding"] = text
+    return out
+
+
+def _unstop_gender(record: dict) -> str:
+    names = [str(f.get("name") or "") for f in (record.get("filters") or [])
+             if isinstance(f, dict) and str(f.get("type") or "").lower() == "gender"]
+    blob = " ".join(names).lower()
+    for key, label in (("female", "Female"), ("women", "Female"), ("male", "Male")):
+        if key in blob:
+            return label
+    return ""
+
+
+def _unstop_job_meta(record: dict, eligibility: dict, official: str, deadline) -> dict:
+    """Structured internship fields from an Unstop search-result item."""
+    detail = record.get("jobDetail") if isinstance(record.get("jobDetail"), dict) else {}
+    skills = []
+    for s in record.get("required_skills") or []:
+        name = str((s.get("skill_name") or s.get("skill") or "") if isinstance(s, dict) else s).strip()
+        if name and name not in skills:
+            skills.append(name)
+    groups = [str(f.get("name") or "").strip() for f in (record.get("filters") or [])
+              if isinstance(f, dict) and f.get("type") == "eligible"]
+    wp = jobmeta.norm_workplace({"wfh": "remote", "in_office": "in office"}.get(
+        str(detail.get("type") or ""), detail.get("type")))
+    openings = record.get("openings") or detail.get("openings") or detail.get("vacancies")
+    m = _meta(
+        employment_type="internship", level="intern", workplace=wp,
+        company_display_name=_unstop_company(record),
+        company_domain=_unstop_company_domain(record),
+        logo_url=_unstop_logo(record),
+        deadline=str(deadline or "")[:10],
+        skills=skills[:12],
+        gender=_unstop_gender(record),
+        eligibility=", ".join(g for g in groups if g and g != "All") or None,
+        openings=openings if isinstance(openings, int) and openings > 0 else None,
+        source_kind="aggregator", listed_on=["unstop"],
+        official_url=official or None,
+    )
+    m.update(_unstop_funding(detail))
+    m["views"] = unstop_facts.public_count(record, "viewsCount")
+    m["participants"] = unstop_facts.public_count(record, "registerCount")
+    m["registration_start"] = _unstop_date(
+        (record.get("regnRequirements") or {}).get("start_regn_dt"))
+    m["festival"] = unstop_facts.festival_name(record)
+    locs = [str(l.get("city") or "") for l in (record.get("locations") or []) if isinstance(l, dict)]
+    mode = {"remote": "Remote", "hybrid": "Hybrid", "onsite": "In office"}.get(wp or "", "")
+    m["description"] = unstop_facts.summary(
+        "internship", record.get("title"), _unstop_company(record), mode=mode,
+        location=", ".join(dict.fromkeys(l for l in locs if l))[:60],
+        pay=m.get("funding") or "", deadline=m.get("deadline") or "",
+        audience=(m.get("eligibility") or ""), skills=skills, openings=m.get("openings"))
+    return {k: v for k, v in m.items() if v not in (None, "", [], {})}
+
+
+def _unstop_date(value) -> str:
+    m = re.match(r"\d{4}-\d{2}-\d{2}", str(value or ""))
+    return m.group(0) if m else ""
 
 
 def _unstop_years(value) -> List[int]:
@@ -770,6 +878,7 @@ def _unstop(token: str) -> BoardResult:
                 canonical, str(record.get("approved_date") or record.get("start_date") or ""),
                 description=description or None,
                 company=_unstop_company(record),
+                meta=_unstop_job_meta(record, eligibility, official, deadline),
             )
             # These attributes extend the compatibility Posting without changing
             # the return type used by the established adapters.

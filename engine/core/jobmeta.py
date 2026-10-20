@@ -397,6 +397,23 @@ _AGGREGATOR_LOGO_HOSTS = ("devpost.com", "devfolio.co", "mlh.io", "internshala.c
                           "indeed.com", "glassdoor.com", "wellfound.com", "hackerearth.com")
 
 
+AGGREGATOR_NAMES = frozenset({
+    "unstop", "internshala", "devpost", "linkedin", "naukri", "indeed", "glassdoor",
+    "wellfound", "angellist", "hackerearth", "devfolio", "dorahacks", "mlh",
+    "major league hacking", "letsintern", "cutshort", "instahyre", "foundit",
+    "monster", "ziprecruiter", "simplyhired", "handshake", "dare2compete",
+    "hirect", "apna", "freshersworld", "youthall",
+})
+
+
+def real_company(name) -> str:
+    """The employer name, or '' when empty or it is a job board/aggregator."""
+    name = str(name or "").strip()
+    if not name or re.sub(r"[^a-z0-9 ]+", "", name.lower()).strip() in AGGREGATOR_NAMES:
+        return ""
+    return name
+
+
 def favicon_logo(domain: Optional[str], size: int = 128) -> Optional[str]:
     """Google favicon URL for a company domain; never for a job board/aggregator,
     whose icon would wrongly stand in for the real organiser's logo."""

@@ -374,7 +374,8 @@ class TestHackathonQuality(unittest.TestCase):
         self.assertEqual(row["logo_url"], "https://d8it4huxumps7.cloudfront.net/uploads/images/150x150/logo.png")
         self.assertEqual(row["organizer_domain"], "bitsathy.ac.in")
         self.assertEqual(row["participants"], 321)
-        self.assertEqual(row["description"], "IoT Hackathon: A dynamic event for makers. Bring a laptop.")
+        self.assertTrue(row["description"].startswith("Hackathon hosted by"))
+        self.assertLessEqual(len(row["description"]), 300)
         self.assertEqual(
             row["eligibility"],
             "Open to: Engineering students (B.Tech, M.Tech, all years), Working professionals")

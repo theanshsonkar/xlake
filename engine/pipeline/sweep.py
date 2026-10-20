@@ -61,6 +61,9 @@ META_KEYS = (
     "employment_type", "workplace", "salary_min", "salary_max", "salary_currency",
     "salary_text", "salary_interval", "posted_at", "deadline", "level", "team",
     "company_display_name", "company_domain", "logo_url",
+    "skills", "gender", "eligibility", "openings", "funding", "source_kind",
+    "listed_on", "official_url", "description", "views", "participants",
+    "registration_start", "festival",
 )
 # Workable boards come from discovery (unclassified): a posting needs real
 # content to be admitted. Thin postings go to the hidden store, not the feed.
@@ -172,7 +175,8 @@ def _row_meta(p, entry: Dict, board_extra: Dict, bucket: str,
     if domain:
         m["company_domain"] = domain
     if not m.get("company_display_name"):
-        name = board_extra.get("company_display_name") or p.company or entry.get("company")
+        name = jobmeta.real_company(
+            p.company or board_extra.get("company_display_name") or entry.get("company"))
         if name:
             m["company_display_name"] = name
     if board_extra.get("logo_url") and not m.get("logo_url"):
@@ -422,7 +426,7 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                         "title": p.title,
                         "url": p.url,
                         "location": p.location,
-                        "company_name": (p.company or entry.get("company")),
+                        "company_name": (jobmeta.real_company(p.company) or jobmeta.real_company(entry.get("company")) or None),
                         "segment": entry.get("segment"),
                         "stage": v.stage,
                         "stage_title": v.stage,
@@ -455,7 +459,7 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                         "platform": p.platform, "token": p.token,
                         "job_id": p.job_id, "title": p.title, "url": p.url,
                         "location": p.location,
-                        "company_name": (p.company or entry.get("company")),
+                        "company_name": (jobmeta.real_company(p.company) or jobmeta.real_company(entry.get("company")) or None),
                         "segment": entry.get("segment"), "stage": v.stage,
                         "stage_title": v.stage, "technical": v.technical,
                         "discipline": v.discipline,
@@ -481,7 +485,8 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                     "url": p.url,
                     "posted_on": p.posted_on,
                     "description": p.description,
-                    "company_name": entry.get("company"),
+                    "company_name": (jobmeta.real_company(p.company)
+                                     or jobmeta.real_company(entry.get("company")) or None),
                     "segment": entry.get("segment"),
                     "stage": v.stage,
                     "stage_title": v.stage,

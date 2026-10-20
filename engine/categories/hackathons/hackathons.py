@@ -16,7 +16,7 @@ from html.parser import HTMLParser
 from urllib import error, request
 from urllib.parse import urlencode, urljoin, urlsplit, urlunsplit
 
-from core import robots
+from core import robots, unstop_facts
 from core.paths import OPERATIONS_DIR, OPPORTUNITIES_PATH
 
 
@@ -398,6 +398,7 @@ def build_row(
     tracks=None,
     timezone_name=None,
     source_kind=None,
+    facts=None,
 ):
     is_online = _is_online(location or "")
     tag_list = list(tags or [])
@@ -464,6 +465,7 @@ def build_row(
         "last_checked_at": checked_at,
     }
     row.update({k: v for k, v in extras.items() if v is not None})
+    row.update({k: v for k, v in (facts or {}).items() if v not in (None, "", [], {})})
     return row
 
 
@@ -1006,7 +1008,23 @@ def normalize_unstop(raw_list, checked_at):
             deadline_basis="registration_deadline",
             prize=prize,
             funding=_prize_funding(prize),
-            description=item.get("details"),
+            description=unstop_facts.summary(
+                "hackathon", item.get("title"), organizer,
+                mode=region_value.title() if region_value.casefold() in ("online", "offline", "hybrid") else "",
+                location=location if location and location != "Online" else "",
+                prize=prize if funding_amount else "", deadline=registration_deadline or "",
+                audience=(unstop_eligibility_text(requirements.get("eligibility"), item.get("filters")) or "").replace("Open to: ", "", 1),
+                team="{}-{}".format(requirements.get("min_team_size"), requirements.get("max_team_size"))
+                if requirements.get("min_team_size") and requirements.get("max_team_size")
+                and requirements.get("min_team_size") != requirements.get("max_team_size") else "",
+                skills=[s.get("skill_name") or s.get("skill") for s in (item.get("required_skills") or []) if isinstance(s, dict)]),
+            facts={
+                "prizes": unstop_facts.prizes_breakdown(prizes),
+                "registration_start": start_date,
+                "views": unstop_facts.public_count(item, "viewsCount"),
+                "festival": unstop_facts.festival_name(item),
+                "skills": [s.get("skill_name") or s.get("skill") for s in (item.get("required_skills") or []) if isinstance(s, dict) and (s.get("skill_name") or s.get("skill"))][:12],
+            },
             official_site=find_official_site(item.get("details"), organizer, organizer_domain),
             logo_url=logo,
             organizer_domain=organizer_domain,

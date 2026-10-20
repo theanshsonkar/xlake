@@ -84,7 +84,7 @@ PLACEHOLDER_NULL_TYPES = {"hackathon", "programme", "contribution", "job", "inte
 DESCRIPTION_MAX_TYPES = {"hackathon", "programme", "contribution", "job", "internship"}
 JOB_TYPES = {"job", "internship"}
 # Hackathon-style keys that job/internship rows also publish.
-JOB_SHARED_KEYS = {"logo_url", "region"}
+JOB_SHARED_KEYS = {"logo_url", "region", "participants"}
 # Job/internship-only keys (never published for other types).
 JOB_ONLY_KEYS = {
     "employment_type", "workplace", "salary_min", "salary_max", "salary_currency",
@@ -106,7 +106,7 @@ EXTRA_KEYS = [
     "season", "sponsorship", "program", "segment", "posting_age_days",
     "employment_type", "workplace", "salary_min", "salary_max", "salary_currency",
     "salary_text", "salary_interval", "posted_at", "level", "team",
-    "company_display_name",
+    "company_display_name", "openings", "views", "registration_start", "festival", "prizes",
     # contributions
     "repo", "labels", "language", "difficulty", "difficulty_signal",
     "issue_number", "repo_stars", "discovery_source", "repo_description", "updated_at",
@@ -234,7 +234,8 @@ def map_row(r: dict) -> dict:
             continue
         if k in CONTRIBUTION_ONLY_KEYS and t != "contribution":
             continue
-        if k in PROGRAMME_ONLY_KEYS and t != "programme":
+        if k in PROGRAMME_ONLY_KEYS and t != "programme" and not (
+                t in JOB_TYPES and k in ("gender", "source_kind")):
             continue
         v = r.get(k)
         if v not in (None, "", []):
