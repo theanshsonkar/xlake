@@ -446,6 +446,9 @@ def annotate(rows: Iterable[Dict], cap: int = 10,
     for r in rows:
         job_row = _is_job_row(r)
         r["company"] = company_key(r.get("platform", ""), r.get("token", ""))
+        if r.get("platform") == "unstop" and r.get("company_name"):
+            # Unstop is one aggregator token; the employer is the identity.
+            r["company"] = "unstop:" + str(r["company_name"]).strip().casefold()
         if job_row:
             rec, why = is_recruiter(r.get("token", ""), r.get("title", ""))
             r["is_recruiter"] = rec
