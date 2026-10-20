@@ -210,10 +210,10 @@
  "unstop|": {
   "platform": "unstop",
   "token": "",
-  "total_qualifying_ever": 37102,
-  "qualifying_last_30d": 37102,
-  "sweeps_run": 56,
-  "last_swept_at": "2026-10-18T05:57:03+00:00"
+  "total_qualifying_ever": 37645,
+  "qualifying_last_30d": 37645,
+  "sweeps_run": 57,
+  "last_swept_at": "2026-10-20T16:25:23+00:00"
  },
  "greenhouse|observeai": {
   "platform": "greenhouse",
