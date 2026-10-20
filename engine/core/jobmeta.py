@@ -393,8 +393,16 @@ def domain_from_text(text: Optional[str], *names: str) -> Optional[str]:
     return None
 
 
+_AGGREGATOR_LOGO_HOSTS = ("devpost.com", "devfolio.co", "mlh.io", "internshala.com", "naukri.com",
+                          "indeed.com", "glassdoor.com", "wellfound.com", "hackerearth.com")
+
+
 def favicon_logo(domain: Optional[str], size: int = 128) -> Optional[str]:
-    if not domain:
+    """Google favicon URL for a company domain; never for a job board/aggregator,
+    whose icon would wrongly stand in for the real organiser's logo."""
+    domain = (domain or "").strip().lower()
+    if not domain or is_ats_host(domain) or any(
+            domain == h or domain.endswith("." + h) for h in _AGGREGATOR_LOGO_HOSTS):
         return None
     return "https://www.google.com/s2/favicons?domain={}&sz={}".format(domain, size)
 
