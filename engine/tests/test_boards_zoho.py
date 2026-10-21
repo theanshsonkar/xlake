@@ -73,6 +73,15 @@ class ZohoRecruitAdapterTest(unittest.TestCase):
             user_agent=boards.ZOHO_BROWSER_UA,
         )
 
+    def test_page_without_jobs_input_is_empty_not_error(self):
+        with mock.patch.object(
+            boards, "_request", return_value=(200, "<html>no jobs</html>", None)
+        ):
+            r = boards._zoho("teacherproven")
+        self.assertIsNone(r.error)
+        self.assertEqual(r.postings, [])
+        self.assertTrue(r.extra.get("no_jobs_input"))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -384,7 +384,7 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
 
             if r.truncated:
                 s["truncated"] += 1
-            elif not r.error:
+            elif not r.error and not (r.count == 0 and r.extra.get("no_jobs_input")):
                 # The trust contract excludes truncated and failed reads from
                 # liveness.
                 boards_read.add(board)

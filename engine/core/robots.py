@@ -73,7 +73,11 @@ DEFAULT_DELAY = float(os.environ.get("LAKE_HOST_DELAY", "1.0"))
 
 # Minimum delays for hosts that need extra protection beyond their robots.txt.
 # Keys are exact lowercase netlocs so additional host-specific floors are easy to add.
-HOST_DELAY_OVERRIDES = {"apply.workable.com": 2.5}
+HOST_DELAY_OVERRIDES = {
+    "apply.workable.com": 2.5,
+    "accenture.wd103.myworkdayjobs.com": 1.5,
+    "micron.eightfold.ai": 2.0,
+}
 
 # A site asking for a very long delay effectively asks us not to sweep it in
 # bulk. Cap what we will wait inline, and report the site as too-slow instead of
