@@ -58,10 +58,10 @@
  "lever|palantir": {
   "platform": "lever",
   "token": "palantir",
-  "total_qualifying_ever": 12562,
-  "qualifying_last_30d": 12562,
-  "sweeps_run": 48,
-  "last_swept_at": "2026-09-05T05:46:26+00:00"
+  "total_qualifying_ever": 12829,
+  "qualifying_last_30d": 12829,
+  "sweeps_run": 49,
+  "last_swept_at": "2026-10-21T07:24:39+00:00"
  },
  "workday|redhat.wd5.myworkdayjobs.com|redhat|jobs": {
   "platform": "workday",
