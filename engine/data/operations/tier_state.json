@@ -178,18 +178,18 @@
  "eightfold|mlp|mlp.com": {
   "platform": "eightfold",
   "token": "mlp|mlp.com",
-  "total_qualifying_ever": 8113,
-  "qualifying_last_30d": 8113,
-  "sweeps_run": 47,
-  "last_swept_at": "2026-09-05T05:46:58+00:00"
+  "total_qualifying_ever": 8279,
+  "qualifying_last_30d": 8279,
+  "sweeps_run": 48,
+  "last_swept_at": "2026-10-21T07:37:47+00:00"
  },
  "eightfold|micron|micron.com": {
   "platform": "eightfold",
   "token": "micron|micron.com",
-  "total_qualifying_ever": 61588,
-  "qualifying_last_30d": 61588,
-  "sweeps_run": 44,
-  "last_swept_at": "2026-09-04T05:58:14+00:00"
+  "total_qualifying_ever": 63199,
+  "qualifying_last_30d": 63199,
+  "sweeps_run": 45,
+  "last_swept_at": "2026-10-21T07:41:04+00:00"
  },
  "greenhouse|groww": {
   "platform": "greenhouse",
@@ -11426,98 +11426,98 @@
  "zohorecruit|advanc": {
   "platform": "zohorecruit",
   "token": "advanc",
-  "total_qualifying_ever": 195,
-  "qualifying_last_30d": 195,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:26+00:00"
+  "total_qualifying_ever": 200,
+  "qualifying_last_30d": 200,
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:30+00:00"
  },
  "zohorecruit|advice": {
   "platform": "zohorecruit",
   "token": "advice",
-  "total_qualifying_ever": 341,
-  "qualifying_last_30d": 341,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:28+00:00"
+  "total_qualifying_ever": 347,
+  "qualifying_last_30d": 347,
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:30+00:00"
  },
  "zohorecruit|dhk": {
   "platform": "zohorecruit",
   "token": "dhk",
-  "total_qualifying_ever": 39,
-  "qualifying_last_30d": 39,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:28+00:00"
+  "total_qualifying_ever": 40,
+  "qualifying_last_30d": 40,
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:30+00:00"
  },
  "zohorecruit|drivex": {
   "platform": "zohorecruit",
   "token": "drivex",
-  "total_qualifying_ever": 39,
-  "qualifying_last_30d": 39,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:29+00:00"
+  "total_qualifying_ever": 40,
+  "qualifying_last_30d": 40,
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:30+00:00"
  },
  "zohorecruit|e2ecleaning": {
   "platform": "zohorecruit",
   "token": "e2ecleaning",
-  "total_qualifying_ever": 39,
-  "qualifying_last_30d": 39,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:30+00:00"
+  "total_qualifying_ever": 40,
+  "qualifying_last_30d": 40,
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:30+00:00"
  },
  "zohorecruit|ellasotconsulting": {
   "platform": "zohorecruit",
   "token": "ellasotconsulting",
   "total_qualifying_ever": 12,
   "qualifying_last_30d": 12,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:30+00:00"
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:30+00:00"
  },
  "zohorecruit|indiumsoft": {
   "platform": "zohorecruit",
   "token": "indiumsoft",
-  "total_qualifying_ever": 1854,
-  "qualifying_last_30d": 1854,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:31+00:00"
+  "total_qualifying_ever": 1887,
+  "qualifying_last_30d": 1887,
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:30+00:00"
  },
  "zohorecruit|piedmontglobal": {
   "platform": "zohorecruit",
   "token": "piedmontglobal",
-  "total_qualifying_ever": 69,
-  "qualifying_last_30d": 69,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:32+00:00"
+  "total_qualifying_ever": 71,
+  "qualifying_last_30d": 71,
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:31+00:00"
  },
  "zohorecruit|ironsidehr": {
   "platform": "zohorecruit",
   "token": "ironsidehr",
-  "total_qualifying_ever": 137,
-  "qualifying_last_30d": 137,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:33+00:00"
+  "total_qualifying_ever": 141,
+  "qualifying_last_30d": 141,
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:31+00:00"
  },
  "zohorecruit|r-2": {
   "platform": "zohorecruit",
   "token": "r-2",
-  "total_qualifying_ever": 195,
-  "qualifying_last_30d": 195,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:33+00:00"
+  "total_qualifying_ever": 200,
+  "qualifying_last_30d": 200,
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:31+00:00"
  },
  "zohorecruit|regulvar": {
   "platform": "zohorecruit",
   "token": "regulvar",
-  "total_qualifying_ever": 117,
-  "qualifying_last_30d": 117,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:33+00:00"
+  "total_qualifying_ever": 120,
+  "qualifying_last_30d": 120,
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:31+00:00"
  },
  "zohorecruit|shugulika": {
   "platform": "zohorecruit",
   "token": "shugulika",
-  "total_qualifying_ever": 39,
-  "qualifying_last_30d": 39,
-  "sweeps_run": 39,
-  "last_swept_at": "2026-10-18T06:40:34+00:00"
+  "total_qualifying_ever": 40,
+  "qualifying_last_30d": 40,
+  "sweeps_run": 40,
+  "last_swept_at": "2026-10-21T07:37:32+00:00"
  },
  "zohorecruit|teacherproven": {
   "platform": "zohorecruit",
