@@ -2043,7 +2043,11 @@ def _zoho(token: str) -> BoardResult:
         r"\bid\s*=\s*([\"'])jobs\1", page, flags=re.IGNORECASE
     )
     if not id_match:
-        r.error = "missing_jobs_input"
+        # A 200 careers page with no jobs input is a board with no openings
+        # (empty, not an error). The sweep's empty-board guard still decides
+        # whether anything may be retired. Flagged so the sweep never treats
+        # this unverified zero as a complete read (no retirement).
+        r.extra["no_jobs_input"] = True
         return r
     input_start = page.rfind("<input", 0, id_match.start())
     if input_start < 0:
