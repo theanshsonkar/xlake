@@ -20,6 +20,7 @@ from urllib.parse import urljoin, urlparse
 
 from core import pagetext, robots
 from categories import programme_enrich as enrich
+from categories.stem import is_junk_title, is_stem_programme
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
 
 @dataclass(frozen=True)
@@ -207,6 +208,9 @@ def programme_title_ok(title: str, url: str, category: str = "") -> Tuple[bool, 
     lowered = title_text.casefold()
     if "|" in title_text or any(mark in title_text for mark in "\u2705\u274c\U0001f7e2\U0001f534"):
         # Markdown-table rows scraped as one cell ("Jan 5, 2026 | | OPEN | Org | Name").
+        return False, "malformed_title"
+    if re.match(r"^\s*[*`]|^\s*\[!", title_text) or is_junk_title(title_text):
+        # Markdown quote / admonition text scraped as a title ("> :warning: ...").
         return False, "malformed_title"
     if (_PROGRAMME_ADVICE_TITLE.search(title_text)
             or "how to" in lowered
@@ -1021,6 +1025,7 @@ def _apply_enrichment(record: Dict, evidence: Dict, enriched: Dict, seed: Dict,
     summary = enrich.build_summary(record)
     if summary:
         record["summary"] = summary
+    record["technical"] = is_stem_programme(record)
 
 
 def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None, final_url: Optional[str] = None, *, config: ProgrammeConfig) -> Tuple[Optional[Dict], Dict]:
