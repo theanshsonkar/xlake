@@ -31764,5 +31764,1916 @@
   "result": "failed",
   "state": "failed",
   "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "startup-yc-batch",
+  "programme_id": "startup-yc-batch",
+  "official_url": "https://www.ycombinator.com/",
+  "checked_at": "2026-10-21T09:26:31+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://www.ycombinator.com/apply",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "The deadline to apply on-time is: November 2.",
+    "url": "https://www.ycombinator.com/apply"
+   },
+   "application": {
+    "quote": "Apply for Winter 2027 by November 2",
+    "url": "https://www.ycombinator.com/apply"
+   },
+   "application_url": {
+    "quote": "Apply for Winter 2027 by November 2",
+    "url": "https://www.ycombinator.com/apply"
+   },
+   "opening_date": {
+    "quote": "The deadline to apply on-time is: November 2.",
+    "url": "https://www.ycombinator.com/apply"
+   },
+   "deadline": {
+    "quote": "The deadline to apply on-time is: November 2.",
+    "url": "https://www.ycombinator.com/apply"
+   },
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "We have an application process that's open to any startup, anywhere in the world.",
+    "url": "https://www.ycombinator.com/faq"
+   }
+  }
+ },
+ {
+  "source_id": "startup-yc-startup-school",
+  "programme_id": "startup-yc-startup-school",
+  "official_url": "https://www.startupschool.org/",
+  "checked_at": "2026-10-21T09:26:31+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Learn how to start a company, with help from the world's top startup accelerator - Y Combinator.",
+    "url": "https://www.startupschool.org/"
+   },
+   "programme_name": {
+    "quote": "YC Startup School",
+    "url": "https://www.startupschool.org/"
+   },
+   "organizer": {
+    "quote": "Y Combinator",
+    "url": "https://www.startupschool.org/"
+   },
+   "official_url": {
+    "quote": "https://www.startupschool.org/",
+    "url": "https://www.startupschool.org/"
+   },
+   "eligibility": {
+    "quote": "We'll show you candidates best suited for you based on your requirements and preferences.",
+    "url": "https://www.startupschool.org/"
+   },
+   "application_url": {
+    "quote": "Apply to YC",
+    "url": "https://apply.ycombinator.com"
+   }
+  }
+ },
+ {
+  "source_id": "startup-a16z-speedrun",
+  "programme_id": "startup-a16z-speedrun",
+  "official_url": "https://speedrun.a16z.com/",
+  "checked_at": "2026-10-21T09:26:31+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://speedrun.a16z.com/faq",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "We review applications on a rolling basis, and every one is read by a person.",
+    "url": "https://speedrun.a16z.com/faq"
+   },
+   "application": {
+    "quote": "Apply to speedrun",
+    "url": "https://speedrun.a16z.com/faq"
+   },
+   "application_url": {
+    "quote": "Apply to speedrun",
+    "url": "https://speedrun.a16z.com/faq"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": ", a network of 150+ C-suite founding members and 1,000+ executives and operators open to meeting early companies.",
+    "url": "https://speedrun.a16z.com/faq"
+   }
+  }
+ },
+ {
+  "source_id": "startup-entrepreneurs-first",
+  "programme_id": "startup-entrepreneurs-first",
+  "official_url": "https://www.joinef.com/",
+  "checked_at": "2026-10-21T09:26:32+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://www.joinef.com/faqs/",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "We review applications on a rolling basis.",
+    "url": "https://www.joinef.com/faqs/"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "Although this is unusual, you are still eligible to apply if you have taken a small amount of investment or been awarded a grant.",
+    "url": "https://www.joinef.com/faqs/"
+   }
+  }
+ },
+ {
+  "source_id": "startup-aws-activate",
+  "programme_id": "startup-aws-activate",
+  "official_url": "https://aws.amazon.com/startups/credits",
+  "checked_at": "2026-10-21T09:26:32+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "*You must have an Organization ID (Org ID) from your Activate Provider, such as an accelerator, angel investor, and venture capital firm.",
+    "url": "https://aws.amazon.com/startups/credits"
+   },
+   "programme_name": {
+    "quote": "AWS Activate",
+    "url": "https://aws.amazon.com/startups/credits"
+   },
+   "organizer": {
+    "quote": "Amazon Web Services",
+    "url": "https://aws.amazon.com/startups/credits"
+   },
+   "official_url": {
+    "quote": "https://aws.amazon.com/startups/credits",
+    "url": "https://aws.amazon.com/startups/credits"
+   },
+   "eligibility": {
+    "quote": "(Available to eligible startups without current Activate Credits).",
+    "url": "https://aws.amazon.com/startups/credits"
+   },
+   "application_url": {
+    "quote": "Apply now",
+    "url": "https://aws.amazon.com/startups/join?destination=/credits/apply&p=startupcredit&s=hero"
+   }
+  }
+ },
+ {
+  "source_id": "startup-nsrcel-women-startup-program",
+  "programme_id": "startup-nsrcel-women-startup-program",
+  "official_url": "https://www.nsrcel.org/",
+  "checked_at": "2026-10-21T09:26:38+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Applications are now open for.",
+    "url": "https://www.nsrcel.org/"
+   },
+   "application": {
+    "quote": "Apply Now",
+    "url": "https://www.nsrcel.org/"
+   },
+   "application_url": {
+    "quote": "Apply Now",
+    "url": "https://www.nsrcel.org/"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {
+    "quote": "Global innovation partner bringing international exposure, masterclasses, and market-readiness support.",
+    "url": "https://www.nsrcel.org/"
+   },
+   "eligibility": {
+    "quote": "Engage in constructive dialogue with founders to clarify compliance requirements and course-correct .",
+    "url": "https://www.nsrcel.org/"
+   }
+  }
+ },
+ {
+  "source_id": "startup-t-hub",
+  "programme_id": "startup-t-hub",
+  "official_url": "https://t-hub.co/programs/",
+  "checked_at": "2026-10-21T09:26:33+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "T-Hub\u2019s flagship programs are meticulously crafted to guide startups through distinct phases of their evolutionary journey.",
+    "url": "https://t-hub.co/programs/"
+   },
+   "programme_name": {
+    "quote": "T-Hub Startup Programmes",
+    "url": "https://t-hub.co/programs/"
+   },
+   "organizer": {
+    "quote": "T-Hub",
+    "url": "https://t-hub.co/programs/"
+   },
+   "official_url": {
+    "quote": "https://t-hub.co/programs/",
+    "url": "https://t-hub.co/programs/"
+   }
+  }
+ },
+ {
+  "source_id": "startup-startup-india-seed-fund",
+  "programme_id": "startup-startup-india-seed-fund",
+  "official_url": "https://seedfund.startupindia.gov.in/",
+  "checked_at": "2026-10-21T09:26:33+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-startup_founder-accelerator-london-com-8de612",
+  "programme_id": "startup_founder-hub-accelerator-london-com-8de612",
+  "official_url": "http://accelerator-london.com/",
+  "checked_at": "2026-10-21T09:26:35+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-startup_founder-acceleratoracademy-com-7c8916",
+  "programme_id": "startup_founder-hub-acceleratoracademy-com-7c8916",
+  "official_url": "http://acceleratoracademy.com/",
+  "checked_at": "2026-10-21T09:26:34+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "robots_blocked"
+ },
+ {
+  "source_id": "hub-startup_founder-www-acceleratorcorp-com-adfc80",
+  "programme_id": "startup_founder-hub-www-acceleratorcorp-com-adfc80",
+  "official_url": "http://www.acceleratorcorp.com/",
+  "checked_at": "2026-10-21T09:27:01+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "timeout"
+ },
+ {
+  "source_id": "hub-startup_founder-aka-ms-startuphelp-12b40c",
+  "programme_id": "startup_founder-hub-aka-ms-startuphelp-12b40c",
+  "official_url": "https://aka.ms/startuphelp",
+  "checked_at": "2026-10-21T09:26:34+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-alchemistaccelerator-com-7f981f",
+  "programme_id": "startup_founder-hub-alchemistaccelerator-com-7f981f",
+  "official_url": "http://alchemistaccelerator.com/",
+  "checked_at": "2026-10-21T09:26:35+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Join a curated cohort of technical founders who challenge, elevate, and inspire one another.",
+    "url": "http://alchemistaccelerator.com/"
+   },
+   "programme_name": {
+    "quote": "The Alchemist Accelerator",
+    "url": "http://alchemistaccelerator.com/"
+   },
+   "organizer": {
+    "quote": "alchemistaccelerator.com",
+    "url": "http://alchemistaccelerator.com/"
+   },
+   "official_url": {
+    "quote": "http://alchemistaccelerator.com/",
+    "url": "http://alchemistaccelerator.com/"
+   },
+   "funding": {
+    "quote": "Mantis Analytics awarded \u20ac500,000 from European Innovation Council.",
+    "url": "http://alchemistaccelerator.com/"
+   },
+   "application_url": {
+    "quote": "Apply Now",
+    "url": "https://www.alchemistaccelerator.com/cs/c/?cta_guid=09bb0443-2928-405b-ba25-3831dbfaebce&signature=AAH58kG99JL94OperB4V2qeV6W_1_qpY3A&portal_id=22145576&pageId=159817754755&placement_guid=158cbd02-6c3d-4216-bc77-8041cac65ee1&click=0644eefb-ebe2-4a01-917a-5ed82f3e1b39&redirect_url=APefjpFvIAaglTsokTJMwQv6e2lMcXaNOScKiH_8hcZ7f1_ssArE50IdTmRPHrV0kQi3i21Zq1I1N4nJMdoG16UQQGBW8a-iaGhvEMhSL7kmnE2qq7Cq5HwEYKEcmCWJFNvmwROd0-1q&hsutk=dc7fb805c9fa54d5561747b4a1bb0299&canon=https%3A%2F%2Fwww.alchemistaccelerator.com%2Fjapan&ts=1766092412327&__hstc=64976752.dc7fb805c9fa54d5561747b4a1bb0299.1766092412614.1766092412614.1766092412614.1&__hssc=64976752.1.1766092412614&__hsfp=3393147654&contentType=landing-page"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-ati-utexas-edu-3d0439",
+  "programme_id": "startup_founder-hub-ati-utexas-edu-3d0439",
+  "official_url": "http://ati.utexas.edu/",
+  "checked_at": "2026-10-21T09:26:46+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://ati.utexas.edu/about/faq/",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "ATI practices rolling admissions.",
+    "url": "https://ati.utexas.edu/about/faq/"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "However, you must be eligible to work in the U.S..",
+    "url": "https://ati.utexas.edu/about/faq/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-austintexas-gov-soulyatx-ec17a6",
+  "programme_id": "startup_founder-hub-austintexas-gov-soulyatx-ec17a6",
+  "official_url": "https://austintexas.gov/soulyatx",
+  "checked_at": "2026-10-21T09:26:36+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-startup_founder-auth0-com-startups-vip-3be21b",
+  "programme_id": "startup_founder-hub-auth0-com-startups-vip-3be21b",
+  "official_url": "https://auth0.com/startups/vip",
+  "checked_at": "2026-10-21T09:26:35+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Apply for the Auth0 for Startups program, which includes everything in our B2B Professional plan, to help you launch your product.",
+    "url": "https://auth0.com/startups/vip"
+   },
+   "programme_name": {
+    "quote": "$864k in credits $21.6k/participant",
+    "url": "https://auth0.com/startups/vip"
+   },
+   "organizer": {
+    "quote": "auth0.com",
+    "url": "https://auth0.com/startups/vip"
+   },
+   "official_url": {
+    "quote": "https://auth0.com/startups/vip",
+    "url": "https://auth0.com/startups/vip"
+   },
+   "funding": {
+    "quote": "Venture-backed with less than $5M in funding.",
+    "url": "https://auth0.com/startups/vip"
+   },
+   "eligibility": {
+    "quote": "If you're not eligible for this program, you can still try Auth0 for free at:.",
+    "url": "https://auth0.com/startups/vip"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-berlinstartupacademy-com-b9ca3c",
+  "programme_id": "startup_founder-hub-berlinstartupacademy-com-b9ca3c",
+  "official_url": "http://berlinstartupacademy.com/",
+  "checked_at": "2026-10-21T09:27:01+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "timeout"
+ },
+ {
+  "source_id": "hub-startup_founder-betakit-com-resources-canadian-accelerator-programs-e189fb",
+  "programme_id": "startup_founder-hub-betakit-com-resources-canadian-accelerator-programs-e189fb",
+  "official_url": "http://betakit.com/resources/canadian-accelerator-programs/name/entrepreneurshipalacrity",
+  "checked_at": "2026-10-21T09:26:35+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-bethnalgreenventures-com-6bcb1f",
+  "programme_id": "startup_founder-hub-bethnalgreenventures-com-6bcb1f",
+  "official_url": "https://bethnalgreenventures.com/",
+  "checked_at": "2026-10-21T09:26:35+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Get notified about BGV's next Tech for Good programme.",
+    "url": "https://bethnalgreenventures.com/"
+   },
+   "programme_name": {
+    "quote": "Bethnal Green Ventures",
+    "url": "https://bethnalgreenventures.com/"
+   },
+   "organizer": {
+    "quote": "bethnalgreenventures.com",
+    "url": "https://bethnalgreenventures.com/"
+   },
+   "official_url": {
+    "quote": "https://bethnalgreenventures.com/",
+    "url": "https://bethnalgreenventures.com/"
+   },
+   "application_url": {
+    "quote": "Apply for our Programme",
+    "url": "https://bethnalgreenventures.com/apply"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-boomtownaccelerator-com-5cab5a",
+  "programme_id": "startup_founder-hub-www-boomtownaccelerator-com-5cab5a",
+  "official_url": "http://www.boomtownaccelerator.com/",
+  "checked_at": "2026-10-21T09:26:36+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-startup_founder-www-canadasmusicincubator-com-5689ec",
+  "programme_id": "startup_founder-hub-www-canadasmusicincubator-com-5689ec",
+  "official_url": "http://www.canadasmusicincubator.com/",
+  "checked_at": "2026-10-21T09:26:50+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Canada\u2019s Music Incubator (CMI) is a not-for-profit organization dedicated to providing customized, hands-on creative and entrepreneurial development for emerging artists, artist managers and industry professionals.",
+    "url": "http://www.canadasmusicincubator.com/"
+   },
+   "programme_name": {
+    "quote": "Canada\u2019s Music Incubator",
+    "url": "http://www.canadasmusicincubator.com/"
+   },
+   "organizer": {
+    "quote": "canadasmusicincubator.com",
+    "url": "http://www.canadasmusicincubator.com/"
+   },
+   "official_url": {
+    "quote": "http://www.canadasmusicincubator.com/",
+    "url": "http://www.canadasmusicincubator.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-cfda-com-programs-designers-d7b551",
+  "programme_id": "startup_founder-hub-cfda-com-programs-designers-d7b551",
+  "official_url": "https://cfda.com/programs/designers/cfda-fashion-incubator",
+  "checked_at": "2026-10-21T09:26:38+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-startup_founder-www-city-ac-uk-business-services-research-and-consultancy-00a597",
+  "programme_id": "startup_founder-hub-www-city-ac-uk-business-services-research-and-consultancy-00a597",
+  "official_url": "http://www.city.ac.uk/business-services/research-and-consultancy/incubation/london-incubator",
+  "checked_at": "2026-10-21T09:26:41+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-startup_founder-www-codeforamerica-org-dfd5a9",
+  "programme_id": "startup_founder-hub-www-codeforamerica-org-dfd5a9",
+  "official_url": "https://www.codeforamerica.org/",
+  "checked_at": "2026-10-21T09:26:41+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-startup_founder-www-creagenincubator-com-3d34ac",
+  "programme_id": "startup_founder-hub-www-creagenincubator-com-3d34ac",
+  "official_url": "http://www.creagenincubator.com/",
+  "checked_at": "2026-10-21T09:26:41+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Discover how C2I Accelerator has provided Tulip Biosciences with a collaborative environment, world-class facilities, and the support needed to transform research into real-world impact.",
+    "url": "http://www.creagenincubator.com/"
+   },
+   "programme_name": {
+    "quote": "CreaGen Life Science Incubator",
+    "url": "http://www.creagenincubator.com/"
+   },
+   "organizer": {
+    "quote": "creagenincubator.com",
+    "url": "http://www.creagenincubator.com/"
+   },
+   "official_url": {
+    "quote": "http://www.creagenincubator.com/",
+    "url": "http://www.creagenincubator.com/"
+   },
+   "application_url": {
+    "quote": "Apply for Lab Space",
+    "url": "https://forms.gle/xLUFXY53BvR6tWKq6"
+   },
+   "eligibility": {
+    "quote": "We have only one primary standard for evaluating prospective residents:.",
+    "url": "https://www.c2ixcel.com/apply-for-space"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-d1-awsstatic-com-onedam-marketing-channels-e576ef",
+  "programme_id": "startup_founder-hub-d1-awsstatic-com-onedam-marketing-channels-e576ef",
+  "official_url": "https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/product-categories/ai-ml/artificial-intelligence/approved/documents/aws-readiness-v13-final.pdf",
+  "checked_at": "2026-10-21T09:26:40+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-startup_founder-dallasventurepartners-com-community-b84db5",
+  "programme_id": "startup_founder-hub-dallasventurepartners-com-community-b84db5",
+  "official_url": "http://dallasventurepartners.com/community",
+  "checked_at": "2026-10-21T09:27:06+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "timeout"
+ },
+ {
+  "source_id": "hub-startup_founder-dbx4startups-com-436054",
+  "programme_id": "startup_founder-hub-dbx4startups-com-436054",
+  "official_url": "https://dbx4startups.com/?itm_category=home&itm_page=home&itm_source=www",
+  "checked_at": "2026-10-21T09:26:42+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Startup Events Join Databricks and our VC partners for Founders Dinners, meetups and hands-on workshops in a city near y",
+    "url": "https://dbx4startups.com/?itm_category=home&itm_page=home&itm_source=www"
+   },
+   "organizer": {
+    "quote": "dbx4startups.com",
+    "url": "https://dbx4startups.com/?itm_category=home&itm_page=home&itm_source=www"
+   },
+   "official_url": {
+    "quote": "https://dbx4startups.com/?itm_category=home&itm_page=home&itm_source=www",
+    "url": "https://dbx4startups.com/?itm_category=home&itm_page=home&itm_source=www"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-digitalhealthaccelerator-com-aaaf6c",
+  "programme_id": "startup_founder-hub-digitalhealthaccelerator-com-aaaf6c",
+  "official_url": "http://digitalhealthaccelerator.com/",
+  "checked_at": "2026-10-21T09:26:44+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "The New York Digital Health Accelerator (NYDHA) was a collaborative effort orchestrated by the Partnership Fund for New York City and the NY eHealth Collaborative .",
+    "url": "http://digitalhealthaccelerator.com/"
+   },
+   "programme_name": {
+    "quote": "New York Digital Health Accelerator",
+    "url": "http://digitalhealthaccelerator.com/"
+   },
+   "organizer": {
+    "quote": "digitalhealthaccelerator.com",
+    "url": "http://digitalhealthaccelerator.com/"
+   },
+   "official_url": {
+    "quote": "http://digitalhealthaccelerator.com/",
+    "url": "http://digitalhealthaccelerator.com/"
+   },
+   "funding": {
+    "quote": "The fund had invested over $150 million exclusively in NYC-based enterprises, with a specific focus on digital health, fintech, life sciences, advanced manufacturing, healthcare, workforce development, and food manufacturing.",
+    "url": "http://digitalhealthaccelerator.com/"
+   },
+   "eligibility": {
+    "quote": "Its chief objective was to deploy its investors\u2019 resources \u2013 capital, time, and influence \u2013 to foster job creation, promote new business development, and enhance opportunities for the city\u2019s...",
+    "url": "http://digitalhealthaccelerator.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-downtown-vegas-tech-coaccelerator-las-vegas-4703af",
+  "programme_id": "startup_founder-hub-downtown-vegas-tech-coaccelerator-las-vegas-4703af",
+  "official_url": "http://downtown.vegas/tech-coaccelerator-las-vegas",
+  "checked_at": "2026-10-21T09:26:44+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-dreamit-com-66c7ce",
+  "programme_id": "startup_founder-hub-www-dreamit-com-66c7ce",
+  "official_url": "http://www.dreamit.com/",
+  "checked_at": "2026-10-21T09:26:48+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-startup_founder-ecomachinesventures-com-dae2cf",
+  "programme_id": "startup_founder-hub-ecomachinesventures-com-dae2cf",
+  "official_url": "http://ecomachinesventures.com/",
+  "checked_at": "2026-10-21T09:26:46+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-startup_founder-egbi-org-888878",
+  "programme_id": "startup_founder-hub-egbi-org-888878",
+  "official_url": "http://egbi.org/",
+  "checked_at": "2026-10-21T09:26:47+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Over the time I\u2019ve worked with EGBI, the organization has continued to grow in both programming and impact, reaching more entrepreneurs and strengthening the small business ecosystem in meaningful ways.",
+    "url": "http://egbi.org/"
+   },
+   "programme_name": {
+    "quote": "Economic Growth Business Incubator",
+    "url": "http://egbi.org/"
+   },
+   "organizer": {
+    "quote": "egbi.org",
+    "url": "http://egbi.org/"
+   },
+   "official_url": {
+    "quote": "http://egbi.org/",
+    "url": "http://egbi.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-elmspringaccelerator-com-f72279",
+  "programme_id": "startup_founder-hub-elmspringaccelerator-com-f72279",
+  "official_url": "http://elmspringaccelerator.com/",
+  "checked_at": "2026-10-21T09:26:49+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Buyers Agent Accelerator leverages an unparalleled network of real estate and housing industry professionals, investors, mentors, and strategic partners to accelerate innovators in the field.",
+    "url": "http://elmspringaccelerator.com/"
+   },
+   "programme_name": {
+    "quote": "Elmspring Accelerator",
+    "url": "http://elmspringaccelerator.com/"
+   },
+   "organizer": {
+    "quote": "elmspringaccelerator.com",
+    "url": "http://elmspringaccelerator.com/"
+   },
+   "official_url": {
+    "quote": "http://elmspringaccelerator.com/",
+    "url": "http://elmspringaccelerator.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-entrepreneurship-mit-edu-accelerator-d3e514",
+  "programme_id": "startup_founder-hub-entrepreneurship-mit-edu-accelerator-d3e514",
+  "official_url": "http://entrepreneurship.mit.edu/accelerator",
+  "checked_at": "2026-10-21T09:26:49+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-eonetwork-org-germany-berlin-fc4dbe",
+  "programme_id": "startup_founder-hub-www-eonetwork-org-germany-berlin-fc4dbe",
+  "official_url": "https://www.eonetwork.org/germany-berlin",
+  "checked_at": "2026-10-21T09:26:52+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-startup_founder-www-eonetwork-org-seattle-63b256",
+  "programme_id": "startup_founder-hub-www-eonetwork-org-seattle-63b256",
+  "official_url": "https://www.eonetwork.org/seattle",
+  "checked_at": "2026-10-21T09:26:49+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-eranyc-com-39e2ca",
+  "programme_id": "startup_founder-hub-eranyc-com-39e2ca",
+  "official_url": "http://eranyc.com/",
+  "checked_at": "2026-10-21T09:26:53+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://www.eranyc.com/apply/",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Application Deadline\u2192 November 2, 2026.",
+    "url": "https://www.eranyc.com/apply/"
+   },
+   "application": {
+    "quote": "Apply Now",
+    "url": "https://www.eranyc.com/apply/"
+   },
+   "application_url": {
+    "quote": "Apply Now",
+    "url": "https://www.eranyc.com/apply/"
+   },
+   "opening_date": {
+    "quote": "Application Deadline\u2192 November 2, 2026.",
+    "url": "https://www.eranyc.com/apply/"
+   },
+   "deadline": {
+    "quote": "Application Deadline\u2192 November 2, 2026.",
+    "url": "https://www.eranyc.com/apply/"
+   },
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "While we leave ourselves open to great entrepreneurs with transformative ideas, we have some general guidelines around company focus.",
+    "url": "https://www.eranyc.com/faq/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-executivebusinessaccelerator-com-executive-business-accelera-3b968f",
+  "programme_id": "startup_founder-hub-executivebusinessaccelerator-com-executive-business-accelera-3b968f",
+  "official_url": "http://executivebusinessaccelerator.com/executive-business-accelerator-en",
+  "checked_at": "2026-10-21T09:26:57+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-startup_founder-www-fashionincubator-com-47a6d3",
+  "programme_id": "startup_founder-hub-www-fashionincubator-com-47a6d3",
+  "official_url": "http://www.fashionincubator.com/",
+  "checked_at": "2026-10-21T09:27:01+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
+ },
+ {
+  "source_id": "hub-startup_founder-fi-co-4b4c62",
+  "programme_id": "startup_founder-hub-fi-co-4b4c62",
+  "official_url": "http://fi.co/",
+  "checked_at": "2026-10-21T09:27:13+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://fi.co/join",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Deadline: Oct 21, 2026.",
+    "url": "https://fi.co/join"
+   },
+   "application": {
+    "quote": "Apply in Silicon Valley",
+    "url": "https://fi.co/join"
+   },
+   "application_url": {
+    "quote": "Apply in Silicon Valley",
+    "url": "https://fi.co/join"
+   },
+   "opening_date": {
+    "quote": "Deadline: Oct 21, 2026.",
+    "url": "https://fi.co/join"
+   },
+   "deadline": {
+    "quote": "Deadline: Oct 21, 2026.",
+    "url": "https://fi.co/join"
+   },
+   "funding": {
+    "quote": "Get special deals and support worth over $3 million from top support organizations and partners.",
+    "url": "https://fi.co/join"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {
+    "quote": "Based in Silicon Valley and with chapters across 200+ cities and 95 countries, our mission is to empower communities of talented and motivated people to build impactful technology companies worldwide.",
+    "url": "https://fi.co/join"
+   },
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-fi-co-s-denver-24cf9e",
+  "programme_id": "startup_founder-hub-fi-co-s-denver-24cf9e",
+  "official_url": "http://fi.co/s/denver",
+  "checked_at": "2026-10-21T09:27:23+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://fi.co/join",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Deadline: Oct 21, 2026.",
+    "url": "https://fi.co/join"
+   },
+   "application": {
+    "quote": "Apply in Silicon Valley",
+    "url": "https://fi.co/join"
+   },
+   "application_url": {
+    "quote": "Apply in Silicon Valley",
+    "url": "https://fi.co/join"
+   },
+   "opening_date": {
+    "quote": "Deadline: Oct 21, 2026.",
+    "url": "https://fi.co/join"
+   },
+   "deadline": {
+    "quote": "Deadline: Oct 21, 2026.",
+    "url": "https://fi.co/join"
+   },
+   "funding": {
+    "quote": "Get special deals and support worth over $3 million from top support organizations and partners.",
+    "url": "https://fi.co/join"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {
+    "quote": "Based in Silicon Valley and with chapters across 200+ cities and 95 countries, our mission is to empower communities of talented and motivated people to build impactful technology companies worldwide.",
+    "url": "https://fi.co/join"
+   },
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-fi-co-s-seattle-4a1dfa",
+  "programme_id": "startup_founder-hub-fi-co-s-seattle-4a1dfa",
+  "official_url": "http://fi.co/s/seattle",
+  "checked_at": "2026-10-21T09:27:21+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://fi.co/join",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "Deadline: Oct 21, 2026.",
+    "url": "https://fi.co/join"
+   },
+   "application": {
+    "quote": "Apply in Silicon Valley",
+    "url": "https://fi.co/join"
+   },
+   "application_url": {
+    "quote": "Apply in Silicon Valley",
+    "url": "https://fi.co/join"
+   },
+   "opening_date": {
+    "quote": "Deadline: Oct 21, 2026.",
+    "url": "https://fi.co/join"
+   },
+   "deadline": {
+    "quote": "Deadline: Oct 21, 2026.",
+    "url": "https://fi.co/join"
+   },
+   "funding": {
+    "quote": "Get special deals and support worth over $3 million from top support organizations and partners.",
+    "url": "https://fi.co/join"
+   },
+   "location": {},
+   "remote": {},
+   "international_eligibility": {
+    "quote": "Based in Silicon Valley and with chapters across 200+ cities and 95 countries, our mission is to empower communities of talented and motivated people to build impactful technology companies worldwide.",
+    "url": "https://fi.co/join"
+   },
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-founderfuel-com-71c023",
+  "programme_id": "startup_founder-hub-founderfuel-com-71c023",
+  "official_url": "http://founderfuel.com/",
+  "checked_at": "2026-10-21T09:27:17+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "A 4-month intensive accelerator program that helps tech founders develop the skillsets and mindsets to turn their vision into world-changing companies.",
+    "url": "http://founderfuel.com/"
+   },
+   "programme_name": {
+    "quote": "Founder Fuel",
+    "url": "http://founderfuel.com/"
+   },
+   "organizer": {
+    "quote": "founderfuel.com",
+    "url": "http://founderfuel.com/"
+   },
+   "official_url": {
+    "quote": "http://founderfuel.com/",
+    "url": "http://founderfuel.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-founderlabs-org-354b0e",
+  "programme_id": "startup_founder-hub-www-founderlabs-org-354b0e",
+  "official_url": "https://www.founderlabs.org/",
+  "checked_at": "2026-10-21T09:27:13+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-startup_founder-foundersfund-com-b75854",
+  "programme_id": "startup_founder-hub-foundersfund-com-b75854",
+  "official_url": "https://foundersfund.com/",
+  "checked_at": "2026-10-21T09:27:10+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-startup_founder-founderspad-com-53fb1b",
+  "programme_id": "startup_founder-hub-founderspad-com-53fb1b",
+  "official_url": "http://founderspad.com/",
+  "checked_at": "2026-10-21T09:27:27+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Founders Pad",
+    "url": "http://founderspad.com/"
+   },
+   "organizer": {
+    "quote": "founderspad.com",
+    "url": "http://founderspad.com/"
+   },
+   "official_url": {
+    "quote": "http://founderspad.com/",
+    "url": "http://founderspad.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-gaminginc-ca-c9a785",
+  "programme_id": "startup_founder-hub-www-gaminginc-ca-c9a785",
+  "official_url": "http://www.gaminginc.ca/",
+  "checked_at": "2026-10-21T09:27:18+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_5xx"
+ },
+ {
+  "source_id": "hub-startup_founder-www-gdhcc-com-7c99cd",
+  "programme_id": "startup_founder-hub-www-gdhcc-com-7c99cd",
+  "official_url": "http://www.gdhcc.com/",
+  "checked_at": "2026-10-21T09:27:21+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Business programs designed to take entrepreneurs from first idea to first contract.",
+    "url": "http://www.gdhcc.com/"
+   },
+   "programme_name": {
+    "quote": "Greater Dallas Hispanic Chamber of Commerce Incubator Program",
+    "url": "http://www.gdhcc.com/"
+   },
+   "organizer": {
+    "quote": "gdhcc.com",
+    "url": "http://www.gdhcc.com/"
+   },
+   "official_url": {
+    "quote": "http://www.gdhcc.com/",
+    "url": "http://www.gdhcc.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-googleforentrepreneurs-com-startup-communities-notman-ho-fadc1c",
+  "programme_id": "startup_founder-hub-www-googleforentrepreneurs-com-startup-communities-notman-ho-fadc1c",
+  "official_url": "https://www.googleforentrepreneurs.com/startup-communities/notman-house",
+  "checked_at": "2026-10-21T09:27:18+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-hhaccelerator-com-c6f072",
+  "programme_id": "startup_founder-hub-www-hhaccelerator-com-c6f072",
+  "official_url": "http://www.hhaccelerator.com/",
+  "checked_at": "2026-10-21T09:27:18+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-hubraum-com-programs-incubator-berlin-960af5",
+  "programme_id": "startup_founder-hub-www-hubraum-com-programs-incubator-berlin-960af5",
+  "official_url": "https://www.hubraum.com/programs/incubator-berlin",
+  "checked_at": "2026-10-21T09:27:18+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-hubventures-org-6d3b78",
+  "programme_id": "startup_founder-hub-www-hubventures-org-6d3b78",
+  "official_url": "http://www.hubventures.org/",
+  "checked_at": "2026-10-21T09:27:23+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "If a VIP area is available after registration, users should read the current programme rules before increasing play volume in an attempt to qualify for a reward.",
+    "url": "http://www.hubventures.org/"
+   },
+   "programme_name": {
+    "quote": "Hub Ventures",
+    "url": "http://www.hubventures.org/"
+   },
+   "organizer": {
+    "quote": "hubventures.org",
+    "url": "http://www.hubventures.org/"
+   },
+   "official_url": {
+    "quote": "http://www.hubventures.org/",
+    "url": "http://www.hubventures.org/"
+   },
+   "funding": {
+    "quote": "The supplied offer is 100% up to \u00a31000 + 200 FS, and the supported payment list supplied for this build includes Visa, Mastercard, bank transfer, Bitcoin, USDT, Skrill, Neteller and Paysafecard.",
+    "url": "http://www.hubventures.org/"
+   },
+   "eligibility": {
+    "quote": "The key terms to check are the qualifying games, minimum eligible stake, scoring method, opt-in requirement, start and end time, tie-breaking rules and any restrictions on bonus funds.",
+    "url": "http://www.hubventures.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-illumina-com-science-accelerator-html-358d1f",
+  "programme_id": "startup_founder-hub-www-illumina-com-science-accelerator-html-358d1f",
+  "official_url": "http://www.illumina.com/science/accelerator.html",
+  "checked_at": "2026-10-21T09:27:25+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "We are accepting rolling applications for Illumina for Startups Grants.",
+    "url": "http://www.illumina.com/science/accelerator.html"
+   },
+   "application": {
+    "quote": "Apply Now",
+    "url": "https://www.illumina.com/landing/illumina-accelerator/grant-competition-application.html"
+   },
+   "application_url": {
+    "quote": "Apply Now",
+    "url": "https://www.illumina.com/landing/illumina-accelerator/grant-competition-application.html"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {}
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-inc39-com-c87980",
+  "programme_id": "startup_founder-hub-www-inc39-com-c87980",
+  "official_url": "http://www.inc39.com/",
+  "checked_at": "2026-10-21T09:27:22+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-startup_founder-www-indexventures-com-b619cf",
+  "programme_id": "startup_founder-hub-www-indexventures-com-b619cf",
+  "official_url": "https://www.indexventures.com/",
+  "checked_at": "2026-10-21T09:27:22+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-startup_founder-insightpd-com-accelerator-insight-accelerator-labs-4c60ac",
+  "programme_id": "startup_founder-hub-insightpd-com-accelerator-insight-accelerator-labs-4c60ac",
+  "official_url": "http://insightpd.com/accelerator/insight-accelerator-labs",
+  "checked_at": "2026-10-21T09:27:27+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-startup_founder-ironyardventures-com-current-programs-dd973d",
+  "programme_id": "startup_founder-hub-ironyardventures-com-current-programs-dd973d",
+  "official_url": "http://ironyardventures.com/current-programs",
+  "checked_at": "2026-10-21T09:27:23+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-joinffl-com-dc9938",
+  "programme_id": "startup_founder-hub-www-joinffl-com-dc9938",
+  "official_url": "http://www.joinffl.com/",
+  "checked_at": "2026-10-21T09:27:25+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "We thoroughly enjoyed our time as a part of their program.",
+    "url": "http://www.joinffl.com/"
+   },
+   "programme_name": {
+    "quote": "FFL Startup Accelerator",
+    "url": "http://www.joinffl.com/"
+   },
+   "organizer": {
+    "quote": "joinffl.com",
+    "url": "http://www.joinffl.com/"
+   },
+   "official_url": {
+    "quote": "http://www.joinffl.com/",
+    "url": "http://www.joinffl.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-kaplanedtechaccelerator-com-s3-website-us-east-1-amazona-a9f4a2",
+  "programme_id": "startup_founder-hub-www-kaplanedtechaccelerator-com-s3-website-us-east-1-amazona-a9f4a2",
+  "official_url": "http://www.kaplanedtechaccelerator.com.s3-website-us-east-1.amazonaws.com/",
+  "checked_at": "2026-10-21T09:28:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "timeout"
+ },
+ {
+  "source_id": "hub-startup_founder-kiro-dev-startups-f69490",
+  "programme_id": "startup_founder-hub-kiro-dev-startups-f69490",
+  "official_url": "https://kiro.dev/startups",
+  "checked_at": "2026-10-21T09:27:28+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {},
+   "programme_name": {
+    "quote": "Learn More Build and deploy faster with Kiro credits designed for startups Apply today",
+    "url": "https://kiro.dev/startups"
+   },
+   "organizer": {
+    "quote": "kiro.dev",
+    "url": "https://kiro.dev/startups"
+   },
+   "official_url": {
+    "quote": "https://kiro.dev/startups",
+    "url": "https://kiro.dev/startups"
+   },
+   "eligibility": {
+    "quote": "Who is eligible to apply for Kiro startup credits?",
+    "url": "https://kiro.dev/startups"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-launchdfw-com-startup-resources-accelerators-8425dc",
+  "programme_id": "startup_founder-hub-launchdfw-com-startup-resources-accelerators-8425dc",
+  "official_url": "http://launchdfw.com/startup-resources/accelerators",
+  "checked_at": "2026-10-21T09:27:28+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-madronavl-com-2ae970",
+  "programme_id": "startup_founder-hub-madronavl-com-2ae970",
+  "official_url": "http://madronavl.com/",
+  "checked_at": "2026-10-21T09:27:28+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-startup_founder-www-marsdd-com-bap-b24158",
+  "programme_id": "startup_founder-hub-www-marsdd-com-bap-b24158",
+  "official_url": "https://www.marsdd.com/bap",
+  "checked_at": "2026-10-21T09:27:30+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-startup_founder-mewe360-com-home-d26edb",
+  "programme_id": "startup_founder-hub-mewe360-com-home-d26edb",
+  "official_url": "http://mewe360.com/home",
+  "checked_at": "2026-10-21T09:27:43+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-startup_founder-www-microsoftaccelerator-com-locations-berlin-d955c6",
+  "programme_id": "startup_founder-hub-www-microsoftaccelerator-com-locations-berlin-d955c6",
+  "official_url": "https://www.microsoftaccelerator.com/locations/berlin",
+  "checked_at": "2026-10-21T09:27:37+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "\u201cThis is my third venture and I have never seen such a beneficial go-to-market program for founders ... especially in the enterprise segment.",
+    "url": "https://www.microsoftaccelerator.com/locations/berlin"
+   },
+   "programme_name": {
+    "quote": "Microsoft Ventures",
+    "url": "https://www.microsoftaccelerator.com/locations/berlin"
+   },
+   "organizer": {
+    "quote": "microsoftaccelerator.com",
+    "url": "https://www.microsoftaccelerator.com/locations/berlin"
+   },
+   "official_url": {
+    "quote": "https://www.microsoftaccelerator.com/locations/berlin",
+    "url": "https://www.microsoftaccelerator.com/locations/berlin"
+   },
+   "eligibility": {
+    "quote": "Credits can be applied across eligible Azure services to support your startup from early development through production workloads.",
+    "url": "https://www.microsoftaccelerator.com/locations/berlin"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-mognodb-com-startup-accelerator-628b96",
+  "programme_id": "startup_founder-hub-mognodb-com-startup-accelerator-628b96",
+  "official_url": "http://mognodb.com/startup-accelerator",
+  "checked_at": "2026-10-21T09:27:30+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-startup_founder-www-newme-in-87378b",
+  "programme_id": "startup_founder-hub-www-newme-in-87378b",
+  "official_url": "http://www.newme.in/",
+  "checked_at": "2026-10-21T09:27:55+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "timeout"
+ },
+ {
+  "source_id": "hub-startup_founder-www-newventuresbc-com-ef463f",
+  "programme_id": "startup_founder-hub-www-newventuresbc-com-ef463f",
+  "official_url": "http://www.newventuresbc.com/",
+  "checked_at": "2026-10-21T09:27:46+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Through mentorship, funding, and our annual competition, we provide the resources, recognition, and community founders need to succeed.",
+    "url": "http://www.newventuresbc.com/"
+   },
+   "programme_name": {
+    "quote": "New Ventures BC, Vancouver",
+    "url": "http://www.newventuresbc.com/"
+   },
+   "organizer": {
+    "quote": "newventuresbc.com",
+    "url": "http://www.newventuresbc.com/"
+   },
+   "official_url": {
+    "quote": "http://www.newventuresbc.com/",
+    "url": "http://www.newventuresbc.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-notion-so-notion-for-startup-terms-936b74c0323745a186b14-b118d3",
+  "programme_id": "startup_founder-hub-www-notion-so-notion-for-startup-terms-936b74c0323745a186b14-b118d3",
+  "official_url": "https://www.notion.so/Notion-for-Startup-Terms-936b74c0323745a186b1497747074020",
+  "checked_at": "2026-10-21T09:27:43+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-nventures-ai-91a6f6",
+  "programme_id": "startup_founder-hub-www-nventures-ai-91a6f6",
+  "official_url": "https://www.nventures.ai/",
+  "checked_at": "2026-10-21T09:27:54+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Join NVIDIA\u2019s free program, developed to support startups at all phases of their journey.",
+    "url": "https://www.nventures.ai/"
+   },
+   "programme_name": {
+    "quote": "Venture Capital",
+    "url": "https://www.nventures.ai/"
+   },
+   "organizer": {
+    "quote": "nventures.ai",
+    "url": "https://www.nventures.ai/"
+   },
+   "official_url": {
+    "quote": "https://www.nventures.ai/",
+    "url": "https://www.nventures.ai/"
+   },
+   "application_url": {
+    "quote": "Apply to Inception",
+    "url": "https://www.nvidia.com/en-us/startups/"
+   },
+   "eligibility": {
+    "quote": "The NVIDIA Inception VC Alliance helps eligible startups connect with a global ecosystem of top-tier VC firms.",
+    "url": "https://www.nvidia.com/en-us/startups/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-oregonrain-org-65a973",
+  "programme_id": "startup_founder-hub-oregonrain-org-65a973",
+  "official_url": "http://oregonrain.org/",
+  "checked_at": "2026-10-21T09:27:53+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Join us at an upcoming event in your area or join one of our upcoming events or programs.",
+    "url": "http://oregonrain.org/"
+   },
+   "programme_name": {
+    "quote": "Regional Accelerator and Innovation Network",
+    "url": "http://oregonrain.org/"
+   },
+   "organizer": {
+    "quote": "oregonrain.org",
+    "url": "http://oregonrain.org/"
+   },
+   "official_url": {
+    "quote": "http://oregonrain.org/",
+    "url": "http://oregonrain.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-otradi-org-0f9c7d",
+  "programme_id": "startup_founder-hub-www-otradi-org-0f9c7d",
+  "official_url": "http://www.otradi.org/",
+  "checked_at": "2026-10-21T09:28:09+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "From shaping an early idea to building an investor-ready company, OBI\u2019s BioIgnite and BioBuild programs are designed to help bioscience founders move forward.",
+    "url": "http://www.otradi.org/"
+   },
+   "programme_name": {
+    "quote": "OTRADI Bioscience Incubator",
+    "url": "http://www.otradi.org/"
+   },
+   "organizer": {
+    "quote": "otradi.org",
+    "url": "http://www.otradi.org/"
+   },
+   "official_url": {
+    "quote": "http://www.otradi.org/",
+    "url": "http://www.otradi.org/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-oxygenaccelerator-com-36f23a",
+  "programme_id": "startup_founder-hub-www-oxygenaccelerator-com-36f23a",
+  "official_url": "http://www.oxygenaccelerator.com/",
+  "checked_at": "2026-10-21T09:28:09+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed; second-hop evidence from https://www.oxygenaccelerator.com/cee-startups-apply-now-to-oxygen-accelerator/",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Apply now by midnight on Sunday 8th February 2015.",
+    "url": "https://www.oxygenaccelerator.com/cee-startups-apply-now-to-oxygen-accelerator/"
+   },
+   "deadline": {
+    "quote": "Apply now by midnight on Sunday 8th February 2015.",
+    "url": "https://www.oxygenaccelerator.com/cee-startups-apply-now-to-oxygen-accelerator/"
+   },
+   "funding": {
+    "quote": "Oxygen Accelerator is an intensive 13 week programme that provides mentoring, tools, hands-on support and \u20ac21,000 in investment for early stage tech startups, in exchange for 8% equity.",
+    "url": "https://www.oxygenaccelerator.com/cee-startups-apply-now-to-oxygen-accelerator/"
+   },
+   "eligibility": {
+    "quote": "You must be based with us for the entire programme (13 weeks), as the programme is incredibly intensive and we believe it is essential to focus entirely on your startup for the duration of the...",
+    "url": "https://www.oxygenaccelerator.com/faqs/"
+   },
+   "application_url": {
+    "quote": "CEE Startups, apply now to Oxygen Accelerator",
+    "url": "https://www.oxygenaccelerator.com/cee-startups-apply-now-to-oxygen-accelerator/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-paris-numa-co-startups-fe95d1",
+  "programme_id": "startup_founder-hub-paris-numa-co-startups-fe95d1",
+  "official_url": "https://paris.numa.co/startups",
+  "checked_at": "2026-10-21T09:27:55+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-paulgraham-com-growth-html-0bf2ee",
+  "programme_id": "startup_founder-hub-www-paulgraham-com-growth-html-0bf2ee",
+  "official_url": "http://www.paulgraham.com/growth.html",
+  "checked_at": "2026-10-21T09:27:57+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Programmers will recognize what we're doing here.",
+    "url": "http://www.paulgraham.com/growth.html"
+   },
+   "programme_name": {
+    "quote": "Startup = Growth \u203a",
+    "url": "http://www.paulgraham.com/growth.html"
+   },
+   "organizer": {
+    "quote": "paulgraham.com",
+    "url": "http://www.paulgraham.com/growth.html"
+   },
+   "official_url": {
+    "quote": "http://www.paulgraham.com/growth.html",
+    "url": "http://www.paulgraham.com/growth.html"
+   },
+   "eligibility": {
+    "quote": "How fast does a company have to grow to be considered a startup?",
+    "url": "http://www.paulgraham.com/growth.html"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-paulgraham-com-startupideas-html-2c48a4",
+  "programme_id": "startup_founder-hub-www-paulgraham-com-startupideas-html-2c48a4",
+  "official_url": "http://www.paulgraham.com/startupideas.html",
+  "checked_at": "2026-10-21T09:27:56+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: advice_page"
+ },
+ {
+  "source_id": "hub-startup_founder-www-paypal-incubator-com-fea1d0",
+  "programme_id": "startup_founder-hub-www-paypal-incubator-com-fea1d0",
+  "official_url": "https://www.paypal-incubator.com/",
+  "checked_at": "2026-10-21T09:27:56+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-pdx-edu-impactentrepreneurs-incubator-126cae",
+  "programme_id": "startup_founder-hub-www-pdx-edu-impactentrepreneurs-incubator-126cae",
+  "official_url": "https://www.pdx.edu/impactentrepreneurs/incubator",
+  "checked_at": "2026-10-21T09:27:58+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-startup_founder-projectstartups-com-d62e60",
+  "programme_id": "startup_founder-hub-projectstartups-com-d62e60",
+  "official_url": "http://projectstartups.com/",
+  "checked_at": "2026-10-21T09:27:58+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-rencenter-org-ea3e5e",
+  "programme_id": "startup_founder-hub-www-rencenter-org-ea3e5e",
+  "official_url": "http://www.rencenter.org/",
+  "checked_at": "2026-10-21T09:27:58+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-revtechaccelerator-com-0b5507",
+  "programme_id": "startup_founder-hub-www-revtechaccelerator-com-0b5507",
+  "official_url": "http://www.revtechaccelerator.com/",
+  "checked_at": "2026-10-21T09:27:58+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-rgaaccelerator-com-connecteddevices-2d1f84",
+  "programme_id": "startup_founder-hub-rgaaccelerator-com-connecteddevices-2d1f84",
+  "official_url": "http://rgaaccelerator.com/connecteddevices",
+  "checked_at": "2026-10-21T09:28:18+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
+ },
+ {
+  "source_id": "hub-startup_founder-salesforceventures-com-543c8f",
+  "programme_id": "startup_founder-hub-salesforceventures-com-543c8f",
+  "official_url": "https://salesforceventures.com/",
+  "checked_at": "2026-10-21T09:27:59+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "We offer customized mentorship, hands-on assistance, and domain-specific insights from enterprise leaders and active Salesforce executives so you can drive measurable growth faster.",
+    "url": "https://salesforceventures.com/"
+   },
+   "programme_name": {
+    "quote": "Salesforce Ventures",
+    "url": "https://salesforceventures.com/"
+   },
+   "organizer": {
+    "quote": "salesforceventures.com",
+    "url": "https://salesforceventures.com/"
+   },
+   "official_url": {
+    "quote": "https://salesforceventures.com/",
+    "url": "https://salesforceventures.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-sfu-ca-io-venture-e7f53d",
+  "programme_id": "startup_founder-hub-www-sfu-ca-io-venture-e7f53d",
+  "official_url": "http://www.sfu.ca/io/venture/venture-connection.html",
+  "checked_at": "2026-10-21T09:28:05+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Entrepreneurship Co-op empowers FHS student to expand non-profit program beyond Lower Mainland.",
+    "url": "http://www.sfu.ca/io/venture/venture-connection.html"
+   },
+   "programme_name": {
+    "quote": "SFU TIME Ventures",
+    "url": "http://www.sfu.ca/io/venture/venture-connection.html"
+   },
+   "organizer": {
+    "quote": "sfu.ca",
+    "url": "http://www.sfu.ca/io/venture/venture-connection.html"
+   },
+   "official_url": {
+    "quote": "http://www.sfu.ca/io/venture/venture-connection.html",
+    "url": "http://www.sfu.ca/io/venture/venture-connection.html"
+   },
+   "funding": {
+    "quote": "Key Funding Partners 2008-2024.",
+    "url": "http://www.sfu.ca/io/venture/venture-connection.html"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-springu-is-home-seattle-188054",
+  "programme_id": "startup_founder-hub-springu-is-home-seattle-188054",
+  "official_url": "http://springu.is/home/seattle",
+  "checked_at": "2026-10-21T09:28:06+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-startup_founder-starburst-aero-91672e",
+  "programme_id": "startup_founder-hub-starburst-aero-91672e",
+  "official_url": "http://starburst.aero/",
+  "checked_at": "2026-10-21T09:28:08+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Combining three complementary activities \u2013 startup accelerators, strategy consulting, & venture investments \u2013 we help aerospace and defense stakeholders innovate, navigate and invest in the dynamic ecosystem.",
+    "url": "http://starburst.aero/"
+   },
+   "programme_name": {
+    "quote": "Starburst Accelerator",
+    "url": "http://starburst.aero/"
+   },
+   "organizer": {
+    "quote": "starburst.aero",
+    "url": "http://starburst.aero/"
+   },
+   "official_url": {
+    "quote": "http://starburst.aero/",
+    "url": "http://starburst.aero/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-startl-org-accelerator-65fcc7",
+  "programme_id": "startup_founder-hub-startl-org-accelerator-65fcc7",
+  "official_url": "http://startl.org/accelerator",
+  "checked_at": "2026-10-21T09:28:08+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-startupnext-co-d1f4d3",
+  "programme_id": "startup_founder-hub-www-startupnext-co-d1f4d3",
+  "official_url": "http://www.startupnext.co/",
+  "checked_at": "2026-10-21T09:28:08+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-startup_founder-startups-aws-com-learn-made-in-boston-home-grown-talent-insp-2e7ad1",
+  "programme_id": "startup_founder-hub-startups-aws-com-learn-made-in-boston-home-grown-talent-insp-2e7ad1",
+  "official_url": "https://startups.aws.com/learn/made-in-boston-home-grown-talent-inspires-world-changing-innovations",
+  "checked_at": "2026-10-21T09:28:08+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-startupsafaryberlin2016-sched-org-event-6q8h-c2a2ec",
+  "programme_id": "startup_founder-hub-startupsafaryberlin2016-sched-org-event-6q8h-c2a2ec",
+  "official_url": "https://startupsafaryberlin2016.sched.org/event/6q8h/you-is-now-meet-the-startup-accelerator-of-the-scout24-portals",
+  "checked_at": "2026-10-21T09:28:11+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-startup_founder-startupschool-org-f423a5",
+  "programme_id": "startup_founder-hub-startupschool-org-f423a5",
+  "official_url": "https://startupschool.org/",
+  "checked_at": "2026-10-21T09:28:12+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Learn how to start a company, with help from the world's top startup accelerator - Y Combinator.",
+    "url": "https://startupschool.org/"
+   },
+   "programme_name": {
+    "quote": "Startup School",
+    "url": "https://startupschool.org/"
+   },
+   "organizer": {
+    "quote": "startupschool.org",
+    "url": "https://startupschool.org/"
+   },
+   "official_url": {
+    "quote": "https://startupschool.org/",
+    "url": "https://startupschool.org/"
+   },
+   "eligibility": {
+    "quote": "We'll show you candidates best suited for you based on your requirements and preferences.",
+    "url": "https://startupschool.org/"
+   },
+   "application_url": {
+    "quote": "Apply to YC",
+    "url": "https://apply.ycombinator.com"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-startupshub-notion-site-1c1590db1742802ba5e3ca6411499628-4c694f",
+  "programme_id": "startup_founder-hub-startupshub-notion-site-1c1590db1742802ba5e3ca6411499628-4c694f",
+  "official_url": "https://startupshub.notion.site/1c1590db1742802ba5e3ca6411499628",
+  "checked_at": "2026-10-21T09:28:13+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-surfincubator-com-d24fb5",
+  "programme_id": "startup_founder-hub-www-surfincubator-com-d24fb5",
+  "official_url": "http://www.surfincubator.com/",
+  "checked_at": "2026-10-21T09:28:14+00:00",
+  "result": "non_actionable",
+  "state": "needs_confirmation",
+  "reason": "official formal programme page; current status or deadline is not stated",
+  "official_evidence": {
+   "official_page": {
+    "quote": "Since 2009, SURF Incubator has been a space for entrepreneurs to explore and find their footing.",
+    "url": "http://www.surfincubator.com/"
+   },
+   "programme_name": {
+    "quote": "SURF Incubator",
+    "url": "http://www.surfincubator.com/"
+   },
+   "organizer": {
+    "quote": "surfincubator.com",
+    "url": "http://www.surfincubator.com/"
+   },
+   "official_url": {
+    "quote": "http://www.surfincubator.com/",
+    "url": "http://www.surfincubator.com/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-techcrunch-com-2026-08-75010c",
+  "programme_id": "startup_founder-hub-techcrunch-com-2026-08-75010c",
+  "official_url": "https://techcrunch.com/2026/08/12/blacksmiths-valuation-jumps-10x-to-550m-as-ai-coding-fuels-software-validation",
+  "checked_at": "2026-10-21T09:28:15+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: malformed_title"
+ },
+ {
+  "source_id": "hub-startup_founder-www-thedec-co-dee55f",
+  "programme_id": "startup_founder-hub-www-thedec-co-dee55f",
+  "official_url": "http://www.thedec.co/",
+  "checked_at": "2026-10-21T09:28:15+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-ucdenver-edu-academics-colleges-0d3190",
+  "programme_id": "startup_founder-hub-www-ucdenver-edu-academics-colleges-0d3190",
+  "official_url": "http://www.ucdenver.edu/academics/colleges/business/about/Centers/bard/incubator/Pages/Incubator.aspx",
+  "checked_at": "2026-10-21T09:28:15+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-umassd-edu-innovate-809534",
+  "programme_id": "startup_founder-hub-www-umassd-edu-innovate-809534",
+  "official_url": "https://www.umassd.edu/innovate",
+  "checked_at": "2026-10-21T09:28:15+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-urbanchamber-org-pages-servicesandprograms-7f1442",
+  "programme_id": "startup_founder-hub-www-urbanchamber-org-pages-servicesandprograms-7f1442",
+  "official_url": "http://www.urbanchamber.org/pages/ServicesandPrograms",
+  "checked_at": "2026-10-21T09:28:19+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-startup_founder-www-usbusinessincubator-com-about-0325dc",
+  "programme_id": "startup_founder-hub-www-usbusinessincubator-com-about-0325dc",
+  "official_url": "http://www.usbusinessincubator.com/about",
+  "checked_at": "2026-10-21T09:28:16+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-startup_founder-www-venturelabs-ca-ab5d31",
+  "programme_id": "startup_founder-hub-www-venturelabs-ca-ab5d31",
+  "official_url": "http://www.venturelabs.ca/",
+  "checked_at": "2026-10-21T09:28:16+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-ventureshot-com-c740fb",
+  "programme_id": "startup_founder-hub-ventureshot-com-c740fb",
+  "official_url": "http://ventureshot.com/",
+  "checked_at": "2026-10-21T09:28:18+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-startup_founder-www-vmsaccelerators-com-f0131e",
+  "programme_id": "startup_founder-hub-www-vmsaccelerators-com-f0131e",
+  "official_url": "http://www.vmsaccelerators.com/",
+  "checked_at": "2026-10-21T09:28:26+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "tls"
+ },
+ {
+  "source_id": "hub-startup_founder-www-wcti-org-d80178",
+  "programme_id": "startup_founder-hub-www-wcti-org-d80178",
+  "official_url": "http://www.wcti.org/",
+  "checked_at": "2026-10-21T09:28:19+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
+ },
+ {
+  "source_id": "hub-startup_founder-web-unlv-edu-accelerator-c066c8",
+  "programme_id": "startup_founder-hub-web-unlv-edu-accelerator-c066c8",
+  "official_url": "http://web.unlv.edu/accelerator",
+  "checked_at": "2026-10-21T09:28:18+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
+ },
+ {
+  "source_id": "hub-startup_founder-www-yedinstitute-org-e53e76",
+  "programme_id": "startup_founder-hub-www-yedinstitute-org-e53e76",
+  "official_url": "http://www.yedinstitute.org/",
+  "checked_at": "2026-10-21T09:28:20+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window; second-hop evidence from https://yedi.ca/programs/certificate-programs/incubator-program/",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {},
+   "application": {
+    "quote": "APPLY NOW",
+    "url": "https://yedi.ca/programs/certificate-programs/incubator-program/"
+   },
+   "application_url": {
+    "quote": "APPLY NOW",
+    "url": "https://yedi.ca/programs/certificate-programs/incubator-program/"
+   },
+   "opening_date": {},
+   "deadline": {},
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "Is the program only open to students?",
+    "url": "https://yedi.ca/programs/certificate-programs/incubator-program/"
+   }
+  }
+ },
+ {
+  "source_id": "hub-startup_founder-www-zahncenternyc-com-930d75",
+  "programme_id": "startup_founder-hub-www-zahncenternyc-com-930d75",
+  "official_url": "http://www.zahncenternyc.com/",
+  "checked_at": "2026-10-21T09:28:18+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: missing_programme_noun"
  }
 ]
