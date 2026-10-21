@@ -11473,5 +11473,45 @@
   "segment": "unclassified",
   "source": "discovery",
   "evidence": "https://udaan.darwinbox.in (discovery-cache boards_darwinbox.json, verified 21 live jobs)"
+ },
+ {
+  "platform": "workday",
+  "token": "accenture.wd103.myworkdayjobs.com|accenture|AccentureCareers",
+  "company": "Accenture",
+  "segment": "it_services",
+  "source": "resolver",
+  "evidence": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers"
+ },
+ {
+  "platform": "workday",
+  "token": "intel.wd1.myworkdayjobs.com|intel|External",
+  "company": "Intel",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "https://intel.wd1.myworkdayjobs.com/External"
+ },
+ {
+  "platform": "eightfold",
+  "token": "micron|micron.com",
+  "company": "Micron",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "micron.eightfold.ai"
+ },
+ {
+  "platform": "lever",
+  "token": "palantir",
+  "company": "Palantir",
+  "segment": "big_tech",
+  "source": "resolver",
+  "evidence": "jobs.lever.co/palantir"
+ },
+ {
+  "platform": "eightfold",
+  "token": "mlp|mlp.com",
+  "company": "Millennium",
+  "segment": "quant",
+  "source": "resolver",
+  "evidence": "mlp.eightfold.ai"
  }
 ]
