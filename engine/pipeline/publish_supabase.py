@@ -52,7 +52,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from core import jobmeta, shards
+from core import jobmeta, serving_quality, shards
 from categories.programme_enrich import clean_location
 
 LAKE_PATH = Path("data/lake/opportunities.json")
@@ -295,9 +295,47 @@ def map_row(r: dict) -> dict:
     }
 
 
-def build_serving(lake: list, category: str = None) -> list:
-    return [map_row(r) for r in lake if is_serving(r)
-            and (category is None or shards.shard_of(r) == category)]
+def quality_reason(r: dict):
+    """Why a (serving-eligible) non-job row must not be served, else None."""
+    t = record_type(r)
+    if t in JOB_TYPES or t == "contribution":
+        return None
+    title = _first(r.get("title"), r.get("programme_name"), r.get("organizer"))
+    url = _first(r.get("url"), r.get("official_url"), r.get("application_url"))
+    eligibility = _first(r.get("eligibility"))
+    if t == "hackathon":
+        return serving_quality.hackathon_gate(
+            title, _first(r.get("organizer"), r.get("company")), eligibility)
+    if t == "programme":
+        return (serving_quality.title_gate(title, url)
+                or serving_quality.senior_gate(r, title, eligibility, r.get("description")))
+    return None
+
+
+def build_serving(lake: list, category: str = None, foreign=(), report=None) -> list:
+    """Rows to publish. ``foreign``: live rows of other programme categories
+    (see serving_quality.candidate) used only for cross-category dedupe.
+    ``report`` (dict) collects {row_id: reason} for dropped rows."""
+    report = report if report is not None else {}
+    kept = []
+    for r in lake:
+        if not (is_serving(r) and (category is None or shards.shard_of(r) == category)):
+            continue
+        why = quality_reason(r)
+        if why:
+            report[stable_id(r)] = why
+            continue
+        kept.append(r)
+    cands, by_id = [], {}
+    for r in kept:
+        if record_type(r) != "programme":
+            continue
+        m = map_row(r)
+        cands.append(serving_quality.candidate(r, m["id"], m["title"], m["company"], m["url"]))
+    losers = serving_quality.dedupe(cands, foreign)
+    for lid, wid in losers.items():
+        report[lid] = "duplicate_of:" + wid
+    return [map_row(r) for r in kept if stable_id(r) not in losers]
 
 
 RETIRE_GUARD_RATIO = 0.5
@@ -375,6 +413,29 @@ class Supabase:
                 f += "&category=eq.%s" % urllib.parse.quote(c, safe="")
             ids |= self._fetch_ids(f)
         return ids
+
+    def fetch_foreign_programmes(self, categories):
+        """Read-only: live programme rows in categories OTHER than ``categories``,
+        as serving_quality candidates (cross-category dedupe for scoped runs)."""
+        out, offset, page = [], 0, 1000
+        while True:
+            status, hdrs, raw = self._request(
+                "GET", "/%s?select=id,category,title,company,url,verified,"
+                       "source_kind:extra->>source_kind&type=eq.programme&is_live=eq.true"
+                       "&limit=%d&offset=%d" % (TABLE, page, offset),
+                headers={"Range-Unit": "items"})
+            rows = json.loads(raw) if raw else []
+            for x in rows:
+                if x.get("category") in categories:
+                    continue
+                out.append(serving_quality.candidate(
+                    {"category": x.get("category"), "source_kind": x.get("source_kind"),
+                     "verified": x.get("verified")},
+                    x["id"], x.get("title"), x.get("company"), x.get("url")))
+            if len(rows) < page:
+                break
+            offset += page
+        return out
 
     def fetch_job_ids(self, shard: str):
         """LIVE ids (already-retired rows are excluded so they are neither
@@ -493,7 +554,16 @@ def main():
     else:
         # whole lake = main + any local shards (shards override main copies)
         lake = shards.load_whole_lake(str(LAKE_PATH))
-    mapped = build_serving(lake, cat)
+    foreign = []
+    url0, key0 = os.environ.get("SUPABASE_URL"), os.environ.get("SUPABASE_SERVICE_KEY")
+    if cat and not job_shard and url0 and key0 and any(t == "programme" for t, _ in scopes):
+        try:  # read-only; failure just skips cross-category dedupe
+            foreign = Supabase(url0, key0).fetch_foreign_programmes(
+                {c for t, c in scopes if t == "programme"})
+        except Exception as e:  # noqa: BLE001
+            print("cross-category dedupe skipped: %s" % e)
+    dropped = {}
+    mapped = build_serving(lake, cat, foreign, dropped)
     by_type, nc, uniq, dups = summarize(mapped)
 
     print("=" * 64)
@@ -501,6 +571,9 @@ def main():
                          " [category=%s]" % cat if cat else ""))
     print("lake rows total        : %d" % len(lake))
     print("serving rows to publish: %d" % len(mapped))
+    print("quality-gate drops     : %d" % len(dropped))
+    for rid, why in sorted(dropped.items())[:40]:
+        print("  DROP %s  (%s)" % (rid, why))
     print("-" * 64)
     print("count by type:")
     for t in sorted(by_type, key=lambda k: -by_type[k]):
