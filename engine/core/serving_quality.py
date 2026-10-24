@@ -132,6 +132,97 @@ def title_gate(title: object, url: object = None) -> Optional[str]:
 
 
 # --------------------------------------------------------------------------- #
+# Recover a programme name from a scraped markdown-table row
+# --------------------------------------------------------------------------- #
+_US_STATES = frozenset(s.casefold() for s in (
+    "Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware Florida Georgia Hawaii Idaho "
+    "Illinois Indiana Iowa Kansas Kentucky Louisiana Maine Maryland Massachusetts Michigan Minnesota "
+    "Mississippi Missouri Montana Nebraska Nevada Ohio Oklahoma Oregon Pennsylvania Tennessee Texas Utah "
+    "Vermont Virginia Washington Wisconsin Wyoming").split()) | {
+    "new hampshire", "new jersey", "new mexico", "new york", "north carolina", "north dakota",
+    "rhode island", "south carolina", "south dakota", "west virginia", "district of columbia"}
+_MONTH = r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?"
+_T_DATE = re.compile(r"^\s*(?:" + _MONTH + r"\s+\d{1,2}\b|\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}/\d{2,4})", re.I)
+_T_STATUS = re.compile(
+    r"^(?:rolling|fafsa|automatic|quarterly|monthly|annual|varies|deadline|new\s*\(|check\s+site)\b|"
+    r"^(?:open|opens?\s+soon|closed|tbd|tba|multiple|remote|n/a|none|status|company|program|type|location|"
+    r"fellowship|scholarship|grant|award|internship|rolling)$", re.I)
+_T_DEADLINE_TAIL = re.compile(r"\s+[\u2014\u2013-]+\s+(?:deadline|incoming|cohort)\b.*$|\s+\(\s*deadline\b.*$", re.I)
+_T_NOUN = re.compile(
+    r"\b(?:scholarships?|fellowships?|fellows?|grants?|programs?|programmes?|awards?|prizes?|expert|leader|"
+    r"promise|hope|tap|ignite|focus|scholars\w*|internships?|initiative|challenge|intensive)\b", re.I)
+_T_ORG = re.compile(r"\b(?:universit(?:y|ies)|college|consortium|foundation|institute|/)\b|/", re.I)
+_T_NOISE_CELL = re.compile(r"##|---|^>|:warning:|\bresident\b|\bup to\b|\bfafsa\b|\bpriority\b|\bpassed\b", re.I)
+_T_EMOJI = re.compile("[\u2705\U0001F525\u23F3\u274C\u26A0\uFE0F\U0001F4A1\u2B50]")
+_T_TAG = re.compile(r"\[(?:OPEN|CLOSED|OPENS?\s+SOON)\]", re.I)
+
+
+def _t_cell(c: str) -> str:
+    c = _T_EMOJI.sub("", c)
+    c = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", c)  # [text](url) -> text
+    c = _T_TAG.sub("", c).replace("**", "").replace("__", "")
+    c = _T_DEADLINE_TAIL.sub("", _norm_ws(c))
+    return c.strip(" -\u2014\u2013:;,")
+
+
+_T_COMPLETE = ("Scholarship", "Fellowship", "Program", "Grant", "Award", "Prize")
+
+
+def _t_repair_truncated(c: str) -> str:
+    """Last cell of a title cut at the length cap: drop dangling bits, complete a partial noun."""
+    c = re.sub(r"\s*\([^)]*$", "", c)  # unclosed paren
+    if re.search(r"\s[\u2014\u2013]\s", c):
+        c = re.split(r"\s[\u2014\u2013]\s", c)[:-1]
+        c = " \u2014 ".join(c)  # the last segment is the cut-off one
+    else:
+        m = re.search(r"(\S+)$", c)
+        if m and not c.endswith(")"):
+            w = m.group(1)
+            full = next((n for n in _T_COMPLETE if n.casefold().startswith(w.casefold())), None)
+            if full and (len(w) >= 2 or len(c.split()) > 1):
+                return c[:m.start()] + full
+            if len(c.split()) > 1:
+                c = c[:m.start()]
+    c = re.sub(r"(?:\s+(?:for|and|of|in|the|at|to|&|a|an|with|on))+$", "", c.strip(), flags=re.I)
+    return c.strip(" -\u2014\u2013:;,")
+
+
+def recover_table_title(title: object) -> Optional[str]:
+    """Programme name hidden in a scraped markdown-table row, or None when only noise remains."""
+    raw = _norm_ws(title)
+    if "|" not in raw and not _T_TAG.search(raw) and not _T_EMOJI.search(raw):
+        return None
+    parts = raw.split("|")
+    truncated = len(raw) >= 119 and not raw.endswith("|")
+    cells, tcells = [], []
+    for i, c in enumerate(parts):
+        if re.search(r"##|---|^\s*>|:warning:", c):
+            continue
+        last = truncated and i == len(parts) - 1
+        c0 = c
+        c = _t_cell(c)
+        if last and not _T_DEADLINE_TAIL.search(_norm_ws(_T_EMOJI.sub("", c0))):
+            c = _t_repair_truncated(c)
+        low = c.casefold()
+        if (not c or _T_DATE.match(c) or _T_STATUS.match(c) or low in _US_STATES
+                or len(re.findall(r"[A-Za-z]", c)) < 4 or len(c) > 100
+                or (re.match(r"^(?:\d|\$)", c) and not _T_NOUN.search(c)) or _T_NOISE_CELL.search(c)):
+            continue
+        (tcells if last else cells).append(c)
+    named = [c for c in cells if _T_NOUN.search(c)] + [c for c in tcells if _T_NOUN.search(c)]
+    if named:
+        plain = [c for c in named if not _T_ORG.search(c)]
+        pick = (plain or named)[0]
+    else:
+        # no programme noun: org cell then programme cell; a lone cell is just an organiser name
+        allc = cells + tcells
+        pick = allc[1] if len(allc) >= 2 else None
+    if not pick or title_gate(pick) or len(pick) < 4:
+        return None
+    return pick
+
+
+# --------------------------------------------------------------------------- #
 # Too-senior programmes (audience: students, 0-2 years experience)
 # --------------------------------------------------------------------------- #
 _SENIOR_TITLE = re.compile(
@@ -236,12 +327,18 @@ _GRANT_STUDENT = re.compile(
     r"\bearly[- ]stage\s+founders?\b|\bsolo\s+founders?\b|\bindividuals?\b|\byoung\s+(?:people|founders|entrepreneurs)\b|"
     r"\bfirst[- ]time\s+founders?\b|\bmaintainers?\b|\bopen[- ]source\s+(?:projects?|developers?|contributors?)\b|\bbuilders?\b", re.I)
 _GRANT_POOL_USD = 1_000_000
+_FELLOW_TITLE = re.compile(r"\bfellow(?:s|ship|ships)?\b", re.I)
+# Curated exceptions that the grant gate would wrongly drop.
+KEEP_IDS = frozenset({"programme:grant-github-fund"})
 
 
 def grant_gate(title: object, eligibility: object, description: object,
-               funding_usd: object = None, requirements: object = None) -> Optional[str]:
+               funding_usd: object = None, requirements: object = None,
+               row_id: object = None) -> Optional[str]:
     """Reason when a grant targets institutions/PIs/companies or is a >=1M pool,
     unless the source text names students / individual or early-stage founders."""
+    if row_id in KEEP_IDS or _FELLOW_TITLE.search(_norm_ws(title)):
+        return None  # curated fund / individual fellowship (senior_gate handles postdoc ones)
     reqs = " ".join(requirements) if isinstance(requirements, list) else _norm_ws(requirements)
     own = " ".join(_norm_ws(x) for x in (title, eligibility, description, reqs) if x)
     if _GRANT_ORG_TITLE.search(_norm_ws(title)):

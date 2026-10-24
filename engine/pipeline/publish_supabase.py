@@ -218,9 +218,21 @@ def _truncate(v, n=200):
     return s[:n]
 
 
+def recovered_title(r: dict):
+    """Programme name recovered from a scraped table-row title, else None."""
+    if record_type(r) != "programme":
+        return None
+    title = _first(r.get("title"), r.get("programme_name"), r.get("organizer"))
+    if title and serving_quality.title_gate(title) == "scrape_junk_title":
+        return serving_quality.recover_table_title(title)
+    return None
+
+
 def _display_title(r: dict, t: str):
     title = _first(r.get("title"), r.get("programme_name"), r.get("organizer"), r.get("repo"))
-    return serving_quality.clean_title(title) if t == "programme" and title else title
+    if t == "programme" and title:
+        return recovered_title(r) or serving_quality.clean_title(title)
+    return title
 
 
 _HOSTNAME = re.compile(r"^(?:https?://)?(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}(?:/\S*)?$", re.I)
@@ -325,6 +337,8 @@ def quality_reason(r: dict):
     url = _first(r.get("url"), r.get("official_url"), r.get("application_url"))
     eligibility = _first(r.get("eligibility"))
     usd = r.get("funding_amount_usd")
+    if t == "programme":
+        title = recovered_title(r) or title
     if t == "hackathon":
         return serving_quality.hackathon_gate(
             title, _first(r.get("organizer"), r.get("company")), eligibility)
@@ -332,7 +346,8 @@ def quality_reason(r: dict):
         why = (serving_quality.title_gate(title, url)
                or serving_quality.senior_gate(r, serving_quality.clean_title(title), eligibility, r.get("description")))
         if not why and r.get("category") == "grant":
-            why = serving_quality.grant_gate(title, eligibility, r.get("description"), usd, r.get("requirements"))
+            why = serving_quality.grant_gate(title, eligibility, r.get("description"), usd, r.get("requirements"),
+                                           row_id=stable_id(r))
         return why
     return None
 
@@ -350,6 +365,10 @@ def build_serving(lake: list, category: str = None, foreign=(), report=None) -> 
         if why:
             report[stable_id(r)] = why
             continue
+        rt = recovered_title(r)
+        if rt:
+            print("title recovered: {} -> {}".format(
+                _first(r.get("title"), r.get("programme_name"))[:80], rt))
         kept.append(r)
     cands, by_id = [], {}
     for r in kept:

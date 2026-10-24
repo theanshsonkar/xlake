@@ -298,3 +298,48 @@ class GrantMaintainerTests(unittest.TestCase):
 
     def test_big_pool_without_individuals_dropped(self):
         self.assertEqual(Q.grant_gate("Big Science Pool", "", "Supports ambitious research.", 30_000_000), "grant_pool_too_large")
+
+
+class RecoverTableTitleTests(unittest.TestCase):
+    def test_recovers_programme_names(self):
+        cases = {
+            "| Rolling (FAFSA ASAP) | | ✅ **[OPEN]** | Nevada | Governor Guinn Millennium Scholarship | Up to $10,000":
+                "Governor Guinn Millennium Scholarship",
+            "| Rolling (FAFSA ASAP) | | ✅ **[OPEN]** | New York | Tuition Assistance Program (TAP) | $500–$5,665 | NY resident":
+                "Tuition Assistance Program (TAP)",
+            "| Jun 17, 2026 | | ✅ **[OPEN]** | Handshake | AI Fellowship Program — Deadline: Check site | Fellowship | Remote |":
+                "AI Fellowship Program",
+            "| Aug 9, 2026 | | ✅ **[OPEN]** | Jane Street | FOCUS — Deadline: Rolling (Sign Up to Be Notified) | Multi-Day Program (S":
+                "FOCUS",
+            "Oct 13, 2026 | | ✅ [OPEN] | Penn State / NASA Pennsylvania Space Grant Consortium | Undergraduate Research Internship Program | x":
+                "Undergraduate Research Internship Program",
+            "| Jul 5, 2026 | | ⏳ [OPENS SOON] | GitHub | Campus Expert — Deadline: Annual Window |": "Campus Expert",
+        }
+        for raw, want in cases.items():
+            self.assertEqual(Q.recover_table_title(raw), want, raw)
+
+    def test_noise_returns_none(self):
+        for raw in ("> :warning: State aid rules change frequently. Always verify eligibility and deadlines",
+                    "Jul 9, 2026 | --- ## Rising Freshmen & Class of 2030 Opportunities Opportunities open",
+                    "Oct 13, 2026 | | ✅ [OPEN] | Lander U", "Gates Cambridge Scholarship"):
+            self.assertIsNone(Q.recover_table_title(raw), raw)
+
+    def test_publisher_recovers_and_keeps_stable_id(self):
+        raw = "| Rolling (FAFSA ASAP) | | ✅ **[OPEN]** | Hawaii | Hawaii Promise Scholarship | Last-dollar aid | HI resident"
+        r = prog("scraped-1", raw, category="scholarship")
+        self.assertIsNone(quality_reason(r))
+        out = build_serving([r])
+        self.assertEqual(out[0]["title"], "Hawaii Promise Scholarship")
+        self.assertEqual(out[0]["id"], "programme:scraped-1")
+        junk = prog("scraped-2", "> :warning: State aid rules change frequently ** x |", category="scholarship")
+        self.assertEqual(quality_reason(junk), "scrape_junk_title")
+
+
+class GrantFellowKeepTests(unittest.TestCase):
+    def test_fellowships_and_keep_ids_not_dropped(self):
+        g = Q.grant_gate
+        self.assertIsNone(g("eBPF Fellowship", "", "grants for organisations and institutions"))
+        self.assertIsNone(g("Mozilla Foundation Fellowships and Awards", "", "supports universities"))
+        self.assertIsNone(g("GitHub Fund", "", "invests in startups companies", row_id="programme:grant-github-fund"))
+        for t in ("Ford Foundation Grants", "Wellcome Discovery Awards", "NSF Seed Fund (SBIR/STTR)"):
+            self.assertEqual(g(t, "", ""), "grant_for_organisations", t)
