@@ -124,6 +124,130 @@ class DedupeTests(unittest.TestCase):
         self.assertEqual(len(got) + len(got_a), 1)
 
 
+class QaRoundTwoGateTests(unittest.TestCase):
+    def test_table_and_blob_titles_dropped(self):
+        for t in ("| Rolling (FAFSA ASAP) | | \u2705 **[OPEN]** | Nevada | Governor Guinn Millennium Scholarship |",
+                  "Jul 9, 2026 | --- ## Rising Freshmen & Class of 2030 Opportunities",
+                  "Foo ## Bar", "A | B | C", "\u2705 Scholarship", "x" * 151):
+            self.assertIsNotNone(Q.title_gate(t), t[:40])
+        self.assertEqual(Q.title_gate("| a | b | Foo Scholarship"), "scrape_junk_title")
+        self.assertIsNone(Q.title_gate("National Fellowship And Scholarship For Higher Education Of ST Students - Scholarship (Formally Top Class Education For Schedule Tribe Students)"))
+        self.assertIsNone(Q.title_gate("Community | Fellowship"))  # a single pipe is not a table
+
+    def test_bold_wrapped_title_is_cleaned_not_dropped(self):
+        self.assertEqual(Q.clean_title("**Ethereum Protocol Fellowship**"), "Ethereum Protocol Fellowship")
+        self.assertIsNone(Q.title_gate("**Ethereum Protocol Fellowship**"))
+        self.assertEqual(Q.title_gate("**Ethereum** Fellowship **x**"), "scrape_junk_title")
+
+    def test_database_forum_and_bad_hosts(self):
+        for t in ("A database of ~700 funding schemes and fellowships for postdocs", "Database of fellowships",
+                  "Funding schemes and travel grant opportunities for postdocs", "Community Forum | github.community",
+                  "Community Forum"):
+            self.assertIsNotNone(Q.title_gate(t), t)
+        self.assertEqual(Q.title_gate("Some Fellowship", "https://www.ecrcentral.org/fundings"), "index_host")
+        self.assertEqual(Q.title_gate("Some Fellowship", "https://github.community/t/x"), "index_host")
+        self.assertIsNone(Q.title_gate("Some Fellowship", "https://example.org/x"))
+
+    def test_senior_titles(self):
+        for t in ("Burroughs Wellcome Fund Career Awards", "MIT METEOR Postdoctoral Fellowship Program",
+                  "DOE Visiting Faculty Program", "Microsoft Research Faculty Fellowship Program",
+                  "Helen Hay Whitney Foundation Postdoctoral Fellowship", "Marie Sk\u0142odowska-Curie Postdoctoral Fellowships",
+                  "HFSP Postdoctoral Fellowships", "Early Career Awards", "HHMI Investigator Program"):
+            self.assertEqual(Q.senior_gate({}, t, None, None), "senior_only", t)
+        for t in ("Mitacs Accelerate", "Google PhD Fellowship", "Career Prep Program", "NSF Graduate Research Fellowship"):
+            self.assertIsNone(Q.senior_gate({}, t, None, None), t)
+
+    def test_grant_gate_organisations_and_pools(self):
+        g = Q.grant_gate
+        self.assertEqual(g("Amazon Research Awards", None, None, 250000), "grant_for_organisations")
+        self.assertEqual(g("Simons Foundation Grants", None, "mathematical sciences", 600000), "grant_for_organisations")
+        self.assertEqual(g("Kauffman Foundation Grants", None, None), "grant_for_organisations")
+        self.assertEqual(g("BIRAC Calls", None, None), "grant_for_organisations")
+        self.assertEqual(g("Innovate UK Smart Grants", None, "business-led innovation"), "grant_for_organisations")
+        self.assertEqual(g("EIC Big Scheme", None, "ambitious companies", 30_000_000), "grant_pool_too_large")
+        self.assertEqual(g("DOE SBIR/STTR", None, "small business"), "grant_for_organisations")
+        self.assertEqual(g("X Grant", "Applicants must be a registered organisation.", None), "grant_for_organisations")
+        self.assertEqual(g("X Grant", "Open to universities and research institutions only", None), "grant_for_organisations")
+        self.assertEqual(g("X Grant", "Principal investigators may apply", None), "grant_for_organisations")
+        self.assertEqual(g("X Fund", None, None, 5_000_000), "grant_pool_too_large")
+
+    def test_grant_gate_keeps_individuals_and_students(self):
+        g = Q.grant_gate
+        self.assertIsNone(g("Z Fellows", "$10k for early-stage founders", None))
+        self.assertIsNone(g("Big Fund", "students and organisations may apply", None, 5_000_000))
+        self.assertIsNone(g("Thiel Fellowship", None, "young people who want to build new things", 250000))
+        self.assertIsNone(g("Mitacs Globalink Research Award", None, "international research collaboration", 6000))
+        self.assertIsNone(g("Open Philanthropy Career Development and Transition Funding", None, None))
+        self.assertIsNone(g("Wikimedia Rapid Fund", None, None, 5000))
+
+    def test_grant_gate_only_applies_to_grants_in_publisher(self):
+        row = prog("g1", "Amazon Research Awards", "grant", "https://amazon.science/x")
+        self.assertEqual(quality_reason(row), "grant_for_organisations")
+        row2 = prog("f1", "Amazon Research Awards", "fellowship", "https://amazon.science/x")
+        self.assertIsNone(quality_reason(row2))
+
+    def test_high_school_hackathons(self):
+        g = Q.hackathon_gate
+        self.assertEqual(g("Redshifted Cortex - AI built by High Schoolers", "Redshifted", None), "high_school_only")
+        self.assertEqual(g("Haven Princeton Game Jam - High School", "Hack Club", None), "high_school_only")
+        self.assertEqual(g("ONHacks", "ONHack Organization", "High School Students who applied"), "high_school_only")
+        self.assertEqual(g("Teens Hack Houston", "HackClub", None), "high_school_only")
+        self.assertIsNone(g("GeauxHack 2026", "SASE-LSU", "USA Students (Highschool, Undergraduate, Graduate)"))
+        self.assertIsNone(g("Sierra Hacks 2026", "CodeCatalyst", None))  # no high-school signal in our data
+        self.assertIsNone(g("College Hackathon", "ACM", "High school and university students"))
+
+
+class UrlDedupeTests(unittest.TestCase):
+    def cand(self, pid, title, cat, url, org="x", **kw):
+        row = {"category": cat, "source_kind": "official"}
+        row.update(kw)
+        return Q.candidate(row, pid, title, org, url)
+
+    def test_norm_url(self):
+        self.assertEqual(Q.norm_url("HTTPS://www.Example.org/Path/?a=1#x"), "example.org/path")
+        self.assertEqual(Q.norm_url("http://example.org/path/"), Q.norm_url("https://www.example.org/path"))
+        self.assertEqual(Q.norm_url("https://example.org/"), "")  # bare homepage never keys a merge
+
+    def test_title_plural_and_dots_normalised(self):
+        self.assertEqual(Q.norm_title("NVIDIA Graduate Fellowship(s)"), Q.norm_title("NVIDIA Graduate Fellowships"))
+        self.assertEqual(Q.norm_title("IBM Ph.D. Fellowship"), Q.norm_title("IBM PhD Fellowship"))
+
+    def test_same_url_cross_category_with_near_title(self):
+        a = self.cand("a", "NVIDIA Graduate Fellowship", "fellowship", "https://www.nvidia.com/en-us/research/graduate-fellowships/", org="NVIDIA")
+        b = self.cand("b", "NVIDIA Graduate Fellowships", "research", "http://nvidia.com/en-us/research/graduate-fellowships?x=1", org="research.nvidia.com")
+        c = self.cand("c", "NVIDIA Graduate Fellowship Program", "scholarship", "https://nvidia.com/en-us/research/graduate-fellowships", org="nv")
+        losers = Q.dedupe([a, b, c])
+        self.assertEqual(len(losers), 2)
+        self.assertNotIn("a", losers)
+
+    def test_shared_listing_url_does_not_merge_distinct_schemes(self):
+        url = "https://scholarships.gov.in/All-Scholarships"
+        a = self.cand("a", "AICTE Saksham Scholarship Scheme", "scholarship", url, org="NSP")
+        b = self.cand("b", "AICTE Pragati Scholarship Scheme", "scholarship", url, org="NSP")
+        c = self.cand("c", "Pre Matric Scholarship For Students With Disabilities", "scholarship", url, org="NSP")
+        d = self.cand("d", "Post Matric Scholarship For Students With Disabilities", "scholarship", url, org="NSP")
+        self.assertEqual(Q.dedupe([a, b, c, d]), {})
+
+    def test_foreign_rows_dedupe_by_url(self):
+        mine = self.cand("m", "Thiel Fellowship", "grant", "https://thielfellowship.org/apply", org="a")
+        foreign = self.cand("f", "Thiel Fellowship", "fellowship", "https://www.thielfellowship.org/apply/", org="b", verified=True)
+        self.assertEqual(Q.dedupe([mine], [foreign]), {"m": "f"})
+
+
+class MapRowCompanyTests(unittest.TestCase):
+    def test_hostname_company_prefers_real_organiser(self):
+        from pipeline.publish_supabase import map_row
+        r = prog("h1", "Some Fellowship", organizer="cis.mpg.de", company="cis.mpg.de",
+                 organizer_name="Max Planck Institute for Intelligent Systems")
+        self.assertEqual(map_row(r)["company"], "Max Planck Institute for Intelligent Systems")
+        r2 = prog("h2", "Some Fellowship", organizer="cis.mpg.de")
+        self.assertEqual(map_row(r2)["company"], "cis.mpg.de")  # nothing better: left as is
+        r3 = prog("h3", "Some Fellowship", organizer="NVIDIA", company="research.nvidia.com")
+        self.assertEqual(map_row(r3)["company"], "NVIDIA")
+        r4 = prog("h4", "**Ethereum Protocol Fellowship**")
+        self.assertEqual(map_row(r4)["title"], "Ethereum Protocol Fellowship")
+
+
 class BuildServingGateTests(unittest.TestCase):
     def test_bad_rows_not_served_and_reasons_reported(self):
         rows = [

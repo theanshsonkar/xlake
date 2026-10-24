@@ -575,20 +575,26 @@ def extract_eligibility(text: str, limit: int = 200) -> Tuple[Optional[str], Lis
     return (truncate(first, limit) if first else None), cue[:8]
 
 
+_NATIONALITY = (r"(?:u\.?s\.?|american|canadian|canada|uk|british|indian|australian|german|eu|european|"
+                r"french|japanese|chinese|swiss|singapore(?:an)?|irish|new\s+zealand|south\s+african|nigerian|kenyan)")
 _INTL_FALSE = re.compile(
-    r"\b(?:(?:only|exclusively)\s+(?:to\s+|for\s+)?(?:u\.?s\.?|american|canadian|uk|british|indian|australian|german|eu)\s+(?:citizens?|nationals?|residents?)|"
-    r"(?:open|available|restricted|limited)\s+(?:only\s+)?to\s+(?:u\.?s\.?|american|canadian|uk|british|indian|australian|german|eu)\s+(?:citizens?|nationals?)|"
+    r"\b(?:(?:only|exclusively)\s+(?:to\s+|for\s+)?" + _NATIONALITY + r"\s+(?:citizens?|nationals?|residents?)|"
+    r"(?<!not\s)(?:open|available|restricted|limited)\s+(?:only\s+)?to\s+(?:\w+\s+){0,2}(?:citizens?|nationals?|permanent\s+residents?)\b|"
     r"(?:u\.?s\.?|united states)\s+citizens?(?:\s+or\s+(?:lawful\s+)?permanent\s+residents?)?\s+only|"
-    r"must\s+be\s+(?:a\s+)?(?:u\.?s\.?|american|canadian|british|indian|australian)\s+(?:citizen|national|permanent resident)|"
-    r"(?:u\.?s\.?\s+)?citizens?\s+(?:or|and)\s+(?:lawful\s+)?permanent\s+residents?\b|"
+    r"(?:must|need\s+to|have\s+to|should)\s+be\s+(?:a\s+|an\s+)?(?:\w+\s+){0,2}?(?:citizens?|nationals?|permanent\s+residents?)\b|"
+    r"(?:\w+\s+)?citizens?(?:,|\s+or|\s+and)\s+(?:\w+\s+){0,2}(?:lawful\s+)?permanent\s+residents?\b|"
+    r"\b(?:citizenship|permanent\s+residen(?:cy|ce))\s+(?:is\s+)?required|"
+    r"(?:holders?\s+of\s+|hold\s+)(?:\w+\s+){0,2}citizenship|"
     r"international\s+(?:students?|applicants?)\s+(?:are\s+)?(?:not\s+eligible|ineligible)|"
     r"not\s+open\s+to\s+international|"
     r"(?:indian|u\.?s\.?|american|canadian|british|australian)\s+(?:nationals?|citizens?)\b[^.]{0,60}?\b(?:are\s+)?eligible\s+to\s+apply)", re.I)
+# Strong statements that really say foreigners may apply.
 _INTL_TRUE = re.compile(
     r"\b(?:international\s+(?:students?|applicants?|candidates?|scholars?)\s+(?:are\s+)?(?:welcome|eligible|encouraged|can apply|may apply)|"
     r"open\s+to\s+(?:all\s+)?international|applicants?\s+from\s+(?:any|all)\s+countr|from\s+any\s+country|"
-    r"regardless\s+of\s+(?:nationality|citizenship)|open\s+worldwide|worldwide|"
-    r"(?:students?|applicants?)\s+(?:of\s+)?any\s+nationality|all\s+nationalities|international\s+applicants?)\b", re.I)
+    r"regardless\s+of\s+(?:nationality|citizenship)|open\s+worldwide|"
+    r"(?:applicants?|students?|candidates?)\s+(?:from\s+)?worldwide|available\s+worldwide|"
+    r"(?:students?|applicants?)\s+(?:of\s+)?any\s+nationality|all\s+nationalities)\b", re.I)
 _LEVELS = (
     ("high school", re.compile(r"\bhigh[- ]school\b|\bsecondary[- ]school\b|\bpre-?college\b", re.I)),
     ("undergraduate", re.compile(r"\bundergraduates?\b|\bbachelor'?s?\b|\bB\.?(?:Sc|Tech|E)\b", re.I)),
@@ -601,11 +607,14 @@ _LEVELS = (
 
 def eligibility_flags(text: str) -> Tuple[Optional[bool], List[str]]:
     text = text or ""
+    # An explicit citizens / permanent-residents-only statement wins; a bare
+    # "worldwide" / "international applicants" mention is not evidence (CLS: "advance
+    # U.S. interests worldwide"; NSERC: "up to 15% to international applicants").
     negative = _INTL_FALSE.search(text)
     positive = _INTL_TRUE.search(text)
-    if negative and not positive:
+    if negative:
         intl: Optional[bool] = False
-    elif positive and not negative:
+    elif positive:
         intl = True
     else:
         intl = None

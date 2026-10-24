@@ -17,10 +17,38 @@ class TestLocationBucketSplit(unittest.TestCase):
 
     def test_blank_defaults(self):
         self.assertEqual(filters.location_bucket(""), filters.GLOBAL_HIRING)
-        self.assertEqual(filters.location_bucket("", india_source=True), filters.US_REMOTE)
+        self.assertEqual(filters.location_bucket("", india_source=True), filters.INDIA_REMOTE)
 
-    def test_generic_remote_india_source_is_primary_region_remote(self):
-        self.assertEqual(filters.location_bucket("Remote", india_source=True), filters.US_REMOTE)
+    def test_generic_remote_india_source_is_india_remote(self):
+        # never the primary (US) region's remote bucket for an Indian source
+        self.assertEqual(filters.location_bucket("Remote", india_source=True), filters.INDIA_REMOTE)
+        self.assertEqual(filters.location_bucket("online", india_source=True), filters.INDIA_REMOTE)
+
+    def test_indian_state_code_locations(self):
+        for loc in ("Meerut Meerut UP", "Hosur Krishnagiri TN", "Kurla (HO) Kurla East MH", "Guntur Guntur AP"):
+            self.assertEqual(filters.location_bucket(loc), filters.INDIA_LOCATED, loc)
+            self.assertEqual(filters.location_bucket(loc, india_source=True), filters.INDIA_LOCATED, loc)
+
+    def test_india_source_ignores_bare_us_state_names_but_keeps_real_us(self):
+        self.assertEqual(filters.location_bucket("Remote Remote Oregon", india_source=True), filters.INDIA_REMOTE)
+        self.assertEqual(filters.location_bucket("Ahmedabad Ahmedabad GJ Remote Remote Oregon", india_source=True),
+                         filters.INDIA_LOCATED)
+        self.assertEqual(filters.location_bucket("New York New York NY", india_source=True), filters.US_LOCATED)
+        self.assertEqual(filters.location_bucket("Austin, TX", india_source=True), filters.US_LOCATED)
+        self.assertEqual(filters.location_bucket("Dubai Dubai DU", india_source=True), filters.GLOBAL_HIRING)
+
+    def test_us_state_codes_without_comma_are_not_india(self):
+        self.assertEqual(filters.location_bucket("Austin TX"), filters.US_LOCATED)
+        self.assertEqual(filters.location_bucket("Nashville TN"), filters.US_LOCATED)
+
+    def test_india_hint_from_platform_and_host(self):
+        self.assertTrue(filters.india_hint("keka"))
+        self.assertTrue(filters.india_hint("darwinbox"))
+        self.assertTrue(filters.india_hint("greenhouse", "https://careers.acme.co.in/jobs/1"))
+        self.assertTrue(filters.india_hint("custom", "https://acme.keka.com/careers/jobdetails/1"))
+        self.assertTrue(filters.india_hint("custom", "", "acme.in"))
+        self.assertFalse(filters.india_hint("greenhouse", "https://boards.greenhouse.io/acme/jobs/1"))
+        self.assertFalse(filters.india_hint("lever", "", "acme.com"))
 
     def test_worldwide_is_generic_remote(self):
         self.assertEqual(filters.location_bucket("Work from anywhere"), filters.REMOTE_GLOBAL)

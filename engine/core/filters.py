@@ -17,6 +17,7 @@ are not here. Those come later, from the description.
 from __future__ import annotations
 
 import re
+from urllib.parse import urlsplit
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
@@ -304,30 +305,64 @@ GLOBAL_HIRING = "global_hiring"
 EXCLUDED = "excluded"
 
 
-def location_bucket(location: str, india_source: bool = False) -> str:
-    """Return a region bucket; ``india_source`` retains its legacy API name.
+# Indian state / UT codes as Keka, Darwinbox and similar ATSs print them
+# ("Meerut Meerut UP", "Hosur Krishnagiri TN"). Codes that collide with US
+# states or common words (AR, GA, LA, MN, OR, AS, CH, ...) are left out; US
+# locations are only ever written ", XX" with a comma, which US_RE handles first.
+INDIA_STATE_CODE_RE = re.compile(
+    r"(?<!,)\s(?:AP|BR|CG|DL|GJ|HP|HR|JH|JK|KA|KL|MH|MP|OD|PB|PY|RJ|TG|TN|TS|UP|WB)(?=\s|$)")
+# Unambiguous US evidence for an India-source location (bare state / city
+# names such as "Oregon" are not trusted there).
+US_STRONG_RE = re.compile(
+    r"\b(united\s+states|usa|u\.s\.?)\b|,\s*(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)(?!\w)",
+    re.I)
+# Keka-style "City City ST" without a comma: uppercase US state code (TN is also
+# an Indian code, so it is excluded and only counts with a comma).
+US_CODE_NOCOMMA_RE = re.compile(
+    r"(?<!,)\s(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TX|UT|VT|VA|WA|WV|WI|WY|DC)(?=\s|$)")
+INDIA_ATS_HOSTS = ("keka.com", "darwinbox.in", "darwinbox.com", "zohorecruit.in")
 
-    A true source hint makes unspecified/generic remote postings remote in the
-    configured primary region, rather than assuming the historical India feed.
+
+def india_hint(platform: str = "", url: str = "", company_domain: str = "") -> bool:
+    """True when the source itself is Indian: an India-first platform (Unstop,
+    Keka, Darwinbox) or an Indian-ATS / ``.in`` tenant host."""
+    if (platform or "").casefold() in ("unstop", "keka", "darwinbox"):
+        return True
+    for u in (url, company_domain):
+        host = (urlsplit(u if "//" in str(u or "") else "//" + str(u or "")).hostname or "").casefold()
+        if host and (host.endswith(".in") or any(host == h or host.endswith("." + h) for h in INDIA_ATS_HOSTS)):
+            return True
+    return False
+
+
+def location_bucket(location: str, india_source: bool = False) -> str:
+    """Return a region bucket.
+
+    ``india_source`` marks postings from an Indian source (Unstop, Keka,
+    Darwinbox, ``.in`` tenants): an empty or generic remote location there is
+    ``india_remote`` (never the primary region's remote bucket), and a location
+    carrying Indian city/state-code signals is India-located unless it has
+    explicit US evidence. Without the hint an empty location stays unknown.
     """
     loc = (location or "").strip()
-    primary_remote = US_REMOTE if PRIMARY_REGION == "US" else INDIA_REMOTE
     if not loc:
-        return primary_remote if india_source else GLOBAL_HIRING
-    if PRIMARY_REGION == "US" and REMOTE_EXCLUDES_US.search(loc):
+        return INDIA_REMOTE if india_source else GLOBAL_HIRING
+    remote_bucket = INDIA_REMOTE if india_source else REMOTE_GLOBAL
+    if PRIMARY_REGION == "US" and REMOTE_EXCLUDES_US.search(loc) and not (
+            india_source and INDIA_RE.search(loc)):
         return EXCLUDED
-    if PRIMARY_REGION == "US" and US_RE.search(loc):
+    us_hit = US_RE.search(loc) and (not india_source or US_STRONG_RE.search(loc) or (
+        US_CODE_NOCOMMA_RE.search(loc) and not INDIA_STATE_CODE_RE.search(loc)))
+    if PRIMARY_REGION == "US" and us_hit:
         if REMOTE_ANY.search(loc):
             return US_REMOTE
         return US_LOCATED
     if PRIMARY_REGION != "US" and REMOTE_EXCLUDES_INDIA.search(loc):
         return EXCLUDED
-    if INDIA_RE.search(loc):
+    if INDIA_RE.search(loc) or INDIA_STATE_CODE_RE.search(loc):
         return INDIA_LOCATED
-    if REMOTE_OPEN.search(loc):
-        return primary_remote if india_source else REMOTE_GLOBAL
-    if REMOTE_ANY.search(loc):
-        return primary_remote if india_source else REMOTE_GLOBAL
+    if REMOTE_OPEN.search(loc) or REMOTE_ANY.search(loc):
+        return remote_bucket
     return GLOBAL_HIRING
 
 

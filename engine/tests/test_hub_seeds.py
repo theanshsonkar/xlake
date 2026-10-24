@@ -320,6 +320,14 @@ class HubSeedsTests(unittest.TestCase):
 
     def test_seed_name_cleanup_strips_labels_and_dangling_parentheses(self):
         self.assertEqual(_clean_seed_name("Sequoia Open Source Fellowship URL"), "Sequoia Open Source Fellowship")
+        # markdown-table rows scraped as one string: [date |] status | org/state | NAME | amount | ...
+        self.assertEqual(_clean_seed_name("| Rolling (FAFSA ASAP) | | \u2705 **[OPEN]** | Nevada | Governor Guinn Millennium Scholarship | Up to $10,000 | NV resident"),
+                         "Governor Guinn Millennium Scholarship")
+        self.assertEqual(_clean_seed_name("Jul 5, 2026 | | \u2705 [OPEN] | Jane Street | FTTP \u2014 Deadline: Rolling | Paid | Students"),
+                         "FTTP")
+        # row that does not follow the shape, or whose name cell is the (clipped) last one, keeps the raw text
+        self.assertIn("|", _clean_seed_name("Jul 9, 2026 | --- ## Rising Freshmen | Opportunities"))
+        self.assertIn("|", _clean_seed_name("Oct 13, 2026 | | \u2705 [OPEN] | Org | Clipped Nam"))
         self.assertEqual(_clean_seed_name("Mozilla Technology Fund (MTF"), "Mozilla Technology Fund")
         self.assertEqual(
             _clean_seed_name("Faculty Early Career Development Program (CAREER"),

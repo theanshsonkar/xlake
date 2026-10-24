@@ -158,6 +158,20 @@ class TestEligibility(unittest.TestCase):
         self.assertEqual(enrich.eligibility_flags("Open to U.S. citizens or permanent residents only."), (False, []))
         self.assertEqual(enrich.eligibility_flags("International students are welcome to apply. Undergraduate and master's students.")[0], True)
         self.assertEqual(enrich.eligibility_flags("International students are not eligible.")[0], False)
+
+    def test_citizens_only_text_is_not_international(self):
+        flags = lambda t: enrich.eligibility_flags(t)[0]
+        # Critical Language Scholarship homepage: "worldwide" is not an eligibility statement
+        self.assertIsNone(flags("advance U.S. interests worldwide"))
+        self.assertFalse(flags("Applicants must be U.S. citizens or permanent residents."))
+        self.assertFalse(flags("You must be a Canadian citizen, a permanent resident of Canada or a protected person."))
+        self.assertFalse(flags("Open to citizens and permanent residents of Canada, even with international applicants mentioned."))
+        self.assertFalse(flags("Up to 15% of awards available to international applicants. Canadian citizens or permanent residents may apply."))
+        self.assertIsNone(flags("Up to 15% of awards will be available to international applicants"))
+        self.assertTrue(flags("Open to students from any country"))
+        self.assertTrue(flags("International students are welcome to apply"))
+        self.assertTrue(flags("Applications open worldwide"))
+        self.assertIsNone(flags("Not open to citizens of X"))
         self.assertIsNone(enrich.eligibility_flags("Applicants must be 18.")[0])
         _, levels = enrich.eligibility_flags("For high school seniors, undergraduates, graduate students, PhD candidates, postdocs and early-career researchers")
         self.assertEqual(levels, ["high school", "undergraduate", "graduate", "phd", "postdoc", "early-career"])

@@ -53,7 +53,7 @@ LIMIT = int(os.environ.get("LAKE_LIMIT", "0"))  # 0 = no limit
 # the new registry is small — a company-scoped registry can still resolve to
 # a board (e.g. a big-tech Workday tenant) that posts hundreds of roles.
 COMPANY_CAP = int(os.environ.get("LAKE_COMPANY_CAP", "10"))
-INDIA_SOURCE_PLATFORMS = {"unstop", "keka"}
+INDIA_SOURCE_PLATFORMS = {"unstop", "keka", "darwinbox"}
 
 # Structured fields copied from Posting.meta onto lake rows (published as
 # extra.* by pipeline.publish_supabase).
@@ -406,7 +406,10 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                 board_extra["company_domain"] = doms.most_common(1)[0][0]
             india_source = entry["platform"] in INDIA_SOURCE_PLATFORMS
             for p in r.postings:
-                v = filters.classify(p.title, p.location, india_source=india_source)
+                v = filters.classify(
+                    p.title, p.location,
+                    india_source=india_source or filters.india_hint(
+                        p.platform, p.url, p.meta.get("company_domain")))
                 if (p.platform == "workday" and v.keep and not p.description
                         and p.meta.get("_path") and wd_budget[board] > 0
                         and _key({"url": p.url}) not in described):

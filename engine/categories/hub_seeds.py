@@ -870,6 +870,28 @@ def _source_count(candidate: Dict) -> int:
         return len(corroborating) if isinstance(corroborating, list) else 0
 
 
+_TABLE_STATUS = re.compile(r"\u2705|\U0001f525|\u23f3|\[(?:OPEN|CLOSING SOON|OPENS SOON|CLOSED)\]", re.I)
+_TABLE_DEADLINE_TAIL = re.compile(r"\s+[\u2014\u2013-]+\s+deadline\b.*$", re.I)
+
+
+def _table_row_name(cells: List[str]) -> str:
+    """Programme name from a markdown-table row scraped as one string.
+
+    The hub tables are ``[date] | status | organiser/state | NAME [- Deadline: x]
+    | amount | eligibility``, so the name is the cell two after the status cell
+    (the one holding the OPEN / CLOSING SOON marker). Returns "" when the row
+    does not follow that shape (the caller then keeps the raw text, which the
+    title gates reject).
+    """
+    for i, cell in enumerate(cells):
+        if _TABLE_STATUS.search(cell) and i + 3 < len(cells):  # name must not be the last (possibly clipped) cell
+            name = _TABLE_DEADLINE_TAIL.sub("", cells[i + 2].replace("**", "")).strip(" -\u2013\u2014:")
+            if 4 <= len(name) <= 120 and not re.match(r"^(?:\$|up to\b|\d)", name, re.I):
+                return name
+            return ""
+    return ""
+
+
 def _clean_seed_name(value: object) -> str:
     """Turn a discovered markdown label into an official programme name."""
     name = _collapsed(value)
@@ -881,6 +903,8 @@ def _clean_seed_name(value: object) -> str:
         ]
         if linked:
             name = linked[0]
+        else:
+            name = _table_row_name(cells) or name
     name = re.sub(r"!\[[^\]]*\]\([^)]*(?:\)|$)", "", name)
     name = re.sub(r"\[([^\]]+)\]\([^)]*(?:\)|$)", r"\1", name)
     name = re.sub(r"\]\([^)]*(?:\)|$)", "", name)
