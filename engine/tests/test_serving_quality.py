@@ -290,3 +290,11 @@ class SchoolLevelTitleTests(unittest.TestCase):
         self.assertIsNone(sq.senior_gate({}, "Post Matric Scholarship for SC Students", "", ""))
         self.assertIsNone(sq.senior_gate({}, "Icar Post Graduate Scholarship(Pgs)", "", ""))
         self.assertIsNone(sq.senior_gate({}, "Scholarship for Class 12 pass-outs entering college", "", ""))
+
+
+class GrantMaintainerTests(unittest.TestCase):
+    def test_oss_maintainer_fund_kept_despite_pool(self):
+        self.assertIsNone(Q.grant_gate("GitHub Secure Open Source Fund", "", "Funding for open source maintainers to improve security.", 1_250_000))
+
+    def test_big_pool_without_individuals_dropped(self):
+        self.assertEqual(Q.grant_gate("Big Science Pool", "", "Supports ambitious research.", 30_000_000), "grant_pool_too_large")

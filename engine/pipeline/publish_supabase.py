@@ -446,7 +446,7 @@ class Supabase:
         while True:
             status, hdrs, raw = self._request(
                 "GET", "/%s?select=id,category,title,company,url,verified,"
-                       "source_kind:extra->>source_kind&type=eq.programme&is_live=eq.true"
+                       "source_kind:extra->>source_kind&type=eq.programme&or=(is_live.eq.true,needs_confirmation.eq.true)"
                        "&limit=%d&offset=%d" % (TABLE, page, offset),
                 headers={"Range-Unit": "items"})
             rows = json.loads(raw) if raw else []
@@ -463,7 +463,7 @@ class Supabase:
         return out
 
     def fetch_job_ids(self, shard: str):
-        """LIVE ids (already-retired rows are excluded so they are neither
+        """SERVING ids (live or needs_confirmation; retired rows are excluded so they are neither
         counted nor re-patched) of job/internship rows whose extra.platform
         belongs to ``shard``
         (filtered client-side so the catch-all shard needs no platform list)."""
@@ -471,7 +471,7 @@ class Supabase:
         while True:
             status, hdrs, raw = self._request(
                 "GET", "/%s?select=id,platform:extra->>platform&type=in.(job,internship)"
-                       "&is_live=eq.true&limit=%d&offset=%d" % (TABLE, page, offset),
+                       "&or=(is_live.eq.true,needs_confirmation.eq.true)&limit=%d&offset=%d" % (TABLE, page, offset),
                 headers={"Range-Unit": "items"})
             rows = json.loads(raw) if raw else []
             for row in rows:
@@ -486,7 +486,7 @@ class Supabase:
         ids, offset, page = set(), 0, 1000
         while True:
             status, hdrs, raw = self._request(
-                "GET", "/%s?select=id%s&is_live=eq.true&limit=%d&offset=%d" % (TABLE, flt, page, offset),
+                "GET", "/%s?select=id%s&or=(is_live.eq.true,needs_confirmation.eq.true)&limit=%d&offset=%d" % (TABLE, flt, page, offset),
                 headers={"Range-Unit": "items"})
             rows = json.loads(raw) if raw else []
             ids.update(row["id"] for row in rows)

@@ -234,7 +234,7 @@ _GRANT_ORG_TITLE = re.compile(
 _GRANT_STUDENT = re.compile(
     r"\bstudents?\b|\bundergrad\w*\b|\bindividual\s+(?:founders?|applicants?|developers?|creators?)\b|"
     r"\bearly[- ]stage\s+founders?\b|\bsolo\s+founders?\b|\bindividuals?\b|\byoung\s+(?:people|founders|entrepreneurs)\b|"
-    r"\bfirst[- ]time\s+founders?\b", re.I)
+    r"\bfirst[- ]time\s+founders?\b|\bmaintainers?\b|\bopen[- ]source\s+(?:projects?|developers?|contributors?)\b|\bbuilders?\b", re.I)
 _GRANT_POOL_USD = 1_000_000
 
 

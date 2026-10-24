@@ -118,7 +118,7 @@ class LiveOnlyAndRotationTest(unittest.TestCase):
         Fake().fetch_all_ids([("hackathon", None)])
         Fake().fetch_all_ids()
         self.assertEqual(len(seen), 3)
-        self.assertTrue(all("is_live=eq.true" in p for p in seen))
+        self.assertTrue(all("or=(is_live.eq.true,needs_confirmation.eq.true)" in p for p in seen))  # serving rows: retired ones excluded
 
     def test_scoped_retire_only_own_shard_prefix(self):
         retire, _ = pub.plan_retire({"job:1", "hackathon:x"}, set(), "jobs-lever", True)
