@@ -277,3 +277,16 @@ class BuildServingGateTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SchoolLevelTitleTests(unittest.TestCase):
+    def test_pre_matric_dropped(self):
+        from core import serving_quality as sq
+        self.assertEqual(sq.senior_gate({}, "Financial Assistance For Education To The Wards Of Beedi Workers - Pre Matric", "", ""), "school_level")
+        self.assertEqual(sq.senior_gate({}, "Scholarship for Class 9 to 10 students", "", ""), "school_level")
+
+    def test_post_matric_and_college_kept(self):
+        from core import serving_quality as sq
+        self.assertIsNone(sq.senior_gate({}, "Post Matric Scholarship for SC Students", "", ""))
+        self.assertIsNone(sq.senior_gate({}, "Icar Post Graduate Scholarship(Pgs)", "", ""))
+        self.assertIsNone(sq.senior_gate({}, "Scholarship for Class 12 pass-outs entering college", "", ""))

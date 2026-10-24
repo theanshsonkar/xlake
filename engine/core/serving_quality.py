@@ -156,6 +156,10 @@ _YEARS_EXPERIENCE = re.compile(
     r"['’]?\s+(?:of\s+)?(?:relevant\s+|professional\s+|work(?:ing)?\s+|industry\s+|research\s+|full-time\s+)?experience", re.I)
 
 
+# School-level schemes (e.g. India's "Pre Matric" scholarships for classes 1-10): audience is college students.
+_SCHOOL_TITLE = re.compile(r"\bpre[- ]?matric\b|\bclass(?:es)?\s+(?:[1-9]|10)(?:\s*(?:-|to|and)\s*(?:[1-9]|10))?\b(?!\s*\+)|\bschool\s+students?\b", re.I)
+
+
 def senior_gate(row: Dict, title: object, eligibility: object, description: object) -> Optional[str]:
     """Reason when the programme is postdoc/faculty only or needs >=3 years' experience.
 
@@ -165,6 +169,8 @@ def senior_gate(row: Dict, title: object, eligibility: object, description: obje
     """
     if _SENIOR_TITLE.search(_norm_ws(title)):
         return "senior_only"
+    if _SCHOOL_TITLE.search(_norm_ws(title)):
+        return "school_level"
     own = " ".join(_norm_ws(x) for x in (eligibility, description) if x)
     req = " ".join(_norm_ws(x) for x in (row.get("requirements") if isinstance(row.get("requirements"), str) else "", own))
     for m in _YEARS_EXPERIENCE.finditer(req):
