@@ -343,3 +343,10 @@ class GrantFellowKeepTests(unittest.TestCase):
         self.assertIsNone(g("GitHub Fund", "", "invests in startups companies", row_id="programme:grant-github-fund"))
         for t in ("Ford Foundation Grants", "Wellcome Discovery Awards", "NSF Seed Fund (SBIR/STTR)"):
             self.assertEqual(g(t, "", ""), "grant_for_organisations", t)
+
+
+class GradeRangeTitleTests(unittest.TestCase):
+    def test_grades_only_dropped_college_kept(self):
+        self.assertEqual(Q.senior_gate({}, "No Sweat Scholarship (Age 13+; Grades 8–12 or Homeschooled; No Essay)", "", ""), "school_level")
+        self.assertIsNone(Q.senior_gate({}, "$2,000 No-Essay Scholarship (Age 16+; HS Jr/Sr or College)", "", ""))
+        self.assertIsNone(Q.senior_gate({}, "Scholarship for grades 11-12 entering college", "", ""))

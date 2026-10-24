@@ -248,7 +248,7 @@ _YEARS_EXPERIENCE = re.compile(
 
 
 # School-level schemes (e.g. India's "Pre Matric" scholarships for classes 1-10): audience is college students.
-_SCHOOL_TITLE = re.compile(r"\bpre[- ]?matric\b|\bclass(?:es)?\s+(?:[1-9]|10)(?:\s*(?:-|to|and)\s*(?:[1-9]|10))?\b(?!\s*\+)|\bschool\s+students?\b", re.I)
+_SCHOOL_TITLE = re.compile(r"\bgrades?\s+(?:[1-9]|1[0-2])\s*(?:[-–]|to)\s*(?:[1-9]|1[0-2])\b(?!.*\b(?:college|universit|undergrad))|\bpre[- ]?matric\b|\bclass(?:es)?\s+(?:[1-9]|10)(?:\s*(?:-|to|and)\s*(?:[1-9]|10))?\b(?!\s*\+)|\bschool\s+students?\b", re.I)
 
 
 def senior_gate(row: Dict, title: object, eligibility: object, description: object) -> Optional[str]:
