@@ -1,0 +1,14 @@
+{
+ "id": "lic-golden-jubilee",
+ "category": "scholarships",
+ "url": "https://licindia.in/web/guest/golden-jubilee-foundation",
+ "final_url": "https://licindia.in/web/guest/golden-jubilee-foundation",
+ "fetched_at": "2026-10-26T11:23:39.994Z",
+ "status": "timeout",
+ "http_status": null,
+ "title": "",
+ "text": "",
+ "html": "",
+ "links": [],
+ "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://licindia.in/web/guest/golden-jubilee-foundation\", waiting until \"domcontentloaded\"\n"
+}

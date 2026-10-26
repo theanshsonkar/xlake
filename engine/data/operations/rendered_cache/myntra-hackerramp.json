@@ -1,0 +1,654 @@
+{
+ "id": "myntra-hackerramp",
+ "category": "hackathons",
+ "url": "https://unstop.com/hackathons/myntra-hackerramp-myntra-1075440",
+ "final_url": "https://unstop.com/page-not-found",
+ "fetched_at": "2026-10-26T11:18:50.390Z",
+ "status": "ok",
+ "http_status": 200,
+ "title": "Unstop - Competitions, Quizzes, Hackathons, Scholarships and Internships for Students and Corporates",
+ "text": "For Business\nLogin\nCOMPETITION\nQUIZZES\nHACKATHONS\nINTERNSHIPS\nSCHOLARSHIPS\nRECRUITER DIARIES\nIt seems you have taken a wrong turn. Take the help of sign board to reach your destination\n\nBuilt with\nin\nIndia\nfor the\nworld\n\nProducts\nEngage Talent\nAI Sourcing Agent\nAI Screening Agent\nAI Assessment Agent\nAI Interview Agent\nAI Proctoring Agent\nMentorship\nBe a Mentor\nExplore Mentors\nMentorship FAQs\nMentorship Blogs\nOur Properties\nUnstop Talent Awards 2026\nUnstop Talent Meet 2026\nUnstop Talent Report 2026\nEducation Loan\nEMI Calculator\nThe Unstoppables - Breaking Barriers\nOnline Quizzing Festival\nLegal\nTerms & Conditions\nPrivacy Policy\nSitemap\nParticipate\nCompetitions & Challenges\nAssessments\nHackathons\nWorkshops & Webinars\nConferences\nCultural Events\nCollege Festivals\nApply\nInternships\nJobs\nScholarships\nSummer Internships\nWinter Internships\nPPO Internships\nGovernment Jobs\nGovernment Internship\nInternational Internships\nFor Business\nClientele\nPartner With Us\nPartners\nTestimonials\nCase Studies\nPost now\nLearn\nCourses\nArticles\nBlog Series\nWorkshops\nResources\nPractice\n5 Days Interview Prep\nCode & Ace Hiring\nAssessments\n100-Day of Coding\nSprint\nOthers\nAbout Us\nCareers\nLife at Unstop\nFAQs\nBranding Guidelines\nUnstop Rewards Program\nUnstop on Shark Tank\nUnstop Campus Champions\nRequest a Feature\nBuild your Resume\nContact Us\nShare Your Story Now\nStay Updated\n\nGet regular updates on opportunities/jobs to showcase your talent and get hired.\n\nSubscribe to our newsletter!\nsend\nJobs by Location\nJobs in Hyderabad​\nJobs in Bangalore\nJobs in Mumbai​\nJobs in Delhi\nJobs in Kolkata\nJobs in Chennai​\nJobs in Pune\nJobs in Ahmedabad\nJobs in Jaipur\nJobs in Chandigarh\nJobs in Noida\nJobs in Gurgaon\nSkill based jobs\nContent Writing Jobs\nDigital Marketing Jobs\nData Science Jobs\nAccounting Jobs\nBackend Developer Jobs\nElectrical Engineer Jobs\nFrontend Developer Jobs\nGraphic Designer Jobs\nGrowth Marketing Jobs\nMachine Learning Jobs\nMechanical Engineer Jobs\nCivil Engineer Jobs\nInternships by Location\nInternship in Bangalore\nInternship in Chennai\nInternship in Pune\nInternship in Hyderabad\nInternship in Delhi\nInternship in Mumbai\nInternship in Noida\nInternship in Jaipur\nInternship in Chandigarh\nInternship in Coimbatore\nInternship in Ahmedabad\nInternship in Kolkata\nSkill based internships\nData Analysis Internships\nData Science Internships\nSoftware Development Internships\nDigital Marketing Internships\nWeb Development Internships\nUI/UX Internships\nHR Internships\nFinance Internships\nDevOps Internships\nAI Internships\nGraphic Design Internship\nWork from Home Jobs\nWork from Home Jobs in Bangalore\nWork from Home Jobs in Chennai\nWork from Home Jobs in Hyderabad\nWork from Home Jobs in Delhi\nWork from Home Jobs in Pune\nWork from Home Jobs in Mumbai\nWork from Home Jobs in Kolkata\nWork from Home Jobs in Ahmedabad\nWork from Home Jobs in Noida\nWork from Home Jobs in Jaipur\nWork from Home Jobs in Chandigarh\nWork from Home Jobs in Coimbatore\nMentorship from Industry Experts\nCV Review\nMBA Preparation\nCase Competition\nPlacement Support\nInterview Preparation\nCareer Guidance\nPersonal Branding\nStudy Abroad\nCoding & Software\nPractice\nSkill Based Mock Assessments\nCompany Preparation\nMachine Learning Projects\nAI-Powered Mock Tests\nAI-Powered Mock Interview\n100 Days Coding Sprint\nAI-Powered Skill-Based Mock Tests\nCode Conquest\nView More\nkeyboard_arrow_down\n\nCopyright © 2026 FLIVE Consulting Pvt Ltd - All rights reserved.\n\nUnstop Version: 10.26.2026.16.8\n\nBest Viewed in Latest Versions of Edge, Mozilla, Chrome, Opera & Safari.",
+ "html": "<app-menubar _ngcontent-ng-c760537293=\"\" _nghost-ng-c1543902093=\"\" class=\"ng-tns-c760537293-0 ng-star-inserted\"><div _ngcontent-ng-c1543902093=\"\" class=\"menubar ng-star-inserted\"><header _ngcontent-ng-c1543902093=\"\" class=\"no-login\"><nav _ngcontent-ng-c1543902093=\"\" aria-label=\"Main Navigation\" class=\"header_inner ng-star-inserted\"><div _ngcontent-ng-c1543902093=\"\" class=\"left-part align-center\"><!----><div _ngcontent-ng-c1543902093=\"\" role=\"button\" tabindex=\"0\" aria-label=\"Unstop Logo\" class=\"logo ng-star-inserted\"><img _ngcontent-ng-c1543902093=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/svg/unstop-logo.svg\" alt=\"Unstop Logo\" height=\"32\" width=\"82\" class=\"ng-star-inserted\"><!----><!----><!----></div><!----><!----><!----><!----><!----></div><!----><!----><div _ngcontent-ng-c1543902093=\"\" class=\"right_part align-center\"><!----><!----><span _ngcontent-ng-c1543902093=\"\" role=\"button\" tabindex=\"0\" aria-label=\"For Business\" class=\"business-btn ng-star-inserted\"><un-icon _ngcontent-ng-c1543902093=\"\" _nghost-ng-c4074514152=\"\"><!----><span _ngcontent-ng-c4074514152=\"\" class=\"icon ng-star-inserted\" style=\"--active: var(--primary-700); --color: var(--primary-700); --hover: var(--primary-700); --size: 20px; mask-image: url(&quot;https://cdn.unstop.com/assets/icons/un_bag_for_business.svg&quot;);\"></span><!----><!----><!----><!----><!----></un-icon><div _ngcontent-ng-c1543902093=\"\" apptranslate=\"forBusiness.title\"><span _ngcontent-ng-c1543902093=\"\">For</span> Business </div></span><!----><!----><!----><!----><!----><div _ngcontent-ng-c1543902093=\"\" apptranslate=\"login\" role=\"button\" tabindex=\"0\" aria-label=\"Login\" class=\"login_btn waves-effect ng-star-inserted\"><un-icon _ngcontent-ng-c1543902093=\"\" _nghost-ng-c4074514152=\"\"><!----><span _ngcontent-ng-c4074514152=\"\" class=\"icon ng-star-inserted\" style=\"--active: var(--grey-00); --color: var(--grey-00); --hover: var(--grey-00); --size: 16px; mask-image: url(&quot;https://cdn.unstop.com/assets/icons/login.svg&quot;);\"></span><!----><!----><!----><!----><!----></un-icon> Login </div><!----><!----><!----></div></nav><!----><!----></header></div><!----><!----><!----><!----><!----><!----><!----></app-menubar><!----><div _ngcontent-ng-c760537293=\"\" id=\"app-main-container\" class=\"main-content overflow_scroll_bar thin ng-tns-c760537293-0\"><router-outlet _ngcontent-ng-c760537293=\"\" class=\"ng-tns-c760537293-0\"></router-outlet><app-error-page _nghost-ng-c3284546742=\"\" class=\"ng-star-inserted\"><div _ngcontent-ng-c3284546742=\"\" id=\"debug-404-info\" style=\"display: none;\"><table _ngcontent-ng-c3284546742=\"\"><thead _ngcontent-ng-c3284546742=\"\"><tr _ngcontent-ng-c3284546742=\"\"><th _ngcontent-ng-c3284546742=\"\">Field</th><th _ngcontent-ng-c3284546742=\"\">Source</th><th _ngcontent-ng-c3284546742=\"\">Diagnoses</th><th _ngcontent-ng-c3284546742=\"\">Value</th></tr></thead><tbody _ngcontent-ng-c3284546742=\"\"><tr _ngcontent-ng-c3284546742=\"\"><td _ngcontent-ng-c3284546742=\"\">prev-url-router</td><td _ngcontent-ng-c3284546742=\"\">Router previousNavigation.finalUrl</td><td _ngcontent-ng-c3284546742=\"\">In-app redirect source (e.g., /p/... → /page-not-found)</td><td _ngcontent-ng-c3284546742=\"\">none</td></tr><tr _ngcontent-ng-c3284546742=\"\"><td _ngcontent-ng-c3284546742=\"\">prev-url-referrer</td><td _ngcontent-ng-c3284546742=\"\">document.referrer</td><td _ngcontent-ng-c3284546742=\"\">Cross-repo/cross-origin previous page</td><td _ngcontent-ng-c3284546742=\"\">https://unstop.com/hackathons/myntra-hackerramp-myntra-1075440</td></tr><tr _ngcontent-ng-c3284546742=\"\"><td _ngcontent-ng-c3284546742=\"\">prev-url-location-href</td><td _ngcontent-ng-c3284546742=\"\">document.location.href (constructor)</td><td _ngcontent-ng-c3284546742=\"\">Browser URL at time ErrorPageComponent was created</td><td _ngcontent-ng-c3284546742=\"\">https://unstop.com/page-not-found</td></tr><tr _ngcontent-ng-c3284546742=\"\"><td _ngcontent-ng-c3284546742=\"\">router-url</td><td _ngcontent-ng-c3284546742=\"\">this.router.url (ngOnInit)</td><td _ngcontent-ng-c3284546742=\"\">Angular Router's internal URL state</td><td _ngcontent-ng-c3284546742=\"\">/page-not-found</td></tr><tr _ngcontent-ng-c3284546742=\"\"><td _ngcontent-ng-c3284546742=\"\">navigation-id</td><td _ngcontent-ng-c3284546742=\"\">getCurrentNavigation()?.id</td><td _ngcontent-ng-c3284546742=\"\">1 = direct hit, 2+ = redirect chain</td><td _ngcontent-ng-c3284546742=\"\">1</td></tr><tr _ngcontent-ng-c3284546742=\"\"><td _ngcontent-ng-c3284546742=\"\">query-params</td><td _ngcontent-ng-c3284546742=\"\">Navigation's extracted URL params</td><td _ngcontent-ng-c3284546742=\"\">Captures _escaped_fragment_, filters, etc.</td><td _ngcontent-ng-c3284546742=\"\">{}</td></tr><tr _ngcontent-ng-c3284546742=\"\"><td _ngcontent-ng-c3284546742=\"\">timestamp</td><td _ngcontent-ng-c3284546742=\"\">ISO date string</td><td _ngcontent-ng-c3284546742=\"\">When the 404 rendered</td><td _ngcontent-ng-c3284546742=\"\">2026-10-26T11:18:52.354Z</td></tr></tbody></table></div><div _ngcontent-ng-c3284546742=\"\" class=\"back error-page\" data-gtm-vis-recent-on-screen428212_344=\"490\" data-gtm-vis-first-on-screen428212_344=\"490\" data-gtm-vis-total-visible-time428212_344=\"100\" data-gtm-vis-has-fired428212_344=\"1\"><div _ngcontent-ng-c3284546742=\"\" class=\"error-wrapper row\"><div _ngcontent-ng-c3284546742=\"\" class=\"col s12 m4\"><div _ngcontent-ng-c3284546742=\"\" class=\"center-align clearfix important-links position-relative\"><div _ngcontent-ng-c3284546742=\"\" class=\"vertical-line\"></div><ul _ngcontent-ng-c3284546742=\"\" class=\"ng-star-inserted\"><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" href=\"/competitions\">Competition</a></li><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" href=\"/quiz\">Quizzes</a></li><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" href=\"/hackathons\">Hackathons</a></li><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" class=\"pl-10\" href=\"/internship\"> Internships</a></li><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" href=\"/scholarships\">Scholarships</a></li><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" href=\"/recruiter-diaries\">Recruiter Diaries</a></li></ul><!----></div></div><div _ngcontent-ng-c3284546742=\"\" class=\"col s12 m8 center-align right-side\"><div _ngcontent-ng-c3284546742=\"\" class=\"error-title show-in-mobile\"><h2 _ngcontent-ng-c3284546742=\"\">404</h2><p _ngcontent-ng-c3284546742=\"\">Page Not Found</p></div><div _ngcontent-ng-c3284546742=\"\" class=\"robot-wrapper position-relative\"><div _ngcontent-ng-c3284546742=\"\" class=\"robot-eye\"><div _ngcontent-ng-c3284546742=\"\" class=\"left-eye\"><span _ngcontent-ng-c3284546742=\"\" class=\"upper-eyebro\"></span><span _ngcontent-ng-c3284546742=\"\" class=\"eye-circle\"></span><span _ngcontent-ng-c3284546742=\"\" class=\"lower-eyebro\"></span></div><div _ngcontent-ng-c3284546742=\"\" class=\"right-eye\"><span _ngcontent-ng-c3284546742=\"\" class=\"upper-eyebro\"></span><span _ngcontent-ng-c3284546742=\"\" class=\"eye-circle\"></span><span _ngcontent-ng-c3284546742=\"\" class=\"lower-eyebro\"></span></div></div><div _ngcontent-ng-c3284546742=\"\" class=\"robot-mouth\"></div><img _ngcontent-ng-c3284546742=\"\" alt=\"Page Not Found\" src=\"https://d8it4huxumps7.cloudfront.net/images/robot1.png\"></div><div _ngcontent-ng-c3284546742=\"\" class=\"error-message\"> It seems you have taken a wrong turn. Take the help of <span _ngcontent-ng-c3284546742=\"\" class=\"show-in-desktop\"> sign board </span><span _ngcontent-ng-c3284546742=\"\" class=\"show-in-mobile\"> bottom links </span> to reach your destination </div><div _ngcontent-ng-c3284546742=\"\" class=\"footer-links show-in-mobile\"><ul _ngcontent-ng-c3284546742=\"\" class=\"ng-star-inserted\"><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" href=\"/competitions\">Competition</a></li><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" href=\"/quiz\">Quizzes</a></li><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" href=\"/hackathons\">Hackathons</a></li><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" class=\"pl-10\" href=\"/internship\"> Internships</a></li><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" href=\"/scholarships\">Scholarships</a></li><li _ngcontent-ng-c3284546742=\"\"><a _ngcontent-ng-c3284546742=\"\" href=\"/recruiter-diaries\">Recruiter Diaries</a></li></ul><!----></div></div></div></div><!----></app-error-page><!----><app-footer-new _ngcontent-ng-c760537293=\"\" _nghost-ng-c512523415=\"\" class=\"ng-tns-c760537293-0 ng-star-inserted\"><div _ngcontent-ng-c512523415=\"\" class=\"Footer_2 ng-star-inserted\"><div _ngcontent-ng-c512523415=\"\" class=\"Footer_Head stripe-border\"><div _ngcontent-ng-c512523415=\"\" class=\"Footer_Details\"><div _ngcontent-ng-c512523415=\"\" class=\"container-un j-between\"><div _ngcontent-ng-c512523415=\"\" class=\"Footer_Head_Left\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/690af21cce9af_un_logo_blue.svg\" alt=\"Unstop blue SVG logo\" width=\"137\" height=\"54\" loading=\"lazy\"><p _ngcontent-ng-c512523415=\"\"> Built with <un-icon _ngcontent-ng-c512523415=\"\" _nghost-ng-c4074514152=\"\"><!----><span _ngcontent-ng-c4074514152=\"\" class=\"icon ng-star-inserted\" style=\"--active: var(--pink-700); --color: var(--pink-700); --hover: var(--pink-700); --size: 24px; mask-image: url(&quot;https://cdn.unstop.com/assets/icons/heart_filled.svg&quot;);\"></span><!----><!----><!----><!----><!----></un-icon> in <strong _ngcontent-ng-c512523415=\"\">India</strong> for the <strong _ngcontent-ng-c512523415=\"\">world</strong></p></div><div _ngcontent-ng-c512523415=\"\" class=\"Footer_Social_icons\"><a _ngcontent-ng-c512523415=\"\" aria-label=\"Follow on twitter\" title=\"Follow on twitter\" href=\"https://twitter.com/Unstop_World\" target=\"_blank\" rel=\"noopener nofollow\" tabindex=\"0\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/65b8ddae44fdd_twitter_logo.svg\" alt=\"Twitter Icon\" width=\"22\" height=\"22\" loading=\"lazy\"></a><a _ngcontent-ng-c512523415=\"\" aria-label=\"Follow on Instagram\" title=\"Follow on Instagram\" href=\"https://www.instagram.com/unstop.world/\" target=\"_blank\" rel=\"noopener nofollow\" tabindex=\"0\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/social-share/instagram-icon.svg\" alt=\"Instagram Icon\" width=\"22\" height=\"22\" loading=\"lazy\"></a><a _ngcontent-ng-c512523415=\"\" aria-label=\"Follow on LinkedIn\" title=\"Follow on LinkedIn\" href=\"https://www.linkedin.com/company/unstop\" target=\"_blank\" rel=\"noopener nofollow\" tabindex=\"0\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/social-share/linkedin-icon.svg\" alt=\"LinkedIn Icon\" width=\"22\" height=\"22\" loading=\"lazy\"></a><a _ngcontent-ng-c512523415=\"\" aria-label=\"Follow on Facebook\" title=\"Follow on Facebook\" href=\"https://www.facebook.com/Unstop.world\" target=\"_blank\" rel=\"noopener nofollow\" tabindex=\"0\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/social-share/facebook-icon.svg\" alt=\"facebook Icon\" width=\"22\" height=\"22\" loading=\"lazy\"></a><a _ngcontent-ng-c512523415=\"\" aria-label=\"Follow on Telegram\" title=\"Follow on Telegram\" href=\"https://t.me/+ON15qceSy-IyZjY9\" target=\"_blank\" rel=\"noopener nofollow\" tabindex=\"0\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/social-share/telegram-icon.svg\" alt=\"telegram Icon\" width=\"22\" height=\"22\" loading=\"lazy\"></a><a _ngcontent-ng-c512523415=\"\" aria-label=\"Follow on Discord\" title=\"Follow on Discord\" href=\"https://discord.com/invite/DvYWXNr4yR\" target=\"_blank\" rel=\"noopener nofollow\" tabindex=\"0\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/social-share/discord-icon.svg\" alt=\"Discord Icon\" width=\"22\" height=\"22\" loading=\"lazy\"></a><a _ngcontent-ng-c512523415=\"\" title=\"Follow on YouTube\" aria-label=\"Follow on YouTube\" href=\"https://www.youtube.com/c/Unstop_World\" target=\"_blank\" rel=\"noopener nofollow\" tabindex=\"0\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/social-share/youtube-icon.svg\" alt=\"YouTube Icon\" width=\"22\" height=\"22\" loading=\"lazy\"></a></div></div><!----></div></div><div _ngcontent-ng-c512523415=\"\" class=\"links_wrapper ng-star-inserted\"><div _ngcontent-ng-c512523415=\"\" class=\"Footer_Main\"><div _ngcontent-ng-c512523415=\"\" class=\"container-un d-flex footer_main_box\"><div _ngcontent-ng-c512523415=\"\" class=\"Footer_Main_left\"><div _ngcontent-ng-c512523415=\"\" class=\"left-col\"><div _ngcontent-ng-c512523415=\"\" class=\"Footer_link_section\"><h4 _ngcontent-ng-c512523415=\"\">Products</h4><a _ngcontent-ng-c512523415=\"\" routerlink=\"/employers/employer-branding\" href=\"/employers/employer-branding\">Engage Talent</a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/employers/ai-sourcing-agent\" href=\"/employers/ai-sourcing-agent\">AI Sourcing Agent</a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/employers/ai-screening-agent\" href=\"/employers/ai-screening-agent\">AI Screening Agent</a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/employers/ai-assessment-agent\" href=\"/employers/ai-assessment-agent\">AI Assessment Agent</a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/employers/ai-interview-agent\" href=\"/employers/ai-interview-agent\">AI Interview Agent</a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/employers/ai-proctoring-agent\" href=\"/employers/ai-proctoring-agent\"> AI Proctoring Agent </a></div><div _ngcontent-ng-c512523415=\"\" class=\"Footer_link_section\"><h4 _ngcontent-ng-c512523415=\"\">Mentorship</h4><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/mentor/become-mentor\"> Be a Mentor </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/find-a-mentor\"> Explore Mentors </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/mentor/faqs\"> Mentorship FAQs </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/t/mentorship-22718\"> Mentorship Blogs </a></div><div _ngcontent-ng-c512523415=\"\" class=\"Footer_link_section\"><h4 _ngcontent-ng-c512523415=\"\">Our Properties</h4><a _ngcontent-ng-c512523415=\"\" routerlink=\"/awards/2026\" role=\"link\" tabindex=\"0\" href=\"/awards/2026\"> Unstop Talent Awards 2026 </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/unstop-talent-meet-2026\" role=\"link\" tabindex=\"0\" href=\"/unstop-talent-meet-2026\"> Unstop Talent Meet 2026 </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/talent-report-2026\" role=\"link\" tabindex=\"0\" href=\"/talent-report-2026\"> Unstop Talent Report 2026 </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/tools/education-loan-emi-calculator\" role=\"link\" tabindex=\"0\" href=\"/tools/education-loan-emi-calculator\"> Education Loan <br _ngcontent-ng-c512523415=\"\"> EMI Calculator </a><a _ngcontent-ng-c512523415=\"\" href=\"/theunstoppables\" role=\"link\" tabindex=\"0\" target=\"_blank\"> The Unstoppables - Breaking Barriers </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/online-quizzing-festival\" role=\"link\" tabindex=\"0\" href=\"/online-quizzing-festival\"> Online Quizzing Festival </a></div><div _ngcontent-ng-c512523415=\"\" class=\"Footer_link_section\"><h4 _ngcontent-ng-c512523415=\"\">Legal</h4><a _ngcontent-ng-c512523415=\"\" href=\"https://unstop.com/legal/terms-of-use\">Terms &amp; Conditions</a><a _ngcontent-ng-c512523415=\"\" href=\"https://unstop.com/legal/privacy-policy\">Privacy Policy</a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/directory/competitions/a/1\" role=\"link\" tabindex=\"0\" href=\"/directory/competitions/a/1\"> Sitemap </a></div></div><div _ngcontent-ng-c512523415=\"\" class=\"left-col\"><div _ngcontent-ng-c512523415=\"\" class=\"Footer_link_section\"><h4 _ngcontent-ng-c512523415=\"\">Participate</h4><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/competitions\"> Competitions &amp; Challenges </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/quiz\"> Assessments </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/hackathons\"> Hackathons </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/workshops\"> Workshops &amp; Webinars </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/conferences\"> Conferences </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/events\"> Cultural Events </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/college-fests\"> College Festivals </a></div><div _ngcontent-ng-c512523415=\"\" class=\"Footer_link_section\"><h4 _ngcontent-ng-c512523415=\"\">Apply</h4><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/internship\"> Internships </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/job\"> Jobs </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/scholarships\"> Scholarships </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/internship/summer\"> Summer Internships </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/internship/winter\"> Winter Internships </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/internship/ppo\"> PPO Internships </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/job/government-jobs\"> Government Jobs </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/internship/government-internship\"> Government Internship </a><a _ngcontent-ng-c512523415=\"\" role=\"link\" tabindex=\"0\" href=\"/internship/international\"> International Internships </a></div><div _ngcontent-ng-c512523415=\"\" class=\"Footer_link_section\"><h4 _ngcontent-ng-c512523415=\"\">For Business</h4><a _ngcontent-ng-c512523415=\"\" routerlink=\"/employers/clients\" role=\"link\" tabindex=\"0\" href=\"/employers/clients\"> Clientele </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/our-partners/become-a-partner\" role=\"link\" tabindex=\"0\" href=\"/our-partners/become-a-partner\"> Partner With Us </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/our-partners\" role=\"link\" tabindex=\"0\" href=\"/our-partners\"> Partners </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/employers/testimonials\" role=\"link\" tabindex=\"0\" href=\"/employers/testimonials\"> Testimonials </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/employers/case-studies\" role=\"link\" tabindex=\"0\" href=\"/employers/case-studies\"> Case Studies </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/post-now\" role=\"link\" tabindex=\"0\" href=\"/post-now\"> Post now </a></div></div><div _ngcontent-ng-c512523415=\"\" class=\"left-col\"><div _ngcontent-ng-c512523415=\"\" class=\"Footer_link_section\"><h4 _ngcontent-ng-c512523415=\"\">Learn</h4><a _ngcontent-ng-c512523415=\"\" routerlink=\"/courses\" role=\"link\" tabindex=\"0\" href=\"/courses\"> Courses </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/blog\" role=\"link\" tabindex=\"0\" href=\"/blog\"> Articles </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/blog-series\" role=\"link\" tabindex=\"0\" href=\"/blog-series\"> Blog Series </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/workshops\" role=\"link\" tabindex=\"0\" href=\"/workshops\"> Workshops </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/resources\" role=\"link\" tabindex=\"0\" href=\"/resources\"> Resources </a></div><div _ngcontent-ng-c512523415=\"\" class=\"Footer_link_section\"><h4 _ngcontent-ng-c512523415=\"\">Practice</h4><a _ngcontent-ng-c512523415=\"\" routerlink=\"/college-fests/5dayinterviewprep-unstop-254952\" role=\"link\" tabindex=\"0\" href=\"/college-fests/5dayinterviewprep-unstop-254952\"> 5 Days Interview Prep </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/practice/coding\" role=\"link\" tabindex=\"0\" href=\"/practice/coding\"> Code &amp; Ace Hiring <br _ngcontent-ng-c512523415=\"\"> Assessments </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/practice/100-days-of-code\" role=\"link\" tabindex=\"0\" href=\"/practice/100-days-of-code\"> 100-Day of Coding <br _ngcontent-ng-c512523415=\"\"> Sprint </a></div><div _ngcontent-ng-c512523415=\"\" class=\"Footer_link_section\"><h4 _ngcontent-ng-c512523415=\"\">Others</h4><a _ngcontent-ng-c512523415=\"\" routerlink=\"/about\" role=\"button\" tabindex=\"0\" href=\"/about\"> About Us </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/about/unstop-careers\" role=\"link\" tabindex=\"0\" href=\"/about/unstop-careers\"> Careers </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/about/life-at-unstop\" role=\"link\" tabindex=\"0\" href=\"/about/life-at-unstop\"> Life at Unstop </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/faq\" role=\"button\" tabindex=\"0\" href=\"/faq\"> FAQs </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/our-partners/branding-guidelines\" role=\"link\" tabindex=\"0\" href=\"/our-partners/branding-guidelines\"> Branding Guidelines </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/unstop-rewards-program\" role=\"link\" tabindex=\"0\" href=\"/unstop-rewards-program\"> Unstop Rewards Program </a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/unstoppitchsharktank\" role=\"link\" tabindex=\"0\" href=\"/unstoppitchsharktank\"> Unstop on Shark Tank </a><a _ngcontent-ng-c512523415=\"\" href=\"https://campuschampions.unstop.com/\" target=\"_blank\" rel=\"noopener noreferrer\" role=\"link\" tabindex=\"0\"> Unstop Campus Champions </a><span _ngcontent-ng-c512523415=\"\" role=\"button\" tabindex=\"0\" class=\"a\"> Request a Feature </span><a _ngcontent-ng-c512523415=\"\" routerlink=\"/resume-builder\" role=\"link\" tabindex=\"0\" href=\"/resume-builder\"> Build your Resume </a></div></div></div><div _ngcontent-ng-c512523415=\"\" class=\"Footer_Main_Right\"><a _ngcontent-ng-c512523415=\"\" href=\"about/unstop-careers\" class=\"Hiring_logo_box stripe-border ng-star-inserted\" target=\"_blank\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/694baa56aab62_we_are_hiring_footer_new_img.svg\" alt=\"we are hiring\" width=\"136px\" height=\"61px\" loading=\"lazy\"></a><!----><div _ngcontent-ng-c512523415=\"\" class=\"right-sub-1\"><a _ngcontent-ng-c512523415=\"\" routerlink=\"/contact-us\" tabindex=\"0\" role=\"link\" class=\"Share_your_story\" href=\"/contact-us\"> Contact Us <un-icon _ngcontent-ng-c512523415=\"\" _nghost-ng-c4074514152=\"\"><!----><!----><img _ngcontent-ng-c4074514152=\"\" src=\"https://cdn.unstop.com/assets/icons/arrow_upward_right.svg\" alt=\"arrow_upward_right\" class=\"ng-star-inserted\" style=\"--size: 18px;\"><!----><!----><!----><!----></un-icon></a><a _ngcontent-ng-c512523415=\"\" routerlink=\"/share-your-story-and-get-featured/\" tabindex=\"0\" role=\"link\" class=\"Share_your_story\" href=\"/share-your-story-and-get-featured\"> Share Your Story Now <un-icon _ngcontent-ng-c512523415=\"\" _nghost-ng-c4074514152=\"\"><!----><!----><img _ngcontent-ng-c4074514152=\"\" src=\"https://cdn.unstop.com/assets/icons/arrow_upward_right.svg\" alt=\"arrow_upward_right\" class=\"ng-star-inserted\" style=\"--size: 18px;\"><!----><!----><!----><!----></un-icon></a><div _ngcontent-ng-c512523415=\"\" class=\"Stay_updated\"><h4 _ngcontent-ng-c512523415=\"\">Stay Updated</h4><p _ngcontent-ng-c512523415=\"\">Get regular updates on opportunities/jobs to showcase your talent and get hired.</p><div _ngcontent-ng-c512523415=\"\" class=\"google-news\"><a _ngcontent-ng-c512523415=\"\" routerlink=\"/about/newsletter\" tabindex=\"0\" href=\"/about/newsletter\"> Subscribe to our newsletter! <em _ngcontent-ng-c512523415=\"\" class=\"material-icons\">send</em></a></div></div></div><div _ngcontent-ng-c512523415=\"\" class=\"right-sub-2\"><div _ngcontent-ng-c512523415=\"\" class=\"App_Links\"><div _ngcontent-ng-c512523415=\"\" class=\"Apps\"><a _ngcontent-ng-c512523415=\"\" href=\"https://play.google.com/store/apps/details?id=com.dare2compete.app\" target=\"_blank\" rel=\"noopener noreferrer nofollow\" aria-label=\"Download Unstop Apps on Google Play\" tabindex=\"0\" class=\"GTM_FOOTER_GOOGLE_PLAY\"><img _ngcontent-ng-c512523415=\"\" width=\"130\" height=\"40\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/690c6771810e0_googleplay.svg\" alt=\"Unstop apk logo\" loading=\"lazy\"></a><a _ngcontent-ng-c512523415=\"\" href=\"https://apps.apple.com/in/app/unstop-formerly-dare2compete/id1601170365\" target=\"_blank\" rel=\"noopener noreferrer nofollow\" aria-label=\"Download Unstop Apps on App Store\" tabindex=\"0\" class=\"GTM_FOOTER_APPLE_STORE\"><img _ngcontent-ng-c512523415=\"\" width=\"130\" height=\"40\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/690c67948ff84_apple_store.svg\" alt=\"Unstop app logo\" loading=\"lazy\"></a></div></div></div></div></div></div><section _ngcontent-ng-c512523415=\"\" class=\"footer_link ng-star-inserted\"><div _ngcontent-ng-c512523415=\"\" class=\"container-un\"><!----><div _ngcontent-ng-c512523415=\"\" class=\"item active\"><h2 _ngcontent-ng-c512523415=\"\" class=\"hdng\"> Jobs by Location <!----></h2><div _ngcontent-ng-c512523415=\"\" class=\"link\"><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-hyderabad\" class=\"ng-star-inserted\"> Jobs in Hyderabad​ </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-bangalore\" class=\"ng-star-inserted\"> Jobs in Bangalore </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-mumbai\" class=\"ng-star-inserted\"> Jobs in Mumbai​ </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-delhi\" class=\"ng-star-inserted\"> Jobs in Delhi </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-kolkata\" class=\"ng-star-inserted\"> Jobs in Kolkata </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-chennai\" class=\"ng-star-inserted\"> Jobs in Chennai​ </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-pune\" class=\"ng-star-inserted\"> Jobs in Pune </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-ahmedabad\" class=\"ng-star-inserted\"> Jobs in Ahmedabad </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-jaipur\" class=\"ng-star-inserted\"> Jobs in Jaipur </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-chandigarh\" class=\"ng-star-inserted\"> Jobs in Chandigarh </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-noida\" class=\"ng-star-inserted\"> Jobs in Noida </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/jobs-in-gurgaon\" class=\"ng-star-inserted\"> Jobs in Gurgaon </a><!----></div></div><div _ngcontent-ng-c512523415=\"\" class=\"item\"><h2 _ngcontent-ng-c512523415=\"\" class=\"hdng\"> Skill based jobs <!----></h2><div _ngcontent-ng-c512523415=\"\" class=\"link\"><a _ngcontent-ng-c512523415=\"\" href=\"/job/content-writing-jobs\" class=\"ng-star-inserted\"> Content Writing Jobs </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/digital-marketing-jobs\" class=\"ng-star-inserted\"> Digital Marketing Jobs </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/data-science-jobs\" class=\"ng-star-inserted\"> Data Science Jobs </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/accounting-jobs\" class=\"ng-star-inserted\"> Accounting Jobs </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/backend-development-jobs\" class=\"ng-star-inserted\"> Backend Developer Jobs </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/electrical-engineer-jobs\" class=\"ng-star-inserted\"> Electrical Engineer Jobs </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/frontend-development-jobs\" class=\"ng-star-inserted\"> Frontend Developer Jobs </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/graphic-design-jobs\" class=\"ng-star-inserted\"> Graphic Designer Jobs </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/growth-marketing-jobs\" class=\"ng-star-inserted\"> Growth Marketing Jobs </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/machine-learning-engineering-jobs\" class=\"ng-star-inserted\"> Machine Learning Jobs </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/mechanical-engineer-jobs\" class=\"ng-star-inserted\"> Mechanical Engineer Jobs </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/civil-engineer-jobs\" class=\"ng-star-inserted\"> Civil Engineer Jobs </a><!----></div></div><div _ngcontent-ng-c512523415=\"\" class=\"item\"><h2 _ngcontent-ng-c512523415=\"\" class=\"hdng\"> Internships by Location <!----></h2><div _ngcontent-ng-c512523415=\"\" class=\"link\"><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-bangalore\" class=\"ng-star-inserted\"> Internship in Bangalore </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-chennai\" class=\"ng-star-inserted\"> Internship in Chennai </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-pune\" class=\"ng-star-inserted\"> Internship in Pune </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-hyderabad\" class=\"ng-star-inserted\"> Internship in Hyderabad </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-delhi\" class=\"ng-star-inserted\"> Internship in Delhi </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-mumbai\" class=\"ng-star-inserted\"> Internship in Mumbai </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-noida\" class=\"ng-star-inserted\"> Internship in Noida </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-jaipur\" class=\"ng-star-inserted\"> Internship in Jaipur </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-chandigarh\" class=\"ng-star-inserted\"> Internship in Chandigarh </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-coimbatore\" class=\"ng-star-inserted\"> Internship in Coimbatore </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-ahmedabad\" class=\"ng-star-inserted\"> Internship in Ahmedabad </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/internship-in-kolkata\" class=\"ng-star-inserted\"> Internship in Kolkata </a><!----></div></div><div _ngcontent-ng-c512523415=\"\" class=\"item\"><h2 _ngcontent-ng-c512523415=\"\" class=\"hdng\"> Skill based internships <!----></h2><div _ngcontent-ng-c512523415=\"\" class=\"link\"><a _ngcontent-ng-c512523415=\"\" href=\"/internship/data-analysis-internship\" class=\"ng-star-inserted\"> Data Analysis Internships </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/data-science-internship\" class=\"ng-star-inserted\"> Data Science Internships </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/software-development-internship\" class=\"ng-star-inserted\"> Software Development Internships </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/digital-marketing-internship\" class=\"ng-star-inserted\"> Digital Marketing Internships </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/web-development-internship\" class=\"ng-star-inserted\"> Web Development Internships </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/uiux-design-internship\" class=\"ng-star-inserted\"> UI/UX Internships </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/human-resources-hr-internship\" class=\"ng-star-inserted\"> HR Internships </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/finance-internship\" class=\"ng-star-inserted\"> Finance Internships </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/devops-internship\" class=\"ng-star-inserted\"> DevOps Internships </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/artificial-intelligence-internship\" class=\"ng-star-inserted\"> AI Internships </a><a _ngcontent-ng-c512523415=\"\" href=\"/internship/graphic-design-internship\" class=\"ng-star-inserted\"> Graphic Design Internship </a><!----></div></div><div _ngcontent-ng-c512523415=\"\" class=\"item\"><h2 _ngcontent-ng-c512523415=\"\" class=\"hdng\"> Work from Home Jobs <!----></h2><div _ngcontent-ng-c512523415=\"\" class=\"link\"><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-bangalore\" class=\"ng-star-inserted\"> Work from Home Jobs in Bangalore </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-chennai\" class=\"ng-star-inserted\"> Work from Home Jobs in Chennai </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-hyderabad\" class=\"ng-star-inserted\"> Work from Home Jobs in Hyderabad </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-delhi\" class=\"ng-star-inserted\"> Work from Home Jobs in Delhi </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-pune\" class=\"ng-star-inserted\"> Work from Home Jobs in Pune </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-mumbai\" class=\"ng-star-inserted\"> Work from Home Jobs in Mumbai </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-kolkata\" class=\"ng-star-inserted\"> Work from Home Jobs in Kolkata </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-ahmedabad\" class=\"ng-star-inserted\"> Work from Home Jobs in Ahmedabad </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-noida\" class=\"ng-star-inserted\"> Work from Home Jobs in Noida </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-jaipur\" class=\"ng-star-inserted\"> Work from Home Jobs in Jaipur </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-chandigarh\" class=\"ng-star-inserted\"> Work from Home Jobs in Chandigarh </a><a _ngcontent-ng-c512523415=\"\" href=\"/job/work-from-home-jobs-in-coimbatore\" class=\"ng-star-inserted\"> Work from Home Jobs in Coimbatore </a><!----></div></div><div _ngcontent-ng-c512523415=\"\" class=\"item ng-star-inserted\"><h2 _ngcontent-ng-c512523415=\"\" class=\"hdng\"> Mentorship from Industry Experts <!----></h2><div _ngcontent-ng-c512523415=\"\" class=\"link\"><a _ngcontent-ng-c512523415=\"\" target=\"_blank\" href=\"/find-a-mentor?skills=resume-cv-review:career-advice\" class=\"ng-star-inserted\"> CV Review </a><a _ngcontent-ng-c512523415=\"\" target=\"_blank\" href=\"/find-a-mentor?skills=cat-preparation:xat-preparation\" class=\"ng-star-inserted\"> MBA Preparation </a><a _ngcontent-ng-c512523415=\"\" target=\"_blank\" href=\"/find-a-mentor?skills=case-study-competitions-and-innovation-challenges\" class=\"ng-star-inserted\"> Case Competition </a><a _ngcontent-ng-c512523415=\"\" target=\"_blank\" href=\"/find-a-mentor?skills=placement-support\" class=\"ng-star-inserted\"> Placement Support </a><a _ngcontent-ng-c512523415=\"\" target=\"_blank\" href=\"/find-a-mentor?skills=mock-interviews:interview-preparation:interview-preparations:how-to-get-high-impact-jobs-vcs-strategy\" class=\"ng-star-inserted\"> Interview Preparation </a><a _ngcontent-ng-c512523415=\"\" target=\"_blank\" href=\"/find-a-mentor?skills=career-development:career-growth:career-coaching:career-advice\" class=\"ng-star-inserted\"> Career Guidance </a><a _ngcontent-ng-c512523415=\"\" target=\"_blank\" href=\"/find-a-mentor?skills=personal-branding-on-linkedin-and-other-social-media-platforms:public-speaking\" class=\"ng-star-inserted\"> Personal Branding </a><a _ngcontent-ng-c512523415=\"\" target=\"_blank\" href=\"/find-a-mentor?skills=study-abroad:gmat-gre-preparation\" class=\"ng-star-inserted\"> Study Abroad </a><a _ngcontent-ng-c512523415=\"\" target=\"_blank\" href=\"/find-a-mentor?skills=coding:hackathons-and-coding-challenges:software-development:software-engineering:software-architecture:mobile-app-development:web-development:product-development:c:programming-languages:programming:prototyping\" class=\"ng-star-inserted\"> Coding &amp; Software </a><!----></div></div><!----><!----><div _ngcontent-ng-c512523415=\"\" class=\"item\"><h2 _ngcontent-ng-c512523415=\"\" class=\"hdng\"> Practice <!----></h2><div _ngcontent-ng-c512523415=\"\" class=\"link\"><a _ngcontent-ng-c512523415=\"\" href=\"/practice/mock-test\" class=\"ng-star-inserted\"> Skill Based Mock Assessments </a><a _ngcontent-ng-c512523415=\"\" href=\"/practice/company-preparation\" class=\"ng-star-inserted\"> Company Preparation </a><a _ngcontent-ng-c512523415=\"\" href=\"/practice/machine-learning-ai-project\" class=\"ng-star-inserted\"> Machine Learning Projects </a><a _ngcontent-ng-c512523415=\"\" href=\"/practice/ai-powered-role-based-mock-tests\" class=\"ng-star-inserted\"> AI-Powered Mock Tests </a><a _ngcontent-ng-c512523415=\"\" href=\"/practice/ai-mock-interview\" class=\"ng-star-inserted\"> AI-Powered Mock Interview </a><a _ngcontent-ng-c512523415=\"\" href=\"/practice/100-days-of-code\" class=\"ng-star-inserted\"> 100 Days Coding Sprint </a><a _ngcontent-ng-c512523415=\"\" href=\"/practice/ai-powered-skill-based-mock-tests\" class=\"ng-star-inserted\"> AI-Powered Skill-Based Mock Tests </a><a _ngcontent-ng-c512523415=\"\" href=\"/practice/coding\" class=\"ng-star-inserted\"> Code Conquest </a><!----></div></div><div _ngcontent-ng-c512523415=\"\" class=\"view_more ng-star-inserted\"> View More <em _ngcontent-ng-c512523415=\"\" class=\"material-icons\"> keyboard_arrow_down </em></div><!----></div></section><!----><div _ngcontent-ng-c512523415=\"\" class=\"Copy_Right\"><div _ngcontent-ng-c512523415=\"\" class=\"container-un j-between\"><p _ngcontent-ng-c512523415=\"\"> Copyright © 2026 <a _ngcontent-ng-c512523415=\"\" routerlink=\"/\" href=\"/\">FLIVE Consulting Pvt Ltd</a> - All rights reserved. </p><div _ngcontent-ng-c512523415=\"\" class=\"version\"><p _ngcontent-ng-c512523415=\"\">Unstop Version: 10.26.2026.16.8</p><p _ngcontent-ng-c512523415=\"\">Best Viewed in Latest Versions of Edge, Mozilla, Chrome, Opera &amp; Safari.</p></div></div></div><div _ngcontent-ng-c512523415=\"\" class=\"payment-sect pt-20 pb-20\"><div _ngcontent-ng-c512523415=\"\" class=\"container-un j-between\"><div _ngcontent-ng-c512523415=\"\" class=\"left-box\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/692925bc2b20c_unstop_payment_info_footer_imag.png?d=1360x104\" alt=\"100% safe &amp; seure payment, secure, razoray Icon\" width=\"680\" height=\"52\" loading=\"lazy\"></div><div _ngcontent-ng-c512523415=\"\" class=\"iso-icon\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/gdpr-logo.png?d=150x150\" alt=\"GDPR\" width=\"60\" height=\"60\" loading=\"lazy\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/6231c2a5bdf94_iso_27001.svg\" alt=\"ISO 27001\" width=\"60\" height=\"60\" loading=\"lazy\"><img _ngcontent-ng-c512523415=\"\" src=\"https://d8it4huxumps7.cloudfront.net/uploads/images/6231c2c0b51ff_iso_9001.svg\" alt=\"ISO 9001\" width=\"60\" height=\"60\" loading=\"lazy\"></div></div></div></div><!----></div><!----><!----><!----><!----><!----></app-footer-new><!----></div>",
+ "links": [
+  {
+   "href": "https://unstop.com/competitions",
+   "text": "COMPETITION"
+  },
+  {
+   "href": "https://unstop.com/quiz",
+   "text": "QUIZZES"
+  },
+  {
+   "href": "https://unstop.com/hackathons",
+   "text": "HACKATHONS"
+  },
+  {
+   "href": "https://unstop.com/internship",
+   "text": "INTERNSHIPS"
+  },
+  {
+   "href": "https://unstop.com/scholarships",
+   "text": "SCHOLARSHIPS"
+  },
+  {
+   "href": "https://unstop.com/recruiter-diaries",
+   "text": "RECRUITER DIARIES"
+  },
+  {
+   "href": "https://unstop.com/competitions",
+   "text": "Competition"
+  },
+  {
+   "href": "https://unstop.com/quiz",
+   "text": "Quizzes"
+  },
+  {
+   "href": "https://unstop.com/hackathons",
+   "text": "Hackathons"
+  },
+  {
+   "href": "https://unstop.com/internship",
+   "text": "Internships"
+  },
+  {
+   "href": "https://unstop.com/scholarships",
+   "text": "Scholarships"
+  },
+  {
+   "href": "https://unstop.com/recruiter-diaries",
+   "text": "Recruiter Diaries"
+  },
+  {
+   "href": "https://twitter.com/Unstop_World",
+   "text": "Follow on twitter"
+  },
+  {
+   "href": "https://www.instagram.com/unstop.world/",
+   "text": "Follow on Instagram"
+  },
+  {
+   "href": "https://www.linkedin.com/company/unstop",
+   "text": "Follow on LinkedIn"
+  },
+  {
+   "href": "https://www.facebook.com/Unstop.world",
+   "text": "Follow on Facebook"
+  },
+  {
+   "href": "https://t.me/+ON15qceSy-IyZjY9",
+   "text": "Follow on Telegram"
+  },
+  {
+   "href": "https://discord.com/invite/DvYWXNr4yR",
+   "text": "Follow on Discord"
+  },
+  {
+   "href": "https://www.youtube.com/c/Unstop_World",
+   "text": "Follow on YouTube"
+  },
+  {
+   "href": "https://unstop.com/employers/employer-branding",
+   "text": "Engage Talent"
+  },
+  {
+   "href": "https://unstop.com/employers/ai-sourcing-agent",
+   "text": "AI Sourcing Agent"
+  },
+  {
+   "href": "https://unstop.com/employers/ai-screening-agent",
+   "text": "AI Screening Agent"
+  },
+  {
+   "href": "https://unstop.com/employers/ai-assessment-agent",
+   "text": "AI Assessment Agent"
+  },
+  {
+   "href": "https://unstop.com/employers/ai-interview-agent",
+   "text": "AI Interview Agent"
+  },
+  {
+   "href": "https://unstop.com/employers/ai-proctoring-agent",
+   "text": "AI Proctoring Agent"
+  },
+  {
+   "href": "https://unstop.com/mentor/become-mentor",
+   "text": "Be a Mentor"
+  },
+  {
+   "href": "https://unstop.com/find-a-mentor",
+   "text": "Explore Mentors"
+  },
+  {
+   "href": "https://unstop.com/mentor/faqs",
+   "text": "Mentorship FAQs"
+  },
+  {
+   "href": "https://unstop.com/t/mentorship-22718",
+   "text": "Mentorship Blogs"
+  },
+  {
+   "href": "https://unstop.com/awards/2026",
+   "text": "Unstop Talent Awards 2026"
+  },
+  {
+   "href": "https://unstop.com/unstop-talent-meet-2026",
+   "text": "Unstop Talent Meet 2026"
+  },
+  {
+   "href": "https://unstop.com/talent-report-2026",
+   "text": "Unstop Talent Report 2026"
+  },
+  {
+   "href": "https://unstop.com/tools/education-loan-emi-calculator",
+   "text": "Education Loan\nEMI Calculator"
+  },
+  {
+   "href": "https://unstop.com/theunstoppables",
+   "text": "The Unstoppables - Breaking Barriers"
+  },
+  {
+   "href": "https://unstop.com/online-quizzing-festival",
+   "text": "Online Quizzing Festival"
+  },
+  {
+   "href": "https://unstop.com/legal/terms-of-use",
+   "text": "Terms & Conditions"
+  },
+  {
+   "href": "https://unstop.com/legal/privacy-policy",
+   "text": "Privacy Policy"
+  },
+  {
+   "href": "https://unstop.com/directory/competitions/a/1",
+   "text": "Sitemap"
+  },
+  {
+   "href": "https://unstop.com/competitions",
+   "text": "Competitions & Challenges"
+  },
+  {
+   "href": "https://unstop.com/quiz",
+   "text": "Assessments"
+  },
+  {
+   "href": "https://unstop.com/hackathons",
+   "text": "Hackathons"
+  },
+  {
+   "href": "https://unstop.com/workshops",
+   "text": "Workshops & Webinars"
+  },
+  {
+   "href": "https://unstop.com/conferences",
+   "text": "Conferences"
+  },
+  {
+   "href": "https://unstop.com/events",
+   "text": "Cultural Events"
+  },
+  {
+   "href": "https://unstop.com/college-fests",
+   "text": "College Festivals"
+  },
+  {
+   "href": "https://unstop.com/internship",
+   "text": "Internships"
+  },
+  {
+   "href": "https://unstop.com/job",
+   "text": "Jobs"
+  },
+  {
+   "href": "https://unstop.com/scholarships",
+   "text": "Scholarships"
+  },
+  {
+   "href": "https://unstop.com/internship/summer",
+   "text": "Summer Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/winter",
+   "text": "Winter Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/ppo",
+   "text": "PPO Internships"
+  },
+  {
+   "href": "https://unstop.com/job/government-jobs",
+   "text": "Government Jobs"
+  },
+  {
+   "href": "https://unstop.com/internship/government-internship",
+   "text": "Government Internship"
+  },
+  {
+   "href": "https://unstop.com/internship/international",
+   "text": "International Internships"
+  },
+  {
+   "href": "https://unstop.com/employers/clients",
+   "text": "Clientele"
+  },
+  {
+   "href": "https://unstop.com/our-partners/become-a-partner",
+   "text": "Partner With Us"
+  },
+  {
+   "href": "https://unstop.com/our-partners",
+   "text": "Partners"
+  },
+  {
+   "href": "https://unstop.com/employers/testimonials",
+   "text": "Testimonials"
+  },
+  {
+   "href": "https://unstop.com/employers/case-studies",
+   "text": "Case Studies"
+  },
+  {
+   "href": "https://unstop.com/post-now",
+   "text": "Post now"
+  },
+  {
+   "href": "https://unstop.com/courses",
+   "text": "Courses"
+  },
+  {
+   "href": "https://unstop.com/blog",
+   "text": "Articles"
+  },
+  {
+   "href": "https://unstop.com/blog-series",
+   "text": "Blog Series"
+  },
+  {
+   "href": "https://unstop.com/workshops",
+   "text": "Workshops"
+  },
+  {
+   "href": "https://unstop.com/resources",
+   "text": "Resources"
+  },
+  {
+   "href": "https://unstop.com/college-fests/5dayinterviewprep-unstop-254952",
+   "text": "5 Days Interview Prep"
+  },
+  {
+   "href": "https://unstop.com/practice/coding",
+   "text": "Code & Ace Hiring\nAssessments"
+  },
+  {
+   "href": "https://unstop.com/practice/100-days-of-code",
+   "text": "100-Day of Coding\nSprint"
+  },
+  {
+   "href": "https://unstop.com/about",
+   "text": "About Us"
+  },
+  {
+   "href": "https://unstop.com/about/unstop-careers",
+   "text": "Careers"
+  },
+  {
+   "href": "https://unstop.com/about/life-at-unstop",
+   "text": "Life at Unstop"
+  },
+  {
+   "href": "https://unstop.com/faq",
+   "text": "FAQs"
+  },
+  {
+   "href": "https://unstop.com/our-partners/branding-guidelines",
+   "text": "Branding Guidelines"
+  },
+  {
+   "href": "https://unstop.com/unstop-rewards-program",
+   "text": "Unstop Rewards Program"
+  },
+  {
+   "href": "https://unstop.com/unstoppitchsharktank",
+   "text": "Unstop on Shark Tank"
+  },
+  {
+   "href": "https://campuschampions.unstop.com/",
+   "text": "Unstop Campus Champions"
+  },
+  {
+   "href": "https://unstop.com/resume-builder",
+   "text": "Build your Resume"
+  },
+  {
+   "href": "https://unstop.com/about/unstop-careers",
+   "text": ""
+  },
+  {
+   "href": "https://unstop.com/contact-us",
+   "text": "Contact Us"
+  },
+  {
+   "href": "https://unstop.com/share-your-story-and-get-featured",
+   "text": "Share Your Story Now"
+  },
+  {
+   "href": "https://unstop.com/about/newsletter",
+   "text": "Subscribe to our newsletter!\nsend"
+  },
+  {
+   "href": "https://play.google.com/store/apps/details?id=com.dare2compete.app",
+   "text": "Download Unstop Apps on Google Play"
+  },
+  {
+   "href": "https://apps.apple.com/in/app/unstop-formerly-dare2compete/id1601170365",
+   "text": "Download Unstop Apps on App Store"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-hyderabad",
+   "text": "Jobs in Hyderabad​"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-bangalore",
+   "text": "Jobs in Bangalore"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-mumbai",
+   "text": "Jobs in Mumbai​"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-delhi",
+   "text": "Jobs in Delhi"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-kolkata",
+   "text": "Jobs in Kolkata"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-chennai",
+   "text": "Jobs in Chennai​"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-pune",
+   "text": "Jobs in Pune"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-ahmedabad",
+   "text": "Jobs in Ahmedabad"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-jaipur",
+   "text": "Jobs in Jaipur"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-chandigarh",
+   "text": "Jobs in Chandigarh"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-noida",
+   "text": "Jobs in Noida"
+  },
+  {
+   "href": "https://unstop.com/job/jobs-in-gurgaon",
+   "text": "Jobs in Gurgaon"
+  },
+  {
+   "href": "https://unstop.com/job/content-writing-jobs",
+   "text": "Content Writing Jobs"
+  },
+  {
+   "href": "https://unstop.com/job/digital-marketing-jobs",
+   "text": "Digital Marketing Jobs"
+  },
+  {
+   "href": "https://unstop.com/job/data-science-jobs",
+   "text": "Data Science Jobs"
+  },
+  {
+   "href": "https://unstop.com/job/accounting-jobs",
+   "text": "Accounting Jobs"
+  },
+  {
+   "href": "https://unstop.com/job/backend-development-jobs",
+   "text": "Backend Developer Jobs"
+  },
+  {
+   "href": "https://unstop.com/job/electrical-engineer-jobs",
+   "text": "Electrical Engineer Jobs"
+  },
+  {
+   "href": "https://unstop.com/job/frontend-development-jobs",
+   "text": "Frontend Developer Jobs"
+  },
+  {
+   "href": "https://unstop.com/job/graphic-design-jobs",
+   "text": "Graphic Designer Jobs"
+  },
+  {
+   "href": "https://unstop.com/job/growth-marketing-jobs",
+   "text": "Growth Marketing Jobs"
+  },
+  {
+   "href": "https://unstop.com/job/machine-learning-engineering-jobs",
+   "text": "Machine Learning Jobs"
+  },
+  {
+   "href": "https://unstop.com/job/mechanical-engineer-jobs",
+   "text": "Mechanical Engineer Jobs"
+  },
+  {
+   "href": "https://unstop.com/job/civil-engineer-jobs",
+   "text": "Civil Engineer Jobs"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-bangalore",
+   "text": "Internship in Bangalore"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-chennai",
+   "text": "Internship in Chennai"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-pune",
+   "text": "Internship in Pune"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-hyderabad",
+   "text": "Internship in Hyderabad"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-delhi",
+   "text": "Internship in Delhi"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-mumbai",
+   "text": "Internship in Mumbai"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-noida",
+   "text": "Internship in Noida"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-jaipur",
+   "text": "Internship in Jaipur"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-chandigarh",
+   "text": "Internship in Chandigarh"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-coimbatore",
+   "text": "Internship in Coimbatore"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-ahmedabad",
+   "text": "Internship in Ahmedabad"
+  },
+  {
+   "href": "https://unstop.com/internship/internship-in-kolkata",
+   "text": "Internship in Kolkata"
+  },
+  {
+   "href": "https://unstop.com/internship/data-analysis-internship",
+   "text": "Data Analysis Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/data-science-internship",
+   "text": "Data Science Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/software-development-internship",
+   "text": "Software Development Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/digital-marketing-internship",
+   "text": "Digital Marketing Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/web-development-internship",
+   "text": "Web Development Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/uiux-design-internship",
+   "text": "UI/UX Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/human-resources-hr-internship",
+   "text": "HR Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/finance-internship",
+   "text": "Finance Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/devops-internship",
+   "text": "DevOps Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/artificial-intelligence-internship",
+   "text": "AI Internships"
+  },
+  {
+   "href": "https://unstop.com/internship/graphic-design-internship",
+   "text": "Graphic Design Internship"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-bangalore",
+   "text": "Work from Home Jobs in Bangalore"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-chennai",
+   "text": "Work from Home Jobs in Chennai"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-hyderabad",
+   "text": "Work from Home Jobs in Hyderabad"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-delhi",
+   "text": "Work from Home Jobs in Delhi"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-pune",
+   "text": "Work from Home Jobs in Pune"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-mumbai",
+   "text": "Work from Home Jobs in Mumbai"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-kolkata",
+   "text": "Work from Home Jobs in Kolkata"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-ahmedabad",
+   "text": "Work from Home Jobs in Ahmedabad"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-noida",
+   "text": "Work from Home Jobs in Noida"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-jaipur",
+   "text": "Work from Home Jobs in Jaipur"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-chandigarh",
+   "text": "Work from Home Jobs in Chandigarh"
+  },
+  {
+   "href": "https://unstop.com/job/work-from-home-jobs-in-coimbatore",
+   "text": "Work from Home Jobs in Coimbatore"
+  },
+  {
+   "href": "https://unstop.com/find-a-mentor?skills=resume-cv-review:career-advice",
+   "text": "CV Review"
+  },
+  {
+   "href": "https://unstop.com/find-a-mentor?skills=cat-preparation:xat-preparation",
+   "text": "MBA Preparation"
+  },
+  {
+   "href": "https://unstop.com/find-a-mentor?skills=case-study-competitions-and-innovation-challenges",
+   "text": "Case Competition"
+  },
+  {
+   "href": "https://unstop.com/find-a-mentor?skills=placement-support",
+   "text": "Placement Support"
+  },
+  {
+   "href": "https://unstop.com/find-a-mentor?skills=mock-interviews:interview-preparation:interview-preparations:how-to-get-high-impact-jobs-vcs-strategy",
+   "text": "Interview Preparation"
+  },
+  {
+   "href": "https://unstop.com/find-a-mentor?skills=career-development:career-growth:career-coaching:career-advice",
+   "text": "Career Guidance"
+  },
+  {
+   "href": "https://unstop.com/find-a-mentor?skills=personal-branding-on-linkedin-and-other-social-media-platforms:public-speaking",
+   "text": "Personal Branding"
+  },
+  {
+   "href": "https://unstop.com/find-a-mentor?skills=study-abroad:gmat-gre-preparation",
+   "text": "Study Abroad"
+  },
+  {
+   "href": "https://unstop.com/find-a-mentor?skills=coding:hackathons-and-coding-challenges:software-development:software-engineering:software-architecture:mobile-app-development:web-development:product-development:c:programming-languages:programming:prototyping",
+   "text": "Coding & Software"
+  },
+  {
+   "href": "https://unstop.com/practice/mock-test",
+   "text": "Skill Based Mock Assessments"
+  },
+  {
+   "href": "https://unstop.com/practice/company-preparation",
+   "text": "Company Preparation"
+  },
+  {
+   "href": "https://unstop.com/practice/machine-learning-ai-project",
+   "text": "Machine Learning Projects"
+  },
+  {
+   "href": "https://unstop.com/practice/ai-powered-role-based-mock-tests",
+   "text": "AI-Powered Mock Tests"
+  },
+  {
+   "href": "https://unstop.com/practice/ai-mock-interview",
+   "text": "AI-Powered Mock Interview"
+  },
+  {
+   "href": "https://unstop.com/practice/100-days-of-code",
+   "text": "100 Days Coding Sprint"
+  },
+  {
+   "href": "https://unstop.com/practice/ai-powered-skill-based-mock-tests",
+   "text": "AI-Powered Skill-Based Mock Tests"
+  },
+  {
+   "href": "https://unstop.com/practice/coding",
+   "text": "Code Conquest"
+  },
+  {
+   "href": "https://unstop.com/",
+   "text": "FLIVE Consulting Pvt Ltd"
+  }
+ ]
+}

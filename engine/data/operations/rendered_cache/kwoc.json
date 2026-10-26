@@ -1,0 +1,66 @@
+{
+ "id": "kwoc",
+ "category": "open_source",
+ "url": "https://kwoc.kossiitkgp.org/",
+ "final_url": "https://kwoc.kossiitkgp.org/",
+ "fetched_at": "2026-10-26T11:24:44.178Z",
+ "status": "ok",
+ "http_status": 200,
+ "title": "KWoC 2025",
+ "text": "Home\nProjects\nFAQs\n\"For the love of open source\"\nKharagpur Winter\nof Code 2025\nStudent Sign-up\nMentor Sign-up\nStudent Manual\nMentor Manual\nJoin our Discord server\nAbout KWOC\n\nKharagpur Winter of Code is a 5-week long online program for students who are new to open source software development. The program not only helps students to get involved in open source, but also prepares them for many open source summer programs; Google Summer of Code being one of them.\n\nWhy KWOC?\nIntro to Open Source\n\nGet started with open source collaboration. Hone programmer skills with Git and GitHub. Make meaningful contributions guided by mentors. Build a portfolio showcasing your talents.\n\nPrepare for GSoC\n\nResearch organizations and connect with mentors. Create quality proposals and sharpen skills. Gain insider tips to boost your GSoC chances. Open doors through impressive abilities.\n\nEarn a Certificate\n\nReceive a certificate upon successful completition of the program. Boost your professional profile and validate your programming skills with this credential. Showcase your expertise.\n\nTimeline\nStay on Track!\n26 November 2025Mentor Registration Begins\n30 November 2025Student Registration Begins\n05 December 2025Coding Period Starts\n31 December 2025Mid Evaluations\n15 January 2026End Evaluations\n20 January 2026Report Submission Deadline\n31 January 2026Results Declaration\nSocial Groups\nDiscord\nLinkedIn\nTwitter\nQuick Links\nTimeline\nFAQs\nAbout KWoC\nOther\nAbout KOSS\ncontact@kossiitkgp.org\nKharagpur Winter of Code\nWith ♥ by KOSS",
+ "html": "\n    <div id=\"root\"><div class=\"App\" role=\"main\"><div class=\"galaxy-container\"><canvas width=\"1280\" height=\"900\" style=\"width: 1280px; height: 900px;\"></canvas></div><div class=\"header\"><img src=\"/assets/kwoc_logo-DlraoW8b.png\" width=\"50\"><div class=\"nav\"><a class=\"nav-link active\" href=\"/\">Home</a><a class=\"nav-link \" href=\"/projects\">Projects</a><a class=\"nav-link \" href=\"/faq\">FAQs</a></div></div><div><div class=\"hero\"><div class=\"quote\">\"For the love of open source\"</div><div class=\"title\">Kharagpur <span class=\"highlight\">Winter <br> of Code</span> 2025</div><div class=\"actions\"><button class=\"block-btn\" type=\"button\"><div class=\"btn-text\">Student Sign-up</div> </button><button class=\"block-btn\" type=\"button\"><div class=\"btn-text\">Mentor Sign-up</div> </button></div><div class=\"manual-links\"><a href=\"https://drive.google.com/file/d/1VgDyagBGBxGS9tM-9WeoDJXqS9p5G5Cf/view?usp=drive_link\" target=\"_blank\" rel=\"noreferrer\">Student Manual</a><a href=\"https://drive.google.com/file/d/1eCsTBrt80h61z97XYhlk0Mmt4Y0odsxV/view?usp=drive_link\" target=\"_blank\" rel=\"noreferrer\">Mentor Manual</a></div><div class=\"discord\"><a href=\"https://discord.gg/N5mbR2RDyw\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://avatars.githubusercontent.com/u/1965106?v=4\" alt=\"discord\">Join our Discord server</a></div></div><div class=\"about\" id=\"about\"><h1>About <span class=\"hl\">KWOC</span></h1><p><span class=\"hl bold\">Kharagpur Winter of Code</span> is a 5-week long online program for students who are new to open source software development. The program not only helps students to get involved in open source, but also prepares them for many open source summer programs; Google Summer of Code being one of them.</p></div><div class=\"whyKwoc\"><h1>Why <span class=\"hl\">KWOC</span>?</h1><section class=\"cards\"><div class=\"card\"><h2>Intro to Open Source</h2><p>Get started with open source collaboration. Hone programmer skills with Git and GitHub. Make meaningful contributions guided by mentors. Build a portfolio showcasing your talents.</p></div><div class=\"card\"><h2>Prepare for GSoC</h2><p>Research organizations and connect with mentors. Create quality proposals and sharpen skills. Gain insider tips to boost your GSoC chances. Open doors through impressive abilities.</p></div><div class=\"card\"><h2>Earn a Certificate</h2><p>Receive a certificate upon successful completition of the program. Boost your professional profile and validate your programming skills with this credential. Showcase your expertise.</p></div></section></div><div class=\"timeline-section\" id=\"timeline\"><h1>Timeline</h1><h2>Stay on Track!</h2><div class=\"timeline flex justify-center mb-1/10 px-5\"></div></div></div><div class=\"footer\"><div class=\"link-content\"><div class=\"section\"><div class=\"section-title\">Social Groups</div><div class=\"links\"><a href=\"https://discord.gg/N5mbR2RDyw\" target=\"_blank\" rel=\"noreferrer\">Discord</a><a href=\"https://www.linkedin.com/company/kharagpur-open-source-society/\" target=\"_blank\" rel=\"noreferrer\">LinkedIn</a><a href=\"https://twitter.com/kossiitkgp\" target=\"_blank\" rel=\"noreferrer\">Twitter</a></div></div><div class=\"section\"><div class=\"section-title\">Quick Links</div><div class=\"links\"><a href=\"/#timeline\">Timeline</a><a href=\"/faq\">FAQs</a><a href=\"/#about\">About KWoC</a></div></div><div class=\"section\"><div class=\"section-title\">Other</div><div class=\"links\"><a href=\"https://kossiitkgp.org\" target=\"_blank\" rel=\"noreferrer\">About KOSS</a><a href=\"mailto:contact@kossiitkgp.org\">contact@kossiitkgp.org</a></div></div></div><div class=\"footer-bottom\"><div class=\"kwoc\">Kharagpur Winter of Code</div><div class=\"koss\">With ♥ by KOSS</div></div></div></div></div>\n  \n\n\n",
+ "links": [
+  {
+   "href": "https://kwoc.kossiitkgp.org/",
+   "text": "Home"
+  },
+  {
+   "href": "https://kwoc.kossiitkgp.org/projects",
+   "text": "Projects"
+  },
+  {
+   "href": "https://kwoc.kossiitkgp.org/faq",
+   "text": "FAQs"
+  },
+  {
+   "href": "https://drive.google.com/file/d/1VgDyagBGBxGS9tM-9WeoDJXqS9p5G5Cf/view?usp=drive_link",
+   "text": "Student Manual"
+  },
+  {
+   "href": "https://drive.google.com/file/d/1eCsTBrt80h61z97XYhlk0Mmt4Y0odsxV/view?usp=drive_link",
+   "text": "Mentor Manual"
+  },
+  {
+   "href": "https://discord.gg/N5mbR2RDyw",
+   "text": "Join our Discord server"
+  },
+  {
+   "href": "https://discord.gg/N5mbR2RDyw",
+   "text": "Discord"
+  },
+  {
+   "href": "https://www.linkedin.com/company/kharagpur-open-source-society/",
+   "text": "LinkedIn"
+  },
+  {
+   "href": "https://twitter.com/kossiitkgp",
+   "text": "Twitter"
+  },
+  {
+   "href": "https://kwoc.kossiitkgp.org/#timeline",
+   "text": "Timeline"
+  },
+  {
+   "href": "https://kwoc.kossiitkgp.org/faq",
+   "text": "FAQs"
+  },
+  {
+   "href": "https://kwoc.kossiitkgp.org/#about",
+   "text": "About KWoC"
+  },
+  {
+   "href": "https://kossiitkgp.org/",
+   "text": "About KOSS"
+  }
+ ]
+}

@@ -1,0 +1,166 @@
+{
+ "id": "mlsa",
+ "category": "community",
+ "url": "https://studentambassadors.microsoft.com/",
+ "final_url": "https://mvp.microsoft.com/studentambassadors",
+ "fetched_at": "2026-10-26T11:25:31.156Z",
+ "status": "ok",
+ "http_status": 200,
+ "title": "MVP Communities",
+ "text": "Skip to main content\nStudent Ambassadors\nMicrosoft\nStudent Ambassadors\nBecome a Student Ambassador\nJoin a global community of students exploring what’s possible with Microsoft technology. Build practical skills and leadership experiences that help you move forward—creating opportunities aligned to what you care about most.\nGet Started\n\nStart something big\nThe future belongs to people who take the first step—and this is where you begin. Connect with peers, mentors, and Microsoft employees who help you grow faster, lead with confidence, and turn effort into results.\nGet started\nBecome a Student Ambassador\nFind Ambassadors\nSearch Student Ambassador profiles\nLearn more\nGet answers to frequent questions\nNavigate skilling\nGuidance for your AI-powered growth\nWhy you should join\nTake the lead and shape your future\nOpen to students from every background, with no application or gatekeeping—just jump in. Learn to lead with AI in ways that are creative and responsible, so you can think bigger, build faster, and bring bold ideas to life.\nGrow faster by growing together\nProgress hits different when you’re learning in a community with people who challenge and support you at every step. Friendships spark creativity, mentorship builds confidence, and growth is stronger when you’re not alone.\nTurn potential into proof positive\nSome milestones show where you’ve been, while others point to where you’re headed. Build a resume that reflects your strengths and contributions. Prove you’re not just ready for what’s next—you’re already doing it.\nWhat to expect\nLearn AI with purpose. Share your knowledge, lead with your peers, and build real experience that actually takes you somewhere—whether you’re focused on career paths or startup ideas.\nLearn more\nStudent Ambassador Milestones\nComplete activities to advance milestones and unlock benefits—share content and host events that help students skill on Microsoft technology.\nLearn more\nStudent resources\nImagine Cup\nMicrosoft’s premier student startup competition\nMicrosoft Learn Student Hub\nResources to help students on their skilling journey\nAI Skills Navigator\nPersonalized learning and on-demand training\nMicrosoft Careers\nResources to help students on their career journey\nAzure for Startups\nAzure for Students\nGitHub Education\nGitHub Student Pack\nMicrosoft Learn\nMicrosoft Education\nMicrosoft Copilot\nEnglish\nYour California Privacy Choices\nContact Us\nPrivacy & cookies\nTerms of use\nTrademarks\nAbout our ads\n© Microsoft 2024\nAzure For Students\nMicrosoft for Startups\nStudent Developer Blog\nAzure Dev Tools for Teaching",
+ "html": "<div id=\"root\"><div id=\"cookie-banner\"></div><div class=\"sc-bbSZdi geZGXW\"><a id=\"skipToMain\" tabindex=\"0\" class=\"sc-hknOHE hxBAPy\">Skip to main content</a><div class=\"sc-brPLxw fMTVse\"><div><nav class=\"sc-klVQfs iTLKZq\"><div class=\"sc-uVWWZ sc-bypJrT dNTPdC bmbFHH\"><a href=\"https://www.microsoft.com/\" rel=\"noopener noreferrer\"><img src=\"/Assets/MsLogo.png\" alt=\"Microsoft - Official Home Page\" title=\"Microsoft - Official Home Page\" class=\"mscom-siteLogo\"></a><a href=\"/en-US/\" class=\"navbar-brand-second\"><span class=\"mscom-divider\"></span><span class=\"brand-text brand-text-desktop\">MVP Communities</span><span class=\"brand-text brand-text-mobile\">Student Ambassadors</span></a><div role=\"menubar\" class=\"sc-uVWWZ sc-fxwrCY dNTPdC Mbefd\"><a active=\"true\" role=\"menuitem\" data-testid=\"menuitem-Student Ambassadors\" class=\"sc-dSCufp gZZlAH\" href=\"/en-US/studentambassadors\">Student Ambassadors</a><a active=\"\" role=\"menuitem\" data-testid=\"menuitem-Most Valuable Professionals\" class=\"sc-dSCufp hYsieV\" href=\"/en-US/mvp\">Most Valuable Professionals</a><a active=\"\" role=\"menuitem\" data-testid=\"menuitem-Regional Directors\" class=\"sc-dSCufp hYsieV\" href=\"/en-US/rd\">Regional Directors</a></div></div><div class=\"sc-uVWWZ sc-hIUJlX dNTPdC fHjVUg\"><a id=\"search\" name=\"Search\" class=\"sc-ggpjZQ bObnSb\" href=\"/en-US/search?target=Landing\"><span>Search</span><i data-icon-name=\"search\" aria-hidden=\"true\" class=\"ms-Icon root-32 css-117 css-104\" style=\"font-family: FabricMDL2Icons;\"></i></a><div><button type=\"button\" role=\"link\" class=\"ms-Button ms-Button--primary root-118\" aria-label=\"Sign in\" data-is-focusable=\"true\"><span class=\"ms-Button-flexContainer flexContainer-119\" data-automationid=\"splitbuttonprimary\"><span class=\"ms-Button-textContainer textContainer-120\"><span class=\"ms-Button-label label-122\" id=\"id__0\">Sign in</span></span></span></button></div></div><button aria-label=\"Open mobile menu\" class=\"sc-dZoequ bcuHGV\"><div class=\"sc-jnOGJG dKEaFu\"></div><div class=\"sc-jnOGJG dKEaFu\"></div><div class=\"sc-jnOGJG dKEaFu\"></div></button></nav><nav class=\"sc-klVQfs iTLKZq navbar-secondlevel\"><a href=\"/en-US/studentambassadors\"><span class=\"brand-text\">Student Ambassadors</span></a><div><div role=\"menubar\" class=\"sc-uVWWZ sc-fxwrCY dNTPdC Mbefd\"><a active=\"\" role=\"menuitem\" data-testid=\"menuitem-msp.APPLY_MENU_HEADER\" class=\"sc-dSCufp hYsieV\" href=\"/account\">Get Started</a><a active=\"\" role=\"menuitem\" data-testid=\"menuitem-msp.EVENTS_MENU_HEADER\" class=\"sc-dSCufp hYsieV\" href=\"/en-US/search?target=Event&amp;timeline=Upcoming&amp;host=MLSA\">Events</a><a href=\"https://imaginecup.microsoft.com\" role=\"menuitem\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-ddjGPC kTuEUE\">Imagine Cup</a><a active=\"\" role=\"menuitem\" data-testid=\"menuitem-msp.QUESTIONS_MENU_HEADER\" class=\"sc-dSCufp hYsieV\" href=\"/en-US/faq?section=student\">Questions</a><a active=\"\" role=\"menuitem\" data-testid=\"menuitem-msp.FINDANMSA_MENU_HEADER\" class=\"sc-dSCufp hYsieV\" href=\"/en-US/search?target=profile&amp;program=MLSA\">Find a Student Ambassador</a><a href=\"https://learn.microsoft.com/training/student-hub/?WT.mc_id=StudentContent__-web-cxa\" role=\"menuitem\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"sc-ddjGPC kTuEUE\">Learn Student Hub</a><button type=\"button\" role=\"menuitem\" class=\"ms-Button ms-Button--default is-expanded ms-Button--hasMenu root-183\" data-is-focusable=\"true\" aria-expanded=\"true\" aria-haspopup=\"true\" aria-owns=\"id__4-menu\"><span class=\"ms-Button-flexContainer flexContainer-119\" data-automationid=\"splitbuttonprimary\"><span class=\"ms-Button-textContainer textContainer-120\"><span class=\"ms-Button-label label-126\" id=\"id__4\">Resources</span></span><i data-icon-name=\"ChevronDown\" aria-hidden=\"true\" class=\"ms-Icon root-32 css-117 ms-Button-menuIcon is-expanded menuIcon-184\" style=\"font-family: FabricMDL2Icons;\"></i><span class=\"ms-layer\"></span></span></button></div></div></nav></div></div><div aria-live=\"polite\" aria-atomic=\"true\" class=\"sc-iMWBiJ fNOihZ\"></div><div id=\"primaryArea\" tabindex=\"-1\" class=\"sc-fBWQRz jxkNEP\" style=\"\"><div role=\"status\" aria-live=\"polite\" aria-atomic=\"true\" style=\"position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;\"></div><div class=\"sc-eqUAAy sc-dcJsrY jMxcqX ckqTwI\"><div class=\"sc-hwdzOV bgmapk\"><img alt=\"Group selfie with two male and two female college friends in an outdoor park.\" src=\"/Assets/Photos/StudentHome.webp\" class=\"sc-krNlru kEqzTo\"><div class=\"sc-hZDyAQ lmEtNX\"></div><div class=\"sc-eqUAAy sc-iGgWBj jMxcqX cnKFEj sc-gsFSXq sc-guJBdh bboFTt iPzdQE\"><div class=\"react-reveal\" style=\"animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-140104460340109-1;\"><div class=\"sc-jGKxIK ifVoEv\"><h1 class=\"css-144\">Microsoft <br> Student Ambassadors</h1></div></div><div class=\"react-reveal\" style=\"animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-140104460340109-2;\"><div class=\"sc-ibQAlb GPbi container-fluid\"><div class=\"sc-iMTnTL kLzkWm\"><div class=\"sc-eqUAAy sc-iGgWBj jMxcqX gNePpA sc-gsFSXq bboFTt\"><h3 class=\"css-145\">Become a Student Ambassador</h3><span class=\"css-146\">Join a global community of students exploring what’s possible with Microsoft technology. Build practical skills and leadership experiences that help you move forward—creating opportunities aligned to what you care about most.</span></div><div class=\"sc-jaXxmE hETcRQ d-flex\"><a class=\"ms-Button ms-Button--primary float-md-right root-147\" href=\"/account\" aria-label=\"Get Started\" data-is-focusable=\"true\"><span class=\"ms-Button-flexContainer flexContainer-119\" data-automationid=\"splitbuttonprimary\">Get Started<i data-icon-name=\"chevronRightMed\" aria-hidden=\"true\" class=\"root-153\"></i></span></a></div></div></div></div></div></div><div class=\"sc-jXbUNg cawwYs\"><div width=\"100%\" height=\"100%\" class=\"sc-eqUAAy sc-iGgWBj jMxcqX cmMfKX sc-gsFSXq bboFTt\"><header class=\"sc-dtBdUo iCqdth\"><div class=\"sc-kOHTFB cVAySf\"><span class=\"sc-dtInlm dXmwBL\"></span></div><div class=\"sc-kOPcWz fxalBw\"><div class=\"react-reveal\"><div class=\"sc-cWSHoV DQxnm\"><h2 class=\"css-160\">Start something big</h2><span class=\"css-161\">The future belongs to people who take the first step—and this is where you begin. Connect with peers, mentors, and Microsoft employees who help you grow faster, lead with confidence, and turn effort into results.</span></div></div></div></header></div><div class=\"sc-jlZhew kszFNs\"><a href=\"/account\" target=\"_self\" class=\"sc-gEvEer sc-dhKdcB bnnhqh ceEtkO\"><div class=\"sc-kpDqfm fhBsRb\"><img alt=\"Get started\" src=\"/Assets/Icons/IconApply.svg\"></div><div class=\"sc-dAlyuH knCKff\"><span class=\"css-162\">Get started</span><span class=\"css-163\">Become a Student Ambassador</span></div></a><a href=\"/search?program=MLSA\" target=\"_self\" class=\"sc-gEvEer sc-dhKdcB bnnhqh ceEtkO\"><div class=\"sc-kpDqfm fhBsRb\"><img alt=\"Find Ambassadors\" src=\"/Assets/Icons/IconProfiles.svg\"></div><div class=\"sc-dAlyuH knCKff\"><span class=\"css-162\">Find Ambassadors</span><span class=\"css-163\">Search Student Ambassador profiles</span></div></a><a href=\"https://mvp.microsoft.com/faq?section=student\" target=\"_self\" class=\"sc-gEvEer sc-dhKdcB bnnhqh ceEtkO\"><div class=\"sc-kpDqfm fhBsRb\"><img alt=\"Learn more\" src=\"/Assets/Icons/MVP/FAQ.svg\"></div><div class=\"sc-dAlyuH knCKff\"><span class=\"css-162\">Learn more</span><span class=\"css-163\">Get answers to frequent questions</span></div></a><a href=\"https://go.microsoft.com/fwlink/?linkid=2354458\" target=\"_blank\" class=\"sc-gEvEer sc-dhKdcB bnnhqh ceEtkO\"><div class=\"sc-kpDqfm fhBsRb\"><img alt=\"Navigate skilling\" src=\"/Assets/Icons/IconLearn.svg\"></div><div class=\"sc-dAlyuH knCKff\"><span class=\"css-162\">Navigate skilling</span><span class=\"css-163\">Guidance for your AI-powered growth</span></div></a></div><div class=\"sc-eqUAAy sc-fTFjTM jMxcqX crjxvs\"><div class=\"sc-kbhJrz gsfbHC\"><h3 class=\"css-164\">Why you should join</h3><div class=\"sc-jIGnZt jwelvk row\"><div class=\"sc-fBdRDi FMqwP col-md-4\"><div tabindex=\"-1\" class=\"ms-Stack ms-Card css-166\"><div class=\"ms-StackItem ms-CardItem css-168\"><span aria-label=\"Contextual image of group collaborating while working on Black Surface Pro6 inside office\" role=\"img\" class=\"sc-fUnMCh cHfAux\"></span></div><div class=\"ms-Stack ms-CardSection css-170\"><div class=\"ms-Stack css-171\"><span class=\"css-172\">Take the lead and shape your future</span><span class=\"css-173\">Open to students from every background, with no application or gatekeeping—just jump in. Learn to lead with AI in ways that are creative and responsible, so you can think bigger, build faster, and bring bold ideas to life.</span></div></div></div></div><div class=\"sc-fBdRDi FMqwP col-md-4\"><div tabindex=\"-1\" class=\"ms-Stack ms-Card css-166\"><div class=\"ms-StackItem ms-CardItem css-168\"><span aria-label=\"Real people, real offices. Female developer collaborating with colleagues. Women who code, women developers, women engineers, code, develop, developer, engineer, Visual Studio, Azure.\" role=\"img\" class=\"sc-fUnMCh hfVMDH\"></span></div><div class=\"ms-Stack ms-CardSection css-170\"><div class=\"ms-Stack css-171\"><span class=\"css-172\">Grow faster by growing together</span><span class=\"css-173\">Progress hits different when you’re learning in a community with people who challenge and support you at every step. Friendships spark creativity, mentorship builds confidence, and growth is stronger when you’re not alone.</span></div></div></div></div><div class=\"sc-fBdRDi FMqwP col-md-4\"><div tabindex=\"-1\" class=\"ms-Stack ms-Card css-166\"><div class=\"ms-StackItem ms-CardItem css-168\"><span aria-label=\"Side photo of man working at the dining room table with a Dell Latitude 7410. Keywords: remote work, remote working, work from home, working at home, home office, telecommuting, video conference, video call\" role=\"img\" class=\"sc-fUnMCh fBVTDn\"></span></div><div class=\"ms-Stack ms-CardSection css-170\"><div class=\"ms-Stack css-171\"><span class=\"css-172\">Turn potential into proof positive</span><span class=\"css-173\">Some milestones show where you’ve been, while others point to where you’re headed. Build a resume that reflects your strengths and contributions. Prove you’re not just ready for what’s next—you’re already doing it.</span></div></div></div></div></div></div></div><div width=\"100%\" height=\"100%\" class=\"sc-eqUAAy sc-iGgWBj jMxcqX cmMfKX sc-gsFSXq bboFTt\"><header class=\"sc-dtBdUo bROmTX\"><div class=\"sc-kOHTFB cVAySf\"><span class=\"sc-dtInlm eTjlKa\"></span></div><div class=\"sc-kOPcWz bVzmTS\"><div class=\"react-reveal\"><div class=\"sc-cWSHoV iBEHsN\"><h2 class=\"css-160\">What to expect</h2><span class=\"css-161\">Learn AI with purpose. Share your knowledge, lead with your peers, and build real experience that actually takes you somewhere—whether you’re focused on career paths or startup ideas.</span><div class=\"sc-lcIPJg bnqNMr\"><a class=\"ms-Button ms-Button--primary float-md-right root-147\" href=\"https://go.microsoft.com/fwlink/?linkid=2204609\" aria-label=\"Learn more\" data-is-focusable=\"true\"><span class=\"ms-Button-flexContainer flexContainer-119\" data-automationid=\"splitbuttonprimary\">Learn more</span></a></div></div></div></div></header></div><div class=\"sc-eqUAAy sc-iGgWBj jMxcqX cnKFEj sc-gsFSXq sc-jsJBEP bboFTt kwVdvg\"><div class=\"sc-eeDRCY kRzLXh\"><div class=\"sc-iHGNWf fGDHlZ\"><div class=\"sc-koXPp gpAsTz\"><div class=\"sc-eqUAAy sc-iGgWBj jMxcqX cnKFEj sc-gsFSXq bboFTt\"><h2 class=\"css-154\">Student Ambassador Milestones</h2><span class=\"css-155\">Complete activities to advance milestones and unlock benefits—share content and host events that help students skill on Microsoft technology.</span><a class=\"ms-Button ms-Button--primary float-md-right root-156\" href=\"/studentambassadors/milestones\" aria-label=\"Learn more\" data-is-focusable=\"true\"><span class=\"ms-Button-flexContainer flexContainer-119\" data-automationid=\"splitbuttonprimary\">Learn more</span></a></div></div><div class=\"sc-bmzYkS goRTpk\"><div class=\"lazyload-wrapper \"><div class=\"lazyload-placeholder\"></div></div><div class=\"lazyload-wrapper \"><div class=\"lazyload-placeholder\"></div></div><div class=\"lazyload-wrapper \"><div class=\"lazyload-placeholder\"></div></div></div></div></div></div><div class=\"sc-iHmpnF fSCtNE\"><h3 class=\"css-174\">Student resources</h3><div class=\"sc-ehixzo eoMcyL\"><div tabindex=\"0\" data-testid=\"community-resources-0\" class=\"ms-Stack ms-Card css-176\"><div class=\"ms-StackItem ms-CardItem css-178\"><div class=\"lazyload-wrapper \"><div class=\"lazyload-placeholder\"></div></div></div><div class=\"ms-Stack ms-CardSection css-180\"><div class=\"ms-Stack css-171\"><span class=\"css-181\">Imagine Cup</span><span class=\"css-182\">Microsoft’s premier student startup competition</span></div></div></div><div tabindex=\"0\" data-testid=\"community-resources-1\" class=\"ms-Stack ms-Card css-176\"><div class=\"ms-StackItem ms-CardItem css-178\"><div class=\"lazyload-wrapper \"><div class=\"lazyload-placeholder\"></div></div></div><div class=\"ms-Stack ms-CardSection css-180\"><div class=\"ms-Stack css-171\"><span class=\"css-181\">Microsoft Learn Student Hub</span><span class=\"css-182\">Resources to help students on their skilling journey</span></div></div></div><div tabindex=\"0\" data-testid=\"community-resources-2\" class=\"ms-Stack ms-Card css-176\"><div class=\"ms-StackItem ms-CardItem css-178\"><div class=\"lazyload-wrapper \"><div class=\"lazyload-placeholder\"></div></div></div><div class=\"ms-Stack ms-CardSection css-180\"><div class=\"ms-Stack css-171\"><span class=\"css-181\">AI Skills Navigator</span><span class=\"css-182\">Personalized learning and on-demand training</span></div></div></div><div tabindex=\"0\" data-testid=\"community-resources-3\" class=\"ms-Stack ms-Card css-176\"><div class=\"ms-StackItem ms-CardItem css-178\"><div class=\"lazyload-wrapper \"><div class=\"lazyload-placeholder\"></div></div></div><div class=\"ms-Stack ms-CardSection css-180\"><div class=\"ms-Stack css-171\"><span class=\"css-181\">Microsoft Careers</span><span class=\"css-182\">Resources to help students on their career journey</span></div></div></div></div></div></div></div></div><div class=\"sc-ihgnxF fSrdsF\"><div class=\"ms-Stack css-127\"><div class=\"ms-StackItem css-157\"><div class=\"sc-hCPjZK sc-Nxspf gECIDf eDStxa\"><div class=\"ms-Stack css-129\"><button class=\"sc-jMakVo evzhvE\"><img alt=\"Azure for Startups\" src=\"/Assets/Social/FooterBlog.svg\" title=\"https://go.microsoft.com/fwlink/?linkid=2352757\"></button><button class=\"sc-jMakVo evzhvE\"><img alt=\"Instagram\" src=\"/Assets/Social/FooterInstagram.svg\" title=\"https://go.microsoft.com/fwlink/?linkid=2352756\"></button><button class=\"sc-jMakVo evzhvE\"><img alt=\"LinkedIn\" src=\"/Assets/Social/FooterLinkedIn.svg\" title=\"https://go.microsoft.com/fwlink/?linkid=2352755\"></button><button class=\"sc-jMakVo evzhvE\"><img alt=\"DISCORD\" src=\"/Assets/Social/FooterDiscord.svg\" title=\"https://go.microsoft.com/fwlink/?linkid=2284401\"></button><button class=\"sc-jMakVo evzhvE\"><img alt=\"YouTube\" src=\"/Assets/Social/FooterYouTube.svg\" title=\"https://go.microsoft.com/fwlink/?linkid=2352571\"></button></div></div></div><div class=\"ms-StackItem css-130\"><div class=\"sc-hCPjZK sc-Nxspf gECIDf eDStxa\"><div class=\"ms-Stack css-132\"><div class=\"ms-Stack-inner css-131\"><a target=\"blank\" href=\"https://go.microsoft.com/fwlink/?linkid=2312920\" rel=\"noopener noreferrer\" class=\"ms-Link root-133\">Azure for Startups</a><a target=\"blank\" href=\"https://go.microsoft.com/fwlink/?linkid=2354122\" rel=\"noopener noreferrer\" class=\"ms-Link root-133\">Azure for Students</a><a target=\"blank\" href=\"https://go.microsoft.com/fwlink/?linkid=2352758\" rel=\"noopener noreferrer\" class=\"ms-Link root-133\">GitHub Education</a><a target=\"blank\" href=\"https://go.microsoft.com/fwlink/?linkid=2352759\" rel=\"noopener noreferrer\" class=\"ms-Link root-133\">GitHub Student Pack</a><a target=\"blank\" href=\"https://go.microsoft.com/fwlink/?linkid=2352572\" rel=\"noopener noreferrer\" class=\"ms-Link root-133\">Microsoft Learn</a><a target=\"blank\" href=\"https://go.microsoft.com/fwlink/?linkid=2352573\" rel=\"noopener noreferrer\" class=\"ms-Link root-133\">Microsoft Education</a><a target=\"blank\" href=\"https://go.microsoft.com/fwlink/?linkid=2352684\" rel=\"noopener noreferrer\" class=\"ms-Link root-133\">Microsoft Copilot</a></div></div><div class=\"ms-Stack css-134\"><div class=\"ms-Stack-inner css-131\"><div class=\"ms-StackItem css-135\"><a href=\"/locale\" style=\"color: rgb(96, 94, 92); width: fit-content;\"><div class=\"ms-Stack css-136\"><div class=\"ms-Image root-137\"><img src=\"/Assets/IconEarth.svg\" alt=\"Language and location\" class=\"ms-Image-image ms-Image-image--portrait is-notLoaded is-fadeIn is-error image-138\"></div><span class=\"css-139\">English</span></div></a></div><div class=\"ms-StackItem css-140\"><div class=\"ms-Stack css-141\"><img src=\"/Assets/Icons/privacyoptions.svg\" alt=\"California Consumer Privacy Act (CCPA) Opt-Out Icon\" style=\"width: 20px; height: 20px;\"><a target=\"_blank\" href=\"https://aka.ms/YourCaliforniaPrivacyChoices\" id=\"californiaPrivacyChoicesLink\" rel=\"noopener noreferrer\" class=\"ms-Link root-142\">Your California Privacy Choices</a></div></div><a href=\"mailto:sa-help@microsoft.com\" rel=\"noopener noreferrer\" class=\"ms-Link root-143\">Contact Us</a><a href=\"https://go.microsoft.com/fwlink/?LinkId=521839\" rel=\"noopener noreferrer\" class=\"ms-Link root-143\">Privacy &amp; cookies</a><a href=\"https://go.microsoft.com/fwlink/?LinkID=206977\" rel=\"noopener noreferrer\" class=\"ms-Link root-143\">Terms of use</a><a href=\"https://www.microsoft.com/trademarks\" rel=\"noopener noreferrer\" class=\"ms-Link root-143\">Trademarks</a><a href=\"https://choice.microsoft.com/\" rel=\"noopener noreferrer\" class=\"ms-Link root-143\">About our ads</a><a href=\"https://www.microsoft.com\" rel=\"noopener noreferrer\" class=\"ms-Link root-143\">© Microsoft 2024</a></div></div></div></div></div></div></div></div><div class=\"ms-Layer ms-Layer--fixed root-206\" data-portal-element=\"true\"><div class=\"ms-Fabric ms-Layer-content content-208\"><div class=\"ms-Callout-container container-210\"><div class=\"ms-Callout ms-ContextualMenu-Callout root-211 css-37\" tabindex=\"-1\" style=\"top: 8px; left: 8px;\"><div class=\"ms-Callout-main calloutMain-214\" style=\"outline: none; max-height: 884px;\"><div id=\"id__4-menu\" class=\"ms-ContextualMenu-container container-186\" tabindex=\"-1\" aria-labelledby=\"id__4\" role=\"menu\"><div class=\"ms-FocusZone css-215 ms-ContextualMenu is-open ms-BaseButton-menuhost root-185\" data-focuszone-id=\"FocusZone58\"><ul class=\"ms-ContextualMenu-list is-open list-187\" role=\"presentation\"><li role=\"presentation\" class=\"ms-ContextualMenu-item item-190\"><div><a name=\"Azure For Students\" href=\"https://azure.microsoft.com/free/students\" rel=\"noopener noreferrer\" target=\"_blank\" class=\"ms-ContextualMenu-link root-192\" role=\"menuitem\" aria-posinset=\"1\" aria-setsize=\"4\" aria-disabled=\"false\" tabindex=\"0\"><div class=\"ms-ContextualMenu-linkContent linkContent-196\"><span class=\"ms-ContextualMenu-itemText label-202\">Azure For Students</span></div></a></div></li><li role=\"presentation\" class=\"ms-ContextualMenu-item item-190\"><div><a name=\"Microsoft for Startups\" href=\"https://go.microsoft.com/fwlink/?linkid=2250502&amp;clcid=0x409\" rel=\"noopener noreferrer\" target=\"_blank\" class=\"ms-ContextualMenu-link root-192\" role=\"menuitem\" aria-posinset=\"2\" aria-setsize=\"4\" aria-disabled=\"false\" tabindex=\"-1\"><div class=\"ms-ContextualMenu-linkContent linkContent-196\"><span class=\"ms-ContextualMenu-itemText label-202\">Microsoft for Startups</span></div></a></div></li><li role=\"presentation\" class=\"ms-ContextualMenu-item item-190\"><div><a name=\"Student Developer Blog\" href=\"https://techcommunity.microsoft.com/t5/Student-Developer-Blog/bg-p/StudentDeveloperBlog\" rel=\"noopener noreferrer\" target=\"_blank\" class=\"ms-ContextualMenu-link root-192\" role=\"menuitem\" aria-posinset=\"3\" aria-setsize=\"4\" aria-disabled=\"false\" tabindex=\"-1\"><div class=\"ms-ContextualMenu-linkContent linkContent-196\"><span class=\"ms-ContextualMenu-itemText label-202\">Student Developer Blog</span></div></a></div></li><li role=\"presentation\" class=\"ms-ContextualMenu-item item-190\"><div><a name=\"Azure Dev Tools for Teaching\" href=\"https://go.microsoft.com/fwlink/?linkid=2204970\" rel=\"noopener noreferrer\" target=\"_blank\" class=\"ms-ContextualMenu-link root-192\" role=\"menuitem\" aria-posinset=\"4\" aria-setsize=\"4\" aria-disabled=\"false\" tabindex=\"-1\"><div class=\"ms-ContextualMenu-linkContent linkContent-196\"><span class=\"ms-ContextualMenu-itemText label-202\">Azure Dev Tools for Teaching</span></div></a></div></li></ul></div></div></div></div></div></div></div>",
+ "links": [
+  {
+   "href": "https://www.microsoft.com/",
+   "text": ""
+  },
+  {
+   "href": "https://mvp.microsoft.com/en-US/",
+   "text": "Student Ambassadors"
+  },
+  {
+   "href": "https://mvp.microsoft.com/en-US/studentambassadors",
+   "text": "Student Ambassadors"
+  },
+  {
+   "href": "https://mvp.microsoft.com/en-US/mvp",
+   "text": "Most Valuable Professionals"
+  },
+  {
+   "href": "https://mvp.microsoft.com/en-US/rd",
+   "text": "Regional Directors"
+  },
+  {
+   "href": "https://mvp.microsoft.com/en-US/search?target=Landing",
+   "text": "Search"
+  },
+  {
+   "href": "https://mvp.microsoft.com/en-US/studentambassadors",
+   "text": "Student Ambassadors"
+  },
+  {
+   "href": "https://mvp.microsoft.com/account",
+   "text": "Get Started"
+  },
+  {
+   "href": "https://mvp.microsoft.com/en-US/search?target=Event&timeline=Upcoming&host=MLSA",
+   "text": "Events"
+  },
+  {
+   "href": "https://imaginecup.microsoft.com/",
+   "text": "Imagine Cup"
+  },
+  {
+   "href": "https://mvp.microsoft.com/en-US/faq?section=student",
+   "text": "Questions"
+  },
+  {
+   "href": "https://mvp.microsoft.com/en-US/search?target=profile&program=MLSA",
+   "text": "Find a Student Ambassador"
+  },
+  {
+   "href": "https://learn.microsoft.com/training/student-hub/?WT.mc_id=StudentContent__-web-cxa",
+   "text": "Learn Student Hub"
+  },
+  {
+   "href": "https://mvp.microsoft.com/account",
+   "text": "Get Started\n"
+  },
+  {
+   "href": "https://mvp.microsoft.com/account",
+   "text": "Get started\nBecome a Student Ambassador"
+  },
+  {
+   "href": "https://mvp.microsoft.com/search?program=MLSA",
+   "text": "Find Ambassadors\nSearch Student Ambassador profiles"
+  },
+  {
+   "href": "https://mvp.microsoft.com/faq?section=student",
+   "text": "Learn more\nGet answers to frequent questions"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?linkid=2354458",
+   "text": "Navigate skilling\nGuidance for your AI-powered growth"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?linkid=2204609",
+   "text": "Learn more"
+  },
+  {
+   "href": "https://mvp.microsoft.com/studentambassadors/milestones",
+   "text": "Learn more"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?linkid=2312920",
+   "text": "Azure for Startups"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?linkid=2354122",
+   "text": "Azure for Students"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?linkid=2352758",
+   "text": "GitHub Education"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?linkid=2352759",
+   "text": "GitHub Student Pack"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?linkid=2352572",
+   "text": "Microsoft Learn"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?linkid=2352573",
+   "text": "Microsoft Education"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?linkid=2352684",
+   "text": "Microsoft Copilot"
+  },
+  {
+   "href": "https://mvp.microsoft.com/locale",
+   "text": "English"
+  },
+  {
+   "href": "https://aka.ms/YourCaliforniaPrivacyChoices",
+   "text": "Your California Privacy Choices"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?LinkId=521839",
+   "text": "Privacy & cookies"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?LinkID=206977",
+   "text": "Terms of use"
+  },
+  {
+   "href": "https://www.microsoft.com/trademarks",
+   "text": "Trademarks"
+  },
+  {
+   "href": "https://choice.microsoft.com/",
+   "text": "About our ads"
+  },
+  {
+   "href": "https://www.microsoft.com/",
+   "text": "© Microsoft 2024"
+  },
+  {
+   "href": "https://azure.microsoft.com/free/students",
+   "text": "Azure For Students"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?linkid=2250502&clcid=0x409",
+   "text": "Microsoft for Startups"
+  },
+  {
+   "href": "https://techcommunity.microsoft.com/t5/Student-Developer-Blog/bg-p/StudentDeveloperBlog",
+   "text": "Student Developer Blog"
+  },
+  {
+   "href": "https://go.microsoft.com/fwlink/?linkid=2204970",
+   "text": "Azure Dev Tools for Teaching"
+  }
+ ]
+}

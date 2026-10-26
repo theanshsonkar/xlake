@@ -1,0 +1,166 @@
+{
+ "id": "gsoc",
+ "category": "open_source",
+ "url": "https://summerofcode.withgoogle.com/",
+ "final_url": "https://summerofcode.withgoogle.com/",
+ "fetched_at": "2026-10-26T11:24:13.157Z",
+ "status": "ok",
+ "http_status": 200,
+ "title": "Home | Google Summer of Code",
+ "text": "Log in\n\nperson_filled\nGSoC 2026 Contributors Announced!\nGSoC 2026\nWhat is Google Summer of Code?\n\nGoogle Summer of Code is a global, online program focused on bringing new contributors into open source software development. GSoC Contributors work with an open source organization on a 12+ week programming project under the guidance of mentors.\n\nLearn more\n22K+\nNew Contributors\n123\nCountries\n48M+\nLines of Code\n1000+\nOpen Source Organizations\n21K+\nMentors\n21\nYears\nBecome a GSoC contributor\n\nAre you new to open source and want to learn more about some interesting projects that you can contribute to? Join GSoC where mentors will help guide you on your journey!\n\nIt is very important to reach out to the organizations that you are interested in as soon as possible. The more conversations you have with the community before you submit your proposal the better your chances of being selected into the GSoC.\n\nView 2026 project list\nplay_circle_outline\n\nWant to learn more about Google Summer of Code?\n\nWatch video\npeople_alt\n\nOpen source organizations are ready to welcome new, excited contributors into their communities\n\nWatch video\nlightbulb\n\nLearn how to apply to be a GSoC contributor\n\nWatch video\nOpen source organizations\n\nOver 1,000 open source organizations have mentored 21,000+ new GSoC contributors since 2005. Our mentoring organizations are eager to teach newcomers to open source about their communities and the thrill of open source development.\n\nLearn why your organization should participate in GSoC\nplay_circle Watch video\nInterested in being a GSoC Mentor?\nplay_circle Watch video\ntext_snippet Read mentor guide\nBrowse all 2026 organizations\nLatest News\nThe Journey Begins: Meet the 2026 GSoC Contributors!\n\nBy Google Open Source, Apr 30, 2026\n\nby Stephanie Taylor, Mary Radomile &amp; Lucila Ortíz, Google Summer of Code A warm welcome to the 1,141 Contributors of Google Summer of Code (GSoC) 2026! We are excited to start this new edition alongside our 184 mentoring orgs. Organizations reviewed a record-breaking 23,371 proposals to find the best matches for their communities. 2026 Application Statistics: 15,245 ...\n\nRead More\nOpen Source, Open Doors, Apply Now for Google Summer of Code!\n\nBy Google Open Source, Mar 16, 2026\n\nby Stephanie Taylor, Mary Radomile &amp; Lucila Ortíz, GSoC Program Admins Join Google Summer of Code (GSoC) and start contributing to the world of open source development! Applications for GSoC are open from now - March 31, 2026 at 18:00 UTC. Google Summer of Code is celebrating its 22nd year in 2026! GSoC started back in 2005 and has brought over 22,000 new contributors from 123 ...\n\nRead More\nIntroducing the 185 Organizations for GSoC 2026\n\nBy Google Open Source, Feb 19, 2026\n\nby Stephanie Taylor, Mary Radomile &amp; Lucila Ortíz, Google Open Source The complete list of Google Summer of Code (GSoC) Mentoring Organizations is now available! 2026 brings us 185 open source communities who are eager to mentor a new group of open source contributors. Now is the time for prospective contributors to start looking for a community to participate with. Visit the full list ...\n\nRead More\nView all news\nGoogle Summer of Code Home\n\nIntroducing developers to open source software development\n\nAbout\nGet started\nHow it works\nPast programs\nProgram timeline\n2026 program\nNews\nHelp\nGSoC YouTube\nContact\nPrivacy\nRules\nTerms",
+ "html": "<router-outlet class=\"ng-star-inserted\"></router-outlet><ng-component _nghost-serverapp-c952871309=\"\" class=\"ng-star-inserted\"><app-feature-banner _ngcontent-serverapp-c952871309=\"\" sectionclass=\"section--tall\" _nghost-serverapp-c780852017=\"\"><section _ngcontent-serverapp-c780852017=\"\" class=\"section section--tall theme--gray\"><!----><div _ngcontent-serverapp-c780852017=\"\" class=\"section__inner\"><div _ngcontent-serverapp-c952871309=\"\" class=\"home__banner__dots\"></div><img _ngcontent-serverapp-c952871309=\"\" src=\"assets/media/logo.svg\" alt=\"Google Summer of Code logo\" class=\"home__banner__logo\"><app-feature-cta _ngcontent-serverapp-c952871309=\"\" _nghost-serverapp-c3856224127=\"\"><div _ngcontent-serverapp-c3856224127=\"\" class=\"feature-cta\"><div _ngcontent-serverapp-c3856224127=\"\"><div _ngcontent-serverapp-c3856224127=\"\"><h1 _ngcontent-serverapp-c952871309=\"\" heading=\"\">GSoC 2026 Contributors Announced!</h1></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"vr\"></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"constrainer--line-length\"></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"vr vr--3x\"></div><a _ngcontent-serverapp-c952871309=\"\" action=\"\" mat-flat-button=\"\" target=\"_blank\" color=\"primary\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" class=\"mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-primary mat-mdc-button-base ng-star-inserted\" href=\"https://opensource.googleblog.com/2026/04/the-journey-begins-meet-the-2026-gsoc-contributors.html\" aria-disabled=\"false\"><span class=\"mat-mdc-button-persistent-ripple mdc-button__ripple\"></span><span class=\"mdc-button__label\"> GSoC 2026 </span><span class=\"mat-mdc-focus-indicator\"></span><span class=\"mat-mdc-button-touch-target\"></span></a><!----></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"feature-cta__image\"></div></div></app-feature-cta></div></section></app-feature-banner><div _ngcontent-serverapp-c952871309=\"\" class=\"home__features\"><app-double-feature _ngcontent-serverapp-c952871309=\"\" _nghost-serverapp-c3378431804=\"\"><section _ngcontent-serverapp-c3378431804=\"\" class=\"layer layer--1\"><div _ngcontent-serverapp-c3378431804=\"\" class=\"grid\"><div _ngcontent-serverapp-c3378431804=\"\" class=\"grid__row grid__row--flush\"><div _ngcontent-serverapp-c3378431804=\"\" class=\"grid__row__item grid__row__item--span6@md grid__row__item--span12@sm\"><div _ngcontent-serverapp-c3378431804=\"\" class=\"double-feature__item double-feature__item__left theme--blue\"><div _ngcontent-serverapp-c952871309=\"\" left=\"\"><app-feature-cta _ngcontent-serverapp-c952871309=\"\" _nghost-serverapp-c3856224127=\"\"><div _ngcontent-serverapp-c3856224127=\"\" class=\"feature-cta\"><div _ngcontent-serverapp-c3856224127=\"\"><div _ngcontent-serverapp-c3856224127=\"\"><h3 _ngcontent-serverapp-c952871309=\"\" heading=\"\">What is Google Summer of Code?</h3></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"vr\"></div><div _ngcontent-serverapp-c3856224127=\"\"><p _ngcontent-serverapp-c952871309=\"\" body=\"\"> Google Summer of Code is a global, online program focused on bringing new contributors into open source software development. GSoC Contributors work with an open source organization on a 12+ week programming project under the guidance of mentors. </p></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"vr vr--3x\"></div><a _ngcontent-serverapp-c952871309=\"\" action=\"\" mat-stroked-button=\"\" color=\"primary\" app-route=\"PUBLIC_HOW_IT_WORKS\" class=\"gsoc-dark-theme mdc-button mdc-button--outlined mat-mdc-outlined-button mat-primary mat-mdc-button-base\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" href=\"/how-it-works\"><span class=\"mat-mdc-button-persistent-ripple mdc-button__ripple\"></span><span class=\"mdc-button__label\"> Learn more </span><span class=\"mat-mdc-focus-indicator\"></span><span class=\"mat-mdc-button-touch-target\"></span></a></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"feature-cta__image\"></div></div></app-feature-cta></div></div></div><div _ngcontent-serverapp-c3378431804=\"\" class=\"grid__row__item grid__row__item--span6@md grid__row__item--span12@sm\"><div _ngcontent-serverapp-c3378431804=\"\" class=\"double-feature__item double-feature__item__right theme--dark-gray-alpha\"><div _ngcontent-serverapp-c952871309=\"\" right=\"\"><app-metrics _ngcontent-serverapp-c952871309=\"\" _nghost-serverapp-c3513310118=\"\"><div _ngcontent-serverapp-c3513310118=\"\" class=\"metrics\"><div _ngcontent-serverapp-c3513310118=\"\" class=\"metrics__inner\"><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric\"><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__callout\"> 22K+ </div><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__label\">New Contributors</div></div><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric\"><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__callout\"> 123 </div><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__label\">Countries</div></div><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric\"><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__callout\"> 48M+ </div><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__label\">Lines of Code</div></div><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric\"><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__callout\"> 1000+ </div><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__label\">Open Source Organizations</div></div><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric\"><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__callout\"> 21K+ </div><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__label\">Mentors</div></div><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric\"><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__callout\"> 21 </div><div _ngcontent-serverapp-c3513310118=\"\" class=\"metric__label\">Years</div></div></div></div></app-metrics></div></div></div></div></div></section></app-double-feature><app-home-feature _ngcontent-serverapp-c952871309=\"\" title=\"Become a GSoC contributor\" _nghost-serverapp-c2436391940=\"\"><section _ngcontent-serverapp-c2436391940=\"\" class=\"section\"><div _ngcontent-serverapp-c2436391940=\"\" class=\"section__inner\"><h2 _ngcontent-serverapp-c2436391940=\"\" class=\"home-feature__hd\">Become a GSoC contributor</h2><div _ngcontent-serverapp-c2436391940=\"\" class=\"home-feature__bd home-feature__bd-length--short\"><p _ngcontent-serverapp-c952871309=\"\" body=\"\"> Are you new to open source and want to learn more about some interesting projects that you can contribute to? Join GSoC where mentors will help guide you on your journey! <br _ngcontent-serverapp-c952871309=\"\"><br _ngcontent-serverapp-c952871309=\"\"> It is very important to reach out to the organizations that you are interested in as soon as possible. The more conversations you have with the community before you submit your proposal the better your chances of being selected into the GSoC. </p></div><div _ngcontent-serverapp-c2436391940=\"\" class=\"home-feature__ft\"><app-contributor-reg-button _ngcontent-serverapp-c952871309=\"\" action=\"\" mat-flat-button=\"\" buttonstyle=\"FLAT\" _nghost-serverapp-c1137677405=\"\" class=\"ng-star-inserted\"><!----><!----><!----><a _ngcontent-serverapp-c1137677405=\"\" mat-button=\"\" color=\"primary\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" class=\"mdc-button mat-mdc-button mat-primary mat-mdc-button-base mat-mdc-unelevated-button ng-star-inserted\" href=\"/programs/2026/projects\"><span class=\"mat-mdc-button-persistent-ripple mdc-button__ripple\"></span><span class=\"mdc-button__label\"> View 2026 project list </span><span class=\"mat-mdc-focus-indicator\"></span><span class=\"mat-mdc-button-touch-target\"></span></a><!----><!----><!----><!----></app-contributor-reg-button><!----></div><div _ngcontent-serverapp-c2436391940=\"\" class=\"home-feature__feature-content\"><app-feature-cards _ngcontent-serverapp-c952871309=\"\" feature-content=\"\" _nghost-serverapp-c2535511876=\"\"><ul _ngcontent-serverapp-c2535511876=\"\" class=\"feature-cards\"><li _ngcontent-serverapp-c2535511876=\"\" class=\"feature-cards__item\"><app-feature-cta _ngcontent-serverapp-c952871309=\"\" card1=\"\" _nghost-serverapp-c3856224127=\"\"><div _ngcontent-serverapp-c3856224127=\"\" class=\"feature-cta\"><div _ngcontent-serverapp-c3856224127=\"\"><div _ngcontent-serverapp-c952871309=\"\" image=\"\" class=\"vr vr--4x\"><mat-icon _ngcontent-serverapp-c952871309=\"\" role=\"img\" class=\"mat-icon notranslate theme--alt-blue google-material-icons mat-icon-no-color\" aria-hidden=\"true\" data-mat-icon-type=\"font\"> play_circle_outline </mat-icon></div><div _ngcontent-serverapp-c3856224127=\"\"></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"vr\"></div><div _ngcontent-serverapp-c3856224127=\"\"><p _ngcontent-serverapp-c952871309=\"\" body=\"\" class=\"text--weight-medium\"> Want to learn more about Google Summer of Code? </p></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"vr vr--3x\"></div><a _ngcontent-serverapp-c952871309=\"\" action=\"\" href=\"https://www.youtube.com/watch?v=Wxjxwx7mqaI&amp;list=PLOU2XLYxmsIL7-SZlT0UHBWEG3DBwbaoA&amp;index=5\" target=\"_blank\" title=\"Opens in a new window\" class=\"link text--weight-medium\"> Watch video </a></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"feature-cta__image\"></div></div></app-feature-cta></li><li _ngcontent-serverapp-c2535511876=\"\" class=\"feature-cards__item\"><app-feature-cta _ngcontent-serverapp-c952871309=\"\" card2=\"\" _nghost-serverapp-c3856224127=\"\"><div _ngcontent-serverapp-c3856224127=\"\" class=\"feature-cta\"><div _ngcontent-serverapp-c3856224127=\"\"><div _ngcontent-serverapp-c952871309=\"\" image=\"\" class=\"vr vr--4x\"><mat-icon _ngcontent-serverapp-c952871309=\"\" role=\"img\" class=\"mat-icon notranslate theme--green google-material-icons mat-icon-no-color\" aria-hidden=\"true\" data-mat-icon-type=\"font\"> people_alt </mat-icon></div><div _ngcontent-serverapp-c3856224127=\"\"></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"vr\"></div><div _ngcontent-serverapp-c3856224127=\"\"><p _ngcontent-serverapp-c952871309=\"\" body=\"\" class=\"text--weight-medium\"> Open source organizations are ready to welcome new, excited contributors into their communities </p></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"vr vr--3x\"></div><a _ngcontent-serverapp-c952871309=\"\" action=\"\" href=\"https://www.youtube.com/watch?v=p6xdQInKZh8&amp;list=PLOU2XLYxmsIJ5kxKS2DO7y-X8EecbFT7g\" target=\"_blank\" title=\"Opens in a new window\" class=\"link text--weight-medium\"> Watch video </a></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"feature-cta__image\"></div></div></app-feature-cta></li><li _ngcontent-serverapp-c2535511876=\"\" class=\"feature-cards__item\"><app-feature-cta _ngcontent-serverapp-c952871309=\"\" card3=\"\" _nghost-serverapp-c3856224127=\"\"><div _ngcontent-serverapp-c3856224127=\"\" class=\"feature-cta\"><div _ngcontent-serverapp-c3856224127=\"\"><div _ngcontent-serverapp-c952871309=\"\" image=\"\" class=\"vr vr--4x\"><mat-icon _ngcontent-serverapp-c952871309=\"\" role=\"img\" class=\"mat-icon notranslate theme--orange google-material-icons mat-icon-no-color\" aria-hidden=\"true\" data-mat-icon-type=\"font\"> lightbulb </mat-icon></div><div _ngcontent-serverapp-c3856224127=\"\"></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"vr\"></div><div _ngcontent-serverapp-c3856224127=\"\"><p _ngcontent-serverapp-c952871309=\"\" body=\"\" class=\"text--weight-medium\"> Learn how to apply to be a GSoC contributor </p></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"vr vr--3x\"></div><a _ngcontent-serverapp-c952871309=\"\" action=\"\" href=\"https://youtu.be/YN7uGCg5vLg\" target=\"_blank\" title=\"Opens in a new window\" class=\"link text--weight-medium\"> Watch video </a></div><div _ngcontent-serverapp-c3856224127=\"\" class=\"feature-cta__image\"></div></div></app-feature-cta></li></ul></app-feature-cards></div></div></section></app-home-feature><hr _ngcontent-serverapp-c952871309=\"\" class=\"hr\"><app-home-feature _ngcontent-serverapp-c952871309=\"\" title=\"Open source organizations\" _nghost-serverapp-c2436391940=\"\"><section _ngcontent-serverapp-c2436391940=\"\" class=\"section\"><div _ngcontent-serverapp-c2436391940=\"\" class=\"section__inner\"><h2 _ngcontent-serverapp-c2436391940=\"\" class=\"home-feature__hd\">Open source organizations</h2><div _ngcontent-serverapp-c2436391940=\"\" class=\"home-feature__bd home-feature__bd-length--long\"><div _ngcontent-serverapp-c952871309=\"\" body=\"\"><p _ngcontent-serverapp-c952871309=\"\"> Over 1,000 open source organizations have mentored 21,000+ new GSoC contributors since 2005. Our mentoring organizations are eager to teach newcomers to open source about their communities and the thrill of open source development. </p><div _ngcontent-serverapp-c952871309=\"\" class=\"vr vr--8x\"></div><div _ngcontent-serverapp-c952871309=\"\" class=\"grid\"><div _ngcontent-serverapp-c952871309=\"\" class=\"grid__row\"><div _ngcontent-serverapp-c952871309=\"\" class=\"grid__row__item grid__row__item--span5@md grid__row__item--span12@sm\"><h5 _ngcontent-serverapp-c952871309=\"\" body=\"\" class=\"home-feature__section--heading\"> Learn why your organization should participate in GSoC </h5><div _ngcontent-serverapp-c952871309=\"\" class=\"vr vr--2x\"></div><ul _ngcontent-serverapp-c952871309=\"\" class=\"v-list\"><li _ngcontent-serverapp-c952871309=\"\" class=\"v-list__item\"><a _ngcontent-serverapp-c952871309=\"\" href=\"https://www.youtube.com/watch?v=L4JNz6zWzLs&amp;list=PLOU2XLYxmsIL7-SZlT0UHBWEG3DBwbaoA&amp;index=10\" target=\"_blank\" title=\"Opens in a new window\" class=\"link text--medium\"><mat-icon _ngcontent-serverapp-c952871309=\"\" role=\"img\" inline=\"\" class=\"mat-icon notranslate v-list__icon google-material-icons mat-icon-inline mat-icon-no-color\" aria-hidden=\"true\" data-mat-icon-type=\"font\">play_circle</mat-icon> Watch video </a></li></ul><div _ngcontent-serverapp-c952871309=\"\" class=\"vr vr--5x\"></div></div><div _ngcontent-serverapp-c952871309=\"\" class=\"grid__row__item grid__row__item--span2@md grid__row__item--span12@sm\"></div><div _ngcontent-serverapp-c952871309=\"\" class=\"grid__row__item grid__row__item--span5@md grid__row__item--span12@sm\"><h5 _ngcontent-serverapp-c952871309=\"\" class=\"home-feature__section--heading\"> Interested in being a GSoC Mentor? </h5><div _ngcontent-serverapp-c952871309=\"\" class=\"vr vr--2x\"></div><ul _ngcontent-serverapp-c952871309=\"\" class=\"v-list\"><li _ngcontent-serverapp-c952871309=\"\" class=\"v-list__item\"><a _ngcontent-serverapp-c952871309=\"\" href=\"https://www.youtube.com/watch?v=85vwk-Sqa5E&amp;list=PLOU2XLYxmsIL7-SZlT0UHBWEG3DBwbaoA&amp;index=1\" target=\"_blank\" title=\"Opens in a new window\" class=\"link text--medium\"><mat-icon _ngcontent-serverapp-c952871309=\"\" role=\"img\" inline=\"\" class=\"mat-icon notranslate v-list__icon google-material-icons mat-icon-inline mat-icon-no-color\" aria-hidden=\"true\" data-mat-icon-type=\"font\">play_circle</mat-icon> Watch video </a></li><li _ngcontent-serverapp-c952871309=\"\" class=\"v-list__item\"><a _ngcontent-serverapp-c952871309=\"\" href=\"https://google.github.io/gsocguides/mentor/\" target=\"_blank\" title=\"Opens in a new window\" class=\"link text--medium\"><mat-icon _ngcontent-serverapp-c952871309=\"\" role=\"img\" inline=\"\" class=\"mat-icon notranslate v-list__icon google-material-icons mat-icon-inline mat-icon-no-color\" aria-hidden=\"true\" data-mat-icon-type=\"font\">text_snippet</mat-icon> Read mentor guide </a></li></ul><div _ngcontent-serverapp-c952871309=\"\" class=\"vr vr--8x\"></div></div></div></div><app-org-reg-button _ngcontent-serverapp-c952871309=\"\" buttonstyle=\"FLAT\"><!----><!----><!----><a mat-flat-button=\"\" class=\"gsoc-dark-theme mdc-button mdc-button--unelevated mat-mdc-unelevated-button mat-primary mat-mdc-button-base ng-star-inserted\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" href=\"/programs/2026/organizations\"><span class=\"mat-mdc-button-persistent-ripple mdc-button__ripple\"></span><span class=\"mdc-button__label\"> Browse all 2026 organizations </span><span class=\"mat-mdc-focus-indicator\"></span><span class=\"mat-mdc-button-touch-target\"></span></a><!----><!----><!----><!----></app-org-reg-button></div></div><div _ngcontent-serverapp-c2436391940=\"\" class=\"home-feature__ft\"></div><div _ngcontent-serverapp-c2436391940=\"\" class=\"home-feature__feature-content\"></div></div></section></app-home-feature></div><div _ngcontent-serverapp-c952871309=\"\" class=\"home__news\"><div _ngcontent-serverapp-c952871309=\"\" class=\"home__news__bg theme--blue\"></div><div _ngcontent-serverapp-c952871309=\"\" class=\"home__news__dots\"></div><app-latest-news _ngcontent-serverapp-c952871309=\"\" _nghost-serverapp-c820663813=\"\"><section _ngcontent-serverapp-c820663813=\"\" class=\"section\"><div _ngcontent-serverapp-c820663813=\"\" class=\"section__inner\"><div _ngcontent-serverapp-c820663813=\"\" class=\"grid\"><div _ngcontent-serverapp-c820663813=\"\" class=\"grid__row\"><div _ngcontent-serverapp-c820663813=\"\" class=\"grid__row__item\"><h2 _ngcontent-serverapp-c820663813=\"\" class=\"text--hdg-2\">Latest News</h2><div _ngcontent-serverapp-c820663813=\"\" class=\"vr vr--6x\"></div><app-latest-news-scroller _ngcontent-serverapp-c820663813=\"\" _nghost-serverapp-c3807046182=\"\"><div _ngcontent-serverapp-c3807046182=\"\" class=\"v-list-wrapper ng-star-inserted\"><mat-list _ngcontent-serverapp-c3807046182=\"\" role=\"list\" class=\"mat-mdc-list mat-mdc-list-base mdc-list v-list\" aria-disabled=\"false\"><mat-list-item _ngcontent-serverapp-c3807046182=\"\" role=\"listitem\" class=\"mat-mdc-list-item mdc-list-item v-list__item mat-mdc-list-item-single-line mdc-list-item--with-one-line ng-star-inserted\" aria-disabled=\"false\"><span class=\"mdc-list-item__content\"><span class=\"mat-mdc-list-item-unscoped-content mdc-list-item__primary-text\"><mat-card _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card mdc-card\"><mat-card-title _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card-title v-list__item__title\"><h5 _ngcontent-serverapp-c3807046182=\"\">The Journey Begins: Meet the 2026 GSoC Contributors!</h5></mat-card-title><mat-card-content _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card-content v-list__item__content\"><p _ngcontent-serverapp-c3807046182=\"\">By Google Open Source, Apr 30, 2026</p><p _ngcontent-serverapp-c3807046182=\"\">by Stephanie Taylor, Mary Radomile &amp;amp; Lucila Ortíz, Google Summer of Code\n\n\n\n\n  \n  \n  \n  A warm welcome to the 1,141 Contributors of Google Summer of Code (GSoC) 2026! We are excited to start this new edition alongside our 184 mentoring orgs. Organizations reviewed a record-breaking 23,371 proposals to find the best matches for their communities.\n\n\n\n2026 Application Statistics:\n\n15,245 ...</p></mat-card-content><mat-card-actions _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card-actions mdc-card__actions\"><a _ngcontent-serverapp-c3807046182=\"\" target=\"_blank\" title=\"Opens in a new window\" class=\"v-list__item__link\" href=\"https://opensource.googleblog.com/2026/04/the-journey-begins-meet-the-2026-gsoc-contributors.html\"> Read More </a><hr _ngcontent-serverapp-c3807046182=\"\" class=\"ng-star-inserted\"><!----></mat-card-actions></mat-card></span></span><div class=\"mat-mdc-focus-indicator\"></div></mat-list-item><mat-list-item _ngcontent-serverapp-c3807046182=\"\" role=\"listitem\" class=\"mat-mdc-list-item mdc-list-item v-list__item mat-mdc-list-item-single-line mdc-list-item--with-one-line ng-star-inserted\" aria-disabled=\"false\"><span class=\"mdc-list-item__content\"><span class=\"mat-mdc-list-item-unscoped-content mdc-list-item__primary-text\"><mat-card _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card mdc-card\"><mat-card-title _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card-title v-list__item__title\"><h5 _ngcontent-serverapp-c3807046182=\"\">Open Source, Open Doors, Apply Now for Google Summer of Code!</h5></mat-card-title><mat-card-content _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card-content v-list__item__content\"><p _ngcontent-serverapp-c3807046182=\"\">By Google Open Source, Mar 16, 2026</p><p _ngcontent-serverapp-c3807046182=\"\">by Stephanie Taylor, Mary Radomile &amp;amp; Lucila Ortíz, GSoC Program Admins\n\n\n\n\n\n\nJoin Google Summer of Code (GSoC) and start contributing to the world of open source development! Applications for GSoC are open from now - March 31, 2026 at 18:00 UTC.\nGoogle Summer of Code is celebrating its 22nd year in 2026!  GSoC started back in 2005 and has brought over 22,000 new contributors from 123 ...</p></mat-card-content><mat-card-actions _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card-actions mdc-card__actions\"><a _ngcontent-serverapp-c3807046182=\"\" target=\"_blank\" title=\"Opens in a new window\" class=\"v-list__item__link\" href=\"https://opensource.googleblog.com/2026/03/open-source-open-doors-apply-now-for-google-summer-of-code.html\"> Read More </a><hr _ngcontent-serverapp-c3807046182=\"\" class=\"ng-star-inserted\"><!----></mat-card-actions></mat-card></span></span><div class=\"mat-mdc-focus-indicator\"></div></mat-list-item><mat-list-item _ngcontent-serverapp-c3807046182=\"\" role=\"listitem\" class=\"mat-mdc-list-item mdc-list-item v-list__item mat-mdc-list-item-single-line mdc-list-item--with-one-line ng-star-inserted\" aria-disabled=\"false\"><span class=\"mdc-list-item__content\"><span class=\"mat-mdc-list-item-unscoped-content mdc-list-item__primary-text\"><mat-card _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card mdc-card\"><mat-card-title _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card-title v-list__item__title\"><h5 _ngcontent-serverapp-c3807046182=\"\">Introducing the 185 Organizations for GSoC 2026</h5></mat-card-title><mat-card-content _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card-content v-list__item__content\"><p _ngcontent-serverapp-c3807046182=\"\">By Google Open Source, Feb 19, 2026</p><p _ngcontent-serverapp-c3807046182=\"\">by Stephanie Taylor, Mary Radomile &amp;amp; Lucila Ortíz, Google Open Source\n\n\n\n\n\n\nThe complete list of Google Summer of Code (GSoC) Mentoring Organizations is now available! 2026 brings us 185 open source communities who are eager to mentor a new group of open source contributors. Now is the time for prospective contributors to start looking for a community to participate with. Visit the full list ...</p></mat-card-content><mat-card-actions _ngcontent-serverapp-c3807046182=\"\" class=\"mat-mdc-card-actions mdc-card__actions\"><a _ngcontent-serverapp-c3807046182=\"\" target=\"_blank\" title=\"Opens in a new window\" class=\"v-list__item__link\" href=\"https://opensource.googleblog.com/2026/02/introducing-the-185-organizations-for-gsoc-2026.html\"> Read More </a><!----></mat-card-actions></mat-card></span></span><div class=\"mat-mdc-focus-indicator\"></div></mat-list-item><!----></mat-list></div><!----><!----><!----><!----><!----></app-latest-news-scroller><div _ngcontent-serverapp-c820663813=\"\" class=\"vr vr--5x\"></div><a _ngcontent-serverapp-c820663813=\"\" mat-stroked-button=\"\" color=\"primary\" href=\"https://opensource.googleblog.com/search/label/gsoc\" target=\"_blank\" title=\"Opens in a new window\" class=\"gsoc-dark-theme mdc-button mdc-button--outlined mat-mdc-outlined-button mat-primary mat-mdc-button-base\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" aria-disabled=\"false\"><span class=\"mat-mdc-button-persistent-ripple mdc-button__ripple\"></span><span class=\"mdc-button__label\"> View all news </span><span class=\"mat-mdc-focus-indicator\"></span><span class=\"mat-mdc-button-touch-target\"></span></a></div></div></div></div></section></app-latest-news></div></ng-component><!----><!---->",
+ "links": [
+  {
+   "href": "https://summerofcode.withgoogle.com/",
+   "text": "Home"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/about",
+   "text": "About"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/how-it-works",
+   "text": "How it works"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/get-started",
+   "text": "Get started"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/archive",
+   "text": "Past programs"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/help",
+   "text": "Help"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/rules",
+   "text": "Rules"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/terms",
+   "text": "Terms"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/",
+   "text": ""
+  },
+  {
+   "href": "https://opensource.googleblog.com/2026/04/the-journey-begins-meet-the-2026-gsoc-contributors.html",
+   "text": "GSoC 2026"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/how-it-works",
+   "text": "Learn more"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/programs/2026/projects",
+   "text": "View 2026 project list"
+  },
+  {
+   "href": "https://www.youtube.com/watch?v=Wxjxwx7mqaI&list=PLOU2XLYxmsIL7-SZlT0UHBWEG3DBwbaoA&index=5",
+   "text": "Watch video"
+  },
+  {
+   "href": "https://www.youtube.com/watch?v=p6xdQInKZh8&list=PLOU2XLYxmsIJ5kxKS2DO7y-X8EecbFT7g",
+   "text": "Watch video"
+  },
+  {
+   "href": "https://youtu.be/YN7uGCg5vLg",
+   "text": "Watch video"
+  },
+  {
+   "href": "https://www.youtube.com/watch?v=L4JNz6zWzLs&list=PLOU2XLYxmsIL7-SZlT0UHBWEG3DBwbaoA&index=10",
+   "text": "play_circle Watch video"
+  },
+  {
+   "href": "https://www.youtube.com/watch?v=85vwk-Sqa5E&list=PLOU2XLYxmsIL7-SZlT0UHBWEG3DBwbaoA&index=1",
+   "text": "play_circle Watch video"
+  },
+  {
+   "href": "https://google.github.io/gsocguides/mentor/",
+   "text": "text_snippet Read mentor guide"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/programs/2026/organizations",
+   "text": "Browse all 2026 organizations"
+  },
+  {
+   "href": "https://opensource.googleblog.com/2026/04/the-journey-begins-meet-the-2026-gsoc-contributors.html",
+   "text": "Read More"
+  },
+  {
+   "href": "https://opensource.googleblog.com/2026/03/open-source-open-doors-apply-now-for-google-summer-of-code.html",
+   "text": "Read More"
+  },
+  {
+   "href": "https://opensource.googleblog.com/2026/02/introducing-the-185-organizations-for-gsoc-2026.html",
+   "text": "Read More"
+  },
+  {
+   "href": "https://opensource.googleblog.com/search/label/gsoc",
+   "text": "View all news"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/",
+   "text": "Google Summer of Code Home"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/about",
+   "text": "About"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/get-started",
+   "text": "Get started"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/how-it-works",
+   "text": "How it works"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/archive",
+   "text": "Past programs"
+  },
+  {
+   "href": "https://developers.google.com/open-source/gsoc/timeline",
+   "text": "Program timeline"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/programs/2026",
+   "text": "2026 program"
+  },
+  {
+   "href": "https://opensource.googleblog.com/search/label/gsoc",
+   "text": "News"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/help",
+   "text": "Help"
+  },
+  {
+   "href": "https://www.youtube.com/c/GoogleOpenSource/playlists",
+   "text": "GSoC YouTube"
+  },
+  {
+   "href": "https://developers.google.com/open-source/gsoc/contact",
+   "text": "Contact"
+  },
+  {
+   "href": "https://www.google.com/",
+   "text": "Google"
+  },
+  {
+   "href": "https://policies.google.com/privacy?hl=en",
+   "text": "Privacy"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/rules",
+   "text": "Rules"
+  },
+  {
+   "href": "https://summerofcode.withgoogle.com/terms",
+   "text": "Terms"
+  }
+ ]
+}

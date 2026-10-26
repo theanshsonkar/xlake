@@ -1,0 +1,98 @@
+{
+ "id": "techfest-iitb",
+ "category": "hackathons",
+ "url": "https://techfest.org/",
+ "final_url": "https://techfest.org/",
+ "fetched_at": "2026-10-26T11:20:09.407Z",
+ "status": "ok",
+ "http_status": 200,
+ "title": "Techfest | IIT Bombay",
+ "text": "ACCOMMODATION\nEARLY BIRD\nWORKSHOPS\nCOMPETITIONS\nIGNITE\nSIGN IN\nHome\nEvents\nContact Us\nAbout Us\nCA Program\n\nBecome a College Ambassador for Techfest.\nRepresent us at your college.\nGet exclusive perks and certificates.\n\nJoin now\nAbout Techfest\n\nWelcome to the Official Website of 30th Edition of Techfest, Asia's Largest Science and Technology festival\n\nWorkshops\nLearn from industry experts and get hands-on experience.\nCompetitions\nParticipate in competitions.\nMore Events\n\nDiscover more events and highlights.\nStay tuned for updates.\nMore details coming soon.\n\nSCROLL\nHave a question?",
+ "html": "<div class=\"scroll-track\"><div class=\"sticky-viewport\"><div class=\"parallax-layer layer-bg\"><video poster=\"https://dsp17yg366baq.cloudfront.net/static/media/vidfirstframe.1d83dc95a4d47f640350.webp\" class=\"parallax-img\" loop=\"\" playsinline=\"\" preload=\"none\" aria-label=\"Background\"></video></div><div class=\"parallax-layer layer-farside\" style=\"opacity: 1; transform: translateX(calc(0% - 70px)) translateY(calc(0px + 0vh));\"><img fetchpriority=\"high\" loading=\"eager\" decoding=\"sync\" alt=\"Farside\" class=\"parallax-img\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/farsideanimation.541a769556633f34a0aa.webp\"></div><div class=\"parallax-layer layer-palace\" style=\"opacity: 1; transform: perspective(1000px) translateX(calc(0% - 30px)) translateY(calc(0px - 3vh));\"><img loading=\"eager\" decoding=\"async\" alt=\"Palace Base\" width=\"1350\" height=\"905\" class=\"parallax-img\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/homepalacefgnoglow_2x.760fcb8ecbfa76b9eb28.avif\"><img loading=\"eager\" decoding=\"sync\" alt=\"Palace Glow\" class=\"parallax-img palace-glow-img\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/homepalacenew_2x.19ac61f235e0cfb94e9d.avif\" style=\"position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\"></div><div class=\"intro-blur-layer\" style=\"position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; z-index: 4; pointer-events: none; backdrop-filter: blur(12px) brightness(0.6); mask-image: radial-gradient(circle, transparent 0%, black 0%); opacity: 1;\"></div><div class=\"layer-themelogo\" style=\"position: absolute; top: 32%; left: 50%; z-index: 6; transform-origin: center center; pointer-events: none; opacity: 1; transform: perspective(1200px) translateX(-50%);\"><img alt=\"Theme Logo\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/themelogo.ada357f543d3cecc338c.webp\" style=\"width: 40vw; height: auto; filter: drop-shadow(rgba(0, 0, 0, 0.6) 0px 10px 20px);\"></div><div class=\"parallax-layer layer-char\" style=\"opacity: 1; transform: translateX(calc(10% - 30px)) translateY(calc(0px - 10vh)) scale(0.9);\"><img loading=\"eager\" decoding=\"sync\" alt=\"Character\" class=\"parallax-img\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/homecharfg_1x.1d653235c244393f6406.webp\"></div><div class=\"parallax-layer layer-fog-transition\"><img alt=\"Transition Fog 1\" class=\"parallax-img trans-fog-img\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/cloud3.6b7a66aed548cc8dfc79.png\" style=\"top: 2%; transform: perspective(800px) translateX(-300vw) scaleX(3.5) scaleY(1.7) rotateY(-60deg);\"><img alt=\"Transition Fog 2\" class=\"parallax-img trans-fog-img\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/cloud3.6b7a66aed548cc8dfc79.png\" style=\"top: -43%; transform: perspective(800px) translateX(-400vw) scaleX(3.5) scaleY(1.5) rotateY(-60deg);\"><img alt=\"Transition Fog 3\" class=\"parallax-img trans-fog-img\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/cloud3.6b7a66aed548cc8dfc79.png\" style=\"top: 18%; transform: perspective(800px) translateX(-350vw) scaleX(3.5) scaleY(1.5) rotateY(-60deg);\"><img alt=\"Transition Fog 4\" class=\"parallax-img trans-fog-img\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/cloud3.6b7a66aed548cc8dfc79.png\" style=\"top: -34%; transform: perspective(800px) translateX(-450vw) scaleX(3.5) scaleY(1.6) rotateY(-60deg);\"><img alt=\"Transition Fog 5\" class=\"parallax-img trans-fog-img\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/cloud3.6b7a66aed548cc8dfc79.png\" style=\"top: 35%; transform: perspective(800px) translateX(-300vw) scaleX(3.5) scaleY(1.4) rotateY(-60deg);\"><img alt=\"Transition Fog 6\" class=\"parallax-img trans-fog-img\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/cloud3.6b7a66aed548cc8dfc79.png\" style=\"top: 15%; transform: translateX(-220vw) scale(1.5);\"></div><div class=\"canvas-layer\"><div style=\"width: 100%; height: 100%; position: absolute; top: 0px; left: 0px;\"><div style=\"width: 100%; height: 100%; position: absolute; top: 0px; left: 0px;\"><canvas data-engine=\"three.js r160\" width=\"1280\" height=\"900\" style=\"display: block; width: 1280px; height: 900px;\"></canvas></div><div class=\"html-cards-container\"><div class=\"html-card html-card-left\" style=\"transform: translate(-50%, -50%) translate(133.015px, 766.866px) scale(1.11681) perspective(1000px) rotateY(20deg); opacity: 0; pointer-events: none;\"><img alt=\"\" class=\"html-card-frame\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/homeframe.2048f0ac1e8b2c456fe6.webp\"><div class=\"html-card-inner\"><h2>CA Program</h2><p>Become a College Ambassador for Techfest.<br>Represent us at your college.<br>Get exclusive perks and certificates.</p><a href=\"https://ca.techfest.org\" target=\"_blank\" rel=\"noreferrer\" class=\"btn-join\">Join now</a></div></div><div class=\"html-card html-card-center\" style=\"transform: translate(-50%, -50%) translate(640px, 731.658px) scale(1.14726) perspective(1000px) rotateY(0deg); opacity: 0; pointer-events: none;\"><img alt=\"\" class=\"html-card-frame\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/homeframe.2048f0ac1e8b2c456fe6.webp\"><div class=\"html-card-inner\"><h2>About Techfest</h2><p>Welcome to the Official Website of 30th Edition of Techfest, Asia's Largest Science and Technology festival</p><div class=\"subcards-row\"><a href=\"/workshops\" class=\"subcard\"><div class=\"subcard-img\"><img alt=\"Workshops\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/ws.d0163545be69c69e7a9f.jpeg\"></div><div class=\"subcard-title\">Workshops</div><div class=\"subcard-overlay\">Learn from industry experts and get hands-on experience.</div></a><a href=\"/competitions\" class=\"subcard\"><div class=\"subcard-img\"><img alt=\"Competitions\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/compi.63e0a80d3a1abe591f42.jpeg\"></div><div class=\"subcard-title\">Competitions</div><div class=\"subcard-overlay\">Participate in competitions.</div></a></div></div></div><div class=\"html-card html-card-right\" style=\"transform: translate(-50%, -50%) translate(1146.98px, 766.866px) scale(1.11681) perspective(1000px) rotateY(-15deg); opacity: 0; pointer-events: none;\"><img alt=\"\" class=\"html-card-frame\" src=\"https://dsp17yg366baq.cloudfront.net/static/media/homeframe.2048f0ac1e8b2c456fe6.webp\"><div class=\"html-card-inner\"><h2>More Events</h2><p>Discover more events and highlights.<br>Stay tuned for updates.<br>More details coming soon.</p></div></div></div></div></div><div class=\"scroll-indicator\" style=\"opacity: 1; transform: translateX(-50%) translateY(9.69389px);\"><span class=\"scroll-text\">Scroll</span><div class=\"scroll-line\"></div></div></div></div>",
+ "links": [
+  {
+   "href": "https://techfest.org/",
+   "text": ""
+  },
+  {
+   "href": "https://techfest.org/accommodation",
+   "text": "ACCOMMODATION"
+  },
+  {
+   "href": "https://techfest.org/workshops",
+   "text": "EARLY BIRD\nWORKSHOPS"
+  },
+  {
+   "href": "https://techfest.org/competitions",
+   "text": "COMPETITIONS"
+  },
+  {
+   "href": "https://techfest.org/ignite",
+   "text": "IGNITE"
+  },
+  {
+   "href": "https://techfest.org/",
+   "text": "Home"
+  },
+  {
+   "href": "https://techfest.org/contactus",
+   "text": "Contact Us"
+  },
+  {
+   "href": "https://www.instagram.com/techfest_iitbombay/?hl=en",
+   "text": "Instagram"
+  },
+  {
+   "href": "https://x.com/Techfest_IITB?lang=en",
+   "text": "X"
+  },
+  {
+   "href": "https://in.linkedin.com/company/techfest",
+   "text": "LinkedIn"
+  },
+  {
+   "href": "https://www.facebook.com/iitbombaytechfest/",
+   "text": "Facebook"
+  },
+  {
+   "href": "https://www.youtube.com/user/techfestiitbombay",
+   "text": "YouTube"
+  },
+  {
+   "href": "https://whatsapp.com/channel/0029VaqxA9IAjPXM1339Pv41",
+   "text": "WhatsApp"
+  },
+  {
+   "href": "https://discord.gg/XfzAud8MNk",
+   "text": "Discord"
+  },
+  {
+   "href": "https://techfest.org/",
+   "text": "Home"
+  },
+  {
+   "href": "https://techfest.org/competitions",
+   "text": "Competitions"
+  },
+  {
+   "href": "https://techfest.org/accommodation",
+   "text": "Accommodation"
+  },
+  {
+   "href": "https://techfest.org/workshops",
+   "text": "Workshops"
+  },
+  {
+   "href": "https://ca.techfest.org/",
+   "text": "Join now"
+  },
+  {
+   "href": "https://techfest.org/workshops",
+   "text": "Workshops\nLearn from industry experts and get hands-on experience."
+  },
+  {
+   "href": "https://techfest.org/competitions",
+   "text": "Competitions\nParticipate in competitions."
+  }
+ ]
+}
