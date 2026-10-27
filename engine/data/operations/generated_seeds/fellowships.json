@@ -184,7 +184,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:03:34Z",
   "last_seen": "2026-10-10T14:58:45Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-www-acls-org-competitions-luce-acls-dissertation-fellowships-f74747",
@@ -357,7 +357,8 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-09T20:25:24Z",
-  "last_seen": "2026-10-25T11:41:16Z"
+  "last_seen": "2026-10-25T11:41:16Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-fellowships-amgenscholars-ca-421ae3",
@@ -729,7 +730,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-buildyourfuture-withgoogle-com-scholarships-generation-googl-7c127a",
@@ -1801,7 +1802,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-gradschool-cornell-edu-fellowships-a5dc92",
@@ -1960,7 +1961,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-hertzfoundation-org-dx-fellowships-e3e4f9",
@@ -2250,7 +2251,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-www-iitr-ac-in-academics-internship-b0b0f6",
@@ -2264,7 +2265,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-img-shields-io-badge-75-20programs-ff5b29-1e084b",
@@ -2330,7 +2331,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-imprs-ls-opencampus-net-en-maxsip-application-info-e15b41",
@@ -2452,7 +2453,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-www-isac-org-students-during-college-dcab4e",
@@ -2681,7 +2682,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-www-k12northstar-org-departments-teaching-learning-ca65ba",
@@ -3207,7 +3208,7 @@
   "needs_page_noun": true,
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-www-nanog-org-outreach-scholarship-program-95fb43",
@@ -3549,7 +3550,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-www-ntu-edu-sg-about-us-global-3828fd",
@@ -3908,7 +3909,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-pathwaystoscience-org-pdf-enhancingyourfellowshipapplication-e8c2a9",
@@ -4187,7 +4188,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-research-snap-com-fellowships-html-dde663",
@@ -4609,7 +4610,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-stanforduniversity-qualtrics-com-jfe-form-cc1ac3",
@@ -4688,7 +4689,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-18T11:17:33Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-swiss-sspp-program-phys-ethz-ch-374d1c",
@@ -4991,7 +4992,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:16Z",
   "last_seen": "2026-10-25T11:41:16Z",
-  "dead_strikes": 1
+  "dead_strikes": 2
  },
  {
   "source_id": "hub-fellowships-unt-jotformgov-com-262565700036857-fbf8e0",
