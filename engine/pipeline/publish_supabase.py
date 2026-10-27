@@ -47,6 +47,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -82,6 +83,7 @@ PROGRAMME_ONLY_KEYS = {"funding_amount_usd", "intl_eligible", "levels", "require
 # Programmes and hackathons share the placeholder->NULL rules.
 PLACEHOLDER_NULL_TYPES = {"hackathon", "programme", "contribution", "job", "internship"}
 DESCRIPTION_MAX_TYPES = {"hackathon", "programme", "contribution", "job", "internship"}
+RETRY_DELAYS = (1, 3)  # GET retry backoff (seconds)
 JOB_TYPES = {"job", "internship"}
 # Hackathon-style keys that job/internship rows also publish.
 JOB_SHARED_KEYS = {"logo_url", "region", "participants"}
@@ -145,23 +147,22 @@ def _closed_and_past(r: dict) -> bool:
         return False
     deadline = r.get("deadline")
     return bool(isinstance(deadline, str) and DATE_RE.match(deadline)
-                and deadline < datetime.date.today().isoformat())
+                and deadline < _today())
 
 
 def _today() -> str:
-    return datetime.date.today().isoformat()
+    return datetime.datetime.now(datetime.timezone.utc).date().isoformat()
 
 
 def _past_deadline_open(r: dict) -> bool:
-    """Non-job row whose deadline is already past and that is not an upcoming (next-cycle) programme.
+    """Row (jobs and internships included) whose deadline is strictly before today (UTC) and that is not an upcoming (next-cycle) programme.
+    Rows with no deadline are unaffected.
 
     Hackathons: registration is closed once the deadline passes, so they stop serving
     (event end >= today alone is not enough). Programmes with a past deadline are closed
     (collection turns recurring ones into upcoming with deadline=None).
     Applies to live and needs_confirmation rows alike; verified records included.
     """
-    if record_type(r) in JOB_TYPES:
-        return False
     if r.get("programme_status") == "upcoming" or r.get("status") == "upcoming":
         return False
     deadline = _as_date(_first(r.get("deadline"), r.get("registration_deadline")))
@@ -434,13 +435,20 @@ class Supabase:
         req = urllib.request.Request(
             self.base + path, data=data, method=method,
             headers=self._headers(headers))
-        try:
-            with urllib.request.urlopen(req) as resp:
-                raw = resp.read().decode()
-                return resp.status, resp.headers, raw
-        except urllib.error.HTTPError as e:
-            e.body_text = e.read().decode(errors="replace")[:300]
-            raise
+        attempts = 3 if method == "GET" else 1
+        for attempt in range(attempts):
+            try:
+                with urllib.request.urlopen(req) as resp:
+                    raw = resp.read().decode()
+                    return resp.status, resp.headers, raw
+            except urllib.error.HTTPError as e:
+                e.body_text = e.read().decode(errors="replace")[:300]
+                if e.code < 500 or attempt == attempts - 1:
+                    raise
+            except (urllib.error.URLError, TimeoutError, OSError):
+                if attempt == attempts - 1:
+                    raise
+            time.sleep(RETRY_DELAYS[attempt])
 
     def fetch_all_ids(self, scopes=None):
         """Return the set of ids currently in the table (paginated).

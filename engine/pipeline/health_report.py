@@ -98,7 +98,7 @@ def _dup_key(row):
 
 def compute_metrics(rows, today=None, now=None):
     """Per-group metrics from served rows (is_live or needs_confirmation)."""
-    today = today or date.today()
+    today = today or datetime.now(timezone.utc).date()
     now = now or datetime.now(timezone.utc)
     stale_cutoff = now - timedelta(days=STALE_CHECK_DAYS)
     closing_end = today + timedelta(days=CLOSING_DAYS)
