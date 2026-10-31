@@ -635,7 +635,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:29Z",
   "last_seen": "2026-10-25T11:41:29Z",
-  "dead_strikes": 5
+  "dead_strikes": 6
  },
  {
   "source_id": "hub-scholarships-www-obama-org-programs-voyager-scholarship-265d00",
@@ -1065,7 +1065,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-10-25T11:41:29Z",
   "last_seen": "2026-10-25T11:41:29Z",
-  "dead_strikes": 5
+  "dead_strikes": 6
  },
  {
   "source_id": "hub-scholarships-wagsonline-org-technology-award-announcement-4ced00",
