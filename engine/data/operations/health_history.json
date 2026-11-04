@@ -206,5 +206,21 @@
    "scholarship": 38,
    "startup-founder": 8
   }
+ },
+ {
+  "ts": "2026-11-04T15:43:45+00:00",
+  "live": {
+   "contribution": 3969,
+   "hackathon": 407,
+   "job": 25182,
+   "internship": 2873,
+   "open-source-programmes": 11,
+   "community": 2,
+   "fellowship": 130,
+   "research": 97,
+   "grant": 20,
+   "scholarship": 38,
+   "startup-founder": 8
+  }
  }
 ]
