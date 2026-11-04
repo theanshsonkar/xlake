@@ -179,7 +179,8 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
-  "last_seen": "2026-11-01T13:35:28Z"
+  "last_seen": "2026-11-01T13:35:28Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-research-apply-mpi-sws-org-register-internship-c0ea39",
@@ -375,7 +376,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-dssg-uchicago-edu-b0d723",
@@ -389,7 +390,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-www-dssgfellowship-org-fde356",
@@ -416,7 +417,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-ece-duke-edu-undergrad-reu-6b7e1e",
@@ -429,8 +430,7 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-10-10T09:45:01Z",
-  "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 1
+  "last_seen": "2026-11-01T13:35:28Z"
  },
  {
   "source_id": "hub-research-www-emmabowenfoundation-org-apply-460ba2",
@@ -626,7 +626,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-www-iitb-ac-in-en-education-e63d02",
@@ -680,7 +680,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-www-inde-campusfrance-org-charpak-research-interns-986032",
@@ -850,7 +850,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-mae-osu-edu-riya-5d4581",
@@ -955,7 +955,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-www-oist-jp-admissions-research-internship-132f2c",
@@ -982,7 +982,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:33:51Z",
   "last_seen": "2026-11-01T13:33:51Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-onlineportal-iitrpr-ac-in-sia-21-ccb8f4",
@@ -996,7 +996,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:33:51Z",
   "last_seen": "2026-11-01T13:33:51Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-pg-ust-hk-prospective-students-programs-6fe9bd",
@@ -1010,7 +1010,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-www-postgraduate-study-cam-ac-uk-events-internships-8eaded",
@@ -1050,7 +1050,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-research-fb-com-programs-fellowship-c0478b",
@@ -1181,7 +1181,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:33:51Z",
   "last_seen": "2026-11-01T13:33:51Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-sfp-caltech-edu-undergraduate-research-programs-08f04d",
@@ -1208,7 +1208,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-www-shastriinstitute-org-shastri-student-internship-project-6141dc",
@@ -1274,7 +1274,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-www-sserd-org-internship-e05f59",
@@ -1301,7 +1301,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:33:51Z",
   "last_seen": "2026-11-01T13:33:51Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-sure-gatech-edu-apply-400d26",
@@ -1328,7 +1328,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-01T13:35:28Z",
   "last_seen": "2026-11-01T13:35:28Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-swiss-sspp-program-phys-ethz-ch-374d1c",
