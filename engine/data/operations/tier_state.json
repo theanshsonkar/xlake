@@ -42,10 +42,10 @@
  "workday|accenture.wd103.myworkdayjobs.com|accenture|AccentureCareers": {
   "platform": "workday",
   "token": "accenture.wd103.myworkdayjobs.com|accenture|AccentureCareers",
-  "total_qualifying_ever": 90435,
-  "qualifying_last_30d": 90435,
-  "sweeps_run": 64,
-  "last_swept_at": "2026-11-06T08:06:05+00:00"
+  "total_qualifying_ever": 91753,
+  "qualifying_last_30d": 91753,
+  "sweeps_run": 65,
+  "last_swept_at": "2026-11-07T07:20:38+00:00"
  },
  "workday|target.wd5.myworkdayjobs.com|target|targetcareers": {
   "platform": "workday",
