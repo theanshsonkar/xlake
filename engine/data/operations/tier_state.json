@@ -18,10 +18,10 @@
  "workday|intel.wd1.myworkdayjobs.com|intel|External": {
   "platform": "workday",
   "token": "intel.wd1.myworkdayjobs.com|intel|External",
-  "total_qualifying_ever": 32418,
-  "qualifying_last_30d": 32418,
-  "sweeps_run": 67,
-  "last_swept_at": "2026-11-10T08:28:24+00:00"
+  "total_qualifying_ever": 33042,
+  "qualifying_last_30d": 33042,
+  "sweeps_run": 68,
+  "last_swept_at": "2026-11-11T07:48:04+00:00"
  },
  "workday|visa.wd5.myworkdayjobs.com|visa|Visa": {
   "platform": "workday",
@@ -42,10 +42,10 @@
  "workday|accenture.wd103.myworkdayjobs.com|accenture|AccentureCareers": {
   "platform": "workday",
   "token": "accenture.wd103.myworkdayjobs.com|accenture|AccentureCareers",
-  "total_qualifying_ever": 95994,
-  "qualifying_last_30d": 95994,
-  "sweeps_run": 68,
-  "last_swept_at": "2026-11-10T08:35:51+00:00"
+  "total_qualifying_ever": 97497,
+  "qualifying_last_30d": 97497,
+  "sweeps_run": 69,
+  "last_swept_at": "2026-11-11T07:55:25+00:00"
  },
  "workday|target.wd5.myworkdayjobs.com|target|targetcareers": {
   "platform": "workday",
@@ -11618,10 +11618,10 @@
  "workday|automationanywhere.wd5.myworkdayjobs.com|automationanywhere|AutomationAnywhereJobs": {
   "platform": "workday",
   "token": "automationanywhere.wd5.myworkdayjobs.com|automationanywhere|AutomationAnywhereJobs",
-  "total_qualifying_ever": 707,
-  "qualifying_last_30d": 707,
-  "sweeps_run": 55,
-  "last_swept_at": "2026-11-10T08:26:58+00:00"
+  "total_qualifying_ever": 722,
+  "qualifying_last_30d": 722,
+  "sweeps_run": 56,
+  "last_swept_at": "2026-11-11T07:46:42+00:00"
  },
  "ashby|uipath": {
   "platform": "ashby",
@@ -11722,58 +11722,58 @@
  "workday|genesys.wd1.myworkdayjobs.com|genesys|Genesys": {
   "platform": "workday",
   "token": "genesys.wd1.myworkdayjobs.com|genesys|Genesys",
-  "total_qualifying_ever": 2363,
-  "qualifying_last_30d": 2363,
-  "sweeps_run": 55,
-  "last_swept_at": "2026-11-10T08:27:09+00:00"
+  "total_qualifying_ever": 2400,
+  "qualifying_last_30d": 2400,
+  "sweeps_run": 56,
+  "last_swept_at": "2026-11-11T07:46:52+00:00"
  },
  "workday|ebay.wd5.myworkdayjobs.com|ebay|apply": {
   "platform": "workday",
   "token": "ebay.wd5.myworkdayjobs.com|ebay|apply",
-  "total_qualifying_ever": 5651,
-  "qualifying_last_30d": 5651,
-  "sweeps_run": 55,
-  "last_swept_at": "2026-11-10T08:27:12+00:00"
+  "total_qualifying_ever": 5750,
+  "qualifying_last_30d": 5750,
+  "sweeps_run": 56,
+  "last_swept_at": "2026-11-11T07:46:57+00:00"
  },
  "workday|modernatx.wd1.myworkdayjobs.com|modernatx|M_tx": {
   "platform": "workday",
   "token": "modernatx.wd1.myworkdayjobs.com|modernatx|M_tx",
-  "total_qualifying_ever": 4692,
-  "qualifying_last_30d": 4692,
-  "sweeps_run": 55,
-  "last_swept_at": "2026-11-10T08:27:09+00:00"
+  "total_qualifying_ever": 4796,
+  "qualifying_last_30d": 4796,
+  "sweeps_run": 56,
+  "last_swept_at": "2026-11-11T07:46:53+00:00"
  },
  "workday|crowdstrike.wd5.myworkdayjobs.com|crowdstrike|crowdstrikecareers": {
   "platform": "workday",
   "token": "crowdstrike.wd5.myworkdayjobs.com|crowdstrike|crowdstrikecareers",
-  "total_qualifying_ever": 6170,
-  "qualifying_last_30d": 6170,
-  "sweeps_run": 55,
-  "last_swept_at": "2026-11-10T08:27:22+00:00"
+  "total_qualifying_ever": 6267,
+  "qualifying_last_30d": 6267,
+  "sweeps_run": 56,
+  "last_swept_at": "2026-11-11T07:47:02+00:00"
  },
  "workday|workday.wd5.myworkdayjobs.com|workday|Workday": {
   "platform": "workday",
   "token": "workday.wd5.myworkdayjobs.com|workday|Workday",
-  "total_qualifying_ever": 5940,
-  "qualifying_last_30d": 5940,
-  "sweeps_run": 55,
-  "last_swept_at": "2026-11-10T08:27:58+00:00"
+  "total_qualifying_ever": 6063,
+  "qualifying_last_30d": 6063,
+  "sweeps_run": 56,
+  "last_swept_at": "2026-11-11T07:47:38+00:00"
  },
  "workday|paloaltonetworks.wd5.myworkdayjobs.com|paloaltonetworks|panwexternalcareers": {
   "platform": "workday",
   "token": "paloaltonetworks.wd5.myworkdayjobs.com|paloaltonetworks|panwexternalcareers",
-  "total_qualifying_ever": 22731,
-  "qualifying_last_30d": 22731,
-  "sweeps_run": 55,
-  "last_swept_at": "2026-11-10T08:27:55+00:00"
+  "total_qualifying_ever": 23138,
+  "qualifying_last_30d": 23138,
+  "sweeps_run": 56,
+  "last_swept_at": "2026-11-11T07:47:30+00:00"
  },
  "workday|hpe.wd5.myworkdayjobs.com|hpe|Jobsathpe": {
   "platform": "workday",
   "token": "hpe.wd5.myworkdayjobs.com|hpe|Jobsathpe",
-  "total_qualifying_ever": 40241,
-  "qualifying_last_30d": 40241,
-  "sweeps_run": 55,
-  "last_swept_at": "2026-11-10T08:29:25+00:00"
+  "total_qualifying_ever": 41154,
+  "qualifying_last_30d": 41154,
+  "sweeps_run": 56,
+  "last_swept_at": "2026-11-11T07:49:50+00:00"
  },
  "darwinbox|hrkare": {
   "platform": "darwinbox",
