@@ -22,6 +22,9 @@ from typing import Dict, Iterable, Optional
 
 OPEN, UPCOMING, UNVERIFIED, CLOSED = "open", "upcoming", "unverified", "closed"
 _DEAD_STAMPS = ("went_dead_at", "liveness_reason", "closed_reason", "closed_at")
+# hidden_reason values that only describe liveness (set by retire steps). On a row
+# that is live again they are stale; quality reasons are left alone.
+_LIVENESS_HIDDEN = ("closed_deadline_passed", "stale_needs_confirmation")
 
 
 def infer(row: Dict) -> str:
@@ -89,6 +92,8 @@ def reconcile(rows: Iterable[Dict], today: date, now: str) -> Dict[str, int]:
                 stats["revived_cleaned"] += 1
             for k in _DEAD_STAMPS:
                 row.pop(k, None)
+            if row.get("hidden_reason") in _LIVENESS_HIDDEN:
+                row["hidden_reason"] = None
             if state in (OPEN, UNVERIFIED):
                 if deadline_passed(row, today):
                     close(row, now, "deadline_passed")

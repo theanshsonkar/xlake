@@ -346,8 +346,11 @@ class TestGenericProgrammePipeline(unittest.TestCase):
                 self.assertIsNone(record["programme_status"])
                 self.assertIsNone(record["deadline"])
                 self.assertEqual(record["official_url"], seed["official_url"])
+            elif fixture == "riscv.html":
+                self.assertEqual(record["programme_status"], "closed")
+                self.assertFalse(record["is_live"])
             else:
-                self.assertIsNone(record)
+                self.assertIsNone(record)  # kde: not a formal programme page
         self.assertEqual(parse_programme(SEEDS[4], self.fixture("riscv.html"), datetime(2026, 8, 16, tzinfo=timezone.utc))[1]["official_evidence"]["application_window"]["quote"], "Applications open: July 15 – August 5.")
         self.assertEqual(parse_programme(SEEDS[5], self.fixture("kde.html"), datetime(2026, 8, 16, tzinfo=timezone.utc))[1]["official_evidence"]["deadline"]["quote"], "Deadline for the contributors applications 2026-01-14.")
 
@@ -549,7 +552,8 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertEqual(record["official_url"], SEEDS[2]["official_url"])
 
         record, observation = parse_programme(SEEDS[2], self.fixture("past-deadline.html"), checked)
-        self.assertIsNone(record)
+        self.assertEqual(record["programme_status"], "closed")
+        self.assertIsNone(record["deadline"])
         self.assertEqual(observation["state"], "closed")
 
         record, observation = parse_programme(SEEDS[2], self.fixture("sparse-actionable.html"), checked)
@@ -1071,6 +1075,45 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertFalse(rows[0]["is_live"])
         self.assertEqual(rows[0]["went_dead_at"], now)
         self.assertEqual(rows[0]["last_checked_at"], observation["checked_at"])
+
+    def test_closed_page_keeps_closed_row_that_is_not_served(self):
+        from pipeline.publish_supabase import is_serving
+        from categories.research import research
+        checked = datetime(2026, 10, 19, tzinfo=timezone.utc)
+        page = lambda body: "<html><body><h1>Summer Research Program</h1>{}</body></html>".format(body)
+        seed = research.SEEDS[0]
+        # (a) non-recurring closed page -> closed row with last_deadline, not served
+        record, observation = research.parse_programme(seed, page("<p>Application deadline: February 1, 2024. Program applications.</p>"), checked)
+        self.assertEqual(record["programme_status"], "closed")
+        self.assertEqual(record["last_deadline"], "2024-02-01")
+        self.assertIsNone(record["deadline"])
+        self.assertFalse(record["is_live"])
+        self.assertEqual(observation["state"], "closed")
+        self.assertFalse(is_serving(record))
+        # (b) recurring closed page -> still upcoming
+        record, _ = research.parse_programme(seed, page("<p>Applications deadline: February 1, 2026. Program applications.</p>"), checked)
+        self.assertEqual(record["programme_status"], "upcoming")
+        # (c) no window / non-formal page -> no row
+        record, _ = research.parse_programme(seed, "<html><body><p>Welcome.</p></body></html>", checked)
+        self.assertIsNone(record)
+        record, _ = parse_programme(SEEDS[5], self.fixture("kde.html"), datetime(2026, 8, 16, tzinfo=timezone.utc))
+        self.assertIsNone(record)
+
+    def test_merge_closed_record_closes_existing_live_row(self):
+        from pipeline.publish_supabase import is_serving
+        closed = {"record_type": "programme", "programme_id": "p1", "official_url": "https://example.test/p", "programme_status": "closed", "deadline": None, "last_deadline": "2024-02-01", "is_live": False, "needs_confirmation": False}
+        old = {"record_type": "programme", "programme_id": "p1", "official_url": "https://example.test/p", "programme_status": "open", "deadline": "2030-01-01", "is_live": True}
+        now = "2026-10-19T00:00:00+00:00"
+        with tempfile.TemporaryDirectory() as td:
+            lake, obs = os.path.join(td, "lake.json"), os.path.join(td, "obs.json")
+            with open(lake, "w") as fh:
+                json.dump([old], fh)
+            rows = merge_programmes([closed], [], lake, obs, now=now)
+        row = rows[0]
+        self.assertFalse(row["is_live"])
+        self.assertEqual(row["programme_status"], "closed")
+        self.assertEqual(row["went_dead_at"], now)
+        self.assertFalse(is_serving(row))
 
     def test_merge_does_not_lower_last_checked_at_for_older_observation(self):
         old = {

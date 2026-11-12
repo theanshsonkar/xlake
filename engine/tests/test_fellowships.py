@@ -78,16 +78,26 @@ class TestFellowshipRegistry(unittest.TestCase):
         seed = fellowships.SOURCE_BY_ID["fellowship-thiel"]
         html = "<html><body><h1>Thiel Fellowship</h1><p>Applications are accepted from June 1 to July 1, 2024.</p></body></html>"
         record, observation = fellowships.parse_programme(seed, html, datetime(2026, 8, 16, tzinfo=timezone.utc))
-        self.assertIsNone(record)
+        self.assertEqual(record["programme_status"], "closed")
         self.assertEqual(observation["state"], "closed")
         old = {"record_type": "programme", "programme_id": seed["programme_id"], "official_url": seed["official_url"], "programme_status": "open", "is_live": True}
         with tempfile.TemporaryDirectory() as directory:
             lake, obs = os.path.join(directory, "lake.json"), os.path.join(directory, "obs.json")
             with open(lake, "w") as handle: json.dump([old], handle)
             rows = fellowships.merge_programmes([], [observation], lake, obs, now="2026-08-16T00:00:00+00:00")
+            row = next(item for item in rows if item.get("programme_id") == seed["programme_id"])
+            self.assertFalse(row["is_live"])
+            self.assertEqual(row["went_dead_at"], "2026-08-16T00:00:00+00:00")
+            # The closed record itself also closes an existing live row.
+            with open(lake, "w") as handle: json.dump([old], handle)
+            rows = fellowships.merge_programmes([record], [observation], lake, obs, now="2026-08-16T00:00:00+00:00")
         row = next(item for item in rows if item.get("programme_id") == seed["programme_id"])
         self.assertFalse(row["is_live"])
+        self.assertEqual(row["programme_status"], "closed")
+        self.assertEqual(row["last_deadline"], "2024-07-01")
         self.assertEqual(row["went_dead_at"], "2026-08-16T00:00:00+00:00")
+        from pipeline.publish_supabase import is_serving
+        self.assertFalse(is_serving(row))
 
 
     def test_fellowship_fetch_checks_robots_and_retries_once(self):

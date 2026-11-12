@@ -72,7 +72,8 @@ class TestDeadlineParsing(unittest.TestCase):
             html = "<html><body><h1>Fellowship program</h1>{}</body></html>".format(body)
             record, observation = fellowships.parse_programme(seed, html, CHECKED)
             if status == "closed":
-                self.assertIsNone(record)
+                self.assertEqual(record["programme_status"], "closed")
+                self.assertFalse(record["is_live"])
                 self.assertEqual(observation["state"], "closed")
             else:
                 self.assertEqual(record["programme_status"], status, body)

@@ -1125,6 +1125,26 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
                 _apply_enrichment(record, evidence, enriched, seed, resolved_apply, apply_link, None)
                 record["deadline_basis"] = "next_cycle"
                 return record, _observation(seed, checked, "actionable", "recurring programme; last deadline passed; next cycle expected", evidence)
+        if status == "closed" and windows and formal:
+            # Keep a real programme whose page shows only a past deadline as a
+            # closed (never served) row instead of dropping it from the lake.
+            last_deadline = windows[0]["end"]
+            record_evidence = {
+                "programme_status": _evidence(windows[0]["quote"], seed["official_url"]),
+                "last_deadline": _evidence(windows[0]["quote"], seed["official_url"]),
+                "programme_name": {"quote": seed["programme_name"], "url": seed["official_url"]},
+                "organizer": {"quote": seed["organizer"], "url": seed["official_url"]},
+                "official_url": {"quote": seed["official_url"], "url": seed["official_url"]},
+            }
+            record = _base(seed, checked, record_evidence, config)
+            record["programme_status"] = "closed"
+            record["deadline"] = None
+            record["last_deadline"] = last_deadline.isoformat()
+            record["application_url"] = resolved_apply
+            record["is_live"] = False
+            record["needs_confirmation"] = False
+            _apply_enrichment(record, record_evidence, enriched, seed, resolved_apply, apply_link, None)
+            return record, _observation(seed, checked, status, "official applicant deadline passed", evidence)
         return None, _observation(seed, checked, status, "no actionable applicant window" if status == "non_actionable" else "official applicant deadline passed", evidence)
     # Every surfaced state must retain the registry's official URL. Rolling
     # additionally needs a resolvable same-origin application URL; for open
@@ -1741,6 +1761,18 @@ def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake
             record = dict(record)
             record.update({"first_seen": now, "last_seen": now, "is_live": False})
             programme_rows[record["programme_id"]] = record
+            continue
+        if record.get("programme_status") == "closed" and record.get("is_live") is False:
+            # Closed programmes are kept (name, link, dates) but never served.
+            if old:
+                first_seen = old.get("first_seen", now)
+                old.update(record)
+                old.update({"first_seen": first_seen, "last_seen": now, "is_live": False, "needs_confirmation": False})
+                old.setdefault("went_dead_at", now)
+            else:
+                record = dict(record)
+                record.update({"first_seen": now, "last_seen": now, "is_live": False, "went_dead_at": now})
+                programme_rows[record["programme_id"]] = record
             continue
         if old:
             had_last_checked_at = "last_checked_at" in old

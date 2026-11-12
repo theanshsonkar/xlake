@@ -43,6 +43,13 @@ class ReconcileTest(unittest.TestCase):
         self.assertEqual(r["lifecycle"], "open")
         self.assertEqual(st["revived_cleaned"], 1)
 
+    def test_live_row_drops_stale_liveness_hidden_reason_only(self):
+        r = {"is_live": True, "hidden_reason": "closed_deadline_passed"}
+        q = {"is_live": True, "hidden_reason": "not_an_opportunity"}
+        lifecycle.reconcile([r, q], TODAY, NOW)
+        self.assertIsNone(r["hidden_reason"])
+        self.assertEqual(q["hidden_reason"], "not_an_opportunity")
+
     def test_sweep_merge_revival_clears_stamps(self):
         job = TestSweepPassthrough._job("https://jobs.example/acme/old", "T")
         job["is_live"] = True

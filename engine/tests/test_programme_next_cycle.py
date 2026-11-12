@@ -25,10 +25,12 @@ class NextCycleTests(unittest.TestCase):
     def test_old_or_discontinued_stays_closed(self):
         seed = research.SEEDS[0]
         record, obs = research.parse_programme(seed, page("<p>Application deadline: February 1, 2024. Program applications.</p>"), NOW)
-        self.assertIsNone(record)
+        self.assertEqual(record["programme_status"], "closed")
+        self.assertEqual(record["last_deadline"], "2024-02-01")
+        self.assertFalse(record["is_live"])
         self.assertEqual(obs["state"], "closed")
         record, obs = research.parse_programme(seed, page("<p>Application deadline: February 1, 2026. This program has been discontinued.</p>"), NOW)
-        self.assertIsNone(record)
+        self.assertEqual(record["programme_status"], "closed")
 
     def test_explicit_next_cycle_text(self):
         hint = enrich.next_cycle_hint("Applications will reopen in January 2027.", date(2026, 2, 1), date(2026, 10, 19))
