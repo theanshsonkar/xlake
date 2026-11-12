@@ -15,6 +15,8 @@ from html.parser import HTMLParser
 from typing import Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urljoin, urlparse
 
+from categories.stem import is_vacancy_text
+
 PLACEHOLDERS = {"", "not_stated", "needs_confirmation", "unknown", "n/a", "none", "null"}
 
 
@@ -922,6 +924,8 @@ def find_application_link(links: Iterable[Tuple[str, str]], seed_url: str,
         if not label or not href or href.startswith(("#", "mailto:", "tel:", "javascript:")):
             continue
         if len(label) > 70 or _APPLY_BAD.search(label):
+            continue
+        if is_vacancy_text(label) or is_vacancy_text(urlparse(href).path):
             continue
         strong = bool(_APPLY_STRONG.match(label))
         if not strong and not _APPLY_WEAK.search(label):

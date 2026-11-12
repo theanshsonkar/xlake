@@ -50,6 +50,20 @@ def is_junk_title(title: str) -> bool:
     return bool(_JUNK.search(str(title or "")))
 
 
+# Staff vacancies / tenders: never a programme's apply link or deadline source.
+# Internships stay allowed ("intern at our office" is not matched).
+_VACANCY = re.compile(
+    r"\bexecutive assistant\b|\bvacanc(?:y|ies)\b|\bjob (?:opening|vacanc)\w*|\bwe are (?:hiring|recruiting)\b|"
+    r"\bposition of\b|\brecruitment of\b|\b(?:request for|invitation for) (?:proposals?|bids?|quotations?)\b|"
+    r"(?<!funding[- ])\btenders?\b|\bprocurement\b|\bexpressions? of interest for (?:the )?(?:supply|procurement|empanelment)\b|"
+    # Not bare "hiring": fellowship pages say "partners' hiring timelines".
+    r"/(?:vacanc|tender)\w*|\b(?:we're|now|currently) hiring\b|\bcareer opportunit(?:y|ies)\b", re.I)
+
+
+def is_vacancy_text(text: str) -> bool:
+    return bool(_VACANCY.search(str(text or "")))
+
+
 def is_stem_programme(row: Dict) -> bool:
     """True when title, stored text and organiser point to a STEM field."""
     title = " ".join(str(row.get(k) or "") for k in ("title", "programme_name"))

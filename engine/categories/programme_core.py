@@ -20,7 +20,7 @@ from urllib.parse import urljoin, urlparse
 
 from core import lifecycle, pagetext, recheck, robots
 from categories import programme_enrich as enrich
-from categories.stem import is_junk_title, is_stem_programme
+from categories.stem import is_junk_title, is_stem_programme, is_vacancy_text
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
 
 @dataclass(frozen=True)
@@ -1033,6 +1033,13 @@ def _apply_enrichment(record: Dict, evidence: Dict, enriched: Dict, seed: Dict,
     record["technical"] = is_stem_programme(record)
 
 
+def _vacancy_window(text: str, window: Dict) -> bool:
+    """A window whose quote, or the ~160 characters before it, describes a staff vacancy or tender."""
+    quote = window.get("quote") or ""
+    at = text.find(quote) if quote else -1
+    return is_vacancy_text(quote) or (at > 0 and is_vacancy_text(text[max(0, at - 160):at]))
+
+
 def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None, final_url: Optional[str] = None, *, config: ProgrammeConfig) -> Tuple[Optional[Dict], Dict]:
     """Run the same extraction and actionability pipeline for every seed."""
     checked_at = checked_at or datetime.now(timezone.utc)
@@ -1043,10 +1050,11 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
     today = checked_at.date()
     structured = enrich.parse_structured(html, final_url or seed["official_url"])
     best_apply = enrich.find_application_link(links, seed["official_url"], final_url)
-    apply_link = best_apply or next(((label, href) for label, href in links if any(token in (label or "").lower() for token in APPLY_LINK_TOKENS)), None)
+    apply_link = best_apply or next(((label, href) for label, href in links if any(token in (label or "").lower() for token in APPLY_LINK_TOKENS)
+                                     and not is_vacancy_text(label) and not is_vacancy_text(urlparse(href or "").path)), None)
     resolved_apply = best_apply[1] if best_apply else (_application_url(seed["official_url"], apply_link[1], final_url) if apply_link else None)
     formal = any(token in text.lower() for token in FORMAL_PROGRAMME_TOKENS)
-    windows = detect_applicant_windows(text, today)
+    windows = [w for w in detect_applicant_windows(text, today) if not _vacancy_window(text, w)]
     structured_deadline = structured.get("deadline")
     if structured_deadline:
         sd = date.fromisoformat(structured_deadline)

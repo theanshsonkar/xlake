@@ -312,3 +312,37 @@ class ApplicationCostTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestVacancyNotProgramme(unittest.TestCase):
+    def test_hiring_timelines_is_not_a_vacancy(self):
+        from categories.stem import is_vacancy_text
+        self.assertFalse(is_vacancy_text("reviewed based on our partners' individual hiring timelines"))
+        self.assertTrue(is_vacancy_text("We are hiring: Executive Assistant"))
+
+    SEED = {"source_id": "t", "programme_id": "t", "programme_name": "DAAD India", "organizer": "DAAD India",
+            "official_url": "https://www.daad.in/en/", "source_kind": "official"}
+
+    def _run(self, body):
+        html = "<html><body><h1>DAAD India</h1><p>Scholarships for study in Germany.</p>%s</body></html>" % body
+        return core.parse_programme(self.SEED, html, CHECKED, config=fellowships.CONFIG) if hasattr(fellowships, "CONFIG") else fellowships.parse_programme(self.SEED, html, CHECKED)
+
+    VACANCY = ('<p><a href="/en/2026/10/21/applications-invited-executive-assistant-to-the-director/">'
+               'Applications invited: Executive Assistant to the Director</a></p>'
+               '<p>Applications invited for the position of Executive Assistant. Deadline: 30 October 2026.</p>')
+
+    def test_vacancy_only_window_is_not_open(self):
+        record, _ = self._run(self.VACANCY)
+        self.assertFalse(record and record.get("programme_status") in ("open", "opening_soon", "rolling"))
+        if record:
+            self.assertNotIn("executive-assistant", record.get("application_url") or "")
+
+    def test_real_link_beats_vacancy_link(self):
+        links = [("Applications invited: Executive Assistant", "/en/2026/10/21/applications-invited-executive-assistant/"),
+                 ("Apply now", "/en/apply/")]
+        self.assertEqual(enrich.find_application_link(links, "https://www.daad.in/en/")[1], "https://www.daad.in/en/apply/")
+        self.assertIsNone(enrich.find_application_link(links[:1], "https://www.daad.in/en/"))
+
+    def test_internship_link_kept(self):
+        links = [("Apply for the summer internship programme", "/en/internship/apply/")]
+        self.assertIsNotNone(enrich.find_application_link(links, "https://www.daad.in/en/"))
