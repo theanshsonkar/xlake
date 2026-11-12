@@ -1,66 +1,25 @@
-# AGENTS.md - how to work on Opportunity Radar
+# AGENTS.md — Xlake engine
 
-Read this first. It tells any AI chat how to work on this project.
+Rules for any AI working in this repo. Also follow `CLAUDE.md`.
 
-## Read order
-1. LAKE.md - what the product is and why.
-2. REGISTRY-PLAN.md - the list of categories and their status.
-3. ENGINE.md - how the engine works (the whole picture).
-4. The category's own doc, e.g. engine/categories/open_source/OPEN_SOURCE.md - your worklist for this chat.
+Full design docs, plans and category worklists are private. If you have the private notes repo
+cloned next to this one, read `../xlake-frontend/notes/README.md` and `../xlake-frontend/notes/engine/` first.
+Never add plans, audits, strategy or known weaknesses to this public repo; they go in the private notes.
 
-## The one rule
-Work on ONE category per chat. Do not spread across categories. The category doc is your worklist and your memory.
-
-## Audience
-Jobs and Internships are global with the US first, technical, for students and early-career candidates (India-sourced rows such as Unstop/Keka are kept and tagged `extra.region`). Every other category - Open Source (programmes and good-first-issues), Fellowships, Research programmes, Grants & Funding, Scholarships, and Hackathons & Competitions - is worldwide and open to anyone, anywhere. Never apply an India or location filter to these worldwide categories; capture each opportunity's own eligibility from its official page. Open-source programmes in particular are global.
-
-## Two kinds of categories
-Categories are collected in one of two ways:
-
-- Calendar/programme categories - Fellowships, Research programmes, Open Source programmes, Grants & Funding, Scholarships, Hackathons & Competitions, Startup/Founder programmes, Community & Leadership programmes, Graduate & Campus programmes. They have application windows/deadlines and prose pages, with few official sources that change slowly. Collected by: the engine for fetching, liveness, dedup and storage, PLUS AI to read each page and extract dates/eligibility/funding, except Hackathons & Competitions, which use the active deterministic official-source refresh. AI rule: only record what you can quote from the official page; never invent a date; a failed or unclear read never closes a row. Because these are low-volume, AI verification runs about twice a month (a human-in-the-loop AI does it until an API key is configured).
-- Listing categories - Jobs, Internships, Apprenticeships, and OSS good-first-issues. High volume, structured data (job boards / APIs / GitHub), collected by the engine only. Internships and OSS good-first-issues are now actively collected.
-
-Schedule: the daily sweep runs at 06:30 IST (`0 1 * * *` UTC), and the separate page-reader job runs at 08:00 IST (`30 2 * * *` UTC); the workflow also supports manual `workflow_dispatch`. The sweep refreshes community internship lists, restores the lake from S3, sweeps the resolved registry, shows the report, refreshes Open Source programmes and contributions, refreshes Hackathons, syncs the lake to S3, publishes Supabase, commits operational files only (`data/operations/...`, never lake), and uploads artifacts. The page-reader job runs separately on its second schedule.
+## Working rules
+1. **Build cleanly.** Modular code, proper architecture, separation of concerns. Never bolt a feature on.
+   If a clean build needs a refactor, stop before doing the work and say so.
+2. **Make implicit state machines explicit**, improving UX, DX and AX together without breaking anything.
 
 ## Guardrails
-- Never fabricate opportunities, sources, dates, or eligibility. Every row needs an official source URL and evidence from that page.
-- Do not change shared engine code (engine/core/, engine/adapters/, engine/pipeline/, trust logic) during category work. If you believe shared code must change, STOP and tell the human.
-- Use the one canonical lake in S3: `s3://$AWS_S3_BUCKET/lake/{opportunities,hidden,opportunities_history}.json`. `engine/data/lake/` is only the local/CI working copy, and Supabase is the serving projection. Never create a second database for a category.
-- Never access or republish LinkedIn or Naukri. Never show a full description - link to the official source.
-- A failed, blocked, or partial read is not a closure. Only a successful read updates liveness.
-- On divergence, use git pull --rebase to keep the daily bot's data commits and replay our commits on top. Never use merge -s ours (it discards the bot's data) and never force-push.
+- Never fabricate opportunities, sources, dates or eligibility. Every row needs an official source URL and evidence from that page.
+- A failed, blocked or partial read is not a closure. Only a successful read updates liveness.
+- Never access or republish LinkedIn or Naukri. Never show a full description; link to the official source.
+- Never create a second database for a category. The canonical lake lives in S3; Supabase is the serving projection.
+- Ask the human before changing shared engine code (`engine/core/`, `engine/adapters/`, `engine/pipeline/`, trust logic).
+- On divergence use `git pull --rebase` to keep the daily bot's data commits. Never `merge -s ours`, never force-push.
 
-## Per-chat loop
-1. Open the category doc; read its status and source worklist.
-2. Pick the next source(s) needing collection/verification or reconfirmation.
-3. Collect from the official source with evidence; verify.
-4. Merge results into the local lake working copy and sync the canonical S3 lake.
-5. Update the category doc: mark sources collected/verified/blocked, update counts and a short 'last worked' note.
-6. Stop. Leave the doc clean for the next chat.
-
-## Where things live
-- engine/core/ - shared engine code
-- engine/adapters/ - source integrations
-- engine/pipeline/ - run scripts (run as `python3 -m pipeline.<name>` from engine/)
-- engine/categories/<category>/ - one folder per category: its code + its <CATEGORY>.md doc
-- engine/data/lake/ - local/CI working copy of the S3-canonical lake
-- S3 `s3://$AWS_S3_BUCKET/lake/` - persistent canonical lake
-- Supabase Postgres - serving projection
-
-## Commands (run from engine/)
-- `python3 -m pipeline.sweep`
-- `python3 -m pipeline.fetch greenhouse vercel`
-- `python3 -m pipeline.resolve --file data/operations/companies.txt`
-- `python3 -m pipeline.read_url URL`
-- `python3 -m pipeline.build_fixtures check`
-- `python3 -m categories.open_source.programmes`
-- `python3 -m categories.open_source.contributions`
-- `python3 -m categories.internships.internships`
-- `python3 -m unittest tests.test_robots`
-
-Contribution discovery uses the `GITHUB_TOKEN` environment variable (from a
-`GH_PAT` secret in CI, else the built-in token). Without it, only curated
-repositories are collected.
-
-## When things change
-Update ENGINE.md when the engine changes. Update a category's doc when its coverage changes.
+## Layout
+- `engine/core/` shared code · `engine/adapters/` source integrations · `engine/pipeline/` run scripts
+  (`python3 -m pipeline.<name>` from `engine/`) · `engine/categories/<category>/` category code ·
+  `engine/data/` local working data (lake files are not committed).

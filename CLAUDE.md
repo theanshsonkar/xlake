@@ -1,6 +1,6 @@
 # CLAUDE.md — Xlake engine
 
-Also read `AGENTS.md`, `ENGINE.md` and `LAKE.md`.
+Also read `AGENTS.md`. Full design docs and plans are private, in `../xlake-frontend/notes/` (never add them to this public repo).
 
 ## What this repo is
 The data engine behind xlake.site: Python 3.12, standard library only, **no LLM/API keys** (deterministic crawling and parsing). It writes per-category shards to S3 and publishes to the Supabase table `opportunities`. The frontend is `theanshsonkar/xlake-frontend`.
