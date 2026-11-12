@@ -71,7 +71,7 @@ jobs:
   sweep:
     needs: plan
     runs-on: ubuntu-latest
-    timeout-minutes: ${{ matrix.platform == 'workable' && 60 || 30 }}
+    timeout-minutes: ${{ (matrix.platform == 'workable' || matrix.platform == 'workday') && 60 || 30 }}
     strategy:
       fail-fast: false
       max-parallel: 4
@@ -129,8 +129,9 @@ jobs:
           LAKE_HOST_DELAY: "0.3"
           LAKE_LIMIT: ${{ github.event.inputs.limit || '0' }}
           # workable has ~1000 boards (~12 boards/min): sweep a rotating slice per run;
-          # unswept boards are never retired.
-          LAKE_MAX_BOARDS: ${{ matrix.platform == 'workable' && '400' || '0' }}
+          # workday boards are big (~1 board/min, ~290 boards since 2026-11-13): 60 per run.
+          # Unswept boards are never retired.
+          LAKE_MAX_BOARDS: ${{ matrix.platform == 'workable' && '400' || matrix.platform == 'workday' && '60' || '0' }}
         run: python3 -u -m pipeline.sweep --shard "$SHARD"
 
       - name: Show report

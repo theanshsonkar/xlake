@@ -11449,5 +11449,4928 @@
   "segment": "quant",
   "source": "resolver",
   "evidence": "mlp.eightfold.ai"
+ },
+ {
+  "platform": "eightfold",
+  "token": "micron",
+  "company": "Micron",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3160 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "eightfold",
+  "token": "mlp",
+  "company": "Millennium",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (358 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "bah.wd1.myworkdayjobs.com|bah|bah_jobs",
+  "company": "Booz Allen",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (72 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "globalhr.wd5.myworkdayjobs.com|globalhr|rec_rtx_ext_gateway",
+  "company": "RTX",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (40 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "leidos.wd5.myworkdayjobs.com|leidos|External",
+  "company": "Leidos",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (36 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "eightfold",
+  "token": "paypal",
+  "company": "PayPal",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (34 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "ngc.wd1.myworkdayjobs.com|ngc|Northrop_Grumman_External_Site",
+  "company": "Northrop Grumman",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (34 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "caci.wd1.myworkdayjobs.com|caci|external",
+  "company": "CACI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (30 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "generalmotors.wd5.myworkdayjobs.com|generalmotors|Careers_GM",
+  "company": "General Motors",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (22 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "tmobile.wd1.myworkdayjobs.com|tmobile|External",
+  "company": "T-Mobile",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (21 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "motorolasolutions.wd5.myworkdayjobs.com|motorolasolutions|Careers",
+  "company": "Motorola",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (17 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "snc.wd1.myworkdayjobs.com|snc|snc_external_career_site",
+  "company": "Sierra Nevada Corporation",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (15 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "kla.wd1.myworkdayjobs.com|kla|Search",
+  "company": "KLA",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (14 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "micron.wd1.myworkdayjobs.com|micron|External",
+  "company": "Micron Technology",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (14 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "jj.wd5.myworkdayjobs.com|jj|JJ",
+  "company": "Johnson & Johnson",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (14 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cox.wd1.myworkdayjobs.com|cox|Cox_External_Career_Site_1",
+  "company": "Cox",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (14 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "gdit.wd5.myworkdayjobs.com|gdit|gdit_earlytalent",
+  "company": "General Dynamics Information Technology",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (14 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "asml.wd3.myworkdayjobs.com|asml|asmlext1",
+  "company": "ASML",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (13 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "copart.wd12.myworkdayjobs.com|copart|copart",
+  "company": "Copart",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (12 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "avav.wd1.myworkdayjobs.com|avav|avav",
+  "company": "Avav",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (12 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "amgen.wd1.myworkdayjobs.com|amgen|careers",
+  "company": "Amgen",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (12 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "gilead.wd1.myworkdayjobs.com|gilead|gileadcareers",
+  "company": "Gilead Sciences",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (12 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "globalhr.wd5.myworkdayjobs.com|globalhr|Private_Posting_No_TMP",
+  "company": "RTX",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (10 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "visa.wd5.myworkdayjobs.com|visa|Visa",
+  "company": "Visa",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (10 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "thenewyorktimes",
+  "company": "The New York Times",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (9 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "jmfamily.wd1.myworkdayjobs.com|jmfamily|jmfamily_external",
+  "company": "JM Family",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (9 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "alliance.wd3.myworkdayjobs.com|alliance|nissanjobs",
+  "company": "Nissan",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (9 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "moog.wd5.myworkdayjobs.com|moog|moog_external_career_site",
+  "company": "Moog",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (9 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "skydio",
+  "company": "Skydio",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (8 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "aero.wd5.myworkdayjobs.com|aero|external",
+  "company": "The Aerospace Corporation",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (8 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "centene.wd5.myworkdayjobs.com|centene|Centene_External",
+  "company": "Centene",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (8 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "oshkoshcorporation.wd5.myworkdayjobs.com|oshkoshcorporation|Oshkosh",
+  "company": "Oshkosh",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (8 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "zebra.wd501.myworkdayjobs.com|zebra|Zebra_careers",
+  "company": "Zebra Technologies",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (8 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "amat.wd1.myworkdayjobs.com|amat|External",
+  "company": "Applied Materials",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (8 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "tevora",
+  "company": "Tevora",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (8 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "highmarkhealth.wd1.myworkdayjobs.com|highmarkhealth|highmark",
+  "company": "Highmark Health",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (8 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "morsecorpcoop",
+  "company": "Meridian Partners",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (8 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "tri",
+  "company": "Toyota Research Institute",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (7 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "nvidia.wd5.myworkdayjobs.com|nvidia|NVIDIAExternalCareerSite",
+  "company": "NVIDIA",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (7 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "rb.wd5.myworkdayjobs.com|rb|FRS",
+  "company": "The Federal Reserve System",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (7 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "asteraearlycareer2027",
+  "company": "Astera Labs",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (7 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "allegion.wd5.myworkdayjobs.com|allegion|careers",
+  "company": "Allegion",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (7 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "aoins.wd5.myworkdayjobs.com|aoins|AutoOwners",
+  "company": "Auto-Owners Insurance",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (7 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "vanguard.wd5.myworkdayjobs.com|vanguard|vanguard_external",
+  "company": "Vanguard",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (7 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "hermeus",
+  "company": "Hermeus",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (7 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "thehartford.wd5.myworkdayjobs.com|thehartford|Careers_External",
+  "company": "The Hartford",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (7 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "globalfoundries.wd1.myworkdayjobs.com|globalfoundries|External",
+  "company": "GlobalFoundries",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "smithnephew.wd5.myworkdayjobs.com|smithnephew|External",
+  "company": "Smith+Nephew",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "abb.wd3.myworkdayjobs.com|abb|external_career_page",
+  "company": "ABB",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "aptiv.wd5.myworkdayjobs.com|aptiv|aptiv_careers",
+  "company": "Aptiv",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "philips.wd3.myworkdayjobs.com|philips|jobs-and-careers",
+  "company": "Philips",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "icf.wd5.myworkdayjobs.com|icf|ICFExternal_Career_Site",
+  "company": "ICF",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "hp.wd5.myworkdayjobs.com|hp|ExternalCareerSite",
+  "company": "Hewlett Packard (HP)",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "q2ebanking.wd5.myworkdayjobs.com|q2ebanking|Q2",
+  "company": "Q2",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "myhrabc.wd5.myworkdayjobs.com|myhrabc|Global",
+  "company": "Cencora",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "stryker.wd1.myworkdayjobs.com|stryker|StrykerCareers",
+  "company": "Stryker",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "hpiq",
+  "company": "HP IQ",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "thenuclearcompany",
+  "company": "The Nuclear Company",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "gdit.wd5.myworkdayjobs.com|gdit|external_career_site",
+  "company": "General Dynamics Information Technology",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (6 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "zoox",
+  "company": "Zoox",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "matchgroup",
+  "company": "Match Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "ilitch.wd5.myworkdayjobs.com|ilitch|lc",
+  "company": "Little Caesars Enterprises",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "microchiphr.wd5.myworkdayjobs.com|microchiphr|external",
+  "company": "Microchip Technology",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cmu.wd115.myworkdayjobs.com|cmu|sei",
+  "company": "Cmu",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "gaig.wd1.myworkdayjobs.com|gaig|GAIG_External",
+  "company": "Great American Insurance Company",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "verizon.wd12.myworkdayjobs.com|verizon|verizon-careers",
+  "company": "Verizon Communications",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "ttc.wd1.myworkdayjobs.com|ttc|Toro_External_Careers",
+  "company": "The Toro Company",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "workday.wd5.myworkdayjobs.com|workday|Workday_Early_Career",
+  "company": "Workday",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "imc",
+  "company": "IMC Trading",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "td.wd3.myworkdayjobs.com|td|TD_Bank_Careers",
+  "company": "TD Bank",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "mckesson.wd3.myworkdayjobs.com|mckesson|External_Careers",
+  "company": "McKesson",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "verkada",
+  "company": "Verkada",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "crowe.wd12.myworkdayjobs.com|crowe|external_careers",
+  "company": "Crowe",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "aurora-operations-inc",
+  "company": "Aurora Innovation",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (5 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "samsungsemiconductor",
+  "company": "Samsung",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "boseallaboutme.wd503.myworkdayjobs.com|boseallaboutme|Bose_Careers",
+  "company": "Bose",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "lilasciences",
+  "company": "Lila Sciences",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "analogdevices.wd1.myworkdayjobs.com|analogdevices|External",
+  "company": "Analog Devices",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "shieldai",
+  "company": "Shield AI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "kla.wd1.myworkdayjobs.com|kla|UR",
+  "company": "KLA",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "umiami.wd1.myworkdayjobs.com|umiami|UMCareerStaff",
+  "company": "University of Miami",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cvshealth.wd1.myworkdayjobs.com|cvshealth|CVS_Health_Careers",
+  "company": "CVS Health",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "andurilindustries",
+  "company": "Anduril",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "jainglobal.wd5.myworkdayjobs.com|jainglobal|ExternalSite",
+  "company": "Jain Global",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "marvell.wd1.myworkdayjobs.com|marvell|MarvellCareers",
+  "company": "Marvell",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "astreya.wd5.myworkdayjobs.com|astreya|life-at-astreya-opportunities",
+  "company": "Astreya",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "tenstorrentuniversity",
+  "company": "Tenstorrent",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "slihrms.wd3.myworkdayjobs.com|slihrms|careers",
+  "company": "AtkinsRéalis",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "gfs.wd5.myworkdayjobs.com|gfs|usjobs-gen-gfs",
+  "company": "Gordon Food Service",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "bedrock-robotics",
+  "company": "Bedrock Robotics",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cisco.wd5.myworkdayjobs.com|cisco|cisco_careers",
+  "company": "Cisco",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "brunswick.wd1.myworkdayjobs.com|brunswick|search",
+  "company": "Brunswick",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "amfam.wd1.myworkdayjobs.com|amfam|AmFamGroupInternCareers",
+  "company": "American Family Insurance Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "elkay.wd1.myworkdayjobs.com|elkay|Elkay_External",
+  "company": "Zurn Elkay Water Solutions",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "singlestore",
+  "company": "SingleStore",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "dvtrading",
+  "company": "DV Trading",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "schonfeld",
+  "company": "Schonfeld",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "virtu",
+  "company": "Virtu Financial",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "lifefitness.wd1.myworkdayjobs.com|lifefitness|searchLFN",
+  "company": "Life Fitness",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "sonos.wd1.myworkdayjobs.com|sonos|Sonos",
+  "company": "Sonos",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "vsp.wd1.myworkdayjobs.com|vsp|vspvisioncareers",
+  "company": "VSP Vision",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "costar.wd1.myworkdayjobs.com|costar|Costar_Campus",
+  "company": "CoStar Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (4 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "bloomenergy.wd1.myworkdayjobs.com|bloomenergy|bloomenergycareers",
+  "company": "Bloom Energy",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "formlabsinternships",
+  "company": "Formlabsinternships",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "REGENT",
+  "company": "REGENT",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "dtna.wd5.myworkdayjobs.com|dtna|DTNA_external",
+  "company": "Daimler Truck",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "shield",
+  "company": "Shield AI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "trimble.wd1.myworkdayjobs.com|trimble|TrimbleCareers",
+  "company": "Trimble",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "vardaspace",
+  "company": "Varda Space",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "hitachi.wd1.myworkdayjobs.com|hitachi|hitachi",
+  "company": "Hitachi Energy",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cbrands.wd5.myworkdayjobs.com|cbrands|CBI_External_Careers",
+  "company": "Constellation Brands",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "entrust.wd1.myworkdayjobs.com|entrust|entrustcareers",
+  "company": "Entrust",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "gardacp",
+  "company": "Garda Capital Partners",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "axos.wd5.myworkdayjobs.com|axos|Axos",
+  "company": "Axos Bank",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "allstate.wd5.myworkdayjobs.com|allstate|sourcing_event",
+  "company": "Allstate Insurance Company",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "inversionspace",
+  "company": "Inversion Space",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "pattern",
+  "company": "Pattern",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "generalmatter",
+  "company": "General Matter",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "muonspace",
+  "company": "Muon Space",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "lnw.wd5.myworkdayjobs.com|lnw|lightwonderexternalcareers",
+  "company": "Light & Wonder",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "tencent.wd1.myworkdayjobs.com|tencent|Tencent_Careers",
+  "company": "Tencent",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "biibhr.wd3.myworkdayjobs.com|biibhr|external",
+  "company": "Biogen",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "nelnet.wd1.myworkdayjobs.com|nelnet|MyNelnet",
+  "company": "Nelnet",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "nordsonhcm.wd501.myworkdayjobs.com|nordsonhcm|nordsoncareers",
+  "company": "Nordson",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "allen-control-systems",
+  "company": "Allen Control Systems",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "voloridgeinvestmentmanagement",
+  "company": "Voloridge",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "astranis",
+  "company": "Astranis",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "bracco.wd103.myworkdayjobs.com|bracco|braccocareers",
+  "company": "Bracco",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "labcorp.wd1.myworkdayjobs.com|labcorp|external",
+  "company": "LabCorp",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "clarios.wd5.myworkdayjobs.com|clarios|clarioscareers",
+  "company": "Clarios",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "axontalentcommunity",
+  "company": "Axon",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cigna.wd5.myworkdayjobs.com|cigna|cignacareers",
+  "company": "Cigna Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "marvell.wd1.myworkdayjobs.com|marvell|marvellcareers2",
+  "company": "Marvell",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workable",
+  "token": "twgai",
+  "company": "TWG Global",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "draftkings.wd1.myworkdayjobs.com|draftkings|Campus_Career_Portal",
+  "company": "DraftKings",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "fnbcorp.wd501.myworkdayjobs.com|fnbcorp|FNBCORP",
+  "company": "First National Bank",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "flir.wd1.myworkdayjobs.com|flir|flircareers",
+  "company": "Teledyne",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "fifththird.wd5.myworkdayjobs.com|fifththird|53careers",
+  "company": "Fifth Third Bank",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "akunacapitaloci",
+  "company": "Akuna Capital",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "walleyecapital-external-students",
+  "company": "Walleye Capital",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "perpay",
+  "company": "Perpay",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "klaviyocampus",
+  "company": "Klaviyo",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "tensorwave",
+  "company": "TensorWave",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "advancedspace",
+  "company": "Advanced Space",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "americancentury.wd5.myworkdayjobs.com|americancentury|AmericanCenturyInvestments",
+  "company": "American Century Investments",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "msd.wd5.myworkdayjobs.com|msd|searchjobs",
+  "company": "Merck",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "base-power",
+  "company": "Base Power",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "conagrabrands.wd1.myworkdayjobs.com|conagrabrands|Careers_US",
+  "company": "Conagra Brands",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (3 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "minitab",
+  "company": "Minitab",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "rockwellautomation.wd1.myworkdayjobs.com|rockwellautomation|External_Rockwell_Automation",
+  "company": "Rockwell Automation",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "sec.wd3.myworkdayjobs.com|sec|Samsung_Careers",
+  "company": "Samsung",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "llbean.wd1.myworkdayjobs.com|llbean|LLBean_Careers",
+  "company": "L.L.Bean",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "marmon.wd501.myworkdayjobs.com|marmon|Marmon_Careers",
+  "company": "Marmon Holdings",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "hearst",
+  "company": "Hearst",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "borgwarner.wd5.myworkdayjobs.com|borgwarner|BorgWarner_Careers",
+  "company": "BorgWarner",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "freseniusmedicalcare.wd3.myworkdayjobs.com|freseniusmedicalcare|fme",
+  "company": "Fresenius Medical Care",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "paypal.wd1.myworkdayjobs.com|paypal|jobs",
+  "company": "PayPal",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "badgermeter.wd5.myworkdayjobs.com|badgermeter|US_CareerSite",
+  "company": "Badger Meter",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "usafacts",
+  "company": "USAFacts",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "trustage.wd1.myworkdayjobs.com|trustage|TruStage",
+  "company": "TruStage",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "valmont.wd1.myworkdayjobs.com|valmont|ValmontCareers",
+  "company": "Valmont",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "gcmgrosvenor",
+  "company": "GCM Grosvenor",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workable",
+  "token": "syntiant",
+  "company": "Syntiant",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "nrel.wd5.myworkdayjobs.com|nrel|NLR",
+  "company": "National Laboratory of the Rockies",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "generac.wd5.myworkdayjobs.com|generac|external",
+  "company": "Generac",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workable",
+  "token": "connectprep",
+  "company": "ConnectPrep",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "quadric",
+  "company": "Quadric",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "amperesand",
+  "company": "Amperesand",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "idmeuniversityrecruiting",
+  "company": "ID.me",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "nike.wd1.myworkdayjobs.com|nike|nke",
+  "company": "Nike",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "olsson",
+  "company": "Olsson",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "zus-health",
+  "company": "Zus Health",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "insperity.wd12.myworkdayjobs.com|insperity|NSP",
+  "company": "Insperity",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "aep.wd1.myworkdayjobs.com|aep|AEPCareerSite",
+  "company": "American Electric Power",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "insomniac",
+  "company": "Insomniac Games",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "werner.wd501.myworkdayjobs.com|werner|werner",
+  "company": "Werner",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "amplify",
+  "company": "Amplify",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "scaleai",
+  "company": "Scale AI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "manh.wd5.myworkdayjobs.com|manh|campus",
+  "company": "Manhattan Associates",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "ryan.wd1.myworkdayjobs.com|ryan|RyanCareers",
+  "company": "Ryan",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "mastercard.wd1.myworkdayjobs.com|mastercard|Campus",
+  "company": "Mastercard",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "qtsdatacenters.wd5.myworkdayjobs.com|qtsdatacenters|qts",
+  "company": "QTS",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "point72",
+  "company": "Point72",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "draper.wd5.myworkdayjobs.com|draper|Draper_Careers",
+  "company": "Draper",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "arcesiumllc",
+  "company": "Arcesium",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "rosaiclabs",
+  "company": "RosaicLabs",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "shopback-2",
+  "company": "ShopBack",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "nationallifeinsurancecompany",
+  "company": "National Life",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "chrobinson.wd5.myworkdayjobs.com|chrobinson|CHRobinson",
+  "company": "C.H. Robinson",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cir.wd108.myworkdayjobs.com|cir|CIR_External_Career_Site",
+  "company": "Cambridge Investment Research",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "thrivent.wd5.myworkdayjobs.com|thrivent|privateexternal",
+  "company": "Thrivent",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "sharkninjaoperatingllc",
+  "company": "SharkNinja",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "basspro.wd1.myworkdayjobs.com|basspro|careers",
+  "company": "Bass Pro Shops",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "rendezvousrobotics",
+  "company": "Rendezvous Robotics",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "aspentech.wd5.myworkdayjobs.com|aspentech|aspentech",
+  "company": "AspenTech",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "gecko-robotics",
+  "company": "Gecko Robotics",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "anavationllc",
+  "company": "AnaVation",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "megazone",
+  "company": "MegazoneCloud",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "testnisc",
+  "company": "National Information Solutions Cooperative (NISC)",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "saronic",
+  "company": "Saronic",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "k2spacecorporation",
+  "company": "K2 Space",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "Talos-Trading",
+  "company": "Talos",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "hyvee.wd1.myworkdayjobs.com|hyvee|HyVeeCareers",
+  "company": "Hy-Vee",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "drivetime.wd1.myworkdayjobs.com|drivetime|drivetime",
+  "company": "DriveTime",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "hadrian-automation",
+  "company": "Hadrian",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "foth",
+  "company": "FOTH",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "draftkings.wd1.myworkdayjobs.com|draftkings|Employee_Referral_Portal",
+  "company": "DraftKings",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "vermeer.wd5.myworkdayjobs.com|vermeer|externalcareersite",
+  "company": "Vermeer",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "pimco.wd1.myworkdayjobs.com|pimco|pimco-careers",
+  "company": "PIMCO",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "manulife.wd3.myworkdayjobs.com|manulife|MFCJH_Jobs",
+  "company": "Manulife Financial",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "sage49",
+  "company": "Sage",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "xantium",
+  "company": "Xantium",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "ing.wd3.myworkdayjobs.com|ing|icsgblcor",
+  "company": "ING",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "belvederetrading",
+  "company": "Belvedere Trading",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "ntst.wd1.myworkdayjobs.com|ntst|careers",
+  "company": "Netsmart",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "appian",
+  "company": "Appian",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "ctccampusboard",
+  "company": "Chicago Trading Company",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "fiveringsllc",
+  "company": "Five Rings",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workable",
+  "token": "pony-dot-ai",
+  "company": "Pony.ai",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "wexinc.wd5.myworkdayjobs.com|wexinc|WEXInc",
+  "company": "Wex",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "americanfidelity.wd5.myworkdayjobs.com|americanfidelity|External",
+  "company": "American Fidelity",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "cfsenergy",
+  "company": "Commonwealth Fusion Systems",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "amfam.wd1.myworkdayjobs.com|amfam|Careers",
+  "company": "American Family Insurance Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "niantic-spatial",
+  "company": "Niantic Spatial",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "emcins.wd5.myworkdayjobs.com|emcins|EMC_Careers",
+  "company": "EMC Insurance",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "acronaviation",
+  "company": "Acron Aviation",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "aba.wd1.myworkdayjobs.com|aba|aba",
+  "company": "American Bankers Association",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "valeo.wd3.myworkdayjobs.com|valeo|valeo_jobs",
+  "company": "Valeo",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "gleanwork",
+  "company": "Glean",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "immuta",
+  "company": "Immuta",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "melius",
+  "company": "Melius",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "rakuten.wd1.myworkdayjobs.com|rakuten|RakutenAmericas",
+  "company": "Rakuten International",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "thrivent.wd5.myworkdayjobs.com|thrivent|external",
+  "company": "Thrivent",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "abglobal.wd1.myworkdayjobs.com|abglobal|abcampuscareers",
+  "company": "AllianceBernstein",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "syskahennessy",
+  "company": "Syska Hennessy Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "northwoodspace",
+  "company": "Northwood Space",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "premierinc.wd1.myworkdayjobs.com|premierinc|External_Professional",
+  "company": "Premier",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "canadiansolar.wd5.myworkdayjobs.com|canadiansolar|CanadianSolar",
+  "company": "Canadian Solar",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "freddiemac.wd5.myworkdayjobs.com|freddiemac|External",
+  "company": "Freddie Mac",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "acds",
+  "company": "ACDS",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "firstam.wd1.myworkdayjobs.com|firstam|firstamericancareers",
+  "company": "First American",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workable",
+  "token": "wallstreetquants",
+  "company": "WallStreetQuants",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "drweng",
+  "company": "DRW",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "xsolla",
+  "company": "Xsolla",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (2 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "leland",
+  "company": "Leland",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "hubinternational.wd1.myworkdayjobs.com|hubinternational|hubinternational",
+  "company": "HUB International",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "huron.wd1.myworkdayjobs.com|huron|huroncareers",
+  "company": "Huron",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "lightmatter",
+  "company": "Lightmatter",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "austalusa.wd1.myworkdayjobs.com|austalusa|austal",
+  "company": "Austal USA",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "mksinst.wd1.myworkdayjobs.com|mksinst|MKSCareersUniversity",
+  "company": "MKS Instruments",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "dow.wd1.myworkdayjobs.com|dow|ExternalCareers",
+  "company": "Dow Chemical Company",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "unisys.wd5.myworkdayjobs.com|unisys|External",
+  "company": "Unisys",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "judihealth",
+  "company": "Judi Health",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "salesforce.wd12.myworkdayjobs.com|salesforce|futureforce_newgradroles",
+  "company": "Salesforce",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "tsys.wd1.myworkdayjobs.com|tsys|TSYS",
+  "company": "Global Payments",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "visa.wd5.myworkdayjobs.com|visa|visa_talent_portal",
+  "company": "Visa",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "celonis",
+  "company": "Celonis",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "illumio",
+  "company": "Illumio",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "pivotal",
+  "company": "Pivotal Software",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "formfactor.wd1.myworkdayjobs.com|formfactor|FFI-Careers",
+  "company": "FormFactor",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "hypertherm.wd503.myworkdayjobs.com|hypertherm|hypertherm-careers",
+  "company": "Hypertherm",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "sharpelectronics",
+  "company": "Sharp Electronics",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "zoetis.wd5.myworkdayjobs.com|zoetis|zoetis",
+  "company": "Zoetis",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "formulary",
+  "company": "Formulary Financial",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "parspec",
+  "company": "Parspec",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "invesco.wd1.myworkdayjobs.com|invesco|IVZ",
+  "company": "Invesco",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "Niural",
+  "company": "Niural",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "galaxydigitalservices",
+  "company": "Galaxy",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "globusmedical.wd5.myworkdayjobs.com|globusmedical|GMED_Careers",
+  "company": "Globus Medical",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "godirect.wd5.myworkdayjobs.com|godirect|voya_jobs",
+  "company": "Voya Financial",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "lumbermens",
+  "company": "Lumbermen's",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "markelcorp.wd5.myworkdayjobs.com|markelcorp|GlobalCareers",
+  "company": "Markel Group, Inc.",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "saabusa.wd1.myworkdayjobs.com|saabusa|saab_careers",
+  "company": "Saab",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "samsungresearchamericainternship",
+  "company": "Samsung Research America",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "roboforce",
+  "company": "RoboForce",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "onepot",
+  "company": "onepot",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "nex",
+  "company": "Nex",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "astrazeneca.wd3.myworkdayjobs.com|astrazeneca|Careers",
+  "company": "AstraZeneca",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "mosaic.wd5.myworkdayjobs.com|mosaic|mosaic",
+  "company": "Mosaic",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "rgare.wd1.myworkdayjobs.com|rgare|Careers",
+  "company": "RGA Reinsurance Company",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "flagshippioneeringinc",
+  "company": "Flagship Pioneering",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "paretocaptiveservicesllc",
+  "company": "ParetoHealth",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "trace3",
+  "company": "Trace3",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "fireworkhq",
+  "company": "Firework",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "ferrovial.wd3.myworkdayjobs.com|ferrovial|ferrovial_career_site",
+  "company": "Ferrovial",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "fccincinnati",
+  "company": "Fussball Club Cincinnati LLC (“FC Cincinnati”)",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "hcsc.wd1.myworkdayjobs.com|hcsc|HCSC_External",
+  "company": "HCSC",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "twosixtechnologies",
+  "company": "Two Six Technologies",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "subtotal",
+  "company": "Subtotal",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "protagonist",
+  "company": "Protagonist",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "assurant.wd1.myworkdayjobs.com|assurant|External_Limited_Posting",
+  "company": "Assurant",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "cssmerge",
+  "company": "Atoms",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "aaaie.wd1.myworkdayjobs.com|aaaie|CSAACareers2",
+  "company": "CSAA Insurance Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "sedgwick.wd1.myworkdayjobs.com|sedgwick|Sedgwick",
+  "company": "Sedgwick Claims Management Services",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "parallel",
+  "company": "Parallel Systems",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cohesity.wd5.myworkdayjobs.com|cohesity|Cohesity_Careers",
+  "company": "Cohesity",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "prologis.wd5.myworkdayjobs.com|prologis|Prologis_External_Careers",
+  "company": "Prologis",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "hivefinancialsystems",
+  "company": "Hive Financial Systems",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "ptc.wd1.myworkdayjobs.com|ptc|ptc",
+  "company": "PTC",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "scout-ai",
+  "company": "Scout AI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "koppers.wd5.myworkdayjobs.com|koppers|Koppers",
+  "company": "Koppers",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "aoins.wd5.myworkdayjobs.com|aoins|concord",
+  "company": "Auto-Owners Insurance",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "freight.wd108.myworkdayjobs.com|freight|FXF_External_Career_Site",
+  "company": "FedEx Freight",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "kiongroup.wd3.myworkdayjobs.com|kiongroup|kiongroup",
+  "company": "KION Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "openart",
+  "company": "OpenArt AI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "metalenz",
+  "company": "Metalenz",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "whataburger.wd5.myworkdayjobs.com|whataburger|WAB_CAREERS",
+  "company": "Whataburger",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "integrate",
+  "company": "Integrate",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "salesforce.wd12.myworkdayjobs.com|salesforce|Futureforce_Internships",
+  "company": "Salesforce",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "toyota.wd503.myworkdayjobs.com|toyota|tmna",
+  "company": "Toyota",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "patreon",
+  "company": "Patreon",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "braze",
+  "company": "Braze",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "nisc",
+  "company": "National Information Solutions Cooperative (NISC)",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "thealleninstitute",
+  "company": "The Allen Institute for AI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "bracebridgecapital",
+  "company": "Bracebridge Capital",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "gravitonresearchcapital",
+  "company": "Graviton",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "agzen",
+  "company": "AgZen",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "emcins.wd5.myworkdayjobs.com|emcins|EMC_Internships",
+  "company": "EMC Insurance",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "hyperiongrp.wd3.myworkdayjobs.com|hyperiongrp|Hyperion_External",
+  "company": "Howden",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "lseg.wd3.myworkdayjobs.com|lseg|Graduate_Careers",
+  "company": "LSEG",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "wustl.wd1.myworkdayjobs.com|wustl|external",
+  "company": "Wustl",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "field-ai",
+  "company": "Field AI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "wattswater.wd5.myworkdayjobs.com|wattswater|Intern-External",
+  "company": "Watts Water",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "azul",
+  "company": "Azul Systems",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cswg.wd1.myworkdayjobs.com|cswg|cs_careers",
+  "company": "C&S Wholesale Grocers",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "alcon.wd5.myworkdayjobs.com|alcon|careers_alcon",
+  "company": "Alcon",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "viget",
+  "company": "Viget",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "jll.wd1.myworkdayjobs.com|jll|jllcareers",
+  "company": "Jones Lang LaSalle (JLL)",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "modmed.wd501.myworkdayjobs.com|modmed|ModMed12",
+  "company": "Modernizing Medicine",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "ruggedrobotics",
+  "company": "Rugged Robotics",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "applebank.wd5.myworkdayjobs.com|applebank|applebankcareers",
+  "company": "Apple Bank",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "sigmacomputing",
+  "company": "Sigma Computing",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "jabil.wd5.myworkdayjobs.com|jabil|Jabil_Careers",
+  "company": "Jabil",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "courierhealth",
+  "company": "Courier Health",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "purestorage",
+  "company": "Pure Storage",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "midlandsb.wd1.myworkdayjobs.com|midlandsb|msbcareers",
+  "company": "Midland States Bank",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "foundenergy",
+  "company": "Found Energy",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "hntb.wd5.myworkdayjobs.com|hntb|hntb_careers",
+  "company": "HNTB",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "arcboatcompany",
+  "company": "Arc",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "sterlingmets.wd5.myworkdayjobs.com|sterlingmets|Mets",
+  "company": "Major League Baseball",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "profluent",
+  "company": "Profluent",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "range",
+  "company": "Range",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "datacor",
+  "company": "Datacor",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "genscript",
+  "company": "GenScript",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "claylabs",
+  "company": "Clay",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "plot",
+  "company": "Plot Technologies",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "amca",
+  "company": "AMCA",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "veteransunited.wd1.myworkdayjobs.com|veteransunited|VUHL",
+  "company": "Veterans United",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "queracomputinginc",
+  "company": "QuEra Computing",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "machindustries",
+  "company": "Mach Industries",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "mill",
+  "company": "Mill",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "genesis-molecular-ai",
+  "company": "Genesis Molecular AI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "insulet.wd5.myworkdayjobs.com|insulet|insuletcareers",
+  "company": "Insulet Corporation",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "cowboyspace",
+  "company": "Cowboy Space",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "gfs.wd5.myworkdayjobs.com|gfs|usprivate-gfs",
+  "company": "Gordon Food Service",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "zekelman.wd12.myworkdayjobs.com|zekelman|Careers",
+  "company": "Zekelman Industries",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "churchdwight.wd1.myworkdayjobs.com|churchdwight|chdcareers",
+  "company": "Church & Dwight",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "covar",
+  "company": "CoVar",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "relaypro",
+  "company": "Relay",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workable",
+  "token": "raveaerospace",
+  "company": "RAVE Aerospace",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "tihinsurance.wd1.myworkdayjobs.com|tihinsurance|crc_careers",
+  "company": "Tihinsurance",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "workshop",
+  "company": "Workshop",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "cyvl",
+  "company": "AI Intern to the CEO",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "farmersmutualhailinsurancecompany",
+  "company": "Farmersmutualhailinsurancecompany",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "xcimer",
+  "company": "Xcimer Energy",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "tanium",
+  "company": "Tanium",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "albemarle.wd5.myworkdayjobs.com|albemarle|ketjenexternal",
+  "company": "Ketjen",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "target.wd5.myworkdayjobs.com|target|targetcareers",
+  "company": "Target",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "pacificfusion",
+  "company": "Pacific Fusion",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "rocketlab",
+  "company": "Rocket Lab",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "quberesearchandtechnologies",
+  "company": "Qube Research & Technologies",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "futo-org",
+  "company": "FUTO",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "viamrobotics",
+  "company": "Viam",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "usbank.wd1.myworkdayjobs.com|usbank|US_Bank_Careers",
+  "company": "U.S. Bank",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cibc.wd3.myworkdayjobs.com|cibc|search",
+  "company": "CIBC",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workable",
+  "token": "enfos-inc",
+  "company": "ENFOS",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "the-exploration-company",
+  "company": "The Exploration Company",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "momentive.wd1.myworkdayjobs.com|momentive|MC",
+  "company": "Momentive",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "hdsupply.wd1.myworkdayjobs.com|hdsupply|External",
+  "company": "HD Supply",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "stokespacetechnologies",
+  "company": "Stokespacetechnologies",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "iatinsurancegroup.wd1.myworkdayjobs.com|iatinsurancegroup|iat",
+  "company": "IAT Insurance Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "trwd.wd1.myworkdayjobs.com|trwd|TRWDCareers",
+  "company": "Tarrant Regional Water District",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "sbdinc.wd1.myworkdayjobs.com|sbdinc|Stanley_Black_Decker_Career_Site",
+  "company": "Stanley Black & Decker",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "newrez.wd1.myworkdayjobs.com|newrez|NRZ",
+  "company": "Newrez",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "Sierra",
+  "company": "Sierra",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "hcmportal.wd5.myworkdayjobs.com|hcmportal|Search",
+  "company": "United Parcel Service (UPS)",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "awetomaton",
+  "company": "Awetomaton",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "charlesriverassociates",
+  "company": "Charles River Associates (CRA)",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "airproducts.wd5.myworkdayjobs.com|airproducts|AP0001",
+  "company": "Air Products",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "whitewatermidstream",
+  "company": "WhiteWater Midstream",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "phoebe-work",
+  "company": "Phoebe",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "keybank.wd5.myworkdayjobs.com|keybank|External_Career_Site",
+  "company": "KeyBank",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "voleon",
+  "company": "The Voleon Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "freeformfuturecorp",
+  "company": "Freeform",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "pentair.wd5.myworkdayjobs.com|pentair|pentair_careers",
+  "company": "Pentair",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "hyannisportresearch",
+  "company": "HPR (Hyannis Port Research)",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "heliux",
+  "company": "Heliux",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "pdtpartners",
+  "company": "PDT Partners",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "quadrillion-labs",
+  "company": "Quadrillion",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "old-mission-capital",
+  "company": "Old Mission",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "flowtraders",
+  "company": "Flow Traders",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "quantiq",
+  "company": "Quantiq",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "ellipsislabs",
+  "company": "Ellipsis Labs",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "smucker.wd5.myworkdayjobs.com|smucker|US_External_Careers",
+  "company": "J.M. Smucker",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "walrusfi",
+  "company": "Walrus",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cboe.wd1.myworkdayjobs.com|cboe|External_Career_CBOE",
+  "company": "Cboe",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "dmainc.wd5.myworkdayjobs.com|dmainc|dma",
+  "company": "Dmainc",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "atcllc.wd5.myworkdayjobs.com|atcllc|atcllc",
+  "company": "ATC",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "enova",
+  "company": "Enova",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "vikingglobalinvestors",
+  "company": "Viking Global",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "vaticlabs",
+  "company": "Vatic Investments",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "duolingounirecruitment",
+  "company": "Duolingo",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "gitai",
+  "company": "GITAI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "grow-therapy",
+  "company": "Grow Therapy",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "warnerbros.wd5.myworkdayjobs.com|warnerbros|global",
+  "company": "Warner Bros.",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "ensco",
+  "company": "ENSCO",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "sunlife.wd3.myworkdayjobs.com|sunlife|Campus",
+  "company": "Sun Life",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "f7d8749a-72d6-407c-bf98-292ea630c73a",
+  "company": "Shield AI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "paloaltonetworks.wd5.myworkdayjobs.com|paloaltonetworks|hidden-private-pawn-temp-gateway-147258369",
+  "company": "Paloaltonetworks",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "reflect-orbital",
+  "company": "Reflect Orbital",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "eqtcorporation",
+  "company": "EQT Corporation",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "ziprecruiter",
+  "company": "ZipRecruiter",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "dxctechnology.wd1.myworkdayjobs.com|dxctechnology|dxcjobs",
+  "company": "DXC Technology",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cae.wd3.myworkdayjobs.com|cae|career",
+  "company": "CAE",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "directsupply.wd501.myworkdayjobs.com|directsupply|direct-supply-careers",
+  "company": "Direct Supply",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "rockwellautomation.wd1.myworkdayjobs.com|rockwellautomation|External-Rockwell-Automation-Early-Careers",
+  "company": "Rockwell Automation",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "massgeneralbrigham.wd1.myworkdayjobs.com|massgeneralbrigham|mgbexternal",
+  "company": "Mass General Brigham",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "stateaffairs",
+  "company": "State Affairs",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "astronicscorporation",
+  "company": "Astronics",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "maxar.wd1.myworkdayjobs.com|maxar|Vantor",
+  "company": "Vantor",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "nebraskamed.wd5.myworkdayjobs.com|nebraskamed|nm",
+  "company": "Nebraska Medicine",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "collinear-ai",
+  "company": "Collinear AI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "botauto",
+  "company": "Bot Auto",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cai.wd5.myworkdayjobs.com|cai|computer_aid",
+  "company": "CAI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "tiaa.wd1.myworkdayjobs.com|tiaa|Search",
+  "company": "TIAA",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "drwuniversityjobs",
+  "company": "DRW",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "graco.wd501.myworkdayjobs.com|graco|Graco_Careers",
+  "company": "Graco",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "wurljobs",
+  "company": "Wurl",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "swbc.wd1.myworkdayjobs.com|swbc|swbccareers",
+  "company": "SWBC",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "fmr.wd1.myworkdayjobs.com|fmr|targeted",
+  "company": "Fidelity Investments",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "knowbe4",
+  "company": "KnowBe4",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "acehardware.wd1.myworkdayjobs.com|acehardware|External",
+  "company": "Ace Hardware",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "cognex.wd1.myworkdayjobs.com|cognex|External_Career_Site",
+  "company": "Cognex",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "pretiuminternships2027",
+  "company": "Pretium",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "cartesiansystems",
+  "company": "Cartesian",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "xpengmotors",
+  "company": "XPENG Motors",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "conductorai",
+  "company": "ConductorAI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "dukeenergy.wd1.myworkdayjobs.com|dukeenergy|search",
+  "company": "Duke Energy",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "relx.wd3.myworkdayjobs.com|relx|RiskSolutions",
+  "company": "LexisNexis Risk Solutions",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "clockworksystems",
+  "company": "Clockwork Systems",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "kitware",
+  "company": "Kitware",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "pathrobotics",
+  "company": "Path Robotics",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "nyisocoops",
+  "company": "New York ISO",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "baxter.wd1.myworkdayjobs.com|baxter|baxter",
+  "company": "Baxter International",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "brevium",
+  "company": "Brevium",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "newperkinelmer.wd1.myworkdayjobs.com|newperkinelmer|External",
+  "company": "PerkinElmer",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "ssctech.wd1.myworkdayjobs.com|ssctech|ssctechnologies",
+  "company": "SS&C",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "psu.wd1.myworkdayjobs.com|psu|PSU_Staff",
+  "company": "PennState University",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "sep",
+  "company": "SEP",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "castelioncorporation",
+  "company": "Castelion",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "equifax.wd5.myworkdayjobs.com|equifax|UR_External",
+  "company": "Equifax",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "itron.wd5.myworkdayjobs.com|itron|Early_Careers",
+  "company": "Itron",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "webfx",
+  "company": "WebFX",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "igsenergy.wd1.myworkdayjobs.com|igsenergy|IGS",
+  "company": "IGS Energy",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "salesforce.wd12.myworkdayjobs.com|salesforce|External_Career_Site",
+  "company": "Salesforce",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "memx",
+  "company": "MEMX",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "workiva.wd503.myworkdayjobs.com|workiva|careers",
+  "company": "Workiva",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "genbio",
+  "company": "GenBio AI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "harvey",
+  "company": "Harvey",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "dandy",
+  "company": "Dandy",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "g2",
+  "company": "G2",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "spscommerce.wd108.myworkdayjobs.com|spscommerce|SPS",
+  "company": "SPS Commerce",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "systemstechnologyresearch",
+  "company": "STR",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "sierraspace.wd1.myworkdayjobs.com|sierraspace|Sierra_Space_External_Career_Site",
+  "company": "Sierra Space",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "mii.wd5.myworkdayjobs.com|mii|universityrecruiting",
+  "company": "Mii",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "gafsgi.wd5.myworkdayjobs.com|gafsgi|GAF_Careers",
+  "company": "GAF",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "itron.wd5.myworkdayjobs.com|itron|Itron",
+  "company": "Itron",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "haigroup",
+  "company": "Haigroup",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "nanopathinc",
+  "company": "Nanopath",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "newsbreak",
+  "company": "NewsBreak",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "businessolverinvitationonly",
+  "company": "Businessolver",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "neighbor",
+  "company": "Neighbor",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "greenheckgroup.wd5.myworkdayjobs.com|greenheckgroup|external",
+  "company": "Greenheck Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "chemours.wd103.myworkdayjobs.com|chemours|Chemours",
+  "company": "Chemours",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "northwesternmutual.wd5.myworkdayjobs.com|northwesternmutual|corporate-careers",
+  "company": "Northwestern Mutual",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "rhombus-systems",
+  "company": "Rhombus",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "interplay",
+  "company": "Internship",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "crestoperations",
+  "company": "Crest Industries",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "ag.wd3.myworkdayjobs.com|ag|Airbus",
+  "company": "Airbus",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "myhrhome.wd1.myworkdayjobs.com|myhrhome|OneMainCareers",
+  "company": "OneMain Financial",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "iex-interns",
+  "company": "IEX",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "buildertrend.wd108.myworkdayjobs.com|buildertrend|External_Careers",
+  "company": "Buildertrend",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "boeing.wd1.myworkdayjobs.com|boeing|EXTERNAL_CAREERS",
+  "company": "The Boeing Company",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "eudia",
+  "company": "Eudia",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "fspco-op012325",
+  "company": "Flagship Pioneering",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "crusoe",
+  "company": "Crusoe",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "guidestone.wd1.myworkdayjobs.com|guidestone|guidestone",
+  "company": "GuideStone",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "mdtkangaroo.wd108.myworkdayjobs.com|mdtkangaroo|minimedcareers",
+  "company": "Mdtkangaroo",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "autostore.wd3.myworkdayjobs.com|autostore|autostore",
+  "company": "Autostore",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "rfsmart",
+  "company": "RF-SMART",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "hq.wd12.myworkdayjobs.com|hq|Securian_External",
+  "company": "Securian Financial Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "monolithicpower.wd12.myworkdayjobs.com|monolithicpower|MPS_Careers",
+  "company": "Monolithic Power Systems",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "beaconsoftware",
+  "company": "Beacon Software",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "alliedsolutions.wd501.myworkdayjobs.com|alliedsolutions|Allied_External",
+  "company": "Allied Solutions",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "clr.wd5.myworkdayjobs.com|clr|CLR_Careers",
+  "company": "Continental Resources",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "perchwell",
+  "company": "Perchwell",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "metoxinternationalinc",
+  "company": "MetOx International",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "cscgeneration-2",
+  "company": "CSC Generation",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "meijer.wd5.myworkdayjobs.com|meijer|Meijer",
+  "company": "Meijer",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "garnerhealth",
+  "company": "Garner Health",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "jci.wd5.myworkdayjobs.com|jci|JCI",
+  "company": "Johnson Controls",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "bti36021",
+  "company": "BTI360",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "rivet",
+  "company": "Rivet Industries",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "ambrook",
+  "company": "Ambrook",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "weave",
+  "company": "Weave",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "h3x-technologies",
+  "company": "H3X Technologies",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "sonyglobal.wd1.myworkdayjobs.com|sonyglobal|SonyGlobalCareers",
+  "company": "Sony",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "fanniemae.wd1.myworkdayjobs.com|fanniemae|FannieMaeCareers",
+  "company": "Fannie Mae",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "espace",
+  "company": "E-Space",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workable",
+  "token": "western-magnetics",
+  "company": "Western Magnetics",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workable",
+  "token": "fooji",
+  "company": "Fooji",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "n1",
+  "company": "N1",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "detroitlions",
+  "company": "Detroit Lions",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "amcor.wd5.myworkdayjobs.com|amcor|amcor_external_career_site",
+  "company": "Amcor",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "oneok.wd1.myworkdayjobs.com|oneok|ONEOK_Early_Careers",
+  "company": "ONEOK",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "transmarketgroup",
+  "company": "TransMarket Group",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "exa",
+  "company": "Exa Labs",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workable",
+  "token": "securityriskadvisors",
+  "company": "Securityriskadvisors",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "centerfield",
+  "company": "Centerfield",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "kbr.wd5.myworkdayjobs.com|kbr|KBR_Careers",
+  "company": "KBR",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "thales.wd3.myworkdayjobs.com|thales|careers",
+  "company": "Thales",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "diversified-automation",
+  "company": "Diversified Automation",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "idexx.wd1.myworkdayjobs.com|idexx|IDEXX",
+  "company": "IDEXX",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "yotta",
+  "company": "Yotta Labs",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "modal",
+  "company": "Modal",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "bcbsla.wd1.myworkdayjobs.com|bcbsla|Generation_Blue",
+  "company": "Louisiana Blue",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "thetradedesk",
+  "company": "The Trade Desk",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "junior",
+  "company": "Junior",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "figureai",
+  "company": "Figure",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "solopulseco",
+  "company": "SoloPulse",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "lever",
+  "token": "plus-2",
+  "company": "PlusAI",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "deepgram",
+  "company": "Deepgram",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "availity.wd1.myworkdayjobs.com|availity|availity_careers_us",
+  "company": "Availity",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "greenhouse",
+  "token": "toshibaglobalcommercesolutions",
+  "company": "Toshiba Global Commerce",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "replit",
+  "company": "Replit",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "coreandmain.wd1.myworkdayjobs.com|coreandmain|coreandmain",
+  "company": "Core & Main",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
+ },
+ {
+  "platform": "workday",
+  "token": "magna.wd3.myworkdayjobs.com|magna|Magna",
+  "company": "Magna International",
+  "segment": "unclassified",
+  "source": "internship-list-discovery",
+  "evidence": "internship-list link (1 proven links)",
+  "added_at": "2026-11-13"
  }
 ]
