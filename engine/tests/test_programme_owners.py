@@ -62,5 +62,53 @@ class OwnerTests(unittest.TestCase):
         self.assertEqual(owners_mod.build_owners(groups), {"gemfellowship.org/": "fellowship"})
 
 
+class SameCategoryAndCrossHostTests(unittest.TestCase):
+    def test_same_category_same_host_similar_name_hidden(self):
+        a = row("fellowship", "fellowship-thiel-fellowship", "https://thielfellowship.org/", "Thiel Fellowship")
+        a["deadline"] = "2027-01-01"
+        b = row("fellowship", "fellowship-thiel", "https://thielfellowship.org/apply", "The Thiel Fellowship Program")
+        self.assertEqual(core.dedupe_within_category([a, b], NOW), 1)
+        self.assertEqual(b["hidden_reason"], "duplicate_same_category")
+        self.assertFalse(b["is_live"])
+        self.assertFalse(ps.is_serving(b))
+        self.assertTrue(ps.is_serving(a))
+
+    def test_same_category_prefers_hand_listed_over_hub(self):
+        hub = row("grant", "grants-hub-x-aaa", "https://x.org/", "X Grant")
+        seed = row("grant", "grant-x", "https://x.org/", "X Grant")
+        core.dedupe_within_category([hub, seed], NOW)
+        self.assertEqual(hub["hidden_reason"], "duplicate_same_category")
+        self.assertFalse(seed.get("hidden_reason"))
+
+    def test_near_name_same_host_not_merged(self):
+        a = row("fellowship", "f-1", "https://research.google/phd-fellowship", "Google PhD Fellowship")
+        b = row("fellowship", "f-2", "https://research.google/research-fellowship", "Google Research Fellowship")
+        self.assertEqual(core.dedupe_within_category([a, b], NOW), 0)
+
+    def test_level_variants_on_shared_page_not_merged(self):
+        url = "https://scholarships.gov.in/All-Scholarships"
+        a = row("scholarship", "s-1", url, "AICTE Pragati Scholarship (Technical Degree)")
+        b = row("scholarship", "s-2", url, "AICTE Pragati Scholarship (Technical Diploma)")
+        self.assertEqual(core.dedupe_within_category([a, b], NOW), 0)
+
+    def test_sibling_hosts_group_across_categories(self):
+        a = row("fellowship", "f-mlh", "https://fellowship.mlh.io/", "MLH Fellowship")
+        b = row("grant", "g-mlh", "https://fellowship.mlh.com/", "MLH Fellowship")
+        self.assertEqual(len(owners_mod.find_groups([a, b])), 1)
+
+    def test_different_host_same_name_different_organiser_not_grouped(self):
+        a = row("fellowship", "f-gem", "https://gemfellowship.org/", "GEM Fellowship Program")
+        a["organizer"] = "GEM Consortium"
+        b = row("grant", "g-gem", "https://gem.coop/fellowship", "Gem Fellowship")
+        b["organizer"] = "gem.coop"
+        self.assertEqual(owners_mod.find_groups([a, b]), [])
+
+    def test_different_host_same_organiser_strong_name_grouped(self):
+        a = row("fellowship", "f-1", "https://a.example.org/x", "Aga Khan International Scholarship Programme")
+        b = row("scholarship", "s-1", "https://b.example.com/y", "Aga Khan International Scholarship")
+        a["organizer"] = b["organizer"] = "Aga Khan Foundation"
+        self.assertEqual(len(owners_mod.find_groups([a, b])), 1)
+
+
 if __name__ == "__main__":
     unittest.main()

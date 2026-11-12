@@ -1751,6 +1751,97 @@ def dedupe_across_categories(lake_rows: List[Dict], now: str) -> int:
     print("dedupe_across_categories: hidden={}".format(hidden), flush=True)
     return hidden
 
+_NAME_FILLER = re.compile(r"\b(?:the|programs?|programmes?)\b")
+_SECOND_LEVEL = {"co", "com", "org", "net", "ac", "edu", "gov", "nic"}
+
+
+def programme_similarity_name(row: Dict) -> str:
+    """Name for fuzzy duplicate matching: normalised, without 'the' / 'program(me)'."""
+    return re.sub(r"\s+", " ", _NAME_FILLER.sub(" ", _row_name_key(row))).strip()
+
+
+def registrable_host(url_key: str) -> str:
+    labels = url_key.split("/", 1)[0].split(":")[0].split(".")
+    return ".".join(labels[-3:] if len(labels) >= 3 and labels[-2] in _SECOND_LEVEL else labels[-2:])
+
+
+def host_label(url_key: str) -> str:
+    """Second-level label of the registrable host (mlh.io and mlh.com both give 'mlh')."""
+    return registrable_host(url_key).split(".")[0]
+
+
+_VARIANT_WORDS = {"diploma", "degree", "pre", "post", "ug", "pg", "ugs", "pgs", "matric", "undergraduate",
+                  "postgraduate", "graduate", "masters", "master", "phd", "doctoral", "school", "schools", "college"}
+
+
+def variant_conflict(a: str, b: str) -> bool:
+    """True when two near-identical names differ by a level/variant word (Diploma vs Degree, Pre vs Post Matric)."""
+    def words(name):
+        tokens = set(name.split())
+        # "NTS-UG" normalises to "ntsug": still a level suffix.
+        return tokens | {t[-2:] for t in tokens if len(t) > 4 and t[-2:] in ("ug", "pg")}
+    return bool((words(a) ^ words(b)) & _VARIANT_WORDS)
+
+
+def _evidence_count(row: Dict) -> int:
+    evidence = row.get("official_evidence") or {}
+    return sum(1 for v in evidence.values() if isinstance(v, dict) and v.get("quote")) if isinstance(evidence, dict) else 0
+
+
+def dedupe_within_category(lake_rows: List[Dict], now: str) -> int:
+    """Hide the same programme listed twice in one category: same registrable host and name
+    similarity >= 0.85, or the same non-bare official URL with loosely agreeing names."""
+    import difflib
+    by_cat: Dict[str, List[Dict]] = {}
+    for row in lake_rows:
+        if (row.get("record_type") == "programme" and row.get("category") in PROGRAMME_CATEGORIES
+                and not row.get("hidden_reason")):
+            by_cat.setdefault(row["category"], []).append(row)
+    hidden = 0
+    for rows in by_cat.values():
+        parent = list(range(len(rows)))
+
+        def find(i):
+            while parent[i] != i:
+                parent[i] = parent[parent[i]]
+                i = parent[i]
+            return i
+        keys = [_normalise_programme_url(r.get("official_url")) for r in rows]
+        names = [programme_similarity_name(r) for r in rows]
+        for i in range(len(rows)):
+            for j in range(i + 1, len(rows)):
+                if not (keys[i] and keys[j] and names[i] and names[j]):
+                    continue
+                ratio = difflib.SequenceMatcher(None, names[i], names[j]).ratio()
+                if ratio < 0.85 or variant_conflict(names[i], names[j]):
+                    continue
+                # Same site alone is not enough (one site, several schemes): the paths must agree
+                # too (equal, one a bare host, or one a prefix of the other). A shared listing
+                # page (same URL) only merges rows whose names also agree.
+                path_i, path_j = keys[i].split("/", 1)[1].rstrip("/"), keys[j].split("/", 1)[1].rstrip("/")
+                paths_agree = not path_i or not path_j or path_i.startswith(path_j) or path_j.startswith(path_i)
+                if registrable_host(keys[i]) == registrable_host(keys[j]) and paths_agree:
+                    parent[find(i)] = find(j)
+        groups: Dict[int, List[Dict]] = {}
+        for i, row in enumerate(rows):
+            groups.setdefault(find(i), []).append(row)
+        for group in groups.values():
+            if len(group) < 2:
+                continue
+            winner = min(group, key=lambda r: (
+                int(is_hub_discovered(r)), -int(bool(r.get("manually_verified"))),
+                -int(bool(r.get("deadline"))), -_evidence_count(r), str(r.get("programme_id") or "")))
+            for row in group:
+                if row is winner:
+                    continue
+                row["is_live"], row["needs_confirmation"] = False, False
+                row.setdefault("went_dead_at", now)
+                row["hidden_reason"] = "duplicate_same_category"
+                row["duplicate_of"] = winner.get("programme_id")
+                hidden += 1
+    print("dedupe_within_category: hidden={}".format(hidden), flush=True)
+    return hidden
+
 
 # Owner rule: one owning category per programme, so per-category shards never serve the same programme twice.
 # Fallback order when the name decides nothing: money-for-study (scholarship) before
@@ -2345,6 +2436,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     stale_today = (checked_at or datetime.now(timezone.utc)).date()
     retire_stale_needs_confirmation(config.category, merged, stale_today, verification_now)
     dedupe_across_categories(merged, verification_now)
+    dedupe_within_category(merged, verification_now)
     hide_non_owned(merged, config.category, load_owners(), verification_now)
     _atomic_json(lake_path, merged)
     return {"records": records, "observations": observations, "merged_count": len(merged),

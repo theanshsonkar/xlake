@@ -23,12 +23,8 @@ from pipeline import publish_supabase as ps  # noqa: E402
 
 NAME_SIMILARITY = 0.85
 URL_NAME_SIMILARITY = 0.6
-SECOND_LEVEL = {"co", "com", "org", "net", "ac", "edu", "gov", "nic"}
-
-
-def registrable_host(url_key: str) -> str:
-    labels = url_key.split("/", 1)[0].split(":")[0].split(".")
-    return ".".join(labels[-3:] if len(labels) >= 3 and labels[-2] in SECOND_LEVEL else labels[-2:])
+CROSS_HOST_NAME_SIMILARITY = 0.9
+registrable_host = core.registrable_host
 
 
 def load_serving(shards_dir: str) -> list:
@@ -72,6 +68,20 @@ def find_groups(rows: list) -> list:
             if rows[i].get("category") != rows[j].get("category") and names[i] and names[j] and \
                     difflib.SequenceMatcher(None, names[i], names[j]).ratio() >= NAME_SIMILARITY:
                 union(i, j)
+    # Different site: sibling hosts (same second-level label) or same organiser, with a strong name match.
+    orgs = [core._normalised_programme_name(r.get("organizer")) for r in rows]
+    sims = [core.programme_similarity_name(r) for r in rows]
+    for i, j in combinations(range(len(rows)), 2):
+        if rows[i].get("category") == rows[j].get("category") or find(i) == find(j):
+            continue
+        if not (keys[i] and keys[j] and sims[i] and sims[j]) or \
+                difflib.SequenceMatcher(None, sims[i], sims[j]).ratio() < CROSS_HOST_NAME_SIMILARITY or \
+                core.variant_conflict(sims[i], sims[j]):
+            continue
+        siblings = core.host_label(keys[i]) == core.host_label(keys[j])
+        same_org = orgs[i] and orgs[i] == orgs[j] and orgs[i] != "not stated" and "." not in orgs[i]
+        if siblings or same_org:
+            union(i, j)
     groups = defaultdict(list)
     for i in range(len(rows)):
         groups[find(i)].append(rows[i])
