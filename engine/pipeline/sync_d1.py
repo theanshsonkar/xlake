@@ -28,6 +28,9 @@ from pipeline import export_d1 as ex  # noqa: E402
 API = "https://api.cloudflare.com/client/v4"
 MULTI_SOURCE = ("jobs", "internships")
 TOUCH_AFTER = timedelta(hours=12)  # owner: freshness reaches D1 when last_checked moved >12h
+# Jobs are re-seen every day, so a 12h refresh would cost ~1 write per job per day;
+# the owner approved 72h for the jobs/internships DBs to stay inside 100k writes/day.
+TOUCH_AFTER_JOBS = timedelta(hours=72)
 NULL_SRC_MAX_AGE = timedelta(days=7)
 COST = {"insert": 9, "update": 4, "touch": 1, "delete": 9, "claim": 4}
 FTS_SRC = ("title", "org", "location", "skills")
@@ -224,7 +227,7 @@ def _plan(db: str, shard: str, recs: List[dict], existing: Dict[str, dict],
             upds.append(("update", rec, {"h": h, "fts": fts}))
         else:
             new, old = _parse(rec.get("last_checked")), _parse(row.get("last_checked"))
-            if (new and old and new - old >= TOUCH_AFTER) or (new and not old):
+            if (new and old and new - old >= (TOUCH_AFTER_JOBS if db in MULTI_SOURCE else TOUCH_AFTER)) or (new and not old):
                 touches.append(("touch", rec, {}))
     ins.sort(key=lambda t: t[0])
     owned = sum(1 for r in existing.values()

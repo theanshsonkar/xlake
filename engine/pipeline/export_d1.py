@@ -94,7 +94,8 @@ def route(rows: Iterable[dict], today=None) -> Dict[str, List[Dict[str, Any]]]:
         cycles.finalize(stale, today)
     best: Dict[str, Dict[str, Any]] = {}
     for r in rows:
-        if not ps.is_serving(r):
+        # Same decision as the Supabase publish: serving-eligible AND passes the quality gate.
+        if not ps.is_serving(r) or ps.quality_reason(r):
             continue
         rec = to_record(r)
         if rec is None:
