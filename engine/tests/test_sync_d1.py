@@ -178,7 +178,7 @@ class SyncD1Test(unittest.TestCase):
     def test_api_error_exits_zero(self):
         out = io.StringIO()
         self.c.fail = "daily limit"
-        env = {"CLOUDFLARE_API_TOKEN": "x", "CLOUDFLARE_ACCOUNT_ID": "a"}
+        env = {"CLOUDFLARE_API_TOKEN": "t" * 40, "CLOUDFLARE_ACCOUNT_ID": "a"}
         with mock.patch.dict(os.environ, env), \
                 mock.patch.object(sync_d1, "Client", lambda *a: self.c), \
                 mock.patch.object(sync_d1.shards, "load_shard", lambda n: [job(1)]), \
@@ -190,6 +190,17 @@ class SyncD1Test(unittest.TestCase):
         s = self.run_sync([job(1)], dry_run=True)
         self.assertEqual(s.c["inserted"], 1)
         self.assertEqual(self.jobs(), [(0,)])
+
+
+
+class CleanTokenTest(unittest.TestCase):
+    def test_extra_lines_and_spaces(self):
+        from pipeline.sync_d1 import clean_token
+        tok = "a" * 40
+        self.assertEqual(clean_token(tok + "\n"), tok)
+        self.assertEqual(clean_token("  %s  \ncurl -X GET https://x" % tok), tok)
+        self.assertEqual(clean_token("Bearer\n" + tok), tok)
+        self.assertEqual(clean_token("short\n"), "")
 
 
 if __name__ == "__main__":

@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import os
 import sys
 import time
@@ -311,13 +312,23 @@ def sync(shard: str, client, dry_run: bool = False, max_writes: int = 10000,
     return st
 
 
+def clean_token(raw: str) -> str:
+    """A pasted secret can carry stray whitespace or extra lines (e.g. the
+    test command shown next to the token). Use the first line that looks
+    like a Cloudflare API token; never print it."""
+    for line in (raw or "").split():
+        if re.fullmatch(r"[A-Za-z0-9_-]{30,}", line):
+            return line
+    return ""
+
+
 def main(argv: Optional[List[str]] = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--shard", required=True)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--max-writes", type=int, default=10000)
     a = ap.parse_args(argv)
-    token = os.environ.get("CLOUDFLARE_API_TOKEN", "")
+    token = clean_token(os.environ.get("CLOUDFLARE_API_TOKEN", ""))
     if not token and not a.dry_run:
         print("d1 sync skipped: no CLOUDFLARE_API_TOKEN")
         return 0
