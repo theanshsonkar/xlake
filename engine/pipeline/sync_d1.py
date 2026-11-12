@@ -349,7 +349,15 @@ def main(argv: Optional[List[str]] = None) -> int:
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--max-writes", type=int, default=10000)
     a = ap.parse_args(argv)
-    token = clean_token(os.environ.get("CLOUDFLARE_API_TOKEN", ""))
+    raw = os.environ.get("CLOUDFLARE_API_TOKEN", "")
+    token = clean_token(raw)
+    if raw and not token:
+        # Shape only, never the value: helps fix a badly pasted secret.
+        print("::warning::CLOUDFLARE_API_TOKEN is set but not usable (lines=%d, line lengths=%s; "
+              "expected one line of ~40 letters/digits)" % (len(raw.splitlines()), [len(x) for x in raw.splitlines()]))
+    if not token and a.dry_run:
+        print("d1 sync %s: no usable token - cannot read D1, so no plan (nothing written)" % a.shard)
+        return 0
     if not token and not a.dry_run:
         print("d1 sync skipped: no CLOUDFLARE_API_TOKEN")
         return 0
