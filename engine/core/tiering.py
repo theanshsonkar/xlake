@@ -3,17 +3,16 @@
 REGISTRY-PLAN.md section 3.1 defines four tiers by what a board has actually
 PRODUCED, not by platform reputation:
 
-    hot   sweep every  6h   produced a qualifying early-career role in the
-                             last 30 days
-    warm  sweep daily       produced one at some point, just not recently
+    hot   sweep every  6h   a sweep saw a qualifying early-career role (any
+                             country) in the last 30 days (last_qualifying_at)
+    warm  sweep every 3 days produced one at some point, just not recently
     cold  sweep weekly      verified/live, never produced one
     dead  never             token is wrong (404/422) — resolve.py's job, not
                              this file's; a dead token should never reach here
 
-"Qualifying" means it passed BOTH filters.classify() (career-stage-eligible,
-technical) and quality.bucket_india() (India-located or explicitly
-India-eligible-remote) — plain job count is not the measure. A board with 500
-US senior roles and 0 India early-career roles is COLD, not hot, no matter how
+"Qualifying" means it passed filters.classify() (career-stage-eligible,
+technical), anywhere in the world — plain job count is not the measure. A board
+with 500 senior roles and 0 early-career roles is COLD, not hot, no matter how
 big it looks.
 
 THE NUMBER THAT MUST NOT BE ASSUMED: historical measurements in
@@ -45,7 +44,7 @@ RECENT_WINDOW_DAYS = 30
 
 TIER_SWEEP_HOURS = {
     "hot": 6,
-    "warm": 24,
+    "warm": 72,  # produced before, not in 30 days: every 3 days is enough
     "cold": 24 * 7,
     "dead": None,  # never
 }
@@ -56,7 +55,7 @@ class BoardHistory:
     """What one (platform, token) board has produced across all sweeps so far.
 
     total_qualifying_ever: count of rows that ever passed both filters.classify
-        and quality.bucket_india on this board, across every sweep.
+        and the quality gate on this board, across every sweep.
     qualifying_last_30d: same, but only rows first_seen within the last 30
         days — this is what separates hot from warm.
     sweeps_run: how many times this board has actually been fetched. Needed so
@@ -71,6 +70,9 @@ class BoardHistory:
     qualifying_last_30d: int = 0
     sweeps_run: int = 0
     last_swept_at: Optional[str] = None
+    # When a sweep last saw at least one qualifying role on this board. This is
+    # what "hot" is measured from (a date decays on its own; a counter did not).
+    last_qualifying_at: Optional[str] = None
 
 
 def per_board_yield(history: BoardHistory) -> Optional[float]:
@@ -81,7 +83,32 @@ def per_board_yield(history: BoardHistory) -> Optional[float]:
     return history.total_qualifying_ever / history.sweeps_run
 
 
-def tier_for(history: BoardHistory) -> str:
+def _ts(value: Optional[str]) -> Optional[datetime]:
+    try:
+        d = datetime.fromisoformat(value) if value else None
+    except (TypeError, ValueError):
+        return None
+    if d is not None and d.tzinfo is None:
+        d = d.replace(tzinfo=timezone.utc)
+    return d
+
+
+def _recently_qualifying(history: BoardHistory, now: Optional[datetime]) -> bool:
+    """A qualifying role seen within RECENT_WINDOW_DAYS. Old state files have
+    no ``last_qualifying_at``; for them a positive legacy counter counts from
+    ``last_swept_at`` (or as recent when no date is known at all)."""
+    when = _ts(history.last_qualifying_at)
+    if when is None and history.qualifying_last_30d > 0:
+        when = _ts(history.last_swept_at)
+        if when is None:
+            return True
+    if when is None:
+        return False
+    now = now or datetime.now(timezone.utc)
+    return now - when <= timedelta(days=RECENT_WINDOW_DAYS)
+
+
+def tier_for(history: BoardHistory, now: Optional[datetime] = None) -> str:
     """The tier a single board earns from its own history.
 
     Never 'hot' without recent production. Never 'dead' from here — dead is a
@@ -95,7 +122,7 @@ def tier_for(history: BoardHistory) -> str:
         # until it has a real number. This is the deliberate fallback: an
         # unmeasured board must not default to 'hot'.
         return "cold"
-    if history.qualifying_last_30d > 0:
+    if _recently_qualifying(history, now):
         return "hot"
     if history.total_qualifying_ever > 0:
         return "warm"
@@ -104,14 +131,19 @@ def tier_for(history: BoardHistory) -> str:
 
 def sweep_due(history: BoardHistory, now: Optional[datetime] = None) -> bool:
     """Whether this board's tier says it should be swept right now."""
-    tier = tier_for(history)
+    tier = tier_for(history, now)
     hours = TIER_SWEEP_HOURS[tier]
     if hours is None:
         return False
     if not history.last_swept_at:
         return True
     now = now or datetime.now(timezone.utc)
-    last = datetime.fromisoformat(history.last_swept_at)
+    try:
+        last = datetime.fromisoformat(history.last_swept_at)
+        if last.tzinfo is None:
+            last = last.replace(tzinfo=timezone.utc)
+    except (TypeError, ValueError):
+        return True  # unknown last-swept time: never skip
     return now - last >= timedelta(hours=hours)
 
 
@@ -128,6 +160,7 @@ def load_tier_state(path: str = TIER_STATE) -> Dict[str, BoardHistory]:
             qualifying_last_30d=v.get("qualifying_last_30d", 0),
             sweeps_run=v.get("sweeps_run", 0),
             last_swept_at=v.get("last_swept_at"),
+            last_qualifying_at=v.get("last_qualifying_at"),
         )
     return out
 
@@ -140,6 +173,7 @@ def save_tier_state(state: Dict[str, BoardHistory], path: str = TIER_STATE) -> N
             "qualifying_last_30d": h.qualifying_last_30d,
             "sweeps_run": h.sweeps_run,
             "last_swept_at": h.last_swept_at,
+            "last_qualifying_at": h.last_qualifying_at,
         }
         for key, h in state.items()
     }
@@ -154,15 +188,17 @@ def record_sweep(state: Dict[str, BoardHistory], platform: str, token: str,
 
     Call this from sweep.py (Task 10, not yet written) once per board per
     sweep, with the count of rows on that board that passed BOTH
-    filters.classify() and quality.bucket_india() this run.
+    filters.classify() this run (any country).
     """
     swept_at = swept_at or datetime.now(timezone.utc)
     key = "{}|{}".format(platform, token)
     h = state.get(key) or BoardHistory(platform=platform, token=token)
     h.total_qualifying_ever += qualifying_count
-    h.qualifying_last_30d += qualifying_count  # decay handled by report()/reset
+    h.qualifying_last_30d = qualifying_count  # latest sweep's count (no longer cumulative)
     h.sweeps_run += 1
     h.last_swept_at = swept_at.isoformat(timespec="seconds")
+    if qualifying_count > 0:
+        h.last_qualifying_at = h.last_swept_at
     state[key] = h
 
 

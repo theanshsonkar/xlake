@@ -199,6 +199,42 @@ class SweepIntegrationTest(unittest.TestCase):
         self.assertTrue(live["A9"])
         self.assertTrue(live["B1"])    # board fetch failed: never retired
 
+    def _tier_state(self, token, hours_ago):
+        from datetime import datetime, timedelta, timezone
+        ts = (datetime.now(timezone.utc) - timedelta(hours=hours_ago)).isoformat(timespec="seconds")
+        return {"workable|" + token: sweep.tiering.BoardHistory(
+            platform="workable", token=token, total_qualifying_ever=1,
+            qualifying_last_30d=0, sweeps_run=3, last_swept_at=ts)}  # warm: 72h
+
+    def _live(self):
+        return {r["job_id"]: r["is_live"] for r in json.load(open(self.paths["OUT_JOBS"]))}
+
+    def _two_sweeps(self, state, env=None):
+        desc = "x" * 200
+        self.run_sweep({"good": self.board("good", [self.posting("good", "A1", "Software Intern", desc)]),
+                        "bad": self.board("bad", [self.posting("bad", "B1", "Data Intern", desc)])})
+        second = {"good": self.board("good", []), "bad": self.board("bad", [])}
+        with mock.patch.object(sweep.tiering, "load_tier_state", return_value=state), \
+                mock.patch.dict(os.environ, env or {}):
+            self.run_sweep(second)
+
+    def test_not_due_board_skipped_and_rows_not_retired(self):
+        # good swept 1h ago (not due); bad has no record (due).
+        self._two_sweeps(self._tier_state("good", 1))
+        live = self._live()
+        self.assertTrue(live["A1"])    # skipped: neither attempted nor read
+        self.assertFalse(live["B1"])   # swept clean and absent: retired
+
+    def test_board_without_tier_state_is_swept(self):
+        self._two_sweeps({})
+        live = self._live()
+        self.assertFalse(live["A1"])
+        self.assertFalse(live["B1"])
+
+    def test_sweep_all_env_disables_skipping(self):
+        self._two_sweeps(self._tier_state("good", 1), {"XLAKE_SWEEP_ALL": "1"})
+        self.assertFalse(self._live()["A1"])
+
 
 if __name__ == "__main__":
     unittest.main()

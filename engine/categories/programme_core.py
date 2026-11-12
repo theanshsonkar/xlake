@@ -18,7 +18,7 @@ from html.parser import HTMLParser
 from typing import Callable, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urljoin, urlparse
 
-from core import lifecycle, pagetext, robots
+from core import lifecycle, pagetext, recheck, robots
 from categories import programme_enrich as enrich
 from categories.stem import is_junk_title, is_stem_programme
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
@@ -2009,6 +2009,39 @@ def _merge_routed_research_seeds(seeds: Iterable[Dict]) -> None:
     )
 
 
+def _due_seeds(config: ProgrammeConfig, lake_path: str) -> List[Dict]:
+    """Seeds worth fetching this run (see core.recheck). Skipped seeds stay in
+    config.source_registry, so retire_orphans still sees them as current."""
+    seeds = list(config.source_registry)
+    if config.record_type != "programme" or os.environ.get("XLAKE_RECHECK_ALL", "").strip() == "1":
+        return seeds
+    rows = [r for r in _load_json(lake_path, []) if isinstance(r, dict)
+            and r.get("record_type") == "programme" and r.get("category") == config.category]
+    by_id = {r.get("programme_id"): r for r in rows if r.get("programme_id")}
+    by_url = {}
+    for r in rows:
+        key = _normalise_programme_url(r.get("official_url"))
+        if key:
+            by_url.setdefault(key, r)
+    now = datetime.now(timezone.utc)
+    due, counts = [], Counter()
+    for seed in seeds:
+        row = by_id.get(seed.get("programme_id")) or by_url.get(_normalise_programme_url(seed.get("official_url")))
+        is_due, reason = recheck.programme_due(row, now)
+        if is_due:
+            due.append(seed)
+        counts[(reason, is_due)] += 1
+    fetched = len(due)
+    print("recheck {}: fetched={} skipped={} (open_near={} open_far={} upcoming={} closed={} new={})".format(
+        config.category, fetched, len(seeds) - fetched,
+        counts[("open_near", False)] + counts[("open_near", True)],
+        counts[("open_far", False)] + counts[("open_far", True)],
+        counts[("upcoming", False)] + counts[("upcoming", True)],
+        counts[("closed", False)] + counts[("closed", True)],
+        counts[("new", True)]), flush=True)
+    return due
+
+
 def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetch, checked_at: Optional[datetime] = None, lake_path: str = OPPORTUNITIES_PATH, observations_path: Optional[str] = None) -> Dict:
     records, observations = [], []
     routed_research = []
@@ -2122,7 +2155,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
         return out
 
     workers = _programme_workers()
-    seeds = list(config.source_registry)
+    seeds = _due_seeds(config, lake_path)
     if workers > 1 and len(seeds) > 1:
         with ThreadPoolExecutor(max_workers=workers) as pool:
             results = pool.map(process, seeds)  # ordered: output stays deterministic
@@ -2143,7 +2176,8 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
             exception_counts[out["exception_name"]] += 1
         if record:
             records.append(record)
-        observations.append(observation)
+        if observation is not None:
+            observations.append(observation)
         if out["fetch_succeeded"] and outcome.startswith("ok"):
             successes += 1
         if not outcome.startswith("ok"):

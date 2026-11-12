@@ -209,8 +209,8 @@ jobs:
           pattern: ops-*
           path: ${{ runner.temp }}/ops
       # Each leg started from the same committed files and appended its own run
-      # line / board history; merge: tier_state = union by board key (leg
-      # values win), runs.jsonl = committed lines + one new line per leg.
+      # line / board history; merge: tier_state = per board, newest last_swept_at
+      # wins), runs.jsonl = committed lines + one new line per leg.
       - name: Merge operational files
         run: |
           python3 - <<'PY'
@@ -223,7 +223,12 @@ jobs:
           for d in sorted(glob.glob(ops + "/*")):
               t = os.path.join(d, "tier_state.json")
               if os.path.exists(t):
-                  tier.update(json.load(open(t)))
+                  # Every leg writes the WHOLE state but only updates its own
+                  # boards; keep the newest record per board, so a later leg's
+                  # stale copy never overwrites an earlier leg's fresh one.
+                  for k, v in json.load(open(t)).items():
+                      if (v.get("last_swept_at") or "") >= (tier.get(k, {}).get("last_swept_at") or ""):
+                          tier[k] = v
               r = os.path.join(d, "runs.jsonl")
               if os.path.exists(r):
                   lines = [l for l in open(r).read().splitlines() if l.strip()]

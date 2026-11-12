@@ -49,6 +49,19 @@ class TestTierFor(unittest.TestCase):
                           total_qualifying_ever=3, qualifying_last_30d=1)
         self.assertEqual(tier_for(h), "hot")
 
+    def test_recent_non_india_production_is_hot(self):
+        # Hot is "qualifying early-career role anywhere", not India-only.
+        h = BoardHistory(platform="greenhouse", token="us-co", sweeps_run=3,
+                          total_qualifying_ever=4, qualifying_last_30d=4)
+        self.assertEqual(tier_for(h), "hot")
+
+    def test_unknown_last_swept_is_due(self):
+        for bad in (None, "", "not-a-date"):
+            h = BoardHistory(platform="keka", token="x", sweeps_run=5,
+                              total_qualifying_ever=1, qualifying_last_30d=1,
+                              last_swept_at=bad)
+            self.assertTrue(sweep_due(h))
+
     def test_past_but_not_recent_production_is_warm(self):
         h = BoardHistory(platform="greenhouse", token="druva", sweeps_run=10,
                           total_qualifying_ever=2, qualifying_last_30d=0)
@@ -117,6 +130,28 @@ class TestRecordSweep(unittest.TestCase):
         h = state["keka|jupiter"]
         self.assertEqual(h.sweeps_run, 2)
         self.assertEqual(h.total_qualifying_ever, 4)
+
+
+class TestHotDecays(unittest.TestCase):
+    """'hot' must expire on its own: it is measured from a date, not a counter."""
+
+    def test_old_qualifying_date_is_warm(self):
+        now = datetime(2026, 11, 12, tzinfo=timezone.utc)
+        h = BoardHistory(platform="p", token="t", total_qualifying_ever=9, sweeps_run=9,
+                         last_swept_at=now.isoformat(),
+                         last_qualifying_at=(now - timedelta(days=40)).isoformat())
+        self.assertEqual(tier_for(h, now), "warm")
+
+    def test_record_sweep_sets_date_and_zero_sweep_keeps_it(self):
+        state = {}
+        t1 = datetime(2026, 11, 1, tzinfo=timezone.utc)
+        record_sweep(state, "p", "t", 2, swept_at=t1)
+        record_sweep(state, "p", "t", 0, swept_at=t1 + timedelta(days=1))
+        h = state["p|t"]
+        self.assertEqual(h.last_qualifying_at, t1.isoformat(timespec="seconds"))
+        self.assertEqual(h.qualifying_last_30d, 0)
+        self.assertEqual(tier_for(h, t1 + timedelta(days=2)), "hot")
+        self.assertEqual(tier_for(h, t1 + timedelta(days=31)), "warm")
 
 
 if __name__ == "__main__":

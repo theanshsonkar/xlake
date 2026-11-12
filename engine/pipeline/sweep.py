@@ -83,6 +83,22 @@ def rotate_boards(entries: List[Dict], cap: int, day: int) -> List[Dict]:
     return (ordered + ordered)[start:start + cap]
 
 
+def tier_filter(entries: List[Dict], state: Dict, now: datetime = None):
+    """Drop boards whose tier says they are not due. Boards with no tier record
+    are always due. XLAKE_SWEEP_ALL=1 disables skipping. Returns
+    (due_entries, skipped_entries)."""
+    if os.environ.get("XLAKE_SWEEP_ALL") == "1":
+        return list(entries), []
+    due, skipped = [], []
+    for e in entries:
+        h = state.get("{}|{}".format(e.get("platform"), e.get("token")))
+        if h is None or tiering.sweep_due(h, now):
+            due.append(e)
+        else:
+            skipped.append(e)
+    return due, skipped
+
+
 def load_registry(segment: str = None) -> List[Dict]:
     if not os.path.exists(REGISTRY):
         return []
@@ -343,6 +359,13 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
     hidden_rows: List[Dict] = []
     boards_read: Set[Tuple[str, str]] = set()
     tier_state = tiering.load_tier_state()
+    entries, skipped_entries = tier_filter(entries, tier_state)
+    skipped_tiers = collections.Counter(
+        tiering.tier_for(tier_state["{}|{}".format(e.get("platform"), e.get("token"))])
+        for e in skipped_entries)
+    print("tiering: due={} skipped={} (hot={} warm={} cold={})".format(
+        len(entries), len(skipped_entries), skipped_tiers["hot"],
+        skipped_tiers["warm"], skipped_tiers["cold"]))
 
     stats: Dict[str, Dict] = {"_total": {
         "boards": 0, "ok": 0, "empty": 0, "failed": 0, "truncated": 0,
@@ -537,6 +560,7 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
         "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "seconds": round(time.time() - started, 1),
         "entries_swept": len(entries),
+        "tier_skipped": len(skipped_entries),
         "boards_read_ok": len(boards_read),
         "totals": stats["_total"],
         "failure_modes": dict(fails.most_common(10)),
