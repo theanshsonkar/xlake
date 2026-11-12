@@ -506,6 +506,13 @@ def sweep(entries: List[Dict], workers: int = WORKERS) -> Dict:
                     row_hidden_reason, gates_found)
                 s["kept"] += 1
                 kept_this_board += 1
+                if not rm.get("level"):
+                    _lv = filters.infer_level(
+                        p.title, p.description, resolution.experience_min,
+                        resolution.experience_max, resolution.experience_conflict,
+                        rm.get("employment_type") or ("internship" if v.is_internship else None))
+                    if _lv:
+                        rm["level"] = _lv
                 rows.append({
                     "platform": p.platform,
                     "token": p.token,

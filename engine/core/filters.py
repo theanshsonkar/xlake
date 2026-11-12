@@ -1330,3 +1330,84 @@ if __name__ == "__main__":
     print("\n{} / {} passed".format(len(gate_cases) - gfails, len(gate_cases)))
 
     raise SystemExit(1 if (fails or sfails or dfails or rfails or efails or gfails) else 0)
+
+
+# --------------------------------------------------------------------------- #
+# Career level inference (fills only a missing ``level``; never changes serving)
+# --------------------------------------------------------------------------- #
+_LV_SENIOR = re.compile(
+    r"\b(senior|sr\.?|principal|lead(?!\s+gen\w*)|head\s+of|director|vp|"
+    r"vice\s+president|chief|architect|manager|mgr|"
+    r"staff\s+(?:[a-z0-9./&+-]+\s+){0,3}?(?:engineer|scientist|developer|architect|"
+    r"researcher|analyst|designer|manager)|"
+    r"(?:sde|swe|engineer|developer|analyst)\s*[- ]?\s*(?:ii|iii|iv|2|3|4)|"
+    r"(?:5|[6-9]|\d{2,})\s*\+\s*years?)\b|"
+    r"\b(?:leiter|leitung|gerente|directeur|responsable)\b",
+    re.I,
+)
+_LV_SOFT_MANAGER = re.compile(
+    r"\b(?:assistant|associate|deputy|trainee|junior|jr\.?)\s+(?:\w+\s+)?manager\b",
+    re.I,
+)
+_LV_INTERN = re.compile(
+    r"\b(interns?|internships?|co-?op|working\s+student|werkstudent\w*|praktikum|"
+    r"praktikant\w*|stagiaire|pasant\w*|estagi\w+|"
+    r"インターン)\b", re.I)
+_LV_JUNIOR = re.compile(r"\b(junior|jr\.?|j[uú]nior)\b", re.I)
+_LV_ENTRY = re.compile(
+    r"\b(entry[\s-]?level|graduates?|new\s+grad\w*|fresher\w*|trainees?|campus|"
+    r"early\s+careers?|recent\s+graduates?|absolvent\w*|apprentice(?:ship)?s?|alternance|"
+    r"associate\s+(?:software|data|systems?|backend|frontend|full[\s-]?stack|"
+    r"engineer\w*|developer|analyst|scientist|consultant|qa|test\w*|product\s+manager)|"
+    r"graduate\s+(?:research|teaching)\s+assistant)\b", re.I)
+_LV_ENTRY_EXCL = re.compile(r"\b(?:graduate\s+(?:school|degree)\s+\w+|postgraduate)\b", re.I)
+_LV_DESC_ENTRY = re.compile(
+    r"\b(entry[\s-]?level|new\s+grads?|recent\s+graduates?|freshers?|"
+    r"early[\s-]career|no\s+(?:prior\s+)?experience\s+(?:is\s+)?(?:required|needed|necessary))\b",
+    re.I)
+
+
+def infer_level(title: str, description: Optional[str] = None,
+                experience_min: Optional[float] = None,
+                experience_max: Optional[float] = None,
+                experience_conflict: bool = False,
+                employment_type: Optional[str] = None,
+                current: Optional[str] = None) -> Optional[str]:
+    """Return intern | entry | junior | senior, or None when unsure.
+
+    A level that already exists is returned untouched. Explicit experience
+    years beat title cues; a conflict between them (or a conflicting years
+    signal) yields None.
+    """
+    if current:
+        return current
+    t = title or ""
+    if experience_conflict:
+        return None
+    # Title cues
+    t_level: Optional[str] = None
+    if employment_type == "internship" or _LV_INTERN.search(t):
+        t_level = "intern"
+    elif _LV_JUNIOR.search(t):
+        t_level = "junior"
+    elif _LV_ENTRY.search(t) and not _LV_ENTRY_EXCL.search(t):
+        t_level = "entry"
+    elif _LV_SENIOR.search(MEMBER_TECHNICAL_STAFF.sub(" ", t)) and \
+            not _LV_SOFT_MANAGER.search(t):
+        t_level = "senior"
+    # Experience evidence
+    y_level: Optional[str] = None
+    if experience_min is not None:
+        if experience_min >= 3:
+            y_level = "senior"
+        elif experience_min <= 1 and experience_max is not None and experience_max <= 2:
+            y_level = "entry"
+    if y_level and t_level and (y_level == "senior") != (t_level == "senior"):
+        return None
+    if t_level:
+        return t_level
+    if y_level:
+        return y_level
+    if description and _LV_DESC_ENTRY.search(description[:3000]):
+        return "entry"
+    return None
