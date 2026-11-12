@@ -1747,6 +1747,51 @@ def dedupe_across_categories(lake_rows: List[Dict], now: str) -> int:
     return hidden
 
 
+# Owner rule: one owning category per programme, so per-category shards never serve the same programme twice.
+OWNER_CATEGORY_PRIORITY = ("fellowship", "scholarship", "grant", "research", "startup-founder",
+                           "community", "open-source-programmes")
+OWNERS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "operations", "programme_owners.json")
+
+
+def programme_owner_key(row: Dict) -> str:
+    return _normalise_programme_url(row.get("official_url"))
+
+
+def is_hub_discovered(row: Dict) -> bool:
+    return "-hub-" in str(row.get("programme_id") or "")
+
+
+def choose_owner(candidates: Iterable[Dict]) -> str:
+    """Owning category among rows of one programme: hand-listed beats hub-discovered, then category priority."""
+    def rank(row):
+        category = row.get("category")
+        position = OWNER_CATEGORY_PRIORITY.index(category) if category in OWNER_CATEGORY_PRIORITY else len(OWNER_CATEGORY_PRIORITY)
+        return (int(is_hub_discovered(row)), position)
+    return min(candidates, key=rank).get("category")
+
+
+def load_owners(path: str = OWNERS_PATH) -> Dict[str, str]:
+    data = _load_json(path, {})
+    return data if isinstance(data, dict) else {}
+
+
+def hide_non_owned(rows: List[Dict], category: str, owners: Dict[str, str], now: str) -> int:
+    """Hide rows whose listed owner is another category. Unlisted URLs stay with this category."""
+    hidden = 0
+    for row in rows:
+        if row.get("record_type") != "programme" or row.get("category") != category or row.get("hidden_reason"):
+            continue
+        owner = owners.get(programme_owner_key(row))
+        if owner and owner != category:
+            row["is_live"], row["needs_confirmation"] = False, False
+            row.setdefault("went_dead_at", now)
+            row["hidden_reason"] = "duplicate_other_category"
+            row["duplicate_of_category"] = owner
+            hidden += 1
+    print("hide_non_owned {}: hidden={}".format(category, hidden), flush=True)
+    return hidden
+
+
 def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake_path: str = OPPORTUNITIES_PATH, observations_path: str = None, now: Optional[str] = None) -> List[Dict]:
     now = now or datetime.now(timezone.utc).isoformat(timespec="seconds")
     lake = _load_json(lake_path, [])
@@ -2276,6 +2321,7 @@ def collect(config: ProgrammeConfig, fetch: Callable[[str], str] = _default_fetc
     stale_today = (checked_at or datetime.now(timezone.utc)).date()
     retire_stale_needs_confirmation(config.category, merged, stale_today, verification_now)
     dedupe_across_categories(merged, verification_now)
+    hide_non_owned(merged, config.category, load_owners(), verification_now)
     _atomic_json(lake_path, merged)
     return {"records": records, "observations": observations, "merged_count": len(merged),
             "routed_research": len(routed_research), "stats": stats}

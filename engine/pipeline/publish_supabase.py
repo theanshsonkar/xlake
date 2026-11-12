@@ -183,6 +183,8 @@ def is_serving(r: dict) -> bool:
         return False
     if _senior_job(r):  # product scope: students and early-career people
         return False
+    if r.get("hidden_reason") == "duplicate_other_category":  # another category owns this programme
+        return False
     if r.get("is_duplicate") is True:  # a fresher twin is serving instead
         return False
     return r.get("is_live") is True or r.get("needs_confirmation") is True
