@@ -30,6 +30,7 @@ RECENT_ACTIVITY_DAYS = 3
 NEW_WINDOW_DAYS = 30
 RECONFIRM_WINDOW_DAYS = 7
 REVERIFY_BATCH_SIZE = 4
+REVERIFY_RATE_FLOOR = 300  # stop individual reverification below this many API calls left
 DISCOVERY_MIN_STARS = 500
 DISCOVERY_MIN_GOOD_FIRST_ISSUES = 3
 DISCOVERY_PUSHED_WITHIN_DAYS = 60
@@ -909,7 +910,13 @@ def _owner_repo_from_url(url):
     return "{}/{}".format(parts[1], parts[2]) if len(parts) > 2 and parts[1] and parts[2] else None
 
 
-def _reverify_rows(existing_rows, checked_at):
+def _reverify_rows(existing_rows, checked_at, skip_ids=None):
+    """Reverify live rows one by one, oldest check first, within the rate budget.
+
+    Rows whose id is in skip_ids were just seen by a repo fetch and are skipped.
+    Rows left unchecked because the budget ran out are marked untouched.
+    """
+    skip_ids = skip_ids or ()
     stats = {
         "eligible": 0,
         "attempted": 0,
@@ -921,6 +928,7 @@ def _reverify_rows(existing_rows, checked_at):
         "rate_limit_detected": False,
         "skipped_rate_limited": 0,
         "untouched": 0,
+        "skipped_budget": 0,
     }
     working_rows = [dict(row) if isinstance(row, dict) else row for row in existing_rows]
     candidates = []
@@ -939,9 +947,20 @@ def _reverify_rows(existing_rows, checked_at):
             row[_INTERNAL_REVERIFY_UNTOUCHED] = True
             stats["untouched"] += 1
             continue
+        if row.get("contribution_id") in skip_ids:
+            continue
         candidates.append((index, identity[0], identity[1]))
+    candidates.sort(key=lambda item: str(working_rows[item[0]].get("last_checked_at") or ""))
 
     for offset in range(0, len(candidates), REVERIFY_BATCH_SIZE):
+        remaining = _RATE["remaining"]
+        if remaining is not None and remaining < REVERIFY_RATE_FLOOR:
+            for index, _repo, _number in candidates[offset:]:
+                working_rows[index][_INTERNAL_REVERIFY_UNTOUCHED] = True
+            skipped = len(candidates) - offset
+            stats["skipped_budget"] += skipped
+            stats["untouched"] += skipped
+            break
         batch = candidates[offset:offset + REVERIFY_BATCH_SIZE]
         results = {}
         with ThreadPoolExecutor(max_workers=REVERIFY_BATCH_SIZE) as executor:
@@ -1009,6 +1028,7 @@ def _reverify_rows(existing_rows, checked_at):
                 row.pop("needs_confirmation", None)
                 row.pop("liveness_reason", None)
                 row.pop("went_dead_at", None)
+                row["last_seen"] = checked_at
                 row.pop(_INTERNAL_GATE_CLOSURE, None)
                 stats["admitted"] += 1
             else:
@@ -1025,6 +1045,7 @@ def _reverify_rows(existing_rows, checked_at):
                     isinstance(row, dict)
                     and row.get("record_type") == "contribution"
                     and not row.get(_INTERNAL_REVERIFY_VERIFIED)
+                    and row.get("contribution_id") not in skip_ids
                 ):
                     row[_INTERNAL_REVERIFY_UNTOUCHED] = True
             remaining_candidates = candidates[offset + len(batch):]
@@ -1196,7 +1217,6 @@ def collect(
             if isinstance(row, dict) and row.get("record_type") == "contribution"
             and row.get("is_live") is True and row.get("updated_at")
         }
-    existing_rows, reverification = _reverify_rows(existing_rows, checked_at)
     rows_by_repo = {}
     successful_repos = set()
     failed_repos = set()
@@ -1221,16 +1241,28 @@ def collect(
             known_clean=known_clean,
         )
 
-    if not reverification["rate_limit_detected"]:
-        with ThreadPoolExecutor(max_workers=FETCH_WORKERS) as executor:
-            futures = {executor.submit(_process, spec): spec["repo"] for spec in repo_specs}
-            for future in as_completed(futures):
-                repo = futures[future]
-                try:
-                    rows_by_repo[repo] = future.result()
-                    successful_repos.add(repo)
-                except Exception:
-                    failed_repos.add(repo)
+    with ThreadPoolExecutor(max_workers=FETCH_WORKERS) as executor:
+        futures = {executor.submit(_process, spec): spec["repo"] for spec in repo_specs}
+        for future in as_completed(futures):
+            repo = futures[future]
+            try:
+                rows_by_repo[repo] = future.result()
+                successful_repos.add(repo)
+            except Exception:
+                failed_repos.add(repo)
+    seen_ids = {row["contribution_id"] for repo_rows in rows_by_repo.values() for row in repo_rows}
+    existing_rows, reverification = _reverify_rows(existing_rows, checked_at, skip_ids=seen_ids)
+    print(
+        "open_source budget: repos_fetched={} repos_failed={} reverified={} "
+        "reverify_skipped_budget={} rate_remaining={}".format(
+            len(successful_repos),
+            len(failed_repos),
+            reverification["reverified"],
+            reverification["skipped_budget"],
+            _RATE["remaining"],
+        ),
+        flush=True,
+    )
     rows = merge_contributions(
         rows_by_repo,
         successful_repos,

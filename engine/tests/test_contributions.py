@@ -102,6 +102,128 @@ class TestContributionsCollector(unittest.TestCase):
         self.assertFalse(any(row["contribution_id"].endswith("/101") for row in contributions))
         self.assertFalse(any(row["contribution_id"].endswith("/102") for row in contributions))
 
+    def _budget_setup(self, td, rows):
+        lake_path = os.path.join(td, "lake.json")
+        with open(lake_path, "w") as handle:
+            json.dump(rows, handle)
+        return lake_path
+
+    @staticmethod
+    def _live_row(repo, number, last_checked_at):
+        return {
+            "record_type": "contribution",
+            "contribution_id": "https://github.com/{}/issues/{}".format(repo, number),
+            "title": "Existing issue",
+            "repo": repo,
+            "issue_number": number,
+            "is_live": True,
+            "first_seen": "2026-08-01T00:00:00+00:00",
+            "last_seen": "2026-08-10T00:00:00+00:00",
+            "last_checked_at": last_checked_at,
+            "updated_at": "2026-08-17T00:00:00Z",
+        }
+
+    @staticmethod
+    def _open_issue(repo, number):
+        return {
+            "html_url": "https://github.com/{}/issues/{}".format(repo, number),
+            "title": "Existing issue",
+            "number": number,
+            "labels": [{"name": "good first issue"}],
+            "state": "open",
+            "comments": 0,
+            "created_at": "2026-08-01T00:00:00Z",
+            "updated_at": "2026-08-17T00:00:00Z",
+        }
+
+    def _run_budget_collect(self, rows, fetch, fetch_issue, remaining=None):
+        from categories.open_source import contributions as module
+
+        checked_at = datetime(2026, 8, 18, 8, 0, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as td:
+            lake_path = self._budget_setup(td, rows)
+            with patch.object(module, "CURATED_REPOS", (("a/seen", "Python"), ("b/unseen", "Python"))), \
+                    patch.object(module, "_github_token", return_value=None), \
+                    patch.object(module, "_fetch_issue", side_effect=fetch_issue), \
+                    patch.dict(module._RATE, {"remaining": remaining}):
+                result = collect(fetch=fetch, repo_fetch=None, checked_at=checked_at, lake_path=lake_path)
+            with open(lake_path) as handle:
+                lake = json.load(handle)
+        return result, {row["contribution_id"]: row for row in lake}
+
+    def test_repo_fetch_first_and_seen_rows_not_individually_reverified(self):
+        from categories.open_source.contributions import _IssueFetchResult
+
+        order = []
+        seen_row = self._live_row("a/seen", 1, "2026-08-01T00:00:00+00:00")
+        other_row = self._live_row("b/unseen", 2, "2026-08-01T00:00:00+00:00")
+
+        def fetch(repo):
+            order.append(("list", repo))
+            if repo == "b/unseen":
+                raise RuntimeError("boom")
+            return [self._open_issue("a/seen", 1)]
+
+        def fetch_issue(repo, number):
+            order.append(("issue", repo, number))
+            return _IssueFetchResult(issue=self._open_issue(repo, number))
+
+        result, lake = self._run_budget_collect([seen_row, other_row], fetch, fetch_issue)
+        self.assertEqual([o for o in order if o[0] == "issue"], [("issue", "b/unseen", 2)])
+        self.assertLess(max(i for i, o in enumerate(order) if o[0] == "list"),
+                        min(i for i, o in enumerate(order) if o[0] == "issue"))
+        self.assertEqual(result["reverification"]["reverified"], 1)
+        self.assertTrue(lake[seen_row["contribution_id"]]["is_live"])
+
+    def test_successful_reverify_sets_last_seen(self):
+        from categories.open_source.contributions import _IssueFetchResult
+
+        row = self._live_row("b/unseen", 2, "2026-08-01T00:00:00+00:00")
+
+        def fetch(repo):
+            raise RuntimeError("boom")
+
+        result, lake = self._run_budget_collect(
+            [row], fetch,
+            lambda repo, number: _IssueFetchResult(issue=self._open_issue(repo, number)),
+        )
+        out = lake[row["contribution_id"]]
+        self.assertTrue(out["is_live"])
+        self.assertEqual(out["last_seen"], "2026-08-18T08:00:00+00:00")
+
+    def test_reverify_budget_floor_leaves_rows_unchanged(self):
+        row = self._live_row("b/unseen", 2, "2026-08-01T00:00:00+00:00")
+        calls = []
+
+        def fetch(repo):
+            raise RuntimeError("boom")
+
+        result, lake = self._run_budget_collect(
+            [row], fetch, lambda repo, number: calls.append(number), remaining=10,
+        )
+        self.assertEqual(calls, [])
+        self.assertEqual(result["reverification"]["skipped_budget"], 1)
+        out = lake[row["contribution_id"]]
+        self.assertTrue(out["is_live"])
+        self.assertEqual(out["last_seen"], row["last_seen"])
+        self.assertEqual(out["last_checked_at"], row["last_checked_at"])
+
+    def test_reverify_still_detects_closed_issue(self):
+        from categories.open_source.contributions import _IssueFetchResult
+
+        row = self._live_row("b/unseen", 2, "2026-08-01T00:00:00+00:00")
+
+        def fetch(repo):
+            raise RuntimeError("boom")
+
+        def fetch_issue(repo, number):
+            issue = self._open_issue(repo, number)
+            issue["state"] = "closed"
+            return _IssueFetchResult(issue=issue)
+
+        _result, lake = self._run_budget_collect([row], fetch, fetch_issue)
+        self.assertFalse(lake[row["contribution_id"]]["is_live"])
+
     def test_build_row_marks_recent_and_older_issues(self):
         checked_at = "2026-08-18T08:00:00+00:00"
         recent = {
