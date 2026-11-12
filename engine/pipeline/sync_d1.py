@@ -334,12 +334,16 @@ def sync(shard: str, client, dry_run: bool = False, max_writes: int = 10000,
 
 
 def clean_token(raw: str) -> str:
-    """A pasted secret can carry stray whitespace or extra lines (e.g. the
-    test command shown next to the token). Use the first line that looks
-    like a Cloudflare API token; never print it."""
-    for line in (raw or "").split():
-        if re.fullmatch(r"[A-Za-z0-9_-]{30,}", line):
-            return line
+    """A pasted secret can carry stray whitespace, extra lines, or even the whole
+    "curl ... -H 'Authorization: Bearer <token>'" test command Cloudflare shows
+    next to a new token. Prefer the value after "Bearer", else the first long
+    token-like word. Never print it."""
+    text = raw or ""
+    m = re.search(r"Bearer\s+([A-Za-z0-9_-]{30,})", text)
+    if m:
+        return m.group(1)
+    for word in re.findall(r"[A-Za-z0-9_-]{30,}", text):
+        return word
     return ""
 
 

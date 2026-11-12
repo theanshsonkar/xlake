@@ -201,6 +201,8 @@ class CleanTokenTest(unittest.TestCase):
         self.assertEqual(clean_token("  %s  \ncurl -X GET https://x" % tok), tok)
         self.assertEqual(clean_token("Bearer\n" + tok), tok)
         self.assertEqual(clean_token("short\n"), "")
+        cmd = 'curl "https://api.cloudflare.com/client/v4/user/tokens/verify" \\\n     -H "Authorization: Bearer %s"' % tok
+        self.assertEqual(clean_token(cmd), tok)
 
 
 
