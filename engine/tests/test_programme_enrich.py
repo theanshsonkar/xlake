@@ -285,5 +285,30 @@ class TestRetirement(unittest.TestCase):
         self.assertTrue(rows[2]["is_live"])
 
 
+class ApplicationCostTests(unittest.TestCase):
+    def test_colon_amount_is_fee(self):
+        self.assertEqual(enrich.application_cost("Registration fee: INR 500 per team.")[0], "fee")
+
+    def test_free(self):
+        for text in ("There is no application fee.", "It is free to apply.", "Applying is free."):
+            self.assertEqual(enrich.application_cost(text)[0], "free", text)
+
+    def test_fee(self):
+        for text in ("The application fee is $50.", "A \u20b9500 registration fee applies.",
+                     "An application fee is required."):
+            self.assertEqual(enrich.application_cost(text)[0], "fee", text)
+        self.assertLessEqual(len(enrich.application_cost("The application fee is $50.")[1]), 200)
+
+    def test_none_traps(self):
+        for text in ("Tuition fees are covered by the scholarship.", "Free accommodation is provided.",
+                     "Tuition fee waiver for admitted students.", "Apply now."):
+            self.assertEqual(enrich.application_cost(text), (None, None), text)
+
+    def test_rowshape_mapping(self):
+        from pipeline import rowshape
+        self.assertEqual(rowshape.map_programme({"official_url": "https://x.org", "application_cost": "free"})["cost_to_apply"], "free")
+        self.assertIsNone(rowshape.map_programme({"official_url": "https://x.org"})["cost_to_apply"])
+
+
 if __name__ == "__main__":
     unittest.main()

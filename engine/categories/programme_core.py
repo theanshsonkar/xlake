@@ -995,6 +995,11 @@ def _apply_enrichment(record: Dict, evidence: Dict, enriched: Dict, seed: Dict,
         quote = enriched.get("_funding_quote")
         if quote and _evidence(quote, url):
             evidence["funding"] = _evidence(quote, url)
+    if enriched.get("application_cost"):
+        record["application_cost"] = enriched["application_cost"]
+        quote = enriched.get("_application_cost_quote")
+        if quote and _evidence(quote, url):
+            evidence["application_cost"] = _evidence(quote, url)
     if enriched.get("eligibility"):
         record["eligibility"] = enriched["eligibility"]
         quote = enriched.get("_eligibility_quote") or enriched["eligibility"]

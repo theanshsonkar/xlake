@@ -538,6 +538,43 @@ def _quote_around(text: str, match) -> str:
 
 
 # --------------------------------------------------------------------------- #
+# Application cost
+# --------------------------------------------------------------------------- #
+_FEE_NOUN = r"(?:application|registration|processing|submission|entry|admission)s?\s+(?:fee|charge|cost)s?"
+_COST_FREE = re.compile(
+    r"\bno\s+(?:" + _FEE_NOUN + r"|fee\s+(?:to|for)\s+appl\w*|cost\s+to\s+appl\w*|charge\s+to\s+appl\w*)|"
+    r"\b(?:" + _FEE_NOUN + r")\s+(?:is|are)\s+(?:waived|free|\$?0|zero)\b|"
+    r"\b(?:free|no[- ]cost|at no cost)\s+to\s+appl\w*|\bapplying\s+is\s+free\b|"
+    r"\bapplication\s+is\s+(?:completely\s+)?free\b|\bfree\s+(?:of\s+charge\s+)?(?:application|registration)\b|"
+    r"\b(?:there\s+is\s+)?no\s+(?:fee|cost)\s+(?:to|for)\s+(?:apply|applying|participate|register)", re.I)
+_COST_FEE = re.compile(
+    r"\b(?:" + _FEE_NOUN + r")\s*(?:of\b|is\b|are\b|:|-|\u2013)?\s*(?:[$\u20b9\u20ac\u00a3]|(?:USD|INR|EUR|GBP|Rs\.?)\s?)?\s*\d|"
+    r"[$\u20b9\u20ac\u00a3]\s?\d[\d,]*(?:\.\d+)?\s+(?:non-refundable\s+)?" + _FEE_NOUN + r"|"
+    r"\b(?:" + _FEE_NOUN + r")\s+(?:is|are)\s+(?:required|charged|payable|non-refundable)|"
+    r"\b(?:a|an|the)\s+(?:non-refundable\s+)?" + _FEE_NOUN + r"\s+(?:is|will be)\s+(?:required|charged|payable)|"
+    r"\bnon-refundable\s+" + _FEE_NOUN + r"|\bpay\s+(?:a|an|the)\s+" + _FEE_NOUN, re.I)
+_COST_TRAP = re.compile(r"\b(?:tuition|fee waiver|fees? (?:are |is )?(?:covered|paid|waived by)|accommodation)\b", re.I)
+
+
+def application_cost(text: str) -> Tuple[Optional[str], Optional[str]]:
+    """Return ``("free"|"fee", quote)`` for explicit application-cost statements, else ``(None, None)``."""
+    text = (text or "").replace("\xa0", " ")
+    free = fee = None
+    for sentence in _sentence_split(text):
+        scrub = _COST_TRAP.sub(" ", sentence)
+        quote = truncate(clean_text(sentence), 200)
+        if _COST_FREE.search(scrub):
+            free = free or quote
+        elif _COST_FEE.search(scrub):
+            fee = fee or quote
+    if fee:
+        return "fee", fee
+    if free:
+        return "free", free
+    return None, None
+
+
+# --------------------------------------------------------------------------- #
 # Eligibility
 # --------------------------------------------------------------------------- #
 _ELIG_STRONG = re.compile(
@@ -1219,6 +1256,10 @@ def enrich_fields(html: str, text: str, url: str, final_url: Optional[str] = Non
             out["funding_amount_usd"] = usd
         if funding_quote:
             out["_funding_quote"] = funding_quote
+    cost, cost_quote = application_cost(text)
+    if cost:
+        out["application_cost"] = cost
+        out["_application_cost_quote"] = cost_quote
     eligibility, cues = extract_eligibility(text)
     if eligibility:
         out["eligibility"] = eligibility

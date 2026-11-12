@@ -302,6 +302,7 @@ def map_programme(row: dict) -> Dict[str, Any]:
         "funding": scrub(row.get("funding"), 120),
         "funding_amount": amount, "currency": currency,
         "duration": scrub(row.get("duration"), 60),
+        "cost_to_apply": row.get("application_cost") if row.get("application_cost") in ("free", "fee") else None,
         "proof": _evidence_proof(row, url),
     }
 
