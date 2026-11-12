@@ -106,11 +106,11 @@ class SyncD1Test(unittest.TestCase):
 
     def test_last_checked_touch_threshold(self):
         self.run_sync([job(1)])
-        s = self.run_sync([job(1, last_seen=T0 + timedelta(days=1))])
-        self.assertEqual(s.est, 0)
-        s = self.run_sync([job(1, last_seen=T0 + timedelta(days=4))])
-        self.assertEqual((s.c["touched"], s.c["updated"]), (1, 0))
-        self.assertIn("2026-11-16", self.jobs("SELECT last_checked FROM opportunities")[0][0])
+        s = self.run_sync([job(1, last_seen=T0 + timedelta(hours=6))])
+        self.assertEqual(s.est, 0)  # moved < 12h: no write
+        s = self.run_sync([job(1, last_seen=T0 + timedelta(hours=13))])
+        self.assertEqual((s.c["touched"], s.c["updated"]), (1, 0))  # moved > 12h: 1 cheap write
+        self.assertEqual(self.jobs("SELECT last_checked FROM opportunities")[0][0], (T0 + timedelta(hours=13)).isoformat())
 
     def test_removed_owned_row_deleted_foreign_kept(self):
         self.run_sync([job(1), job(2)])

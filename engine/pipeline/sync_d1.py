@@ -27,7 +27,7 @@ from pipeline import export_d1 as ex  # noqa: E402
 
 API = "https://api.cloudflare.com/client/v4"
 MULTI_SOURCE = ("jobs", "internships")
-TOUCH_AFTER = timedelta(days=3)
+TOUCH_AFTER = timedelta(hours=12)  # owner: freshness reaches D1 when last_checked moved >12h
 NULL_SRC_MAX_AGE = timedelta(days=7)
 COST = {"insert": 9, "update": 4, "touch": 1, "delete": 9, "claim": 4}
 FTS_SRC = ("title", "org", "location", "skills")
