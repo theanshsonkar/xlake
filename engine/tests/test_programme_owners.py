@@ -110,5 +110,18 @@ class SameCategoryAndCrossHostTests(unittest.TestCase):
         self.assertEqual(len(owners_mod.find_groups([a, b])), 1)
 
 
+
+class SamePageFamilyTest(unittest.TestCase):
+    def test_city_chapters_are_separate_opportunities(self):
+        self.assertFalse(core._same_page_family("s/denver", "s/seattle"))
+        self.assertFalse(core._same_page_family("", "s/seattle"))  # homepage vs a city cohort
+
+    def test_generic_tails_are_the_same_page(self):
+        self.assertTrue(core._same_page_family("", "apply"))
+        self.assertTrue(core._same_page_family("fellowship", "fellowship/how-to-apply"))
+        self.assertTrue(core._same_page_family("programs/fund", "programs/fund"))
+        self.assertFalse(core._same_page_family("programs/fund", "programs/fund-2027"))
+
+
 if __name__ == "__main__":
     unittest.main()

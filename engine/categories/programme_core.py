@@ -1788,6 +1788,27 @@ def _evidence_count(row: Dict) -> int:
     return sum(1 for v in evidence.values() if isinstance(v, dict) and v.get("quote")) if isinstance(evidence, dict) else 0
 
 
+_GENERIC_PATH_PARTS = frozenset((
+    "", "apply", "application", "applications", "about", "overview", "program", "programme",
+    "programs", "programmes", "fellowship", "fellowships", "scholarship", "scholarships", "grant",
+    "grants", "eligibility", "faq", "faqs", "how-to-apply", "index.html", "index.php", "en",
+    "home", "join", "details", "info"))
+
+
+def _same_page_family(path_a: str, path_b: str) -> bool:
+    """True when two paths on one site point at the same programme page: equal, or one
+    extends the other only with generic parts (/apply, /about, /en ...). Any other extra
+    part (a city, cohort, year, track) means a different opportunity."""
+    a = [p for p in path_a.lower().split("/") if p]
+    b = [p for p in path_b.lower().split("/") if p]
+    if a == b:
+        return True
+    short, long_ = (a, b) if len(a) <= len(b) else (b, a)
+    if long_[:len(short)] != short:
+        return False
+    return all(p in _GENERIC_PATH_PARTS for p in long_[len(short):])
+
+
 def dedupe_within_category(lake_rows: List[Dict], now: str) -> int:
     """Hide the same programme listed twice in one category: same registrable host and name
     similarity >= 0.85, or the same non-bare official URL with loosely agreeing names."""
@@ -1815,11 +1836,12 @@ def dedupe_within_category(lake_rows: List[Dict], now: str) -> int:
                 ratio = difflib.SequenceMatcher(None, names[i], names[j]).ratio()
                 if ratio < 0.85 or variant_conflict(names[i], names[j]):
                     continue
-                # Same site alone is not enough (one site, several schemes): the paths must agree
-                # too (equal, one a bare host, or one a prefix of the other). A shared listing
-                # page (same URL) only merges rows whose names also agree.
+                # Same site alone is not enough: only the same programme AND the same cycle may
+                # merge. Paths must be equal, or differ only by a generic tail such as /apply or
+                # /about. A distinguishing tail (a city chapter like fi.co/s/seattle, a cohort,
+                # a year) is a separate opportunity and never merges.
                 path_i, path_j = keys[i].split("/", 1)[1].rstrip("/"), keys[j].split("/", 1)[1].rstrip("/")
-                paths_agree = not path_i or not path_j or path_i.startswith(path_j) or path_j.startswith(path_i)
+                paths_agree = _same_page_family(path_i, path_j)
                 if registrable_host(keys[i]) == registrable_host(keys[j]) and paths_agree:
                     parent[find(i)] = find(j)
         groups: Dict[int, List[Dict]] = {}
