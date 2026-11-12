@@ -50,6 +50,7 @@ COLUMNS = (
 )
 FTS_COLUMNS = ("id", "title", "org", "location", "skills")
 BATCH = 100
+MAX_STMT_BYTES = 90_000
 
 DB_NAMES = ("jobs", "internships", "fellowships", "scholarships", "grants", "research",
             "hackathons", "open_source", "startup", "community")
@@ -131,17 +132,29 @@ def _fts_text(rec: Dict[str, Any], col: str) -> Optional[str]:
     return v
 
 
+def _chunks(values: List[str], head: str) -> List[str]:
+    """Group VALUES tuples into INSERT statements of at most MAX_STMT_BYTES
+    (D1 rejects statements over ~100 KB with SQLITE_TOOBIG) and BATCH rows."""
+    out, cur, size = [], [], len(head)
+    for v in values:
+        n = len(v.encode("utf-8")) + 2
+        if cur and (size + n > MAX_STMT_BYTES or len(cur) >= BATCH):
+            out.append(head + ",\n".join(cur) + ";")
+            cur, size = [], len(head)
+        cur.append(v)
+        size += n
+    if cur:
+        out.append(head + ",\n".join(cur) + ";")
+    return out
+
+
 def build_sql(recs: List[Dict[str, Any]]) -> str:
     parts = [SCHEMA, "DELETE FROM opportunities;", "DELETE FROM opportunities_fts;"]
-    for i in range(0, len(recs), BATCH):
-        chunk = recs[i:i + BATCH]
-        parts.append("INSERT INTO opportunities (%s) VALUES\n%s;" % (
-            ", ".join(COLUMNS),
-            ",\n".join("(%s)" % ", ".join(lit(r[c]) for c in COLUMNS) for r in chunk)))
-        parts.append("INSERT INTO opportunities_fts (%s) VALUES\n%s;" % (
-            ", ".join(FTS_COLUMNS),
-            ",\n".join("(%s)" % ", ".join(
-                lit(r["id"] if c == "id" else _fts_text(r, c)) for c in FTS_COLUMNS) for r in chunk)))
+    parts += _chunks(["(%s)" % ", ".join(lit(r[c]) for c in COLUMNS) for r in recs],
+                     "INSERT INTO opportunities (%s) VALUES\n" % ", ".join(COLUMNS))
+    parts += _chunks(["(%s)" % ", ".join(lit(r["id"] if c == "id" else _fts_text(r, c))
+                                         for c in FTS_COLUMNS) for r in recs],
+                     "INSERT INTO opportunities_fts (%s) VALUES\n" % ", ".join(FTS_COLUMNS))
     return "\n".join(parts) + "\n"
 
 

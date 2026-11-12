@@ -88,5 +88,18 @@ class ExportD1Test(unittest.TestCase):
         self.assertEqual(rep["jobs"]["rows"], 250)
 
 
+
+class StatementSizeTest(unittest.TestCase):
+    def test_no_statement_exceeds_d1_limit(self):
+        from pipeline import export_d1
+        big = [{c: None for c in export_d1.COLUMNS} for _ in range(50)]
+        for i, r in enumerate(big):
+            r.update(id="hackathon:%d" % i, type="hackathon", title="T" * 5000,
+                     url="https://x.test/%d" % i, status="open")
+        sql = export_d1.build_sql(big)
+        for stmt in sql.split(";\n"):
+            self.assertLess(len(stmt.encode("utf-8")), 100_000)
+
+
 if __name__ == "__main__":
     unittest.main()
