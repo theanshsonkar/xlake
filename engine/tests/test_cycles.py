@@ -95,11 +95,46 @@ class PredictTest(unittest.TestCase):
         self.assertEqual(r2["next_cycle_hint"], "Keep me")
 
 
+class OverdueTest(unittest.TestCase):
+    def test_grace_boundary(self):
+        # expected_opens 2026-10-13 -> exactly 30 days before TODAY: not yet overdue
+        r = prog(lifecycle="upcoming", expected_opens="2026-10-13")
+        self.assertFalse(cycles.overdue(r, TODAY))
+        r["expected_opens"] = "2026-10-12"
+        self.assertTrue(cycles.overdue(r, TODAY))
+
+    def test_deadline_fallback(self):
+        r = prog(lifecycle="closed", expected_deadline="2026-10-01")  # opens ~09-01
+        self.assertTrue(cycles.overdue(r, TODAY))
+
+    def test_open_or_no_prediction_never(self):
+        self.assertFalse(cycles.overdue(prog(lifecycle="open", expected_opens="2026-01-01"), TODAY))
+        self.assertFalse(cycles.overdue(prog(lifecycle="closed"), TODAY))
+        self.assertFalse(cycles.overdue(
+            prog(lifecycle="upcoming", expected_opens="2026-01-01", deadline="2026-12-01"), TODAY))
+
+    def test_list_sorted_and_finalize_flag(self):
+        a = prog(lifecycle="upcoming", title="A", official_url="u1", expected_opens="2026-06-01",
+                 cycles=[{"deadline": "2025-07-01", "opens": "2025-06-01", "first_seen": "x"},
+                         {"deadline": "2024-07-01", "opens": "2024-06-01", "first_seen": "x"}])
+        self.assertEqual(cycles.overdue_list([a], TODAY), [("A", "u1", "2026-06-01")])
+        rows = [dict(a, overdue=True, lifecycle="open", deadline="2027-01-01")]
+        s = cycles.finalize(rows, TODAY)
+        self.assertNotIn("overdue", rows[0])
+        self.assertEqual(s["overdue"], 0)
+        b = prog(lifecycle="upcoming", title="B", official_url="u2",
+                 cycles=[{"deadline": "2025-03-01", "opens": "2025-02-01", "first_seen": "x"},
+                         {"deadline": "2024-03-01", "opens": "2024-02-01", "first_seen": "x"}])
+        s = cycles.finalize([b], TODAY)
+        self.assertNotIn("overdue", b)  # prediction rolls forward, so not overdue
+
+
 class IntegrationTest(unittest.TestCase):
     def test_finalize(self):
         rows = [prog(lifecycle="upcoming", deadline="2026-03-15"), {"record_type": "job"}]
         s = cycles.finalize(rows, TODAY)
-        self.assertEqual(s, {"rows_with_history": 1, "changed": 1, "predicted": 1})
+        self.assertEqual(s, {"rows_with_history": 1, "changed": 1, "predicted": 1,
+                                 "overdue": 0, "overdue_lines": []})
         self.assertNotIn("cycles", rows[1])
 
     def test_rowshape(self):

@@ -117,7 +117,9 @@ def main(argv=None) -> int:
         "closed=%(closed)d revived_cleaned=%(revived_cleaned)d "
         "deadline_closed=%(deadline_closed)d deadline_unparsed=%(deadline_unparsed)d" % lc) + (
         "\ncycles: rows_with_history=%(rows_with_history)d changed=%(changed)d "
-        "predicted=%(predicted)d" % cy)
+        "predicted=%(predicted)d overdue=%(overdue)d" % cy)
+    for _l in cy.get("overdue_lines", []):
+        text += "\n" + _l
     try:
         from pipeline import coverage as _cov
         cov_line = _cov.summary_line(cat, mine)

@@ -7,7 +7,7 @@ next cycle one year after the latest past one (only when spacing is ~annual).
 from __future__ import annotations
 
 import re
-from datetime import date
+from datetime import date, timedelta
 from typing import Dict, List, Optional
 
 MAX_CYCLES = 10
@@ -157,6 +157,34 @@ def apply_prediction(row: dict, today) -> bool:
     return False
 
 
+def _expected_date(row: dict) -> Optional[date]:
+    opens = _iso(row.get("expected_opens"))
+    if opens:
+        return date.fromisoformat(opens)
+    dl = _iso(row.get("expected_deadline"))
+    return date.fromisoformat(dl) - timedelta(days=30) if dl else None
+
+
+def overdue(row: dict, today, grace_days: int = 30) -> bool:
+    """A recurring programme predicted to reopen, but not seen open grace_days after."""
+    if row.get("record_type") != "programme" or row.get("lifecycle") not in ("upcoming", "closed"):
+        return False
+    exp = _expected_date(row)
+    if exp is None:
+        return False
+    td = _today(today)
+    if (td - exp).days <= grace_days:
+        return False
+    cur = _first_iso(row, "deadline", "registration_deadline")
+    return not (cur and date.fromisoformat(cur) >= td)
+
+
+def overdue_list(rows: List[dict], today) -> list:
+    out = [(r.get("programme_name") or r.get("title"), r.get("official_url"),
+            _expected_date(r).isoformat()) for r in rows if overdue(r, today)]
+    return sorted(out, key=lambda t: t[2])
+
+
 def finalize(rows: List[dict], today) -> Dict[str, int]:
     have = changed = predicted = 0
     for r in rows:
@@ -166,4 +194,18 @@ def finalize(rows: List[dict], today) -> Dict[str, int]:
             predicted += 1
         if r.get("cycles"):
             have += 1
-    return {"rows_with_history": have, "changed": changed, "predicted": predicted}
+    od = 0
+    lines: List[str] = []
+    try:
+        for r in rows:
+            if overdue(r, today):
+                r["overdue"] = True
+            else:
+                r.pop("overdue", None)
+        lst = overdue_list(rows, today)
+        od = len(lst)
+        lines = ["overdue: %s (expected %s) %s" % (n, d, u) for n, u, d in lst[:10]]
+    except Exception as e:  # never fail finalize on an alert
+        lines = ["WARNING: overdue check failed: %s" % e]
+    return {"rows_with_history": have, "changed": changed, "predicted": predicted,
+            "overdue": od, "overdue_lines": lines}
