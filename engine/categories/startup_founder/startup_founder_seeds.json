@@ -170,9 +170,9 @@
   "programme_id": "startup-village-global",
   "programme_name": "Village Global",
   "organizer": "Village Global",
-  "official_url": "https://www.villageglobal.com/",
+  "official_url": "https://www.villageglobal.com/velocity/apply",
   "allowed_path_hints": [
-   ""
+   "/velocity"
   ],
   "check_cadence": "weekly"
  },
@@ -203,9 +203,9 @@
   "programme_id": "startup-plug-and-play",
   "programme_name": "Plug and Play Tech Center",
   "organizer": "Plug and Play",
-  "official_url": "https://www.plugandplaytechcenter.com/",
+  "official_url": "https://www.plugandplaytechcenter.com/innovation-services/startups",
   "allowed_path_hints": [
-   ""
+   "/innovation-services/startups"
   ],
   "check_cadence": "weekly"
  }
