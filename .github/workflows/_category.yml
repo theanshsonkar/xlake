@@ -167,7 +167,14 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: "3dcdbb176253427b2e7e80c6189b12ca"
-        run: python3 -u -m pipeline.sync_d1 --shard "$CAT"
+        run: |
+          # Live D1 writes only after the owner turns on the repo variable D1_SYNC_LIVE=true.
+          if [ "${{ vars.D1_SYNC_LIVE }}" = "true" ]; then
+            python3 -u -m pipeline.sync_d1 --shard "$CAT"
+          else
+            echo "D1_SYNC_LIVE is not true: plan only"
+            python3 -u -m pipeline.sync_d1 --shard "$CAT" --dry-run
+          fi
 
       - name: Sync to Cloudflare D1
         if: ${{ inputs.dry_run }}
