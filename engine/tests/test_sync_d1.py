@@ -203,5 +203,28 @@ class CleanTokenTest(unittest.TestCase):
         self.assertEqual(clean_token("short\n"), "")
 
 
+
+class DeleteGuardTest(unittest.TestCase):
+    def test_sharp_drop_never_removes_rows(self):
+        from datetime import datetime, timezone
+        from pipeline import sync_d1 as sd
+        now = datetime(2026, 11, 13, tzinfo=timezone.utc)
+        existing = {"p:%d" % i: {"id": "p:%d" % i, "src": "grants", "h": "x"} for i in range(100)}
+        cur = [{"id": "p:%d" % i} for i in range(10)]  # 90% would vanish
+        st = sd.Stats()
+        plan = sd._plan("grants", "grants", cur, existing, now, set(), st)
+        self.assertFalse([k for k, _, _ in plan if k == "delete"])
+        self.assertEqual(st.c.get("guarded_deletes"), 90)
+
+    def test_normal_churn_still_removes(self):
+        from datetime import datetime, timezone
+        from pipeline import sync_d1 as sd
+        now = datetime(2026, 11, 13, tzinfo=timezone.utc)
+        existing = {"p:%d" % i: {"id": "p:%d" % i, "src": "grants", "h": "x"} for i in range(100)}
+        cur = [{"id": "p:%d" % i} for i in range(95)]
+        plan = sd._plan("grants", "grants", cur, existing, now, set(), sd.Stats())
+        self.assertEqual(len([k for k, _, _ in plan if k == "delete"]), 5)
+
+
 if __name__ == "__main__":
     unittest.main()

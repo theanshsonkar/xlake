@@ -33,6 +33,10 @@ COST = {"insert": 9, "update": 4, "touch": 1, "delete": 9, "claim": 4}
 FTS_SRC = ("title", "org", "location", "skills")
 READ_COLS = ("id", "h", "src", "last_checked") + FTS_SRC
 PAGE = 2000
+# Never trust a sharp drop: if one run would remove more than this share of the
+# rows a leg owns (and more than DELETE_GUARD_MIN rows), skip all removals.
+DELETE_GUARD_RATIO = 0.30
+DELETE_GUARD_MIN = 20
 
 
 class D1Error(Exception):
@@ -128,6 +132,7 @@ class Client:
 class Stats:
     def __init__(self):
         self.c = dict(inserted=0, updated=0, touched=0, deleted=0, claimed=0, foreign=0, skipped_budget=0)
+        self.plan: List[dict] = []
         self.est = 0
         self.reported = 0
 
@@ -222,6 +227,18 @@ def _plan(db: str, shard: str, recs: List[dict], existing: Dict[str, dict],
             if (new and old and new - old >= TOUCH_AFTER) or (new and not old):
                 touches.append(("touch", rec, {}))
     ins.sort(key=lambda t: t[0])
+    owned = sum(1 for r in existing.values()
+                if r.get("src") == shard or (r.get("src") is None and db not in MULTI_SOURCE))
+    if len(dels) > DELETE_GUARD_MIN and len(dels) > DELETE_GUARD_RATIO * max(owned, 1):
+        print("::warning::d1 sync %s/%s: would remove %d of %d owned rows (>%d%%) - treating as a bad read, "
+            "skipping all removals" % (shard, db, len(dels), owned, int(DELETE_GUARD_RATIO * 100)))
+        if st:
+            st.c["guarded_deletes"] = st.c.get("guarded_deletes", 0) + len(dels)
+        dels = []
+    if st is not None:
+        st.plan.append(dict(db=db, existing=len(existing), current=len(cur), owned=owned,
+                            insert=len(ins), update=len(upds), claim=len(claims),
+                            touch=len(touches), delete=len(dels)))
     return dels + upds + claims + touches + [(k, r, c) for _, k, r, c in ins]
 
 
@@ -308,7 +325,11 @@ def sync(shard: str, client, dry_run: bool = False, max_writes: int = 10000,
             for chunk in _pack(pending):
                 _, w = client.query(title, chunk)
                 st.reported += w
-        log("d1 plan %s/%s: %d changes" % (shard, db, len(plan)))
+        for pl in st.plan:
+            if pl["db"] == db:
+                log("d1 plan %s/%s: existing=%d current=%d owned=%d -> insert=%d update=%d claim=%d touch=%d delete=%d"
+                    % (shard, db, pl["existing"], pl["current"], pl["owned"], pl["insert"], pl["update"],
+                       pl["claim"], pl["touch"], pl["delete"]))
     return st
 
 
