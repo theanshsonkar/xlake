@@ -118,6 +118,13 @@ def main(argv=None) -> int:
         "deadline_closed=%(deadline_closed)d deadline_unparsed=%(deadline_unparsed)d" % lc) + (
         "\ncycles: rows_with_history=%(rows_with_history)d changed=%(changed)d "
         "predicted=%(predicted)d" % cy)
+    try:
+        from pipeline import coverage as _cov
+        cov_line = _cov.summary_line(cat, mine)
+        if cov_line:
+            text += "\n" + cov_line
+    except Exception as e:  # never fail finalize on a report line
+        text += "\nWARNING: coverage line failed: %s" % e
     print(text)
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as fh:

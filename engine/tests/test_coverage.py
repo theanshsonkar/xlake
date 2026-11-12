@@ -16,6 +16,20 @@ def row(name, url, **kw):
     return r
 
 
+class SummaryLineTest(unittest.TestCase):
+    def test_line_and_job_shard(self):
+        import json
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            with open(os.path.join(d, "fellowships.json"), "w") as f:
+                json.dump([CHEV, {"name": "Other Fellowship", "domain": "other.org"}], f)
+            rows = [row("Chevening Scholarships", "https://www.chevening.org/")]
+            line = coverage.summary_line("fellowships", rows, d)
+            self.assertTrue(line.startswith("coverage: tracked=1/2 (50%) served="))
+            self.assertTrue(line.endswith("missing=Other Fellowship"))
+            self.assertIsNone(coverage.summary_line("jobs", rows, d))
+
+
 class MatchTest(unittest.TestCase):
     def test_domain_and_name(self):
         r = row("Chevening Scholarships 2027", "https://www.chevening.org/scholarships/")

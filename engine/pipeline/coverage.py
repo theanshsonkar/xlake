@@ -111,6 +111,20 @@ def coverage(items, rows):
     return tracked, served, missing
 
 
+def summary_line(shard, rows, bench_dir=BENCH_DIR):
+    """One-line coverage for a shard, or None when it has no benchmark."""
+    cat = shard.replace("-", "_")
+    if not os.path.exists(os.path.join(bench_dir, cat + ".json")):
+        return None
+    items = load_benchmark(cat, bench_dir)
+    n = len(items)
+    if not n:
+        return None
+    t, s, miss = coverage(items, rows)
+    return "coverage: tracked={}/{} ({:.0f}%) served={}/{} ({:.0f}%) missing={}".format(
+        t, n, 100.0 * t / n, s, n, 100.0 * s / n, ", ".join(m["name"] for m in miss[:5]))
+
+
 def main(argv):
     if len(argv) != 2:
         print("usage: python3 -m pipeline.coverage <shards_dir>", file=sys.stderr)
