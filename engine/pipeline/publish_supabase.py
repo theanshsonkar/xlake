@@ -59,6 +59,7 @@ from categories.programme_enrich import clean_location
 LAKE_PATH = Path("data/lake/opportunities.json")
 TABLE = "opportunities"
 UPSERT_BATCH = 500
+UPSERT_MIN_BATCH = 50
 RETIRE_BATCH = 200
 # Some Supabase edges sit behind Cloudflare which rejects the default urllib
 # UA with HTTP 403 code 1010; send a browser-ish UA to be safe.
@@ -83,7 +84,7 @@ PROGRAMME_ONLY_KEYS = {"funding_amount_usd", "intl_eligible", "levels", "require
 # Programmes and hackathons share the placeholder->NULL rules.
 PLACEHOLDER_NULL_TYPES = {"hackathon", "programme", "contribution", "job", "internship"}
 DESCRIPTION_MAX_TYPES = {"hackathon", "programme", "contribution", "job", "internship"}
-RETRY_DELAYS = (1, 3)  # GET retry backoff (seconds)
+RETRY_DELAYS = (1, 3)  # GET / idempotent-upsert retry backoff (seconds)
 JOB_TYPES = {"job", "internship"}
 # Hackathon-style keys that job/internship rows also publish.
 JOB_SHARED_KEYS = {"logo_url", "region", "participants"}
@@ -445,7 +446,8 @@ class Supabase:
         req = urllib.request.Request(
             self.base + path, data=data, method=method,
             headers=self._headers(headers))
-        attempts = 3 if method == "GET" else 1
+        # GET and idempotent upserts (POST ... on_conflict merge) are safe to retry.
+        attempts = 3 if method == "GET" or (method == "POST" and "on_conflict=" in path) else 1
         for attempt in range(attempts):
             try:
                 with urllib.request.urlopen(req) as resp:
@@ -533,10 +535,20 @@ class Supabase:
         return ids
 
     def upsert(self, rows):
-        """Upsert (on conflict id) a batch via merge-duplicates."""
-        self._request(
-            "POST", "/%s?on_conflict=id" % TABLE, body=rows,
-            headers={"Prefer": "resolution=merge-duplicates,return=minimal"})
+        """Upsert (on conflict id) a batch via merge-duplicates. A batch that
+        still fails with a server error after retries is split in half (down
+        to UPSERT_MIN_BATCH) so one slow or bad chunk cannot sink the run."""
+        try:
+            self._request(
+                "POST", "/%s?on_conflict=id" % TABLE, body=rows,
+                headers={"Prefer": "resolution=merge-duplicates,return=minimal"})
+        except urllib.error.HTTPError as e:
+            if e.code < 500 or len(rows) <= UPSERT_MIN_BATCH:
+                raise
+            mid = len(rows) // 2
+            print("upsert: HTTP %d on %d rows, splitting" % (e.code, len(rows)), flush=True)
+            self.upsert(rows[:mid])
+            self.upsert(rows[mid:])
 
     def retire(self, ids):
         """Soft-retire: set is_live=false for the given ids (batched).
