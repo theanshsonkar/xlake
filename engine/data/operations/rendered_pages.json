@@ -244,5 +244,17 @@
   "category": "community",
   "url": "https://studentambassadors.microsoft.com/",
   "notes": "Microsoft Learn Student Ambassadors"
+ },
+ {
+  "id": "ospp",
+  "category": "open_source",
+  "url": "https://summer-ospp.ac.cn/",
+  "notes": "Open Source Promotion Plan (live HTML empty)"
+ },
+ {
+  "id": "500-global-founders",
+  "category": "startup",
+  "url": "https://500.co/founders",
+  "notes": "500 Global founders (live HTML empty)"
  }
 ]

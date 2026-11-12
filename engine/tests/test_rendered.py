@@ -66,6 +66,21 @@ class RenderedCache(unittest.TestCase):
                 mock.patch("core.webfetch.fetch_html", return_value=("<html>w</html>", "w")):
             self.assertEqual(programme_core._default_fetch(URL), ("<html>w</html>", "w"))
 
+    def test_empty_live_html_uses_rendered_text_but_403_never_does(self):
+        self.write()
+        with mock.patch.object(rendered, "_targets", return_value={rendered._norm(URL): "ex"}), \
+                mock.patch.object(rendered, "CACHE_DIR", self.tmp.name), \
+                mock.patch("core.rendered.datetime") as dt:
+            dt.now.return_value = NOW
+            dt.fromisoformat = datetime.fromisoformat
+            html, _final = programme_core._default_fetch(URL)
+        text, _links = programme_core._text(html)
+        self.assertIn("30 November 2026", text)
+        with mock.patch.object(rendered, "lookup", return_value=None), \
+                mock.patch("core.webfetch.fetch_html", side_effect=RuntimeError("http_403")):
+            with self.assertRaises(RuntimeError):
+                programme_core._default_fetch(URL)
+
     def test_extraction_deadline_from_rendered_text(self):
         self.write()
         html, final = self.lookup()
