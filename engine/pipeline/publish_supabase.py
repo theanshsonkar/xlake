@@ -141,6 +141,14 @@ def record_type(r: dict) -> str:
     return "job"
 
 
+def _senior_job(r: dict) -> bool:
+    """A job (never an internship) whose title/experience marks it senior.
+    Owner decision 2026-11-12: senior jobs are not served; unknown level still is."""
+    if record_type(r) != "job" or r.get("is_internship"):
+        return False
+    return r.get("level") == "senior" or r.get("stage_resolved") == "senior"
+
+
 def _closed_and_past(r: dict) -> bool:
     """Programme whose status is closed and whose deadline is already past."""
     if r.get("record_type") != "programme" or r.get("programme_status") != "closed":
@@ -171,6 +179,8 @@ def _past_deadline_open(r: dict) -> bool:
 
 def is_serving(r: dict) -> bool:
     if _closed_and_past(r) or _past_deadline_open(r):
+        return False
+    if _senior_job(r):  # product scope: students and early-career people
         return False
     if r.get("is_duplicate") is True:  # a fresher twin is serving instead
         return False
