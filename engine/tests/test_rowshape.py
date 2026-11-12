@@ -137,5 +137,39 @@ class RowShapeTest(unittest.TestCase):
         self.assertIsNone(s["cost_to_apply"])
 
 
+def hack(**kw):
+    r = {"record_type": "hackathon", "category": "hackathons", "hackathon_id": "h1", "title": "Hack",
+         "official_url": "https://example.org/h", "source": "unstop", "organizer": "Some Univ"}
+    r.update(kw)
+    return r
+
+
+class HackathonTrustTests(unittest.TestCase):
+    def test_unstop_registration_quote(self):
+        ev = {"start_regn_dt": "2026-03-04T00:00:00+05:30", "end_regn_dt": "2026-11-30T00:59:00+05:30"}
+        p = to_standard(hack(official_evidence=ev))["proof"]
+        self.assertEqual(p["quote"], "Registration: 2026-03-04T00:00:00+05:30 \u2013 2026-11-30T00:59:00+05:30")
+        self.assertEqual((p["url"], p["kind"]), ("https://example.org/h", "source_fields"))
+
+    def test_devfolio_and_mlh_quotes(self):
+        d = to_standard(hack(official_evidence={"starts_at": "A", "reg_ends_at": "B"}))["proof"]
+        self.assertEqual(d["quote"], "Starts: A; registration ends: B")
+        m = to_standard(hack(official_evidence={"start": "A", "end": "B"}))["proof"]
+        self.assertEqual(m["quote"], "Event: A \u2013 B")
+
+    def test_dates_text_preferred_no_kind(self):
+        p = to_standard(hack(official_evidence={"submission_period_dates": "Jul 16 - Aug 1, 2026"}))["proof"]
+        self.assertEqual(p, {"quote": "Jul 16 - Aug 1, 2026", "url": "https://example.org/h"})
+
+    def test_no_evidence_no_quote(self):
+        self.assertIsNone(to_standard(hack())["proof"]["quote"])
+        self.assertIsNone(to_standard(hack(official_evidence={"start_regn_dt": "x"}))["proof"]["quote"])
+
+    def test_junk_and_aggregator_org(self):
+        for junk in ("nill", "na", "n/a", "-", "Devpost", "MLH"):
+            self.assertIsNone(to_standard(hack(organizer=junk))["org"], junk)
+        self.assertEqual(to_standard(hack())["org"], "Some Univ")
+
+
 if __name__ == "__main__":
     unittest.main()

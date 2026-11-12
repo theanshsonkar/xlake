@@ -31,7 +31,7 @@ FIELDS = (
 REQUIRED = ("id", "type", "title", "org", "url", "proof", "last_checked")
 
 TEXT_MAX = 300
-_EXTRA_PLACEHOLDERS = {"nill", "nil", "null", "tbd", "not specified", "not_specified"}
+_EXTRA_PLACEHOLDERS = {"nill", "nil", "null", "tbd", "not specified", "not_specified", "na", "-", "--"}
 
 # programme `category` -> standard type
 _PROGRAMME_TYPES = {
@@ -190,6 +190,26 @@ def _evidence_proof(row: dict, url: Optional[str]) -> Dict[str, Any]:
     return {"quote": None, "url": url}
 
 
+def _source_fields_proof(row: dict, url: Optional[str]) -> Optional[Dict[str, Any]]:
+    """Hackathon proof built from verbatim source date fields (not page text)."""
+    ev = row.get("official_evidence")
+    if not isinstance(ev, dict) or not url:
+        return None
+
+    def get(k):
+        v = ev.get(k)
+        return v.strip() if isinstance(v, str) and v.strip() else None
+
+    quote = None
+    if get("start_regn_dt") and get("end_regn_dt"):
+        quote = "Registration: {} \u2013 {}".format(get("start_regn_dt"), get("end_regn_dt"))
+    elif get("starts_at") and get("reg_ends_at"):
+        quote = "Starts: {}; registration ends: {}".format(get("starts_at"), get("reg_ends_at"))
+    elif get("start") and get("end"):
+        quote = "Event: {} \u2013 {}".format(get("start"), get("end"))
+    return {"quote": quote, "url": url, "kind": "source_fields"} if quote else None
+
+
 def _list(value: Any) -> List[str]:
     if not isinstance(value, list):
         return []
@@ -300,8 +320,15 @@ def map_hackathon(row: dict) -> Dict[str, Any]:
         "workplace": _workplace(row.get("mode"), "remote" if row.get("is_online") is True else None),
         "funding": scrub(_first(row.get("funding"), row.get("top_prize")), 120),
         "funding_amount": pool, "currency": "USD" if pool is not None else None,
-        "proof": _evidence_proof(row, url),
+        "proof": _hackathon_proof(row, url),
     }
+
+
+def _hackathon_proof(row: dict, url: Optional[str]) -> Dict[str, Any]:
+    proof = _evidence_proof(row, url)
+    if not proof.get("quote"):
+        proof = _source_fields_proof(row, url) or proof
+    return proof
 
 
 def map_contribution(row: dict) -> Dict[str, Any]:
