@@ -1,0 +1,131 @@
+[
+ {
+  "name": "Google Summer of Code",
+  "org": "Google",
+  "domain": "summerofcode.withgoogle.com",
+  "aliases": [
+   "GSoC"
+  ]
+ },
+ {
+  "name": "Outreachy",
+  "org": "Software Freedom Conservancy",
+  "domain": "outreachy.org",
+  "aliases": [
+   "Outreachy Internships"
+  ]
+ },
+ {
+  "name": "LFX Mentorship",
+  "org": "Linux Foundation",
+  "domain": "lfx.linuxfoundation.org",
+  "aliases": [
+   "Linux Foundation Mentorship"
+  ]
+ },
+ {
+  "name": "MLH Fellowship",
+  "org": "Major League Hacking",
+  "domain": "fellowship.mlh.io",
+  "aliases": [
+   "Major League Hacking Fellowship"
+  ]
+ },
+ {
+  "name": "Hacktoberfest",
+  "org": "DigitalOcean",
+  "domain": "hacktoberfest.com",
+  "aliases": []
+ },
+ {
+  "name": "Google Season of Docs",
+  "org": "Google",
+  "domain": "developers.google.com",
+  "aliases": [
+   "Season of Docs"
+  ]
+ },
+ {
+  "name": "Summer of Bitcoin",
+  "org": "Summer of Bitcoin",
+  "domain": "summerofbitcoin.org",
+  "aliases": []
+ },
+ {
+  "name": "GirlScript Summer of Code",
+  "org": "GirlScript Foundation",
+  "domain": "gssoc.girlscript.tech",
+  "aliases": [
+   "GSSoC"
+  ]
+ },
+ {
+  "name": "Hyperledger Mentorship",
+  "org": "Linux Foundation",
+  "domain": "wiki.hyperledger.org",
+  "aliases": [
+   "Hyperledger"
+  ]
+ },
+ {
+  "name": "Rails Girls Summer of Code",
+  "org": "Rails Girls Summer of Code",
+  "domain": "railsgirlssummerofcode.org",
+  "aliases": [
+   "RGSoC"
+  ]
+ },
+ {
+  "name": "Open Source Promotion Plan",
+  "org": "ISCAS",
+  "domain": "summer-ospp.ac.cn",
+  "aliases": [
+   "OSPP",
+   "Summer 2021"
+  ]
+ },
+ {
+  "name": "Season of KDE",
+  "org": "KDE",
+  "domain": "season.kde.org",
+  "aliases": [
+   "Season of KDE"
+  ]
+ },
+ {
+  "name": "Processing Foundation Fellowships",
+  "org": "Processing Foundation",
+  "domain": "processingfoundation.org",
+  "aliases": []
+ },
+ {
+  "name": "FOSS United Hack",
+  "org": "FOSS United",
+  "domain": "fossunited.org",
+  "aliases": []
+ },
+ {
+  "name": "CNCF Mentoring",
+  "org": "CNCF",
+  "domain": "cncf.io",
+  "aliases": [
+   "CNCF Mentoring Programs"
+  ]
+ },
+ {
+  "name": "Apache Summer Mentoring",
+  "org": "Apache Software Foundation",
+  "domain": "community.apache.org",
+  "aliases": [
+   "Apache Mentoring"
+  ]
+ },
+ {
+  "name": "GNOME Foundation Outreach Internships",
+  "org": "GNOME",
+  "domain": "gnome.org",
+  "aliases": [
+   "GNOME Internships"
+  ]
+ }
+]

@@ -1,0 +1,93 @@
+[
+ {
+  "name": "GitHub Campus Experts",
+  "org": "GitHub",
+  "domain": "education.github.com",
+  "aliases": [
+   "Campus Expert",
+   "GitHub Campus Expert"
+  ]
+ },
+ {
+  "name": "Microsoft Learn Student Ambassadors",
+  "org": "Microsoft",
+  "domain": "studentambassadors.microsoft.com",
+  "aliases": [
+   "Student Ambassadors",
+   "MLSA"
+  ]
+ },
+ {
+  "name": "Google Developer Groups on Campus",
+  "org": "Google",
+  "domain": "gdg.community.dev",
+  "aliases": [
+   "GDG on Campus",
+   "GDGoC"
+  ]
+ },
+ {
+  "name": "AWS Cloud Clubs",
+  "org": "Amazon Web Services",
+  "domain": "aws.amazon.com",
+  "aliases": [
+   "Cloud Clubs"
+  ]
+ },
+ {
+  "name": "Postman Student Leaders",
+  "org": "Postman",
+  "domain": "postman.com",
+  "aliases": [
+   "Postman Student Program",
+   "Student Leaders"
+  ]
+ },
+ {
+  "name": "MLH Coach",
+  "org": "Major League Hacking",
+  "domain": "mlh.io",
+  "aliases": [
+   "MLH Coaches",
+   "Coach"
+  ]
+ },
+ {
+  "name": "Google Developer Student Clubs",
+  "org": "Google",
+  "domain": "developers.google.com",
+  "aliases": [
+   "GDSC"
+  ]
+ },
+ {
+  "name": "Notion Campus Leaders",
+  "org": "Notion",
+  "domain": "notion.com",
+  "aliases": [
+   "Campus Leaders"
+  ]
+ },
+ {
+  "name": "Figma Campus Leaders",
+  "org": "Figma",
+  "domain": "figma.com",
+  "aliases": [
+   "Campus Leaders"
+  ]
+ },
+ {
+  "name": "Women Techmakers Ambassadors",
+  "org": "Google",
+  "domain": "womentechmakers.com",
+  "aliases": [
+   "Women Techmakers"
+  ]
+ },
+ {
+  "name": "JetBrains Student Program",
+  "org": "JetBrains",
+  "domain": "jetbrains.com",
+  "aliases": []
+ }
+]

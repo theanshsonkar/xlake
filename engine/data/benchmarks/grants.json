@@ -1,0 +1,174 @@
+[
+ {
+  "name": "NLnet Funding",
+  "org": "NLnet Foundation",
+  "domain": "nlnet.nl",
+  "aliases": [
+   "NGI Zero",
+   "NLnet"
+  ]
+ },
+ {
+  "name": "Sovereign Tech Fund",
+  "org": "Sovereign Tech Agency",
+  "domain": "sovereign.tech",
+  "aliases": [
+   "Sovereign Tech Fund"
+  ]
+ },
+ {
+  "name": "Mozilla Builders",
+  "org": "Mozilla",
+  "domain": "mozilla.org",
+  "aliases": [
+   "Mozilla Grants"
+  ]
+ },
+ {
+  "name": "Emergent Ventures",
+  "org": "Mercatus Center",
+  "domain": "mercatus.org",
+  "aliases": [
+   "Emergent Ventures"
+  ]
+ },
+ {
+  "name": "GitHub Secure Open Source Fund",
+  "org": "GitHub",
+  "domain": "github.com",
+  "aliases": [
+   "Secure Open Source Fund"
+  ]
+ },
+ {
+  "name": "Gitcoin Grants",
+  "org": "Gitcoin",
+  "domain": "gitcoin.co",
+  "aliases": [
+   "Gitcoin"
+  ]
+ },
+ {
+  "name": "Open Technology Fund",
+  "org": "Open Technology Fund",
+  "domain": "opentech.fund",
+  "aliases": [
+   "Internet Freedom Fund"
+  ]
+ },
+ {
+  "name": "Ethereum Foundation Ecosystem Support Program",
+  "org": "Ethereum Foundation",
+  "domain": "esp.ethereum.foundation",
+  "aliases": [
+   "Ecosystem Support Program"
+  ]
+ },
+ {
+  "name": "Prototype Fund",
+  "org": "Open Knowledge Foundation Germany",
+  "domain": "prototypefund.de",
+  "aliases": []
+ },
+ {
+  "name": "Wikimedia Foundation Grants",
+  "org": "Wikimedia Foundation",
+  "domain": "meta.wikimedia.org",
+  "aliases": [
+   "Wikimedia Grants"
+  ]
+ },
+ {
+  "name": "Python Software Foundation Grants",
+  "org": "Python Software Foundation",
+  "domain": "pyfound.org",
+  "aliases": [
+   "PSF Grants"
+  ]
+ },
+ {
+  "name": "Shuttleworth Foundation Fellowship",
+  "org": "Shuttleworth Foundation",
+  "domain": "shuttleworthfoundation.org",
+  "aliases": []
+ },
+ {
+  "name": "Awesome Foundation Grants",
+  "org": "Awesome Foundation",
+  "domain": "awesomefoundation.org",
+  "aliases": [
+   "Awesome Foundation"
+  ]
+ },
+ {
+  "name": "Open Society Foundations Grants",
+  "org": "Open Society Foundations",
+  "domain": "opensocietyfoundations.org",
+  "aliases": []
+ },
+ {
+  "name": "Rockefeller Foundation Grants",
+  "org": "Rockefeller Foundation",
+  "domain": "rockefellerfoundation.org",
+  "aliases": []
+ },
+ {
+  "name": "Sloan Foundation Grants",
+  "org": "Alfred P. Sloan Foundation",
+  "domain": "sloan.org",
+  "aliases": []
+ },
+ {
+  "name": "Chan Zuckerberg Initiative Grants",
+  "org": "Chan Zuckerberg Initiative",
+  "domain": "chanzuckerberg.com",
+  "aliases": [
+   "CZI Grants"
+  ]
+ },
+ {
+  "name": "Filecoin Foundation Grants",
+  "org": "Filecoin Foundation",
+  "domain": "fil.org",
+  "aliases": [
+   "Filecoin Grants"
+  ]
+ },
+ {
+  "name": "Solana Foundation Grants",
+  "org": "Solana Foundation",
+  "domain": "solana.org",
+  "aliases": [
+   "Solana Grants"
+  ]
+ },
+ {
+  "name": "Protocol Labs Grants",
+  "org": "Protocol Labs",
+  "domain": "protocol.ai",
+  "aliases": []
+ },
+ {
+  "name": "Fast Grants",
+  "org": "Fast Grants",
+  "domain": "fastgrants.org",
+  "aliases": []
+ },
+ {
+  "name": "Horizon Europe EIC Pathfinder",
+  "org": "European Commission",
+  "domain": "eic.ec.europa.eu",
+  "aliases": [
+   "EIC Accelerator",
+   "EIC Pathfinder"
+  ]
+ },
+ {
+  "name": "Wellcome Trust Grants",
+  "org": "Wellcome Trust",
+  "domain": "wellcome.org",
+  "aliases": [
+   "Wellcome Funding"
+  ]
+ }
+]

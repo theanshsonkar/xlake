@@ -1,0 +1,171 @@
+[
+ {
+  "name": "NSF REU",
+  "org": "National Science Foundation",
+  "domain": "nsf.gov",
+  "aliases": [
+   "Research Experiences for Undergraduates"
+  ]
+ },
+ {
+  "name": "Caltech SURF",
+  "org": "Caltech",
+  "domain": "sfp.caltech.edu",
+  "aliases": [
+   "Summer Undergraduate Research Fellowships"
+  ]
+ },
+ {
+  "name": "Amgen Scholars Program",
+  "org": "Amgen Foundation",
+  "domain": "amgenscholars.com",
+  "aliases": [
+   "Amgen Scholars"
+  ]
+ },
+ {
+  "name": "Mitacs Globalink Research Internship",
+  "org": "Mitacs",
+  "domain": "mitacs.ca",
+  "aliases": [
+   "Globalink"
+  ]
+ },
+ {
+  "name": "DAAD RISE",
+  "org": "DAAD",
+  "domain": "daad.de",
+  "aliases": [
+   "RISE Germany",
+   "RISE Worldwide"
+  ]
+ },
+ {
+  "name": "CERN Summer Student Programme",
+  "org": "CERN",
+  "domain": "home.cern",
+  "aliases": [
+   "CERN Summer Student"
+  ]
+ },
+ {
+  "name": "EPFL Summer Research Programme",
+  "org": "EPFL",
+  "domain": "epfl.ch",
+  "aliases": [
+   "EPFL Summer in the Lab"
+  ]
+ },
+ {
+  "name": "ETH Summer Research Fellowship",
+  "org": "ETH Zurich",
+  "domain": "ethz.ch",
+  "aliases": [
+   "ETH Student Summer Research Fellowship",
+   "SSRF"
+  ]
+ },
+ {
+  "name": "IISc Summer Research Fellowship",
+  "org": "Indian Institute of Science",
+  "domain": "iisc.ac.in",
+  "aliases": [
+   "IISc Summer Fellowship"
+  ]
+ },
+ {
+  "name": "IAS Summer Research Fellowship SRFP",
+  "org": "Indian Academy of Sciences",
+  "domain": "ias.ac.in",
+  "aliases": [
+   "SRFP",
+   "Summer Research Fellowship Programme"
+  ]
+ },
+ {
+  "name": "OIST Research Internship",
+  "org": "OIST",
+  "domain": "oist.jp",
+  "aliases": [
+   "OIST Research Internship Program"
+  ]
+ },
+ {
+  "name": "MIT MSRP",
+  "org": "MIT",
+  "domain": "oge.mit.edu",
+  "aliases": [
+   "MIT Summer Research Program"
+  ]
+ },
+ {
+  "name": "NIH Summer Internship Program",
+  "org": "NIH",
+  "domain": "training.nih.gov",
+  "aliases": [
+   "NIH SIP"
+  ]
+ },
+ {
+  "name": "DOE SULI",
+  "org": "US Department of Energy",
+  "domain": "science.osti.gov",
+  "aliases": [
+   "Science Undergraduate Laboratory Internships"
+  ]
+ },
+ {
+  "name": "Max Planck Summer of Science",
+  "org": "Max Planck",
+  "domain": "mpg.de",
+  "aliases": [
+   "MPG Summer of Science"
+  ]
+ },
+ {
+  "name": "Jackson Laboratory Summer Student Program",
+  "org": "The Jackson Laboratory",
+  "domain": "jax.org",
+  "aliases": [
+   "JAX Summer Student Program"
+  ]
+ },
+ {
+  "name": "NUS Summer Research Programme",
+  "org": "NUS",
+  "domain": "nus.edu.sg",
+  "aliases": [
+   "NUS Undergraduate Research"
+  ]
+ },
+ {
+  "name": "Weizmann Institute Summer Research",
+  "org": "Weizmann Institute",
+  "domain": "weizmann.ac.il",
+  "aliases": [
+   "Weizmann Summer Research Program"
+  ]
+ },
+ {
+  "name": "EMBL Summer Student Internships",
+  "org": "EMBL",
+  "domain": "embl.org",
+  "aliases": [
+   "EMBL Internship"
+  ]
+ },
+ {
+  "name": "Wellcome Sanger Institute Summer Studentship",
+  "org": "Wellcome Sanger Institute",
+  "domain": "sanger.ac.uk",
+  "aliases": []
+ },
+ {
+  "name": "TIFR Visiting Students Research Programme",
+  "org": "TIFR",
+  "domain": "tifr.res.in",
+  "aliases": [
+   "VSRP"
+  ]
+ }
+]

@@ -1,0 +1,225 @@
+[
+ {
+  "name": "Fulbright Program",
+  "org": "US Department of State",
+  "domain": "fulbrightprogram.org",
+  "aliases": [
+   "Fulbright Foreign Student Program",
+   "Fulbright Scholarship"
+  ],
+  "extra_domains": [
+   "fulbrightonline.org"
+  ]
+ },
+ {
+  "name": "Chevening Scholarships",
+  "org": "UK FCDO",
+  "domain": "chevening.org",
+  "aliases": [
+   "Chevening"
+  ]
+ },
+ {
+  "name": "DAAD Scholarships",
+  "org": "DAAD",
+  "domain": "daad.de",
+  "aliases": [
+   "DAAD"
+  ]
+ },
+ {
+  "name": "Rhodes Scholarship",
+  "org": "Rhodes Trust",
+  "domain": "rhodeshouse.ox.ac.uk",
+  "aliases": [
+   "Rhodes"
+  ]
+ },
+ {
+  "name": "Gates Cambridge Scholarship",
+  "org": "Gates Cambridge Trust",
+  "domain": "gatescambridge.org",
+  "aliases": [
+   "Gates Cambridge"
+  ]
+ },
+ {
+  "name": "Erasmus Mundus Joint Masters",
+  "org": "European Commission",
+  "domain": "erasmus-plus.ec.europa.eu",
+  "aliases": [
+   "Erasmus Mundus"
+  ]
+ },
+ {
+  "name": "MEXT Scholarship",
+  "org": "Government of Japan",
+  "domain": "studyinjapan.go.jp",
+  "aliases": [
+   "MEXT",
+   "Japanese Government Scholarship"
+  ]
+ },
+ {
+  "name": "Knight-Hennessy Scholars",
+  "org": "Stanford University",
+  "domain": "knight-hennessy.stanford.edu",
+  "aliases": [
+   "Knight Hennessy"
+  ]
+ },
+ {
+  "name": "Schwarzman Scholars",
+  "org": "Schwarzman Scholars",
+  "domain": "schwarzmanscholars.org",
+  "aliases": [
+   "Schwarzman"
+  ]
+ },
+ {
+  "name": "Commonwealth Scholarships",
+  "org": "Commonwealth Scholarship Commission",
+  "domain": "cscuk.fcdo.gov.uk",
+  "aliases": [
+   "Commonwealth Scholarship"
+  ]
+ },
+ {
+  "name": "Mastercard Foundation Scholars Program",
+  "org": "Mastercard Foundation",
+  "domain": "mastercardfdn.org",
+  "aliases": [
+   "Mastercard Foundation Scholars"
+  ]
+ },
+ {
+  "name": "Reliance Foundation Scholarships",
+  "org": "Reliance Foundation",
+  "domain": "reliancefoundation.org",
+  "aliases": [
+   "Reliance Foundation Undergraduate Scholarship"
+  ]
+ },
+ {
+  "name": "KC Mahindra Scholarship",
+  "org": "KC Mahindra Education Trust",
+  "domain": "kcmet.org",
+  "aliases": [
+   "K.C. Mahindra Scholarship for Post Graduate Studies Abroad"
+  ]
+ },
+ {
+  "name": "Marshall Scholarship",
+  "org": "Marshall Aid Commemoration Commission",
+  "domain": "marshallscholarship.org",
+  "aliases": [
+   "Marshall"
+  ]
+ },
+ {
+  "name": "Clarendon Scholarships",
+  "org": "University of Oxford",
+  "domain": "ox.ac.uk",
+  "aliases": [
+   "Clarendon Scholarship",
+   "Oxford Clarendon Fund"
+  ]
+ },
+ {
+  "name": "Gates Scholarship",
+  "org": "Gates Foundation",
+  "domain": "thegatesscholarship.org",
+  "aliases": [
+   "The Gates Scholarship"
+  ]
+ },
+ {
+  "name": "Swiss Government Excellence Scholarships",
+  "org": "Swiss Confederation",
+  "domain": "sbfi.admin.ch",
+  "aliases": [
+   "Swiss Government Excellence"
+  ]
+ },
+ {
+  "name": "Australia Awards",
+  "org": "Australian Government",
+  "domain": "australiaawards.gov.au",
+  "aliases": [
+   "Australia Awards Scholarships"
+  ]
+ },
+ {
+  "name": "Eiffel Excellence Scholarship",
+  "org": "Campus France",
+  "domain": "campusfrance.org",
+  "aliases": [
+   "Eiffel"
+  ]
+ },
+ {
+  "name": "Chinese Government Scholarship CSC",
+  "org": "China Scholarship Council",
+  "domain": "csc.edu.cn",
+  "aliases": [
+   "CSC Scholarship"
+  ]
+ },
+ {
+  "name": "Korean Government Scholarship GKS",
+  "org": "NIIED",
+  "domain": "studyinkorea.go.kr",
+  "aliases": [
+   "GKS",
+   "Global Korea Scholarship"
+  ]
+ },
+ {
+  "name": "Turkiye Burslari",
+  "org": "Government of Turkiye",
+  "domain": "turkiyeburslari.gov.tr",
+  "aliases": [
+   "Turkey Scholarships"
+  ]
+ },
+ {
+  "name": "Vanier Canada Graduate Scholarships",
+  "org": "Government of Canada",
+  "domain": "vanier.gc.ca",
+  "aliases": [
+   "Vanier CGS"
+  ]
+ },
+ {
+  "name": "Joint Japan World Bank Graduate Scholarship",
+  "org": "World Bank",
+  "domain": "worldbank.org",
+  "aliases": [
+   "JJ/WBGSP"
+  ]
+ },
+ {
+  "name": "Aga Khan Foundation International Scholarship",
+  "org": "Aga Khan Foundation",
+  "domain": "akdn.org",
+  "aliases": [
+   "Aga Khan Scholarship"
+  ]
+ },
+ {
+  "name": "Inlaks Scholarships",
+  "org": "Inlaks Shivdasani Foundation",
+  "domain": "inlaksfoundation.org",
+  "aliases": [
+   "Inlaks"
+  ]
+ },
+ {
+  "name": "Yenching Academy Scholarship",
+  "org": "Peking University",
+  "domain": "yenchingacademy.pku.edu.cn",
+  "aliases": [
+   "Yenching"
+  ]
+ }
+]

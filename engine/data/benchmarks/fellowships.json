@@ -1,0 +1,186 @@
+[
+ {
+  "name": "Thiel Fellowship",
+  "org": "Thiel Foundation",
+  "domain": "thielfellowship.org",
+  "aliases": [
+   "Thiel"
+  ]
+ },
+ {
+  "name": "Google PhD Fellowship",
+  "org": "Google",
+  "domain": "research.google",
+  "aliases": [
+   "Google PhD Fellowship Program"
+  ]
+ },
+ {
+  "name": "Microsoft Research PhD Fellowship",
+  "org": "Microsoft Research",
+  "domain": "microsoft.com",
+  "aliases": [
+   "Microsoft Research PhD"
+  ]
+ },
+ {
+  "name": "Schmidt Science Fellows",
+  "org": "Schmidt Sciences",
+  "domain": "schmidtsciencefellows.org",
+  "aliases": [
+   "Schmidt Science Fellowship"
+  ]
+ },
+ {
+  "name": "Kleiner Perkins Fellows",
+  "org": "Kleiner Perkins",
+  "domain": "kleinerperkins.com",
+  "aliases": [
+   "KP Fellows"
+  ]
+ },
+ {
+  "name": "Echoing Green Fellowship",
+  "org": "Echoing Green",
+  "domain": "echoinggreen.org",
+  "aliases": [
+   "Echoing Green"
+  ]
+ },
+ {
+  "name": "Obama Foundation Leaders",
+  "org": "Obama Foundation",
+  "domain": "obama.org",
+  "aliases": [
+   "Obama Foundation Leaders Program"
+  ]
+ },
+ {
+  "name": "Young India Fellowship",
+  "org": "Ashoka University",
+  "domain": "ashoka.edu.in",
+  "aliases": [
+   "YIF"
+  ]
+ },
+ {
+  "name": "Teach For India Fellowship",
+  "org": "Teach For India",
+  "domain": "teachforindia.org",
+  "aliases": [
+   "Teach For India"
+  ]
+ },
+ {
+  "name": "Teach For All",
+  "org": "Teach For All",
+  "domain": "teachforall.org",
+  "aliases": []
+ },
+ {
+  "name": "Rotary Peace Fellowship",
+  "org": "Rotary International",
+  "domain": "rotary.org",
+  "aliases": [
+   "Rotary Peace Centers"
+  ]
+ },
+ {
+  "name": "Knight Science Journalism Fellowship",
+  "org": "MIT",
+  "domain": "ksj.mit.edu",
+  "aliases": []
+ },
+ {
+  "name": "Pickering Fellowship",
+  "org": "Woodrow Wilson Foundation",
+  "domain": "woodrow.org",
+  "aliases": [
+   "Thomas R. Pickering Foreign Affairs Fellowship"
+  ]
+ },
+ {
+  "name": "Coro Fellowship",
+  "org": "Coro",
+  "domain": "coro.org",
+  "aliases": [
+   "Coro Fellows"
+  ]
+ },
+ {
+  "name": "Ford Foundation Fellowship",
+  "org": "National Academies",
+  "domain": "nationalacademies.org",
+  "aliases": [
+   "Ford Foundation Predoctoral Fellowship"
+  ]
+ },
+ {
+  "name": "Hertz Fellowship",
+  "org": "Fannie and John Hertz Foundation",
+  "domain": "hertzfoundation.org",
+  "aliases": [
+   "Hertz"
+  ]
+ },
+ {
+  "name": "NSF Graduate Research Fellowship",
+  "org": "National Science Foundation",
+  "domain": "nsfgrfp.org",
+  "aliases": [
+   "GRFP"
+  ]
+ },
+ {
+  "name": "Churchill Scholarship",
+  "org": "Winston Churchill Foundation",
+  "domain": "churchillscholarship.org",
+  "aliases": [
+   "Churchill"
+  ]
+ },
+ {
+  "name": "Open Philanthropy Fellowship",
+  "org": "Open Philanthropy",
+  "domain": "openphilanthropy.org",
+  "aliases": []
+ },
+ {
+  "name": "Presidential Management Fellows",
+  "org": "US OPM",
+  "domain": "pmf.gov",
+  "aliases": [
+   "PMF"
+  ]
+ },
+ {
+  "name": "Venture for America",
+  "org": "Venture for America",
+  "domain": "ventureforamerica.org",
+  "aliases": [
+   "VFA Fellowship"
+  ]
+ },
+ {
+  "name": "Ashoka Fellowship",
+  "org": "Ashoka",
+  "domain": "ashoka.org",
+  "aliases": [
+   "Ashoka Fellows"
+  ]
+ },
+ {
+  "name": "Quad Fellowship",
+  "org": "Quad Fellowship",
+  "domain": "quadfellowship.org",
+  "aliases": [
+   "Quad"
+  ]
+ },
+ {
+  "name": "Atlantic Fellows",
+  "org": "Atlantic Institute",
+  "domain": "atlanticfellows.org",
+  "aliases": []
+ }
+]

@@ -1,0 +1,152 @@
+[
+ {
+  "name": "Major League Hacking Season",
+  "org": "Major League Hacking",
+  "domain": "mlh.io",
+  "aliases": [
+   "MLH Season",
+   "MLH Hackathons"
+  ]
+ },
+ {
+  "name": "ETHGlobal",
+  "org": "ETHGlobal",
+  "domain": "ethglobal.com",
+  "aliases": [
+   "ETHGlobal Hackathon"
+  ]
+ },
+ {
+  "name": "Smart India Hackathon",
+  "org": "Government of India",
+  "domain": "sih.gov.in",
+  "aliases": [
+   "SIH"
+  ]
+ },
+ {
+  "name": "NASA International Space Apps Challenge",
+  "org": "NASA",
+  "domain": "spaceappschallenge.org",
+  "aliases": [
+   "NASA Space Apps"
+  ]
+ },
+ {
+  "name": "Google Solution Challenge",
+  "org": "Google",
+  "domain": "developers.google.com",
+  "aliases": [
+   "Solution Challenge",
+   "GDSC Solution Challenge"
+  ]
+ },
+ {
+  "name": "Microsoft Imagine Cup",
+  "org": "Microsoft",
+  "domain": "imaginecup.microsoft.com",
+  "aliases": [
+   "Imagine Cup"
+  ]
+ },
+ {
+  "name": "HackMIT",
+  "org": "MIT",
+  "domain": "hackmit.org",
+  "aliases": []
+ },
+ {
+  "name": "TreeHacks",
+  "org": "Stanford",
+  "domain": "treehacks.com",
+  "aliases": []
+ },
+ {
+  "name": "PennApps",
+  "org": "University of Pennsylvania",
+  "domain": "pennapps.com",
+  "aliases": []
+ },
+ {
+  "name": "HackHarvard",
+  "org": "Harvard",
+  "domain": "hackharvard.io",
+  "aliases": []
+ },
+ {
+  "name": "CalHacks",
+  "org": "UC Berkeley",
+  "domain": "calhacks.io",
+  "aliases": [
+   "Cal Hacks"
+  ]
+ },
+ {
+  "name": "Hack the North",
+  "org": "University of Waterloo",
+  "domain": "hackthenorth.com",
+  "aliases": []
+ },
+ {
+  "name": "MHacks",
+  "org": "University of Michigan",
+  "domain": "mhacks.org",
+  "aliases": []
+ },
+ {
+  "name": "HackIllinois",
+  "org": "University of Illinois",
+  "domain": "hackillinois.org",
+  "aliases": []
+ },
+ {
+  "name": "HackGT",
+  "org": "Georgia Tech",
+  "domain": "hack.gt",
+  "aliases": [
+   "HackGT"
+  ]
+ },
+ {
+  "name": "JunctionX",
+  "org": "Junction",
+  "domain": "hackjunction.com",
+  "aliases": [
+   "Junction"
+  ]
+ },
+ {
+  "name": "HackZurich",
+  "org": "HackZurich",
+  "domain": "hackzurich.com",
+  "aliases": []
+ },
+ {
+  "name": "Devfolio ETHIndia",
+  "org": "Devfolio",
+  "domain": "ethindia.co",
+  "aliases": [
+   "ETHIndia"
+  ]
+ },
+ {
+  "name": "Angelhack",
+  "org": "AngelHack",
+  "domain": "angelhack.com",
+  "aliases": []
+ },
+ {
+  "name": "Global Game Jam",
+  "org": "Global Game Jam",
+  "domain": "globalgamejam.org",
+  "aliases": []
+ },
+ {
+  "name": "Solana Hackathon Colosseum",
+  "org": "Colosseum",
+  "domain": "colosseum.org",
+  "aliases": [
+   "Colosseum"
+  ]
+ }
+]

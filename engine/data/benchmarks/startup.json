@@ -1,0 +1,158 @@
+[
+ {
+  "name": "Y Combinator",
+  "org": "Y Combinator",
+  "domain": "ycombinator.com",
+  "aliases": [
+   "YC Batch",
+   "YC"
+  ]
+ },
+ {
+  "name": "Techstars Accelerator",
+  "org": "Techstars",
+  "domain": "techstars.com",
+  "aliases": [
+   "Techstars"
+  ]
+ },
+ {
+  "name": "Antler Residency",
+  "org": "Antler",
+  "domain": "antler.co",
+  "aliases": [
+   "Antler"
+  ]
+ },
+ {
+  "name": "Entrepreneur First",
+  "org": "Entrepreneur First",
+  "domain": "joinef.com",
+  "aliases": [
+   "EF"
+  ]
+ },
+ {
+  "name": "500 Global Accelerator",
+  "org": "500 Global",
+  "domain": "500.co",
+  "aliases": [
+   "500 Startups",
+   "500 Global"
+  ]
+ },
+ {
+  "name": "Pioneer",
+  "org": "Pioneer",
+  "domain": "pioneer.app",
+  "aliases": [
+   "Pioneer Tournament"
+  ]
+ },
+ {
+  "name": "Google for Startups Accelerator",
+  "org": "Google",
+  "domain": "startup.google.com",
+  "aliases": [
+   "Google for Startups"
+  ]
+ },
+ {
+  "name": "AWS Activate",
+  "org": "Amazon Web Services",
+  "domain": "aws.amazon.com",
+  "aliases": [
+   "AWS Activate"
+  ]
+ },
+ {
+  "name": "Startup India Seed Fund Scheme",
+  "org": "DPIIT",
+  "domain": "startupindia.gov.in",
+  "aliases": [
+   "Startup India"
+  ]
+ },
+ {
+  "name": "Sequoia Surge",
+  "org": "Sequoia Capital India",
+  "domain": "surgeahead.com",
+  "aliases": [
+   "Surge"
+  ]
+ },
+ {
+  "name": "Axilor Ventures Accelerator",
+  "org": "Axilor",
+  "domain": "axilor.com",
+  "aliases": []
+ },
+ {
+  "name": "Station F Founders Program",
+  "org": "Station F",
+  "domain": "stationf.co",
+  "aliases": [
+   "Founders Program"
+  ]
+ },
+ {
+  "name": "Alchemist Accelerator",
+  "org": "Alchemist Accelerator",
+  "domain": "alchemistaccelerator.com",
+  "aliases": []
+ },
+ {
+  "name": "Seedcamp",
+  "org": "Seedcamp",
+  "domain": "seedcamp.com",
+  "aliases": []
+ },
+ {
+  "name": "Microsoft for Startups Founders Hub",
+  "org": "Microsoft",
+  "domain": "startups.microsoft.com",
+  "aliases": [
+   "Founders Hub"
+  ]
+ },
+ {
+  "name": "NVIDIA Inception",
+  "org": "NVIDIA",
+  "domain": "nvidia.com",
+  "aliases": [
+   "Inception"
+  ]
+ },
+ {
+  "name": "Flat6Labs",
+  "org": "Flat6Labs",
+  "domain": "flat6labs.com",
+  "aliases": []
+ },
+ {
+  "name": "Village Global",
+  "org": "Village Global",
+  "domain": "villageglobal.com",
+  "aliases": []
+ },
+ {
+  "name": "Wayra",
+  "org": "Telefonica",
+  "domain": "wayra.com",
+  "aliases": []
+ },
+ {
+  "name": "Startupbootcamp",
+  "org": "Startupbootcamp",
+  "domain": "startupbootcamp.org",
+  "aliases": []
+ },
+ {
+  "name": "Plug and Play Tech Center",
+  "org": "Plug and Play",
+  "domain": "plugandplaytechcenter.com",
+  "aliases": [
+   "Plug and Play"
+  ]
+ }
+]
