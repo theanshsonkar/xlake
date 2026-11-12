@@ -13,10 +13,11 @@ Rules enforced here:
 from __future__ import annotations
 
 import re
+from datetime import date
 from typing import Any, Dict, List, Optional
 
 from categories.programme_enrich import clean_location, is_placeholder
-from core import jobmeta, lifecycle
+from core import cycles, jobmeta, lifecycle
 from pipeline import publish_supabase as ps
 
 FIELDS = (
@@ -259,13 +260,21 @@ def map_programme(row: dict) -> Dict[str, Any]:
     amount = _number(_first(row.get("funding_amount"), row.get("funding_amount_usd")))
     currency = _currency(row.get("funding_currency")) or (
         "USD" if amount is not None and row.get("funding_amount") is None else None)
+    today = date.today()
+    own_last = to_date(row.get("last_deadline"))
+    if not own_last:
+        past = [c["deadline"] for c in (row.get("cycles") or [])
+                if isinstance(c, dict) and to_date(c.get("deadline")) and c["deadline"] < today.isoformat()]
+        own_last = max(past) if past else None
+    next_cycle = scrub(row.get("next_cycle_hint"), 120) or scrub(
+        cycles.next_cycle_text(cycles.predict_next(row, today)), 120)
     return {
         "org": real_org(ps._display_company(row)),
         "logo": clean_logo(row.get("logo_url")),
         "url": url, "apply_url": _first(row.get("application_url"), url),
         "opens": to_date(row.get("opening_date")),
-        "last_deadline": to_date(row.get("last_deadline")),
-        "next_cycle": scrub(row.get("next_cycle_hint"), 120),
+        "last_deadline": own_last,
+        "next_cycle": next_cycle,
         "level": _level_of(row.get("levels")),
         "location": scrub(clean_location(row.get("location")), 120),
         "country": _country(clean_location(row.get("location")), row.get("region")),

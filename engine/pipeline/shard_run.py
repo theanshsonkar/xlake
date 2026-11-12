@@ -20,7 +20,7 @@ import os
 import sys
 from datetime import datetime, timezone
 
-from core import lifecycle, shards
+from core import cycles, lifecycle, shards
 from core.paths import HIDDEN_PATH, LAKE_DIR, OPPORTUNITIES_PATH
 
 PREV_COUNT = os.path.join(LAKE_DIR, "shards", ".prev_count")
@@ -111,10 +111,13 @@ def main(argv=None) -> int:
     err = shards.drop_guard(prev if prev is not None else 0, len(mine), args.force)
     now = datetime.now(timezone.utc)
     lc = lifecycle.reconcile(mine, now.date(), now.isoformat(timespec="seconds"))
+    cy = cycles.finalize(mine, now.date())
     text = summary(cat, mine, prev) + (
         "\nlifecycle: open=%(open)d upcoming=%(upcoming)d unverified=%(unverified)d "
         "closed=%(closed)d revived_cleaned=%(revived_cleaned)d "
-        "deadline_closed=%(deadline_closed)d deadline_unparsed=%(deadline_unparsed)d" % lc)
+        "deadline_closed=%(deadline_closed)d deadline_unparsed=%(deadline_unparsed)d" % lc) + (
+        "\ncycles: rows_with_history=%(rows_with_history)d changed=%(changed)d "
+        "predicted=%(predicted)d" % cy)
     print(text)
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as fh:
