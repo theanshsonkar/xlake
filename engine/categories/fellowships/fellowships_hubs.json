@@ -1747,5 +1747,16 @@
       ""
     ],
     "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-teach-for-all",
+    "programme_id": "fellowship-teach-for-all",
+    "programme_name": "Teach For All",
+    "organizer": "Teach For All",
+    "official_url": "https://teachforall.org/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
   }
 ]

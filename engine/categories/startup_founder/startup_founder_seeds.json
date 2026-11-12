@@ -76,5 +76,137 @@
   ],
   "check_cadence": "weekly",
   "render": true
+ },
+ {
+  "source_id": "startup-techstars",
+  "programme_id": "startup-techstars",
+  "programme_name": "Techstars Accelerator",
+  "organizer": "Techstars",
+  "official_url": "https://www.techstars.com/accelerators",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
+ },
+ {
+  "source_id": "startup-500-global",
+  "programme_id": "startup-500-global",
+  "programme_name": "500 Global Accelerator",
+  "organizer": "500 Global",
+  "official_url": "https://500.co/founders",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
+ },
+ {
+  "source_id": "startup-pioneer",
+  "programme_id": "startup-pioneer",
+  "programme_name": "Pioneer",
+  "organizer": "Pioneer",
+  "official_url": "https://pioneer.app/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
+ },
+ {
+  "source_id": "startup-sequoia-surge",
+  "programme_id": "startup-sequoia-surge",
+  "programme_name": "Surge (Peak XV)",
+  "organizer": "Peak XV Partners",
+  "official_url": "https://surge.peakxv.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
+ },
+ {
+  "source_id": "startup-axilor",
+  "programme_id": "startup-axilor",
+  "programme_name": "Axilor Ventures Accelerator",
+  "organizer": "Axilor Ventures",
+  "official_url": "https://www.axilor.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
+ },
+ {
+  "source_id": "startup-seedcamp",
+  "programme_id": "startup-seedcamp",
+  "programme_name": "Seedcamp",
+  "organizer": "Seedcamp",
+  "official_url": "https://seedcamp.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
+ },
+ {
+  "source_id": "startup-nvidia-inception",
+  "programme_id": "startup-nvidia-inception",
+  "programme_name": "NVIDIA Inception",
+  "organizer": "NVIDIA",
+  "official_url": "https://www.nvidia.com/en-us/startups/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
+ },
+ {
+  "source_id": "startup-flat6labs",
+  "programme_id": "startup-flat6labs",
+  "programme_name": "Flat6Labs",
+  "organizer": "Flat6Labs",
+  "official_url": "https://flat6labs.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
+ },
+ {
+  "source_id": "startup-village-global",
+  "programme_id": "startup-village-global",
+  "programme_name": "Village Global",
+  "organizer": "Village Global",
+  "official_url": "https://www.villageglobal.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
+ },
+ {
+  "source_id": "startup-wayra",
+  "programme_id": "startup-wayra",
+  "programme_name": "Wayra",
+  "organizer": "Telefonica Open Innovation (Wayra)",
+  "official_url": "https://wayra.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
+ },
+ {
+  "source_id": "startup-startupbootcamp",
+  "programme_id": "startup-startupbootcamp",
+  "programme_name": "Startupbootcamp",
+  "organizer": "Startupbootcamp",
+  "official_url": "https://startupbootcamp.org/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
+ },
+ {
+  "source_id": "startup-plug-and-play",
+  "programme_id": "startup-plug-and-play",
+  "programme_name": "Plug and Play Tech Center",
+  "organizer": "Plug and Play",
+  "official_url": "https://www.plugandplaytechcenter.com/",
+  "allowed_path_hints": [
+   ""
+  ],
+  "check_cadence": "weekly"
  }
 ]

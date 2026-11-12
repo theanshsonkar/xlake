@@ -142,5 +142,14 @@
     "official_url": "https://www.snowflake.com/en/data-superheroes/",
     "allowed_path_hints": ["en/data-superheroes"],
     "check_cadence": "monthly"
+  },
+  {
+    "source_id": "community-jetbrains-student-program",
+    "programme_id": "community-jetbrains-student-program",
+    "programme_name": "JetBrains Student Program",
+    "organizer": "JetBrains",
+    "official_url": "https://www.jetbrains.com/academy/student-pack/",
+    "allowed_path_hints": ["academy/student-pack"],
+    "check_cadence": "monthly"
   }
 ]
