@@ -34,8 +34,19 @@ class OwnerTests(unittest.TestCase):
         self.assertEqual(core.choose_owner([row("open-source-programmes", "o-1"), row("community", "c-1")]), "community")
 
     def test_hand_seed_beats_hub_seed(self):
-        pick = core.choose_owner([row("fellowship", "fellowship-hub-www-gem-abc123"), row("scholarship", "scholarship-gem")])
-        self.assertEqual(pick, "scholarship")
+        n = "Fulbright Foreign Student Program"  # name states no category
+        pick = core.choose_owner([row("fellowship", "fellowship-x", name=n), row("scholarship", "scholarship-hub-x-abc123", name=n)])
+        self.assertEqual(pick, "fellowship")
+
+    def test_own_name_decides_first(self):
+        n = "Knight-Hennessy Scholars"
+        self.assertEqual(core.choose_owner([row("fellowship", "fellowship-kh", name=n), row("scholarship", "scholarship-hub-kh-1", name=n)]), "scholarship")
+        g = "GEM Fellowship Program"
+        self.assertEqual(core.choose_owner([row("scholarship", "scholarship-gem", name=g), row("fellowship", "fellowship-hub-gem-1", name=g)]), "fellowship")
+
+    def test_ambiguous_name_prefers_scholarship(self):
+        n = "Fulbright Foreign Student Program"
+        self.assertEqual(core.choose_owner([row("fellowship", "f-1", name=n), row("scholarship", "s-1", name=n)]), "scholarship")
 
     def test_hidden_row_not_served(self):
         rows = [row("scholarship", "s-1")]

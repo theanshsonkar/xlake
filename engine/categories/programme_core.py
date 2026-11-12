@@ -1748,8 +1748,26 @@ def dedupe_across_categories(lake_rows: List[Dict], now: str) -> int:
 
 
 # Owner rule: one owning category per programme, so per-category shards never serve the same programme twice.
-OWNER_CATEGORY_PRIORITY = ("fellowship", "scholarship", "grant", "research", "startup-founder",
+# Fallback order when the name decides nothing: money-for-study (scholarship) before
+# fellowship, so ambiguous programmes (e.g. Fulbright) stay findable as scholarships.
+OWNER_CATEGORY_PRIORITY = ("scholarship", "fellowship", "grant", "research", "startup-founder",
                            "community", "open-source-programmes")
+# The programme's own name decides first: "Knight-Hennessy Scholars" is a scholarship,
+# "GEM Fellowship" a fellowship, wherever else it was also found.
+_OWNER_NAME_WORDS = (
+    ("scholarship", re.compile(r"\bscholars(?:hips?)?\b", re.I)),
+    ("fellowship", re.compile(r"\bfellow(?:s|ships?)\b", re.I)),
+    ("grant", re.compile(r"\bgrants?\b", re.I)),
+    ("startup-founder", re.compile(r"\b(?:accelerator|incubator)\b", re.I)),
+)
+
+
+def _name_says(row: Dict) -> Optional[str]:
+    name = row.get("programme_name") or row.get("title") or ""
+    for category, rx in _OWNER_NAME_WORDS:
+        if rx.search(name):
+            return category
+    return None
 OWNERS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "operations", "programme_owners.json")
 
 
@@ -1762,11 +1780,12 @@ def is_hub_discovered(row: Dict) -> bool:
 
 
 def choose_owner(candidates: Iterable[Dict]) -> str:
-    """Owning category among rows of one programme: hand-listed beats hub-discovered, then category priority."""
+    """Owning category among rows of one programme: the category its own name states,
+    then hand-listed beats hub-discovered, then category priority."""
     def rank(row):
         category = row.get("category")
         position = OWNER_CATEGORY_PRIORITY.index(category) if category in OWNER_CATEGORY_PRIORITY else len(OWNER_CATEGORY_PRIORITY)
-        return (int(is_hub_discovered(row)), position)
+        return (int(_name_says(row) != category), int(is_hub_discovered(row)), position)
     return min(candidates, key=rank).get("category")
 
 
