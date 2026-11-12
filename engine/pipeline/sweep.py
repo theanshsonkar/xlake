@@ -255,6 +255,8 @@ def _merge_store(path: str, rows: List[Dict],
                 "last_seen": now,
                 "is_live": True,
             })
+            for _k in ("went_dead_at", "liveness_reason", "needs_confirmation"):
+                existing.pop(_k, None)  # revived: drop stale dead stamps
             if r.get("company_name"):
                 existing["company_name"] = r["company_name"]
             if "is_internship" not in existing:

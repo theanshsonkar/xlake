@@ -18,8 +18,9 @@ import argparse
 import json
 import os
 import sys
+from datetime import datetime, timezone
 
-from core import shards
+from core import lifecycle, shards
 from core.paths import HIDDEN_PATH, LAKE_DIR, OPPORTUNITIES_PATH
 
 PREV_COUNT = os.path.join(LAKE_DIR, "shards", ".prev_count")
@@ -108,7 +109,12 @@ def main(argv=None) -> int:
         print("note: dropped %d non-%s rows from working file" % (foreign, cat))
     prev = int(open(PREV_COUNT).read()) if os.path.exists(PREV_COUNT) else None
     err = shards.drop_guard(prev if prev is not None else 0, len(mine), args.force)
-    text = summary(cat, mine, prev)
+    now = datetime.now(timezone.utc)
+    lc = lifecycle.reconcile(mine, now.date(), now.isoformat(timespec="seconds"))
+    text = summary(cat, mine, prev) + (
+        "\nlifecycle: open=%(open)d upcoming=%(upcoming)d unverified=%(unverified)d "
+        "closed=%(closed)d revived_cleaned=%(revived_cleaned)d "
+        "deadline_closed=%(deadline_closed)d deadline_unparsed=%(deadline_unparsed)d" % lc)
     print(text)
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as fh:

@@ -11,6 +11,7 @@ from typing import Callable, Dict, Iterable, List, Optional, Tuple
 from core import robots
 from pipeline.resolve import _fetch_page
 
+from core import lifecycle
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
 from categories import programme_core as _core
 from categories.programme_core import (
@@ -166,6 +167,8 @@ def _postprocess(rows: Iterable[Dict], verifications: Iterable[Dict]) -> List[Di
         if row.get("record_type") != "programme":
             continue
         if row.get("programme_id") in valid_open_ids:
+            if lifecycle.deadline_passed(row):
+                continue
             row["is_live"] = True
             row.pop("needs_confirmation", None)
             row.pop("went_dead_at", None)

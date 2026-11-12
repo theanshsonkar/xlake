@@ -16,6 +16,8 @@ from __future__ import annotations
 from datetime import datetime, timedelta, timezone
 from typing import Dict, Iterable, Optional, Set, Tuple
 
+from core import lifecycle
+
 RETIRE_DAYS = 21
 # Platforms whose rows are refreshed by their own collector, not by board sweeps.
 SELF_MANAGED_PLATFORMS = frozenset({"zshah101-list"})
@@ -32,10 +34,7 @@ def _parse(ts) -> Optional[datetime]:
 
 
 def _retire(r: Dict, now: str, reason: str) -> None:
-    r["is_live"] = False
-    r["needs_confirmation"] = False
-    r["went_dead_at"] = now
-    r["liveness_reason"] = reason
+    lifecycle.close(r, now, reason)
 
 
 def apply(rows: Iterable[Dict], found_keys_of: Set[int], boards_read: Set[Tuple[str, str]],

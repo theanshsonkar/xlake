@@ -7,6 +7,7 @@ from copy import deepcopy
 from datetime import datetime, timezone
 from typing import Callable, Dict, Iterable, List, Optional, Tuple
 
+from core import lifecycle
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
 from categories import programme_core as _core
 from categories.programme_core import (
@@ -137,7 +138,7 @@ def _postprocess(rows: Iterable[Dict], verifications: Iterable[Dict]) -> List[Di
                 row.pop(field, None)
 
         status = row.get("programme_status")
-        if status in ("open", "opening_soon", "rolling"):
+        if status in ("open", "opening_soon", "rolling") and not lifecycle.deadline_passed(row):
             row["is_live"] = True
             row.pop("needs_confirmation", None)
             row.pop("went_dead_at", None)

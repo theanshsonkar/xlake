@@ -7,6 +7,7 @@ from copy import deepcopy
 from datetime import datetime, timezone
 from typing import Callable, Dict, Iterable, List, Optional, Tuple
 
+from core import lifecycle
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
 from categories import programme_core as _core
 from categories.programme_core import (
@@ -149,7 +150,8 @@ def _postprocess(rows: Iterable[Dict], verifications: Iterable[Dict]) -> List[Di
                         if key in verification.get("official_evidence", {}):
                             evidence[key] = deepcopy(verification["official_evidence"][key])
         status = row.get("programme_status")
-        if status in ("open", "opening_soon", "rolling", "upcoming") and not row.get("needs_confirmation"):
+        if (status in ("open", "opening_soon", "rolling", "upcoming") and not row.get("needs_confirmation")
+                and not lifecycle.deadline_passed(row)):
             row["is_live"] = True
             row.pop("went_dead_at", None)
         elif status in ("closed", "ended"):

@@ -18,7 +18,7 @@ from html.parser import HTMLParser
 from typing import Callable, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urljoin, urlparse
 
-from core import pagetext, robots
+from core import lifecycle, pagetext, robots
 from categories import programme_enrich as enrich
 from categories.stem import is_junk_title, is_stem_programme
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
@@ -1454,7 +1454,8 @@ def apply_verifications(rows: Iterable[Dict], verifications: Iterable[Dict], now
         row["source_mechanism"] = "manual-verification"
         status = row.get("programme_status")
         if status in ("live", "open", "opening_soon"):
-            row["is_live"] = True
+            if not lifecycle.deadline_passed(row):
+                row["is_live"] = True
         elif status in ("closed", "ended"):
             row["is_live"] = False
             if not row.get("went_dead_at"):
