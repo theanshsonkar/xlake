@@ -160,6 +160,23 @@ jobs:
             python3 -u -m pipeline.publish_supabase --category "$CAT" --execute $EXTRA
           fi
 
+
+      - name: Sync to Cloudflare D1
+        if: ${{ !inputs.dry_run }}
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: "3dcdbb176253427b2e7e80c6189b12ca"
+        run: python3 -u -m pipeline.sync_d1 --shard "$CAT"
+
+      - name: Sync to Cloudflare D1
+        if: ${{ inputs.dry_run }}
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: "3dcdbb176253427b2e7e80c6189b12ca"
+        run: python3 -u -m pipeline.sync_d1 --shard "$CAT" --dry-run
+
       - name: Commit operational files
         if: ${{ !inputs.dry_run }}
         run: |
