@@ -407,13 +407,13 @@ def to_standard(row: dict) -> Dict[str, Any]:
     out["status"] = row.get("lifecycle") or lifecycle.infer(row, date.today())
     out["deadline"] = to_date(_first(row.get("deadline"), row.get("registration_deadline")))
     if t == "hackathon" and out["status"] in ("open", "upcoming"):
-        # Upcoming only while a dated registration opening is ahead (UTC); event start alone
-        # does not make a hackathon upcoming. A deadline not after the opening is stale.
+        # A dated registration opening still ahead (UTC) makes the row upcoming; otherwise the
+        # status is left as it was. A deadline not after that opening is stale.
         opens = out["opens"]
-        today_utc = _today_utc()
-        out["status"] = "upcoming" if opens and opens > today_utc else "open"
-        if opens and opens > today_utc and out["deadline"] and out["deadline"] <= opens:
-            out["deadline"] = None
+        if opens and opens > _today_utc():
+            out["status"] = "upcoming"
+            if out["deadline"] and out["deadline"] <= opens:
+                out["deadline"] = None
     out["eligibility"] = _eligibility(row, out["level"])
     out["last_checked"] = _first(row.get("last_checked_at"), row.get("last_seen"), row.get("checked_at"))
     return {k: out[k] for k in FIELDS}

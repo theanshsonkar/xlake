@@ -43,10 +43,12 @@ class HackathonOpensTest(unittest.TestCase):
         with at("2026-11-13"):
             s = to_standard(hack())
         self.assertIsNone(s["opens"])
-        self.assertEqual(s["status"], "open")
+        self.assertEqual(s["status"], "upcoming")  # unchanged from the row's own status
+        with at("2026-11-13"):
+            self.assertEqual(to_standard(hack(lifecycle="open"))["status"], "open")
 
     def test_non_opening_quote_rejected(self):
-        row = hack(opening_date="2026-12-15",
+        row = hack(opening_date="2026-12-15", lifecycle="open",
                    official_evidence={"opening_date": {"quote": "Registration closes on 15 December 2026."}})
         with at("2026-11-13"):
             s = to_standard(row)
@@ -66,6 +68,7 @@ class HackathonOpensTest(unittest.TestCase):
 
     def test_flips_to_open_after_date(self):
         row = hack(opening_date="2026-12-15", official_evidence={"opening_date": {"quote": QUOTE}})
+        row["lifecycle"] = "open"
         with at("2026-12-15"):
             self.assertEqual(to_standard(row)["status"], "open")
         with at("2026-12-14"):
