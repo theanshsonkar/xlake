@@ -43,20 +43,39 @@ REQUIRED_SEED_FIELDS = (
 )
 
 
+def _finder_seeds_kept(stem: str, seeds: list, taken_urls: set) -> list:
+    """Finder seeds get the same durable name/URL filters as hub seeds."""
+    try:
+        from categories.hub_seeds import _merge_seed_filter_reason
+    except ImportError:  # pragma: no cover - supports package-root imports
+        from engine.categories.hub_seeds import _merge_seed_filter_reason
+    return [seed for seed in seeds
+            if isinstance(seed, dict) and seed.get("official_url") not in taken_urls
+            and not _merge_seed_filter_reason(stem, seed.get("programme_name"), seed.get("official_url"))]
+
+
 def load_generated_seeds(stem: str) -> tuple:
     """Load an optional canonical generated-seed registry for a category."""
     generated_dir = os.environ.get(GENERATED_SEEDS_ENV, "").strip()
     if not generated_dir:
         return ()
-    path = os.path.join(generated_dir, "{}.json".format(stem))
-    if not os.path.isfile(path):
+    seeds = []
+    for name in (stem, "finder_" + stem):
+        path = os.path.join(generated_dir, "{}.json".format(name))
+        if not os.path.isfile(path):
+            continue
+        with open(path, encoding="utf-8") as handle:
+            loaded = json.load(handle)
+        if not isinstance(loaded, list):
+            raise ValueError("generated {} seed registry must be a JSON array".format(name))
+        if name != stem:
+            loaded = _finder_seeds_kept(stem, loaded, {s.get("official_url") for s in seeds})
+        seeds.extend(loaded)
+    if not seeds:
         return ()
-    with open(path, encoding="utf-8") as handle:
-        seeds = json.load(handle)
-    if not isinstance(seeds, list):
-        raise ValueError("generated {} seed registry must be a JSON array".format(stem))
     for index, seed in enumerate(seeds):
-        optional_fields = {"first_seen", "last_seen", "added_at", "generated_at", "needs_page_noun", "dead_strikes", "tech_ok"}
+        optional_fields = {"first_seen", "last_seen", "added_at", "generated_at", "needs_page_noun", "dead_strikes", "tech_ok",
+                           "source_kind", "discovered_from"}
         if (not isinstance(seed, dict)
                 or set(seed) - set(REQUIRED_SEED_FIELDS) - optional_fields
                 or not set(REQUIRED_SEED_FIELDS) <= set(seed)):
