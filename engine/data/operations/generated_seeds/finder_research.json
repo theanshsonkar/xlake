@@ -15,36 +15,6 @@
   "last_seen": "2026-11-13T11:47:49Z"
  },
  {
-  "source_id": "find-research-animalbehavior-indiana-edu-184245",
-  "programme_id": "research-find-animalbehavior-indiana-edu-184245",
-  "programme_name": "REU Archives: NSF Research Experience for Undergraduates: Research: Center for the Integrative Study of Animal Behavior: Indiana University Bloomington",
-  "organizer": "Indiana University Bloomington",
-  "official_url": "https://animalbehavior.indiana.edu/research/reu/reu-archives/index.html",
-  "allowed_path_hints": [
-   "research/reu/reu-archives/index.html"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-research-as-tufts-edu-45c237",
-  "programme_id": "research-find-as-tufts-edu-45c237",
-  "programme_name": "Grants & Fellowships | School of Arts and Sciences",
-  "organizer": "Tufts University",
-  "official_url": "https://as.tufts.edu/index.php/faculty-research/grants-fellowships",
-  "allowed_path_hints": [
-   "index.php/faculty-research/grants-fellowships"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
   "source_id": "find-research-cc-nih-gov-524de4",
   "programme_id": "research-find-cc-nih-gov-524de4",
   "programme_name": "Mentored Research Program for Early Career Bioethics Scholars | Clinical Center",
@@ -75,21 +45,6 @@
   "last_seen": "2026-11-13T11:47:49Z"
  },
  {
-  "source_id": "find-research-chemistry-uark-edu-60f3db",
-  "programme_id": "research-find-chemistry-uark-edu-60f3db",
-  "programme_name": "Tony Jude Award | Chemistry & Biochemistry | University of Arkansas",
-  "organizer": "University of Arkansas",
-  "official_url": "https://chemistry.uark.edu/academics/undergraduate/nsf-reu/tony-jude-award.php",
-  "allowed_path_hints": [
-   "academics/undergraduate/nsf-reu/tony-jude-award.php"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
   "source_id": "find-research-chemistry-utah-edu-e8f3da",
   "programme_id": "research-find-chemistry-utah-edu-e8f3da",
   "programme_name": "REU Program \u2013 Department of Chemistry",
@@ -97,51 +52,6 @@
   "official_url": "https://www.chemistry.utah.edu/research/reu-program/",
   "allowed_path_hints": [
    "research/reu-program"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-research-chemistry-utah-edu-b4b312",
-  "programme_id": "research-find-chemistry-utah-edu-b4b312",
-  "programme_name": "REU Program \u2013 Department of Chemistry",
-  "organizer": "University of Utah",
-  "official_url": "https://www.chemistry.utah.edu/research/reu-program-2/",
-  "allowed_path_hints": [
-   "research/reu-program-2"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-research-chemistry-utah-edu-9bc2b0",
-  "programme_id": "research-find-chemistry-utah-edu-9bc2b0",
-  "programme_name": "Awards and Scholarships \u2013 Department of Chemistry",
-  "organizer": "University of Utah",
-  "official_url": "https://www.chemistry.utah.edu/awards-and-scholarships/",
-  "allowed_path_hints": [
-   "awards-and-scholarships"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-research-daad-de-b57377",
-  "programme_id": "research-find-daad-de-b57377",
-  "programme_name": "Funding Opportunities from other Organisations - DAAD",
-  "organizer": "DAAD",
-  "official_url": "https://www.daad.de/en/studying-in-germany/scholarships/funding-options/",
-  "allowed_path_hints": [
-   "en/studying-in-germany/scholarships/funding-options"
   ],
   "check_cadence": "monthly",
   "source_kind": "official",

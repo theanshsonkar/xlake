@@ -1,50 +1,5 @@
 [
  {
-  "source_id": "find-community-docs-linuxfoundation-org-26673a",
-  "programme_id": "community-find-docs-linuxfoundation-org-26673a",
-  "programme_name": "Mentorship | Linux Foundation Documentation",
-  "organizer": "docs.linuxfoundation.org",
-  "official_url": "https://docs.linuxfoundation.org/lfx/mentorship",
-  "allowed_path_hints": [
-   "lfx/mentorship"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-community-docs-linuxfoundation-org-d1deff",
-  "programme_id": "community-find-docs-linuxfoundation-org-d1deff",
-  "programme_name": "Mentorship FAQs | Linux Foundation Documentation",
-  "organizer": "docs.linuxfoundation.org",
-  "official_url": "https://docs.linuxfoundation.org/lfx/mentorship/mentorship-faqs",
-  "allowed_path_hints": [
-   "lfx/mentorship/mentorship-faqs"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-community-millenniumfellows-org-9bfb00",
-  "programme_id": "community-find-millenniumfellows-org-9bfb00",
-  "programme_name": "Global Webinar with Ambassador Scott DeLisi | MillenniumFellowship",
-  "organizer": "millenniumfellows.org",
-  "official_url": "https://www.millenniumfellows.org/event-details/global-webinar-with-ambassador-scott-delisi",
-  "allowed_path_hints": [
-   "event-details/global-webinar-with-ambassador-scott-delisi"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
   "source_id": "find-community-openmainframeproject-org-c216c3",
   "programme_id": "community-find-openmainframeproject-org-c216c3",
   "programme_name": "Ambassadors - Open Mainframe Project",
@@ -97,66 +52,6 @@
   "official_url": "https://aises.org/full-circle-mentorship/",
   "allowed_path_hints": [
    "full-circle-mentorship"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-community-amgenscholars-com-508022",
-  "programme_id": "community-find-amgenscholars-com-508022",
-  "programme_name": "Mentorship Creates Lasting Bonds \u2013 Amgen Scholars",
-  "organizer": "Amgen Foundation",
-  "official_url": "https://amgenscholars.com/mentorship-creates-lasting-bonds/",
-  "allowed_path_hints": [
-   "mentorship-creates-lasting-bonds"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-community-bowiestate-edu-af84c8",
-  "programme_id": "community-find-bowiestate-edu-af84c8",
-  "programme_name": "C4 & BSU Green Ambassadors | Bowie State",
-  "organizer": "Bowie State University",
-  "official_url": "https://bowiestate.edu/about/sustainability/c4-and-green-ambassadors/index.php",
-  "allowed_path_hints": [
-   "about/sustainability/c4-and-green-ambassadors/index.php"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-community-bowiestate-edu-98ebc1",
-  "programme_id": "community-find-bowiestate-edu-98ebc1",
-  "programme_name": "BSU Green Fund | Bowie State",
-  "organizer": "Bowie State University",
-  "official_url": "https://bowiestate.edu/about/sustainability/c4-and-green-ambassadors/bsu-green-fund.php",
-  "allowed_path_hints": [
-   "about/sustainability/c4-and-green-ambassadors/bsu-green-fund.php"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-community-gdhcc-com-fcfba5",
-  "programme_id": "community-find-gdhcc-com-fcfba5",
-  "programme_name": "Ambassadors - GREATER DALLAS HISPANIC CHAMBER OF COMMERCE",
-  "organizer": "gdhcc.com",
-  "official_url": "https://www.gdhcc.com/ambassadors.html",
-  "allowed_path_hints": [
-   "ambassadors.html"
   ],
   "check_cadence": "monthly",
   "source_kind": "official",

@@ -1,50 +1,5 @@
 [
  {
-  "source_id": "find-startup_founder-mongodb-com-bdf9c2",
-  "programme_id": "startup_founder-find-mongodb-com-bdf9c2",
-  "programme_name": "AI Accelerator | Build AI Apps On MongoDB | MongoDB Consulting | MongoDB",
-  "organizer": "MongoDB",
-  "official_url": "https://www.mongodb.com/services/consulting/ai-accelerator",
-  "allowed_path_hints": [
-   "services/consulting/ai-accelerator"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-snowflake-com-15c73f",
-  "programme_id": "startup_founder-find-snowflake-com-15c73f",
-  "programme_name": "Snowpark Migration Accelerator | Snowflake",
-  "organizer": "Snowflake",
-  "official_url": "https://www.snowflake.com/fr/data-cloud/snowpark/migration-accelerator/",
-  "allowed_path_hints": [
-   "fr/data-cloud/snowpark/migration-accelerator"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-snowflake-com-94870e",
-  "programme_id": "startup_founder-find-snowflake-com-94870e",
-  "programme_name": "Snowpark Migration Accelerator | Snowflake",
-  "organizer": "Snowflake",
-  "official_url": "https://www.snowflake.com/de/product/features/snowpark/migration-accelerator/",
-  "allowed_path_hints": [
-   "de/product/features/snowpark/migration-accelerator"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
   "source_id": "find-startup_founder-aalto-fi-c6be68",
   "programme_id": "startup_founder-find-aalto-fi-c6be68",
   "programme_name": "Pre-incubator | Aalto University",
@@ -52,36 +7,6 @@
   "official_url": "https://www.aalto.fi/en/aalto-creatives/pre-incubator",
   "allowed_path_hints": [
    "en/aalto-creatives/pre-incubator"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-blog-google-d80d78",
-  "programme_id": "startup_founder-find-blog-google-d80d78",
-  "programme_name": "Google AI for Education Accelerator has 400+ schools",
-  "organizer": "blog.google",
-  "official_url": "https://blog.google/products-and-platforms/products/education/google-ai-accelerator/",
-  "allowed_path_hints": [
-   "products-and-platforms/products/education/google-ai-accelerator"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-cisl-ucar-edu-73acb6",
-  "programme_id": "startup_founder-find-cisl-ucar-edu-73acb6",
-  "programme_name": "Towards Operational Implementation of COSMO on Accelerators at MeteoSwiss | Computational and Information Systems Lab",
-  "organizer": "NCAR",
-  "official_url": "https://www.cisl.ucar.edu/cas2k13/towards-operational-implementation-cosmo-accelerators-meteoswiss",
-  "allowed_path_hints": [
-   "cas2k13/towards-operational-implementation-cosmo-accelerators-meteoswiss"
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
@@ -127,66 +52,6 @@
   "official_url": "https://canadasmusicincubator.com/indigenous-music-accelerator/",
   "allowed_path_hints": [
    "indigenous-music-accelerator"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-canadasmusicincubator-com-db5fa4",
-  "programme_id": "startup_founder-find-canadasmusicincubator-com-db5fa4",
-  "programme_name": "London Music Accelerator Returns with Two Sessions in October '26! \u2022 Canada's Music Incubator %",
-  "organizer": "canadasmusicincubator.com",
-  "official_url": "https://canadasmusicincubator.com/london-music-accelerator-2026/",
-  "allowed_path_hints": [
-   "london-music-accelerator-2026"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-c2ixcel-com-6cc541",
-  "programme_id": "startup_founder-find-c2ixcel-com-6cc541",
-  "programme_name": "Discussion - C2I Accelerator Group | C2I Accelerator",
-  "organizer": "creagenincubator.com",
-  "official_url": "https://www.c2ixcel.com/group/c2i-accelerator-group/discussion",
-  "allowed_path_hints": [
-   "group/c2i-accelerator-group/discussion"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-c2ixcel-com-5ab0a6",
-  "programme_id": "startup_founder-find-c2ixcel-com-5ab0a6",
-  "programme_name": "Welcome to our group C2I Accelerator Group ! A space for us | C2I Accelerator Group | C2I Accelerator",
-  "organizer": "creagenincubator.com",
-  "official_url": "https://www.c2ixcel.com/group/c2i-accelerator-group/discussion/d19b7cd6-7368-4727-9792-7603fd1337a8",
-  "allowed_path_hints": [
-   "group/c2i-accelerator-group/discussion/d19b7cd6-7368-4727-9792-7603fd1337a8"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-gdhcc-com-9227b1",
-  "programme_id": "startup_founder-find-gdhcc-com-9227b1",
-  "programme_name": "Dallas Accelerator Program - GREATER DALLAS HISPANIC CHAMBER OF COMMERCE",
-  "organizer": "gdhcc.com",
-  "official_url": "https://www.gdhcc.com/dallas-accelerator-program.html",
-  "allowed_path_hints": [
-   "dallas-accelerator-program.html"
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
@@ -255,141 +120,6 @@
   "last_seen": "2026-11-13T11:47:49Z"
  },
  {
-  "source_id": "find-startup_founder-nsrcel-org-493645",
-  "programme_id": "startup_founder-find-nsrcel-org-493645",
-  "programme_name": "For Incubators | NSRCEL",
-  "organizer": "NSRCEL, IIM Bangalore",
-  "official_url": "https://nsrcel.org/for-incubators/",
-  "allowed_path_hints": [
-   "for-incubators"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-nsrcel-org-422540",
-  "programme_id": "startup_founder-find-nsrcel-org-422540",
-  "programme_name": "Women Startup Program | NSRCEL",
-  "organizer": "NSRCEL, IIM Bangalore",
-  "official_url": "https://nsrcel.org/women-startup-program/",
-  "allowed_path_hints": [
-   "women-startup-program"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-nsrcel-org-2112fc",
-  "programme_id": "startup_founder-find-nsrcel-org-2112fc",
-  "programme_name": "Foundations of Entrepreneurship | Women Startup Program | NSRCEL",
-  "organizer": "NSRCEL, IIM Bangalore",
-  "official_url": "https://nsrcel.org/foe-women-startup-program/",
-  "allowed_path_hints": [
-   "foe-women-startup-program"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-nsrcel-org-95e240",
-  "programme_id": "startup_founder-find-nsrcel-org-95e240",
-  "programme_name": "Thank you - Women Startup Program - NSRCEL",
-  "organizer": "NSRCEL, IIM Bangalore",
-  "official_url": "https://nsrcel.org/thank-you-women-startup-program/",
-  "allowed_path_hints": [
-   "thank-you-women-startup-program"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-nsrcel-org-6110b5",
-  "programme_id": "startup_founder-find-nsrcel-org-6110b5",
-  "programme_name": "Women Entrepreneurship Program at IIM Bangalore | NSRCEL",
-  "organizer": "NSRCEL, IIM Bangalore",
-  "official_url": "https://nsrcel.org/incubation-women-startup-program/",
-  "allowed_path_hints": [
-   "incubation-women-startup-program"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-oregonrain-org-a5daab",
-  "programme_id": "startup_founder-find-oregonrain-org-a5daab",
-  "programme_name": "RAIN Seeking Accelerator Director - RAIN",
-  "organizer": "oregonrain.org",
-  "official_url": "https://www.oregonrain.org/rain-seeking-accelerator-director/",
-  "allowed_path_hints": [
-   "rain-seeking-accelerator-director"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-oregonrain-org-0e5f0a",
-  "programme_id": "startup_founder-find-oregonrain-org-0e5f0a",
-  "programme_name": "RAIN Launches Coastal Pre-accelerator - RAIN",
-  "organizer": "oregonrain.org",
-  "official_url": "https://www.oregonrain.org/rain-launches-coastal-pre-accelerator-2/",
-  "allowed_path_hints": [
-   "rain-launches-coastal-pre-accelerator-2"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-oregonrain-org-0d4faf",
-  "programme_id": "startup_founder-find-oregonrain-org-0d4faf",
-  "programme_name": "OSU Advantage Accelerator/RAIN Corvallis Update - RAIN",
-  "organizer": "oregonrain.org",
-  "official_url": "https://www.oregonrain.org/osu-advantage-acceleratorrain-corvallis-update/",
-  "allowed_path_hints": [
-   "osu-advantage-acceleratorrain-corvallis-update"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-oxygenaccelerator-com-5099c3",
-  "programme_id": "startup_founder-find-oxygenaccelerator-com-5099c3",
-  "programme_name": "Accelerator Space \u2013 Oxygen Accelerator",
-  "organizer": "oxygenaccelerator.com",
-  "official_url": "https://www.oxygenaccelerator.com/accelerator-space/",
-  "allowed_path_hints": [
-   "accelerator-space"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
   "source_id": "find-startup_founder-plugandplaytechcenter-com-8b6dd2",
   "programme_id": "startup_founder-find-plugandplaytechcenter-com-8b6dd2",
   "programme_name": "Plug and Play Morocco Accelerator",
@@ -405,36 +135,6 @@
   "last_seen": "2026-11-13T11:47:49Z"
  },
  {
-  "source_id": "find-startup_founder-plugandplaytechcenter-com-7105de",
-  "programme_id": "startup_founder-find-plugandplaytechcenter-com-7105de",
-  "programme_name": "Meet PNP | Innovation Accelerator Programs",
-  "organizer": "Plug and Play",
-  "official_url": "https://www.plugandplaytechcenter.com/about-us/meet-pnp/innovation-accelerator-programs",
-  "allowed_path_hints": [
-   "about-us/meet-pnp/innovation-accelerator-programs"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-plugandplaytechcenter-com-18a571",
-  "programme_id": "startup_founder-find-plugandplaytechcenter-com-18a571",
-  "programme_name": "Plug and Play",
-  "organizer": "Plug and Play",
-  "official_url": "https://www.plugandplaytechcenter.com/about-us/pressroom/041520-ADGM-Virtual-Accelerator",
-  "allowed_path_hints": [
-   "about-us/pressroom/041520-ADGM-Virtual-Accelerator"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
   "source_id": "find-startup_founder-plugandplaytechcenter-com-0e1fdc",
   "programme_id": "startup_founder-find-plugandplaytechcenter-com-0e1fdc",
   "programme_name": "Plug and Play Georgia Accelerator",
@@ -442,21 +142,6 @@
   "official_url": "https://www.plugandplaytechcenter.com/innovation-services/our-programs/georgia-accelerator",
   "allowed_path_hints": [
    "innovation-services/our-programs/georgia-accelerator"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-startup_founder-plugandplaytechcenter-com-170472",
-  "programme_id": "startup_founder-find-plugandplaytechcenter-com-170472",
-  "programme_name": "Takeoff Accelerator",
-  "organizer": "Plug and Play",
-  "official_url": "https://www.plugandplaytechcenter.com/innovation-services/our-programs/takeoff-accelerator",
-  "allowed_path_hints": [
-   "innovation-services/our-programs/takeoff-accelerator"
   ],
   "check_cadence": "monthly",
   "source_kind": "official",

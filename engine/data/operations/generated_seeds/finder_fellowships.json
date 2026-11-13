@@ -1,95 +1,5 @@
 [
  {
-  "source_id": "find-fellowships-millenniumfellows-org-77a2d7",
-  "programme_id": "fellowships-find-millenniumfellows-org-77a2d7",
-  "programme_name": "Millennium Fellowship Webinar: Adam Mostogl | MillenniumFellowship",
-  "organizer": "millenniumfellows.org",
-  "official_url": "https://www.millenniumfellows.org/event-details/millennium-fellowship-webinar-adam-mostogl",
-  "allowed_path_hints": [
-   "event-details/millennium-fellowship-webinar-adam-mostogl"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-fellowships-millenniumfellows-org-8e654c",
-  "programme_id": "fellowships-find-millenniumfellows-org-8e654c",
-  "programme_name": "Millennium Fellowship Webinar: Alumni Panel | MillenniumFellowship",
-  "organizer": "millenniumfellows.org",
-  "official_url": "https://www.millenniumfellows.org/event-details/millennium-fellowship-webinar-alumni-panel",
-  "allowed_path_hints": [
-   "event-details/millennium-fellowship-webinar-alumni-panel"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-fellowships-millenniumfellows-org-51d6bd",
-  "programme_id": "fellowships-find-millenniumfellows-org-51d6bd",
-  "programme_name": "Millennium Fellowship Webinar: Faculty Panel | MillenniumFellowship",
-  "organizer": "millenniumfellows.org",
-  "official_url": "https://www.millenniumfellows.org/event-details/millennium-fellowship-webinar-faculty-panel",
-  "allowed_path_hints": [
-   "event-details/millennium-fellowship-webinar-faculty-panel"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-fellowships-millenniumfellows-org-9a9102",
-  "programme_id": "fellowships-find-millenniumfellows-org-9a9102",
-  "programme_name": "Millennium Fellowship webinar with Team MCN | MillenniumFellowship",
-  "organizer": "millenniumfellows.org",
-  "official_url": "https://www.millenniumfellows.org/event-details/millennium-fellowship-webinar-with-team-mcn",
-  "allowed_path_hints": [
-   "event-details/millennium-fellowship-webinar-with-team-mcn"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-fellowships-digitalswarajfellowship-org-5006ec",
-  "programme_id": "fellowships-find-digitalswarajfellowship-org-5006ec",
-  "programme_name": "Fellowship Team \u2013 Digital Swaraj Fellowship",
-  "organizer": "digitalswarajfellowship.org",
-  "official_url": "https://digitalswarajfellowship.org/fellowship-team/",
-  "allowed_path_hints": [
-   "fellowship-team"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-fellowships-digitalswarajfellowship-org-f594df",
-  "programme_id": "fellowships-find-digitalswarajfellowship-org-f594df",
-  "programme_name": "Fellowship Structure \u2013 Digital Swaraj Fellowship",
-  "organizer": "digitalswarajfellowship.org",
-  "official_url": "https://digitalswarajfellowship.org/fellowship-structure/",
-  "allowed_path_hints": [
-   "fellowship-structure"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
   "source_id": "find-fellowships-populareducation-in-41c9c3",
   "programme_id": "fellowships-find-populareducation-in-41c9c3",
   "programme_name": "Research Fellowship - Popular Education and Action Centre",
@@ -135,21 +45,6 @@
   "last_seen": "2026-11-13T11:47:49Z"
  },
  {
-  "source_id": "find-fellowships-acls-org-e5d30a",
-  "programme_id": "fellowships-find-acls-org-e5d30a",
-  "programme_name": "Fellowship and Grant Programs - ACLS",
-  "organizer": "acls.org",
-  "official_url": "https://www.acls.org/fellowship-grant-programs/",
-  "allowed_path_hints": [
-   "fellowship-grant-programs"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
   "source_id": "find-fellowships-acls-org-d20fb7",
   "programme_id": "fellowships-find-acls-org-d20fb7",
   "programme_name": "ACLS Fellowship Program - ACLS",
@@ -172,21 +67,6 @@
   "official_url": "https://www.aei.mpg.de/26182/max-planck-fellowship",
   "allowed_path_hints": [
    "26182/max-planck-fellowship"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-fellowships-aei-mpg-de-a02664",
-  "programme_id": "fellowships-find-aei-mpg-de-a02664",
-  "programme_name": "Max Planck Fellowship Program | Max-Planck-Institut f\u00fcr Gravitationsphysik",
-  "organizer": "aei.mpg.de",
-  "official_url": "https://www.aei.mpg.de/426717/max-planck-fellowship",
-  "allowed_path_hints": [
-   "426717/max-planck-fellowship"
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
@@ -240,21 +120,6 @@
   "last_seen": "2026-11-13T11:47:49Z"
  },
  {
-  "source_id": "find-fellowships-blog-google-4ad388",
-  "programme_id": "fellowships-find-blog-google-4ad388",
-  "programme_name": "Open call: introducing Google\u2019s Image Equity Fellowship",
-  "organizer": "blog.google",
-  "official_url": "https://blog.google/company-news/outreach-and-initiatives/diversity/image-equity-fellowship/",
-  "allowed_path_hints": [
-   "company-news/outreach-and-initiatives/diversity/image-equity-fellowship"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
   "source_id": "find-fellowships-btaa-org-9e075c",
   "programme_id": "fellowships-find-btaa-org-9e075c",
   "programme_name": "Big Ten Academic Alliance Smithsonian Institute Fellowships | Big Ten Academic Alliance",
@@ -277,21 +142,6 @@
   "official_url": "https://www.cc.nih.gov/dlm/fellowships",
   "allowed_path_hints": [
    "dlm/fellowships"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-fellowships-cc-nih-gov-169049",
-  "programme_id": "fellowships-find-cc-nih-gov-169049",
-  "programme_name": "Fellowship & Medical Education | Clinical Center",
-  "organizer": "NIH Clinical Center",
-  "official_url": "https://www.cc.nih.gov/ccmd/fellowships",
-  "allowed_path_hints": [
-   "ccmd/fellowships"
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
@@ -337,21 +187,6 @@
   "official_url": "https://www.chemistry.utah.edu/postdoctoral-fellowship/",
   "allowed_path_hints": [
    "postdoctoral-fellowship"
-  ],
-  "check_cadence": "monthly",
-  "source_kind": "official",
-  "discovered_from": "finder:sitemap",
-  "first_seen": "2026-11-13T11:47:49Z",
-  "last_seen": "2026-11-13T11:47:49Z"
- },
- {
-  "source_id": "find-fellowships-cshl-edu-09828f",
-  "programme_id": "fellowships-find-cshl-edu-09828f",
-  "programme_name": "CSHL graduate student wins HHMI fellowship | Cold Spring Harbor Laboratory",
-  "organizer": "Cold Spring Harbor Laboratory",
-  "official_url": "https://www.cshl.edu/cshl-graduate-student-wins-hhmi-fellowship/",
-  "allowed_path_hints": [
-   "cshl-graduate-student-wins-hhmi-fellowship"
   ],
   "check_cadence": "monthly",
   "source_kind": "official",
