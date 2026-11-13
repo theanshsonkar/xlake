@@ -22,7 +22,10 @@ from core.jobmeta import _AGGREGATOR_LOGO_HOSTS
 AGGREGATOR_HOSTS = _AGGREGATOR_LOGO_HOSTS + ("unstop.com", "linkedin.com", "dorahacks.io", "dare2compete.com",
                                              "letsintern.com", "cutshort.io", "instahyre.com", "foundit.in",
                                              "ziprecruiter.com", "simplyhired.com", "joinhandshake.com",
-                                             "freshersworld.com", "youthall.com")
+                                             "freshersworld.com", "youthall.com", "unigo.com", "profellow.com",
+                                             "niche.com", "buddy4study.com", "ioscholarships.com",
+                                             "cirkledin.com", "insidesherpa.com", "opportunitiesforyouth.org",
+                                             "techcrunch.com")
 PROGRAMME_CATEGORIES = ("fellowship", "scholarship", "grant", "research", "startup-founder",
                         "community", "open-source-programmes")
 _GENERIC = {"en", "home", "index.html", "index.htm", "index.php", "en-us", "en-gb"}

@@ -53,7 +53,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from core import jobmeta, serving_quality, shards
+from core import jobmeta, linkcheck, serving_quality, shards
 from categories.programme_enrich import clean_location
 
 LAKE_PATH = Path("data/lake/opportunities.json")
@@ -349,6 +349,8 @@ def quality_reason(r: dict):
         return None
     if "link_dead" in (r.get("link_quality") or ()):
         return "link_dead"
+    if t == "programme" and linkcheck._is_aggregator(linkcheck._split(str(r.get("official_url") or ""))[0]):
+        return "link_aggregator"
     title = _first(r.get("title"), r.get("programme_name"), r.get("organizer"))
     url = _first(r.get("url"), r.get("official_url"), r.get("application_url"))
     eligibility = _first(r.get("eligibility"))

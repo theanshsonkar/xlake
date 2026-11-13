@@ -350,3 +350,16 @@ class GradeRangeTitleTests(unittest.TestCase):
         self.assertEqual(Q.senior_gate({}, "No Sweat Scholarship (Age 13+; Grades 8–12 or Homeschooled; No Essay)", "", ""), "school_level")
         self.assertIsNone(Q.senior_gate({}, "$2,000 No-Essay Scholarship (Age 16+; HS Jr/Sr or College)", "", ""))
         self.assertIsNone(Q.senior_gate({}, "Scholarship for grades 11-12 entering college", "", ""))
+
+
+class LinkAggregatorTests(unittest.TestCase):
+    def test_programme_on_aggregator_dropped(self):
+        for u in ("https://www.unigo.com/scholarships/x", "https://buddy4study.com/page/y"):
+            self.assertEqual(quality_reason(prog("p1", "Some Scholarship", url=u)), "link_aggregator", u)
+
+    def test_hackathon_on_devpost_unaffected(self):
+        r = {"record_type": "hackathon", "title": "Big Hack", "official_url": "https://big.devpost.com/"}
+        self.assertNotEqual(quality_reason(r), "link_aggregator")
+
+    def test_programme_on_organiser_domain_kept(self):
+        self.assertIsNone(quality_reason(prog("p2", "Google Summer of Code", url="https://summerofcode.withgoogle.com/")))

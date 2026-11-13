@@ -1769,5 +1769,16 @@
       ""
     ],
     "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-mlt-career-prep",
+    "programme_id": "fellowship-mlt-career-prep",
+    "programme_name": "MLT Career Prep",
+    "organizer": "Management Leadership for Tomorrow (MLT)",
+    "official_url": "https://mlt.org/career-prep/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
   }
 ]
