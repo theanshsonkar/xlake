@@ -180,8 +180,8 @@ jobs:
         run: |
           # Daily D1 write budget per leg (jobs total ~80k of the 100k/day free limit).
           case "$P" in
-            workday) B=34000 ;; workable) B=19000 ;; greenhouse) B=12000 ;; internships) B=2500 ;;
-            keka) B=4000 ;; other) B=2500 ;; ashby) B=3500 ;; lever) B=2500 ;; *) B=2000 ;;
+            workday) B=25500 ;; workable) B=14000 ;; greenhouse) B=9000 ;; internships) B=2500 ;;
+            keka) B=3000 ;; other) B=2000 ;; ashby) B=2500 ;; lever) B=2000 ;; *) B=1500 ;;
           esac
           # Jobs have their own switch: live D1 writes only with repo variable D1_SYNC_LIVE_JOBS=true.
           # Optional start date (UTC, YYYY-MM-DD) in repo variable D1_SYNC_JOBS_FROM: plan only before it.
@@ -201,8 +201,8 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: "3dcdbb176253427b2e7e80c6189b12ca"
         run: |
           case "$P" in
-            workday) B=34000 ;; workable) B=19000 ;; greenhouse) B=12000 ;; internships) B=2500 ;;
-            keka) B=4000 ;; other) B=2500 ;; ashby) B=3500 ;; lever) B=2500 ;; *) B=2000 ;;
+            workday) B=25500 ;; workable) B=14000 ;; greenhouse) B=9000 ;; internships) B=2500 ;;
+            keka) B=3000 ;; other) B=2000 ;; ashby) B=2500 ;; lever) B=2000 ;; *) B=1500 ;;
           esac
           python3 -u -m pipeline.sync_d1 --shard "$SHARD" --dry-run --max-writes "$B"
 
