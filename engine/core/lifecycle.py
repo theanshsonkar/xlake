@@ -36,9 +36,11 @@ def _opening(row: Dict) -> Optional[date]:
         d = date.fromisoformat(v[:10])
     except ValueError:
         return None
+    from categories.programme_core import official_opening_quote, opening_date_holds
+    if row.get("programme_id") in opening_date_holds():
+        return None
     dated = row.get("opens_quote_dated")
     if dated is None:
-        from categories.programme_core import official_opening_quote
         q = ((row.get("official_evidence") or {}).get("opening_date") or {}).get("quote")
         dated = bool(official_opening_quote(q, d.isoformat()))
     return d if dated else None

@@ -22,6 +22,17 @@ class OpeningDateHoldTests(unittest.TestCase):
         record["is_live"] = True
         self.assertEqual(lifecycle.infer(record, date(2026, 10, 19)), "open")
 
+    def test_stored_row_without_flag_is_held(self):
+        # a row stored before the hold existed: flag absent, quote passes on its own
+        row = {"record_type": "programme", "is_live": True, "opening_date": "2027-08-03",
+               "programme_id": "research-hub-www-mitacs-ca-en-programs-de62ed",
+               "official_evidence": {"opening_date": {"quote": "Applications open on August 3, 2027."}}}
+        self.assertEqual(lifecycle.infer(row, date(2026, 11, 13)), "open")
+        from pipeline.rowshape import _dated_opens
+        self.assertIsNone(_dated_opens(row))
+        row["programme_id"] = "research-other"
+        self.assertEqual(lifecycle.infer(row, date(2026, 11, 13)), "upcoming")
+
 
 if __name__ == "__main__":
     unittest.main()
