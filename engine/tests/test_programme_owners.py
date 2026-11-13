@@ -91,6 +91,22 @@ class SameCategoryAndCrossHostTests(unittest.TestCase):
         b = row("scholarship", "s-2", url, "AICTE Pragati Scholarship (Technical Diploma)")
         self.assertEqual(core.dedupe_within_category([a, b], NOW), 0)
 
+    def test_same_apply_url_google_phd_hub_hidden(self):
+        apply = "https://research.google/programs-and-events/phd-fellowship/#how-to-apply-2"
+        a = row("fellowship", "fellowship-google-phd", "https://research.google/outreach/phd-fellowship/", "Google PhD Fellowship")
+        b = row("fellowship", "fellowships-hub-ai-google-research-outreach-3dd877", "https://ai.google/research/outreach/phd-fellowship",
+                "Google PhD Fellowship")
+        a["application_url"] = b["application_url"] = apply
+        self.assertEqual(core.dedupe_within_category([a, b], NOW), 1)
+        self.assertEqual(b["hidden_reason"], "duplicate_same_category")
+        self.assertFalse(a.get("hidden_reason"))
+
+    def test_same_apply_url_different_names_not_merged(self):
+        a = row("fellowship", "f-1", "https://x.org/a", "Alpha Fellowship")
+        b = row("fellowship", "f-2", "https://y.org/b", "Zeta Residency")
+        a["application_url"] = b["application_url"] = "https://z.org/apply"
+        self.assertEqual(core.dedupe_within_category([a, b], NOW), 0)
+
     def test_sibling_hosts_group_across_categories(self):
         a = row("fellowship", "f-mlh", "https://fellowship.mlh.io/", "MLH Fellowship")
         b = row("grant", "g-mlh", "https://fellowship.mlh.com/", "MLH Fellowship")

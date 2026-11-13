@@ -1829,12 +1829,16 @@ def dedupe_within_category(lake_rows: List[Dict], now: str) -> int:
             return i
         keys = [_normalise_programme_url(r.get("official_url")) for r in rows]
         names = [programme_similarity_name(r) for r in rows]
+        applies = [_normalise_programme_url(r.get("application_url")) for r in rows]
         for i in range(len(rows)):
             for j in range(i + 1, len(rows)):
                 if not (keys[i] and keys[j] and names[i] and names[j]):
                     continue
                 ratio = difflib.SequenceMatcher(None, names[i], names[j]).ratio()
                 if ratio < 0.85 or variant_conflict(names[i], names[j]):
+                    continue
+                if applies[i] and applies[i] == applies[j]:  # same application page, same name
+                    parent[find(i)] = find(j)
                     continue
                 # Same site alone is not enough: only the same programme AND the same cycle may
                 # merge. Paths must be equal, or differ only by a generic tail such as /apply or
