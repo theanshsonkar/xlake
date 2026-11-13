@@ -40,15 +40,22 @@ def is_programme_like(row: dict) -> bool:
     return row.get("record_type") in PROGRAMME_TYPES
 
 
-def merge_cycle(cycles: List[dict], deadline: str, opens: Optional[str], today: str) -> None:
+def merge_cycle(cycles: List[dict], deadline: str, opens: Optional[str], today: str,
+                opens_quote: Optional[str] = None, opens_url: Optional[str] = None) -> None:
+    extra = {}
+    if opens and opens_quote:
+        extra = {"opens_quote": opens_quote[:200], "opens_url": opens_url}
     for c in cycles:
         if c.get("deadline") == deadline:
             if not c.get("opens") and opens:
                 c["opens"] = opens
+                c.update(extra)
+            elif opens and c.get("opens") == opens and not c.get("opens_quote"):
+                c.update(extra)
             if today < (c.get("first_seen") or today):
                 c["first_seen"] = today
             return
-    cycles.append({"opens": opens, "deadline": deadline, "first_seen": today})
+    cycles.append({"opens": opens, "deadline": deadline, "first_seen": today, **extra})
 
 
 def record(row: dict, today, extra_deadlines=()) -> bool:
@@ -63,7 +70,8 @@ def record(row: dict, today, extra_deadlines=()) -> bool:
     opens = _first_iso(row, "opening_date", "opens", "registration_start")
     dl = _first_iso(row, "deadline", "registration_deadline")
     if dl:
-        merge_cycle(cycles, dl, opens, t)
+        ev = (row.get("official_evidence") or {}).get("opening_date") or {}
+        merge_cycle(cycles, dl, opens, t, ev.get("quote"), ev.get("url"))
     for key in ("last_deadline",):
         ld = _iso(row.get(key))
         if ld:
@@ -88,6 +96,23 @@ def _shift(d: date, years: int) -> date:
 
 def _today(today) -> date:
     return today if isinstance(today, date) else date.fromisoformat(str(today)[:10])
+
+
+def _pattern_opens(pattern, td: date):
+    """Next occurrence after ``td`` of an explicit recurring opening statement
+    (``opens_pattern``); never derived from past opening dates."""
+    if not isinstance(pattern, dict) or not isinstance(pattern.get("month"), int) \
+            or not 1 <= pattern["month"] <= 12:
+        return None, None
+    day = pattern.get("day") if isinstance(pattern.get("day"), int) else None
+    for year in (td.year, td.year + 1):
+        try:
+            d = date(year, pattern["month"], day or 1)
+        except ValueError:
+            d = date(year, pattern["month"], 28)
+        if d > td:
+            return d.isoformat(), None if day else "month"
+    return None, None
 
 
 def predict_next(row: dict, today) -> Optional[dict]:
@@ -118,9 +143,10 @@ def predict_next(row: dict, today) -> Optional[dict]:
     n = 1
     while _shift(base, n) < td:
         n += 1
-    opens = _iso(last.get("opens"))
+    expected_opens, precision = _pattern_opens(row.get("opens_pattern"), td)
     return {
-        "expected_opens": _shift(date.fromisoformat(opens), n).isoformat() if opens else None,
+        "expected_opens": expected_opens,
+        "expected_opens_precision": precision,
         "expected_deadline": _shift(base, n).isoformat(),
         "basis": "annual",
         "cycles_seen": len(past),
@@ -148,11 +174,15 @@ def apply_prediction(row: dict, today) -> bool:
     pred = predict_next(row, today) if row.get("lifecycle") in ("upcoming", "closed") else None
     if pred:
         row["expected_opens"] = pred["expected_opens"]
+        row.pop("expected_opens_precision", None)
+        if pred.get("expected_opens_precision"):
+            row["expected_opens_precision"] = pred["expected_opens_precision"]
         row["expected_deadline"] = pred["expected_deadline"]
         if not row.get("next_cycle_hint"):
             row["next_cycle_hint"] = next_cycle_text(pred)
         return True
     row.pop("expected_opens", None)
+    row.pop("expected_opens_precision", None)
     row.pop("expected_deadline", None)
     return False
 

@@ -55,9 +55,33 @@ class PredictTest(unittest.TestCase):
         r = prog(cycles=[{"opens": "2024-02-01", "deadline": "2024-03-15", "first_seen": "x"},
                          {"opens": "2025-02-01", "deadline": "2025-03-15", "first_seen": "x"}])
         p = cycles.predict_next(r, TODAY)
-        self.assertEqual(p, {"expected_opens": "2027-02-01", "expected_deadline": "2027-03-15",
-                             "basis": "annual", "cycles_seen": 2})
-        self.assertEqual(cycles.next_cycle_text(p), "Usually opens around February (based on 2 past cycles)")
+        # opening is never shifted from last year's date; only opens_pattern sets it
+        self.assertEqual(p, {"expected_opens": None, "expected_opens_precision": None,
+                             "expected_deadline": "2027-03-15", "basis": "annual", "cycles_seen": 2})
+        self.assertEqual(cycles.next_cycle_text(p), "Usually closes around 15 March (based on 2 past cycles)")
+
+    def test_expected_opens_from_pattern(self):
+        cyc = [{"opens": None, "deadline": "2024-03-15", "first_seen": "x"},
+               {"opens": None, "deadline": "2025-03-15", "first_seen": "x"}]
+        r = prog(cycles=cyc, opens_pattern={"month": 9, "day": None, "quote": "q", "url": "u"})
+        p = cycles.predict_next(r, TODAY)
+        self.assertEqual((p["expected_opens"], p["expected_opens_precision"]), ("2027-09-01", "month"))
+        r = prog(cycles=cyc, opens_pattern={"month": 3, "day": 1, "quote": "q", "url": "u"})
+        p = cycles.predict_next(r, TODAY)
+        self.assertEqual((p["expected_opens"], p["expected_opens_precision"]), ("2027-03-01", None))
+        r = prog(cycles=cyc, opens_pattern={"month": 12, "day": None, "quote": "q", "url": "u"}, lifecycle="upcoming")
+        cycles.apply_prediction(r, TODAY)
+        self.assertEqual((r["expected_opens"], r["expected_opens_precision"]), ("2026-12-01", "month"))
+
+    def test_cycle_keeps_opens_quote(self):
+        r = prog(opening_date="2026-10-01", deadline="2026-12-01",
+                 official_evidence={"opening_date": {"quote": "Opens 1 October 2026", "url": "http://x"}})
+        cycles.record(r, TODAY)
+        c = r["cycles"][0]
+        self.assertEqual((c["opens"], c["opens_quote"], c["opens_url"]), ("2026-10-01", "Opens 1 October 2026", "http://x"))
+        old = prog(deadline="2026-12-01")  # legacy entries without quote still work
+        cycles.record(old, TODAY)
+        self.assertNotIn("opens_quote", old["cycles"][0])
 
     def test_opens_unknown_text(self):
         r = prog(lifecycle="upcoming", cycles=[{"opens": None, "deadline": "2026-03-15", "first_seen": "x"}])

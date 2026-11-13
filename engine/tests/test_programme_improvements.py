@@ -221,3 +221,16 @@ class OpeningQuoteTest(unittest.TestCase):
         self.assertTrue(q("Opens 1/10/2027", "2027-01-10"))
         self.assertFalse(q("General Application Period.", "2027-01-10"))
         self.assertFalse(q("Opens 11 January 2027", "2027-01-10"))
+
+
+class OpensPatternTest(unittest.TestCase):
+    def test_explicit_recurring_only(self):
+        from categories.programme_core import detect_opens_pattern as d
+        a = d("Applications open every September. Details follow.", "u")
+        self.assertEqual((a["month"], a["day"], a["url"]), (9, None, "u"))
+        self.assertEqual(d("The application portal opens in early December each year.", "u")["month"], 12)
+        b = d("Applications open annually on 1 March.", "u")
+        self.assertEqual((b["month"], b["day"]), (3, 1))
+        self.assertIsNone(d("Applications opened on 1 March 2026.", "u"))
+        self.assertIsNone(d("Applications open in September.", "u"))
+        self.assertIsNone(d("The deadline is every March.", "u"))

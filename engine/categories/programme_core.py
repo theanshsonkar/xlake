@@ -955,6 +955,31 @@ def _quote_with(text: str, tokens: Iterable[str], minimum_words: int = 1, prefer
     return None
 
 
+_RECUR = re.compile(r"\b(?:every\s+(?:year|january|february|march|april|may|june|july|august|september|october|november|december)|each\s+year|annually|yearly)\b", re.I)
+_OPENS_VERB = re.compile(r"\b(?:opens?|begins?|launch(?:es)?|starts?|accepting)\b", re.I)
+_MONTH_NUM = {m.lower(): i + 1 for i, m in enumerate(MONTHS)}
+_MONTH_NUM.update({"jan": 1, "feb": 2, "mar": 3, "apr": 4, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "sept": 9, "oct": 10, "nov": 11, "dec": 12})
+
+
+def detect_opens_pattern(text: str, url: str) -> Optional[Dict]:
+    """An explicit recurring opening statement ("applications open every September",
+    "opens annually on 1 March") as {month, day|None, quote, url}. Only explicit
+    every/each year/annually/yearly wording plus a month; never inferred from dates."""
+    for _, _, sentence in _sentences(_ABBREV_DOT.sub(r"\1", text.replace("\xa0", " "))):
+        if len(sentence) > 200 or not _RECUR.search(sentence) or not _OPENS_VERB.search(sentence):
+            continue
+        if re.search(r"\b(?:deadline|clos(?:e|es|ing)|due)\b", sentence, re.I):
+            continue
+        m = re.search(rf"\b(?:(?P<d1>\d{{1,2}}){_ORD}\s+(?:of\s+)?(?P<m1>{MONTH_PATTERN})|(?P<m2>{MONTH_PATTERN})(?:\s+(?P<d2>\d{{1,2}}){_ORD})?)\b(?!\s+\d{{4}})", sentence, re.I)
+        if not m:
+            continue
+        month = _MONTH_NUM.get((m.group("m1") or m.group("m2")).lower())
+        day = int(m.group("d1") or m.group("d2") or 0) or None
+        if month and (day is None or 1 <= day <= 31):
+            return {"month": month, "day": day, "quote": _clean_quote(sentence), "url": url}
+    return None
+
+
 def quote_has_date(quote: Optional[str], iso_date: Optional[str]) -> bool:
     """True when ``quote`` writes out ``iso_date`` (month name/abbrev + day, day +
     month, ISO or numeric forms; the year may come from the quote or the date)."""
@@ -1220,6 +1245,9 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
     if legacy_eligibility and not enriched.get("eligibility"):
         enriched["eligibility"], enriched["_eligibility_quote"] = enrich.truncate(legacy_eligibility, 200), legacy_eligibility
     _apply_enrichment(record, evidence, enriched, seed, resolved_apply, apply_link, window)
+    pattern = detect_opens_pattern(text, seed["official_url"])
+    if pattern:
+        record["opens_pattern"] = pattern
     record["opens_quote_dated"] = quote_has_date((evidence.get("opening_date") or {}).get("quote"), record.get("opening_date"))
     if status == "rolling":
         record["deadline_basis"] = "rolling"
