@@ -57,6 +57,8 @@ from core import jobmeta, linkcheck, serving_quality, shards
 from categories.programme_enrich import clean_location
 
 LAKE_PATH = Path("data/lake/opportunities.json")
+# Programmes run by the listing site itself (its own page is the official one).
+ORGANISER_RUN_HOSTS = ("fellowship.mlh.io",)
 TABLE = "opportunities"
 UPSERT_BATCH = 500
 UPSERT_MIN_BATCH = 50
@@ -349,7 +351,8 @@ def quality_reason(r: dict):
         return None
     if "link_dead" in (r.get("link_quality") or ()):
         return "link_dead"
-    if t == "programme" and linkcheck._is_aggregator(linkcheck._split(str(r.get("official_url") or ""))[0]):
+    host = linkcheck._split(str(r.get("official_url") or ""))[0]
+    if t == "programme" and host not in ORGANISER_RUN_HOSTS and linkcheck._is_aggregator(host):
         return "link_aggregator"
     title = _first(r.get("title"), r.get("programme_name"), r.get("organizer"))
     url = _first(r.get("url"), r.get("official_url"), r.get("application_url"))
