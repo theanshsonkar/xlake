@@ -1295,7 +1295,7 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
     opening = official_opening_quote((evidence.get("opening_date") or {}).get("quote"), record.get("opening_date"))
     record["opens_quote_dated"] = bool(opening)
     if opening:
-        evidence["opening_date"] = _evidence(opening, seed["official_url"]) or evidence["opening_date"]
+        evidence["opening_date"] = {"quote": opening, "url": seed["official_url"]}
     if status == "rolling":
         record["deadline_basis"] = "rolling"
     if status == "open" and window is None:
