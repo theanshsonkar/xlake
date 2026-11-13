@@ -1291,7 +1291,7 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
     if pattern:
         record["opens_pattern"] = pattern
     opening = official_opening_quote((evidence.get("opening_date") or {}).get("quote"), record.get("opening_date"))
-    record["opens_quote_dated"] = bool(opening)
+    record["opens_quote_dated"] = bool(opening) and seed.get("programme_id") not in opening_date_holds()
     if opening:
         evidence["opening_date"] = {"quote": opening, "url": seed["official_url"]}
     if status == "rolling":
@@ -1330,6 +1330,18 @@ def _load_json(path: str, default):
     if not isinstance(value, type(default)):
         raise ValueError("invalid JSON shape in {}".format(path))
     return value
+
+
+HOLDS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "operations", "opening_date_holds.json")
+_HOLDS: Optional[Dict[str, str]] = None
+
+
+def opening_date_holds(path: str = HOLDS_PATH) -> Dict[str, str]:
+    """programme_id -> reason, for programmes whose quoted opening date is not the programme's own."""
+    global _HOLDS
+    if _HOLDS is None:
+        _HOLDS = _load_json(path, {})
+    return _HOLDS
 
 
 def load_verifications(path: str) -> List[Dict]:
