@@ -197,3 +197,27 @@ class GithubTokenTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class OpeningQuoteTest(unittest.TestCase):
+    def test_heading_joined_with_date_line(self):
+        from datetime import date as d
+        from categories import programme_core as pc
+        for text, iso in (
+            ("General Application Period.\nDecember 1, 2026 – February 3, 2027\nOther.", "2026-12-01"),
+            ("Junior Application Period:.\nJanuary 10 – February 20, 2027.\nOther.", "2027-01-10"),
+        ):
+            w = pc.detect_applicant_windows(text, d(2026, 11, 13))
+            w = [x for x in w if x["start"].isoformat() == iso][0]
+            self.assertLessEqual(len(w["quote"]), 200)
+            self.assertTrue(pc.quote_has_date(w["quote"], iso), w["quote"])
+            self.assertIn("Application Period", w["quote"])
+
+    def test_quote_has_date_forms(self):
+        from categories.programme_core import quote_has_date as q
+        self.assertTrue(q("Opens 10 January 2027", "2027-01-10"))
+        self.assertTrue(q("Opens Jan 10", "2027-01-10"))
+        self.assertTrue(q("Opens 2027-01-10", "2027-01-10"))
+        self.assertTrue(q("Opens 1/10/2027", "2027-01-10"))
+        self.assertFalse(q("General Application Period.", "2027-01-10"))
+        self.assertFalse(q("Opens 11 January 2027", "2027-01-10"))

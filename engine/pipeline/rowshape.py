@@ -86,6 +86,21 @@ def scrub(value: Any, limit: int = TEXT_MAX) -> Optional[str]:
     return text[:limit].rstrip()
 
 
+def _dated_opens(row: dict):
+    """Opening date for D1, only when a quote on the page writes that date out
+    (``opens_quote_dated``; older rows without the flag are judged from their
+    stored opening_date quote)."""
+    opens = to_date(row.get("opening_date"))
+    if not opens:
+        return None
+    dated = row.get("opens_quote_dated")
+    if dated is None:
+        from categories.programme_core import quote_has_date
+        q = ((row.get("official_evidence") or {}).get("opening_date") or {}).get("quote")
+        dated = quote_has_date(q, opens)
+    return opens if dated else None
+
+
 def to_date(value: Any) -> Optional[str]:
     """YYYY-MM-DD from an ISO date/datetime string, else None."""
     if isinstance(value, str) and _DATE_RE.match(value.strip()):
@@ -292,7 +307,7 @@ def map_programme(row: dict) -> Dict[str, Any]:
         "org": real_org(ps._display_company(row)),
         "logo": clean_logo(row.get("logo_url")),
         "url": url, "apply_url": _first(row.get("application_url"), url),
-        "opens": to_date(row.get("opening_date")),
+        "opens": _dated_opens(row),
         "last_deadline": own_last,
         "next_cycle": next_cycle,
         "level": _level_of(row.get("levels")),

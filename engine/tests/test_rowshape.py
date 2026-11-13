@@ -125,7 +125,7 @@ class RowShapeTest(unittest.TestCase):
         self.assertEqual(rowshape.scrub("Deadline 2026-11-12"), "Deadline 2026-11-12")
 
     def test_dates_normalised(self):
-        s = to_standard(prog(deadline="2027-03-12T23:59:00Z", opening_date="2027-01-01", last_deadline="March 2026"))
+        s = to_standard(prog(deadline="2027-03-12T23:59:00Z", opening_date="2027-01-01", opens_quote_dated=True, last_deadline="March 2026"))
         self.assertEqual((s["deadline"], s["opens"], s["last_deadline"]), ("2027-03-12", "2027-01-01", None))
         self.assertIsNone(to_standard(prog(deadline="rolling"))["deadline"])
 
@@ -173,3 +173,13 @@ class HackathonTrustTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DatedOpensTest(unittest.TestCase):
+    def test_opens_only_with_dated_quote(self):
+        from pipeline.rowshape import _dated_opens
+        base = {"opening_date": "2027-01-10"}
+        self.assertEqual(_dated_opens(dict(base, opens_quote_dated=True)), "2027-01-10")
+        self.assertIsNone(_dated_opens(dict(base, opens_quote_dated=False)))
+        self.assertIsNone(_dated_opens(dict(base, official_evidence={"opening_date": {"quote": "General Application Period."}})))
+        self.assertEqual(_dated_opens(dict(base, official_evidence={"opening_date": {"quote": "Opens 10 January 2027"}})), "2027-01-10")

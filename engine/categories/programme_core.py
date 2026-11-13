@@ -672,8 +672,18 @@ def detect_applicant_windows(text: str, today: Optional[date] = None) -> List[Di
             if any(token in context.lower() for token in ORGANIZER_WINDOW_TOKENS):
                 continue
             dates = parse_dates(context, _year_near(normalized, start), today)
+            from_context = True
+        else:
+            from_context = False
         for parsed in dates:
             quote = candidate_sentence.strip() if candidate_sentence else parsed["quote"]
+            if from_context:
+                # The sentence is only a heading ("General Application Period."):
+                # quote the line that holds the date, with the heading as its label.
+                line = next((ln.strip() for ln in context.split("\n") if parsed["quote"] in ln), parsed["quote"])
+                label = quote.rstrip(".:; ")
+                quote = line if parsed["quote"] and label and label.lower() in line.lower() else (label + ": " + line if label else line)
+                quote = quote[:200]
             candidates.append({"start": parsed["start"], "end": parsed["end"], "quote": quote, "date_quote": parsed["quote"], "exact": parsed["exact"], "token": positive[0], "basis": "application_window"})
     # Preserve order and avoid a duplicated date discovered through adjacent context.
     unique = {}
@@ -945,6 +955,18 @@ def _quote_with(text: str, tokens: Iterable[str], minimum_words: int = 1, prefer
     return None
 
 
+def quote_has_date(quote: Optional[str], iso_date: Optional[str]) -> bool:
+    """True when ``quote`` writes out ``iso_date`` (month name/abbrev + day, day +
+    month, ISO or numeric forms; the year may come from the quote or the date)."""
+    if not quote or not iso_date:
+        return False
+    try:
+        want = date.fromisoformat(str(iso_date)[:10])
+    except ValueError:
+        return False
+    return any(want in (p["start"], p["end"]) for p in parse_dates(str(quote), want.year))
+
+
 def _evidence(quote: Optional[str], url: str) -> Dict:
     cleaned = _clean_quote(quote)
     return {"quote": cleaned, "url": url} if is_quality_evidence(cleaned) else {}
@@ -1198,6 +1220,7 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
     if legacy_eligibility and not enriched.get("eligibility"):
         enriched["eligibility"], enriched["_eligibility_quote"] = enrich.truncate(legacy_eligibility, 200), legacy_eligibility
     _apply_enrichment(record, evidence, enriched, seed, resolved_apply, apply_link, window)
+    record["opens_quote_dated"] = quote_has_date((evidence.get("opening_date") or {}).get("quote"), record.get("opening_date"))
     if status == "rolling":
         record["deadline_basis"] = "rolling"
     if status == "open" and window is None:
