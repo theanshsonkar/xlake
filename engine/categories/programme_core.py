@@ -1026,11 +1026,9 @@ def official_opening_quote(quote: Optional[str], iso_date: Optional[str]) -> Opt
         want = date.fromisoformat(str(iso_date)[:10])
     except ValueError:
         return None
-    if _opening_ok(quote, want):
-        return quote
     parts = [x.strip() for x in re.split(r"(?<=[.!?])\s+", quote) if x.strip()]
-    options = parts + [a + " " + b for a, b in zip(parts, parts[1:])]
-    for piece in sorted(options, key=len):
+    options = [" ".join(parts[i:i + n]) for n in (1, 2, 3) for i in range(len(parts) - n + 1)]
+    for piece in sorted(options, key=len) + [quote]:
         if _opening_ok(piece, want):
             return piece
     return None
