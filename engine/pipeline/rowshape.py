@@ -13,7 +13,7 @@ Rules enforced here:
 from __future__ import annotations
 
 import re
-from datetime import date
+from datetime import date, datetime, timezone
 from typing import Any, Dict, List, Optional
 
 from categories.programme_enrich import clean_location, is_placeholder
@@ -99,6 +99,26 @@ def _dated_opens(row: dict):
         q = ((row.get("official_evidence") or {}).get("opening_date") or {}).get("quote")
         dated = bool(official_opening_quote(q, opens))
     return opens if dated else None
+
+
+def _today_utc() -> str:
+    return datetime.now(timezone.utc).date().isoformat()
+
+
+def _hackathon_opens(row: dict):
+    """Registration-open date for a hackathon, only from an explicit source:
+    a platform registration-start field (Unstop ``start_regn_dt``) or an official
+    page quote that writes the date out as an opening statement. Never the event start."""
+    ev = row.get("official_evidence") or {}
+    reg = to_date(row.get("registration_start"))
+    if reg and to_date(ev.get("start_regn_dt")) == reg:
+        return reg
+    opens = to_date(row.get("opening_date"))
+    if not opens:
+        return None
+    from categories.programme_core import official_opening_quote
+    q = (ev.get("opening_date") or {}).get("quote")
+    return opens if official_opening_quote(q, opens) else None
 
 
 def to_date(value: Any) -> Optional[str]:
@@ -329,7 +349,7 @@ def map_hackathon(row: dict) -> Dict[str, Any]:
         "org": real_org(row.get("organizer")),
         "logo": clean_logo(row.get("logo_url")),
         "url": url, "apply_url": _first(row.get("application_url"), url),
-        "opens": to_date(row.get("registration_start")),
+        "opens": _hackathon_opens(row),
         "skills": _list(row.get("skills")),
         "location": scrub(row.get("location"), 120),
         "country": _country(row.get("location")),
@@ -386,6 +406,14 @@ def to_standard(row: dict) -> Dict[str, Any]:
     out["title"] = title
     out["status"] = row.get("lifecycle") or lifecycle.infer(row, date.today())
     out["deadline"] = to_date(_first(row.get("deadline"), row.get("registration_deadline")))
+    if t == "hackathon" and out["status"] in ("open", "upcoming"):
+        # Upcoming only while a dated registration opening is ahead (UTC); event start alone
+        # does not make a hackathon upcoming. A deadline not after the opening is stale.
+        opens = out["opens"]
+        today_utc = _today_utc()
+        out["status"] = "upcoming" if opens and opens > today_utc else "open"
+        if opens and opens > today_utc and out["deadline"] and out["deadline"] <= opens:
+            out["deadline"] = None
     out["eligibility"] = _eligibility(row, out["level"])
     out["last_checked"] = _first(row.get("last_checked_at"), row.get("last_seen"), row.get("checked_at"))
     return {k: out[k] for k in FIELDS}
