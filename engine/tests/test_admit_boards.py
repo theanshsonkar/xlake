@@ -30,6 +30,38 @@ class FakeVerifier:
                            postings=spec.get("postings"))
 
 
+def _posts(*titles):
+    return [SimpleNamespace(location="", title=t, meta={}) for t in titles]
+
+
+class AdmitCapAndFilterTest(unittest.TestCase):
+    def _run(self, caches, mapping, **kw):
+        v = FakeVerifier(mapping)
+        return admit_boards.run_admission(caches, [], list_board_fn=v, **kw), v
+
+    def test_cap_respected(self):
+        toks = ["a", "b", "c", "d"]
+        mapping = {("lever", t): {"count": 1, "postings": _posts("Software Intern")}
+                   for t in toks}
+        res, v = self._run({"lever": toks}, mapping, max_admit=2,
+                           require_early_career=True)
+        self.assertEqual(len(res["admit_entries"]), 2)
+        self.assertEqual(len(v.calls), 2)
+
+    def test_non_early_career_not_admitted(self):
+        mapping = {("lever", "x"): {"count": 1, "postings": _posts("Senior Associate, Tax")}}
+        res, _ = self._run({"lever": ["x"]}, mapping, require_early_career=True)
+        self.assertEqual(res["admit_entries"], [])
+        self.assertEqual(res["report"]["lever"]["no_early_career"], 1)
+        self.assertEqual(res["review_rows"], [])
+
+    def test_early_career_admitted(self):
+        mapping = {("lever", "y"): {"count": 2,
+                                    "postings": _posts("Staff Engineer", "Graduate Analyst")}}
+        res, _ = self._run({"lever": ["y"]}, mapping, require_early_career=True)
+        self.assertEqual(len(res["admit_entries"]), 1)
+
+
 class AdmitBoardsTest(unittest.TestCase):
     def _run(self, caches, registry, mapping):
         v = FakeVerifier(mapping)

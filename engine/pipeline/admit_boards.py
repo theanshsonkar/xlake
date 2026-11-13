@@ -24,6 +24,7 @@ if _ENGINE_ROOT not in sys.path:
     sys.path.insert(0, _ENGINE_ROOT)
 
 from adapters.boards import list_board  # noqa: E402
+from core import jobmeta  # noqa: E402
 
 PLATFORM_POLICY = {
     "keka": "admit",
@@ -31,6 +32,13 @@ PLATFORM_POLICY = {
     "workable": "admit",
     "zohorecruit": "admit",
     "darwinbox": "admit",
+    # adapters exist in adapters.boards; sweep legs: lever/ashby have their own,
+    # workday has its own, smartrecruiters/recruitee are read by the "other" leg
+    "workday": "admit",
+    "ashby": "admit",
+    "lever": "admit",
+    "smartrecruiters": "admit",
+    "recruitee": "admit",
 }
 
 EVIDENCE_URL = {
@@ -39,7 +47,31 @@ EVIDENCE_URL = {
     "workable": "apply.workable.com/{token}",
     "zohorecruit": "https://{token}.zohorecruit.com/jobs/Careers",
     "darwinbox": "https://{token}.darwinbox.in",
+    "lever": "jobs.lever.co/{token}",
+    "ashby": "jobs.ashbyhq.com/{token}",
+    "smartrecruiters": "jobs.smartrecruiters.com/{token}",
+    "recruitee": "{token}.recruitee.com",
 }
+
+DEFAULT_MAX_ADMIT = 300
+_EARLY_EXTRA = re.compile(
+    r"\b(graduates?|freshers?|apprentice(ship)?s?|campus|working student)\b", re.I)
+_ASSOCIATE = re.compile(r"\bassociate\b", re.I)
+_SENIOR_ASSOCIATE = re.compile(r"\bsenior\s+associate\b", re.I)
+
+
+def is_early_career_posting(p):
+    """Reuses jobmeta.detect_level (intern/new_grad/entry/junior) plus a few
+    extra early-career terms it lacks (graduate, fresher, apprentice, associate)."""
+    title = getattr(p, "title", "") or ""
+    meta = getattr(p, "meta", None) or {}
+    if meta.get("level") in ("intern", "new_grad", "entry", "junior"):
+        return True
+    if jobmeta.detect_level(title, meta.get("employment_type")):
+        return True
+    if _EARLY_EXTRA.search(title):
+        return True
+    return bool(_ASSOCIATE.search(title) and not _SENIOR_ASSOCIATE.search(title))
 
 OUTLIER_COUNT = 200
 AGENCY_PATTERNS = (
@@ -94,7 +126,7 @@ def build_entry(platform, token, company, count, note=None):
 
 def run_admission(caches, registry, list_board_fn=list_board,
                   policy=PLATFORM_POLICY, outlier=OUTLIER_COUNT,
-                  rejected=None):
+                  rejected=None, max_admit=None, require_early_career=False):
     rejected = set(rejected or ())
     existing = {_key(e) for e in registry}
     report = {}
@@ -103,7 +135,8 @@ def run_admission(caches, registry, list_board_fn=list_board,
     review_rows = []
     pending_rows = []
 
-    for platform, tokens in caches.items():
+    for platform in sorted(caches):
+        tokens = caches[platform]
         pol = policy.get(platform)
         if pol is None:
             continue
@@ -121,6 +154,7 @@ def run_admission(caches, registry, list_board_fn=list_board,
             "deduped": len(uniq) - len(new_tokens),
             "verified": 0, "empty": 0, "dead": 0,
             "admit": 0, "flagged": 0, "pending": 0,
+            "no_early_career": 0,
         }
 
         if pol == "page_reader":
@@ -144,6 +178,8 @@ def run_admission(caches, registry, list_board_fn=list_board,
 
         if pol == "admit":
             for t in new_tokens:
+                if max_admit is not None and len(admit_entries) >= max_admit:
+                    break
                 res = list_board_fn(platform, t)
                 if getattr(res, "error", None):
                     r["dead"] += 1
@@ -153,8 +189,12 @@ def run_admission(caches, registry, list_board_fn=list_board,
                     r["empty"] += 1
                     continue
                 r["verified"] += 1
-                company = getattr(res, "token", None) or t
                 postings = getattr(res, "postings", None) or []
+                if require_early_career and not any(
+                        is_early_career_posting(p) for p in postings):
+                    r["no_early_career"] += 1
+                    continue
+                company = getattr(res, "token", None) or t
                 location = getattr(postings[0], "location", "") if postings else ""
                 reasons = []
                 if count >= outlier:
@@ -475,6 +515,8 @@ def main(argv=None):
     ap.add_argument("--refresh-names", action="store_true",
                     help="refresh company names for discovery entries")
     ap.add_argument("--process-review", dest="process_review", action="store_true")
+    ap.add_argument("--max-admit", type=int, default=DEFAULT_MAX_ADMIT,
+                    help="stop after admitting N boards this run (default 300)")
     ap.add_argument("--admit", action="append", default=[])
     ap.add_argument("--reject", action="append", default=[])
     args = ap.parse_args(argv)
@@ -569,7 +611,8 @@ def main(argv=None):
     rejected_rows = _load_json(REJECTED_PATH, [])
     rejected_keys = {(r["platform"], r["token"]) for r in rejected_rows}
     result = run_admission(caches, registry, list_board_fn=list_board,
-                           rejected=rejected_keys)
+                           rejected=rejected_keys, max_admit=args.max_admit,
+                           require_early_career=True)
 
     rep = result["report"]
     print("=" * 70)
@@ -583,6 +626,15 @@ def main(argv=None):
         print(hdr.format(p, r["policy"], r["read"], r["deduped"], new,
                          r["verified"], r["empty"], r["dead"],
                          r["admit"], r["flagged"]))
+    print()
+
+    tot = {k: sum(r[k] for r in rep.values())
+           for k in ("verified", "empty", "dead", "no_early_career", "flagged")}
+    print("admission: admitted={} verified={} empty={} dead={} no_early_career={} "
+          "flagged={} per_platform={}".format(
+              len(result["admit_entries"]), tot["verified"], tot["empty"],
+              tot["dead"], tot["no_early_career"], tot["flagged"],
+              {p: r["admit"] for p, r in rep.items()}))
     print()
 
     print("FLAGGED FOR MANUAL REVIEW ({}):".format(len(result["review_rows"])))
