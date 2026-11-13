@@ -95,9 +95,9 @@ def _dated_opens(row: dict):
         return None
     dated = row.get("opens_quote_dated")
     if dated is None:
-        from categories.programme_core import quote_has_date
+        from categories.programme_core import official_opening_quote
         q = ((row.get("official_evidence") or {}).get("opening_date") or {}).get("quote")
-        dated = quote_has_date(q, opens)
+        dated = bool(official_opening_quote(q, opens))
     return opens if dated else None
 
 

@@ -615,7 +615,7 @@ def _year_near(text: str, position: int) -> Optional[int]:
 
 
 def _sentences(text: str) -> Iterable[Tuple[int, int, str]]:
-    for match in re.finditer(r"(?:[^.!?\n]|(?<=\d)\.(?=\d))+(?:[.!?]|$)", text):
+    for match in re.finditer(r"(?:[^.!?\n]|(?<=\d)\.(?=\d))+(?:[.!?]|$)", text, re.M):
         yield match.start(), match.end(), match.group(0).strip()
 
 
@@ -992,6 +992,50 @@ def quote_has_date(quote: Optional[str], iso_date: Optional[str]) -> bool:
     return any(want in (p["start"], p["end"]) for p in parse_dates(str(quote), want.year))
 
 
+_NOT_OPENING = re.compile(r"\b(?:clos(?:e|es|ed|ing)|deadlines?|due|notif\w*|decisions?|announce\w*|results?|interviews?|programme?s?\s+(?:dates?|starts?|begins?)|start\s+dates?|orientation|arrival)\b", re.I)
+_OPENING_CUE = re.compile(r"\bopen(?:s|ing)?\b|\bbegin(?:s)?\b|\bstarts?\s+accepting|\blaunch\w*|\baccepted\s+between|\bapplication\s+(?:period|window)|\bonline\s+application|\bfrom\s*$", re.I)
+OPENING_QUOTE_MAX = 220
+
+
+def _opening_ok(quote: str, want: date) -> bool:
+    if len(quote) > OPENING_QUOTE_MAX:
+        return False
+    for p in parse_dates(quote, want.year):
+        if p["start"] != want:
+            continue
+        a, b = p["span"]
+        before, after = quote[max(0, a - 70):a], quote[b:b + 30]
+        if re.search(r"(?:[–—-]|\bto\b)\s*$", before):
+            continue  # the second date of a window is its end
+        if _NOT_OPENING.search(before[-50:] + " " + after[:25]):
+            continue
+        if _OPENING_CUE.search(before + " " + after):
+            return True
+    return False
+
+
+def official_opening_quote(quote: Optional[str], iso_date: Optional[str]) -> Optional[str]:
+    """The quote (trimmed to the single sentence/line holding the date when long)
+    if it is an official OPENING statement for ``iso_date``: it has the date as the
+    first/only date, an opening cue next to it, and no close/deadline/decision/
+    programme-start wording next to it. Else None."""
+    quote = _clean_quote(quote)
+    if not quote or not iso_date:
+        return None
+    try:
+        want = date.fromisoformat(str(iso_date)[:10])
+    except ValueError:
+        return None
+    if _opening_ok(quote, want):
+        return quote
+    parts = [x.strip() for x in re.split(r"(?<=[.!?])\s+", quote) if x.strip()]
+    options = parts + [a + " " + b for a, b in zip(parts, parts[1:])]
+    for piece in sorted(options, key=len):
+        if _opening_ok(piece, want):
+            return piece
+    return None
+
+
 def _evidence(quote: Optional[str], url: str) -> Dict:
     cleaned = _clean_quote(quote)
     return {"quote": cleaned, "url": url} if is_quality_evidence(cleaned) else {}
@@ -1248,7 +1292,10 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
     pattern = detect_opens_pattern(text, seed["official_url"])
     if pattern:
         record["opens_pattern"] = pattern
-    record["opens_quote_dated"] = quote_has_date((evidence.get("opening_date") or {}).get("quote"), record.get("opening_date"))
+    opening = official_opening_quote((evidence.get("opening_date") or {}).get("quote"), record.get("opening_date"))
+    record["opens_quote_dated"] = bool(opening)
+    if opening:
+        evidence["opening_date"] = _evidence(opening, seed["official_url"]) or evidence["opening_date"]
     if status == "rolling":
         record["deadline_basis"] = "rolling"
     if status == "open" and window is None:

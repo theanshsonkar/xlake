@@ -178,3 +178,11 @@ class IntegrationTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PatternOnlyTest(unittest.TestCase):
+    def test_pattern_without_history(self):
+        r = prog(lifecycle="upcoming", opens_pattern={"month": 9, "day": 1, "quote": "q", "url": "u"})
+        self.assertTrue(cycles.apply_prediction(r, TODAY))
+        self.assertEqual((r["expected_opens"], r["expected_deadline"]), ("2027-09-01", None))
+        self.assertEqual(r["next_cycle_hint"], "Opens around September each year (official page)")

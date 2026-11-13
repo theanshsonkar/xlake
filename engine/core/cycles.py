@@ -116,6 +116,20 @@ def _pattern_opens(pattern, td: date):
 
 
 def predict_next(row: dict, today) -> Optional[dict]:
+    pred = _predict_cycles(row, today)
+    if pred or row.get("record_type") != "programme":
+        return pred
+    # An explicit official recurring statement works without cycle history.
+    td = _today(today)
+    cur = _first_iso(row, "deadline", "registration_deadline")
+    eo, prec = _pattern_opens(row.get("opens_pattern"), td)
+    if not eo or (cur and date.fromisoformat(cur) >= td):
+        return None
+    return {"expected_opens": eo, "expected_opens_precision": prec, "expected_deadline": None,
+            "basis": "pattern", "cycles_seen": 0}
+
+
+def _predict_cycles(row: dict, today) -> Optional[dict]:
     td = _today(today)
     cycles = row.get("cycles")
     if not isinstance(cycles, list):
@@ -157,6 +171,8 @@ def next_cycle_text(pred: Optional[dict]) -> Optional[str]:
     if not pred:
         return None
     n = pred.get("cycles_seen") or 0
+    if not n and pred.get("expected_opens"):
+        return "Opens around %s each year (official page)" % _MONTHS[date.fromisoformat(pred["expected_opens"]).month - 1]
     lead = "Usually" if n >= 2 else "Last cycle suggests it"
     if pred.get("expected_opens"):
         d = date.fromisoformat(pred["expected_opens"])

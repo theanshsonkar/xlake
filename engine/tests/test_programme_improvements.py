@@ -234,3 +234,32 @@ class OpensPatternTest(unittest.TestCase):
         self.assertIsNone(d("Applications opened on 1 March 2026.", "u"))
         self.assertIsNone(d("Applications open in September.", "u"))
         self.assertIsNone(d("The deadline is every March.", "u"))
+
+
+class OfficialOpeningQuoteTest(unittest.TestCase):
+    def test_real_cases(self):
+        from categories.programme_core import official_opening_quote as q
+        no = [("Applications Close: December 15, 2026", "2026-12-15"),
+              ("Decisions will be notified by December 31, 2026", "2026-12-31"),
+              ("Program dates: January 11 – February 19, 2027", "2027-01-11"),
+              ("Application Period: December 1st, 2026 – February 3rd, 2027.", "2027-02-03"),
+              ("Skip to main content. " + "Join a wonderful programme for talented people, " * 8 + "applications open on December 1, 2026.", "2026-12-01")]
+        yes = [("Application Period: December 1st, 2026 – February 3rd, 2027.", "2026-12-01"),
+               ("Online application: November 15, 2026 – February 15, 2027.", "2026-11-15"),
+               ("The next call will open. on November 15, 2026. .", "2026-11-15"),
+               ("Applications accepted between 12/01/2026 - 02/15/2027.", "2026-12-01")]
+        for text, iso in no:
+            self.assertIsNone(q(text, iso), text)
+        for text, iso in yes:
+            self.assertTrue(q(text, iso), text)
+
+    def test_long_blob_trims_to_sentence(self):
+        from categories.programme_core import official_opening_quote as q
+        blob = "Great programme for talented people. " * 8 + "Applications open on December 1, 2026. " + "More blurb here. " * 8
+        self.assertEqual(q(blob, "2026-12-01"), "Applications open on December 1, 2026.")
+
+    def test_headingless_line_is_a_sentence(self):
+        from datetime import date as d
+        from categories import programme_core as pc
+        w = pc.detect_applicant_windows("Junior Application Period:\nJanuary 10 – February 20, 2027\nOther.", d(2026, 11, 13))
+        self.assertTrue(any(x["start"].isoformat() == "2027-01-10" for x in w))
