@@ -622,6 +622,11 @@ def _sentences(text: str) -> Iterable[Tuple[int, int, str]]:
 _ABBREV_DOT = re.compile(r"\b(Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sept|Sep|Oct|Nov|Dec)\.(?=\s*\d)")
 
 
+# "PhD must be received by <date>": a degree-date eligibility rule, not an application deadline.
+_APPLY_WORD = re.compile(r"\b(?:applic\w*|apply|nominat\w*|submi\w*|deadline)", re.I)
+_DEGREE_DATE = re.compile(r"\b(?:ph\.?d|doctora(?:te|l)|degree|cannot be received before)\b", re.I)
+
+
 def detect_applicant_windows(text: str, today: Optional[date] = None) -> List[Dict]:
     """Find dated applicant windows while rejecting organizer/mentor dates."""
     candidates: List[Dict] = []
@@ -1182,7 +1187,9 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
     # A page listing several deadlines (priority/general/final): when the first
     # is past but another cued deadline is still ahead, use the earliest future one.
     if windows and windows[0].get("deadline_cue") and windows[0]["end"] < today:
-        future = [w for w in windows if w.get("deadline_cue") and w["end"] >= today]
+        future = [w for w in windows if w.get("deadline_cue") and w["end"] >= today
+                  and _APPLY_WORD.search(str(w.get("quote") or ""))
+                  and not _DEGREE_DATE.search(str(w.get("quote") or ""))]
         if future:
             windows.insert(0, min(future, key=lambda w: w["end"]))
     status = classify_status(text, windows, today, formal, resolved_apply)

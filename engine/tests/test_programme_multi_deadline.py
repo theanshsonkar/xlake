@@ -38,6 +38,11 @@ class MultiDeadlineTests(unittest.TestCase):
         self.assertNotEqual(record["programme_status"], "open")
         self.assertIsNone(record["deadline"])
 
+    def test_degree_date_is_not_a_deadline(self):
+        record, _ = self.parse("<p>Application deadline: September 10, 2026. Program applications.</p>"
+                               "<p>Your PhD cannot be received before January 1, 2025 and must be received by August 31, 2027.</p><p>Your degree must be received by 8/31/27.</p>")
+        self.assertNotEqual(record["deadline"], "2027-08-31")
+
 
 if __name__ == "__main__":
     unittest.main()
