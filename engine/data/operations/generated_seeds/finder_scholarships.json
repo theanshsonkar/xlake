@@ -1,0 +1,347 @@
+[
+ {
+  "source_id": "find-scholarships-asiafoundation-org-0c6521",
+  "programme_id": "scholarships-find-asiafoundation-org-0c6521",
+  "programme_name": "Scholarships for Girls Education in Cambodia | The Asia Foundation",
+  "organizer": "asiafoundation.org",
+  "official_url": "https://asiafoundation.org/scholarships-for-girls-education-in-cambodia/",
+  "allowed_path_hints": [
+   "scholarships-for-girls-education-in-cambodia"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-a-star-edu-sg-e55242",
+  "programme_id": "scholarships-find-a-star-edu-sg-e55242",
+  "programme_name": "AGA - POC",
+  "organizer": "A*STAR",
+  "official_url": "https://www.a-star.edu.sg/scholarships/aga-poc",
+  "allowed_path_hints": [
+   "scholarships/aga-poc"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-a-star-edu-sg-9d2b8e",
+  "programme_id": "scholarships-find-a-star-edu-sg-9d2b8e",
+  "programme_name": "Sam Oh",
+  "organizer": "A*STAR",
+  "official_url": "https://www.a-star.edu.sg/scholarships/dr-sam-oh",
+  "allowed_path_hints": [
+   "scholarships/dr-sam-oh"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-a-star-edu-sg-3616ef",
+  "programme_id": "scholarships-find-a-star-edu-sg-3616ef",
+  "programme_name": "Scholarship",
+  "organizer": "A*STAR",
+  "official_url": "https://www.a-star.edu.sg/qinc/join-us/scholarship",
+  "allowed_path_hints": [
+   "qinc/join-us/scholarship"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-a-star-edu-sg-45fb3e",
+  "programme_id": "scholarships-find-a-star-edu-sg-45fb3e",
+  "programme_name": "Scholarships",
+  "organizer": "A*STAR",
+  "official_url": "https://www.a-star.edu.sg/scholarships/home/scholarships",
+  "allowed_path_hints": [
+   "scholarships/home/scholarships"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-aalto-fi-7eeab9",
+  "programme_id": "scholarships-find-aalto-fi-7eeab9",
+  "programme_name": "Erasmus+-scholarships | Aalto University",
+  "organizer": "aalto.fi",
+  "official_url": "https://www.aalto.fi/en/other-studies/erasmus-scholarships",
+  "allowed_path_hints": [
+   "en/other-studies/erasmus-scholarships"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-acls-org-5c62fd",
+  "programme_id": "scholarships-find-acls-org-5c62fd",
+  "programme_name": "Amplifying Humanistic Scholarship - ACLS",
+  "organizer": "acls.org",
+  "official_url": "https://www.acls.org/amplifying-humanistic-scholarship/",
+  "allowed_path_hints": [
+   "amplifying-humanistic-scholarship"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-act-org-de8038",
+  "programme_id": "scholarships-find-act-org-de8038",
+  "programme_name": "How to Find scholarships | ACT",
+  "organizer": "act.org",
+  "official_url": "https://www.act.org/content/act/en/students-and-parents/college-planning-resources/paying-for-college/finding-scholarships.html",
+  "allowed_path_hints": [
+   "content/act/en/students-and-parents/college-planning-resources/paying-for-college/finding-scholarships.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-act-org-88cb9d",
+  "programme_id": "scholarships-find-act-org-88cb9d",
+  "programme_name": "Find ACT Score Scholarships | ACT",
+  "organizer": "act.org",
+  "official_url": "https://www.act.org/content/act/en/students-and-parents/college-planning-resources/paying-for-college/free-college-scholarships.html",
+  "allowed_path_hints": [
+   "content/act/en/students-and-parents/college-planning-resources/paying-for-college/free-college-scholarships.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-ccri-edu-f45e77",
+  "programme_id": "scholarships-find-ccri-edu-f45e77",
+  "programme_name": "Bursar's Office \u2013 CCRI",
+  "organizer": "ccri.edu",
+  "official_url": "https://www.ccri.edu/bursar/index.html",
+  "allowed_path_hints": [
+   "bursar/index.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-ccri-edu-2ac671",
+  "programme_id": "scholarships-find-ccri-edu-2ac671",
+  "programme_name": "Bursar's Office Help Videos \u2013 CCRI",
+  "organizer": "ccri.edu",
+  "official_url": "https://www.ccri.edu/bursar/videos.html",
+  "allowed_path_hints": [
+   "bursar/videos.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-ccri-edu-2f653d",
+  "programme_id": "scholarships-find-ccri-edu-2f653d",
+  "programme_name": "Contact the Bursar's Office \u2013 CCRI",
+  "organizer": "ccri.edu",
+  "official_url": "https://www.ccri.edu/bursar/contact.html",
+  "allowed_path_hints": [
+   "bursar/contact.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-ccri-edu-2a96bf",
+  "programme_id": "scholarships-find-ccri-edu-2a96bf",
+  "programme_name": "Scholarships \u2013 CCRI",
+  "organizer": "ccri.edu",
+  "official_url": "https://www.ccri.edu/art/scholarships.html",
+  "allowed_path_hints": [
+   "art/scholarships.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-ccri-edu-4c9b27",
+  "programme_id": "scholarships-find-ccri-edu-4c9b27",
+  "programme_name": "Communication and Film/Media Scholarships \u2013 CCRI",
+  "organizer": "ccri.edu",
+  "official_url": "https://www.ccri.edu/cmmd/scholarship.html",
+  "allowed_path_hints": [
+   "cmmd/scholarship.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-ag-purdue-edu-46a49c",
+  "programme_id": "scholarships-find-ag-purdue-edu-46a49c",
+  "programme_name": "College of Agriculture Scholarships",
+  "organizer": "Purdue University",
+  "official_url": "https://ag.purdue.edu/department/oap/scholarships.html",
+  "allowed_path_hints": [
+   "department/oap/scholarships.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-ag-purdue-edu-523dbd",
+  "programme_id": "scholarships-find-ag-purdue-edu-523dbd",
+  "programme_name": "Scholarships",
+  "organizer": "Purdue University",
+  "official_url": "https://ag.purdue.edu/department/ansc/scholarships.html",
+  "allowed_path_hints": [
+   "department/ansc/scholarships.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-aises-org-d8ead7",
+  "programme_id": "scholarships-find-aises-org-d8ead7",
+  "programme_name": "AISES Scholarships - Funding STEM Futures",
+  "organizer": "aises.org",
+  "official_url": "https://aises.org/scholarships/",
+  "allowed_path_hints": [
+   "scholarships"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-aises-org-384d3e",
+  "programme_id": "scholarships-find-aises-org-384d3e",
+  "programme_name": "Scholarship Reviewer - AISES",
+  "organizer": "aises.org",
+  "official_url": "https://aises.org/scholarship-reviewer/",
+  "allowed_path_hints": [
+   "scholarship-reviewer"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-bits-pilani-ac-in-7bb44c",
+  "programme_id": "scholarships-find-bits-pilani-ac-in-7bb44c",
+  "programme_name": "Golden 76 Scholarship Endowment Fund - BITS Pilani",
+  "organizer": "BITS Pilani",
+  "official_url": "https://www.bits-pilani.ac.in/the-golden-76-scholarship-endowment-fund/",
+  "allowed_path_hints": [
+   "the-golden-76-scholarship-endowment-fund"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-bits-pilani-ac-in-b4b46c",
+  "programme_id": "scholarships-find-bits-pilani-ac-in-b4b46c",
+  "programme_name": "The Golden 74 Batch Scholarship Endowment Fund - BITS Pilani",
+  "organizer": "BITS Pilani",
+  "official_url": "https://www.bits-pilani.ac.in/the-golden-74-batch-scholarship-endowment-fund/",
+  "allowed_path_hints": [
+   "the-golden-74-batch-scholarship-endowment-fund"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-csi-cuny-edu-827577",
+  "programme_id": "scholarships-find-csi-cuny-edu-827577",
+  "programme_name": "Scholarships | Ways to Give | College of Staten Island",
+  "organizer": "CUNY College of Staten Island",
+  "official_url": "https://www.csi.cuny.edu/giving/ways-give/scholarships",
+  "allowed_path_hints": [
+   "giving/ways-give/scholarships"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-csi-cuny-edu-e81082",
+  "programme_id": "scholarships-find-csi-cuny-edu-e81082",
+  "programme_name": "Bursar | Paying for College | College of Staten Island",
+  "organizer": "CUNY College of Staten Island",
+  "official_url": "https://www.csi.cuny.edu/admissions/paying-college/bursar",
+  "allowed_path_hints": [
+   "admissions/paying-college/bursar"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-scholarships-daad-de-17f0de",
+  "programme_id": "scholarships-find-daad-de-17f0de",
+  "programme_name": "Scholarships & Funding - DAAD",
+  "organizer": "DAAD",
+  "official_url": "https://www.daad.de/en/studying-in-germany/scholarships/",
+  "allowed_path_hints": [
+   "en/studying-in-germany/scholarships"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ }
+]

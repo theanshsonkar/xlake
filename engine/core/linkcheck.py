@@ -25,7 +25,7 @@ AGGREGATOR_HOSTS = _AGGREGATOR_LOGO_HOSTS + ("unstop.com", "linkedin.com", "dora
                                              "freshersworld.com", "youthall.com", "unigo.com", "profellow.com",
                                              "niche.com", "buddy4study.com", "ioscholarships.com",
                                              "cirkledin.com", "insidesherpa.com", "opportunitiesforyouth.org",
-                                             "techcrunch.com")
+                                             "techcrunch.com", "bigfuture.collegeboard.org")
 PROGRAMME_CATEGORIES = ("fellowship", "scholarship", "grant", "research", "startup-founder",
                         "community", "open-source-programmes")
 _GENERIC = {"en", "home", "index.html", "index.htm", "index.php", "en-us", "en-gb"}

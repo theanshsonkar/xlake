@@ -1,0 +1,1052 @@
+[
+ {
+  "source_id": "find-grants-docs-linuxfoundation-org-498d94",
+  "programme_id": "grants-find-docs-linuxfoundation-org-498d94",
+  "programme_name": "Crowdfunding | Linux Foundation Documentation",
+  "organizer": "docs.linuxfoundation.org",
+  "official_url": "https://docs.linuxfoundation.org/lfx/crowdfunding",
+  "allowed_path_hints": [
+   "lfx/crowdfunding"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-docs-linuxfoundation-org-b6c49b",
+  "programme_id": "grants-find-docs-linuxfoundation-org-b6c49b",
+  "programme_name": "Crowdfunding FAQs | Linux Foundation Documentation",
+  "organizer": "docs.linuxfoundation.org",
+  "official_url": "https://docs.linuxfoundation.org/lfx/crowdfunding/crowdfunding-faqs",
+  "allowed_path_hints": [
+   "lfx/crowdfunding/crowdfunding-faqs"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-docs-linuxfoundation-org-ff2be8",
+  "programme_id": "grants-find-docs-linuxfoundation-org-ff2be8",
+  "programme_name": "Crowdfunding - Get Help | Linux Foundation Documentation",
+  "organizer": "docs.linuxfoundation.org",
+  "official_url": "https://docs.linuxfoundation.org/lfx/crowdfunding/crowdfunding-get-help",
+  "allowed_path_hints": [
+   "lfx/crowdfunding/crowdfunding-get-help"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-ethereum-org-4cd0b4",
+  "programme_id": "grants-find-ethereum-org-4cd0b4",
+  "programme_name": "Ethereum Foundation & community grant programs | ethereum.org",
+  "organizer": "ethereum.org",
+  "official_url": "https://ethereum.org/community/grants/",
+  "allowed_path_hints": [
+   "community/grants"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-asiafoundation-org-8c6cc5",
+  "programme_id": "grants-find-asiafoundation-org-8c6cc5",
+  "programme_name": "Virtual Lotus Leadership Awards | The Asia Foundation",
+  "organizer": "asiafoundation.org",
+  "official_url": "https://asiafoundation.org/virtual-lotus-leadership-awards/",
+  "allowed_path_hints": [
+   "virtual-lotus-leadership-awards"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-snowflake-com-6197fb",
+  "programme_id": "grants-find-snowflake-com-6197fb",
+  "programme_name": "Snowflake Community Awards",
+  "organizer": "Snowflake",
+  "official_url": "https://www.snowflake.com/en/community-awards/",
+  "allowed_path_hints": [
+   "en/community-awards"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-snowflake-com-e6e92f",
+  "programme_id": "grants-find-snowflake-com-e6e92f",
+  "programme_name": "Snowflake Data Drivers Awards",
+  "organizer": "Snowflake",
+  "official_url": "https://www.snowflake.com/en/customers/data-drivers-awards/",
+  "allowed_path_hints": [
+   "en/customers/data-drivers-awards"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-snowflake-com-cba80f",
+  "programme_id": "grants-find-snowflake-com-cba80f",
+  "programme_name": "Snowflake Grants Support Program - Snowflake",
+  "organizer": "Snowflake",
+  "official_url": "https://www.snowflake.com/snowflake-grants-support-program/",
+  "allowed_path_hints": [
+   "snowflake-grants-support-program"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-a-star-edu-sg-9f952d",
+  "programme_id": "grants-find-a-star-edu-sg-9f952d",
+  "programme_name": "ASTAR Funding Opportunities",
+  "organizer": "A*STAR",
+  "official_url": "https://www.a-star.edu.sg/research/funding-opportunities",
+  "allowed_path_hints": [
+   "research/funding-opportunities"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aaai-org-1747ee",
+  "programme_id": "grants-find-aaai-org-1747ee",
+  "programme_name": "Awards and Recognitions - AAAI",
+  "organizer": "aaai.org",
+  "official_url": "https://aaai.org/about-aaai/aaai-awards/",
+  "allowed_path_hints": [
+   "about-aaai/aaai-awards"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aaai-org-42bd37",
+  "programme_id": "grants-find-aaai-org-42bd37",
+  "programme_name": "AAAI Distinguished Service Award - AAAI",
+  "organizer": "aaai.org",
+  "official_url": "https://aaai.org/aaai-distinguished-service-award/",
+  "allowed_path_hints": [
+   "aaai-distinguished-service-award"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aaai-org-c9453b",
+  "programme_id": "grants-find-aaai-org-c9453b",
+  "programme_name": "AAAI-26 Award Talks - AAAI",
+  "organizer": "aaai.org",
+  "official_url": "https://aaai.org/conference/aaai/aaai-26/award-talks/",
+  "allowed_path_hints": [
+   "conference/aaai/aaai-26/award-talks"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aaai-org-e16c9a",
+  "programme_id": "grants-find-aaai-org-e16c9a",
+  "programme_name": "AAAI Awards Inaugural Feigenbaum Prize - AAAI",
+  "organizer": "aaai.org",
+  "official_url": "https://aaai.org/aaai-awards-inaugural-feigenbaum-prize/",
+  "allowed_path_hints": [
+   "aaai-awards-inaugural-feigenbaum-prize"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aaai-org-ac38f6",
+  "programme_id": "grants-find-aaai-org-ac38f6",
+  "programme_name": "AAAI ISEF Awards - AAAI",
+  "organizer": "aaai.org",
+  "official_url": "https://aaai.org/about-aaai/aaai-awards/aaai-isef-awards/",
+  "allowed_path_hints": [
+   "about-aaai/aaai-awards/aaai-isef-awards"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aalto-fi-23a2c6",
+  "programme_id": "grants-find-aalto-fi-23a2c6",
+  "programme_name": "Funding | Aalto University",
+  "organizer": "aalto.fi",
+  "official_url": "https://www.aalto.fi/en/school-of-engineering/funding",
+  "allowed_path_hints": [
+   "en/school-of-engineering/funding"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aalto-fi-8003a2",
+  "programme_id": "grants-find-aalto-fi-8003a2",
+  "programme_name": "Innovation funding | Aalto University",
+  "organizer": "aalto.fi",
+  "official_url": "https://www.aalto.fi/en/aalto-innovation/innovation-funding",
+  "allowed_path_hints": [
+   "en/aalto-innovation/innovation-funding"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aalto-fi-094e32",
+  "programme_id": "grants-find-aalto-fi-094e32",
+  "programme_name": "Approved grants | Aalto University",
+  "organizer": "aalto.fi",
+  "official_url": "https://www.aalto.fi/en/hse-support-foundation/approved-grants",
+  "allowed_path_hints": [
+   "en/hse-support-foundation/approved-grants"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-acls-org-119f73",
+  "programme_id": "grants-find-acls-org-119f73",
+  "programme_name": "Funding - ACLS",
+  "organizer": "acls.org",
+  "official_url": "https://www.acls.org/funding/",
+  "allowed_path_hints": [
+   "funding"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-acls-org-272784",
+  "programme_id": "grants-find-acls-org-272784",
+  "programme_name": "ACLS Digital Justice Grants - ACLS",
+  "organizer": "acls.org",
+  "official_url": "https://www.acls.org/programs/acls-digital-justice-grants/",
+  "allowed_path_hints": [
+   "programs/acls-digital-justice-grants"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aei-mpg-de-b402e7",
+  "programme_id": "grants-find-aei-mpg-de-b402e7",
+  "programme_name": "Young Scientist Award | Max Planck Institute for Gravitational Physics",
+  "organizer": "aei.mpg.de",
+  "official_url": "https://www.aei.mpg.de/1131771/young-scientist-award",
+  "allowed_path_hints": [
+   "1131771/young-scientist-award"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aei-mpg-de-69e574",
+  "programme_id": "grants-find-aei-mpg-de-69e574",
+  "programme_name": "ERC Advanced Grant for Hermann Nicolai | Max Planck Institute for Gravitational Physics",
+  "organizer": "aei.mpg.de",
+  "official_url": "https://www.aei.mpg.de/190500/erc-advanced-grant-for-hermann-nicolai",
+  "allowed_path_hints": [
+   "190500/erc-advanced-grant-for-hermann-nicolai"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aei-mpg-de-d35d6d",
+  "programme_id": "grants-find-aei-mpg-de-d35d6d",
+  "programme_name": "ERC Consolidator Grant for Miguel Zumalac\u00e1rregui | Max Planck Institute for Gravitational Physics",
+  "organizer": "aei.mpg.de",
+  "official_url": "https://www.aei.mpg.de/1359867/erc-consolidator-grant-for-miguel-zumalac-rregui",
+  "allowed_path_hints": [
+   "1359867/erc-consolidator-grant-for-miguel-zumalac-rregui"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-carnegie-org-e2b8a4",
+  "programme_id": "grants-find-carnegie-org-e2b8a4",
+  "programme_name": "Grants | Carnegie",
+  "organizer": "Carnegie Corporation of New York",
+  "official_url": "https://carnegie.org/grants/",
+  "allowed_path_hints": [
+   "grants"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-carnegie-org-a0ad17",
+  "programme_id": "grants-find-carnegie-org-a0ad17",
+  "programme_name": "Grants Database | Carnegie",
+  "organizer": "Carnegie Corporation of New York",
+  "official_url": "https://carnegie.org/grants/grants-database/",
+  "allowed_path_hints": [
+   "grants/grants-database"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-carnegie-org-e78b2b",
+  "programme_id": "grants-find-carnegie-org-e78b2b",
+  "programme_name": "Grantmaking Highlights | Carnegie",
+  "organizer": "Carnegie Corporation of New York",
+  "official_url": "https://carnegie.org/grants/grantmaking-highlights/",
+  "allowed_path_hints": [
+   "grants/grantmaking-highlights"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-carnegie-org-13f347",
+  "programme_id": "grants-find-carnegie-org-13f347",
+  "programme_name": "I Love My Librarian (ILML) | Carnegie",
+  "organizer": "Carnegie Corporation of New York",
+  "official_url": "https://carnegie.org/our-work/libraries/i-love-my-librarian-award/",
+  "allowed_path_hints": [
+   "our-work/libraries/i-love-my-librarian-award"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-carnegie-org-e43d97",
+  "programme_id": "grants-find-carnegie-org-e43d97",
+  "programme_name": "Made Possible by Librarians 2026 | Carnegie",
+  "organizer": "Carnegie Corporation of New York",
+  "official_url": "https://carnegie.org/our-work/libraries/i-love-my-librarian-award/made-possible-by-librarians-2026/",
+  "allowed_path_hints": [
+   "our-work/libraries/i-love-my-librarian-award/made-possible-by-librarians-2026"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-caseagrant-ucsd-edu-aea379",
+  "programme_id": "grants-find-caseagrant-ucsd-edu-aea379",
+  "programme_name": "Funding | California Sea Grant",
+  "organizer": "California Sea Grant",
+  "official_url": "https://caseagrant.ucsd.edu/funding",
+  "allowed_path_hints": [
+   "funding"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-caseagrant-ucsd-edu-c1525a",
+  "programme_id": "grants-find-caseagrant-ucsd-edu-c1525a",
+  "programme_name": "Eyes on Seagrass | California Sea Grant",
+  "organizer": "California Sea Grant",
+  "official_url": "https://caseagrant.ucsd.edu/funding/eyes-seagrass",
+  "allowed_path_hints": [
+   "funding/eyes-seagrass"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-caseagrant-ucsd-edu-e07ec0",
+  "programme_id": "grants-find-caseagrant-ucsd-edu-e07ec0",
+  "programme_name": "Bugs Below Zero | California Sea Grant",
+  "organizer": "California Sea Grant",
+  "official_url": "https://caseagrant.ucsd.edu/funding/bugs-below-zero",
+  "allowed_path_hints": [
+   "funding/bugs-below-zero"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-caseagrant-ucsd-edu-9a24e7",
+  "programme_id": "grants-find-caseagrant-ucsd-edu-9a24e7",
+  "programme_name": "Call for Full Proposals | California Sea Grant",
+  "organizer": "California Sea Grant",
+  "official_url": "https://caseagrant.ucsd.edu/funding/call-full-proposals",
+  "allowed_path_hints": [
+   "funding/call-full-proposals"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-ag-purdue-edu-ebf5e6",
+  "programme_id": "grants-find-ag-purdue-edu-ebf5e6",
+  "programme_name": "Agronomy Awards , Honors & Recognition",
+  "organizer": "Purdue University",
+  "official_url": "https://ag.purdue.edu/department/agry/awards/index.html",
+  "allowed_path_hints": [
+   "department/agry/awards/index.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-ag-purdue-edu-e6f3a9",
+  "programme_id": "grants-find-ag-purdue-edu-e6f3a9",
+  "programme_name": "Animal Sciences Awards, Honors & Recognition",
+  "organizer": "Purdue University",
+  "official_url": "https://ag.purdue.edu/department/ansc/awards/index.html",
+  "allowed_path_hints": [
+   "department/ansc/awards/index.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-aises-org-9de076",
+  "programme_id": "grants-find-aises-org-9de076",
+  "programme_name": "Ely S. Parker Award - AISES",
+  "organizer": "aises.org",
+  "official_url": "https://aises.org/ely-s-parker-award/",
+  "allowed_path_hints": [
+   "ely-s-parker-award"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-amgenscholars-com-07868b",
+  "programme_id": "grants-find-amgenscholars-com-07868b",
+  "programme_name": "US Spring Travel Award Cycle Opens \u2013 Amgen Scholars",
+  "organizer": "Amgen Foundation",
+  "official_url": "https://amgenscholars.com/us-spring-travel-award-cycle-opens/",
+  "allowed_path_hints": [
+   "us-spring-travel-award-cycle-opens"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-animalbehavior-indiana-edu-a30e3a",
+  "programme_id": "grants-find-animalbehavior-indiana-edu-a30e3a",
+  "programme_name": "Pre-doctoral Funding Form: Forms: Center for the Integrative Study of Animal Behavior: Indiana University Bloomington",
+  "organizer": "Indiana University Bloomington",
+  "official_url": "https://animalbehavior.indiana.edu/forms/pre-doc-funding-form.html",
+  "allowed_path_hints": [
+   "forms/pre-doc-funding-form.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-animalbehavior-indiana-edu-ded97b",
+  "programme_id": "grants-find-animalbehavior-indiana-edu-ded97b",
+  "programme_name": "CISAB Award and Fellowship Highlights: News & Events: Center for the Integrative Study of Animal Behavior: Indiana University Bloomington",
+  "organizer": "Indiana University Bloomington",
+  "official_url": "https://animalbehavior.indiana.edu/news-events/cisab-awards/index.html",
+  "allowed_path_hints": [
+   "news-events/cisab-awards/index.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-animalbehavior-indiana-edu-97e6f7",
+  "programme_id": "grants-find-animalbehavior-indiana-edu-97e6f7",
+  "programme_name": "Pre-doctoral Funding Form: Forms: Center for the Integrative Study of Animal Behavior: Indiana University Bloomington",
+  "organizer": "Indiana University Bloomington",
+  "official_url": "https://animalbehavior.indiana.edu/forms/pre-doctoral-funding-form.html",
+  "allowed_path_hints": [
+   "forms/pre-doctoral-funding-form.html"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-as-tufts-edu-d6ac01",
+  "programme_id": "grants-find-as-tufts-edu-d6ac01",
+  "programme_name": "Jumbo Appreciation Awards | School of Arts and Sciences",
+  "organizer": "Tufts University",
+  "official_url": "https://as.tufts.edu/index.php/about/jumbo-appreciation-awards",
+  "allowed_path_hints": [
+   "index.php/about/jumbo-appreciation-awards"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-as-tufts-edu-6aa225",
+  "programme_id": "grants-find-as-tufts-edu-6aa225",
+  "programme_name": "Mellon Sawyer Grant | School of Arts and Sciences",
+  "organizer": "Tufts University",
+  "official_url": "https://as.tufts.edu/index.php/center-public-history/research/mellon-sawyer-grant",
+  "allowed_path_hints": [
+   "index.php/center-public-history/research/mellon-sawyer-grant"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-as-tufts-edu-c7c2d7",
+  "programme_id": "grants-find-as-tufts-edu-c7c2d7",
+  "programme_name": "Grant Proposal Resources | School of Arts and Sciences",
+  "organizer": "Tufts University",
+  "official_url": "https://as.tufts.edu/index.php/faculty-research/research-resources/grant-proposal-resources",
+  "allowed_path_hints": [
+   "index.php/faculty-research/research-resources/grant-proposal-resources"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-astro-cornell-edu-b62946",
+  "programme_id": "grants-find-astro-cornell-edu-b62946",
+  "programme_name": "Department Awards | Department of Astronomy",
+  "organizer": "Cornell University",
+  "official_url": "https://astro.cornell.edu/awards",
+  "allowed_path_hints": [
+   "awards"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-bits-pilani-ac-in-5849c7",
+  "programme_id": "grants-find-bits-pilani-ac-in-5849c7",
+  "programme_name": "Grants - BITS Pilani",
+  "organizer": "BITS Pilani",
+  "official_url": "https://www.bits-pilani.ac.in/research/grants/",
+  "allowed_path_hints": [
+   "research/grants"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-bits-pilani-ac-in-e310ee",
+  "programme_id": "grants-find-bits-pilani-ac-in-e310ee",
+  "programme_name": "Awards and Achievements - BITS Pilani",
+  "organizer": "BITS Pilani",
+  "official_url": "https://www.bits-pilani.ac.in/pilani/pharmacy/awards-and-achievements/",
+  "allowed_path_hints": [
+   "pilani/pharmacy/awards-and-achievements"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-blog-google-e0615c",
+  "programme_id": "grants-find-blog-google-e0615c",
+  "programme_name": "Google Ad Grants help a U.K. nonprofit save lives",
+  "organizer": "blog.google",
+  "official_url": "https://blog.google/innovation-and-ai/technology/ads/ad-grants-samaritans/",
+  "allowed_path_hints": [
+   "innovation-and-ai/technology/ads/ad-grants-samaritans"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-blog-google-c56455",
+  "programme_id": "grants-find-blog-google-c56455",
+  "programme_name": "Connecting people to causes through $1 billion in Ad Grants",
+  "organizer": "blog.google",
+  "official_url": "https://blog.google/company-news/outreach-and-initiatives/nonprofits/1-billion-ad-grants/",
+  "allowed_path_hints": [
+   "company-news/outreach-and-initiatives/nonprofits/1-billion-ad-grants"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-bowiestate-edu-e7f346",
+  "programme_id": "grants-find-bowiestate-edu-e7f346",
+  "programme_name": "Funding Veterans' Education | Bowie State",
+  "organizer": "Bowie State University",
+  "official_url": "https://bowiestate.edu/admissions-and-aid/veteran-enrollment/funding-veterans-education.php",
+  "allowed_path_hints": [
+   "admissions-and-aid/veteran-enrollment/funding-veterans-education.php"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-bowiestate-edu-d91eb0",
+  "programme_id": "grants-find-bowiestate-edu-d91eb0",
+  "programme_name": "Grants & Research | Bowie State",
+  "organizer": "Bowie State University",
+  "official_url": "https://bowiestate.edu/academics/colleges/college-of-education/grants-and-research/index.php",
+  "allowed_path_hints": [
+   "academics/colleges/college-of-education/grants-and-research/index.php"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-bowiestate-edu-5ad241",
+  "programme_id": "grants-find-bowiestate-edu-5ad241",
+  "programme_name": "Grants | Bowie State",
+  "organizer": "Bowie State University",
+  "official_url": "https://bowiestate.edu/admissions-and-aid/financial-aid/types-of-financial-aid/grants/index.php",
+  "allowed_path_hints": [
+   "admissions-and-aid/financial-aid/types-of-financial-aid/grants/index.php"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-ccam-uci-edu-9498d7",
+  "programme_id": "grants-find-ccam-uci-edu-9498d7",
+  "programme_name": "JRFs awarded for outstanding contributions to CCAM \u2013 CCAM",
+  "organizer": "UC Irvine",
+  "official_url": "https://ccam.uci.edu/ccam-awards-jrfs-for-outstanding-contributions/",
+  "allowed_path_hints": [
+   "ccam-awards-jrfs-for-outstanding-contributions"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-chemistry-uark-edu-acf687",
+  "programme_id": "grants-find-chemistry-uark-edu-acf687",
+  "programme_name": "Travel and Research Funding Opportunities | Chemistry & Biochemistry | University of Arkansas",
+  "organizer": "University of Arkansas",
+  "official_url": "https://chemistry.uark.edu/academics/graduate/current/fundingopportunities.php",
+  "allowed_path_hints": [
+   "academics/graduate/current/fundingopportunities.php"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-cs-usc-edu-7b07fa",
+  "programme_id": "grants-find-cs-usc-edu-7b07fa",
+  "programme_name": "Awards and Honors - USC Viterbi | Thomas Lord Department of Computer Science",
+  "organizer": "USC Viterbi",
+  "official_url": "https://www.cs.usc.edu/about/awards-and-honors/",
+  "allowed_path_hints": [
+   "about/awards-and-honors"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-cshl-edu-de4cf9",
+  "programme_id": "grants-find-cshl-edu-de4cf9",
+  "programme_name": "Student Awards & Honors | Cold Spring Harbor Laboratory",
+  "organizer": "Cold Spring Harbor Laboratory",
+  "official_url": "https://www.cshl.edu/phd-program/student-awards-honors/",
+  "allowed_path_hints": [
+   "phd-program/student-awards-honors"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-cshl-edu-b9be68",
+  "programme_id": "grants-find-cshl-edu-b9be68",
+  "programme_name": "Former CSHL scientist wins Lasker Award | Cold Spring Harbor Laboratory",
+  "organizer": "Cold Spring Harbor Laboratory",
+  "official_url": "https://www.cshl.edu/former-cshl-scientist-wins-lasker-award/",
+  "allowed_path_hints": [
+   "former-cshl-scientist-wins-lasker-award"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-cshl-edu-b7734c",
+  "programme_id": "grants-find-cshl-edu-b7734c",
+  "programme_name": "Suffrage Science award to Mikala Egeblad | Cold Spring Harbor Laboratory",
+  "organizer": "Cold Spring Harbor Laboratory",
+  "official_url": "https://www.cshl.edu/suffrage-science-award-to-mikala-egeblad/",
+  "allowed_path_hints": [
+   "suffrage-science-award-to-mikala-egeblad"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-csi-cuny-edu-3bd50e",
+  "programme_id": "grants-find-csi-cuny-edu-3bd50e",
+  "programme_name": "Dolphin Awards | Faculty & Staff | College of Staten Island",
+  "organizer": "CUNY College of Staten Island",
+  "official_url": "https://www.csi.cuny.edu/faculty-staff/dolphin-awards",
+  "allowed_path_hints": [
+   "faculty-staff/dolphin-awards"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-csi-cuny-edu-d70294",
+  "programme_id": "grants-find-csi-cuny-edu-d70294",
+  "programme_name": "Rachel Grant | | College of Staten Island",
+  "organizer": "CUNY College of Staten Island",
+  "official_url": "https://www.csi.cuny.edu/campus-directory/rachel-grant",
+  "allowed_path_hints": [
+   "campus-directory/rachel-grant"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-csi-cuny-edu-3ae6f1",
+  "programme_id": "grants-find-csi-cuny-edu-3ae6f1",
+  "programme_name": "Brett G. Grant | | College of Staten Island",
+  "organizer": "CUNY College of Staten Island",
+  "official_url": "https://www.csi.cuny.edu/campus-directory/brett-g-grant",
+  "allowed_path_hints": [
+   "campus-directory/brett-g-grant"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-alchemist-vc-874469",
+  "programme_id": "grants-find-alchemist-vc-874469",
+  "programme_name": "How Frontier Tech Gets Funded Before It Becomes a Startup",
+  "organizer": "alchemistaccelerator.com",
+  "official_url": "https://www.alchemist.vc/podcasts-archive/frontier-tech-funding-before-startup",
+  "allowed_path_hints": [
+   "podcasts-archive/frontier-tech-funding-before-startup"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-alchemist-vc-384cd8",
+  "programme_id": "grants-find-alchemist-vc-384cd8",
+  "programme_name": "How the JOBS Act and Investment Crowdfunding Sparked the Rise of the Customer-Investor",
+  "organizer": "alchemistaccelerator.com",
+  "official_url": "https://www.alchemist.vc/podcasts-archive/jobs-act-investment-crowdfunding-customer-investors",
+  "allowed_path_hints": [
+   "podcasts-archive/jobs-act-investment-crowdfunding-customer-investors"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-ati-utexas-edu-c39b19",
+  "programme_id": "grants-find-ati-utexas-edu-c39b19",
+  "programme_name": "ATI named recipient of IN\u00b2 clean tech award \u2013 Austin Technology Incubator",
+  "organizer": "ati.utexas.edu",
+  "official_url": "https://ati.utexas.edu/in2-clean-tech-award/",
+  "allowed_path_hints": [
+   "in2-clean-tech-award"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-ati-utexas-edu-104976",
+  "programme_id": "grants-find-ati-utexas-edu-104976",
+  "programme_name": "First annual TEXVMS Awards \u2013 Austin Technology Incubator",
+  "organizer": "ati.utexas.edu",
+  "official_url": "https://ati.utexas.edu/first-annual-texvms-awards/",
+  "allowed_path_hints": [
+   "first-annual-texvms-awards"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-ati-utexas-edu-f56476",
+  "programme_id": "grants-find-ati-utexas-edu-f56476",
+  "programme_name": "Austin Technology Incubator receives AgTech grant from Wells Fargo Innovation Incubator \u2013 Austin Technology Incubator",
+  "organizer": "ati.utexas.edu",
+  "official_url": "https://ati.utexas.edu/ati-receives-agtech-grant-from-in2/",
+  "allowed_path_hints": [
+   "ati-receives-agtech-grant-from-in2"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-ati-utexas-edu-677750",
+  "programme_id": "grants-find-ati-utexas-edu-677750",
+  "programme_name": "Admiral Bobby Inman and Pike Powers receive the George Kozmetsky Lifetime Achievement Award \u2013 Austin Technology Incubator",
+  "organizer": "ati.utexas.edu",
+  "official_url": "https://ati.utexas.edu/inman-and-powers-receive-kozmetsky-award/",
+  "allowed_path_hints": [
+   "inman-and-powers-receive-kozmetsky-award"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-newventuresbc-com-bf0632",
+  "programme_id": "grants-find-newventuresbc-com-bf0632",
+  "programme_name": "Awards Ceremony - New Ventures BC",
+  "organizer": "newventuresbc.com",
+  "official_url": "https://www.newventuresbc.com/2026-awards-ceremony/",
+  "allowed_path_hints": [
+   "2026-awards-ceremony"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-newventuresbc-com-3dcd79",
+  "programme_id": "grants-find-newventuresbc-com-3dcd79",
+  "programme_name": "ISI Grant Program FAQs - New Ventures BC",
+  "organizer": "newventuresbc.com",
+  "official_url": "https://www.newventuresbc.com/isi-grant-program-faqs/",
+  "allowed_path_hints": [
+   "isi-grant-program-faqs"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-newventuresbc-com-b243c0",
+  "programme_id": "grants-find-newventuresbc-com-b243c0",
+  "programme_name": "Vote for our community in the SBBC Awards - New Ventures BC",
+  "organizer": "newventuresbc.com",
+  "official_url": "https://www.newventuresbc.com/vote-community-sbbc-awards/",
+  "allowed_path_hints": [
+   "vote-community-sbbc-awards"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-nvidia-com-bb1c33",
+  "programme_id": "grants-find-nvidia-com-bb1c33",
+  "programme_name": "NVIDIA Partner Awards EMEA 2026",
+  "organizer": "NVIDIA",
+  "official_url": "https://www.nvidia.com/en-gb/about-nvidia/partners/npn-awards-emea/",
+  "allowed_path_hints": [
+   "en-gb/about-nvidia/partners/npn-awards-emea"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-nvidia-com-29b21f",
+  "programme_id": "grants-find-nvidia-com-29b21f",
+  "programme_name": "Academic Grant Program for Researchers | NVIDIA",
+  "organizer": "NVIDIA",
+  "official_url": "https://www.nvidia.com/en-gb/industries/higher-education-research/academic-grant-program/",
+  "allowed_path_hints": [
+   "en-gb/industries/higher-education-research/academic-grant-program"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ },
+ {
+  "source_id": "find-grants-oregonrain-org-2ee92c",
+  "programme_id": "grants-find-oregonrain-org-2ee92c",
+  "programme_name": "Round 4 Emergency Small Business Grants Available in Lane, Linn, Benton, & Lincoln Counties %",
+  "organizer": "oregonrain.org",
+  "official_url": "https://www.oregonrain.org/round-4-emergency-small-business-grants-available/",
+  "allowed_path_hints": [
+   "round-4-emergency-small-business-grants-available"
+  ],
+  "check_cadence": "monthly",
+  "source_kind": "official",
+  "discovered_from": "finder:sitemap",
+  "first_seen": "2026-11-13T11:47:49Z",
+  "last_seen": "2026-11-13T11:47:49Z"
+ }
+]

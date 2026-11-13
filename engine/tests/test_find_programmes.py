@@ -100,3 +100,45 @@ class RunTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PageCheckTests(unittest.TestCase):
+    def test_url_rejects(self):
+        for u in ("https://a.org/product-page/fellowship-shirt", "https://a.org/blog/fellowship-x",
+                  "https://a.org/fellows/jane-fellowship", "https://a.org/fellowship/meet-the-fellows",
+                  "https://a.org/grants/handbook", "https://a.org/terms/grant-terms",
+                  "https://grafana.com/grafana/dashboards/grant"):
+            self.assertIsNone(fp.classify_path(u), u)
+
+    def test_language_dedupe(self):
+        urls = {u: "s" for u in ("https://a.org/de/fellowship/x", "https://a.org/fellowship/x",
+                                 "https://a.org/es/scholarship/y", "https://a.org/ja/scholarship/y")}
+        got = [c[1] for c in fp.candidates_for_host("a.org", urls, "fellowships", "A", set(), 10)]
+        self.assertEqual(sorted(got), ["https://a.org/es/scholarship/y", "https://a.org/fellowship/x"])
+
+    def test_bigfuture_generic(self):
+        self.assertTrue(fp.is_generic_host("bigfuture.collegeboard.org"))
+
+    def test_page_check(self):
+        ok = "<title>Acme Fellowship</title><body>How to apply: deadline May 1</body>"
+        self.assertEqual(fp.page_check(ok), ("Acme Fellowship", ""))
+        self.assertEqual(fp.page_check("<title>Acme Fellowship winners</title>apply")[1], "past_or_news")
+        self.assertEqual(fp.page_check("<title>About us</title>apply")[1], "title_no_category")
+        self.assertEqual(fp.page_check("<title>Acme Fellowship</title>hello")[1], "no_applicant_cue")
+
+    def test_run_with_fake_fetch(self):
+        with tempfile.TemporaryDirectory() as td:
+            shards = os.path.join(td, "shards")
+            os.makedirs(shards)
+            json.dump([row("https://a.org/fellowship/known")], open(os.path.join(shards, "fellowships.json"), "w"))
+            sm = (b"<urlset><url><loc>https://a.org/fellowship/good</loc></url>"
+                  b"<url><loc>https://a.org/fellowship/bad</loc></url></urlset>")
+            files = {"https://a.org/robots.txt": b"", "https://a.org/sitemap.xml": sm}
+            pages = {"https://a.org/fellowship/good": "<title>Good Fellowship | Acme</title>Apply by June",
+                     "https://a.org/fellowship/bad": "<title>Shop</title>apply"}
+            out = []
+            res = fp.run(shards, ["fellowships"], seeds_dir=os.path.join(td, "s"), use_cc=False, dry_run=True,
+                         get=lambda u: files[u], allowed=lambda u: True, sleep=lambda s: None, out=out.append,
+                         fetch=lambda u: (pages[u], u))
+            self.assertEqual([s["official_url"] for s in res["fellowships"]], ["https://a.org/fellowship/good"])
+            self.assertIn("title_no_category", out[0])
