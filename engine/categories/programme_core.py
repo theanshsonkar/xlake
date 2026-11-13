@@ -1179,6 +1179,12 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
             "quote": "Application deadline {} {}, {} (page structured data: {})".format(
                 MONTHS[sd.month - 1], sd.day, sd.year, structured.get("deadline_field", "deadline")),
         })
+    # A page listing several deadlines (priority/general/final): when the first
+    # is past but another cued deadline is still ahead, use the earliest future one.
+    if windows and windows[0].get("deadline_cue") and windows[0]["end"] < today:
+        future = [w for w in windows if w.get("deadline_cue") and w["end"] >= today]
+        if future:
+            windows.insert(0, min(future, key=lambda w: w["end"]))
     status = classify_status(text, windows, today, formal, resolved_apply)
     lexical_status, lexical_quote = _lexical_status(text, today) if status == "non_actionable" else (None, None)
     if lexical_status:
