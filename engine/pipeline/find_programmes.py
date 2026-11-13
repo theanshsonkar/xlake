@@ -70,11 +70,12 @@ EXCLUDED_SEGMENTS = frozenset({
     "staff", "faculty", "team", "login", "signin", "sign-in", "search", "tag", "tags", "category",
     "categories", "feed", "rss", "press", "story", "stories", "article", "articles", "archive",
     "archives", "alumni", "directory", "calendar", "wp-content", "wp-json", "author", "podcast",
-    "videos", "video", "jobs", "careers", "past", "winners", "recipients", "announcements",
+    "videos", "video", "drafts", "draft", "resources", "insights", "updates", "media", "publications",
+    "newsletter", "newsletters", "stories", "testimonials", "jobs", "careers", "past", "winners", "recipients", "announcements",
 })
 EXCLUDED_EXT = re.compile(r"\.(?:pdf|docx?|xlsx?|pptx?|jpe?g|png|gif|svg|webp|zip|mp4|mp3|xml|json|rss|atom|ics)$", re.I)
 DATE_PATH = re.compile(r"/(?:19|20)\d{2}/\d{1,2}(?:/|$)|/(?:19|20)\d{2}-\d{2}-\d{2}")
-LAST_SEGMENT_NOISE = re.compile(r"winners?|recipients?|announce|awarded|congratulat|results?|^page-?\d+$|^\d+$", re.I)
+LAST_SEGMENT_NOISE = re.compile(r"^(?:faqs?|fellows|alumni|contact|get-in-touch|about|eligibility|overview|apply)$|blog|reflection|focus|-old$|winners?|recipients?|announce|awarded|congratulat|results?|^page-?\d+$|^\d+$", re.I)
 GENERIC_LAST = frozenset({"apply", "overview", "about", "eligibility", "faq", "faqs", "index", "how-to-apply",
                           "application", "applications", "details", "info", "program", "programs"})
 MAX_SITEMAP_FILES, MAX_HOST_URLS = 5, 20000
@@ -119,6 +120,8 @@ def classify_path(url: str) -> Optional[str]:
         return None
     if len(segs) >= 2 and segs[-2] == "page" and segs[-1].isdigit():
         return None
+    if len(re.split(r"[-_]", segs[-1])) > 7:  # long slugs are articles, not programmes
+        return None
     if HACKATHON.search(low) or is_vacancy_text(url):
         return None
     hits = [cat for cat, rx in KEYWORDS if rx.search(low)]
@@ -141,6 +144,7 @@ class Budget:
                  clock: Callable[[], float] = time.monotonic):
         self.left, self.sleep, self.clock = max_requests, sleep, clock
         self.last_any, self.last_host = 0.0, {}
+        self.cc_down = False  # set after a failed index query; skip the rest of the run
 
     def take(self, host: str, delay: float = HOST_DELAY) -> bool:
         if self.left <= 0:
@@ -213,7 +217,7 @@ def sitemap_urls(host: str, budget: Budget, get: Callable[[str], bytes],
 def commoncrawl_urls(host: str, budget: Budget, cc_get: Callable[[str], str] = None,
                      crawl: Optional[str] = None, limit: int = 5000) -> List[str]:
     """One CDX page of status-200 URLs for the host (matchType=prefix)."""
-    if not budget.take("index.commoncrawl.org", CC_DELAY):
+    if budget.cc_down or not budget.take("index.commoncrawl.org", CC_DELAY):
         return []
     cc_get = cc_get or (lambda u: enumerate_boards._cc_get(u, 120))
     try:
@@ -222,6 +226,7 @@ def commoncrawl_urls(host: str, budget: Budget, cc_get: Callable[[str], str] = N
             urllib.parse.quote(host + "/*"), limit)
         body = cc_get("https://index.commoncrawl.org/{}-index?{}".format(crawl, q))
     except Exception:  # noqa: BLE001
+        budget.cc_down = True
         return []
     out = []
     for line in body.splitlines():
