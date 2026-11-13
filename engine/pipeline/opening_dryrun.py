@@ -60,7 +60,8 @@ def refetch(row, configs):
     config = configs.get(row.get("category"))
     if not config:
         return "no_config"
-    seed = {k: row.get(k) for k in ("programme_id", "programme_name", "organizer", "official_url")}
+    seed = {k: row.get(k) for k in ("programme_id", "programme_name", "organizer", "official_url", "source_kind")}
+    seed["source_id"] = row.get("source_id") or "dryrun"
     try:
         fetched = pc._default_fetch(row["official_url"])
         html, final = fetched if isinstance(fetched, tuple) else (fetched, None)
