@@ -103,5 +103,47 @@
   "company": "halter",
   "count": 269,
   "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "legora",
+  "company": "legora",
+  "count": 336,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "maintainx",
+  "company": "maintainx",
+  "count": 210,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "neura-robotics-gmbh",
+  "company": "neura-robotics-gmbh",
+  "count": 427,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "pennylane",
+  "company": "pennylane",
+  "count": 203,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "renuity",
+  "company": "renuity",
+  "count": 414,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "snowflake",
+  "company": "snowflake",
+  "count": 378,
+  "reason": "outlier_count>=200"
  }
 ]
