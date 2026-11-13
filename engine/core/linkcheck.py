@@ -3,9 +3,9 @@
 Uses only what is already on the row: no extra crawling. Flags (never blocks, except
 ``link_dead``, which publish_supabase.quality_reason turns into "not served"):
   link_homepage   apply/official link is a bare homepage (path "/" or en, home, index.html...)
-                  AND (another row of the shard on the same host has a deeper path, OR the
-                  programme name's words do not appear in the host: usief.org.in vs "Fulbright").
-                  thielfellowship.org vs "Thiel Fellowship" is the site itself, so not flagged.
+                  AND another row of the shard on the same host links a deeper page (the site
+                  hosts several programmes). A programme's own site (thielfellowship.org,
+                  apply.pif.gov) is never flagged.
   link_aggregator link host is a job board / aggregator (hackathons hosted on one by design are exempt)
   link_dead       ``link_fail_count`` >= 2: two consecutive definitive failures (HTTP 404 or DNS),
                   counted in programme_core.merge_programmes and reset on any successful read.
@@ -26,8 +26,6 @@ AGGREGATOR_HOSTS = _AGGREGATOR_LOGO_HOSTS + ("unstop.com", "linkedin.com", "dora
 PROGRAMME_CATEGORIES = ("fellowship", "scholarship", "grant", "research", "startup-founder",
                         "community", "open-source-programmes")
 _GENERIC = {"en", "home", "index.html", "index.htm", "index.php", "en-us", "en-gb"}
-_NAME_STOP = {"fellowship", "fellowships", "scholarship", "scholarships", "programme", "program", "grant",
-              "grants", "award", "awards", "the", "for", "and", "india", "indian", "citizens"}
 DEAD_AFTER = 2
 
 
@@ -71,20 +69,13 @@ def deeper_hosts(rows: Iterable[Dict]) -> Set[str]:
     return out
 
 
-def _name_in_host(row: Dict, host: str) -> bool:
-    compact = re.sub(r"[^a-z0-9]", "", host)
-    name = row.get("programme_name") or row.get("title") or ""
-    words = [w for w in re.findall(r"[a-z0-9]{4,}", name.lower()) if w not in _NAME_STOP]
-    return not words or any(w in compact for w in words)
-
-
 def flags(row: Dict, deeper: Set[str] = frozenset()) -> List[str]:
     out = []
     host, path = _split(_link(row))
     hackathon = row.get("record_type") == "hackathon"
     aggregator = _is_aggregator(host)
     if host and _is_landing(path) and not (hackathon and aggregator):
-        if host in deeper or not _name_in_host(row, host):
+        if host in deeper:
             out.append("link_homepage")
     if aggregator and not hackathon:
         out.append("link_aggregator")

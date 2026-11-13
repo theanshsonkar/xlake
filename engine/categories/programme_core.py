@@ -1827,7 +1827,7 @@ def dedupe_within_category(lake_rows: List[Dict], now: str) -> int:
             if not ka.endswith("/") or ka.count("/") != 1 or aa.count("/") < 1 or aa.endswith("/") and aa.count("/") == 1:
                 continue
             twin = next((b for b in rows if b is not a and not b.get("hidden_reason") and aa
-                         and _normalise_programme_url(b.get("application_url")) == aa), None)
+                         and _normalise_programme_url(b.get("application_url") or b.get("official_url")) == aa), None)
             if twin is not None:
                 a["is_live"], a["needs_confirmation"] = False, False
                 a.setdefault("went_dead_at", now)

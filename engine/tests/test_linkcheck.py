@@ -13,13 +13,25 @@ def prog(name, official, apply=None, **kw):
                  "official_url": official, "application_url": apply, "is_live": True}, **kw)
 
 
+class TwinOfficialTests(unittest.TestCase):
+    def test_twin_matches_deeper_rows_official_url(self):
+        from categories.programme_core import dedupe_within_category
+        deep = "https://www.usief.org.in/fulbright-fellowships/fellowships-for-indian-citizen/"
+        a = prog("USIEF Fulbright-Nehru Fellowships", "https://www.usief.org.in/",
+                 "https://usief.org.in/fulbright-fellowships/fellowships-for-indian-citizen/", programme_id="a")
+        b = prog("Fulbright-Nehru Fellowships for Indian Citizens", deep, None, programme_id="b")
+        self.assertEqual(dedupe_within_category([a, b], "now"), 1)
+        self.assertEqual(a["duplicate_of"], "b")
+
+
 class FlagTests(unittest.TestCase):
     def test_homepage_other_row_deeper(self):
         a = prog("Some Programme", "https://example.org/en/")
         self.assertEqual(linkcheck.flags(a, {"example.org"}), ["link_homepage"])
 
-    def test_homepage_name_not_in_host(self):
-        self.assertEqual(linkcheck.flags(prog("Fulbright Nehru Fellowships", "https://www.usief.org.in/")), ["link_homepage"])
+    def test_acronym_site_alone_not_homepage(self):
+        # a programme's own site whose host is an acronym (no deeper row on that host)
+        self.assertEqual(linkcheck.flags(prog("US Presidential Innovation Fellows", "https://apply.pif.gov/")), [])
 
     def test_homepage_site_is_the_programme(self):
         self.assertEqual(linkcheck.flags(prog("Thiel Fellowship", "https://thielfellowship.org/")), [])
@@ -93,14 +105,15 @@ class IntegrationTests(unittest.TestCase):
         rows = [prog("Thiel Fellowship", "https://thielfellowship.org/"),
                 prog("X Grant", "https://unstop.com/p/x"),
                 prog("Fulbright", "https://usief.org.in/"),
+                prog("Fulbright-Nehru Doctoral", "https://usief.org.in/fulbright/doctoral"),
                 prog("Dead One", "https://dead.org/p/1", link_fail_count=2),
                 prog("Vacancy of Clerk", "https://z.org/p"),
                 {"record_type": "job", "title": "Engineer", "url": "https://linkedin.com/jobs/1"}]
         counts = linkcheck.annotate(rows, "now")
-        self.assertEqual(counts, {"ok": 1, "homepage": 1, "aggregator": 1, "dead": 1, "vacancy": 1, "checked": 5})
+        self.assertEqual(counts, {"ok": 2, "homepage": 1, "aggregator": 1, "dead": 1, "vacancy": 1, "checked": 6})
         self.assertEqual(rows[0]["link_quality"], "ok")
         self.assertEqual(rows[0]["link_checked_at"], "now")
-        self.assertNotIn("link_quality", rows[5])
+        self.assertNotIn("link_quality", rows[6])
 
 
 if __name__ == "__main__":
