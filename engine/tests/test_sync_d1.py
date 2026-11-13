@@ -227,6 +227,26 @@ class DeleteGuardTest(unittest.TestCase):
         plan = sd._plan("grants", "grants", cur, existing, now, set(), sd.Stats())
         self.assertEqual(len([k for k, _, _ in plan if k == "delete"]), 5)
 
+    def _guarded(self, cleanup):
+        from datetime import datetime, timezone
+        from pipeline import sync_d1 as sd
+        now = datetime(2026, 11, 13, tzinfo=timezone.utc)
+        existing = {"p:%d" % i: {"id": "p:%d" % i, "src": "grants", "h": "x"} for i in range(100)}
+        cur = [{"id": "p:%d" % i} for i in range(10)]
+        explained = {"p:%d" % i: ("t", "grant_for_organisations") for i in range(10, 40)}
+        st = sd.Stats()
+        plan = sd._plan("grants", "grants", cur, existing, now, set(), st, cleanup, explained)
+        return [i["id"] for k, i, _ in plan if k == "delete"], st
+
+    def test_cleanup_deletes_only_explained_rows_when_guard_trips(self):
+        ids, st = self._guarded(True)
+        self.assertEqual(sorted(ids), sorted("p:%d" % i for i in range(10, 40)))
+        self.assertEqual(st.c.get("guarded_deletes"), 60)
+
+    def test_no_cleanup_deletes_nothing_when_guard_trips(self):
+        ids, _ = self._guarded(False)
+        self.assertEqual(ids, [])
+
 
 if __name__ == "__main__":
     unittest.main()

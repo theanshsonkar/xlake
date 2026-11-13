@@ -1,6 +1,6 @@
 """Diff-based sync of one finalized shard into the Cloudflare D1 databases.
 
-    python3 -m pipeline.sync_d1 --shard <shard_name> [--dry-run] [--max-writes 10000]
+    python3 -m pipeline.sync_d1 --shard <shard_name> [--dry-run] [--max-writes 10000] [--cleanup]
 
 Writes only changes (D1 free plan: 100k rows written/day, indexes + FTS count),
 only touches rows this shard owns (column ``src``), and never fails the leg.
@@ -40,6 +40,9 @@ PAGE = 2000
 # rows a leg owns (and more than DELETE_GUARD_MIN rows), skip all removals.
 DELETE_GUARD_RATIO = 0.30
 DELETE_GUARD_MIN = 20
+
+
+PRINT_CAP = 300
 
 
 class D1Error(Exception):
@@ -193,8 +196,30 @@ def _read_all_ids(client, db: str) -> set:
         last = rows[-1]["id"]
 
 
+def explain_excluded(rows: List[dict], routed_ids: set) -> Dict[str, Tuple[str, str]]:
+    """{d1 id: (title, reason)} for shard rows present but excluded by the serving filter."""
+    out: Dict[str, Tuple[str, str]] = {}
+    for r in rows:
+        if not isinstance(r, dict):
+            continue
+        if ex.ps.is_serving(r):
+            why = ex.ps.quality_reason(r)
+            if not why:
+                continue
+        else:
+            why = r.get("hidden_reason") or r.get("lifecycle") or "not_serving"
+        try:
+            id_ = ex.to_standard(r).get("id")
+        except Exception:
+            continue
+        if id_ and id_ not in routed_ids:
+            out[id_] = (str(r.get("title") or r.get("programme_name") or ""), str(why))
+    return out
+
+
 def _plan(db: str, shard: str, recs: List[dict], existing: Dict[str, dict],
-          now: datetime, foreign: Optional[set] = None, st: Optional["Stats"] = None) -> List[Tuple[str, dict, dict]]:
+          now: datetime, foreign: Optional[set] = None, st: Optional["Stats"] = None,
+          cleanup: bool = False, explained: Optional[Dict[str, Tuple[str, str]]] = None) -> List[Tuple[str, dict, dict]]:
     """-> ordered [(kind, rec_or_row, ctx)] : deletes, updates, claims, touches, inserts."""
     cur = {r["id"]: r for r in recs}
     dels, upds, claims, touches, ins = [], [], [], [], []
@@ -235,9 +260,13 @@ def _plan(db: str, shard: str, recs: List[dict], existing: Dict[str, dict],
     if len(dels) > DELETE_GUARD_MIN and len(dels) > DELETE_GUARD_RATIO * max(owned, 1):
         print("::warning::d1 sync %s/%s: would remove %d of %d owned rows (>%d%%) - treating as a bad read, "
             "skipping all removals" % (shard, db, len(dels), owned, int(DELETE_GUARD_RATIO * 100)))
+        keep = [d for d in dels if cleanup and d[1]["id"] in (explained or {})]
+        if keep:
+            print("d1 sync %s/%s: --cleanup removes %d rows excluded by the serving filter; "
+                  "%d missing-from-shard removals stay blocked" % (shard, db, len(keep), len(dels) - len(keep)))
         if st:
-            st.c["guarded_deletes"] = st.c.get("guarded_deletes", 0) + len(dels)
-        dels = []
+            st.c["guarded_deletes"] = st.c.get("guarded_deletes", 0) + len(dels) - len(keep)
+        dels = keep
     if st is not None:
         st.plan.append(dict(db=db, existing=len(existing), current=len(cur), owned=owned,
                             insert=len(ins), update=len(upds), claim=len(claims),
@@ -275,7 +304,7 @@ def _fts_insert(rec: dict) -> str:
 
 def sync(shard: str, client, dry_run: bool = False, max_writes: int = 10000,
          now: Optional[datetime] = None, rows: Optional[List[dict]] = None,
-         stats: Optional[Stats] = None, log=print) -> Stats:
+         stats: Optional[Stats] = None, log=print, cleanup: bool = False) -> Stats:
     st = stats or Stats()
     now = now or datetime.now(timezone.utc)
     if rows is None:
@@ -283,6 +312,7 @@ def sync(shard: str, client, dry_run: bool = False, max_writes: int = 10000,
         if rows is None:
             raise D1Error("shard %s not found" % shard)
     routed = ex.route(rows)
+    explained = explain_excluded(rows, {r["id"] for recs in routed.values() for r in recs})
     targets = [n for n in ex.DB_NAMES if routed[n]]
     if shards.is_job_shard(shard):
         targets = [n for n in ("jobs", "internships")]
@@ -310,12 +340,17 @@ def sync(shard: str, client, dry_run: bool = False, max_writes: int = 10000,
             foreign = _read_all_ids(client, title) - set(existing)
         else:
             existing, foreign = {}, set()
-        plans.append((db, title, _plan(db, shard, routed[db], existing, now, foreign, st)))
+        plans.append((db, title, _plan(db, shard, routed[db], existing, now, foreign, st, cleanup, explained)))
     for db, title, plan in plans:
         pending: List[str] = []
         names = {"delete": "deleted", "update": "updated", "touch": "touched",
                  "insert": "inserted", "claim": "claimed"}
+        shown = 0
         for kind, item, ctx in plan:
+            if dry_run and kind == "delete" and shown < PRINT_CAP:
+                shown += 1
+                title, why = explained.get(item["id"], (item.get("title") or "", "missing_from_shard"))
+                log("d1 remove %s/%s: %s | %s | %s" % (shard, db, item["id"], str(title)[:60], why))
             cost = COST[kind] if not (kind == "update" and not ctx.get("fts")) else 3
             if st.est + cost > max_writes:
                 st.c["skipped_budget"] += 1
@@ -355,6 +390,8 @@ def main(argv: Optional[List[str]] = None) -> int:
     ap.add_argument("--shard", required=True)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--max-writes", type=int, default=10000)
+    ap.add_argument("--cleanup", action="store_true",
+                    help="when the delete guard trips, still remove rows present in the shard but excluded by the serving filter")
     a = ap.parse_args(argv)
     raw = os.environ.get("CLOUDFLARE_API_TOKEN", "")
     token = clean_token(raw)
@@ -371,7 +408,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     client = Client(token, os.environ.get("CLOUDFLARE_ACCOUNT_ID", "")) if token else None
     st = Stats()
     try:
-        sync(a.shard, client, a.dry_run, a.max_writes, stats=st)
+        sync(a.shard, client, a.dry_run, a.max_writes, stats=st, cleanup=a.cleanup)
     except Exception as e:  # never fail the leg
         print("::warning::d1 sync %s aborted: %s" % (a.shard, e))
     print(st.line(a.shard))

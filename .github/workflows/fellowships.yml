@@ -15,6 +15,11 @@ on:
         required: false
         type: boolean
         default: false
+      d1_cleanup:
+        description: "D1 one-time cleanup of rows excluded by the serving filter"
+        required: false
+        type: boolean
+        default: false
       generate_seeds:
         description: "Regenerate hub seeds first"
         required: false
@@ -32,5 +37,6 @@ jobs:
       timeout: 40
       retire_force: ${{ inputs.retire_force || '' }}
       dry_run: ${{ inputs.dry_run || false }}
+      d1_cleanup: ${{ inputs.d1_cleanup || false }}
       generate_seeds: ${{ inputs.generate_seeds || false }}
     secrets: inherit
