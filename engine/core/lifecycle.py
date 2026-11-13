@@ -27,12 +27,27 @@ _DEAD_STAMPS = ("went_dead_at", "liveness_reason", "closed_reason", "closed_at")
 _LIVENESS_HIDDEN = ("closed_deadline_passed", "stale_needs_confirmation")
 
 
-def infer(row: Dict) -> str:
+def _opening(row: Dict) -> Optional[date]:
+    v = row.get("opening_date")
+    if isinstance(v, str) and len(v) >= 10:
+        try:
+            return date.fromisoformat(v[:10])
+        except ValueError:
+            return None
+    return None
+
+
+def infer(row: Dict, today: Optional[date] = None) -> str:
     """Lifecycle from legacy flags. A row with no ``is_live`` key counts as live
-    (same default as core.retire) unless it needs confirmation."""
+    (same default as core.retire) unless it needs confirmation. With ``today``, a
+    live programme whose official opening date is still ahead is ``upcoming``
+    (whatever its programme_status says, e.g. "rolling")."""
     if row.get("needs_confirmation") is True and row.get("is_live") is not True:
         return UNVERIFIED
     if row.get("is_live", True) is True:
+        o = _opening(row)
+        if today and row.get("record_type") == "programme" and o and o > today:
+            return UPCOMING
         if row.get("programme_status") == "upcoming" or row.get("status") == "upcoming":
             return UPCOMING
         return OPEN
@@ -54,6 +69,9 @@ def deadline_passed(row: Dict, today: Optional[date] = None) -> bool:
     """True when the row has an ISO deadline strictly before ``today`` (UTC)
     and is not an upcoming (next-cycle) row."""
     if row.get("programme_status") == "upcoming" or row.get("status") == "upcoming":
+        return False
+    o = _opening(row)
+    if row.get("record_type") == "programme" and o and o > (today or date.today()):
         return False
     d = _deadline(row)
     if d is None:
@@ -85,7 +103,7 @@ def reconcile(rows: Iterable[Dict], today: date, now: str) -> Dict[str, int]:
     stats = {OPEN: 0, UPCOMING: 0, UNVERIFIED: 0, CLOSED: 0,
              "revived_cleaned": 0, "deadline_closed": 0, "deadline_unparsed": 0}
     for row in rows:
-        state = infer(row)
+        state = infer(row, today)
         row["lifecycle"] = state
         if state != CLOSED:
             if any(k in row for k in _DEAD_STAMPS):

@@ -369,7 +369,7 @@ def to_standard(row: dict) -> Dict[str, Any]:
     out["id"] = ps.stable_id(row)
     out["type"] = _type_of(row)
     out["title"] = title
-    out["status"] = row.get("lifecycle") or lifecycle.infer(row)
+    out["status"] = row.get("lifecycle") or lifecycle.infer(row, date.today())
     out["deadline"] = to_date(_first(row.get("deadline"), row.get("registration_deadline")))
     out["eligibility"] = _eligibility(row, out["level"])
     out["last_checked"] = _first(row.get("last_checked_at"), row.get("last_seen"), row.get("checked_at"))

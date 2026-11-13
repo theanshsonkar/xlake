@@ -139,3 +139,29 @@ class ServingInvariantTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class OpeningDateTest(unittest.TestCase):
+    def _life(self, today, **kw):
+        r = prog(programme_status="opening_soon", opening_date="2026-11-15", **kw)
+        lifecycle.reconcile([r], today, NOW)
+        return r
+
+    def test_future_opening_is_upcoming(self):
+        self.assertEqual(self._life(date(2026, 11, 14))["lifecycle"], "upcoming")
+        r = prog(programme_status="rolling", opening_date="2027-01-10")
+        lifecycle.reconcile([r], TODAY, NOW)
+        self.assertEqual(r["lifecycle"], "upcoming")
+
+    def test_flips_open_on_opening_day(self):
+        self.assertEqual(self._life(date(2026, 11, 15))["lifecycle"], "open")
+
+    def test_past_deadline_still_closes(self):
+        r = prog(opening_date="2026-01-01", deadline="2026-02-01")
+        lifecycle.reconcile([r], TODAY, NOW)
+        self.assertEqual(r["lifecycle"], "closed")
+
+    def test_future_opening_old_deadline_not_closed(self):
+        r = prog(opening_date="2027-01-01", deadline="2026-02-01")
+        lifecycle.reconcile([r], TODAY, NOW)
+        self.assertEqual(r["lifecycle"], "upcoming")
