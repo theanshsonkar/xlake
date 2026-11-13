@@ -1034,6 +1034,32 @@ def official_opening_quote(quote: Optional[str], iso_date: Optional[str]) -> Opt
     return None
 
 
+_RANGE_JOIN = re.compile(r"^\s*(?:[-\u2013\u2014]|to|through|until|and)\s*$", re.I)
+
+
+def closing_from_opening_quote(quote: Optional[str], iso_date: Optional[str]) -> Optional[str]:
+    """ISO end date when ``quote`` states a range "<opening date> - <end date>" whose
+    opening date is written with a year; a missing end year is the opening year and
+    needs an end month no earlier than the start month. Else None."""
+    if not quote or not iso_date:
+        return None
+    try:
+        start = date.fromisoformat(str(iso_date)[:10])
+    except ValueError:
+        return None
+    first = parse_dates(quote)
+    if not first or first[0]["start"] != start:
+        return None
+    dates = first if len(first) > 1 else parse_dates(quote, nearby_year=start.year)
+    if len(dates) != 2 or dates[0]["start"] != start:
+        return None
+    a, b = dates
+    if not _RANGE_JOIN.match(quote[a["span"][1]:b["span"][0]]):
+        return None
+    end = b["start"]
+    return end.isoformat() if end > start and (len(first) > 1 or end.month >= start.month) else None
+
+
 def _evidence(quote: Optional[str], url: str) -> Dict:
     cleaned = _clean_quote(quote)
     return {"quote": cleaned, "url": url} if is_quality_evidence(cleaned) else {}
@@ -1294,6 +1320,10 @@ def parse_programme(seed: Dict, html: str, checked_at: Optional[datetime] = None
     record["opens_quote_dated"] = bool(opening) and seed.get("programme_id") not in opening_date_holds()
     if opening:
         evidence["opening_date"] = {"quote": opening, "url": seed["official_url"]}
+        closing = closing_from_opening_quote(opening, record.get("opening_date"))
+        if closing and (not record.get("deadline") or str(record["deadline"])[:10] <= str(record["opening_date"])[:10]):
+            record["deadline"] = closing
+            evidence["deadline"] = {"quote": opening, "url": seed["official_url"]}
     if status == "rolling":
         record["deadline_basis"] = "rolling"
     if status == "open" and window is None:
