@@ -184,10 +184,12 @@ jobs:
             keka) B=4000 ;; other) B=2500 ;; ashby) B=3500 ;; lever) B=2500 ;; *) B=2000 ;;
           esac
           # Jobs have their own switch: live D1 writes only with repo variable D1_SYNC_LIVE_JOBS=true.
-          if [ "${{ vars.D1_SYNC_LIVE_JOBS }}" = "true" ]; then
+          # Optional start date (UTC, YYYY-MM-DD) in repo variable D1_SYNC_JOBS_FROM: plan only before it.
+          FROM="${{ vars.D1_SYNC_JOBS_FROM }}"
+          if [ "${{ vars.D1_SYNC_LIVE_JOBS }}" = "true" ] && { [ -z "$FROM" ] || [ ! "$(date -u +%F)" \< "$FROM" ]; }; then
             python3 -u -m pipeline.sync_d1 --shard "$SHARD" --max-writes "$B"
           else
-            echo "D1_SYNC_LIVE_JOBS is not true: plan only"
+            echo "D1_SYNC_LIVE_JOBS is not true or before D1_SYNC_JOBS_FROM: plan only"
             python3 -u -m pipeline.sync_d1 --shard "$SHARD" --dry-run --max-writes "$B"
           fi
 
