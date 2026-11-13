@@ -28,13 +28,20 @@ _LIVENESS_HIDDEN = ("closed_deadline_passed", "stale_needs_confirmation")
 
 
 def _opening(row: Dict) -> Optional[date]:
+    """Opening date, only when it is quote-dated (see pipeline.rowshape._dated_opens)."""
     v = row.get("opening_date")
-    if isinstance(v, str) and len(v) >= 10:
-        try:
-            return date.fromisoformat(v[:10])
-        except ValueError:
-            return None
-    return None
+    if not (isinstance(v, str) and len(v) >= 10):
+        return None
+    try:
+        d = date.fromisoformat(v[:10])
+    except ValueError:
+        return None
+    dated = row.get("opens_quote_dated")
+    if dated is None:
+        from categories.programme_core import official_opening_quote
+        q = ((row.get("official_evidence") or {}).get("opening_date") or {}).get("quote")
+        dated = bool(official_opening_quote(q, d.isoformat()))
+    return d if dated else None
 
 
 def infer(row: Dict, today: Optional[date] = None) -> str:
@@ -101,7 +108,8 @@ def close(row: Dict, now: str, reason: str) -> None:
 
 def reconcile(rows: Iterable[Dict], today: date, now: str) -> Dict[str, int]:
     stats = {OPEN: 0, UPCOMING: 0, UNVERIFIED: 0, CLOSED: 0,
-             "revived_cleaned": 0, "deadline_closed": 0, "deadline_unparsed": 0}
+             "revived_cleaned": 0, "deadline_closed": 0, "deadline_unparsed": 0,
+             "stale_deadline_dropped": 0}
     for row in rows:
         state = infer(row, today)
         row["lifecycle"] = state
@@ -112,6 +120,12 @@ def reconcile(rows: Iterable[Dict], today: date, now: str) -> Dict[str, int]:
                 row.pop(k, None)
             if row.get("hidden_reason") in _LIVENESS_HIDDEN:
                 row["hidden_reason"] = None
+            o = _opening(row)
+            if state == UPCOMING and row.get("record_type") == "programme" and o and o > today:
+                d = _deadline(row)
+                if d and d <= o:  # last cycle's deadline, or the opening date misread
+                    row["deadline"] = None
+                    stats["stale_deadline_dropped"] += 1
             if state in (OPEN, UNVERIFIED):
                 if deadline_passed(row, today):
                     close(row, now, "deadline_passed")

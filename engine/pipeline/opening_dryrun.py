@@ -48,6 +48,11 @@ def _quote(r):
             or (r.get("opens_pattern") or {}).get("quote") or "")
 
 
+def _moved(r):
+    return {"name": _name(r), "opens": r.get("opening_date"), "dated": bool(_dated_opens(r)),
+            "deadline": r.get("deadline"), "quality": ps.quality_reason(r), "quote": _quote(r)}
+
+
 def in_scope(r, before, today):
     if r.get("record_type") != "programme" or not ps.is_serving(r):
         return False
@@ -101,7 +106,8 @@ def main(argv=None):
         if a.refetch:
             for r in scoped:
                 fetched[refetch(r, configs)] += 1
-        lifecycle.reconcile(rows, today, stamp)
+        stats = lifecycle.reconcile(rows, today, stamp)
+        print("reconcile %s: %s" % (path, stats))
         cycles.finalize(rows, today)
         for r in rows:
             c = cat[r.get("category") or path]
@@ -121,7 +127,7 @@ def main(argv=None):
     report = {}
     for name, c in sorted(cat.items()):
         report[name] = {
-            "open_to_upcoming": [_name(r) for r in c["open_to_upcoming"]],
+            "open_to_upcoming": [_moved(r) for r in c["open_to_upcoming"]],
             "in_scope": len(c["scope"]), "dated_opening_quote": len(c["dated_quote"]),
             "opens_pattern": len(c["pattern"]),
             "opening_soon_60": [(d, _name(r), _quote(r)) for d, r in sorted(c["soon60"], key=lambda t: t[0])],
@@ -130,8 +136,10 @@ def main(argv=None):
         print("== %s: open->upcoming %d, in scope %d, dated opening quote %d, opens_pattern %d, soon60 %d, soon180 %d" % (
             name, len(c["open_to_upcoming"]), len(c["scope"]), len(c["dated_quote"]), len(c["pattern"]),
             len(c["soon60"]), len(c["soon180"])))
-        for n in report[name]["open_to_upcoming"]:
-            print("   open->upcoming: %s" % n)
+        for m in report[name]["open_to_upcoming"]:
+            print("   open->upcoming: %s" % m["name"])
+            print("   moved: %s | opens=%s | dated=%s | deadline=%s | quality=%s | quote=%s" % (
+                m["name"], m["opens"], m["dated"], m["deadline"], m["quality"], m["quote"][:120]))
         for days in (60, 180):
             for d, n, q in report[name]["opening_soon_%d" % days]:
                 print("   soon%d: %s | %s | %s" % (days, d, n, q[:120]))

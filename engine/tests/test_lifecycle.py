@@ -143,13 +143,13 @@ if __name__ == "__main__":
 
 class OpeningDateTest(unittest.TestCase):
     def _life(self, today, **kw):
-        r = prog(programme_status="opening_soon", opening_date="2026-11-15", **kw)
+        r = prog(programme_status="opening_soon", opening_date="2026-11-15", opens_quote_dated=True, **kw)
         lifecycle.reconcile([r], today, NOW)
         return r
 
     def test_future_opening_is_upcoming(self):
         self.assertEqual(self._life(date(2026, 11, 14))["lifecycle"], "upcoming")
-        r = prog(programme_status="rolling", opening_date="2027-01-10")
+        r = prog(programme_status="rolling", opening_date="2027-01-10", opens_quote_dated=True)
         lifecycle.reconcile([r], TODAY, NOW)
         self.assertEqual(r["lifecycle"], "upcoming")
 
@@ -162,6 +162,27 @@ class OpeningDateTest(unittest.TestCase):
         self.assertEqual(r["lifecycle"], "closed")
 
     def test_future_opening_old_deadline_not_closed(self):
-        r = prog(opening_date="2027-01-01", deadline="2026-02-01")
+        r = prog(opening_date="2027-01-01", opens_quote_dated=True, deadline="2026-02-01")
         lifecycle.reconcile([r], TODAY, NOW)
         self.assertEqual(r["lifecycle"], "upcoming")
+
+    def test_undated_future_opening_stays_open(self):
+        r = prog(programme_status="rolling", opening_date="2027-01-10", opens_quote_dated=False,
+                 deadline="2027-03-01")
+        lifecycle.reconcile([r], TODAY, NOW)
+        self.assertEqual(r["lifecycle"], "open")
+        self.assertEqual(r["deadline"], "2027-03-01")
+
+    def test_stale_deadline_dropped_when_not_after_opening(self):
+        for dl in ("2026-12-01", "2027-01-10"):
+            r = prog(opening_date="2027-01-10", opens_quote_dated=True, deadline=dl)
+            st = lifecycle.reconcile([r], TODAY, NOW)
+            self.assertEqual(r["lifecycle"], "upcoming")
+            self.assertIsNone(r["deadline"])
+            self.assertEqual(st["stale_deadline_dropped"], 1)
+
+    def test_deadline_after_opening_kept(self):
+        r = prog(opening_date="2027-01-10", opens_quote_dated=True, deadline="2027-03-01")
+        st = lifecycle.reconcile([r], TODAY, NOW)
+        self.assertEqual(r["deadline"], "2027-03-01")
+        self.assertEqual(st["stale_deadline_dropped"], 0)
