@@ -33,6 +33,11 @@ on:
         required: false
         type: boolean
         default: false
+      recheck_all:
+        description: "Re-read every official page this run (not only the due ones)"
+        required: false
+        type: boolean
+        default: false
       generate_seeds:
         description: "Regenerate this category's hub seeds before collecting"
         required: false
@@ -53,6 +58,7 @@ jobs:
       CAT: ${{ inputs.category }}
       DRY_RUN: ${{ inputs.dry_run }}
       D1_CLEANUP: ${{ inputs.d1_cleanup && '--cleanup' || '' }}
+      XLAKE_RECHECK_ALL: ${{ inputs.recheck_all && '1' || '' }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}

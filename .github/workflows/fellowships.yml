@@ -20,6 +20,11 @@ on:
         required: false
         type: boolean
         default: false
+      recheck_all:
+        description: "Re-read every official page this run (not only the due ones)"
+        required: false
+        type: boolean
+        default: false
       generate_seeds:
         description: "Regenerate hub seeds first"
         required: false
@@ -38,5 +43,6 @@ jobs:
       retire_force: ${{ inputs.retire_force || '' }}
       dry_run: ${{ inputs.dry_run || false }}
       d1_cleanup: ${{ inputs.d1_cleanup || false }}
+      recheck_all: ${{ inputs.recheck_all || false }}
       generate_seeds: ${{ inputs.generate_seeds || false }}
     secrets: inherit
