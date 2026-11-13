@@ -1820,6 +1820,20 @@ def dedupe_within_category(lake_rows: List[Dict], now: str) -> int:
             by_cat.setdefault(row["category"], []).append(row)
     hidden = 0
     for rows in by_cat.values():
+        # Homepage twin: official link is only the site homepage and another row applies at the same
+        # (normalised) page: the homepage row is the weaker copy, no name similarity needed.
+        for a in rows:
+            ka, aa = _normalise_programme_url(a.get("official_url")), _normalise_programme_url(a.get("application_url"))
+            if not ka.endswith("/") or ka.count("/") != 1 or aa.count("/") < 1 or aa.endswith("/") and aa.count("/") == 1:
+                continue
+            twin = next((b for b in rows if b is not a and not b.get("hidden_reason") and aa
+                         and _normalise_programme_url(b.get("application_url")) == aa), None)
+            if twin is not None:
+                a["is_live"], a["needs_confirmation"] = False, False
+                a.setdefault("went_dead_at", now)
+                a["hidden_reason"], a["duplicate_of"] = "duplicate_same_category", twin.get("programme_id")
+                hidden += 1
+        rows = [r for r in rows if not r.get("hidden_reason")]
         parent = list(range(len(rows)))
 
         def find(i):
@@ -1991,6 +2005,13 @@ def merge_programmes(records: Iterable[Dict], observations: Iterable[Dict], lake
             row = programme_rows.get(observation.get("programme_id"))
             if row is not None:
                 _refresh_last_checked_at(row, observation.get("checked_at"))
+                if row.get("link_fail_count"):
+                    row["link_fail_count"] = 0
+        elif observation.get("state") == "dead" and observation.get("reason") in ("http_404", "dns"):
+            # Definitive failure only (never 403/429/5xx/timeouts); linkcheck flags two in a row.
+            row = programme_rows.get(observation.get("programme_id"))
+            if row is not None:
+                row["link_fail_count"] = int(row.get("link_fail_count") or 0) + 1
     successful_sources = {
         o["official_url"]
         for o in observed

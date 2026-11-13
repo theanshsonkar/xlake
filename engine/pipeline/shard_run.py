@@ -20,7 +20,7 @@ import os
 import sys
 from datetime import datetime, timezone
 
-from core import cycles, lifecycle, shards
+from core import cycles, linkcheck, lifecycle, shards
 from core.paths import HIDDEN_PATH, LAKE_DIR, OPPORTUNITIES_PATH
 
 PREV_COUNT = os.path.join(LAKE_DIR, "shards", ".prev_count")
@@ -112,6 +112,7 @@ def main(argv=None) -> int:
     now = datetime.now(timezone.utc)
     lc = lifecycle.reconcile(mine, now.date(), now.isoformat(timespec="seconds"))
     cy = cycles.finalize(mine, now.date())
+    lq = linkcheck.annotate(mine, now.isoformat(timespec="seconds"))
     text = summary(cat, mine, prev) + (
         "\nlifecycle: open=%(open)d upcoming=%(upcoming)d unverified=%(unverified)d "
         "closed=%(closed)d revived_cleaned=%(revived_cleaned)d "
@@ -120,6 +121,10 @@ def main(argv=None) -> int:
         "predicted=%(predicted)d overdue=%(overdue)d" % cy)
     for _l in cy.get("overdue_lines", []):
         text += "\n" + _l
+    if lq["checked"]:
+        text += ("\nlink quality %s: checked=%d ok=%d (%d%%) homepage=%d aggregator=%d dead=%d vacancy=%d" % (
+            cat, lq["checked"], lq["ok"], round(100 * lq["ok"] / lq["checked"]),
+            lq["homepage"], lq["aggregator"], lq["dead"], lq["vacancy"]))
     try:
         from pipeline import coverage as _cov
         cov_line = _cov.summary_line(cat, mine)

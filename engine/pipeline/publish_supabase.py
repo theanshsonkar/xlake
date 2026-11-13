@@ -347,6 +347,8 @@ def quality_reason(r: dict):
     t = record_type(r)
     if t in JOB_TYPES or t == "contribution":
         return None
+    if "link_dead" in (r.get("link_quality") or ()):
+        return "link_dead"
     title = _first(r.get("title"), r.get("programme_name"), r.get("organizer"))
     url = _first(r.get("url"), r.get("official_url"), r.get("application_url"))
     eligibility = _first(r.get("eligibility"))
