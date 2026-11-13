@@ -176,5 +176,18 @@
     "funding_period": "total",
     "summary": "BIRAC's flagship scheme funding proof-of-concept biotechnology ideas. Calls are announced on 1 January and 1 July and stay open about 45 days.",
     "verification_note": "Page states the call calendar; current call status not stated."
+  },
+  {
+    "programme_id": "grants-hub-chanzuckerberg-com-rfa-essential-open-source-software-for-sc-20a56f",
+    "verified_at": "2026-11-13T12:00:00Z",
+    "verified_by": "manual-official-page",
+    "official_url": "https://chanzuckerberg.com/rfa/essential-open-source-software-for-science/"
+  },
+  {
+    "programme_id": "grants-hub-www-sfari-org-0356fe",
+    "verified_at": "2026-11-13T12:00:00Z",
+    "verified_by": "manual-official-page",
+    "official_url": "https://www.simonsfoundation.org/sfari/",
+    "application_url": "https://www.simonsfoundation.org/sfari/"
   }
 ]

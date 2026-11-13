@@ -103,8 +103,8 @@
     "verified_at": "2026-10-19T00:00:00Z",
     "verified_by": "manual-official-page",
     "programme_status": "open",
-    "official_url": "https://www.nsrcel.org/",
-    "application_url": "https://www.nsrcel.org/",
+    "official_url": "https://nsrcel.org/women-startup-program/",
+    "application_url": "https://nsrcel.org/women-startup-program/",
     "official_evidence": {
       "status": {
         "quote": "Women Founders - Build the startup you've been dreaming of! Join the Women Startup Program. Apply Now",
@@ -800,5 +800,12 @@
     "mode": "in-person",
     "intl_eligible": false,
     "logo_url": "https://aim.gov.in/images/favicon.png"
+  },
+  {
+    "programme_id": "startup_founder-hub-www-gdhcc-com-7c99cd",
+    "verified_at": "2026-11-13T12:00:00Z",
+    "verified_by": "manual-official-page",
+    "official_url": "https://www.gdhcc.com/dallas-accelerator-program.html",
+    "application_url": "https://www.gdhcc.com/dallas-accelerator-program.html"
   }
 ]
