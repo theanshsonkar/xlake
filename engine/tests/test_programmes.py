@@ -619,6 +619,21 @@ class TestGenericProgrammePipeline(unittest.TestCase):
         self.assertTrue(result[2]["is_live"])
         self.assertTrue(result[3]["is_live"])
 
+    def test_retire_orphans_leaves_already_closed_rows_alone(self):
+        base = {"record_type": "programme", "category": "grant"}
+        rows = [
+            {**base, "programme_id": "dead", "official_url": "https://dead.example/g", "is_live": False,
+             "went_dead_at": "2026-01-01T00:00:00+00:00"},
+            {**base, "programme_id": "closed", "official_url": "https://closed.example/g", "lifecycle": "closed",
+             "went_dead_at": "2026-02-01T00:00:00+00:00"},
+            {**base, "programme_id": "kept", "official_url": "https://kept.example/g", "is_live": True},
+        ]
+        retire_orphans("grant", ["https://kept.example/g"], rows, "2026-08-20T00:00:00+00:00")
+        self.assertEqual(rows[0]["went_dead_at"], "2026-01-01T00:00:00+00:00")
+        self.assertNotIn("hidden_reason", rows[0])
+        self.assertEqual(rows[1]["went_dead_at"], "2026-02-01T00:00:00+00:00")
+        self.assertNotIn("hidden_reason", rows[1])
+
     def test_retire_orphans_normalizes_seed_url_variants(self):
         rows = [{
             "record_type": "programme", "category": "grant", "programme_id": "kept",

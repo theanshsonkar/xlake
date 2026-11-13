@@ -1568,6 +1568,10 @@ def _programme_row_urls(row: Dict) -> List[str]:
     return urls
 
 
+def _already_closed(row: Dict) -> bool:
+    return row.get("lifecycle") == "closed" or (row.get("is_live") is False and bool(row.get("went_dead_at")))
+
+
 def retire_orphans(category: str, current_seed_urls: Iterable[str], lake_rows: List[Dict], now: str) -> List[Dict]:
     """Hide retained programme rows whose source seed no longer exists."""
     current_urls = set()
@@ -1594,7 +1598,8 @@ def retire_orphans(category: str, current_seed_urls: Iterable[str], lake_rows: L
             normalized for value in _programme_row_urls(row)
             if (normalized := _normalise_programme_url(value))
         }
-        if not row_urls.intersection(current_urls) and row.get("hidden_reason") != "source_removed":
+        if not row_urls.intersection(current_urls) and row.get("hidden_reason") != "source_removed" \
+                and not _already_closed(row):
             candidates.append(row)
     for row in candidates[:60]:
         title = row.get("programme_name") or row.get("title") or row.get("name") or row.get("programme_id") or ""
@@ -1628,7 +1633,7 @@ def retire_orphans(category: str, current_seed_urls: Iterable[str], lake_rows: L
                 row["is_live"] = True
                 row.pop("went_dead_at", None)
             continue
-        if row.get("hidden_reason") == "source_removed":
+        if row.get("hidden_reason") == "source_removed" or _already_closed(row):
             continue
         row["is_live"] = False
         row["went_dead_at"] = now
