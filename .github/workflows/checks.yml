@@ -52,3 +52,18 @@ jobs:
             esac
           fi
           python3 -m pipeline.run_checks $ARGS
+      - name: Duplicates hidden and dead links in today's category runs
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          T=$(date -u +%F)
+          for w in fellowships scholarships grants research startup community open-source hackathons; do
+            id=$(gh run list -R "$GITHUB_REPOSITORY" --workflow "$w.yml" --created ">=$T" -L 1 --json databaseId -q '.[0].databaseId')
+            [ -z "$id" ] && { echo "$w: no run today" | tee -a "$GITHUB_STEP_SUMMARY"; continue; }
+            log=$(gh run view "$id" -R "$GITHUB_REPOSITORY" --log 2>/dev/null || true)
+            dup=$(printf '%s\n' "$log" | grep -c "d1 remove .*duplicate_" || true)
+            dead=$(printf '%s\n' "$log" | grep "d1 remove .*link_dead" | sed 's/^.*d1 remove //' || true)
+            lq=$(printf '%s\n' "$log" | grep -o "link quality .*" | head -1)
+            { echo "$w: duplicates hidden this run=$dup; $lq"; [ -n "$dead" ] && echo "$dead" | sed 's/^/  dead: /'; } | tee -a "$GITHUB_STEP_SUMMARY"
+          done

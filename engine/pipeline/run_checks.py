@@ -172,7 +172,7 @@ def check_counts():
             parts.append(f"{t}={len(_rows(call_tool('search', {'type': t, 'limit': 100})))}")
         except Exception as e:
             parts.append(f"{t}=err({type(e).__name__})")
-    record("INFO", "served rows per type (capped at 100): " + " ".join(parts))
+    record("INFO", "rows on the first search page per type: " + " ".join(parts))
 
 
 def check_d1(max_writes, now=None):
