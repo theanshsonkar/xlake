@@ -127,6 +127,16 @@ class SameCategoryAndCrossHostTests(unittest.TestCase):
 
 
 
+class QueryUrlLosesTest(unittest.TestCase):
+    def test_plain_link_beats_query_link(self):
+        a = row("startup-founder", "startup_founder-hub-fi-co-9541ee", "http://fi.co/?target=toronto", "Founder Institute")
+        b = row("startup-founder", "startup_founder-hub-fi-co-4b4c62", "http://fi.co/", "The Founder Institute")
+        b["application_url"] = "https://fi.co/join"
+        self.assertEqual(core.dedupe_within_category([a, b], NOW), 1)
+        self.assertEqual(a["hidden_reason"], "duplicate_same_category")
+        self.assertFalse(b.get("hidden_reason"))
+
+
 class SamePageFamilyTest(unittest.TestCase):
     def test_city_chapters_are_separate_opportunities(self):
         self.assertFalse(core._same_page_family("s/denver", "s/seattle"))

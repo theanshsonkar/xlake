@@ -1870,7 +1870,8 @@ def dedupe_within_category(lake_rows: List[Dict], now: str) -> int:
                 continue
             winner = min(group, key=lambda r: (
                 int(is_hub_discovered(r)), -int(bool(r.get("manually_verified"))),
-                -int(bool(r.get("deadline"))), -_evidence_count(r), str(r.get("programme_id") or "")))
+                -int(bool(r.get("deadline"))), int("?" in str(r.get("official_url") or "")),
+                -_evidence_count(r), str(r.get("programme_id") or "")))
             for row in group:
                 if row is winner:
                     continue
