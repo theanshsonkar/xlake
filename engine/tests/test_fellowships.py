@@ -15,7 +15,9 @@ class TestFellowshipRegistry(unittest.TestCase):
     def test_json_registry_has_canonical_unique_seeds(self):
         with open(fellowships.SEED_PATH, encoding="utf-8") as handle:
             raw = json.load(handle)
-        self.assertEqual(len(raw), 160)
+        self.assertEqual(len(raw), 161)
+        yif = next(seed for seed in raw if seed["programme_id"] == "fellowship-young-india-fellowship")
+        self.assertEqual(yif["official_url"], "https://yif-application.ashoka.edu.in/")
         required = set(fellowships.REQUIRED_SEED_FIELDS)
         self.assertEqual({key for seed in raw for key in seed}, required)
         self.assertEqual(len({seed["source_id"] for seed in raw}), len(raw))

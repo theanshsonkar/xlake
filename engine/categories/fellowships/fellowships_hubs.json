@@ -1758,5 +1758,16 @@
       ""
     ],
     "check_cadence": "monthly"
+  },
+  {
+    "source_id": "fellowship-young-india-fellowship",
+    "programme_id": "fellowship-young-india-fellowship",
+    "programme_name": "Young India Fellowship",
+    "organizer": "Ashoka University",
+    "official_url": "https://yif-application.ashoka.edu.in/",
+    "allowed_path_hints": [
+      ""
+    ],
+    "check_cadence": "monthly"
   }
 ]
