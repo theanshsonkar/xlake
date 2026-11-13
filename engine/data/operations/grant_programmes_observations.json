@@ -141101,5 +141101,128 @@
   "result": "failed",
   "state": "failed",
   "reason": "RuntimeError: RemoteDisconnected: Remote end closed connection without response"
+ },
+ {
+  "source_id": "grant-national-geographic-okavango-ecosystem-dynamics",
+  "programme_id": "grant-national-geographic-okavango-ecosystem-dynamics",
+  "official_url": "https://funding.nationalgeographic.org/s/fundingopportunity/119Hr000000byRrIAI/understanding-ecosystem-dynamics-ecology-of-the-okavango-river-basin",
+  "checked_at": "2026-11-13T09:12:41+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "grant-usaid-dev",
+  "programme_id": "grant-usaid-dev",
+  "official_url": "https://www.usaid.gov/div",
+  "checked_at": "2026-11-13T09:12:43+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "grant-prototype-fund",
+  "programme_id": "grant-prototype-fund",
+  "official_url": "https://prototypefund.de/en/",
+  "checked_at": "2026-11-13T09:12:46+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "grant-shuttleworth",
+  "programme_id": "grant-shuttleworth",
+  "official_url": "https://www.shuttleworthfoundation.org/apply/",
+  "checked_at": "2026-11-13T09:12:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_5xx"
+ },
+ {
+  "source_id": "grant-serb-grants",
+  "programme_id": "grant-serb-grants",
+  "official_url": "https://serb.gov.in/",
+  "checked_at": "2026-11-13T09:13:07+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "timeout"
+ },
+ {
+  "source_id": "hub-grants-gradient-ai-research-grant-10397f",
+  "programme_id": "grants-hub-gradient-ai-research-grant-10397f",
+  "official_url": "https://gradient.ai/research-grant",
+  "checked_at": "2026-11-13T09:12:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "tls"
+ },
+ {
+  "source_id": "hub-grants-handshake-org-9006fd",
+  "programme_id": "grants-hub-handshake-org-9006fd",
+  "official_url": "https://handshake.org/",
+  "checked_at": "2026-11-13T09:12:41+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-grants-landing-hostkey-com-grant-for-scientific-projects-formhtml-574f04",
+  "programme_id": "grants-hub-landing-hostkey-com-grant-for-scientific-projects-formhtml-574f04",
+  "official_url": "https://landing.hostkey.com/grant_for_scientific_projects_formhtml",
+  "checked_at": "2026-11-13T09:12:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "robots_blocked"
+ },
+ {
+  "source_id": "hub-grants-www-mozilla-org-en-us-moss-351f7e",
+  "programme_id": "grants-hub-www-mozilla-org-en-us-moss-351f7e",
+  "official_url": "https://www.mozilla.org/en-US/moss",
+  "checked_at": "2026-11-13T09:12:43+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Update: MOSS Applications Are Closed.",
+    "url": "https://www.mozilla.org/en-US/moss"
+   }
+  }
+ },
+ {
+  "source_id": "hub-grants-research-cisco-com-open-rfps-af03de",
+  "programme_id": "grants-hub-research-cisco-com-open-rfps-af03de",
+  "official_url": "https://research.cisco.com/open-rfps",
+  "checked_at": "2026-11-13T09:12:42+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-grants-sloan-org-grants-apply-005a70",
+  "programme_id": "grants-hub-sloan-org-grants-apply-005a70",
+  "official_url": "https://sloan.org/grants/apply",
+  "checked_at": "2026-11-13T09:12:44+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-grants-www-top10vpn-com-research-grant-d51033",
+  "programme_id": "grants-hub-www-top10vpn-com-research-grant-d51033",
+  "official_url": "https://www.top10vpn.com/research-grant",
+  "checked_at": "2026-11-13T09:12:44+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-grants-trelis-com-trelis-ai-grants-f363b0",
+  "programme_id": "grants-hub-trelis-com-trelis-ai-grants-f363b0",
+  "official_url": "https://trelis.com/trelis-ai-grants",
+  "checked_at": "2026-11-13T09:12:45+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: RemoteDisconnected: Remote end closed connection without response"
  }
 ]
