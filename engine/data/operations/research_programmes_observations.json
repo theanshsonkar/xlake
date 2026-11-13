@@ -265066,5 +265066,626 @@
   "result": "failed",
   "state": "failed",
   "reason": "http_403"
+ },
+ {
+  "source_id": "nso-reu",
+  "programme_id": "research-nso-reu",
+  "official_url": "https://nso.edu/education/reu/",
+  "checked_at": "2026-11-13T11:41:38+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications for the 2026 BSA REU program are now closed!",
+    "url": "https://nso.edu/education/reu/"
+   }
+  }
+ },
+ {
+  "source_id": "allen-institute-internships",
+  "programme_id": "research-allen-institute-internships",
+  "official_url": "https://alleninstitute.org/careers/internships/",
+  "checked_at": "2026-11-13T11:41:34+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications for ASPIRE Internship positions starting in Summer 2026 are now closed.",
+    "url": "https://alleninstitute.org/careers/internships/"
+   }
+  }
+ },
+ {
+  "source_id": "era-cambridge",
+  "programme_id": "research-era-cambridge",
+  "official_url": "https://erafellowship.org/",
+  "checked_at": "2026-11-13T11:41:33+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications have now closed.",
+    "url": "https://erafellowship.org/"
+   }
+  }
+ },
+ {
+  "source_id": "reu-umn-cs",
+  "programme_id": "research-reu-umn-cs",
+  "official_url": "https://reu.cs.umn.edu/",
+  "checked_at": "2026-11-13T11:41:33+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "The application for summer 2026 is now closed.",
+    "url": "https://reu.cs.umn.edu/"
+   }
+  }
+ },
+ {
+  "source_id": "reu-columbia-mrsec",
+  "programme_id": "research-reu-columbia-mrsec",
+  "official_url": "https://mrsec.columbia.edu/content/research-experiences-undergraduates-reu",
+  "checked_at": "2026-11-13T11:41:35+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "reu-umich-math",
+  "programme_id": "research-reu-umich-math",
+  "official_url": "https://lsa.umich.edu/math/undergraduates/research-and-career-opportunities/research/research-experience-for-undergraduates--reu-.html",
+  "checked_at": "2026-11-13T11:41:35+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "reu-stanford-mse",
+  "programme_id": "research-reu-stanford-mse",
+  "official_url": "https://mse.stanford.edu/REU",
+  "checked_at": "2026-11-13T11:41:33+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "The application for our 2026 REU Program (for Stanford undergraduates only) is now closed.",
+    "url": "https://mse.stanford.edu/REU"
+   }
+  }
+ },
+ {
+  "source_id": "surf-umich-nuro",
+  "programme_id": "research-surf-umich-nuro",
+  "official_url": "https://medschool.umich.edu/interdisciplinary-programs/neuroscience-graduate-program/summer-research-opportunities/nuro-program",
+  "checked_at": "2026-11-13T11:41:35+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "research-iitgn-srip",
+  "programme_id": "research-iitgn-srip",
+  "official_url": "https://srip.iitgn.ac.in/",
+  "checked_at": "2026-11-13T11:41:35+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "research-iitr-spark",
+  "programme_id": "research-iitr-spark",
+  "official_url": "https://spark.iitr.ac.in/",
+  "checked_at": "2026-11-13T11:41:37+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-ai-google-research-800bdd",
+  "programme_id": "research-hub-ai-google-research-800bdd",
+  "official_url": "https://ai.google/research",
+  "checked_at": "2026-11-13T11:41:35+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-www-amazon-jobs-jobs-10584990-23fd3c",
+  "programme_id": "research-hub-www-amazon-jobs-jobs-10584990-23fd3c",
+  "official_url": "https://www.amazon.jobs/jobs/10584990/-applied-scientist-internship--masters-amazon-university-talent-acquisition?cmpid=bsp-amazon-science",
+  "checked_at": "2026-11-13T11:41:34+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: internship_title"
+ },
+ {
+  "source_id": "hub-research-www-amazon-jobs-jobs-10585292-700bad",
+  "programme_id": "research-hub-www-amazon-jobs-jobs-10585292-700bad",
+  "official_url": "https://www.amazon.jobs/jobs/10585292/-applied-scientist-internship--phd-amazon-university-talent-acquisition?cmpid=bsp-amazon-science",
+  "checked_at": "2026-11-13T11:41:34+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: internship_title"
+ },
+ {
+  "source_id": "hub-research-www-amazon-jobs-jobs-10585615-6e323d",
+  "programme_id": "research-hub-www-amazon-jobs-jobs-10585615-6e323d",
+  "official_url": "https://www.amazon.jobs/jobs/10585615/applied--research-scientist--safe-autonomy-frontiers-saf-lab-safe-autonomy-frontiers-saf-lab?cmpid=bsp-amazon-science",
+  "checked_at": "2026-11-13T11:41:38+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-apply-mpi-sws-org-register-internship-c0ea39",
+  "programme_id": "research-hub-apply-mpi-sws-org-register-internship-c0ea39",
+  "official_url": "https://apply.mpi-sws.org/register/internship",
+  "checked_at": "2026-11-13T11:41:36+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "robots_blocked"
+ },
+ {
+  "source_id": "hub-research-asta-allen-ai-e6214b",
+  "programme_id": "research-hub-asta-allen-ai-e6214b",
+  "official_url": "https://asta.allen.ai/",
+  "checked_at": "2026-11-13T11:41:35+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "missing_programme_noun_page"
+ },
+ {
+  "source_id": "hub-research-blog-google-translate-goog-intl-de-de-b11f7e",
+  "programme_id": "research-hub-blog-google-translate-goog-intl-de-de-b11f7e",
+  "official_url": "https://blog-google.translate.goog/intl/de-de/unternehmen/technologie/google-tu-munchen-tum-investition-cybersecurity-forschung?_x_tr_hl=de&_x_tr_pto=wapp&_x_tr_sl=auto&_x_tr_tl=en",
+  "checked_at": "2026-11-13T11:41:35+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "robots_blocked"
+ },
+ {
+  "source_id": "hub-research-blog-google-technology-research-3e68c2",
+  "programme_id": "research-hub-blog-google-technology-research-3e68c2",
+  "official_url": "https://blog.google/technology/research/rajavi-mishra-becoming-computer-science-researcher",
+  "checked_at": "2026-11-13T11:41:35+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: malformed_title"
+ },
+ {
+  "source_id": "hub-research-www-bvp-com-bessemer-fellows-ee2f77",
+  "programme_id": "research-hub-www-bvp-com-bessemer-fellows-ee2f77",
+  "official_url": "https://www.bvp.com/bessemer-fellows",
+  "checked_at": "2026-11-13T11:41:37+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-careers-pruna-ai-jobs-5116044-working-student-master-thesis-1e15db",
+  "programme_id": "research-hub-careers-pruna-ai-jobs-5116044-working-student-master-thesis-1e15db",
+  "official_url": "https://careers.pruna.ai/jobs/5116044-working-student-master-thesis-internship",
+  "checked_at": "2026-11-13T11:41:35+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-careers-smartrecruiters-com-cern-tech-89e81e",
+  "programme_id": "research-hub-careers-smartrecruiters-com-cern-tech-89e81e",
+  "official_url": "https://careers.smartrecruiters.com/CERN/tech",
+  "checked_at": "2026-11-13T11:41:35+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-www-cmi-ac-in-admissions-internships-php-3c84a4",
+  "programme_id": "research-hub-www-cmi-ac-in-admissions-internships-php-3c84a4",
+  "official_url": "https://www.cmi.ac.in/admissions/internships.php",
+  "checked_at": "2026-11-13T11:41:37+00:00",
+  "result": "actionable",
+  "state": "actionable",
+  "reason": "generic evidence-based applicant window",
+  "official_evidence": {
+   "programme_name": {},
+   "organizer": {},
+   "official_url": {},
+   "programme_status": {
+    "quote": "The deadline to apply for: Mathematics internships for summer 2027 is 30 November,",
+    "url": "https://www.cmi.ac.in/admissions/internships.php"
+   },
+   "application": {},
+   "application_url": {},
+   "opening_date": {
+    "quote": "The deadline to apply for: Mathematics internships for summer 2027 is 30 November,",
+    "url": "https://www.cmi.ac.in/admissions/internships.php"
+   },
+   "deadline": {
+    "quote": "The deadline to apply for: Mathematics internships for summer 2027 is 30 November,",
+    "url": "https://www.cmi.ac.in/admissions/internships.php"
+   },
+   "funding": {},
+   "location": {},
+   "remote": {},
+   "international_eligibility": {},
+   "eligibility": {
+    "quote": "some exposure to algorithms and/or automata theory.",
+    "url": "https://www.cmi.ac.in/admissions/internships.php"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-cse-gatech-edu-research-cruise-9d9e64",
+  "programme_id": "research-hub-www-cse-gatech-edu-research-cruise-9d9e64",
+  "official_url": "https://www.cse.gatech.edu/research/cruise",
+  "checked_at": "2026-11-13T11:41:36+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-dssg-uchicago-edu-b0d723",
+  "programme_id": "research-hub-dssg-uchicago-edu-b0d723",
+  "official_url": "https://dssg.uchicago.edu/",
+  "checked_at": "2026-11-13T11:41:39+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-dst-gov-in-scientific-programmes-scientific-engineering-rese-ef3a17",
+  "programme_id": "research-hub-dst-gov-in-scientific-programmes-scientific-engineering-rese-ef3a17",
+  "official_url": "https://dst.gov.in/scientific-programmes/scientific-engineering-research/human-resource-development-and-nurturing-young-talent-swarnajayanti-fellowships-scheme",
+  "checked_at": "2026-11-13T11:41:41+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-ece-duke-edu-undergrad-reu-6b7e1e",
+  "programme_id": "research-hub-ece-duke-edu-undergrad-reu-6b7e1e",
+  "official_url": "https://ece.duke.edu/undergrad/reu",
+  "checked_at": "2026-11-13T11:41:42+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-fokos-info-en-home-299a9c",
+  "programme_id": "research-hub-fokos-info-en-home-299a9c",
+  "official_url": "https://fokos.info/en/home/stipendium",
+  "checked_at": "2026-11-13T11:41:37+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: internship_title"
+ },
+ {
+  "source_id": "hub-research-www-ggvc-com-ggv-nextgen-fellow-fd1f5f",
+  "programme_id": "research-hub-www-ggvc-com-ggv-nextgen-fellow-fd1f5f",
+  "official_url": "https://www.ggvc.com/ggv-nextgen-fellow",
+  "checked_at": "2026-11-13T11:41:58+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-huggingface-co-coherelabs-65fbae",
+  "programme_id": "research-hub-huggingface-co-coherelabs-65fbae",
+  "official_url": "https://huggingface.co/CohereLabs",
+  "checked_at": "2026-11-13T11:41:37+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-www-iiitd-ac-in-placement-internships-434899",
+  "programme_id": "research-hub-www-iiitd-ac-in-placement-internships-434899",
+  "official_url": "https://www.iiitd.ac.in/placement/internships",
+  "checked_at": "2026-11-13T11:41:57+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
+ },
+ {
+  "source_id": "hub-research-www-iitb-ac-in-en-education-b84b9d",
+  "programme_id": "research-hub-www-iitb-ac-in-en-education-b84b9d",
+  "official_url": "http://www.iitb.ac.in/en/education/research-internship",
+  "checked_at": "2026-11-13T11:41:43+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-www-iitb-ac-in-en-education-e63d02",
+  "programme_id": "research-hub-www-iitb-ac-in-en-education-e63d02",
+  "official_url": "http://www.iitb.ac.in/en/education/research-internship)(http://www.iitb.ac.in/newacadhome/toTraining.jsp)(https://www.it.iitb.ac.in/summerinternship2020/selectionlist.html",
+  "checked_at": "2026-11-13T11:41:39+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "invalid_seed"
+ },
+ {
+  "source_id": "hub-research-www-iitrpr-ac-in-sites-default-51c0e8",
+  "programme_id": "research-hub-www-iitrpr-ac-in-sites-default-51c0e8",
+  "official_url": "https://www.iitrpr.ac.in/sites/default/files/Advertisement%20for%20Summer%20Internship%202021.pdf",
+  "checked_at": "2026-11-13T11:41:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "missing_programme_noun_page"
+ },
+ {
+  "source_id": "hub-research-www-impactlabs-io-fellowship-7f1e15",
+  "programme_id": "research-hub-www-impactlabs-io-fellowship-7f1e15",
+  "official_url": "https://www.impactlabs.io/fellowship",
+  "checked_at": "2026-11-13T11:41:41+00:00",
+  "result": "non_actionable",
+  "state": "closed",
+  "reason": "official applicant deadline passed",
+  "official_evidence": {
+   "programme_status": {
+    "quote": "Applications for The 2025 Impact Fellowship are now closed.",
+    "url": "https://www.impactlabs.io/fellowship"
+   }
+  }
+ },
+ {
+  "source_id": "hub-research-www-inde-campusfrance-org-en-page-64e379",
+  "programme_id": "research-hub-www-inde-campusfrance-org-en-page-64e379",
+  "official_url": "http://www.inde.campusfrance.org/en/page/charpak-research-internship-program",
+  "checked_at": "2026-11-13T11:41:47+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-www-inde-campusfrance-org-charpak-research-interns-986032",
+  "programme_id": "research-hub-www-inde-campusfrance-org-charpak-research-interns-986032",
+  "official_url": "http://www.inde.campusfrance.org/\u2026/charpak-research-interns\u2026",
+  "checked_at": "2026-11-13T11:41:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "invalid_seed"
+ },
+ {
+  "source_id": "hub-research-www-inria-fr-en-do-internship-98f222",
+  "programme_id": "research-hub-www-inria-fr-en-do-internship-98f222",
+  "official_url": "https://www.inria.fr/en/do-internship",
+  "checked_at": "2026-11-13T11:41:43+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "missing_programme_noun_page"
+ },
+ {
+  "source_id": "hub-research-www-insidesherpa-com-virtual-internships-prototype-17ed83",
+  "programme_id": "research-hub-www-insidesherpa-com-virtual-internships-prototype-17ed83",
+  "official_url": "https://www.insidesherpa.com/virtual-internships/prototype/oRMogWRHeewqHzA7u/College-students%3A-Learn-how-to-work-at-a-YC-startup-",
+  "checked_at": "2026-11-13T11:41:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "robots_blocked"
+ },
+ {
+  "source_id": "hub-research-www-insidesherpa-com-virtual-internships-theme-f7570a",
+  "programme_id": "research-hub-www-insidesherpa-com-virtual-internships-theme-f7570a",
+  "official_url": "https://www.insidesherpa.com/virtual-internships/theme/m7W4GMqeT3bh9Nb2c/KPMG-Data-Analytics-Virtual-Internship",
+  "checked_at": "2026-11-13T11:41:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: internship_title"
+ },
+ {
+  "source_id": "hub-research-www-internships-yesatyale-org-students-beccb8",
+  "programme_id": "research-hub-www-internships-yesatyale-org-students-beccb8",
+  "official_url": "https://www.internships.yesatyale.org/students",
+  "checked_at": "2026-11-13T11:41:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: internship_title"
+ },
+ {
+  "source_id": "hub-research-jobs-cisco-com-jobs-projectdetail-49f5c7",
+  "programme_id": "research-hub-jobs-cisco-com-jobs-projectdetail-49f5c7",
+  "official_url": "https://jobs.cisco.com/jobs/ProjectDetail/Software-Engineer-Bachelor-s-Intern-United-States/1295250?source=Pitt+CSC&tags=CDC+SnNG+students-and-new-graduate-programs",
+  "checked_at": "2026-11-13T11:41:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-jobs-lever-co-trailofbits-5c836c41-04d0-4f16-8f7d-e3cfdc3319-f2fdf4",
+  "programme_id": "research-hub-jobs-lever-co-trailofbits-5c836c41-04d0-4f16-8f7d-e3cfdc3319-f2fdf4",
+  "official_url": "https://jobs.lever.co/trailofbits/5c836c41-04d0-4f16-8f7d-e3cfdc33191b",
+  "checked_at": "2026-11-13T11:41:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-labs-oracle-com-pls-apex-1ca0e5",
+  "programme_id": "research-hub-labs-oracle-com-pls-apex-1ca0e5",
+  "official_url": "https://labs.oracle.com/pls/apex/r/labs/labs/internships",
+  "checked_at": "2026-11-13T11:41:42+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-mae-osu-edu-riya-5d4581",
+  "programme_id": "research-hub-mae-osu-edu-riya-5d4581",
+  "official_url": "https://mae.osu.edu/RIYA",
+  "checked_at": "2026-11-13T11:41:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "robots_blocked"
+ },
+ {
+  "source_id": "hub-research-www-mitacs-ca-globa-e18074",
+  "programme_id": "research-hub-www-mitacs-ca-globa-e18074",
+  "official_url": "https://www.mitacs.ca/\u2026/globa\u2026/globalink-research-internship",
+  "checked_at": "2026-11-13T11:41:42+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "invalid_seed"
+ },
+ {
+  "source_id": "hub-research-nigintern-nig-ac-jp-1e26aa",
+  "programme_id": "research-hub-nigintern-nig-ac-jp-1e26aa",
+  "official_url": "https://nigintern.nig.ac.jp/",
+  "checked_at": "2026-11-13T11:41:43+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno 111] Connection refused>"
+ },
+ {
+  "source_id": "hub-research-oga-nthu-edu-tw-news-php-7dbca8",
+  "programme_id": "research-hub-oga-nthu-edu-tw-news-php-7dbca8",
+  "official_url": "http://oga.nthu.edu.tw/news.php?id=233&lang=en",
+  "checked_at": "2026-11-13T11:41:45+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-pg-ust-hk-prospective-students-programs-6fe9bd",
+  "programme_id": "research-hub-pg-ust-hk-prospective-students-programs-6fe9bd",
+  "official_url": "https://pg.ust.hk/prospective-students/programs/short-term-study/international-visiting-internship-student-program",
+  "checked_at": "2026-11-13T11:41:47+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
+  "programme_id": "research-hub-research-adobe-com-adobe-india-women-in-technology-scholarsh-e0dd0b",
+  "official_url": "https://research.adobe.com/adobe-india-women-in-technology-scholarship",
+  "checked_at": "2026-11-13T11:41:44+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-research-fb-com-programs-fellowship-c0478b",
+  "programme_id": "research-hub-research-fb-com-programs-fellowship-c0478b",
+  "official_url": "https://research.fb.com/programs/fellowship",
+  "checked_at": "2026-11-13T11:41:46+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_4xx"
+ },
+ {
+  "source_id": "hub-research-sfp-iitm-ac-in-540af5",
+  "programme_id": "research-hub-sfp-iitm-ac-in-540af5",
+  "official_url": "https://sfp.iitm.ac.in/",
+  "checked_at": "2026-11-13T11:41:45+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-www-shastriinstitute-org-shastri-research-student-fellowship-4e27a9",
+  "programme_id": "research-hub-www-shastriinstitute-org-shastri-research-student-fellowship-4e27a9",
+  "official_url": "https://www.shastriinstitute.org/shastri-research-student-fellowship",
+  "checked_at": "2026-11-13T11:41:51+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-research-simonsfoundation-wd1-myworkdayjobs-com-en-us-simonsfoundatio-2c149a",
+  "programme_id": "research-hub-simonsfoundation-wd1-myworkdayjobs-com-en-us-simonsfoundatio-2c149a",
+  "official_url": "https://simonsfoundation.wd1.myworkdayjobs.com/en-US/simonsfoundationcareers/job/162-Fifth-Avenue/Data-Visualization-Intern--SCC_R0000579",
+  "checked_at": "2026-11-13T11:41:46+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-www-smithsonianofi-com-fellowship-opportunities-smithsonian-372c41",
+  "programme_id": "research-hub-www-smithsonianofi-com-fellowship-opportunities-smithsonian-372c41",
+  "official_url": "https://www.smithsonianofi.com/fellowship-opportunities/smithsonian-institution-fellowship-program",
+  "checked_at": "2026-11-13T11:41:46+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "RuntimeError: URLError: <urlopen error [Errno 111] Connection refused>"
+ },
+ {
+  "source_id": "hub-research-spike-unist-ac-kr-main-main-php-a42b4d",
+  "programme_id": "research-hub-spike-unist-ac-kr-main-main-php-a42b4d",
+  "official_url": "http://spike.unist.ac.kr/main/main.php",
+  "checked_at": "2026-11-13T11:41:46+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "dns"
+ },
+ {
+  "source_id": "hub-research-www-sserd-org-internship-e05f59",
+  "programme_id": "research-hub-www-sserd-org-internship-e05f59",
+  "official_url": "https://www.sserd.org/internship",
+  "checked_at": "2026-11-13T11:41:47+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "empty or unparsable official response"
+ },
+ {
+  "source_id": "hub-research-susaventures-com-summer-fellows-236d23",
+  "programme_id": "research-hub-susaventures-com-summer-fellows-236d23",
+  "official_url": "https://susaventures.com/summer-fellows",
+  "checked_at": "2026-11-13T11:41:47+00:00",
+  "result": "non_actionable",
+  "state": "dead",
+  "reason": "http_404"
+ },
+ {
+  "source_id": "hub-research-www-ugc-ac-in-oldpdf-xiplanpdf-674fcb",
+  "programme_id": "research-hub-www-ugc-ac-in-oldpdf-xiplanpdf-674fcb",
+  "official_url": "https://www.ugc.ac.in/oldpdf/xiplanpdf/JRFE-T.pdf",
+  "checked_at": "2026-11-13T11:41:52+00:00",
+  "result": "non_actionable",
+  "state": "non_actionable",
+  "reason": "no actionable applicant window"
+ },
+ {
+  "source_id": "hub-research-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
+  "programme_id": "research-hub-undergraduateresearch-princeton-edu-programs-summer-programs-773fd8",
+  "official_url": "https://undergraduateresearch.princeton.edu/programs/summer-programs?field_class_year_eligibility_value=Juniors&field_division_value=Engineering&field_princeton_status_eligibili_value=Non-Princeton+undergrads",
+  "checked_at": "2026-11-13T11:41:50+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
+ },
+ {
+  "source_id": "hub-research-us-redhat-icims-com-jobs-83084-52c799",
+  "programme_id": "research-hub-us-redhat-icims-com-jobs-83084-52c799",
+  "official_url": "https://us-redhat.icims.com/jobs/83084/remote-us-nc/job",
+  "checked_at": "2026-11-13T11:41:47+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "generated seed rejected: job_board_host"
+ },
+ {
+  "source_id": "hub-research-www-weizmann-ac-il-feinberg-admissions-c56b6c",
+  "programme_id": "research-hub-www-weizmann-ac-il-feinberg-admissions-c56b6c",
+  "official_url": "https://www.weizmann.ac.il/feinberg/admissions/kupcinet-getz-international-summer-school/about-program-0",
+  "checked_at": "2026-11-13T11:41:49+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "missing_programme_noun_page"
+ },
+ {
+  "source_id": "hub-research-www8-gsb-columbia-edu-programs-pre-doctoral-research-18922c",
+  "programme_id": "research-hub-www8-gsb-columbia-edu-programs-pre-doctoral-research-18922c",
+  "official_url": "https://www8.gsb.columbia.edu/programs/pre-doctoral-research/summer-research-internship",
+  "checked_at": "2026-11-13T11:41:51+00:00",
+  "result": "failed",
+  "state": "failed",
+  "reason": "http_403"
  }
 ]
