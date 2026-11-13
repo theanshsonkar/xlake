@@ -1,0 +1,54 @@
+name: checks
+
+on:
+  workflow_dispatch:
+    inputs:
+      expect_open:
+        description: "Space-separated ids that must be open"
+        required: false
+        type: string
+        default: ''
+      soon:
+        description: "DAYS=N for the opening-soon check, e.g. 60=1"
+        required: false
+        type: string
+        default: ''
+  schedule:
+    - cron: "37 6 14 11 *"
+    - cron: "37 6 15 11 *"
+    - cron: "37 6 16 11 *"
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: engine
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: "3dcdbb176253427b2e7e80c6189b12ca"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run checks
+        env:
+          IN_OPEN: ${{ inputs.expect_open }}
+          IN_SOON: ${{ inputs.soon }}
+        run: |
+          ARGS="--max-writes 80000"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            [ -n "$IN_OPEN" ] && ARGS="$ARGS --expect-open $IN_OPEN"
+            [ -n "$IN_SOON" ] && ARGS="$ARGS --soon-min $IN_SOON"
+          else
+            case "$(date -u +%d)" in
+              15|16) ARGS="$ARGS --expect-open programme:fellowship-humboldt-research-fellowship programme:research-reu-purdue-biochem programme:research-reu-ncsa --soon-min 60=1" ;;
+            esac
+          fi
+          python3 -m pipeline.run_checks $ARGS
