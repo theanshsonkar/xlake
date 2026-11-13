@@ -16372,5 +16372,2405 @@
   "source": "internship-list-discovery",
   "evidence": "internship-list link (1 proven links)",
   "added_at": "2026-11-13"
+ },
+ {
+  "platform": "ashby",
+  "token": "10xteam",
+  "company": "10xteam",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/10xteam (discovery-cache boards_ashby.json, verified 134 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "1password",
+  "company": "1password",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/1password (discovery-cache boards_ashby.json, verified 80 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "42dot",
+  "company": "42dot",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/42dot (discovery-cache boards_ashby.json, verified 108 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "9fin",
+  "company": "9fin",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/9fin (discovery-cache boards_ashby.json, verified 35 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "abacum",
+  "company": "abacum",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/abacum (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "abound",
+  "company": "abound",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/abound (discovery-cache boards_ashby.json, verified 14 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "abridge",
+  "company": "abridge",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/abridge (discovery-cache boards_ashby.json, verified 22 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "abundant",
+  "company": "abundant",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/abundant (discovery-cache boards_ashby.json, verified 8 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "access",
+  "company": "access",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/access (discovery-cache boards_ashby.json, verified 16 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "acorns",
+  "company": "acorns",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/acorns (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "adaption",
+  "company": "adaption",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/adaption (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "adaptivesecurity",
+  "company": "adaptivesecurity",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/adaptivesecurity (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "adaptyv",
+  "company": "adaptyv",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/adaptyv (discovery-cache boards_ashby.json, verified 38 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "addi",
+  "company": "addi",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/addi (discovery-cache boards_ashby.json, verified 31 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "adjoe",
+  "company": "adjoe",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/adjoe (discovery-cache boards_ashby.json, verified 46 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "aerovect",
+  "company": "aerovect",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/aerovect (discovery-cache boards_ashby.json, verified 38 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "aescape",
+  "company": "aescape",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/aescape (discovery-cache boards_ashby.json, verified 8 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "afterquery",
+  "company": "afterquery",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/afterquery (discovery-cache boards_ashby.json, verified 42 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "agavegames",
+  "company": "agavegames",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/agavegames (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "agent",
+  "company": "agent",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/agent (discovery-cache boards_ashby.json, verified 16 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "agentio",
+  "company": "agentio",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/agentio (discovery-cache boards_ashby.json, verified 30 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "agentis-capital-advisors",
+  "company": "agentis-capital-advisors",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/agentis-capital-advisors (discovery-cache boards_ashby.json, verified 28 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "akasa",
+  "company": "akasa",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/akasa (discovery-cache boards_ashby.json, verified 8 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "alan",
+  "company": "alan",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/alan (discovery-cache boards_ashby.json, verified 137 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "alcazar-energy",
+  "company": "alcazar-energy",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/alcazar-energy (discovery-cache boards_ashby.json, verified 19 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "aleph",
+  "company": "aleph",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/aleph (discovery-cache boards_ashby.json, verified 15 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "allica-bank",
+  "company": "allica-bank",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/allica-bank (discovery-cache boards_ashby.json, verified 33 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "allium",
+  "company": "allium",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/allium (discovery-cache boards_ashby.json, verified 13 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "alloyenterprises",
+  "company": "alloyenterprises",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/alloyenterprises (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "almedia",
+  "company": "almedia",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/almedia (discovery-cache boards_ashby.json, verified 29 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "alta-ares",
+  "company": "alta-ares",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/alta-ares (discovery-cache boards_ashby.json, verified 40 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "amboss",
+  "company": "amboss",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/amboss (discovery-cache boards_ashby.json, verified 15 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "ambral",
+  "company": "ambral",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/ambral (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "american-housing",
+  "company": "american-housing",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/american-housing (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "antares",
+  "company": "antares",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/antares (discovery-cache boards_ashby.json, verified 84 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "anysignal",
+  "company": "anysignal",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/anysignal (discovery-cache boards_ashby.json, verified 27 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "apex-technology-inc",
+  "company": "apex-technology-inc",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/apex-technology-inc (discovery-cache boards_ashby.json, verified 137 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "apolink",
+  "company": "apolink",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/apolink (discovery-cache boards_ashby.json, verified 2 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "applike-group",
+  "company": "applike-group",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/applike-group (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "arcade",
+  "company": "arcade",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/arcade (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "arcturus",
+  "company": "arcturus",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/arcturus (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "arq",
+  "company": "arq",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/arq (discovery-cache boards_ashby.json, verified 37 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "artsy",
+  "company": "artsy",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/artsy (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "aspora",
+  "company": "aspora",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/aspora (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "assembly",
+  "company": "assembly",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/assembly (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "astera",
+  "company": "astera",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/astera (discovery-cache boards_ashby.json, verified 41 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "astro-mechanica",
+  "company": "astro-mechanica",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/astro-mechanica (discovery-cache boards_ashby.json, verified 44 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "asula",
+  "company": "asula",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/asula (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "asymmetric.re",
+  "company": "asymmetric.re",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/asymmetric.re (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "atira",
+  "company": "atira",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/atira (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "atomic-invest",
+  "company": "atomic-invest",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/atomic-invest (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "atticus",
+  "company": "atticus",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/atticus (discovery-cache boards_ashby.json, verified 18 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "auctor",
+  "company": "auctor",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/auctor (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "aurelian",
+  "company": "aurelian",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/aurelian (discovery-cache boards_ashby.json, verified 7 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "authorium",
+  "company": "authorium",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/authorium (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "automat",
+  "company": "automat",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/automat (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "avelios-medical",
+  "company": "avelios-medical",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/avelios-medical (discovery-cache boards_ashby.json, verified 46 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "avida",
+  "company": "avida",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/avida (discovery-cache boards_ashby.json, verified 2 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "away",
+  "company": "away",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/away (discovery-cache boards_ashby.json, verified 32 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "axelera",
+  "company": "axelera",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/axelera (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "axle-careers",
+  "company": "axle-careers",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/axle-careers (discovery-cache boards_ashby.json, verified 16 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "backmarket",
+  "company": "backmarket",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/backmarket (discovery-cache boards_ashby.json, verified 33 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "barnes",
+  "company": "barnes",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/barnes (discovery-cache boards_ashby.json, verified 124 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "basiccapital",
+  "company": "basiccapital",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/basiccapital (discovery-cache boards_ashby.json, verified 15 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "basis-ai",
+  "company": "basis-ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/basis-ai (discovery-cache boards_ashby.json, verified 40 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "basis-research",
+  "company": "basis-research",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/basis-research (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "ben",
+  "company": "ben",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/ben (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "benepass",
+  "company": "benepass",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/benepass (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "beparallel",
+  "company": "beparallel",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/beparallel (discovery-cache boards_ashby.json, verified 15 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bespokelabs",
+  "company": "bespokelabs",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bespokelabs (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bicara-therapeutics",
+  "company": "bicara-therapeutics",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bicara-therapeutics (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "biggergames",
+  "company": "biggergames",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/biggergames (discovery-cache boards_ashby.json, verified 15 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bild-ai",
+  "company": "bild-ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bild-ai (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "billie",
+  "company": "billie",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/billie (discovery-cache boards_ashby.json, verified 2 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "binance.us",
+  "company": "binance.us",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/binance.us (discovery-cache boards_ashby.json, verified 8 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "binti",
+  "company": "binti",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/binti (discovery-cache boards_ashby.json, verified 15 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "blackbird-labs-inc",
+  "company": "blackbird-labs-inc",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/blackbird-labs-inc (discovery-cache boards_ashby.json, verified 7 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "blacksemiconductor",
+  "company": "blacksemiconductor",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/blacksemiconductor (discovery-cache boards_ashby.json, verified 44 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bliro",
+  "company": "bliro",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bliro (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "blissway",
+  "company": "blissway",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/blissway (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "blockhouse",
+  "company": "blockhouse",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/blockhouse (discovery-cache boards_ashby.json, verified 2 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "blockstream",
+  "company": "blockstream",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/blockstream (discovery-cache boards_ashby.json, verified 46 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bobyard",
+  "company": "bobyard",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bobyard (discovery-cache boards_ashby.json, verified 38 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "boom",
+  "company": "boom",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/boom (discovery-cache boards_ashby.json, verified 10 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bounce",
+  "company": "bounce",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bounce (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "brainco",
+  "company": "brainco",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/brainco (discovery-cache boards_ashby.json, verified 48 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bravehealth",
+  "company": "bravehealth",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bravehealth (discovery-cache boards_ashby.json, verified 65 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bree",
+  "company": "bree",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bree (discovery-cache boards_ashby.json, verified 13 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "brelle",
+  "company": "brelle",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/brelle (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bridger",
+  "company": "bridger",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bridger (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "brightstar-ai",
+  "company": "brightstar-ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/brightstar-ai (discovery-cache boards_ashby.json, verified 1 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "brightwheel",
+  "company": "brightwheel",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/brightwheel (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "brigit",
+  "company": "brigit",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/brigit (discovery-cache boards_ashby.json, verified 14 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "brinc",
+  "company": "brinc",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/brinc (discovery-cache boards_ashby.json, verified 28 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "brm.ai",
+  "company": "brm.ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/brm.ai (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "buena",
+  "company": "buena",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/buena (discovery-cache boards_ashby.json, verified 20 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bunch",
+  "company": "bunch",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bunch (discovery-cache boards_ashby.json, verified 31 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bureau",
+  "company": "bureau",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bureau (discovery-cache boards_ashby.json, verified 17 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "burklandassociates",
+  "company": "burklandassociates",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/burklandassociates (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "bynder",
+  "company": "bynder",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/bynder (discovery-cache boards_ashby.json, verified 21 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "callosum",
+  "company": "callosum",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/callosum (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "camber",
+  "company": "camber",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/camber (discovery-cache boards_ashby.json, verified 14 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "campfire",
+  "company": "campfire",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/campfire (discovery-cache boards_ashby.json, verified 51 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "canals",
+  "company": "canals",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/canals (discovery-cache boards_ashby.json, verified 21 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "candidhealth",
+  "company": "candidhealth",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/candidhealth (discovery-cache boards_ashby.json, verified 30 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "cantina",
+  "company": "cantina",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/cantina (discovery-cache boards_ashby.json, verified 21 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "capable",
+  "company": "capable",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/capable (discovery-cache boards_ashby.json, verified 18 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "carwow",
+  "company": "carwow",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/carwow (discovery-cache boards_ashby.json, verified 45 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "category-labs",
+  "company": "category-labs",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/category-labs (discovery-cache boards_ashby.json, verified 1 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "centivo",
+  "company": "centivo",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/centivo (discovery-cache boards_ashby.json, verified 7 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "cerebras",
+  "company": "cerebras",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/cerebras (discovery-cache boards_ashby.json, verified 124 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "certifyos",
+  "company": "certifyos",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/certifyos (discovery-cache boards_ashby.json, verified 22 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "chaidiscovery",
+  "company": "chaidiscovery",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/chaidiscovery (discovery-cache boards_ashby.json, verified 23 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "chambercardio",
+  "company": "chambercardio",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/chambercardio (discovery-cache boards_ashby.json, verified 7 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "chartis",
+  "company": "chartis",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/chartis (discovery-cache boards_ashby.json, verified 36 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "check-technologies",
+  "company": "check-technologies",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/check-technologies (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "checkatrade",
+  "company": "checkatrade",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/checkatrade (discovery-cache boards_ashby.json, verified 16 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "checkout.com",
+  "company": "checkout.com",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/checkout.com (discovery-cache boards_ashby.json, verified 172 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "chief",
+  "company": "chief",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/chief (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "choco",
+  "company": "choco",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/choco (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "claim-health",
+  "company": "claim-health",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/claim-health (discovery-cache boards_ashby.json, verified 10 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "clasp-group",
+  "company": "clasp-group",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/clasp-group (discovery-cache boards_ashby.json, verified 10 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "clearbank",
+  "company": "clearbank",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/clearbank (discovery-cache boards_ashby.json, verified 7 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "clearco",
+  "company": "clearco",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/clearco (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "clipboard",
+  "company": "clipboard",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/clipboard (discovery-cache boards_ashby.json, verified 37 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "clipbook",
+  "company": "clipbook",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/clipbook (discovery-cache boards_ashby.json, verified 17 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "cluely",
+  "company": "cluely",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/cluely (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "coastal",
+  "company": "coastal",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/coastal (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "codesphere",
+  "company": "codesphere",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/codesphere (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "codeway",
+  "company": "codeway",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/codeway (discovery-cache boards_ashby.json, verified 16 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "cohere",
+  "company": "cohere",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/cohere (discovery-cache boards_ashby.json, verified 121 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "coinflow",
+  "company": "coinflow",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/coinflow (discovery-cache boards_ashby.json, verified 21 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "colonist",
+  "company": "colonist",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/colonist (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "commure",
+  "company": "commure",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/commure (discovery-cache boards_ashby.json, verified 71 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "composio",
+  "company": "composio",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/composio (discovery-cache boards_ashby.json, verified 31 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "comstruct",
+  "company": "comstruct",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/comstruct (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "conception",
+  "company": "conception",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/conception (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "conduct",
+  "company": "conduct",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/conduct (discovery-cache boards_ashby.json, verified 28 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "conduit-health",
+  "company": "conduit-health",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/conduit-health (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "constellationspace",
+  "company": "constellationspace",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/constellationspace (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "contentoo",
+  "company": "contentoo",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/contentoo (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "contoro",
+  "company": "contoro",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/contoro (discovery-cache boards_ashby.json, verified 10 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "conveo",
+  "company": "conveo",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/conveo (discovery-cache boards_ashby.json, verified 21 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "coram-ai",
+  "company": "coram-ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/coram-ai (discovery-cache boards_ashby.json, verified 45 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "cosuno",
+  "company": "cosuno",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/cosuno (discovery-cache boards_ashby.json, verified 25 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "creatify",
+  "company": "creatify",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/creatify (discovery-cache boards_ashby.json, verified 7 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "cruxclimate",
+  "company": "cruxclimate",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/cruxclimate (discovery-cache boards_ashby.json, verified 23 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "ctgt",
+  "company": "ctgt",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/ctgt (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "current-advisors",
+  "company": "current-advisors",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/current-advisors (discovery-cache boards_ashby.json, verified 108 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "cursor",
+  "company": "cursor",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/cursor (discovery-cache boards_ashby.json, verified 115 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "cuspai",
+  "company": "cuspai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/cuspai (discovery-cache boards_ashby.json, verified 25 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "cylake-inc",
+  "company": "cylake-inc",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/cylake-inc (discovery-cache boards_ashby.json, verified 14 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "dailypay",
+  "company": "dailypay",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/dailypay (discovery-cache boards_ashby.json, verified 13 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "darkroom",
+  "company": "darkroom",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/darkroom (discovery-cache boards_ashby.json, verified 41 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "dash0",
+  "company": "dash0",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/dash0 (discovery-cache boards_ashby.json, verified 44 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "datasnipper",
+  "company": "datasnipper",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/datasnipper (discovery-cache boards_ashby.json, verified 43 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "decagon",
+  "company": "decagon",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/decagon (discovery-cache boards_ashby.json, verified 129 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "deepjudge",
+  "company": "deepjudge",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/deepjudge (discovery-cache boards_ashby.json, verified 22 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "delinea",
+  "company": "delinea",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/delinea (discovery-cache boards_ashby.json, verified 70 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "deliveroo",
+  "company": "deliveroo",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/deliveroo (discovery-cache boards_ashby.json, verified 8 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "dexmate",
+  "company": "dexmate",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/dexmate (discovery-cache boards_ashby.json, verified 40 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "directive",
+  "company": "directive",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/directive (discovery-cache boards_ashby.json, verified 72 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "distributed-spectrum",
+  "company": "distributed-spectrum",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/distributed-spectrum (discovery-cache boards_ashby.json, verified 13 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "docplanner",
+  "company": "docplanner",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/docplanner (discovery-cache boards_ashby.json, verified 42 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "doss",
+  "company": "doss",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/doss (discovery-cache boards_ashby.json, verified 21 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "dreamthree",
+  "company": "dreamthree",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/dreamthree (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "dryft",
+  "company": "dryft",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/dryft (discovery-cache boards_ashby.json, verified 15 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "duna",
+  "company": "duna",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/duna (discovery-cache boards_ashby.json, verified 13 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "duvo",
+  "company": "duvo",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/duvo (discovery-cache boards_ashby.json, verified 17 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "dyna-robotics",
+  "company": "dyna-robotics",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/dyna-robotics (discovery-cache boards_ashby.json, verified 30 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "e-source",
+  "company": "e-source",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/e-source (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "easygenerator",
+  "company": "easygenerator",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/easygenerator (discovery-cache boards_ashby.json, verified 16 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "edited",
+  "company": "edited",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/edited (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "eightsleep",
+  "company": "eightsleep",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/eightsleep (discovery-cache boards_ashby.json, verified 34 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "eliseai",
+  "company": "eliseai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/eliseai (discovery-cache boards_ashby.json, verified 112 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "eliza",
+  "company": "eliza",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/eliza (discovery-cache boards_ashby.json, verified 13 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "ello",
+  "company": "ello",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/ello (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "embedding-vc",
+  "company": "embedding-vc",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/embedding-vc (discovery-cache boards_ashby.json, verified 57 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "emergence",
+  "company": "emergence",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/emergence (discovery-cache boards_ashby.json, verified 7 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "encord",
+  "company": "encord",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/encord (discovery-cache boards_ashby.json, verified 38 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "enpal",
+  "company": "enpal",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/enpal (discovery-cache boards_ashby.json, verified 169 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "enter-ai",
+  "company": "enter-ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/enter-ai (discovery-cache boards_ashby.json, verified 29 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "equal-ventures",
+  "company": "equal-ventures",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/equal-ventures (discovery-cache boards_ashby.json, verified 8 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "equal1",
+  "company": "equal1",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/equal1 (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "equip",
+  "company": "equip",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/equip (discovery-cache boards_ashby.json, verified 70 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "etched",
+  "company": "etched",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/etched (discovery-cache boards_ashby.json, verified 116 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "euphoric",
+  "company": "euphoric",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/euphoric (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "everai",
+  "company": "everai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/everai (discovery-cache boards_ashby.json, verified 91 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "expa",
+  "company": "expa",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/expa (discovery-cache boards_ashby.json, verified 15 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "exponential",
+  "company": "exponential",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/exponential (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "eye-security",
+  "company": "eye-security",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/eye-security (discovery-cache boards_ashby.json, verified 31 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "faculty",
+  "company": "faculty",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/faculty (discovery-cache boards_ashby.json, verified 96 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "fanvue.com",
+  "company": "fanvue.com",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/fanvue.com (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "far.ai",
+  "company": "far.ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/far.ai (discovery-cache boards_ashby.json, verified 20 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "faros-ai",
+  "company": "faros-ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/faros-ai (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "feathery",
+  "company": "feathery",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/feathery (discovery-cache boards_ashby.json, verified 19 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "fiducial",
+  "company": "fiducial",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/fiducial (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "finary",
+  "company": "finary",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/finary (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "finni-health",
+  "company": "finni-health",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/finni-health (discovery-cache boards_ashby.json, verified 132 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "finto",
+  "company": "finto",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/finto (discovery-cache boards_ashby.json, verified 7 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "fitt",
+  "company": "fitt",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/fitt (discovery-cache boards_ashby.json, verified 10 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "fizz",
+  "company": "fizz",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/fizz (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "flagright.com",
+  "company": "flagright.com",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/flagright.com (discovery-cache boards_ashby.json, verified 12 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "flashpoint.io",
+  "company": "flashpoint.io",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/flashpoint.io (discovery-cache boards_ashby.json, verified 8 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "flint",
+  "company": "flint",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/flint (discovery-cache boards_ashby.json, verified 10 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "flipturn",
+  "company": "flipturn",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/flipturn (discovery-cache boards_ashby.json, verified 2 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "flosports",
+  "company": "flosports",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/flosports (discovery-cache boards_ashby.json, verified 19 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "focal",
+  "company": "focal",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/focal (discovery-cache boards_ashby.json, verified 2 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "fonio",
+  "company": "fonio",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/fonio (discovery-cache boards_ashby.json, verified 86 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "fonoa",
+  "company": "fonoa",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/fonoa (discovery-cache boards_ashby.json, verified 18 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "forum-ventures",
+  "company": "forum-ventures",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/forum-ventures (discovery-cache boards_ashby.json, verified 23 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "forus",
+  "company": "forus",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/forus (discovery-cache boards_ashby.json, verified 54 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "foundry-for-good",
+  "company": "foundry-for-good",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/foundry-for-good (discovery-cache boards_ashby.json, verified 22 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "fourth-power",
+  "company": "fourth-power",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/fourth-power (discovery-cache boards_ashby.json, verified 1 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "fuel-cycle",
+  "company": "fuel-cycle",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/fuel-cycle (discovery-cache boards_ashby.json, verified 15 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "galvany",
+  "company": "galvany",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/galvany (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "garage",
+  "company": "garage",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/garage (discovery-cache boards_ashby.json, verified 17 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "gen-digital",
+  "company": "gen-digital",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/gen-digital (discovery-cache boards_ashby.json, verified 93 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "general-medicine",
+  "company": "general-medicine",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/general-medicine (discovery-cache boards_ashby.json, verified 13 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "generalist",
+  "company": "generalist",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/generalist (discovery-cache boards_ashby.json, verified 39 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "generate",
+  "company": "generate",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/generate (discovery-cache boards_ashby.json, verified 15 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "genmo",
+  "company": "genmo",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/genmo (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "glia",
+  "company": "glia",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/glia (discovery-cache boards_ashby.json, verified 26 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "glide",
+  "company": "glide",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/glide (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "glomo",
+  "company": "glomo",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/glomo (discovery-cache boards_ashby.json, verified 10 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "glow25",
+  "company": "glow25",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/glow25 (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "goodie-ai",
+  "company": "goodie-ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/goodie-ai (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "goventi",
+  "company": "goventi",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/goventi (discovery-cache boards_ashby.json, verified 39 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "grabagun",
+  "company": "grabagun",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/grabagun (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "gradient",
+  "company": "gradient",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/gradient (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "gradientrobotics",
+  "company": "gradientrobotics",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/gradientrobotics (discovery-cache boards_ashby.json, verified 10 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "granular-energy.com",
+  "company": "granular-energy.com",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/granular-energy.com (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "graphitehq",
+  "company": "graphitehq",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/graphitehq (discovery-cache boards_ashby.json, verified 7 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "gratia",
+  "company": "gratia",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/gratia (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "graymatter-robotics",
+  "company": "graymatter-robotics",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/graymatter-robotics (discovery-cache boards_ashby.json, verified 13 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "gritt",
+  "company": "gritt",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/gritt (discovery-cache boards_ashby.json, verified 18 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "halobraid",
+  "company": "halobraid",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/halobraid (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "handshake",
+  "company": "handshake",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/handshake (discovery-cache boards_ashby.json, verified 76 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hanover-park",
+  "company": "hanover-park",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hanover-park (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "happyrobot.ai",
+  "company": "happyrobot.ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/happyrobot.ai (discovery-cache boards_ashby.json, verified 66 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "harmattan-ai",
+  "company": "harmattan-ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/harmattan-ai (discovery-cache boards_ashby.json, verified 167 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "harperinsure",
+  "company": "harperinsure",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/harperinsure (discovery-cache boards_ashby.json, verified 38 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hcompany",
+  "company": "hcompany",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hcompany (discovery-cache boards_ashby.json, verified 25 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "healthtech-1",
+  "company": "healthtech-1",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/healthtech-1 (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "heidihealth.com.au",
+  "company": "heidihealth.com.au",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/heidihealth.com.au (discovery-cache boards_ashby.json, verified 18 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "helion",
+  "company": "helion",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/helion (discovery-cache boards_ashby.json, verified 65 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hellyeah",
+  "company": "hellyeah",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hellyeah (discovery-cache boards_ashby.json, verified 8 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "heron-power",
+  "company": "heron-power",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/heron-power (discovery-cache boards_ashby.json, verified 56 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "higgsfieldai",
+  "company": "higgsfieldai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/higgsfieldai (discovery-cache boards_ashby.json, verified 96 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "highbeam",
+  "company": "highbeam",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/highbeam (discovery-cache boards_ashby.json, verified 8 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hike-medical",
+  "company": "hike-medical",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hike-medical (discovery-cache boards_ashby.json, verified 13 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hims-and-hers",
+  "company": "hims-and-hers",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hims-and-hers (discovery-cache boards_ashby.json, verified 144 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hinge-health",
+  "company": "hinge-health",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hinge-health (discovery-cache boards_ashby.json, verified 80 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hirehangar",
+  "company": "hirehangar",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hirehangar (discovery-cache boards_ashby.json, verified 116 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hivehealth",
+  "company": "hivehealth",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hivehealth (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hiverge",
+  "company": "hiverge",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hiverge (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hiya",
+  "company": "hiya",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hiya (discovery-cache boards_ashby.json, verified 28 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hockeystack",
+  "company": "hockeystack",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hockeystack (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hook",
+  "company": "hook",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hook (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "horizon3ai",
+  "company": "horizon3ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/horizon3ai (discovery-cache boards_ashby.json, verified 193 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hostinger",
+  "company": "hostinger",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hostinger (discovery-cache boards_ashby.json, verified 49 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hud",
+  "company": "hud",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hud (discovery-cache boards_ashby.json, verified 39 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "humaans",
+  "company": "humaans",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/humaans (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "human-computer-lab",
+  "company": "human-computer-lab",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/human-computer-lab (discovery-cache boards_ashby.json, verified 14 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "humanarchive",
+  "company": "humanarchive",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/humanarchive (discovery-cache boards_ashby.json, verified 22 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "hyperexponential",
+  "company": "hyperexponential",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/hyperexponential (discovery-cache boards_ashby.json, verified 42 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "iambic-therapeutics",
+  "company": "iambic-therapeutics",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/iambic-therapeutics (discovery-cache boards_ashby.json, verified 29 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "ibotta",
+  "company": "ibotta",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/ibotta (discovery-cache boards_ashby.json, verified 44 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "iceye",
+  "company": "iceye",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/iceye (discovery-cache boards_ashby.json, verified 199 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "iddqd",
+  "company": "iddqd",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/iddqd (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "ideals",
+  "company": "ideals",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/ideals (discovery-cache boards_ashby.json, verified 52 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "imagineart",
+  "company": "imagineart",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/imagineart (discovery-cache boards_ashby.json, verified 22 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "immersivelabs",
+  "company": "immersivelabs",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/immersivelabs (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "imprint",
+  "company": "imprint",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/imprint (discovery-cache boards_ashby.json, verified 18 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "impulse",
+  "company": "impulse",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/impulse (discovery-cache boards_ashby.json, verified 2 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "incident",
+  "company": "incident",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/incident (discovery-cache boards_ashby.json, verified 33 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "industrious",
+  "company": "industrious",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/industrious (discovery-cache boards_ashby.json, verified 69 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "inertia",
+  "company": "inertia",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/inertia (discovery-cache boards_ashby.json, verified 5 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "inferact",
+  "company": "inferact",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/inferact (discovery-cache boards_ashby.json, verified 33 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "infinite-machine",
+  "company": "infinite-machine",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/infinite-machine (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "injective",
+  "company": "injective",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/injective (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "instructure",
+  "company": "instructure",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/instructure (discovery-cache boards_ashby.json, verified 59 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "intus",
+  "company": "intus",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/intus (discovery-cache boards_ashby.json, verified 4 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "jane",
+  "company": "jane",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/jane (discovery-cache boards_ashby.json, verified 27 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "jellyfishcareers",
+  "company": "jellyfishcareers",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/jellyfishcareers (discovery-cache boards_ashby.json, verified 42 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "jerry.ai",
+  "company": "jerry.ai",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/jerry.ai (discovery-cache boards_ashby.json, verified 33 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "jobs-valence",
+  "company": "jobs-valence",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/jobs-valence (discovery-cache boards_ashby.json, verified 21 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "joko",
+  "company": "joko",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/joko (discovery-cache boards_ashby.json, verified 46 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "joor",
+  "company": "joor",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/joor (discovery-cache boards_ashby.json, verified 3 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "julius",
+  "company": "julius",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/julius (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "junction",
+  "company": "junction",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/junction (discovery-cache boards_ashby.json, verified 15 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "junipersquare",
+  "company": "junipersquare",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/junipersquare (discovery-cache boards_ashby.json, verified 49 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "juro",
+  "company": "juro",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/juro (discovery-cache boards_ashby.json, verified 2 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "justplay-gmbh",
+  "company": "justplay-gmbh",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/justplay-gmbh (discovery-cache boards_ashby.json, verified 6 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "k-id",
+  "company": "k-id",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/k-id (discovery-cache boards_ashby.json, verified 11 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "kaizenlabs",
+  "company": "kaizenlabs",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/kaizenlabs (discovery-cache boards_ashby.json, verified 25 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "kayak",
+  "company": "kayak",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/kayak (discovery-cache boards_ashby.json, verified 45 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "kernel",
+  "company": "kernel",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/kernel (discovery-cache boards_ashby.json, verified 17 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "keyrock",
+  "company": "keyrock",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/keyrock (discovery-cache boards_ashby.json, verified 9 live jobs)"
+ },
+ {
+  "platform": "ashby",
+  "token": "kineticsystems",
+  "company": "kineticsystems",
+  "segment": "unclassified",
+  "source": "discovery",
+  "evidence": "jobs.ashbyhq.com/kineticsystems (discovery-cache boards_ashby.json, verified 6 live jobs)"
  }
 ]

@@ -40,5 +40,68 @@
   "company": "lago-1",
   "count": 384,
   "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "airapps",
+  "company": "airapps",
+  "count": 498,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "airwallex",
+  "company": "airwallex",
+  "count": 485,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "applied",
+  "company": "applied",
+  "count": 325,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "bjakcareer",
+  "company": "bjakcareer",
+  "count": 3156,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "clera",
+  "company": "clera",
+  "count": 254,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "clickhouse",
+  "company": "clickhouse",
+  "count": 201,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "fluidstack",
+  "company": "fluidstack",
+  "count": 254,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "formenergy",
+  "company": "formenergy",
+  "count": 210,
+  "reason": "outlier_count>=200"
+ },
+ {
+  "platform": "ashby",
+  "token": "halter",
+  "company": "halter",
+  "count": 269,
+  "reason": "outlier_count>=200"
  }
 ]
