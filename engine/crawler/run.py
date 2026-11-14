@@ -18,7 +18,7 @@ SEED_PER_HOST = 60
 STARTUP_PER_HOST = 6
 FEED_MAX_AGE_DAYS = 365
 PRIORITY = {"seed": 100, "startup_home": 90, "careers_link": 80, "feed": 70, "feed_item": 50,
-            "sitemap": 30, "cc": 25, "page": 10}
+            "sitemap": 5, "cc": 4, "page": 10}  # doors use leftover budget only
 
 
 class Crawler:
