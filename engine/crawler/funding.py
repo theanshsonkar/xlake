@@ -80,16 +80,28 @@ def published_date(meta: dict, ld_blobs: List[str], time_values: List[str], toda
     return None
 
 
-def funding_quote(text: str) -> Optional[str]:
-    """First sentence that states a funding event: a funding verb plus an amount or a named round."""
+def _words(low: str, phrases) -> Optional[re.Match]:
+    for p in phrases:
+        m = re.search(r"\b" + re.escape(p) + r"\b", low)
+        if m:
+            return m
+    return None
+
+
+def funding_quote(text: str, title: str = "") -> Optional[str]:
+    """First sentence (headline first) stating a funding event: a funding verb plus an amount or a
+    named round, and none of the "funding_not" words (revenue, deals, a VC's own fund...)."""
     types = score.load_types()
-    verbs, rounds = types["funding_proof"], types["funding_rounds"]
-    for sentence in re.split(r"(?<!\d)[.!?](?!\d)|\n", text or ""):
+    verbs, rounds, nots = types["funding_proof"], types["funding_rounds"], types["funding_not"]
+    sentences = [title or ""] + re.split(r"(?<!\d)[.!?](?!\d)|\n", text or "")
+    for sentence in sentences:
         s = sentence.strip()
         low = s.lower()
-        if s and any(re.search(r"\b" + re.escape(v) + r"\b", low) for v in verbs) and (
-                _MONEY.search(s) or any(r in low for r in rounds)):
-            return s[:300]
+        verb = _words(low, verbs) if s else None
+        if not verb or _words(low, nots) or not (_MONEY.search(s) or any(r in low for r in rounds)):
+            continue
+        start = max(0, verb.start() - 150)
+        return s[start:start + 300].strip()
     return None
 
 
@@ -110,7 +122,7 @@ def from_page(page: dict, page_url: str, source_kind: str, today: date) -> Optio
     text = page.get("text") or ""
     title = page.get("title") or ""
     if page.get("published") and not _is_home(page_url):  # a homepage date is not an announcement
-        q = funding_quote(text)
+        q = funding_quote(text, title)
         if q:
             return {"date": page["published"], "precision": "day", "proof": page_url,
                     "source_kind": source_kind, "quote": q}

@@ -194,5 +194,21 @@
     "in funding",
     "in seed",
     "in new funding"
+  ],
+  "funding_not": [
+    "revenue",
+    "sales",
+    "contract",
+    "contracts",
+    "deal",
+    "deals",
+    "orders",
+    "customers",
+    "pipeline",
+    "savings",
+    "fund",
+    "funds",
+    "gmv",
+    "arr"
   ]
 }

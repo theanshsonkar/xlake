@@ -90,3 +90,14 @@ class TestFundingPrecision(unittest.TestCase):
         ev = {"source_kind": "accelerator", "quote": "Fall 2026 cohort"}
         self.assertTrue(funding.mentions(ev, {"title": "Acme: robots for farms"}, "Acme"))
         self.assertFalse(funding.mentions(ev, {"title": "Techstars is No. 1 on TIME list"}, "Time"))
+
+
+class TestFundingQuoteShape(unittest.TestCase):
+    def test_headline_first_and_negatives(self):
+        self.assertEqual(funding.funding_quote("menu", "Modelence raises $3M for apps"), "Modelence raises $3M for apps")
+        self.assertIsNone(funding.funding_quote("How RASA Closed $450K in New Catering Revenue"))
+        self.assertIsNone(funding.funding_quote("", "VC firm 2150 raises €210M fund"))
+
+    def test_quote_window_keeps_company(self):
+        q = funding.funding_quote("Logo Menu " * 60 + "Fractile raised $720M in a Series B round")
+        self.assertIn("Fractile raised $720M", q)
