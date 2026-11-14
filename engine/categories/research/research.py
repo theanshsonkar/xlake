@@ -41,8 +41,11 @@ def _combined_source_registry() -> tuple:
     result = list(STATIC_SOURCE_REGISTRY)
     seen_urls = {seed["official_url"] for seed in result}
     seen_ids = {seed["source_id"] for seed in result} | {seed["programme_id"] for seed in result}
+    from categories.open_source.programmes import SOURCE_REGISTRY as _oss_registry  # research stays disjoint from open source
+    oss_urls = {seed["official_url"] for seed in _oss_registry}
     for seed in load_generated_seeds("research"):
         if (seed["official_url"] in seen_urls
+                or seed["official_url"] in oss_urls
                 or seed["source_id"] in seen_ids
                 or seed["programme_id"] in seen_ids):
             continue

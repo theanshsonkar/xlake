@@ -3,6 +3,7 @@ import os
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -47,6 +48,14 @@ class TestResearchProgrammeCategory(unittest.TestCase):
                 {seed["official_url"] for seed in OPEN_SOURCE_SOURCE_REGISTRY}
             )
         )
+
+    def test_generated_research_seeds_skip_open_source_urls(self):
+        oss_url = OPEN_SOURCE_SOURCE_REGISTRY[0]["official_url"]
+        dup = {"source_id": "hub-research-dup", "programme_id": "research-hub-dup", "programme_name": "Dup Programme",
+               "organizer": "x", "official_url": oss_url, "allowed_path_hints": [""], "check_cadence": "monthly"}
+        with mock.patch.object(research, "load_generated_seeds", return_value=(dup,)):
+            registry = research._combined_source_registry()
+        self.assertNotIn("research-hub-dup", {seed["programme_id"] for seed in registry})
 
     def test_merge_preserves_open_source_rows_and_adds_research(self):
         seed = research.SOURCE_REGISTRY[0]
