@@ -22,6 +22,7 @@ from core import lifecycle, pagetext, recheck, robots
 from categories import programme_enrich as enrich
 from categories.stem import is_junk_title, is_stem_programme, is_vacancy_text
 from core.paths import OPPORTUNITIES_PATH, OPERATIONS_DIR
+from core.seed_filters import _merge_seed_filter_reason
 from core.opportunity_text import (  # noqa: F401 - re-exported for existing callers
     APPLICANT_ACTION_TOKENS,
     APPLICANT_DEADLINE_TOKENS,
@@ -94,11 +95,6 @@ REQUIRED_SEED_FIELDS = (
 
 def _finder_seeds_kept(stem: str, seeds: list, taken_urls: set) -> list:
     """Finder seeds get the same durable name/URL filters as hub seeds."""
-    try:
-        from categories.hub_seeds import _merge_seed_filter_reason
-    except ImportError:  # loaded while hub_seeds itself imports the category modules
-        def _merge_seed_filter_reason(*_args):
-            return None  # finder already applied these filters when it wrote the seed
     return [seed for seed in seeds
             if isinstance(seed, dict) and seed.get("official_url") not in taken_urls
             and not _merge_seed_filter_reason(stem, seed.get("programme_name"), seed.get("official_url"))]
