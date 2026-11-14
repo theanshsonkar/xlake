@@ -24,7 +24,11 @@ PRIORITY = {"seed": 100, "startup_home": 90, "careers_link": 80, "feed": 70, "fe
 class Crawler:
     def __init__(self, frontier: Frontier, fetcher: Fetcher, store: Store, workers: int = 8,
                  today: Optional[date] = None, sitemaps: bool = True, commoncrawl: bool = True,
-                 cc_max: int = doors.CC_MAX_DEFAULT, cc_door: Optional[doors.CommonCrawlDoor] = None):
+                 cc_max: int = doors.CC_MAX_DEFAULT, cc_door: Optional[doors.CommonCrawlDoor] = None,
+                 seeds_only: bool = False):
+        self.seeds_only = seeds_only
+        if seeds_only:  # off-site work is left queued for the legs; no doors
+            sitemaps, commoncrawl = False, False
         self.frontier, self.fetcher, self.store = frontier, fetcher, store
         self.workers = workers
         self.today = today or date.today()
@@ -53,11 +57,13 @@ class Crawler:
                 "news" if kind == "feed" else "investor")
             self.frontier.push(s["url"], source=s.get("label", ""), kind=kind,
                                priority=PRIORITY[kind])
-        for item in self.frontier.items.values():
+        for item in self.frontier.items.values():  # also rebuilds state from a loaded frontier
             if item["kind"] in ("seed", "feed"):
                 self.seed_hosts.add(item["host"])
                 if item["kind"] == "feed":
                     self.feed_urls.add(item["url"])
+            elif item["kind"] == "startup_home":
+                self.startup_domains.add(urls.registered_domain(item["url"]))
 
     def _limit(self, item: dict) -> int:
         if item["host"] in self.seed_hosts:
@@ -135,10 +141,20 @@ class Crawler:
             self.store.write_summary(self.summary())
         return self.summary()
 
+    def _in_seed_scope(self, item: dict) -> bool:
+        return item["host"] in self.seed_hosts or item.get("parent") in self.feed_urls
+
     def _pop_batch(self, parts: List[int], size: int) -> List[dict]:
         batch: List[dict] = []
         while len(batch) < size:
             got = [i for i in (self.frontier.pop(p) for p in parts[:size - len(batch)]) if i]
+            if self.seeds_only:
+                # skipped items were popped off the heap but stay "queued" so save() keeps them
+                got = [i for i in got if self._in_seed_scope(i)]
+                if not got and not any(self.frontier.has_queued(p) for p in parts):
+                    break
+                if not got:
+                    continue
             if not got:
                 parts = [p for p in parts if self.frontier.has_queued(p)]
                 if not parts:

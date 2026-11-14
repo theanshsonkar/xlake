@@ -27,13 +27,17 @@ def main(argv=None) -> int:
     ap.add_argument("--no-sitemaps", action="store_true", help="disable the sitemap door")
     ap.add_argument("--no-commoncrawl", action="store_true", help="disable the Common Crawl door")
     ap.add_argument("--cc-max", type=int, default=50, help="Common Crawl query budget")
+    ap.add_argument("--seeds-only", action="store_true",
+                    help="stage 1: crawl only seed/feed hosts, leave everything else queued")
+    ap.add_argument("--frontier-in", type=Path, default=None,
+                    help="load the frontier from this dir instead of --out (stage 2 legs)")
     args = ap.parse_args(argv)
 
     frontier = Frontier(args.parts)
-    frontier.load(args.out)
+    frontier.load(args.frontier_in or args.out)
     crawler = Crawler(frontier, Fetcher(args.max_pages, args.per_host), Store(args.out), args.workers,
                       sitemaps=not args.no_sitemaps, commoncrawl=not args.no_commoncrawl,
-                      cc_max=args.cc_max)
+                      cc_max=args.cc_max, seeds_only=args.seeds_only)
     crawler.add_seeds(json.loads(args.seeds.read_text()))
     parts = list(range(args.parts)) if args.part == "all" else [int(args.part)]
     stats = crawler.run(parts)

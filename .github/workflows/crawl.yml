@@ -1,0 +1,153 @@
+name: crawl
+
+# General crawler, run in parallel legs. Output is a workflow ARTIFACT only (no S3,
+# no Supabase, no secrets, no commits) until the owner approves S3 writes.
+#
+# - robots.txt is always honoured; polite per-site delays come from core.webfetch;
+#   LinkedIn / Naukri are never fetched (deny list).
+# - Stage 1 "seeds": crawl only seed/feed hosts, everything else stays queued in the
+#   saved frontier. Stage 2 "legs": 8 machines, each crawls one frontier part (hash of
+#   the registered domain), so a site lives in exactly one leg and a crash loses one
+#   leg only. Stage 3 "merge": combine whatever leg artifacts exist.
+on:
+  workflow_dispatch:
+    inputs:
+      seed_pages:
+        description: "Pages for the seeds stage"
+        required: false
+        default: "1500"
+      leg_pages:
+        description: "Pages per leg"
+        required: false
+        default: "3000"
+      workers:
+        description: "Fetch workers per job"
+        required: false
+        default: "6"
+
+concurrency:
+  group: xlake-crawler
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  seeds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Crawl seed and feed hosts
+        env:
+          SEED_PAGES: ${{ github.event.inputs.seed_pages }}
+          WORKERS: ${{ github.event.inputs.workers }}
+        run: >
+          python3 -u -m pipeline.crawl --seeds-only --parts 8
+          --max-pages "$SEED_PAGES" --workers "$WORKERS"
+          --out out/seeds
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crawl-seeds
+          path: engine/out/seeds
+          retention-days: 14
+
+  legs:
+    needs: seeds
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [0, 1, 2, 3, 4, 5, 6, 7]
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: crawl-seeds
+          path: engine/out/seeds
+
+      - name: Crawl this leg's part
+        env:
+          PART: ${{ matrix.part }}
+          LEG_PAGES: ${{ github.event.inputs.leg_pages }}
+          WORKERS: ${{ github.event.inputs.workers }}
+        run: >
+          python3 -u -m pipeline.crawl --parts 8 --part "$PART"
+          --frontier-in out/seeds
+          --max-pages "$LEG_PAGES" --workers "$WORKERS"
+          --out "out/leg-$PART"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: crawl-leg-${{ matrix.part }}
+          path: engine/out/leg-${{ matrix.part }}
+          retention-days: 14
+          if-no-files-found: ignore
+
+  merge:
+    needs: [seeds, legs]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: crawl-leg-*
+          path: engine/out/legs
+          merge-multiple: false
+
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: crawl-seeds
+          path: engine/out/seeds
+
+      - name: Merge
+        run: |
+          mkdir -p out/legs out/seeds
+          python3 -m pipeline.crawl_merge --in out/seeds out/legs/* --out out/result
+
+      - name: Job summary
+        run: |
+          {
+            echo '### crawl result'
+            echo '```json'
+            cat out/result/summary.json
+            echo
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crawl-result
+          path: engine/out/result
+          retention-days: 30
