@@ -47,8 +47,9 @@ def _finder_seeds_kept(stem: str, seeds: list, taken_urls: set) -> list:
     """Finder seeds get the same durable name/URL filters as hub seeds."""
     try:
         from categories.hub_seeds import _merge_seed_filter_reason
-    except ImportError:  # pragma: no cover - supports package-root imports
-        from engine.categories.hub_seeds import _merge_seed_filter_reason
+    except ImportError:  # loaded while hub_seeds itself imports the category modules
+        def _merge_seed_filter_reason(*_args):
+            return None  # finder already applied these filters when it wrote the seed
     return [seed for seed in seeds
             if isinstance(seed, dict) and seed.get("official_url") not in taken_urls
             and not _merge_seed_filter_reason(stem, seed.get("programme_name"), seed.get("official_url"))]
