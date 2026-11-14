@@ -24,11 +24,16 @@ def main(argv=None) -> int:
     ap.add_argument("--seeds", type=Path, default=urls.DATA / "seeds.json")
     ap.add_argument("--out", type=Path, default=urls.DATA / "out")
     ap.add_argument("--per-host", type=int, default=25)
+    ap.add_argument("--no-sitemaps", action="store_true", help="disable the sitemap door")
+    ap.add_argument("--no-commoncrawl", action="store_true", help="disable the Common Crawl door")
+    ap.add_argument("--cc-max", type=int, default=50, help="Common Crawl query budget")
     args = ap.parse_args(argv)
 
     frontier = Frontier(args.parts)
     frontier.load(args.out)
-    crawler = Crawler(frontier, Fetcher(args.max_pages, args.per_host), Store(args.out), args.workers)
+    crawler = Crawler(frontier, Fetcher(args.max_pages, args.per_host), Store(args.out), args.workers,
+                      sitemaps=not args.no_sitemaps, commoncrawl=not args.no_commoncrawl,
+                      cc_max=args.cc_max)
     crawler.add_seeds(json.loads(args.seeds.read_text()))
     parts = list(range(args.parts)) if args.part == "all" else [int(args.part)]
     stats = crawler.run(parts)

@@ -53,7 +53,7 @@ class TestCrawl(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self.out = Path(self.tmp.name)
         self.crawler = Crawler(Frontier(2), Fetcher(50, 25, fake), Store(self.out), workers=2,
-                               today=date(2026, 11, 14))
+                               today=date(2026, 11, 14), sitemaps=False, commoncrawl=False)
         self.crawler.add_seeds([
             {"url": "https://vc.test/portfolio", "kind": "seed", "label": "vc"},
             {"url": "https://feed.test/rss", "kind": "feed", "label": "feed"}])
@@ -76,7 +76,7 @@ class TestCrawl(unittest.TestCase):
         self.assertEqual(items["https://logoco.com/"]["lead"]["name"], "Logoco")
 
     def test_h1_name_on_detail_page(self):
-        c = Crawler(Frontier(1), Fetcher(10, 10, fake), Store(self.out / "x"), 1)
+        c = Crawler(Frontier(1), Fetcher(10, 10, fake), Store(self.out / "x"), 1, sitemaps=False, commoncrawl=False)
         c.add_seeds([{"url": "https://vc.test/company/zed", "kind": "seed", "label": "vc"}])
         c.run([0])
         self.assertEqual(c.frontier.items["https://notmatching.com/"]["lead"]["name"], "Notmatching")
@@ -102,7 +102,7 @@ class TestCrawl(unittest.TestCase):
     def test_parse_error_budget_rows_and_summary_survive(self):
         from unittest import mock
         out = self.out / "y"
-        c = Crawler(Frontier(1), Fetcher(2, 25, fake), Store(out), 1)
+        c = Crawler(Frontier(1), Fetcher(2, 25, fake), Store(out), 1, sitemaps=False, commoncrawl=False)
         c.add_seeds([{"url": "https://vc.test/portfolio", "kind": "seed", "label": "vc"}])
         with mock.patch("crawler.run.extract.extract", side_effect=ValueError("boom")):
             stats = c.run([0])
@@ -115,7 +115,7 @@ class TestCrawl(unittest.TestCase):
     def test_summary_saved_when_loop_raises(self):
         from unittest import mock
         out = self.out / "z"
-        c = Crawler(Frontier(1), Fetcher(5, 25, fake), Store(out), 1)
+        c = Crawler(Frontier(1), Fetcher(5, 25, fake), Store(out), 1, sitemaps=False, commoncrawl=False)
         c.add_seeds([{"url": "https://vc.test/portfolio", "kind": "seed", "label": "vc"}])
         with mock.patch.object(Crawler, "_handle", side_effect=RuntimeError("x")):
             with self.assertRaises(RuntimeError):
@@ -128,7 +128,7 @@ class TestCrawl(unittest.TestCase):
 
         def fn(url, polite=True):
             return (200, url, table[url], None) if url in table else (404, url, "", "http_404")
-        c = Crawler(Frontier(1), Fetcher(50, 25, fn), Store(self.out / name), 1, today=date(2026, 11, 14))
+        c = Crawler(Frontier(1), Fetcher(50, 25, fn), Store(self.out / name), 1, today=date(2026, 11, 14), sitemaps=False, commoncrawl=False)
         c.add_seeds(seeds)
         c.run([0])
         return c.frontier.items
@@ -160,7 +160,7 @@ class TestCrawl(unittest.TestCase):
 
         def fn(url, polite=True):
             return (200, url, table[url], None) if url in table else (404, url, "", "http_404")
-        c = Crawler(Frontier(1), Fetcher(50, 25, fn), Store(out), 1, today=date(2026, 11, 14))
+        c = Crawler(Frontier(1), Fetcher(50, 25, fn), Store(out), 1, today=date(2026, 11, 14), sitemaps=False, commoncrawl=False)
         c.add_seeds(seeds)
         stats = c.run([0])
         rows = {json.loads(l)["domain"]: json.loads(l)
@@ -212,7 +212,7 @@ class TestCrawl(unittest.TestCase):
         def fn(url, polite=True):
             return 200, "https://a.test/x", pages["https://a.test/x"], None
         store = Store(self.out / "dup")
-        c = Crawler(Frontier(1), Fetcher(10, 10, fn), store, 1)
+        c = Crawler(Frontier(1), Fetcher(10, 10, fn), store, 1, sitemaps=False, commoncrawl=False)
         c.add_seeds([{"url": "https://a.test/x", "kind": "seed", "label": "a"},
                      {"url": "https://b.test/y", "kind": "seed", "label": "b"}])
         stats = c.run([0])

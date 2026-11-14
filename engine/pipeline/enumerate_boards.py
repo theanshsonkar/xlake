@@ -44,6 +44,7 @@ import urllib.parse
 import urllib.request
 from typing import Dict, List, Set
 
+from core import discovery
 from core.paths import DISCOVERY_CACHE_DIR
 
 CACHE_DIR = DISCOVERY_CACHE_DIR
@@ -82,40 +83,13 @@ NOT_TOKENS = {
 
 
 def _cc_get(url: str, timeout: int = 120, attempts: int = 6) -> str:
-    """GET the Common Crawl index with backoff.
-
-    The index will drop connections or 503 if queried hard, which is fair — it
-    is a free public service. Backing off is both polite and necessary.
-    """
-    import time
-
-    last = ""
-    for i in range(attempts):
-        if i:
-            time.sleep(min(30, 3 * (2 ** (i - 1))))
-        try:
-            with urllib.request.urlopen(
-                urllib.request.Request(url, headers={"User-Agent": UA}),
-                timeout=timeout,
-            ) as r:
-                return r.read().decode("utf-8", "replace")
-        except Exception as e:  # noqa: BLE001
-            last = "{}: {}".format(type(e).__name__, str(e)[:120])
-    raise RuntimeError("common_crawl_unreachable ({})".format(last))
+    """GET the Common Crawl index with backoff (see core.discovery.cc_get)."""
+    return discovery.cc_get(url, timeout, attempts)
 
 
 def _latest_crawl() -> str:
     # Allow pinning so a long run is reproducible and needs no extra request.
-    pinned = os.environ.get("CC_CRAWL_ID")
-    if pinned:
-        return pinned
-    cache = os.path.join(CACHE_DIR, "crawl_id.txt")
-    if os.path.exists(cache):
-        return open(cache).read().strip()
-    cid = json.loads(_cc_get("https://index.commoncrawl.org/collinfo.json", 60))[0]["id"]
-    os.makedirs(CACHE_DIR, exist_ok=True)
-    open(cache, "w").write(cid)
-    return cid
+    return discovery.latest_crawl(CACHE_DIR, get=lambda u, t=120: _cc_get(u, t))
 
 
 def _index_pages(crawl: str, query: str, mode: str) -> int:

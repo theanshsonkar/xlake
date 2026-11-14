@@ -11,7 +11,7 @@ from typing import Dict, Iterable, List, Optional
 from crawler import urls
 
 STATES = ("queued", "fetched", "failed", "skipped")
-KINDS = ("seed", "feed", "page", "startup_home", "careers_link")
+KINDS = ("seed", "feed", "page", "startup_home", "careers_link", "sitemap", "cc")
 
 
 def part_of(url: str, parts: int) -> int:

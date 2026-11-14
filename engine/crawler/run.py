@@ -8,7 +8,7 @@ from datetime import date, timedelta
 from collections import Counter
 from typing import Dict, Iterable, List, Optional, Set
 
-from crawler import extract, funding, score, urls
+from crawler import doors, extract, funding, score, urls
 from crawler.fetch import Fetcher
 from crawler.frontier import Frontier, part_of
 from crawler.store import Store
@@ -17,12 +17,14 @@ MAX_DEPTH = 2
 SEED_PER_HOST = 60
 STARTUP_PER_HOST = 6
 FEED_MAX_AGE_DAYS = 365
-PRIORITY = {"seed": 100, "startup_home": 90, "careers_link": 80, "feed": 70, "feed_item": 50, "page": 10}
+PRIORITY = {"seed": 100, "startup_home": 90, "careers_link": 80, "feed": 70, "feed_item": 50,
+            "sitemap": 30, "cc": 25, "page": 10}
 
 
 class Crawler:
     def __init__(self, frontier: Frontier, fetcher: Fetcher, store: Store, workers: int = 8,
-                 today: Optional[date] = None):
+                 today: Optional[date] = None, sitemaps: bool = True, commoncrawl: bool = True,
+                 cc_max: int = doors.CC_MAX_DEFAULT, cc_door: Optional[doors.CommonCrawlDoor] = None):
         self.frontier, self.fetcher, self.store = frontier, fetcher, store
         self.workers = workers
         self.today = today or date.today()
@@ -37,6 +39,12 @@ class Crawler:
         self.names: Dict[str, str] = {}
         self.domain_careers: Dict[str, Set[str]] = {}
         self.pages = 0
+        self.sitemaps_on = sitemaps
+        self.cc = (cc_door or doors.CommonCrawlDoor(cc_max)) if commoncrawl else None
+        self.sitemap = doors.SitemapDoor(self.today)
+        self.probed: Set[str] = set()
+        self.door_items = 0
+        self.pages_by_door: Counter = Counter()
 
     def add_seeds(self, seeds: Iterable[dict]) -> None:
         for s in seeds:
@@ -59,10 +67,16 @@ class Crawler:
         return self.fetcher.per_host
 
     def _work(self, item: dict):
+        if item["kind"] == "cc":
+            found = self.cc.query(item["host"]) if self.cc else []
+            return item, doors_result(item), {"cc_urls": found}
         is_feed = item["kind"] == "feed"
-        result = self.fetcher.fetch(item["url"], self._limit(item), feed=is_feed)
+        accept = "text" if item["kind"] == "sitemap" else ("feed" if is_feed else "html")
+        result = self.fetcher.fetch(item["url"], self._limit(item), accept=accept)
         page = None
-        if result.outcome == "ok":
+        if result.outcome == "ok" and item["kind"] == "sitemap":
+            page = {"body": result.html}
+        elif result.outcome == "ok":
             try:
                 page = self._parse(item, result, is_feed)
             except Exception:  # noqa: BLE001 - one bad page must never kill the run
@@ -137,8 +151,13 @@ class Crawler:
         if result.outcome == "budget":
             self.frontier.mark(item["url"], "skipped")
             return
-        self.store.append(part_of(item["url"], self.frontier.parts), item, result, page)
+        if item["kind"] in doors.DOOR_KINDS:
+            self._handle_door(item, result, page)
+            return
+        written = self.store.append(part_of(item["url"], self.frontier.parts), item, result, page)
         self.pages += 1
+        if written and result.outcome == "ok":
+            self.pages_by_door[doors.SOURCE_DOORS.get(item["source"], "link")] += 1
         if result.outcome != "ok":
             self.frontier.mark(item["url"], "failed")
             return
@@ -156,6 +175,51 @@ class Crawler:
             self._enqueue_feed(item, page["feed_items"])
         else:
             self._enqueue_links(item, page)
+            self._probe_door(item, result, page)
+
+    def _probe_door(self, item: dict, result, page: Dict) -> None:
+        if not self.sitemaps_on or page.get("junk_reason") in ("parked", "vendor"):
+            return
+        final = result.final_url
+        domain = urls.registered_domain(final)
+        if domain in self.probed or score.is_denied(final):
+            return
+        self.probed.add(domain)
+        robots = self.sitemap.start(domain, urls.host(final))
+        self.frontier.push(robots, "sitemap", 0, PRIORITY["sitemap"], "sitemap", item["url"], item["lead"])
+
+    def _push_door_url(self, item: dict, source: str, url: str) -> bool:
+        return self.frontier.push(url, source, 1, PRIORITY["careers_link"], "careers_link",
+                                  item["url"], item["lead"])
+
+    def _handle_door(self, item: dict, result, page: Optional[Dict]) -> None:
+        self.door_items += 1
+        ok = result.outcome == "ok"
+        self.frontier.mark(item["url"], "fetched" if ok else "failed")
+        if item["kind"] == "cc":
+            domain = urls.registered_domain(item["host"])
+            cands = [u for u in page["cc_urls"] if doors.url_wanted(u, domain, None, self.today)]
+            self.cc.urls_queued += self.sitemap.queue_urls(
+                domain, cands, lambda u: self._push_door_url(item, "commoncrawl", u))
+            return
+        domain = urls.registered_domain(item["url"])
+        push = []
+        if ok:
+            body = page["body"]
+            if urls.normalise(item["url"]).split("?")[0].endswith("/robots.txt"):
+                push = self.sitemap.handle_robots(item["url"], body, domain, item["host"])
+            else:
+                push, cands = self.sitemap.handle_sitemap(item["url"], body, domain)
+                self.sitemap.queue_urls(domain, cands, lambda u: self._push_door_url(item, "sitemap", u))
+        elif result.outcome in ("http_error", "network_error", "not_html") and \
+                item["url"].endswith("/robots.txt"):
+            push = self.sitemap.plan_files(domain, ["https://{}/sitemap.xml".format(item["host"])])
+        for u in push:
+            self.frontier.push(u, "sitemap", 0, PRIORITY["sitemap"], "sitemap", item["url"], item["lead"])
+        host = self.sitemap.finish(domain)
+        if host and self.cc and not self.cc.down:
+            self.frontier.push(doors.cc_item_url(host), "commoncrawl", 0, PRIORITY["cc"], "cc",
+                               item["url"], item["lead"])
 
     def funding_note(self, domain: str, item: dict, page: Dict) -> None:
         lead = item["lead"]
@@ -241,4 +305,15 @@ class Crawler:
                 "funding_evidence_old": len(self.funding) - len(recent),
                 "careers_pages": len(self.careers_urls),
                 "careers_startups": len(self.careers_domains),
-                "duplicate": self.store.duplicates}
+                "duplicate": self.store.duplicates,
+                "sitemap_files": self.sitemap.files_total, "sitemap_urls_queued": self.sitemap.urls_total,
+                "cc_queries": self.cc.queries if self.cc else 0,
+                "cc_urls_queued": self.cc.urls_queued if self.cc else 0,
+                "cc_down": bool(self.cc and self.cc.down),
+                "door_items": self.door_items,
+                "pages_by_door": {k: self.pages_by_door.get(k, 0) for k in ("sitemap", "commoncrawl", "link")}}
+
+
+def doors_result(item: dict):
+    from crawler.fetch import Result
+    return Result(None, item["url"], "", None, "ok")

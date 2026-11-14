@@ -36,7 +36,7 @@ if ENGINE_ROOT not in sys.path:
 
 from categories.hub_seeds import _merge_seed_filter_reason, _clean_seed_name  # noqa: E402
 from categories.stem import is_vacancy_text  # noqa: E402
-from core import robots  # noqa: E402
+from core import discovery, robots  # noqa: E402
 from core.linkcheck import _is_aggregator, _is_landing  # noqa: E402
 from pipeline import enumerate_boards  # noqa: E402
 from pipeline.publish_supabase import is_serving, quality_reason  # noqa: E402
@@ -210,20 +210,11 @@ def http_get(url: str, timeout: int = 30) -> bytes:
 
 
 def _decode(data: bytes) -> str:
-    if data[:2] == b"\x1f\x8b":
-        data = gzip.GzipFile(fileobj=io.BytesIO(data)).read(MAX_SITEMAP_BYTES)
-    return data.decode("utf-8", "replace")
+    return discovery.decode_body(data, MAX_SITEMAP_BYTES)
 
 
-def parse_sitemap(text: str) -> Tuple[bool, List[str]]:
-    """(is_index, <loc> urls)."""
-    locs = [m.strip() for m in re.findall(r"<loc>\s*(?:<!\[CDATA\[)?\s*([^<\]\s]+)", text, flags=re.I)]
-    return "<sitemapindex" in text[:2000].lower(), locs
-
-
-def robots_sitemaps(robots_text: str) -> List[str]:
-    return [l.split(":", 1)[1].strip() for l in robots_text.splitlines()
-            if l.lower().startswith("sitemap:") and l.split(":", 1)[1].strip()]
+parse_sitemap = discovery.parse_sitemap
+robots_sitemaps = discovery.robots_sitemaps
 
 
 def sitemap_urls(host: str, budget: Budget, get: Callable[[str], bytes],
@@ -267,19 +258,10 @@ def commoncrawl_urls(host: str, budget: Budget, cc_get: Callable[[str], str] = N
     cc_get = cc_get or (lambda u: enumerate_boards._cc_get(u, 120))
     try:
         crawl = crawl or enumerate_boards._latest_crawl()
-        q = "url={}&output=json&fl=url,status&filter=status:200&collapse=urlkey&limit={}&page=0".format(
-            urllib.parse.quote(host + "/*"), limit)
-        body = cc_get("https://index.commoncrawl.org/{}-index?{}".format(crawl, q))
+        return discovery.cc_host_urls(host, crawl, cc_get, limit)
     except Exception:  # noqa: BLE001
         budget.cc_down = True
         return []
-    out = []
-    for line in body.splitlines():
-        try:
-            out.append(json.loads(line)["url"])
-        except Exception:  # noqa: BLE001
-            continue
-    return out
 
 
 # -- data ------------------------------------------------------------------- #

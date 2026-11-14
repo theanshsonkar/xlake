@@ -37,23 +37,31 @@ class Fetcher:
     def used(self) -> int:
         return self._used
 
-    def fetch(self, url: str, host_limit: Optional[int] = None, feed: bool = False) -> Result:
+    def fetch(self, url: str, host_limit: Optional[int] = None, feed: bool = False,
+              accept: Optional[str] = None) -> Result:
+        accept = accept or ("feed" if feed else "html")
         host = urls.host(url)
         limit = self.per_host if host_limit is None else host_limit
         with self._lock:
-            if self._used >= self.max_pages or self._hosts[host] >= limit:
+            door = accept == "text"  # door files do not use a page's per-host allowance
+            if self._used >= self.max_pages or (not door and self._hosts[host] >= limit):
                 self.counts["budget"] += 1
                 return Result(None, url, "", "budget", "budget")
             self._used += 1
-            self._hosts[host] += 1
+            if not door:
+                self._hosts[host] += 1
         status, final, html, err = self.fetch_fn(url, polite=True)
-        result = Result(status, final, html, err, self._classify(status, html, err, feed))
+        result = Result(status, final, html, err, self._classify(status, html, err, accept))
         with self._lock:
             self.counts[result.outcome] += 1
         return result
 
     @staticmethod
-    def _classify(status, html, err, feed) -> str:
+    def _classify(status, html, err, accept="html") -> str:
+        if accept is True:
+            accept = "feed"
+        elif accept is False:
+            accept = "html"
         if err and err.startswith("robots"):
             return "robots"
         if status is None:
@@ -61,7 +69,9 @@ class Fetcher:
         if status >= 400 or err:
             return "http_error"
         head = (html or "")[:2000].lower()
-        markers = _HTML_MARKERS + (_FEED_MARKERS if feed else ())
+        if accept == "text":
+            return "not_html" if "\x00" in head else "ok"
+        markers = _HTML_MARKERS + (_FEED_MARKERS if accept == "feed" else ())
         if "\x00" in head or not any(m in head for m in markers):
             return "not_html"
         return "ok"
