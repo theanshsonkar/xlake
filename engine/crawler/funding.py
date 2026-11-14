@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import urllib.parse
 from datetime import date
 from typing import Dict, List, Optional, Tuple
 
@@ -15,6 +16,8 @@ _SHORT = re.compile(r"\b([WSFX])(\d{2})\b")
 _SHORT_MONTH = {"W": 1, "X": 4, "S": 6, "F": 9}
 _META_KEYS = ("article:published_time", "og:published_time", "datepublished", "date", "publish-date")
 _ISO = re.compile(r"\d{4}-\d{2}-\d{2}")
+_MONEY = re.compile(r"(?:[$€£₹]|\b(?:usd|inr|rs\.?|eur)\s?)\s?\d[\d,.]*\s?(?:k|m|mn|b|bn|million|billion|crore|cr|lakh)?\b"
+                    r"|\b\d[\d,.]*\s?(?:million|billion|crore|lakh)\b", re.I)
 
 
 def batch_labels(text: str, today: date) -> List[Tuple[str, str, str]]:
@@ -78,12 +81,20 @@ def published_date(meta: dict, ld_blobs: List[str], time_values: List[str], toda
 
 
 def funding_quote(text: str) -> Optional[str]:
-    phrases = score.load_types()["funding_proof"]
-    for sentence in re.split(r"[.!?\n]", text or ""):
+    """First sentence that states a funding event: a funding verb plus an amount or a named round."""
+    types = score.load_types()
+    verbs, rounds = types["funding_proof"], types["funding_rounds"]
+    for sentence in re.split(r"(?<!\d)[.!?](?!\d)|\n", text or ""):
         s = sentence.strip()
-        if s and any(p in s.lower() for p in phrases):
+        low = s.lower()
+        if s and any(re.search(r"\b" + re.escape(v) + r"\b", low) for v in verbs) and (
+                _MONEY.search(s) or any(r in low for r in rounds)):
             return s[:300]
     return None
+
+
+def _is_home(url: str) -> bool:
+    return urllib.parse.urlsplit(url or "").path.strip("/") == ""
 
 
 def from_anchor(anchor_text: str, page_url: str, today: date) -> Optional[Dict]:
@@ -98,7 +109,7 @@ def from_anchor(anchor_text: str, page_url: str, today: date) -> Optional[Dict]:
 def from_page(page: dict, page_url: str, source_kind: str, today: date) -> Optional[Dict]:
     text = page.get("text") or ""
     title = page.get("title") or ""
-    if page.get("published"):
+    if page.get("published") and not _is_home(page_url):  # a homepage date is not an announcement
         q = funding_quote(text)
         if q:
             return {"date": page["published"], "precision": "day", "proof": page_url,
@@ -127,7 +138,8 @@ def mentions(evidence: Optional[Dict], page: dict, name: str) -> bool:
     if key in score._compact(evidence.get("quote") or ""):
         return True
     if evidence.get("source_kind") == "accelerator":
-        return key in score._compact(page.get("title") or "") or key in score._compact(page.get("h1") or "")
+        # a company profile page names the company first ("Acme: ...", "Acme | YC")
+        return any(score._compact(page.get(f) or "").startswith(key) for f in ("title", "h1"))
     return False
 
 

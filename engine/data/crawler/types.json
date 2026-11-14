@@ -161,26 +161,38 @@
   "funding_proof": [
     "raised",
     "raises",
+    "raising",
     "has raised",
-    "seed round",
-    "pre-seed",
-    "series a",
-    "series b",
-    "series c",
-    "series d",
-    "funding round",
-    "led by",
     "secures",
     "secured",
     "bags",
     "closes",
-    "closed a",
-    "investment from",
-    "in funding"
+    "closed",
+    "announces",
+    "announced",
+    "lands",
+    "landed"
   ],
   "batch_words": [
     "batch",
     "cohort",
     "class of"
+  ],
+  "funding_rounds": [
+    "pre-seed",
+    "seed round",
+    "seed funding",
+    "seed investment",
+    "series a",
+    "series b",
+    "series c",
+    "series d",
+    "series e",
+    "funding round",
+    "growth round",
+    "venture round",
+    "in funding",
+    "in seed",
+    "in new funding"
   ]
 }

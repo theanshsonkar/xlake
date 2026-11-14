@@ -71,3 +71,22 @@ class TestFunding(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestFundingPrecision(unittest.TestCase):
+    def test_quote_needs_event(self):
+        for t in ("Born and raised in South Mississippi", "Output jumped, led by CFI",
+                  "AI Interviewer closes it same-day", "Learn how ZTNA secures every user"):
+            self.assertIsNone(funding.funding_quote(t), t)
+        self.assertTrue(funding.funding_quote("Foo bags Rs 40 crore in Series A"))
+        self.assertTrue(funding.funding_quote("Acme raised $5.2M led by X"))
+
+    def test_homepage_date_is_not_announcement(self):
+        page = {"title": "Acme", "text": "Acme raised $5M in seed funding.", "published": "2026-10-01"}
+        self.assertIsNone(funding.from_page(page, "https://acme.com/", "own_site", TODAY))
+        self.assertTrue(funding.from_page(page, "https://acme.com/blog/seed", "own_site", TODAY))
+
+    def test_accelerator_title_must_start_with_name(self):
+        ev = {"source_kind": "accelerator", "quote": "Fall 2026 cohort"}
+        self.assertTrue(funding.mentions(ev, {"title": "Acme: robots for farms"}, "Acme"))
+        self.assertFalse(funding.mentions(ev, {"title": "Techstars is No. 1 on TIME list"}, "Time"))
