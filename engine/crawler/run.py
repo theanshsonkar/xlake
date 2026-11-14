@@ -184,6 +184,8 @@ class Crawler:
         domain = urls.registered_domain(final)
         if domain in self.probed or score.is_denied(final):
             return
+        if self.sitemap.files_total + len(self.probed) >= doors.DOOR_SHARE * self.fetcher.max_pages:
+            return  # door budget spent; pages come first
         self.probed.add(domain)
         robots = self.sitemap.start(domain, urls.host(final))
         self.frontier.push(robots, "sitemap", 0, PRIORITY["sitemap"], "sitemap", item["url"], item["lead"])

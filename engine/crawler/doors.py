@@ -18,7 +18,9 @@ from core import discovery
 from core.paths import DISCOVERY_CACHE_DIR
 from crawler import score, urls
 
-MAX_SITEMAP_FILES_PER_DOMAIN = 4
+MAX_SITEMAP_FILES_PER_DOMAIN = 3
+DOOR_SHARE = 0.15  # doors may use at most this share of the page budget
+MAX_SLUG_TOKENS = 3  # longer slugs are articles, not opportunity sections
 SITEMAP_URLS_PER_DOMAIN = 25
 LASTMOD_MAX_AGE_DAYS = 365
 CC_DELAY = 1.0
@@ -34,10 +36,31 @@ def cc_item_url(host: str) -> str:
     return "https://{}/.well-known/xlake-cc-lookup".format(host)
 
 
+_LOCALE = re.compile(r"^[a-z]{2}(?:[-_][a-z]{2,4})?$", re.I)
+
+
+def canonical_path(loc: str) -> str:
+    """Path without a leading locale segment, so /fr/careers and /careers count once."""
+    segs = [x for x in urllib.parse.urlsplit(loc).path.lower().split("/") if x]
+    if segs and _LOCALE.match(segs[0]):
+        segs = segs[1:]
+    return "/" + "/".join(segs)
+
+
+def path_is_opportunity(path: str) -> bool:
+    """An opportunity word must be a short path segment (/careers, /jobs/123), not part of a long slug."""
+    words = [w.replace(" ", "-") for w in score.load_types()["link_words"]]
+    for seg in (x for x in path.lower().split("/") if x):
+        tokens = [t for t in re.split(r"[-_.]", seg) if t]
+        if seg in words or (len(tokens) <= MAX_SLUG_TOKENS and any(w in tokens for w in words)):
+            return True
+    return False
+
+
 def url_wanted(loc: str, domain: str, lastmod: Optional[str], today: date) -> bool:
-    if urls.registered_domain(loc) != domain or not score.link_is_opportunity("", loc):
-        return False
     path = urllib.parse.urlsplit(loc).path
+    if urls.registered_domain(loc) != domain or not path_is_opportunity(path):
+        return False
     if _BAD_EXT.search(path):
         return False
     junk = set(score.load_types()["junk"])
@@ -64,6 +87,7 @@ class SitemapDoor:
         self.cc_asked: Set[str] = set()
         self.files_total = 0
         self.urls_total = 0
+        self.seen_paths: Set[str] = set()
 
     # -- bookkeeping ------------------------------------------------------- #
     def start(self, domain: str, host: str) -> str:
@@ -119,6 +143,10 @@ class SitemapDoor:
         for u in cands:
             if self.queued[domain] >= SITEMAP_URLS_PER_DOMAIN:
                 break
+            key = domain + canonical_path(u)
+            if key in self.seen_paths:
+                continue
+            self.seen_paths.add(key)
             if push(u):
                 self.queued[domain] += 1
                 n += 1

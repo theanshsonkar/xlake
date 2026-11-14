@@ -153,3 +153,22 @@ class TestDoors(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestDoorRules(unittest.TestCase):
+    def test_path_is_opportunity(self):
+        from crawler import doors
+        self.assertTrue(doors.path_is_opportunity("/careers"))
+        self.assertTrue(doors.path_is_opportunity("/FRS/job/Atlanta-GA/XMLNAME-2027-Summer-Internship-Program"))
+        self.assertTrue(doors.path_is_opportunity("/about/careers-and-opportunities/postdoc"))
+        self.assertFalse(doors.path_is_opportunity("/events/how-can-generative-ai-transform-our-careers/"))
+
+    def test_locale_paths_count_once(self):
+        from crawler import doors
+        self.assertEqual(doors.canonical_path("https://a.com/fr/careers"), doors.canonical_path("https://a.com/careers"))
+        self.assertEqual(doors.canonical_path("https://a.com/en-US/careers"), "/careers")
+
+    def test_link_words_ignore_query(self):
+        from crawler import score
+        self.assertFalse(score.link_is_opportunity("", "https://chatgpt.com/?q=read+https%3A%2F%2Fx.com%2Fjobs"))
+        self.assertTrue(score.link_is_opportunity("", "https://x.com/jobs"))

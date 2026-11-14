@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import urllib.parse
 from functools import lru_cache
 from typing import Dict, List, Optional
 
@@ -93,7 +94,8 @@ def score(page: Dict) -> float:
 
 def link_is_opportunity(text: str, url: str) -> bool:
     words = load_types()["link_words"]
-    haystack = (text or "").lower() + " " + urls.normalise(url).lower()
+    parts = urllib.parse.urlsplit(urls.normalise(url))
+    haystack = (text or "").lower() + " " + (parts.netloc + parts.path).lower()  # query strings carry share links
     return any(w in haystack for w in words)
 
 
