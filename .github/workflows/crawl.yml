@@ -52,10 +52,11 @@ jobs:
           WORKERS: ${{ github.event.inputs.workers }}
         run: >
           python3 -u -m pipeline.crawl --seeds-only --parts 8
-          --max-pages "$SEED_PAGES" --workers "$WORKERS"
+          --max-pages "$SEED_PAGES" --workers "$WORKERS" --max-minutes 50
           --out out/seeds
 
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: crawl-seeds
           path: engine/out/seeds
@@ -92,7 +93,7 @@ jobs:
         run: >
           python3 -u -m pipeline.crawl --parts 8 --part "$PART"
           --frontier-in out/seeds
-          --max-pages "$LEG_PAGES" --workers "$WORKERS"
+          --max-pages "$LEG_PAGES" --workers "$WORKERS" --max-minutes 105
           --out "out/leg-$PART"
 
       - uses: actions/upload-artifact@v4

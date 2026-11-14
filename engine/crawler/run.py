@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import time
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, timedelta
@@ -43,6 +44,7 @@ class Crawler:
         self.names: Dict[str, str] = {}
         self.domain_careers: Dict[str, Set[str]] = {}
         self.pages = 0
+        self.time_limit_hit = False
         self.sitemaps_on = sitemaps
         self.cc = (cc_door or doors.CommonCrawlDoor(cc_max)) if commoncrawl else None
         self.sitemap = doors.SitemapDoor(self.today)
@@ -126,10 +128,15 @@ class Crawler:
         page["junk"] = page["junk_reason"] is not None
         return page
 
-    def run(self, parts: List[int]) -> Dict:
+    def run(self, parts: List[int], max_minutes: Optional[float] = None) -> Dict:
+        """Crawl until the page budget, the frontier or the time limit runs out; always save."""
+        stop_at = time.monotonic() + max_minutes * 60 if max_minutes else None
         try:
             with ThreadPoolExecutor(self.workers) as pool:
                 while self.fetcher.used < self.fetcher.max_pages:
+                    if stop_at and time.monotonic() >= stop_at:
+                        self.time_limit_hit = True
+                        break
                     batch = self._pop_batch(parts, min(self.workers, self.fetcher.max_pages - self.fetcher.used))
                     if not batch:
                         break
@@ -315,7 +322,7 @@ class Crawler:
     def summary(self) -> Dict:
         c = self.fetcher.counts
         recent = {d: ev for d, ev in self.funding.items() if funding.is_recent(ev, self.today)}
-        return {"pages_fetched": self.pages, "ok": c["ok"], "blocked_by_robots": c["robots"],
+        return {"pages_fetched": self.pages, "time_limit_hit": self.time_limit_hit, "ok": c["ok"], "blocked_by_robots": c["robots"],
                 "errors": c["http_error"] + c["network_error"] + c["parse_error"], "not_html": c["not_html"],
                 "budget_skipped": c["budget"], "startup_leads": len(self.startups_ok),
                 "unique_startups": len(recent), "startups_by_source": dict(Counter(

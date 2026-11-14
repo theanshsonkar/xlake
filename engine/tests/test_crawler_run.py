@@ -248,3 +248,16 @@ class TestCrawl(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestTimeLimit(unittest.TestCase):
+    def test_zero_minutes_stops_and_saves(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp)
+            c = Crawler(Frontier(1), Fetcher(50, 25, fake), Store(out), workers=1,
+                        today=date(2026, 11, 14), sitemaps=False, commoncrawl=False)
+            c.add_seeds([{"url": "https://vc.test/portfolio", "kind": "seed", "label": "vc"}])
+            stats = c.run([0], max_minutes=1e-9)
+            self.assertTrue(stats["time_limit_hit"])
+            self.assertEqual(stats["pages_fetched"], 0)
+            self.assertTrue((out / "frontier-0.jsonl").exists())

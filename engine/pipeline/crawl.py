@@ -24,6 +24,8 @@ def main(argv=None) -> int:
     ap.add_argument("--seeds", type=Path, default=urls.DATA / "seeds.json")
     ap.add_argument("--out", type=Path, default=urls.DATA / "out")
     ap.add_argument("--per-host", type=int, default=25)
+    ap.add_argument("--max-minutes", type=float, default=None,
+                    help="stop cleanly after this many minutes (keeps CI jobs under their timeout)")
     ap.add_argument("--no-sitemaps", action="store_true", help="disable the sitemap door")
     ap.add_argument("--no-commoncrawl", action="store_true", help="disable the Common Crawl door")
     ap.add_argument("--cc-max", type=int, default=50, help="Common Crawl query budget")
@@ -40,7 +42,7 @@ def main(argv=None) -> int:
                       cc_max=args.cc_max, seeds_only=args.seeds_only)
     crawler.add_seeds(json.loads(args.seeds.read_text()))
     parts = list(range(args.parts)) if args.part == "all" else [int(args.part)]
-    stats = crawler.run(parts)
+    stats = crawler.run(parts, args.max_minutes)
     for key, value in stats.items():
         print("{:>20}: {}".format(key, value))
     failed = [i["url"] for i in frontier.items.values()
