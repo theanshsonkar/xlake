@@ -56,3 +56,6 @@ engine/data/measure/keka_raw.json
 engine/data/lake/opportunities.json
 engine/data/lake/hidden.json
 engine/data/lake/opportunities_history.jsonengine/render/node_modules/
+
+# Local crawler output
+engine/data/crawler/out/

@@ -1,0 +1,16 @@
+{
+  "types": {
+    "careers": ["careers", "career", "jobs", "job openings", "we're hiring", "we are hiring", "hiring", "join us", "join our team", "open positions", "work with us", "vacancies"],
+    "startup": ["startup", "founders", "venture", "seed round", "portfolio company", "our mission"],
+    "funding": ["funding", "raised", "series a", "series b", "investment", "investors", "backed by"],
+    "fellowship": ["fellowship", "fellows", "residency"],
+    "internship": ["internship", "internships", "intern", "trainee", "apprentice"],
+    "hackathon": ["hackathon", "hackathons", "buildathon", "datathon", "codefest"],
+    "accelerator": ["accelerator", "incubator", "cohort", "demo day", "batch"],
+    "scholarship": ["scholarship", "scholarships", "bursary", "stipend"],
+    "grant": ["grant", "grants", "call for proposals", "funding opportunity"]
+  },
+  "funding_news": ["raise", "raises", "raised", "funding", "seed", "series a", "series b", "series c", "round", "backed", "secures", "bags", "lands", "crore", "million", "investment", "led by"],
+  "link_words": ["careers", "career", "jobs", "job", "hiring", "apply", "join-us", "join us", "work-with-us", "work with us", "openings", "vacancies", "internship", "fellowship", "hackathon", "scholarship", "grants", "accelerator"],
+  "junk": ["login", "log-in", "signin", "sign-in", "signup", "sign-up", "register", "privacy", "terms", "cookie", "cookies", "press", "blog", "news", "tag", "tags", "author", "cart", "checkout", "account", "unsubscribe", "feed", "sitemap"]
+}

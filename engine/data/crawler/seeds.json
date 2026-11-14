@@ -1,0 +1,13 @@
+[
+  {"url": "https://a16z.com/portfolio/", "kind": "seed", "label": "a16z portfolio"},
+  {"url": "https://www.sequoiacap.com/our-companies/", "kind": "seed", "label": "Sequoia companies"},
+  {"url": "https://www.accel.com/companies", "kind": "seed", "label": "Accel companies"},
+  {"url": "https://www.peakxv.com/", "kind": "seed", "label": "Peak XV portfolio"},
+  {"url": "https://lsvp.com/companies/", "kind": "seed", "label": "Lightspeed portfolio"},
+  {"url": "https://www.ycombinator.com/companies", "kind": "seed", "label": "YC companies"},
+  {"url": "https://www.techstars.com/portfolio", "kind": "seed", "label": "Techstars portfolio"},
+  {"url": "https://techcrunch.com/category/startups/feed/", "kind": "feed", "label": "TechCrunch startups"},
+  {"url": "https://techcrunch.com/tag/fundraising/feed/", "kind": "feed", "label": "TechCrunch fundraising"},
+  {"url": "https://inc42.com/feed/", "kind": "feed", "label": "Inc42"},
+  {"url": "https://entrackr.com/rss", "kind": "feed", "label": "Entrackr"}
+]
