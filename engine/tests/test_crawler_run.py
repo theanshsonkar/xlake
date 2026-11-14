@@ -66,7 +66,8 @@ class TestCrawl(unittest.TestCase):
         items = self.crawler.frontier.items
         self.assertEqual(items["https://acmerobots.com/"]["kind"], "startup_home")
         self.assertEqual(items["https://acmerobots.com/careers"]["state"], "fetched")
-        self.assertEqual(self.stats["unique_startups"], 2)
+        self.assertEqual(self.stats["startup_leads"], 2)
+        self.assertEqual(self.stats["unique_startups"], 0)
         self.assertGreaterEqual(self.stats["careers_pages"], 1)
         self.assertEqual(self.stats["careers_startups"], 2)
 
@@ -131,6 +132,54 @@ class TestCrawl(unittest.TestCase):
         c.add_seeds(seeds)
         c.run([0])
         return c.frontier.items
+
+    def test_funding_door(self):
+        pages = {
+            "https://yc.test/companies": "<title>Companies</title><a href='/companies/acme'>Acme</a>",
+            "https://yc.test/companies/acme": "<title>Acme | YC</title><h1>Acme</h1>"
+                "<p>Batch: Winter 2026</p><p>Apply for Winter 2027</p>"
+                "<a href='https://acme.com/'>Acme</a>",
+            "https://acme.com/": "<title>Acme</title><a href='/careers'>Careers</a>",
+            "https://acme.com/careers": "<title>Careers at Acme</title>We are hiring.",
+            "https://news.test/a": "<html><head><title>News</title>"
+                "<meta property='article:published_time' content='2026-10-01T09:00:00Z'></head><body>"
+                "<p>Betaco raised a $5M seed round led by Foo Ventures.</p>"
+                "<a href='https://betaco.com/'>Betaco</a>"
+                "<a href='https://othercorp.com/'>Othercorp</a></body></html>",
+            "https://betaco.com/": "<title>Beta Co</title>hello",
+            "https://othercorp.com/": "<title>Othercorp</title>hello",
+            "https://vc.test/p": "<title>P</title><a href='https://plainco.com/'>Plainco</a>",
+            "https://plainco.com/": "<title>Plainco</title><a href='/careers'>Careers</a>",
+            "https://plainco.com/careers": "<title>Careers at Plainco</title>We are hiring.",
+        }
+        seeds = [{"url": "https://yc.test/companies", "kind": "seed", "label": "yc", "source_kind": "accelerator"},
+                 {"url": "https://news.test/a", "kind": "seed", "label": "n", "source_kind": "news"},
+                 {"url": "https://vc.test/p", "kind": "seed", "label": "vc"}]
+        out = self.out / "door"
+        table = dict(pages)
+
+        def fn(url, polite=True):
+            return (200, url, table[url], None) if url in table else (404, url, "", "http_404")
+        c = Crawler(Frontier(1), Fetcher(50, 25, fn), Store(out), 1, today=date(2026, 11, 14))
+        c.add_seeds(seeds)
+        stats = c.run([0])
+        rows = {json.loads(l)["domain"]: json.loads(l)
+                for l in (out / "startups.jsonl").read_text().splitlines()}
+        self.assertTrue(rows["acme.com"]["startup"])
+        self.assertEqual(rows["acme.com"]["funding"]["source_kind"], "accelerator")
+        self.assertEqual(rows["acme.com"]["funding"]["proof"], "https://yc.test/companies/acme")
+        self.assertTrue(rows["betaco.com"]["startup"])
+        self.assertEqual(rows["betaco.com"]["funding"]["source_kind"], "news")
+        self.assertNotIn("othercorp.com", {d for d, r in rows.items() if r["startup"]})
+        self.assertNotIn("plainco.com", {d for d, r in rows.items() if r["startup"]})
+        self.assertEqual(stats["unique_startups"], 2)
+        self.assertEqual(stats["startups_by_source"], {"accelerator": 1, "news": 1})
+        self.assertEqual(c.frontier.items["https://plainco.com/careers"]["state"], "fetched")
+        recs = [json.loads(l) for l in (out / "pages-0.jsonl").read_text().splitlines()]
+        plain = [r for r in recs if r["final_url"] == "https://plainco.com/"][0]
+        self.assertEqual(plain["tags"], [])
+        acme = [r for r in recs if r["final_url"] == "https://acme.com/"][0]
+        self.assertEqual(acme["tags"], ["startup"])
 
     def test_offsite_hop_rules(self):
         pages = {

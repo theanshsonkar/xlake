@@ -67,8 +67,10 @@ def _by_type(page: Dict) -> Dict[str, float]:
             for name, words in load_types()["types"].items()}
 
 
-def type_guess(page: Dict) -> str:
-    weights = _by_type(page)
+def type_guess(page: Dict, exclude=()) -> str:
+    weights = {k: v for k, v in _by_type(page).items() if k not in exclude}
+    if not weights:
+        return "unknown"
     best = max(weights, key=weights.get)
     return best if weights[best] > 0 else "unknown"
 

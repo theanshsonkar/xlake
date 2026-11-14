@@ -157,5 +157,30 @@
     "recruiting software",
     "hiring software",
     "talent acquisition software"
+  ],
+  "funding_proof": [
+    "raised",
+    "raises",
+    "has raised",
+    "seed round",
+    "pre-seed",
+    "series a",
+    "series b",
+    "series c",
+    "series d",
+    "funding round",
+    "led by",
+    "secures",
+    "secured",
+    "bags",
+    "closes",
+    "closed a",
+    "investment from",
+    "in funding"
+  ],
+  "batch_words": [
+    "batch",
+    "cohort",
+    "class of"
   ]
 }

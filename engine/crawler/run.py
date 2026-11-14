@@ -5,9 +5,10 @@ from __future__ import annotations
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, timedelta
+from collections import Counter
 from typing import Dict, Iterable, List, Optional, Set
 
-from crawler import extract, score, urls
+from crawler import extract, funding, score, urls
 from crawler.fetch import Fetcher
 from crawler.frontier import Frontier, part_of
 from crawler.store import Store
@@ -31,11 +32,17 @@ class Crawler:
         self.startups_ok: Set[str] = set()
         self.careers_urls: Set[str] = set()
         self.careers_domains: Set[str] = set()
+        self.seed_kind: Dict[str, str] = {}
+        self.funding: Dict[str, Dict] = {}
+        self.names: Dict[str, str] = {}
+        self.domain_careers: Dict[str, Set[str]] = {}
         self.pages = 0
 
     def add_seeds(self, seeds: Iterable[dict]) -> None:
         for s in seeds:
             kind = s["kind"]
+            self.seed_kind[urls.host(s["url"])] = s.get("source_kind") or (
+                "news" if kind == "feed" else "investor")
             self.frontier.push(s["url"], source=s.get("label", ""), kind=kind,
                                priority=PRIORITY[kind])
         for item in self.frontier.items.values():
@@ -74,6 +81,27 @@ class Crawler:
         page["hop"] = item.get("hop", 0)
         page["type_guess"] = score.type_guess(page)
         page["score"] = score.score(page)
+        lead = item["lead"] or {}
+        final_host = urls.host(result.final_url)
+        own_site = bool(lead.get("domain") and urls.registered_domain(final_host) == lead["domain"])
+        if own_site:
+            kind = "own_site"
+        elif item["parent"] in self.feed_urls:
+            kind = "news"
+        elif item["host"] in self.seed_hosts:
+            kind = self.seed_kind.get(item["host"], "investor")
+        else:
+            kind = "page"
+        page["funding"] = funding.from_page(page, result.final_url, kind, self.today)
+        page["own_site"] = own_site
+        ev = funding.best(lead.get("funding"), page["funding"] if own_site else None)
+        if funding.is_recent(ev, self.today):
+            page["tags"] = ["startup"]
+            page["company_funding"] = ev
+        else:
+            page["tags"] = []
+            if page["type_guess"] == "startup":
+                page["type_guess"] = score.type_guess(page, exclude=("startup",))
         page["junk_reason"] = score.junk_reason(page)
         page["junk"] = page["junk_reason"] is not None
         return page
@@ -89,6 +117,7 @@ class Crawler:
                         self._handle(item, result, page)
         finally:
             self.frontier.save(self.store.out)
+            self.store.write_startups(self._startup_rows())
             self.store.write_summary(self.summary())
         return self.summary()
 
@@ -117,13 +146,33 @@ class Crawler:
         if item["kind"] == "startup_home":
             self.startups_ok.add(urls.registered_domain(item["url"]))
         domain = (item["lead"] or {}).get("domain")
+        if domain and item["kind"] != "feed":
+            self.funding_note(domain, item, page)
         if domain and page.get("type_guess") == "careers":
             self.careers_urls.add(item["url"])
             self.careers_domains.add(domain)
+            self.domain_careers.setdefault(domain, set()).add(item["url"])
         if item["kind"] == "feed":
             self._enqueue_feed(item, page["feed_items"])
         else:
             self._enqueue_links(item, page)
+
+    def funding_note(self, domain: str, item: dict, page: Dict) -> None:
+        lead = item["lead"]
+        own = page.get("own_site")
+        ev = funding.best(self.funding.get(domain), lead.get("funding"),
+                          page.get("funding") if own else None)
+        if ev:
+            self.funding[domain] = ev
+        if lead.get("name"):
+            self.names.setdefault(domain, lead["name"])
+
+    def _startup_rows(self) -> List[Dict]:
+        rows = [{"domain": d, "name": self.names.get(d), "startup": funding.is_recent(ev, self.today),
+                 "funding": ev, "careers_urls": sorted(self.domain_careers.get(d, ()))}
+                for d, ev in self.funding.items()]
+        rows.sort(key=lambda r: r["funding"]["date"], reverse=True)
+        return rows
 
     def _enqueue_feed(self, item: dict, entries: List[dict]) -> None:
         cutoff = (self.today - timedelta(days=FEED_MAX_AGE_DAYS)).isoformat()
@@ -168,18 +217,28 @@ class Crawler:
                 self.startup_domains.add(domain)
                 parts = urllib.parse.urlsplit(target)
                 home = "{}://{}/".format(parts.scheme, parts.netloc)
-                inherited = (lead or {}).get("date")
+                ev = funding.from_anchor(text, url, self.today)
+                if not ev and page.get("funding") and funding.mentions(page["funding"], page, name):
+                    ev = page["funding"]
+                if not ev:
+                    ev = (lead or {}).get("funding")
+                inherited = ev["date"] if ev else (lead or {}).get("date")
                 self.frontier.push(home, url, 0, PRIORITY["startup_home"], "startup_home", url,
-                                   {"name": name, "domain": domain, "source": url, "date": inherited})
+                                   {"name": name, "domain": domain, "source": url, "date": inherited,
+                                    "funding": ev})
             elif opportunity and own_site:
                 self.frontier.push(target, item["source"], 0, PRIORITY["careers_link"],
                                    "careers_link", url, lead, hop=1)
 
     def summary(self) -> Dict:
         c = self.fetcher.counts
+        recent = {d: ev for d, ev in self.funding.items() if funding.is_recent(ev, self.today)}
         return {"pages_fetched": self.pages, "ok": c["ok"], "blocked_by_robots": c["robots"],
                 "errors": c["http_error"] + c["network_error"] + c["parse_error"], "not_html": c["not_html"],
-                "budget_skipped": c["budget"], "unique_startups": len(self.startups_ok),
+                "budget_skipped": c["budget"], "startup_leads": len(self.startups_ok),
+                "unique_startups": len(recent), "startups_by_source": dict(Counter(
+                    ev["source_kind"] for ev in recent.values())),
+                "funding_evidence_old": len(self.funding) - len(recent),
                 "careers_pages": len(self.careers_urls),
                 "careers_startups": len(self.careers_domains),
                 "duplicate": self.store.duplicates}

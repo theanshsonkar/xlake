@@ -12,7 +12,7 @@ from html.parser import HTMLParser
 from typing import Dict, List, Optional, Tuple
 
 from core import opportunity_text, pagetext
-from crawler import urls
+from crawler import funding, urls
 
 MAX_WORDS = 2000
 SNIPPET_CHARS = 300
@@ -34,6 +34,7 @@ class _Parser(HTMLParser):
         self.lang = ""
         self.links: List[Tuple[str, str]] = []
         self.ld: List[str] = []
+        self.times: List[str] = []
         self._in: Optional[str] = None
         self._buf: List[str] = []
         self._href: Optional[str] = None
@@ -45,9 +46,11 @@ class _Parser(HTMLParser):
         if tag == "html":
             self.lang = a.get("lang") or ""
         elif tag == "meta":
-            key = a.get("property") or a.get("name")
+            key = a.get("property") or a.get("name") or a.get("itemprop")
             if key and a.get("content"):
                 self.meta.setdefault(key.lower(), a["content"].strip())
+        elif tag == "time" and a.get("datetime") and len(self.times) < 5:
+            self.times.append(a["datetime"].strip())
         elif tag in ("title", "h1") and self._in is None:
             self._in, self._buf = tag, []
         elif tag == "a" and a.get("href"):
@@ -192,7 +195,8 @@ def extract(html: str, url: str, today: Optional[date] = None) -> Dict:
             "organiser": organiser, "text": text,
             "snippet": _snippet(flat), "words": len(words),
             "language": detect_language(parser.lang, meta.get("og:locale", ""), flat),
-            "links": links, "emails": _emails(mailtos, flat, url), **dates}
+            "links": links, "emails": _emails(mailtos, flat, url),
+            "published": funding.published_date(meta, parser.ld, parser.times, today), **dates}
 
 
 def _feed_date(value: str) -> Optional[str]:
