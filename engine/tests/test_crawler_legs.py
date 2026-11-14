@@ -104,3 +104,25 @@ class TestLegs(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestSeedsOnlyTerminates(unittest.TestCase):
+    def test_empty_first_part_does_not_hang(self):
+        import threading
+        from crawler.fetch import Fetcher
+        from crawler.frontier import Frontier
+        from crawler.run import Crawler
+        from crawler.store import Store
+        from crawler.frontier import part_of
+        with tempfile.TemporaryDirectory() as tmp:
+            fr = Frontier(8)
+            c = Crawler(fr, Fetcher(50, 25, lambda u, polite=True: (404, u, "", "http_404")), Store(Path(tmp)),
+                        workers=4, today=date(2026, 11, 14), sitemaps=False, commoncrawl=False, seeds_only=True)
+            c.add_seeds([{"url": "https://seed.test/", "kind": "seed", "label": "s"}])
+            # off-scope items in parts other than the seed's part
+            for i in range(40):
+                fr.push("https://other{}.test/".format(i), kind="startup_home", priority=90)
+            done = threading.Event()
+            t = threading.Thread(target=lambda: (c.run(list(range(8))), done.set()), daemon=True)
+            t.start()
+            self.assertTrue(done.wait(10), "seeds_only run hung")

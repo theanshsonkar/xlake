@@ -154,19 +154,13 @@ class Crawler:
     def _pop_batch(self, parts: List[int], size: int) -> List[dict]:
         batch: List[dict] = []
         while len(batch) < size:
+            parts = [p for p in parts if self.frontier.has_queued(p)]
+            if not parts:
+                break
             got = [i for i in (self.frontier.pop(p) for p in parts[:size - len(batch)]) if i]
             if self.seeds_only:
-                # skipped items were popped off the heap but stay "queued" so save() keeps them
+                # out-of-scope items leave the heap but stay "queued", so save() keeps them for the legs
                 got = [i for i in got if self._in_seed_scope(i)]
-                if not got and not any(self.frontier.has_queued(p) for p in parts):
-                    break
-                if not got:
-                    continue
-            if not got:
-                parts = [p for p in parts if self.frontier.has_queued(p)]
-                if not parts:
-                    break
-                continue
             batch.extend(got)
         return batch
 
