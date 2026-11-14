@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import re
 from functools import lru_cache
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 from crawler import urls
 
@@ -33,10 +33,27 @@ def _tokens(text: str) -> List[str]:
     return re.findall(r"[a-z0-9]+", text.lower())
 
 
-def is_junk(page: Dict) -> bool:
+def _phrase_hits(page: Dict, name: str) -> int:
+    haystack = ((page.get("title") or "") + " " + (page.get("text") or "")[:2000]).lower()
+    return sum(1 for phrase in load_types()[name] if phrase in haystack)
+
+
+def junk_reason(page: Dict) -> Optional[str]:
     junk = set(load_types()["junk"])
     path = urls.normalise(page.get("url", "")).split("//", 1)[-1].partition("/")[2]
-    return bool(junk & set(_tokens(path)) or junk & set(_tokens(page.get("title") or "")))
+    if junk & set(_tokens(path)):
+        return "url_word"
+    if junk & set(_tokens(page.get("title") or "")):
+        return "title_word"
+    if _phrase_hits(page, "parked"):
+        return "parked"
+    if _phrase_hits(page, "vendor") >= 2:
+        return "vendor"
+    return None
+
+
+def is_junk(page: Dict) -> bool:
+    return junk_reason(page) is not None
 
 
 def _hits(words: List[str], haystack: str) -> int:
@@ -46,7 +63,7 @@ def _hits(words: List[str], haystack: str) -> int:
 def _by_type(page: Dict) -> Dict[str, float]:
     head = ((page.get("title") or "") + " " + page.get("url", "")).lower()
     body = (page.get("text") or "").lower()
-    return {name: 3 * _hits(words, head) + min(_hits(words, body), 5)
+    return {name: 3 * _hits(words, head) + min(_hits(words, body), 10)
             for name, words in load_types()["types"].items()}
 
 
@@ -57,13 +74,18 @@ def type_guess(page: Dict) -> str:
 
 
 def score(page: Dict) -> float:
-    value = min(100.0, 20 * max(_by_type(page).values()))
+    value = 5.0 * max(_by_type(page).values())
     if is_junk(page):
         value *= 0.3
     if len((page.get("text") or "").split()) < 80:
         value *= 0.5
     if page.get("status_code") != 200:
         value *= 0.5
+    lead = page.get("lead_domain")
+    if not lead:
+        value *= 0.5
+    elif page.get("hop") == 1 or urls.registered_domain(page.get("url", "")) == lead:
+        value *= 1.5
     return round(value, 1)
 
 

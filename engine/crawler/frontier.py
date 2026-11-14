@@ -23,17 +23,19 @@ class Frontier:
     def __init__(self, parts: int = 1):
         self.parts = parts
         self.items: Dict[str, dict] = {}
+        self._keys: set = set()
         self._heaps: List[list] = [[] for _ in range(parts)]
         self._n = 0  # tie-breaker keeps pops in insertion order
 
     def push(self, url: str, source: str = "", depth: int = 0, priority: float = 0,
-             kind: str = "page", parent: Optional[str] = None, lead: Optional[dict] = None) -> bool:
+             kind: str = "page", parent: Optional[str] = None, lead: Optional[dict] = None, hop: int = 0) -> bool:
         url = urls.normalise(url)
-        if url in self.items or not url.startswith(("http://", "https://")):
+        if not url.startswith(("http://", "https://")) or urls.key(url) in self._keys:
             return False
+        self._keys.add(urls.key(url))
         item = {"url": url, "host": urls.host(url), "source": source, "depth": depth,
                 "priority": priority, "state": "queued", "parent": parent, "lead": lead,
-                "kind": kind}
+                "kind": kind, "hop": hop}
         self.items[url] = item
         self._enqueue(item)
         return True
@@ -80,5 +82,6 @@ class Frontier:
             for line in path.read_text().splitlines():
                 item = json.loads(line)
                 self.items[item["url"]] = item
+                self._keys.add(urls.key(item["url"]))
                 if item["state"] == "queued":
                     self._enqueue(item)

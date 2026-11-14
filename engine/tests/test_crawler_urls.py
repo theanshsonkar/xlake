@@ -26,6 +26,12 @@ class TestUrls(unittest.TestCase):
         urls.host(bad)  # must not raise
         urls.registered_domain(bad)
 
+    def test_key_ignores_scheme_www_slash_and_tracking(self):
+        a = urls.key("https://www.Acme.com/jobs/?gh_src=x&source=y&gh_jid=7")
+        self.assertEqual(a, urls.key("http://acme.com/jobs?gh_jid=7"))
+        self.assertEqual(urls.key("https://acme.com/"), "acme.com/")
+        self.assertNotEqual(urls.key("https://acme.com/jobs?gh_jid=7"), urls.key("https://acme.com/jobs?gh_jid=8"))
+
 
 if __name__ == "__main__":
     unittest.main()

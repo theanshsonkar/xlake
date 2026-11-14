@@ -122,18 +122,76 @@ class TestCrawl(unittest.TestCase):
         self.assertTrue((out / "summary.json").exists())
         self.assertTrue((out / "frontier-0.jsonl").exists())
 
+    def _crawl(self, pages, seeds, name):
+        table = dict(pages)
+
+        def fn(url, polite=True):
+            return (200, url, table[url], None) if url in table else (404, url, "", "http_404")
+        c = Crawler(Frontier(1), Fetcher(50, 25, fn), Store(self.out / name), 1, today=date(2026, 11, 14))
+        c.add_seeds(seeds)
+        c.run([0])
+        return c.frontier.items
+
+    def test_offsite_hop_rules(self):
+        pages = {
+            "https://vc.test/p": "<title>P</title><a href='https://acmerobots.com/'>Acme Robots</a>",
+            "https://acmerobots.com/": "<title>Acme Robots</title><a href='https://ats.test/acme/jobs'>Jobs</a>",
+            "https://ats.test/acme/jobs": "<title>Jobs</title><a href='/acme/jobs/1'>Open job</a>"
+                                          "<a href='https://other.test/careers'>More careers</a>"
+                                          "<a href='/about'>About</a>",
+            "https://ats.test/acme/jobs/1": "<title>Role</title>",
+        }
+        items = self._crawl(pages, [{"url": "https://vc.test/p", "kind": "seed", "label": "v"}], "hop")
+        self.assertEqual(items["https://ats.test/acme/jobs"]["hop"], 1)
+        self.assertEqual(items["https://ats.test/acme/jobs"]["lead"]["domain"], "acmerobots.com")
+        self.assertEqual(items["https://ats.test/acme/jobs/1"]["hop"], 1)
+        self.assertNotIn("https://other.test/careers", items)
+        self.assertNotIn("https://ats.test/about", items)
+
+    def test_no_links_from_parked_or_vendor_pages(self):
+        pages = {
+            "https://vc.test/p": "<title>P</title><a href='https://acmerobots.com/'>Acme Robots</a>",
+            "https://acmerobots.com/": "<title>Acme Robots</title><p>This domain is for sale</p>"
+                                       "<a href='/careers'>Careers</a>",
+        }
+        items = self._crawl(pages, [{"url": "https://vc.test/p", "kind": "seed", "label": "v"}], "park")
+        self.assertNotIn("https://acmerobots.com/careers", items)
+
+    def test_duplicate_final_url_written_once(self):
+        pages = {"https://a.test/x": "<title>X</title>hello", "https://www.a.test/x/": "<title>X</title>hello"}
+
+        def fn(url, polite=True):
+            return 200, "https://a.test/x", pages["https://a.test/x"], None
+        store = Store(self.out / "dup")
+        c = Crawler(Frontier(1), Fetcher(10, 10, fn), store, 1)
+        c.add_seeds([{"url": "https://a.test/x", "kind": "seed", "label": "a"},
+                     {"url": "https://b.test/y", "kind": "seed", "label": "b"}])
+        stats = c.run([0])
+        rows = (self.out / "dup" / "pages-0.jsonl").read_text().splitlines()
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(stats["duplicate"], 1)
+        self.assertEqual(stats["pages_fetched"], 2)
+
+    def test_review_columns_and_stats_line(self):
+        rows = crawl_review.read_rows(self.out)
+        text = crawl_review.render(crawl_review.top_pages(rows, 5), rows, "My title")
+        self.assertTrue(text.startswith("# My title"))
+        self.assertIn("careers startups:", text)
+        self.assertIn("| rank | url | title | organiser | type | score | status | startup | snippet | real/junk |", text)
+        self.assertEqual(crawl_review.stats(rows)["unique startups"], 2)
+
     def test_outputs_and_review(self):
         self.assertTrue((self.out / "summary.json").exists())
         records = [json.loads(l) for p in self.out.glob("pages-*.jsonl") for l in p.read_text().splitlines()]
         self.assertEqual(len(records), self.stats["pages_fetched"])
-        rows = crawl_review.top_pages(self.out, 5)
+        rows = crawl_review.top_pages(crawl_review.read_rows(self.out), 5)
         self.assertEqual(rows[0]["url"], "https://acmerobots.com/careers")
-        self.assertIn("Careers at Acme Robots", crawl_review.render(rows))
+        self.assertIn("Careers at Acme Robots", crawl_review.render(rows, crawl_review.read_rows(self.out)))
 
     def test_review_excludes_source_domains(self):
-        everything = crawl_review.top_pages(self.out, 50)
+        everything = crawl_review.top_pages(crawl_review.read_rows(self.out), 50)
         self.assertIn("vc.test", {r["host"] for r in everything})
-        kept = crawl_review.top_pages(self.out, 50, frozenset({"vc.test", "news.test"}))
+        kept = crawl_review.top_pages(crawl_review.read_rows(self.out), 50, frozenset({"vc.test", "news.test"}))
         self.assertNotIn("vc.test", {r["host"] for r in kept})
         self.assertNotIn("news.test", {r["host"] for r in kept})
         self.assertTrue(kept)

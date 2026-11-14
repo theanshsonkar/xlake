@@ -9,7 +9,8 @@ from pathlib import Path
 from typing import List
 
 DATA = Path(__file__).resolve().parents[1] / "data" / "crawler"
-_TRACKING = ("utm_", "ref", "fbclid", "gclid", "mc_cid", "mc_eid")
+_TRACKING = ("utm_", "ref", "fbclid", "gclid", "mc_cid", "mc_eid", "gh_src", "lever-source",
+             "source", "src")
 
 
 @lru_cache(maxsize=1)
@@ -34,6 +35,17 @@ def _normalise(url: str) -> str:
         host += ":%d" % p.port
     path = p.path or "/"
     return urllib.parse.urlunsplit((p.scheme.lower(), host, path, urllib.parse.urlencode(query), ""))
+
+
+def key(url: str) -> str:
+    """Dedupe key: normalised, no scheme, no www., no trailing slash (except root)."""
+    n = normalise(url)
+    if not n:
+        return ""
+    p = urllib.parse.urlsplit(n)
+    netloc = p.netloc[4:] if p.netloc.startswith("www.") else p.netloc
+    path = p.path.rstrip("/") or "/"
+    return netloc + path + ("?" + p.query if p.query else "")
 
 
 def host(url: str) -> str:

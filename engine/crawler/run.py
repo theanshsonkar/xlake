@@ -57,7 +57,7 @@ class Crawler:
         page = None
         if result.outcome == "ok":
             try:
-                page = self._parse(result, is_feed)
+                page = self._parse(item, result, is_feed)
             except Exception:  # noqa: BLE001 - one bad page must never kill the run
                 result = result._replace(outcome="parse_error", error="parse_error")
                 with self.fetcher._lock:
@@ -65,14 +65,17 @@ class Crawler:
                     self.fetcher.counts["parse_error"] += 1
         return item, result, page
 
-    def _parse(self, result, is_feed: bool) -> Dict:
+    def _parse(self, item: dict, result, is_feed: bool) -> Dict:
         if is_feed:
             return {"links": [], "feed_items": extract.parse_feed(result.html)}
         page = extract.extract(result.html, result.final_url, self.today)
         page.update(url=result.final_url, status_code=result.status)
+        page["lead_domain"] = (item["lead"] or {}).get("domain")
+        page["hop"] = item.get("hop", 0)
         page["type_guess"] = score.type_guess(page)
         page["score"] = score.score(page)
-        page["junk"] = score.is_junk(page)
+        page["junk_reason"] = score.junk_reason(page)
+        page["junk"] = page["junk_reason"] is not None
         return page
 
     def run(self, parts: List[int]) -> Dict:
@@ -134,34 +137,43 @@ class Crawler:
                                          "date": e["date"]})
 
     def _enqueue_links(self, item: dict, page: Dict) -> None:
-        url = item["url"]
+        if page.get("junk_reason") in ("parked", "vendor"):
+            return
+        url, lead, hop = item["url"], item["lead"], item.get("hop", 0)
         on_seed = item["host"] in self.seed_hosts
         lead_page = on_seed or item["parent"] in self.feed_urls
+        own_site = bool(lead and lead.get("domain")
+                        and urls.registered_domain(item["host"]) == lead["domain"])
         for link in page["links"]:
             target, text = link["url"], link["text"]
             opportunity = score.link_is_opportunity(text, target)
+            if hop == 1:  # off-site hop: stay on this exact host, opportunity links only
+                if urls.host(target) == item["host"] and opportunity and item["depth"] + 1 <= MAX_DEPTH:
+                    self.frontier.push(target, item["source"], item["depth"] + 1,
+                                       PRIORITY["careers_link"], "careers_link", url, lead, hop=1)
+                continue
             if urls.same_site(url, target):
                 if item["depth"] + 1 > MAX_DEPTH or not (on_seed or opportunity):
                     continue
                 kind = "careers_link" if opportunity else "page"
                 self.frontier.push(target, item["source"], item["depth"] + 1,
-                                   PRIORITY[kind], kind, url, item["lead"])
+                                   PRIORITY[kind], kind, url, lead)
                 continue
             if score.is_denied(target):
                 continue
             domain = urls.registered_domain(target)
             name = next((n for n in (text, page.get("h1"), page.get("title_name"))
-                         if n and score.name_matches_domain(n, target)), None)
-            if lead_page and domain not in self.startup_domains and name:
+                         if n and score.name_matches_domain(n, target)), None) if lead_page else None
+            if name and domain not in self.startup_domains:
                 self.startup_domains.add(domain)
                 parts = urllib.parse.urlsplit(target)
                 home = "{}://{}/".format(parts.scheme, parts.netloc)
-                inherited = (item["lead"] or {}).get("date")
+                inherited = (lead or {}).get("date")
                 self.frontier.push(home, url, 0, PRIORITY["startup_home"], "startup_home", url,
                                    {"name": name, "domain": domain, "source": url, "date": inherited})
-            elif opportunity and item["lead"]:
+            elif opportunity and own_site:
                 self.frontier.push(target, item["source"], 0, PRIORITY["careers_link"],
-                                   "careers_link", url, item["lead"])
+                                   "careers_link", url, lead, hop=1)
 
     def summary(self) -> Dict:
         c = self.fetcher.counts
@@ -169,4 +181,5 @@ class Crawler:
                 "errors": c["http_error"] + c["network_error"] + c["parse_error"], "not_html": c["not_html"],
                 "budget_skipped": c["budget"], "unique_startups": len(self.startups_ok),
                 "careers_pages": len(self.careers_urls),
-                "careers_startups": len(self.careers_domains)}
+                "careers_startups": len(self.careers_domains),
+                "duplicate": self.store.duplicates}
