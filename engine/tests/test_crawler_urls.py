@@ -20,6 +20,12 @@ class TestUrls(unittest.TestCase):
         self.assertTrue(urls.same_site("https://a.acme.com/", "https://www.acme.com/x"))
         self.assertFalse(urls.same_site("https://acme.com/", "https://acme.org/"))
 
+    def test_invalid_url_gives_empty(self):
+        bad = "http://host:Experience Optimization, Q4 2024/x"
+        self.assertEqual(urls.normalise(bad), "")
+        urls.host(bad)  # must not raise
+        urls.registered_domain(bad)
+
 
 if __name__ == "__main__":
     unittest.main()

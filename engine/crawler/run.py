@@ -56,28 +56,38 @@ class Crawler:
         result = self.fetcher.fetch(item["url"], self._limit(item), feed=is_feed)
         page = None
         if result.outcome == "ok":
-            if is_feed:
-                page = {"links": [], "feed_items": extract.parse_feed(result.html)}
-            else:
-                page = extract.extract(result.html, result.final_url, self.today)
-                page.update(url=result.final_url, status_code=result.status)
-                page["type_guess"] = score.type_guess(page)
-                page["score"] = score.score(page)
-                page["junk"] = score.is_junk(page)
+            try:
+                page = self._parse(result, is_feed)
+            except Exception:  # noqa: BLE001 - one bad page must never kill the run
+                result = result._replace(outcome="parse_error", error="parse_error")
+                with self.fetcher._lock:
+                    self.fetcher.counts["ok"] -= 1
+                    self.fetcher.counts["parse_error"] += 1
         return item, result, page
 
+    def _parse(self, result, is_feed: bool) -> Dict:
+        if is_feed:
+            return {"links": [], "feed_items": extract.parse_feed(result.html)}
+        page = extract.extract(result.html, result.final_url, self.today)
+        page.update(url=result.final_url, status_code=result.status)
+        page["type_guess"] = score.type_guess(page)
+        page["score"] = score.score(page)
+        page["junk"] = score.is_junk(page)
+        return page
+
     def run(self, parts: List[int]) -> Dict:
-        with ThreadPoolExecutor(self.workers) as pool:
-            while self.fetcher.used < self.fetcher.max_pages:
-                batch = self._pop_batch(parts, min(self.workers, self.fetcher.max_pages - self.fetcher.used))
-                if not batch:
-                    break
-                for item, result, page in pool.map(self._work, batch):
-                    self._handle(item, result, page)
-        self.frontier.save(self.store.out)
-        stats = self.summary()
-        self.store.write_summary(stats)
-        return stats
+        try:
+            with ThreadPoolExecutor(self.workers) as pool:
+                while self.fetcher.used < self.fetcher.max_pages:
+                    batch = self._pop_batch(parts, min(self.workers, self.fetcher.max_pages - self.fetcher.used))
+                    if not batch:
+                        break
+                    for item, result, page in pool.map(self._work, batch):
+                        self._handle(item, result, page)
+        finally:
+            self.frontier.save(self.store.out)
+            self.store.write_summary(self.summary())
+        return self.summary()
 
     def _pop_batch(self, parts: List[int], size: int) -> List[dict]:
         batch: List[dict] = []
@@ -92,10 +102,10 @@ class Crawler:
         return batch
 
     def _handle(self, item: dict, result, page: Optional[Dict]) -> None:
-        self.store.append(part_of(item["url"], self.frontier.parts), item, result, page)
         if result.outcome == "budget":
             self.frontier.mark(item["url"], "skipped")
             return
+        self.store.append(part_of(item["url"], self.frontier.parts), item, result, page)
         self.pages += 1
         if result.outcome != "ok":
             self.frontier.mark(item["url"], "failed")
@@ -156,7 +166,7 @@ class Crawler:
     def summary(self) -> Dict:
         c = self.fetcher.counts
         return {"pages_fetched": self.pages, "ok": c["ok"], "blocked_by_robots": c["robots"],
-                "errors": c["http_error"] + c["network_error"], "not_html": c["not_html"],
+                "errors": c["http_error"] + c["network_error"] + c["parse_error"], "not_html": c["not_html"],
                 "budget_skipped": c["budget"], "unique_startups": len(self.startups_ok),
                 "careers_pages": len(self.careers_urls),
                 "careers_startups": len(self.careers_domains)}

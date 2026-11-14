@@ -98,6 +98,30 @@ class TestCrawl(unittest.TestCase):
         self.assertEqual(items["https://vc.test/portfolio?page=2"]["state"], "failed")
         self.assertEqual(self.stats["errors"], 2)  # page=2 and logoco careers
 
+    def test_parse_error_budget_rows_and_summary_survive(self):
+        from unittest import mock
+        out = self.out / "y"
+        c = Crawler(Frontier(1), Fetcher(2, 25, fake), Store(out), 1)
+        c.add_seeds([{"url": "https://vc.test/portfolio", "kind": "seed", "label": "vc"}])
+        with mock.patch("crawler.run.extract.extract", side_effect=ValueError("boom")):
+            stats = c.run([0])
+        self.assertEqual(stats["errors"], 1)
+        self.assertEqual(stats["ok"], 0)
+        self.assertTrue((out / "summary.json").exists())
+        rows = [json.loads(l) for l in (out / "pages-0.jsonl").read_text().splitlines()]
+        self.assertEqual([r["outcome"] for r in rows], ["parse_error"])
+
+    def test_summary_saved_when_loop_raises(self):
+        from unittest import mock
+        out = self.out / "z"
+        c = Crawler(Frontier(1), Fetcher(5, 25, fake), Store(out), 1)
+        c.add_seeds([{"url": "https://vc.test/portfolio", "kind": "seed", "label": "vc"}])
+        with mock.patch.object(Crawler, "_handle", side_effect=RuntimeError("x")):
+            with self.assertRaises(RuntimeError):
+                c.run([0])
+        self.assertTrue((out / "summary.json").exists())
+        self.assertTrue((out / "frontier-0.jsonl").exists())
+
     def test_outputs_and_review(self):
         self.assertTrue((self.out / "summary.json").exists())
         records = [json.loads(l) for p in self.out.glob("pages-*.jsonl") for l in p.read_text().splitlines()]

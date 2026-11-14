@@ -19,6 +19,13 @@ def _suffixes() -> frozenset:
 
 def normalise(url: str) -> str:
     """Strip fragment and tracking params; lowercase scheme/host; drop default ports."""
+    try:
+        return _normalise(url)
+    except ValueError:
+        return ""
+
+
+def _normalise(url: str) -> str:
     p = urllib.parse.urlsplit((url or "").strip())
     query = [(k, v) for k, v in urllib.parse.parse_qsl(p.query, keep_blank_values=True)
              if not k.lower().startswith(_TRACKING[0]) and k.lower() not in _TRACKING[1:]]
@@ -30,7 +37,10 @@ def normalise(url: str) -> str:
 
 
 def host(url: str) -> str:
-    return (urllib.parse.urlsplit(url).hostname or "").lower()
+    try:
+        return (urllib.parse.urlsplit(url).hostname or "").lower()
+    except ValueError:
+        return ""
 
 
 def registered_domain(url_or_host: str) -> str:
