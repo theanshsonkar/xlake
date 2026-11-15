@@ -16,7 +16,7 @@ name: crawl
 #   through off-site opportunity links.
 on:
   schedule:
-    - cron: "23 20 * * *"
+    - cron: "23 2,8,14,20 * * *"   # every 6 hours; per-site caps per run keep it polite
   workflow_dispatch:
     inputs:
       seed_pages:
