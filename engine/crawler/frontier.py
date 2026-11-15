@@ -5,13 +5,14 @@ from __future__ import annotations
 import hashlib
 import heapq
 import json
+from datetime import date
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional
 
 from crawler import urls
 
 STATES = ("queued", "fetched", "failed", "skipped")
-KINDS = ("seed", "feed", "page", "startup_home", "careers_link", "sitemap", "cc")
+KINDS = ("seed", "feed", "page", "startup_home", "careers_link", "sitemap", "cc", "outlink")
 
 
 def part_of(url: str, parts: int) -> int:
@@ -57,9 +58,59 @@ class Frontier:
     def has_queued(self, part: int) -> bool:
         return bool(self._heaps[part])
 
-    def mark(self, url: str, state: str) -> None:
+    def mark(self, url: str, state: str, today: Optional[date] = None) -> None:
         assert state in STATES
         self.items[url]["state"] = state
+        self.items[url]["at"] = (today or date.today()).isoformat()
+
+    def _rebuild_heaps(self) -> None:
+        self._heaps = [[] for _ in range(self.parts)]
+        for item in self.items.values():
+            if item["state"] == "queued":
+                self._enqueue(item)
+
+    def prepare_next_run(self, today: Optional[date] = None, revisit_days: int = 7,
+                         max_items: int = 300_000) -> None:
+        """Turn a saved frontier into the next run's starting state (no-op when empty)."""
+        today = today or date.today()
+
+        def age(item: dict) -> int:
+            try:
+                return (today - date.fromisoformat(item["at"])).days
+            except (KeyError, TypeError, ValueError):
+                return 10 ** 6  # unknown age counts as old
+
+        for item in self.items.values():
+            state, kind = item["state"], item["kind"]
+            if kind in ("seed", "feed"):
+                item["state"] = "queued"
+            elif state == "skipped":
+                item["state"] = "queued"
+            elif state == "fetched" and kind in ("careers_link", "startup_home", "outlink") \
+                    and age(item) > revisit_days:
+                item.update(state="queued", recheck=True, priority=60)
+            elif state == "failed" and age(item) > 30 and item.get("retries", 0) < 2:
+                item.update(state="queued", retries=item.get("retries", 0) + 1)
+        if len(self.items) > max_items:
+            queued = sorted((i for i in self.items.values() if i["state"] == "queued"),
+                            key=lambda i: (i["priority"], i.get("at") or ""))
+            for item in queued:
+                if len(self.items) <= max_items:
+                    break
+                self._drop(item)
+        if len(self.items) > max_items:
+            old = sorted((i for i in self.items.values()
+                          if i["state"] == "fetched" and i["kind"] == "page"),
+                         key=lambda i: i.get("at") or "")
+            for item in old:
+                if len(self.items) <= max_items:
+                    break
+                self._drop(item)
+        self._rebuild_heaps()
+
+    def _drop(self, item: dict) -> None:
+        del self.items[item["url"]]
+        self._keys.discard(urls.key(item["url"]))
 
     def parts_of(self) -> Iterable[int]:
         return range(self.parts)

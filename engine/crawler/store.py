@@ -32,7 +32,7 @@ class Store:
         record = {
             "url": item["url"], "final_url": result.final_url, "host": item["host"],
             "part": part, "source": item["source"], "depth": item["depth"],
-            "kind": item["kind"], "lead": item["lead"], "status_code": result.status,
+            "kind": item["kind"], "recheck": bool(item.get("recheck")), "lead": item["lead"], "status_code": result.status,
             "outcome": result.outcome, "title": page.get("title"),
             "organiser": page.get("organiser"), "language": page.get("language"),
             "snippet": page.get("snippet"), "text": page.get("text"),

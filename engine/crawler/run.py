@@ -18,8 +18,11 @@ MAX_DEPTH = 2
 SEED_PER_HOST = 60
 STARTUP_PER_HOST = 6
 FEED_MAX_AGE_DAYS = 365
+OUTLINK_PER_PAGE = 10
+OUTLINK_PER_DOMAIN = 1
+OUTLINK_PER_HOST = 10
 PRIORITY = {"seed": 100, "startup_home": 90, "careers_link": 80, "feed": 70, "feed_item": 50,
-            "sitemap": 5, "cc": 4, "page": 10}  # doors use leftover budget only
+            "outlink": 40, "sitemap": 5, "cc": 4, "page": 10}  # doors use leftover budget only
 
 
 class Crawler:
@@ -51,6 +54,10 @@ class Crawler:
         self.probed: Set[str] = set()
         self.door_items = 0
         self.pages_by_door: Counter = Counter()
+        self.outlink_hosts: Set[str] = set()
+        self.outlink_domains: Set[str] = set()
+        self.new_sites: Set[str] = set()
+        self.rechecked = self.recheck_dead = self.recheck_ok = 0
 
     def add_seeds(self, seeds: Iterable[dict]) -> None:
         for s in seeds:
@@ -64,12 +71,17 @@ class Crawler:
                 self.seed_hosts.add(item["host"])
                 if item["kind"] == "feed":
                     self.feed_urls.add(item["url"])
+            elif item["kind"] == "outlink":
+                self.outlink_hosts.add(item["host"])
+                self.outlink_domains.add(urls.registered_domain(item["url"]))
             elif item["kind"] == "startup_home":
                 self.startup_domains.add(urls.registered_domain(item["url"]))
 
     def _limit(self, item: dict) -> int:
         if item["host"] in self.seed_hosts:
             return SEED_PER_HOST
+        if item["kind"] == "outlink" or item["host"] in self.outlink_hosts:
+            return OUTLINK_PER_HOST
         if item["kind"] in ("startup_home", "careers_link") or item["lead"]:
             return STARTUP_PER_HOST
         return self.fetcher.per_host
@@ -166,19 +178,30 @@ class Crawler:
 
     def _handle(self, item: dict, result, page: Optional[Dict]) -> None:
         if result.outcome == "budget":
-            self.frontier.mark(item["url"], "skipped")
+            self.frontier.mark(item["url"], "skipped", self.today)
             return
         if item["kind"] in doors.DOOR_KINDS:
             self._handle_door(item, result, page)
             return
         written = self.store.append(part_of(item["url"], self.frontier.parts), item, result, page)
         self.pages += 1
+        from_outlink = item["kind"] == "outlink" or item["host"] in self.outlink_hosts
         if written and result.outcome == "ok":
-            self.pages_by_door[doors.SOURCE_DOORS.get(item["source"], "link")] += 1
+            self.pages_by_door["outlink" if from_outlink else doors.SOURCE_DOORS.get(item["source"], "link")] += 1
+            if from_outlink:
+                self.new_sites.add(urls.registered_domain(item["url"]))
+        if item.get("recheck"):
+            self.rechecked += 1
+            if result.outcome == "ok":
+                self.recheck_ok += 1
+            elif (result.outcome == "http_error" and result.status in (404, 410)) \
+                    or result.outcome == "network_error":
+                self.recheck_dead += 1
+            item["recheck"] = False
         if result.outcome != "ok":
-            self.frontier.mark(item["url"], "failed")
+            self.frontier.mark(item["url"], "failed", self.today)
             return
-        self.frontier.mark(item["url"], "fetched")
+        self.frontier.mark(item["url"], "fetched", self.today)
         if item["kind"] == "startup_home":
             self.startups_ok.add(urls.registered_domain(item["url"]))
         domain = (item["lead"] or {}).get("domain")
@@ -214,7 +237,7 @@ class Crawler:
     def _handle_door(self, item: dict, result, page: Optional[Dict]) -> None:
         self.door_items += 1
         ok = result.outcome == "ok"
-        self.frontier.mark(item["url"], "fetched" if ok else "failed")
+        self.frontier.mark(item["url"], "fetched" if ok else "failed", self.today)
         if item["kind"] == "cc":
             domain = urls.registered_domain(item["host"])
             cands = [u for u in page["cc_urls"] if doors.url_wanted(u, domain, None, self.today)]
@@ -276,6 +299,7 @@ class Crawler:
         lead_page = on_seed or item["parent"] in self.feed_urls
         own_site = bool(lead and lead.get("domain")
                         and urls.registered_domain(item["host"]) == lead["domain"])
+        outlinks = 0
         for link in page["links"]:
             target, text = link["url"], link["text"]
             opportunity = score.link_is_opportunity(text, target)
@@ -312,6 +336,12 @@ class Crawler:
             elif opportunity and own_site:
                 self.frontier.push(target, item["source"], 0, PRIORITY["careers_link"],
                                    "careers_link", url, lead, hop=1)
+            elif opportunity and not name and not page.get("junk") and outlinks < OUTLINK_PER_PAGE \
+                    and domain not in self.outlink_domains:
+                if self.frontier.push(target, url, 0, PRIORITY["outlink"], "outlink", url, None):
+                    outlinks += 1
+                    self.outlink_domains.add(domain)
+                    self.outlink_hosts.add(urls.host(target))
 
     def summary(self) -> Dict:
         c = self.fetcher.counts
@@ -330,7 +360,12 @@ class Crawler:
                 "cc_urls_queued": self.cc.urls_queued if self.cc else 0,
                 "cc_down": bool(self.cc and self.cc.down),
                 "door_items": self.door_items,
-                "pages_by_door": {k: self.pages_by_door.get(k, 0) for k in ("sitemap", "commoncrawl", "link")}}
+                "new_sites": len(self.new_sites),
+                "rechecked": self.rechecked, "recheck_dead": self.recheck_dead,
+                "recheck_ok": self.recheck_ok,
+                "dead_link_share": self.recheck_dead / self.rechecked if self.rechecked else 0,
+                "pages_by_door": {k: self.pages_by_door.get(k, 0)
+                                  for k in ("sitemap", "commoncrawl", "outlink", "link")}}
 
 
 def doors_result(item: dict):

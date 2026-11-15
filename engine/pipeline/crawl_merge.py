@@ -9,6 +9,44 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from crawler import funding, urls
+from crawler.frontier import part_of
+
+_STATE_RANK = {"fetched": 3, "failed": 2, "skipped": 1, "queued": 0}
+
+
+def _better(new: Dict, cur: Dict) -> bool:
+    rn, rc = _STATE_RANK.get(new.get("state"), 0), _STATE_RANK.get(cur.get("state"), 0)
+    return rn > rc or (rn == rc and (new.get("at") or "") > (cur.get("at") or ""))
+
+
+def merge_frontiers(dirs: List[Path], out: Path, parts: int = 8) -> Dict[str, int]:
+    items: Dict[str, Dict] = {}
+    for d in dirs:
+        for path in sorted(Path(d).glob("frontier-*.jsonl")):
+            for it in _lines(path):
+                url = it.get("url")
+                if not url:
+                    continue
+                cur = items.get(url)
+                if cur is None:
+                    items[url] = it
+                    continue
+                win, lose = (it, cur) if _better(it, cur) else (cur, it)
+                win["retries"] = max(win.get("retries", 0), lose.get("retries", 0))
+                if not (win.get("lead") or {}).get("funding") and (lose.get("lead") or {}).get("funding"):
+                    win["lead"] = lose["lead"]
+                items[url] = win
+    fdir = out / "frontier"
+    fdir.mkdir(parents=True, exist_ok=True)
+    by_part: List[List[Dict]] = [[] for _ in range(parts)]
+    for it in items.values():
+        by_part[part_of(it["url"], parts)].append(it)
+    for p, rows in enumerate(by_part):
+        with open(fdir / "frontier-{}.jsonl".format(p), "w") as fh:
+            for it in rows:
+                fh.write(json.dumps(it, ensure_ascii=False) + "\n")
+    return {"frontier_items": len(items),
+            "frontier_queued": sum(1 for i in items.values() if i.get("state") == "queued")}
 
 
 def _lines(path: Path):
@@ -34,7 +72,7 @@ def _add(total: Dict, key: str, value) -> None:
             _add(sub, k, v)
 
 
-def merge(dirs: List[Path], out: Path, today: Optional[date] = None) -> Dict:
+def merge(dirs: List[Path], out: Path, today: Optional[date] = None, parts: int = 8) -> Dict:
     today = today or date.today()
     out.mkdir(parents=True, exist_ok=True)
     seen: set = set()
@@ -87,6 +125,9 @@ def merge(dirs: List[Path], out: Path, today: Optional[date] = None) -> Dict:
             fh.write(json.dumps(r, ensure_ascii=False) + "\n")
     summary.update(legs_ok=ok_dirs, legs_missing=missing, merged_pages=pages,
                    merged_duplicates=dupes, merged_startups=len(rows))
+    summary.update(merge_frontiers(dirs, out, parts))
+    summary["dead_link_share"] = (summary.get("recheck_dead", 0) / summary["rechecked"]
+                                 if summary.get("rechecked") else 0)
     (out / "summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False))
     return summary
 
@@ -95,10 +136,11 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--in", dest="inputs", nargs="+", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--parts", type=int, default=8)
     args = ap.parse_args(argv)
     dirs = [d for d in args.inputs if d.is_dir()]
     skipped = [str(d) for d in args.inputs if not d.is_dir()]
-    summary = merge(dirs, args.out)
+    summary = merge(dirs, args.out, parts=args.parts)
     summary["legs_missing"] += skipped
     (args.out / "summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False))
     print(json.dumps(summary, indent=2))

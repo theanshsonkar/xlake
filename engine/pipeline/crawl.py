@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import date
 from pathlib import Path
 
 from crawler import urls
@@ -33,10 +34,14 @@ def main(argv=None) -> int:
                     help="stage 1: crawl only seed/feed hosts, leave everything else queued")
     ap.add_argument("--frontier-in", type=Path, default=None,
                     help="load the frontier from this dir instead of --out (stage 2 legs)")
+    ap.add_argument("--no-prepare", action="store_true",
+                    help="skip next-run preparation (stage 2 legs continue the seeds stage state)")
     args = ap.parse_args(argv)
 
     frontier = Frontier(args.parts)
-    frontier.load(args.frontier_in or args.out)
+    frontier.load(args.frontier_in or args.out)  # a missing/empty dir is a fresh start
+    if not args.no_prepare:
+        frontier.prepare_next_run(date.today())
     crawler = Crawler(frontier, Fetcher(args.max_pages, args.per_host), Store(args.out), args.workers,
                       sitemaps=not args.no_sitemaps, commoncrawl=not args.no_commoncrawl,
                       cc_max=args.cc_max, seeds_only=args.seeds_only)

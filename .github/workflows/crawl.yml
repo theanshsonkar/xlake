@@ -9,7 +9,14 @@ name: crawl
 #   saved frontier. Stage 2 "legs": 8 machines, each crawls one frontier part (hash of
 #   the registered domain), so a site lives in exactly one leg and a crash loses one
 #   leg only. Stage 3 "merge": combine whatever leg artifacts exist.
+# - Daily at 20:23 UTC, plus manual dispatch. The crawler has MEMORY: the merged
+#   frontier is saved in the actions cache (engine/out/memory, key crawl-memory-<run>)
+#   and restored by the next run's seeds stage, which re-queues feeds, budget-skipped
+#   items and stale opportunity pages (liveness re-check), then spreads to new sites
+#   through off-site opportunity links.
 on:
+  schedule:
+    - cron: "23 20 * * *"
   workflow_dispatch:
     inputs:
       seed_pages:
@@ -46,14 +53,21 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Restore crawler memory
+        uses: actions/cache/restore@v4
+        with:
+          path: engine/out/memory
+          key: crawl-memory-${{ github.run_id }}
+          restore-keys: crawl-memory-
+
       - name: Crawl seed and feed hosts
         env:
-          SEED_PAGES: ${{ github.event.inputs.seed_pages }}
-          WORKERS: ${{ github.event.inputs.workers }}
+          SEED_PAGES: ${{ github.event.inputs.seed_pages || '1500' }}
+          WORKERS: ${{ github.event.inputs.workers || '6' }}
         run: >
           python3 -u -m pipeline.crawl --seeds-only --parts 8
           --max-pages "$SEED_PAGES" --workers "$WORKERS" --max-minutes 50
-          --out out/seeds
+          --frontier-in out/memory --out out/seeds
 
       - uses: actions/upload-artifact@v4
         if: always()
@@ -88,11 +102,11 @@ jobs:
       - name: Crawl this leg's part
         env:
           PART: ${{ matrix.part }}
-          LEG_PAGES: ${{ github.event.inputs.leg_pages }}
-          WORKERS: ${{ github.event.inputs.workers }}
+          LEG_PAGES: ${{ github.event.inputs.leg_pages || '3000' }}
+          WORKERS: ${{ github.event.inputs.workers || '6' }}
         run: >
           python3 -u -m pipeline.crawl --parts 8 --part "$PART"
-          --frontier-in out/seeds
+          --frontier-in out/seeds --no-prepare
           --max-pages "$LEG_PAGES" --workers "$WORKERS" --max-minutes 105
           --out "out/leg-$PART"
 
@@ -135,7 +149,21 @@ jobs:
       - name: Merge
         run: |
           mkdir -p out/legs out/seeds
-          python3 -m pipeline.crawl_merge --in out/seeds out/legs/* --out out/result
+          python3 -m pipeline.crawl_merge --in out/seeds out/legs/* --out out/result --parts 8
+
+      - name: Stage memory for the next run
+        run: |
+          mkdir -p out/memory
+          if ls out/result/frontier/*.jsonl >/dev/null 2>&1; then
+            cp out/result/frontier/*.jsonl out/memory/
+          fi
+
+      - name: Save crawler memory
+        if: hashFiles('engine/out/memory/*.jsonl') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: engine/out/memory
+          key: crawl-memory-${{ github.run_id }}
 
       - name: Job summary
         run: |
