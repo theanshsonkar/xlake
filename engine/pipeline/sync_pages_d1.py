@@ -1,6 +1,7 @@
 """Publish crawler starting-point pages to the separate D1 database `xlake-pages`.
 
     python3 -m pipeline.sync_pages_d1 --in <crawl-result dir> [--dry-run] [--max-writes 4000] [--db xlake-pages]
+        [--pending DIR] [--write-pending]
 
 Incremental: only this run's rows are read/written (never a full replace). Always exits 0.
 """
@@ -26,6 +27,9 @@ COLUMNS = ("id", "url", "site", "title", "org", "kind", "tags", "status", "statu
            "first_seen", "last_checked", "h")
 HASH_COLS = tuple(c for c in COLUMNS if c not in ("last_checked", "first_seen", "h"))
 FTS_COLS = ("title", "org", "summary", "kind", "tags")
+PENDING_FILE = "pages-pending.jsonl"
+PENDING_CAP = 50000
+PROGRAMME_KINDS = ("fellowship", "scholarship", "grant", "internship", "hackathon", "accelerator")
 CHUNK = 90  # D1 allows 100 bound parameters per statement
 
 SCHEMA = [
@@ -61,11 +65,64 @@ class Stats:
         self.c = dict(insert=0, update=0, touch=0, delete=0, deferred=0)
         self.writes = 0
         self.reported = 0
+        self.pending: List[dict] = []
 
     def line(self, dry: bool) -> str:
-        return "pages sync: rows=%d insert=%d update=%d touch=%d delete=%d deferred=%d writes=%d dry_run=%s" % (
+        return "pages sync: rows=%d insert=%d update=%d touch=%d delete=%d deferred=%d writes=%d pending=%d dry_run=%s" % (
             self.rows, self.c["insert"], self.c["update"], self.c["touch"], self.c["delete"],
-            self.c["deferred"], self.writes, str(bool(dry)).lower())
+            self.c["deferred"], self.writes, len(self.pending), str(bool(dry)).lower())
+
+
+def value_group(r: Dict[str, Any]) -> int:
+    if r.get("status_quote") is not None:
+        return 0
+    if r.get("funding_date"):
+        return 1
+    if r.get("kind") in PROGRAMME_KINDS:
+        return 2
+    return 3
+
+
+def value_sort(rows: List[dict]) -> List[dict]:
+    """Best first: quoted status, funded, programme kinds, rest; newest last_checked first inside a group."""
+    out = sorted(rows, key=lambda r: r.get("last_checked") or "", reverse=True)
+    out.sort(key=value_group)
+    return out
+
+
+def load_pending(d: Optional[str]) -> List[dict]:
+    out: List[dict] = []
+    if not d:
+        return out
+    f = Path(d) / PENDING_FILE
+    if not f.exists():
+        return out
+    for line in f.read_text(encoding="utf-8").splitlines():
+        try:
+            r = json.loads(line)
+        except ValueError:
+            continue
+        if isinstance(r, dict) and r.get("id"):
+            out.append(r)
+    return out
+
+
+def write_pending(d: str, rows: List[dict]) -> int:
+    rows = value_sort(rows)[:PENDING_CAP]
+    Path(d).mkdir(parents=True, exist_ok=True)
+    tmp = Path(d) / (PENDING_FILE + ".tmp")
+    tmp.write_text("".join(json.dumps(r, ensure_ascii=False, default=str) + "\n" for r in rows), encoding="utf-8")
+    os.replace(tmp, Path(d) / PENDING_FILE)
+    return len(rows)
+
+
+def merge_pending(rows: List[dict], dead_ids: List[str], pending: List[dict]) -> List[dict]:
+    by_id = {r["id"]: r for r in pending}
+    for d in dead_ids:
+        by_id.pop(d, None)
+    for r in rows:
+        by_id[r["id"]] = r
+    return list(by_id.values())
 
 
 def _fts_insert(r: Dict[str, Any]) -> str:
@@ -112,6 +169,7 @@ def plan(rows: List[dict], dead_ids: List[str], existing: Dict[str, dict],
             items.append(("delete", {"id": id_}, ""))
     dead = set(dead_ids)
     ins, upd, touch = [], [], []
+    orig = {row["id"]: row for row in rows}
     for row in rows:
         if row["id"] in dead:
             continue
@@ -127,6 +185,8 @@ def plan(rows: List[dict], dead_ids: List[str], existing: Dict[str, dict],
             new, was = _parse(r.get("last_checked")), _parse(old.get("last_checked"))
             if (new and was and new - was >= TOUCH_AFTER) or (new and not was):
                 touch.append(("touch", r, h))
+    ins.sort(key=lambda it: it[1].get("last_checked") or "", reverse=True)
+    ins.sort(key=lambda it: value_group(it[1]))
     items += upd + touch + ins
     kept: List[Tuple[str, dict, str]] = []
     cost_total = 0
@@ -134,6 +194,8 @@ def plan(rows: List[dict], dead_ids: List[str], existing: Dict[str, dict],
         cost = 3 if (kind == "update" and not r.get("_fts")) else COST[kind]
         if cost_total + cost > max_writes:
             st.c["deferred"] += 1
+            if kind != "delete":
+                st.pending.append(orig[r["id"]])
             continue
         cost_total += cost
         st.c[kind] += 1
@@ -154,7 +216,8 @@ def ensure_db(client, name: str) -> None:
 
 
 def sync(rows: List[dict], dead_ids: List[str], client, db: str = "xlake-pages", dry_run: bool = False,
-         max_writes: int = 4000, log=print) -> Stats:
+         max_writes: int = 4000, log=print,
+         pending_rows: Optional[List[dict]] = None) -> Stats:
     if not rows:
         log("pages sync: 0 rows, treating as failed read; nothing synced")
         return Stats()
@@ -163,6 +226,8 @@ def sync(rows: List[dict], dead_ids: List[str], client, db: str = "xlake-pages",
         st.rows = len(rows)
         log("pages sync: no token: plan only, %d rows ready" % len(rows))
         return st
+    if pending_rows:
+        rows = merge_pending(rows, dead_ids, pending_rows)
     existing: Dict[str, dict] = {}
     ids = [r["id"] for r in rows] + list(dead_ids)
     if not dry_run:
@@ -177,10 +242,10 @@ def sync(rows: List[dict], dead_ids: List[str], client, db: str = "xlake-pages",
             log("pages sync: dry-run could not read %s (%s); assuming empty" % (db, str(e)[:80]))
     items, st = plan(rows, dead_ids, existing, max_writes)
     if not dry_run:
-        pending: List[str] = []
+        stmts: List[str] = []
         for kind, r, h in items:
-            pending.extend(_sql(kind, r, h))
-        for chunk in _pack(pending):
+            stmts.extend(_sql(kind, r, h))
+        for chunk in _pack(stmts):
             _, w = client.query(db, chunk)
             st.reported += w
     return st
@@ -192,13 +257,18 @@ def main(argv: Optional[List[str]] = None) -> int:
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--max-writes", type=int, default=4000)
     ap.add_argument("--db", default="xlake-pages")
+    ap.add_argument("--pending", default=None, help="dir holding pages-pending.jsonl (deferred rows)")
+    ap.add_argument("--write-pending", action="store_true", help="write the pending file even in --dry-run")
     a = ap.parse_args(argv)
     st = Stats()
     try:
         rows, dead = pagerow.rows_from_merged(Path(a.inp) / "pages-merged.jsonl")
         token = clean_token(os.environ.get("CLOUDFLARE_API_TOKEN", ""))
         client = Client(token, os.environ.get("CLOUDFLARE_ACCOUNT_ID", "")) if token else None
-        st = sync(rows, dead, client, a.db, a.dry_run, a.max_writes)
+        pend = load_pending(a.pending)
+        st = sync(rows, dead, client, a.db, a.dry_run, a.max_writes, pending_rows=pend)
+        if a.pending and client is not None and rows and (not a.dry_run or a.write_pending):
+            write_pending(a.pending, st.pending)
     except Exception as e:  # never fail the workflow
         print("::warning::pages sync aborted: %s" % e)
     print(st.line(a.dry_run))

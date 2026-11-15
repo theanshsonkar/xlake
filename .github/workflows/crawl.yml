@@ -225,6 +225,13 @@ jobs:
             aws s3 cp "out/result/$f.gz" "s3://$AWS_S3_BUCKET/lake/crawler/runs/$TS/$f.gz"
           done
 
+      - name: Restore pending pages
+        uses: actions/cache/restore@v4
+        with:
+          path: engine/out/pending
+          key: crawl-pending-${{ github.run_id }}
+          restore-keys: crawl-pending-
+
       - name: Sync pages to Cloudflare D1 (xlake-pages)
         continue-on-error: true
         env:
@@ -233,8 +240,16 @@ jobs:
         run: |
           DRY="--dry-run"
           if [ "$LIVE" = "true" ]; then DRY=""; fi
-          python3 -u -m pipeline.sync_pages_d1 --in out/result --max-writes 4000 $DRY | tee out/pages-sync.log
+          mkdir -p out/pending
+          python3 -u -m pipeline.sync_pages_d1 --in out/result --max-writes 4000 --pending out/pending $DRY | tee out/pages-sync.log
           {
             echo '### pages sync (xlake-pages)'
             grep '^pages sync:' out/pages-sync.log | tail -1 || echo 'no summary'
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save pending pages
+        if: env.LIVE == 'true' && hashFiles('engine/out/pending/*') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: engine/out/pending
+          key: crawl-pending-${{ github.run_id }}
