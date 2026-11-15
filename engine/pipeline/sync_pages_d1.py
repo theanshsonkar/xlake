@@ -206,13 +206,14 @@ def plan(rows: List[dict], dead_ids: List[str], existing: Dict[str, dict],
 
 def ensure_db(client, name: str) -> None:
     try:
-        client.db_id(name)
+        uuid = client.db_id(name)
     except D1Error as e:
         if "not found" not in str(e):
             raise
         p = client._call("POST", "%s/accounts/%s/d1/database" % (API, client.account), {"name": name})
-        client._ids[name] = (p.get("result") or {})["uuid"]
+        uuid = client._ids[name] = (p.get("result") or {})["uuid"]
         print("pages sync: created D1 database %s" % name)
+    print("pages sync: database %s id %s" % (name, uuid))  # the MCP worker's DB_PAGES binding needs this id
 
 
 def sync(rows: List[dict], dead_ids: List[str], client, db: str = "xlake-pages", dry_run: bool = False,
