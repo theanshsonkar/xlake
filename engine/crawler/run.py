@@ -129,7 +129,10 @@ class Crawler:
         page["funding"] = funding.from_page(page, result.final_url, kind, self.today)
         page["own_site"] = own_site
         ev = funding.best(lead.get("funding"), page["funding"] if own_site else None)
-        if funding.is_recent(ev, self.today):
+        # the company's tag belongs only on its own site or its job board (one hop), never on
+        # news or other sites reached through its links
+        company_page = own_site or item.get("hop") == 1
+        if company_page and funding.is_recent(ev, self.today):
             page["tags"] = ["startup"]
             page["company_funding"] = ev
         else:

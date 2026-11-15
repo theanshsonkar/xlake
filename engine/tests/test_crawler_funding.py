@@ -101,3 +101,26 @@ class TestFundingQuoteShape(unittest.TestCase):
     def test_quote_window_keeps_company(self):
         q = funding.funding_quote("Logo Menu " * 60 + "Fractile raised $720M in a Series B round")
         self.assertIn("Fractile raised $720M", q)
+
+
+class TestStartupTagScope(unittest.TestCase):
+    def test_tag_only_on_company_pages(self):
+        import tempfile
+        from pathlib import Path
+        from crawler.fetch import Fetcher
+        from crawler.frontier import Frontier
+        from crawler.run import Crawler
+        from crawler.store import Store
+        page = "<html><head><title>Story</title></head><body>Some news text about careers.</body></html>"
+        ev = {"date": "2026-10-01", "precision": "day", "proof": "https://n.test/a", "source_kind": "news", "quote": "Acme raised $5M"}
+        with tempfile.TemporaryDirectory() as tmp:
+            c = Crawler(Frontier(1), Fetcher(10, 10, lambda u, polite=True: (200, u, page, None)), Store(Path(tmp)),
+                        workers=1, today=TODAY, sitemaps=False, commoncrawl=False)
+            lead = {"name": "Acme", "domain": "acme.com", "source": "x", "date": ev["date"], "funding": ev}
+            item = {"url": "https://news.other/story", "host": "news.other", "lead": lead, "hop": 0, "parent": None, "kind": "page", "source": "x", "depth": 0}
+            res = c.fetcher.fetch(item["url"])
+            self.assertEqual(c._parse(item, res, False)["tags"], [])
+            item2 = dict(item, url="https://acme.com/careers", host="acme.com")
+            self.assertEqual(c._parse(item2, c.fetcher.fetch(item2["url"]), False)["tags"], ["startup"])
+            item3 = dict(item, url="https://jobs.ashbyhq.com/acme", host="jobs.ashbyhq.com", hop=1)
+            self.assertEqual(c._parse(item3, c.fetcher.fetch(item3["url"]), False)["tags"], ["startup"])
