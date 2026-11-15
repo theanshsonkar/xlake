@@ -1,7 +1,11 @@
 name: crawl
 
-# General crawler, run in parallel legs. Output is a workflow ARTIFACT only (no S3,
-# no Supabase, no secrets, no commits) until the owner approves S3 writes.
+# General crawler, run in parallel legs. Output: the workflow ARTIFACT always. The S3
+# archive (lake/crawler/runs/<ts>/) and the D1 database `xlake-pages` are written only
+# when the repo variable CRAWL_PUBLISH_LIVE is 'true' (scheduled runs, or manual runs
+# with publish=live); otherwise the publish job is a dry run. No Supabase, no commits.
+# D1 budget: 4 runs/day x 4000 writes = 16k of the ~20k/day headroom left under the
+# 80k daily check.
 #
 # - robots.txt is always honoured; polite per-site delays come from core.webfetch;
 #   LinkedIn / Naukri are never fetched (deny list).
@@ -31,6 +35,10 @@ on:
         description: "Fetch workers per job"
         required: false
         default: "6"
+      publish:
+        description: "dry | live"
+        required: false
+        default: "dry"
 
 concurrency:
   group: xlake-crawler
@@ -180,3 +188,53 @@ jobs:
           name: crawl-result
           path: engine/out/result
           retention-days: 30
+
+  publish:
+    needs: [merge]
+    if: always() && needs.merge.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: engine
+    env:
+      LIVE: "${{ vars.CRAWL_PUBLISH_LIVE == 'true' && (github.event_name == 'schedule' || github.event.inputs.publish == 'live') }}"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: crawl-result
+          path: engine/out/result
+
+      - name: Archive run to S3
+        if: env.LIVE == 'true'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_DEFAULT_REGION: ap-south-1
+        run: |
+          TS=$(date -u +%Y-%m-%dT%H%MZ)
+          for f in pages-merged.jsonl startups.jsonl summary.json; do
+            gzip -kf "out/result/$f"
+            aws s3 cp "out/result/$f.gz" "s3://$AWS_S3_BUCKET/lake/crawler/runs/$TS/$f.gz"
+          done
+
+      - name: Sync pages to Cloudflare D1 (xlake-pages)
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: "3dcdbb176253427b2e7e80c6189b12ca"
+        run: |
+          DRY="--dry-run"
+          if [ "$LIVE" = "true" ]; then DRY=""; fi
+          python3 -u -m pipeline.sync_pages_d1 --in out/result --max-writes 4000 $DRY | tee out/pages-sync.log
+          {
+            echo '### pages sync (xlake-pages)'
+            grep '^pages sync:' out/pages-sync.log | tail -1 || echo 'no summary'
+          } >> "$GITHUB_STEP_SUMMARY"
