@@ -1,7 +1,7 @@
 name: crawl
 
 # General crawler, run in parallel legs. Output: the workflow ARTIFACT always. The S3
-# archive (lake/crawler/runs/<ts>/) and the D1 database `xlake-pages` are written only
+# archive (lake/crawler/runs/<ts>/) and the D1 `pages` table (in xlake-community) are written only
 # when the repo variable CRAWL_PUBLISH_LIVE is 'true' (scheduled runs, or manual runs
 # with publish=live); otherwise the publish job is a dry run. No Supabase, no commits.
 # D1 budget: 4 runs/day x 4000 writes = 16k of the ~20k/day headroom left under the
@@ -232,7 +232,7 @@ jobs:
           key: crawl-pending-${{ github.run_id }}
           restore-keys: crawl-pending-
 
-      - name: Sync pages to Cloudflare D1 (xlake-pages)
+      - name: Sync pages to Cloudflare D1 (pages table in xlake-community)
         continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -243,7 +243,7 @@ jobs:
           mkdir -p out/pending
           python3 -u -m pipeline.sync_pages_d1 --in out/result --max-writes 4000 --pending out/pending $DRY | tee out/pages-sync.log
           {
-            echo '### pages sync (xlake-pages)'
+            echo '### pages sync (xlake-community.pages)'
             grep '^pages sync:' out/pages-sync.log | tail -1 || echo 'no summary'
           } >> "$GITHUB_STEP_SUMMARY"
 

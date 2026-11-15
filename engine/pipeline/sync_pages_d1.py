@@ -1,6 +1,7 @@
-"""Publish crawler starting-point pages to the separate D1 database `xlake-pages`.
+"""Publish crawler starting-point pages to the `pages` table in D1 (default host db: xlake-community;
+the free plan allows only 10 databases, so pages share the community db like the API key tables).
 
-    python3 -m pipeline.sync_pages_d1 --in <crawl-result dir> [--dry-run] [--max-writes 4000] [--db xlake-pages]
+    python3 -m pipeline.sync_pages_d1 --in <crawl-result dir> [--dry-run] [--max-writes 4000] [--db xlake-community]
         [--pending DIR] [--write-pending]
 
 Incremental: only this run's rows are read/written (never a full replace). Always exits 0.
@@ -216,7 +217,7 @@ def ensure_db(client, name: str) -> None:
     print("pages sync: database %s id %s" % (name, uuid))  # the MCP worker's DB_PAGES binding needs this id
 
 
-def sync(rows: List[dict], dead_ids: List[str], client, db: str = "xlake-pages", dry_run: bool = False,
+def sync(rows: List[dict], dead_ids: List[str], client, db: str = "xlake-community", dry_run: bool = False,
          max_writes: int = 4000, log=print,
          pending_rows: Optional[List[dict]] = None) -> Stats:
     if not rows:
@@ -257,7 +258,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     ap.add_argument("--in", dest="inp", required=True)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--max-writes", type=int, default=4000)
-    ap.add_argument("--db", default="xlake-pages")
+    ap.add_argument("--db", default="xlake-community")
     ap.add_argument("--pending", default=None, help="dir holding pages-pending.jsonl (deferred rows)")
     ap.add_argument("--write-pending", action="store_true", help="write the pending file even in --dry-run")
     a = ap.parse_args(argv)
