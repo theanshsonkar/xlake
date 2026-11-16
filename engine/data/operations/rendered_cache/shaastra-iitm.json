@@ -3,11 +3,56 @@
  "category": "hackathons",
  "url": "https://shaastra.org/",
  "final_url": "https://shaastra.org/",
- "fetched_at": "2026-11-09T14:07:51.519Z",
- "status": "empty",
+ "fetched_at": "2026-11-16T13:52:15.793Z",
+ "status": "ok",
  "http_status": 200,
- "title": "Shaastra 2026",
- "text": "SKIP INTRO",
- "html": "",
- "links": []
+ "title": "Shaastra 2027 | IIT Madras",
+ "text": "BROCHURE\nSALES\nLOGIN\nPIT // 01\nHOME\n›\nEVENTS\n›\nWORKSHOPS\n›\nSUMMIT\n›\nSPOTLIGHT\n›\nICON\n›\nABOUT US\n›\nPIT // 02\nPASSPORT\n‹\nACCOMMODATION\n‹\nOPEN HOUSE\n‹\nSPONSORS\n‹\nSHOWS\n‹\nGAMES\n‹\nSOCIAL CAMPAIGN\n‹\nSHAASTRA\nIIT MADRAS\nCHECK YOUR\nREACTION TIME\nSTATUS\nRACE READY\nSECTOR\n01\nSHAASTRA\n\nIIT MADRAS // ENGINEERING THE FUTURE\n\nABOUT US\n\nShaastra is the annual technical festival of the Indian Institute of Technology Madras (IITM), Chennai. Rooted in the Sanskrit word “Shaastra” meaning science, the festival is a premier convergence of advanced engineering competitions, summits, international conferences, research exhibitions, and hands-on technology workshops.\n\nTraditionally hosted over five days and five nights from 2nd to 6th January, Shaastra has celebrated twenty-six premier editions since its inception in 2000. It remains completely student-managed and holds the global distinction of being the first student-run festival certified under ISO 9001:2015.\n\nSCROLL\nSTOP\n01/04",
+ "html": "<div class=\"mb-3 shrink-0 sm:mb-3\"><div class=\"flex items-center\"><h1 class=\"\n        font-f1 pl-1\n        text-[clamp(20px,4vw,43px)]\n        font-black uppercase italic\n        leading-none\n        tracking-[0.09em]\n        text-white\n        drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]\n      \">SHA<span class=\"text-red-500\">ASTRA</span></h1></div><p class=\"\n    mt-1.5 pl-1\n    font-mono text-[7px]\n    font-bold tracking-[0.3em]\n    text-white/70\n    sm:text-[9px]\n  \">IIT MADRAS // ENGINEERING THE FUTURE</p></div><div class=\"mb-2.5 flex shrink-0 items-center gap-2 pl-2 sm:mb-3\"><div class=\"\n                -skew-x-[15deg]\n                border border-red-500/90\n                bg-black/55\n                px-4 py-1.5\n                shadow-[0_0_14px_rgba(239,68,68,0.3)]\n                sm:px-5 sm:py-2\n              \"><h2 class=\"\n                  skew-x-[15deg]\n                  text-sm font-black italic\n                  tracking-[0.2em] text-white\n                  sm:text-lg md:text-xl\n                \">ABOUT US</h2></div><span class=\"h-6 w-[3px] -skew-x-[22deg] bg-red-500 sm:h-7\"></span><span class=\"h-6 w-[3px] -skew-x-[22deg] bg-red-500/70 sm:h-7\"></span></div><div class=\"\n              about-panel-scroll\n              min-h-0 flex-1\n              overflow-y-auto\n              overscroll-contain\n              touch-pan-y\n              pr-1.5 sm:pr-3\n            \"><div class=\"\n              max-w-[950px]\n              space-y-3\n              sm:space-y-4\n            \"><div class=\"\n                  flex gap-3 sm:gap-4\n                  rounded-lg\n                  border border-white/[0.12]\n                  bg-black/65\n                  px-3 py-3\n                  sm:px-4 sm:py-4\n                  backdrop-blur-[7px]\n                  shadow-[0_4px_20px_rgba(0,0,0,0.4)]\n                \"><span class=\"\n                    mt-1 w-[3px] shrink-0\n                    rounded-full\n                    bg-gradient-to-b\n                    from-red-400 via-red-600 to-red-900/20\n                    shadow-[0_0_8px_#ef4444]\n                  \"></span><p class=\"\n                    text-[11px]\n                    leading-[1.7]\n                    text-white\n                    drop-shadow-[0_1px_5px_rgba(0,0,0,1)]\n                    min-[380px]:text-xs\n                    sm:text-sm md:text-base\n                  \">Shaastra is the annual technical festival of the <strong class=\"font-bold text-white\">Indian Institute of Technology Madras (IITM)</strong>, Chennai. Rooted in the Sanskrit word <em>“Shaastra”</em> meaning science, the festival is a premier convergence of advanced engineering competitions, summits, international conferences, research exhibitions, and hands-on technology workshops.</p></div><div class=\"\n                  flex gap-3 sm:gap-4\n                  rounded-lg\n                  border border-white/[0.12]\n                  bg-black/65\n                  px-3 py-3\n                  sm:px-4 sm:py-4\n                  backdrop-blur-[7px]\n                  shadow-[0_4px_20px_rgba(0,0,0,0.4)]\n                \"><span class=\"\n                    mt-1 w-[3px] shrink-0\n                    rounded-full\n                    bg-gradient-to-b\n                    from-red-400 via-red-600 to-red-900/20\n                    shadow-[0_0_8px_#ef4444]\n                  \"></span><p class=\"\n                    text-[11px]\n                    leading-[1.7]\n                    text-white\n                    drop-shadow-[0_1px_5px_rgba(0,0,0,1)]\n                    min-[380px]:text-xs\n                    sm:text-sm md:text-base\n                  \">Traditionally hosted over five days and five nights from 2nd to 6th January, Shaastra has celebrated twenty-six premier editions since its inception in 2000. It remains completely student-managed and holds the global distinction of being the first student-run festival certified under <span class=\"\n                      inline-block -skew-x-[10deg]\n                      rounded border border-red-500/80\n                      bg-black/55 px-2 py-0.5\n                      align-middle\n                    \"><span class=\"\n                        inline-block skew-x-[10deg]\n                        font-mono text-[10px]\n                        font-bold tracking-wider\n                        text-white sm:text-xs\n                      \">ISO 9001:2015</span></span>.</p></div></div></div>",
+ "links": [
+  {
+   "href": "https://www.digitalindia.gov.in/",
+   "text": "Visit Digital India website"
+  },
+  {
+   "href": "https://www.unesco.org/en",
+   "text": "Visit UNESCO & INCCU website"
+  },
+  {
+   "href": "https://negd.gov.in/",
+   "text": "Visit NeGD website"
+  },
+  {
+   "href": "https://www.makeinindia.com/",
+   "text": "Visit Make in India website"
+  },
+  {
+   "href": "https://www.meity.gov.in/",
+   "text": "Visit MeitY website"
+  },
+  {
+   "href": "https://www.youtube.com/@ShaastraIITM",
+   "text": "YouTube"
+  },
+  {
+   "href": "https://www.linkedin.com/company/shaastra-iitm/",
+   "text": "LinkedIn"
+  },
+  {
+   "href": "https://www.instagram.com/shaastra_iitm/",
+   "text": "Instagram"
+  },
+  {
+   "href": "https://www.facebook.com/ShaastraIITM/",
+   "text": "Facebook"
+  },
+  {
+   "href": "https://x.com/ShaastraIITM",
+   "text": "X"
+  },
+  {
+   "href": "https://shaastra.org/#android-app",
+   "text": "Download Shaastra for Android"
+  }
+ ]
 }
