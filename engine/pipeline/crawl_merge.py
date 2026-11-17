@@ -77,6 +77,7 @@ def merge(dirs: List[Path], out: Path, today: Optional[date] = None, parts: int 
     out.mkdir(parents=True, exist_ok=True)
     seen: set = set()
     startups: Dict[str, Dict] = {}
+    boards: Dict[tuple, Dict] = {}
     summary: Dict = {}
     ok_dirs: List[str] = []
     missing: List[str] = []
@@ -101,6 +102,11 @@ def merge(dirs: List[Path], out: Path, today: Optional[date] = None, parts: int 
                         seen.add(k)
                     fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
                     pages += 1
+            for row in _lines(d / "boards.jsonl"):
+                key = (row.get("platform"), row.get("token"))
+                cur = boards.get(key)
+                if key[0] and key[1] and (cur is None or (row.get("first_seen") or "~") < (cur.get("first_seen") or "~")):
+                    boards[key] = row
             for row in _lines(d / "startups.jsonl"):
                 dom = row.get("domain")
                 if not dom:
@@ -123,6 +129,10 @@ def merge(dirs: List[Path], out: Path, today: Optional[date] = None, parts: int 
     with open(out / "startups.jsonl", "w") as fh:
         for r in rows:
             fh.write(json.dumps(r, ensure_ascii=False) + "\n")
+    with open(out / "boards.jsonl", "w") as fh:
+        for key in sorted(boards):
+            fh.write(json.dumps(boards[key], ensure_ascii=False) + "\n")
+    summary["merged_boards"] = len(boards)
     summary.update(legs_ok=ok_dirs, legs_missing=missing, merged_pages=pages,
                    merged_duplicates=dupes, merged_startups=len(rows))
     summary.update(merge_frontiers(dirs, out, parts))

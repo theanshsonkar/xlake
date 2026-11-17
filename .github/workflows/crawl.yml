@@ -220,7 +220,8 @@ jobs:
           AWS_DEFAULT_REGION: ap-south-1
         run: |
           TS=$(date -u +%Y-%m-%dT%H%MZ)
-          for f in pages-merged.jsonl startups.jsonl summary.json; do
+          for f in pages-merged.jsonl startups.jsonl boards.jsonl summary.json; do
+            [ -f "out/result/$f" ] || continue
             gzip -kf "out/result/$f"
             aws s3 cp "out/result/$f.gz" "s3://$AWS_S3_BUCKET/lake/crawler/runs/$TS/$f.gz"
           done

@@ -268,6 +268,23 @@ def _load_caches():
     return caches
 
 
+def load_extra_candidates(path, caches):
+    """Merge {platform, token} rows from a jsonl file (e.g. crawler boards) into the
+    cache token lists. They then pass through run_admission's normal checks."""
+    n = 0
+    with open(path, encoding="utf-8") as fh:
+        for line in fh:
+            try:
+                row = json.loads(line)
+            except ValueError:
+                continue
+            plat, tok = row.get("platform"), row.get("token")
+            if plat and tok and plat in PLATFORM_POLICY:
+                caches.setdefault(plat, []).append(tok)
+                n += 1
+    return n
+
+
 def _write_json(path, data):
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(data, fh, indent=1, ensure_ascii=False)
@@ -517,6 +534,9 @@ def main(argv=None):
     ap.add_argument("--process-review", dest="process_review", action="store_true")
     ap.add_argument("--max-admit", type=int, default=DEFAULT_MAX_ADMIT,
                     help="stop after admitting N boards this run (default 300)")
+    ap.add_argument("--extra-candidates", metavar="JSONL", action="append", default=[],
+                    help="jsonl of {platform, token} rows (crawler boards.jsonl) added to "
+                         "the cached candidates; same verification applies")
     ap.add_argument("--admit", action="append", default=[])
     ap.add_argument("--reject", action="append", default=[])
     args = ap.parse_args(argv)
@@ -607,6 +627,8 @@ def main(argv=None):
         return 0
 
     caches = _load_caches()
+    for extra in args.extra_candidates:
+        print("extra candidates from {}: {}".format(extra, load_extra_candidates(extra, caches)))
     registry = _load_json(REGISTRY_PATH, [])
     rejected_rows = _load_json(REJECTED_PATH, [])
     rejected_keys = {(r["platform"], r["token"]) for r in rejected_rows}

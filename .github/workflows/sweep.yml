@@ -155,7 +155,11 @@ jobs:
           [ -f "data/lake/shards/$SHARD.hidden.json" ] && aws s3 cp "data/lake/shards/$SHARD.hidden.json" "s3://$AWS_S3_BUCKET/lake/shards/$SHARD.hidden.json"
           aws s3 cp "data/lake/shards/$SHARD.json" "s3://$AWS_S3_BUCKET/archive/shards/$SHARD-$(date -u +%Y%m%dT%H%M%SZ).json"
 
+      # Jobs reach the plugin via Cloudflare D1. The Supabase free plan ran out of
+      # disk IO, so the jobs shards no longer write to it unless the repo variable
+      # SUPABASE_PUBLISH_JOBS is 'true' (default: off). Categories are unaffected.
       - name: Publish to Supabase (scoped to this shard)
+        if: ${{ vars.SUPABASE_PUBLISH_JOBS == 'true' }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

@@ -9,6 +9,7 @@ from datetime import date, timedelta
 from collections import Counter
 from typing import Dict, Iterable, List, Optional, Set
 
+from crawler.boards import BoardCollector
 from crawler import doors, extract, funding, score, urls
 from crawler.fetch import Fetcher
 from crawler.frontier import Frontier, part_of
@@ -46,6 +47,7 @@ class Crawler:
         self.funding: Dict[str, Dict] = {}
         self.names: Dict[str, str] = {}
         self.domain_careers: Dict[str, Set[str]] = {}
+        self.boards = BoardCollector(self.today)
         self.pages = 0
         self.time_limit_hit = False
         self.sitemaps_on = sitemaps
@@ -160,6 +162,7 @@ class Crawler:
         finally:
             self.frontier.save(self.store.out)
             self.store.write_startups(self._startup_rows())
+            self.store.write_boards(self.boards.rows())
             self.store.write_summary(self.summary())
         return self.summary()
 
@@ -205,6 +208,8 @@ class Crawler:
             self.frontier.mark(item["url"], "failed", self.today)
             return
         self.frontier.mark(item["url"], "fetched", self.today)
+        if item["kind"] != "feed":
+            self.boards.add(result.final_url, [l["url"] for l in page.get("links", [])])
         if item["kind"] == "startup_home":
             self.startups_ok.add(urls.registered_domain(item["url"]))
         domain = (item["lead"] or {}).get("domain")
@@ -357,6 +362,7 @@ class Crawler:
                 "funding_evidence_old": len(self.funding) - len(recent),
                 "careers_pages": len(self.careers_urls),
                 "careers_startups": len(self.careers_domains),
+                "boards_found": len(self.boards.found),
                 "duplicate": self.store.duplicates,
                 "sitemap_files": self.sitemap.files_total, "sitemap_urls_queued": self.sitemap.urls_total,
                 "cc_queries": self.cc.queries if self.cc else 0,

@@ -53,5 +53,10 @@ class Store:
             for r in rows:
                 fh.write(json.dumps(r, ensure_ascii=False) + "\n")
 
+    def write_boards(self, rows) -> None:
+        with open(self.out / "boards.jsonl", "w") as fh:
+            for r in rows:
+                fh.write(json.dumps(r, ensure_ascii=False) + "\n")
+
     def write_summary(self, stats: Dict) -> None:
         (self.out / "summary.json").write_text(json.dumps(stats, indent=2, ensure_ascii=False))

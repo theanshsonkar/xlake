@@ -1,7 +1,16 @@
 name: discovery-refresh
 
+# Optional board admission from the crawler: with admit_crawler_boards=dry|write, boards
+# the general crawler found in the last 14 days (s3://$BUCKET/lake/crawler/runs/*/boards.jsonl.gz)
+# go through the SAME pipeline.admit_boards checks and cap as Common Crawl candidates.
+# Default off; the crawler itself never edits the registry.
 on:
   workflow_dispatch:
+    inputs:
+      admit_crawler_boards:
+        description: "off | dry | write (admit crawler-found boards)"
+        required: false
+        default: "off"
 
 concurrency:
   group: discovery-refresh-${{ github.ref }}
@@ -29,12 +38,33 @@ jobs:
       - name: Refresh discovery board names
         run: python3 -u -m pipeline.admit_boards --refresh-names --write
 
+      - name: Admit crawler-found boards (same admission checks)
+        if: ${{ github.event.inputs.admit_crawler_boards == 'dry' || github.event.inputs.admit_crawler_boards == 'write' }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_DEFAULT_REGION: ap-south-1
+          MODE: ${{ github.event.inputs.admit_crawler_boards }}
+        run: |
+          mkdir -p out/crawler-boards
+          CUTOFF=$(date -u -d '14 days ago' +%Y-%m-%d)
+          : > out/crawler-boards/all.jsonl
+          for P in $(aws s3 ls "s3://$AWS_S3_BUCKET/lake/crawler/runs/" | awk '/PRE/ {print $2}' | tr -d /); do
+            [ "${P%%T*}" \< "$CUTOFF" ] && continue
+            aws s3 cp "s3://$AWS_S3_BUCKET/lake/crawler/runs/$P/boards.jsonl.gz" - 2>/dev/null | gunzip >> out/crawler-boards/all.jsonl || true
+          done
+          wc -l out/crawler-boards/all.jsonl
+          FLAG=""
+          if [ "$MODE" = "write" ]; then FLAG="--write"; fi
+          python3 -u -m pipeline.admit_boards --extra-candidates out/crawler-boards/all.jsonl $FLAG
+
       - name: Commit and push registry changes
         working-directory: ${{ github.workspace }}
         run: |
           git config user.name  "opportunity-lake-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add engine/data/operations/registry.json
+          git add engine/data/operations/registry.json engine/data/operations/discovery_review.json engine/data/operations/discovery_pending_enrichment.json
           if git diff --cached --quiet; then
             echo "No registry changes to commit."
             exit 0
