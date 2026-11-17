@@ -275,6 +275,45 @@ class BuildServingGateTests(unittest.TestCase):
         self.assertEqual(len(build_serving([job, con])), 2)
 
 
+class ServingRuleTests(unittest.TestCase):
+    def test_event_titles_not_funding_programmes(self):
+        for cat in ("fellowship", "scholarship", "grant", "research"):
+            self.assertEqual(quality_reason(prog("e1", "Women in Tech Career Fair", category=cat)), "event_not_programme")
+        self.assertEqual(quality_reason(prog("e2", "Spring Info Session")), "event_not_programme")
+        self.assertIsNone(quality_reason(prog("e3", "Summit Fellowship")))
+        self.assertIsNone(quality_reason(prog("e4", "Career Fair Travel Grant")))
+        self.assertIsNone(quality_reason(prog("e5", "Women in Tech Career Fair", category="startup-founder")))
+
+    def test_login_urls_never_served(self):
+        for u in ("https://www.fastlane.nsf.gov/grfp/Login.do", "https://x.org/account/login", "https://x.org/sign-in",
+                  "https://sso.x.org/start", "https://x.org/auth/callback"):
+            self.assertTrue(Q.is_auth_url(u), u)
+            self.assertEqual(quality_reason(prog("l1", "Some Fellowship", url=u)), "link_login", u)
+        self.assertFalse(Q.is_auth_url("https://x.org/fellowships/apply"))
+        # another non-login link keeps the row servable
+        self.assertIsNone(quality_reason(prog("l2", "Some Fellowship", url="https://x.org/Login.do",
+                                              application_url="https://x.org/apply")))
+
+    def test_aggregator_only_behind_env_flag(self):
+        import os
+        from pipeline import publish_supabase as ps
+        job = {"record_type": "internship", "is_internship": True, "url": "https://unstop.com/internships/x"}
+        hack = {"record_type": "hackathon", "title": "Business Battlefield 2027", "official_url": "https://bb.devpost.com/"}
+        self.assertTrue(ps.aggregator_only(job) and ps.aggregator_only(hack))
+        self.assertFalse(ps.aggregator_only({**hack, "application_url": "https://bb.org/apply"}))
+        old = os.environ.pop("XLAKE_DROP_AGGREGATOR_ONLY", None)
+        try:
+            self.assertIsNone(quality_reason(job))
+            os.environ["XLAKE_DROP_AGGREGATOR_ONLY"] = "1"
+            self.assertEqual(quality_reason(job), "aggregator_only")
+            self.assertEqual(quality_reason(hack), "aggregator_only")
+            self.assertIsNone(quality_reason({**hack, "application_url": "https://bb.org/apply"}))
+        finally:
+            os.environ.pop("XLAKE_DROP_AGGREGATOR_ONLY", None)
+            if old is not None:
+                os.environ["XLAKE_DROP_AGGREGATOR_ONLY"] = old
+
+
 if __name__ == "__main__":
     unittest.main()
 

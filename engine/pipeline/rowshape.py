@@ -17,7 +17,7 @@ from datetime import date, datetime, timezone
 from typing import Any, Dict, List, Optional
 
 from categories.programme_enrich import clean_location, is_placeholder
-from core import cycles, jobmeta, lifecycle
+from core import cycles, jobmeta, lifecycle, serving_quality
 from pipeline import publish_supabase as ps
 
 FIELDS = (
@@ -154,6 +154,18 @@ def real_org(name: Any) -> Optional[str]:
     if not text or not jobmeta.real_company(text):
         return None
     return text
+
+
+def real_org_name(*candidates: Any) -> Optional[str]:
+    """First candidate that is an organisation name; a bare hostname is used only when nothing better exists."""
+    names = [n for n in (real_org(c) for c in candidates) if n]
+    return next((n for n in names if not ps._looks_like_hostname(n)), names[0] if names else None)
+
+
+def pick_url(*urls: Any) -> Optional[str]:
+    """First url that is not a login/auth page (falls back to the first url)."""
+    urls = [u for u in urls if u]
+    return next((u for u in urls if not serving_quality.is_auth_url(u)), urls[0] if urls else None)
 
 
 def clean_logo(url: Any) -> Optional[str]:
@@ -313,7 +325,7 @@ def map_job(row: dict) -> Dict[str, Any]:
 
 def map_programme(row: dict) -> Dict[str, Any]:
     """Fellowships, scholarships, grants, research, startup, community, open-source programmes."""
-    url = _first(row.get("official_url"), row.get("url"), row.get("application_url"))
+    url = pick_url(row.get("official_url"), row.get("url"), row.get("application_url"))
     amount = _number(_first(row.get("funding_amount"), row.get("funding_amount_usd")))
     currency = _currency(row.get("funding_currency")) or (
         "USD" if amount is not None and row.get("funding_amount") is None else None)
@@ -326,9 +338,10 @@ def map_programme(row: dict) -> Dict[str, Any]:
     next_cycle = scrub(row.get("next_cycle_hint"), 120) or scrub(
         cycles.next_cycle_text(cycles.predict_next(row, today)), 120)
     return {
-        "org": real_org(ps._display_company(row)),
+        "org": real_org_name(ps._display_company(row), row.get("organiser"), row.get("site_name"),
+                             row.get("og_site_name")),
         "logo": clean_logo(row.get("logo_url")),
-        "url": url, "apply_url": _first(row.get("application_url"), url),
+        "url": url, "apply_url": pick_url(row.get("application_url"), url),
         "opens": _dated_opens(row),
         "last_deadline": own_last,
         "next_cycle": next_cycle,
@@ -345,7 +358,7 @@ def map_programme(row: dict) -> Dict[str, Any]:
 
 
 def map_hackathon(row: dict) -> Dict[str, Any]:
-    url = _first(row.get("official_url"), row.get("application_url"))
+    url = pick_url(row.get("official_url"), row.get("application_url"))
     pool = _number(row.get("prize_pool_usd"))
     return {
         "org": real_org(row.get("organizer")),

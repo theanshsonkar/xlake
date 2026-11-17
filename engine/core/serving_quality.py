@@ -21,6 +21,8 @@ Rules (each returns a short reason string, or None to keep the row):
 """
 from __future__ import annotations
 
+import json
+import os
 import re
 import unicodedata
 from typing import Dict, Iterable, List, Optional
@@ -129,6 +131,57 @@ def title_gate(title: object, url: object = None) -> Optional[str]:
     if is_github_list_url(u):
         return "github_list_url"
     return None
+
+
+# --------------------------------------------------------------------------- #
+# Event titles typed as funding programmes; login/auth URLs (word lists live in data/serving_rules.json)
+# --------------------------------------------------------------------------- #
+_RULES_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "serving_rules.json")
+
+
+def _rules() -> dict:
+    try:
+        with open(_RULES_PATH, encoding="utf-8") as fh:
+            return json.load(fh)
+    except (OSError, ValueError):
+        return {}
+
+
+def _word_re(words):
+    words = [w for w in (words or ()) if w]
+    return re.compile(r"\b(?:" + "|".join(re.escape(w) for w in words) + r")s?\b", re.I) if words else None
+
+
+_RULE_DATA = _rules()
+_EVENT_RE = _word_re(_RULE_DATA.get("event_title_words"))
+_SCHEME_RE = _word_re(_RULE_DATA.get("scheme_title_words"))
+_EVENT_CATEGORIES = frozenset(_RULE_DATA.get("event_gate_categories") or ())
+
+
+def event_gate(title: object, category: object) -> Optional[str]:
+    """An event (career fair, webinar, summit...) typed as fellowship/scholarship/grant/research is not served,
+    unless the title also names a funding scheme (e.g. "Summit Fellowship")."""
+    if category not in _EVENT_CATEGORIES or not _EVENT_RE:
+        return None
+    t = clean_title(title)
+    if _EVENT_RE.search(t) and not (_SCHEME_RE and _SCHEME_RE.search(t)):
+        return "event_not_programme"
+    return None
+
+
+_AUTH_PATH = re.compile(
+    r"(?:^|[/._-])(?:log-?in|sign-?in|signon|sign-on|sso|auth|oauth|authenticate|"
+    r"account/login|users?/login)(?:\.\w+)?(?:[/._-]|$)", re.I)
+_AUTH_HOST = re.compile(r"^(?:login|signin|sso|auth|accounts?|id)\.", re.I)
+
+
+def is_auth_url(url: object) -> bool:
+    """Login / sign-in / SSO page: never a valid official or apply link."""
+    try:
+        parts = urlsplit(str(url or "").strip())
+    except ValueError:
+        return False
+    return bool(parts.hostname and (_AUTH_HOST.match(parts.hostname) or _AUTH_PATH.search(parts.path or "")))
 
 
 # --------------------------------------------------------------------------- #

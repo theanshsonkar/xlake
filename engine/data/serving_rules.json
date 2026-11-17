@@ -1,0 +1,6 @@
+{
+  "event_title_words": ["career fair", "job fair", "conference", "webinar", "info session", "information session",
+                        "open house", "summit", "meetup", "workshop", "expo", "symposium", "networking event"],
+  "event_gate_categories": ["fellowship", "scholarship", "grant", "research"],
+  "scheme_title_words": ["fellowship", "scholarship", "grant", "award", "bursary", "stipend", "studentship"]
+}

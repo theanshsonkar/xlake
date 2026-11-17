@@ -344,9 +344,32 @@ def map_row(r: dict) -> dict:
     }
 
 
+_LINK_KEYS = ("url", "official_url", "apply_url", "application_url")
+
+
+def _links(r: dict) -> list:
+    return [str(r[k]) for k in _LINK_KEYS if r.get(k)]
+
+
+def aggregator_only(r: dict) -> bool:
+    """Every link on the row is an aggregator/job board (official-first: discovery only)."""
+    hosts = [linkcheck._split(u)[0] for u in _links(r)]
+    return bool(hosts) and all(h and linkcheck._is_aggregator(h) for h in hosts)
+
+
+def _drop_aggregator_only() -> bool:
+    return os.environ.get("XLAKE_DROP_AGGREGATOR_ONLY", "").strip().lower() in ("1", "true", "yes", "on")
+
+
 def quality_reason(r: dict):
     """Why a (serving-eligible) non-job row must not be served, else None."""
     t = record_type(r)
+    if t != "contribution":
+        links = _links(r)
+        if links and all(serving_quality.is_auth_url(u) for u in links):
+            return "link_login"
+        if _drop_aggregator_only() and aggregator_only(r):
+            return "aggregator_only"
     if t in JOB_TYPES or t == "contribution":
         return None
     if "link_dead" in (r.get("link_quality") or ()):
@@ -355,6 +378,8 @@ def quality_reason(r: dict):
     if t == "programme" and host not in ORGANISER_RUN_HOSTS and linkcheck._is_aggregator(host):
         return "link_aggregator"
     title = _first(r.get("title"), r.get("programme_name"), r.get("organizer"))
+    if t == "programme" and serving_quality.event_gate(_first(r.get("programme_name"), r.get("title")), r.get("category")):
+        return "event_not_programme"
     url = _first(r.get("url"), r.get("official_url"), r.get("application_url"))
     eligibility = _first(r.get("eligibility"))
     usd = r.get("funding_amount_usd")

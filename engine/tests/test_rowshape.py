@@ -171,6 +171,20 @@ class HackathonTrustTests(unittest.TestCase):
         self.assertEqual(to_standard(hack())["org"], "Some Univ")
 
 
+class OrgAndUrlShapeTest(unittest.TestCase):
+    def test_hostname_org_prefers_page_site_name(self):
+        r = prog(organizer="soroptimist.org", organiser="Soroptimist International")
+        self.assertEqual(to_standard(r)["org"], "Soroptimist International")
+        self.assertEqual(to_standard(prog(organizer="nccu.edu"))["org"], "nccu.edu")  # nothing better: keep domain
+
+    def test_login_url_not_picked_when_other_evidence_exists(self):
+        r = prog(official_url="https://www.fastlane.nsf.gov/grfp/Login.do", application_url=None)
+        r["url"] = "https://www.nsf.gov/grfp"
+        s = to_standard(r)
+        self.assertEqual(s["url"], "https://www.nsf.gov/grfp")
+        self.assertEqual(s["apply_url"], "https://www.nsf.gov/grfp")
+
+
 if __name__ == "__main__":
     unittest.main()
 
