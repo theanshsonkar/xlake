@@ -42,6 +42,8 @@ SCHEMA = [
     "CREATE INDEX IF NOT EXISTS ix_pages_site ON pages(site);",
     "CREATE INDEX IF NOT EXISTS ix_pages_checked ON pages(last_checked);",
     "CREATE INDEX IF NOT EXISTS ix_pages_funding ON pages(funding_date);",
+    "CREATE INDEX IF NOT EXISTS ix_pages_kind_checked ON pages(kind, last_checked DESC);",
+    "CREATE INDEX IF NOT EXISTS ix_pages_site_checked ON pages(site, last_checked DESC);",
     "CREATE VIRTUAL TABLE IF NOT EXISTS pages_fts USING fts5(id UNINDEXED, title, org, summary, kind, tags, "
     "tokenize='unicode61 remove_diacritics 2');",
 ]

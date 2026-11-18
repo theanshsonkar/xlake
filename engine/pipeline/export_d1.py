@@ -37,6 +37,8 @@ CREATE INDEX IF NOT EXISTS ix_type_status ON opportunities(type, status);
 CREATE INDEX IF NOT EXISTS ix_country ON opportunities(country);
 CREATE INDEX IF NOT EXISTS ix_expected_opens ON opportunities(expected_opens);
 CREATE INDEX IF NOT EXISTS ix_first_seen ON opportunities(first_seen);
+CREATE INDEX IF NOT EXISTS ix_deadline_checked ON opportunities(deadline, last_checked DESC);
+CREATE INDEX IF NOT EXISTS ix_opens_coalesce ON opportunities(COALESCE(expected_opens, opens));
 CREATE VIRTUAL TABLE IF NOT EXISTS opportunities_fts USING fts5(id UNINDEXED, title, org, location, skills, tokenize='unicode61 remove_diacritics 2');
 """
 
