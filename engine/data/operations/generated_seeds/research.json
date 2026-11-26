@@ -415,7 +415,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
   "last_seen": "2026-11-22T14:43:06Z",
-  "dead_strikes": 3
+  "dead_strikes": 4
  },
  {
   "source_id": "hub-research-www-dssgfellowship-org-fde356",
@@ -442,7 +442,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
   "last_seen": "2026-11-22T14:43:06Z",
-  "dead_strikes": 3
+  "dead_strikes": 4
  },
  {
   "source_id": "hub-research-ece-duke-edu-undergrad-reu-6b7e1e",
@@ -455,7 +455,8 @@
   ],
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
-  "last_seen": "2026-11-22T14:43:06Z"
+  "last_seen": "2026-11-22T14:43:06Z",
+  "dead_strikes": 1
  },
  {
   "source_id": "hub-research-www-emmabowenfoundation-org-apply-460ba2",
@@ -651,7 +652,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
   "last_seen": "2026-11-22T14:43:06Z",
-  "dead_strikes": 3
+  "dead_strikes": 4
  },
  {
   "source_id": "hub-research-www-iitb-ac-in-en-education-e63d02",
@@ -705,7 +706,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
   "last_seen": "2026-11-22T14:43:06Z",
-  "dead_strikes": 2
+  "dead_strikes": 3
  },
  {
   "source_id": "hub-research-www-inde-campusfrance-org-charpak-research-interns-986032",
@@ -875,7 +876,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
   "last_seen": "2026-11-22T14:43:06Z",
-  "dead_strikes": 3
+  "dead_strikes": 4
  },
  {
   "source_id": "hub-research-mae-osu-edu-riya-5d4581",
@@ -980,7 +981,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
   "last_seen": "2026-11-22T14:43:06Z",
-  "dead_strikes": 3
+  "dead_strikes": 4
  },
  {
   "source_id": "hub-research-www-oist-jp-admissions-research-internship-132f2c",
@@ -1007,7 +1008,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
   "last_seen": "2026-11-22T14:43:06Z",
-  "dead_strikes": 3
+  "dead_strikes": 4
  },
  {
   "source_id": "hub-research-www-postgraduate-study-cam-ac-uk-events-internships-8eaded",
@@ -1047,7 +1048,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
   "last_seen": "2026-11-22T14:43:06Z",
-  "dead_strikes": 3
+  "dead_strikes": 4
  },
  {
   "source_id": "hub-research-research-fb-com-programs-fellowship-c0478b",
@@ -1191,7 +1192,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
   "last_seen": "2026-11-22T14:43:06Z",
-  "dead_strikes": 3
+  "dead_strikes": 4
  },
  {
   "source_id": "hub-research-www-shastriinstitute-org-shastri-student-internship-project-6141dc",
@@ -1257,7 +1258,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
   "last_seen": "2026-11-22T14:43:06Z",
-  "dead_strikes": 3
+  "dead_strikes": 4
  },
  {
   "source_id": "hub-research-www-sserd-org-internship-e05f59",
@@ -1297,7 +1298,7 @@
   "check_cadence": "monthly",
   "first_seen": "2026-11-22T14:43:06Z",
   "last_seen": "2026-11-22T14:43:06Z",
-  "dead_strikes": 3
+  "dead_strikes": 4
  },
  {
   "source_id": "hub-research-swiss-sspp-program-phys-ethz-ch-374d1c",
